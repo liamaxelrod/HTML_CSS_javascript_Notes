@@ -44,19 +44,25 @@ Also, I do have plans To refresh my knowledge on other coding languages and lear
 
 ---
 
-## 8. Acknowledgments / Credits (if applicable)
+## 8. Links/Acknowledgement (if applicable)
 
-**Link to the website:**
+**websites that assist in the creation of this project.**
+
+***Link to the website:***
 
 [https://liam-axelrod-html-notes.vercel.app/](https://liam-axelrod-html-notes.vercel.app/)
 
-**Link to vercel:**
+***Link to vercel ():***
 
 [https://vercel.com/](https://vercel.com/)
 
-**Link to ?:**
+***Link to ?:***
 
 (?)
+
+**Acknowledgement**
+
+Use chatGPT And copilot in the assistance of this Project.
 
 ---
 
