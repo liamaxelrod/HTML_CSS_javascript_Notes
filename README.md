@@ -50,15 +50,15 @@ Also, I do have plans To refresh my knowledge on other coding languages and lear
 
 ***Link to the website:***
 
-[https://liam-axelrod-html-notes.vercel.app/](https://liam-axelrod-html-notes.vercel.app/)
+[Liam Axelrod website](https://liam-axelrod-html-notes.vercel.app/)
 
-***Link to vercel ():***
+***Link to vercel:***
 
-[https://vercel.com/](https://vercel.com/)
+[vercel](https://vercel.com/)
 
-***Link to ?:***
+***Link to w3schools:***
 
-(?)
+[w3schools]([https://www.w3schools.com/css/default.asp]())
 
 **Acknowledgement**
 

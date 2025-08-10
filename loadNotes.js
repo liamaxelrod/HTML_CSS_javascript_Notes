@@ -41,17 +41,20 @@ async function loadNeededNotes() {
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
       
-      // Look for a <template> element inside the fetched HTML document
-      const template = doc.querySelector('template');
+      // Look for all <template> elements inside the fetched HTML document
+      const templates = doc.querySelectorAll('template');
 
       // If no <template> is found, warn and skip this slot
-      if (!template) {
+      if (templates.length === 0) {
         console.warn(`No <template> found in ${path}`);
         continue;
       }
 
-      // Clone the content of the template and append it to the current placeholder slot
-      slot.appendChild(template.content.cloneNode(true));
+      // Clone the content of all templates and append them to the current placeholder slot
+      // This allows loading multiple templates sequentially from a single note file
+      templates.forEach(template => {
+        slot.appendChild(template.content.cloneNode(true));
+      });
 
     } catch (error) {
       // If an error occurs during fetching or parsing, log it to the console
@@ -64,9 +67,5 @@ async function loadNeededNotes() {
 loadNeededNotes();
 
 /* chatGPT Questions by liam Disregard if I forgot to remove it.  
-
-
-
-
 
 */
