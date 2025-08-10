@@ -105,10 +105,79 @@
 .d9 { background-color: #d97a2a; }
 .d10 { background-color: #2a72d9; }
 
+/* ===========================
+   RESPONSIVE / DYNAMIC INTERFACE STYLES
+   =========================== */
+
+/* Phones: max-width 600px */
+@media (max-width: 600px) {
+  .bubble {
+    margin: 10px 8px;
+    padding: 10px 12px 12px 12px;
+  }
+
+  .code_block {
+    font-size: 0.85rem;
+    padding: 10px 12px;
+  }
+
+  .example {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .explanation {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Tablets: 601px to 900px */
+@media (min-width: 601px) and (max-width: 900px) {
+  .bubble {
+    margin: 15px 12px;
+    padding: 12px 16px 16px 16px;
+  }
+
+  .code_block {
+    font-size: 0.95rem;
+    padding: 11px 14px;
+  }
+
+  .example {
+    padding: 11px;
+    font-size: 1rem;
+  }
+
+  .explanation {
+    padding: 11px 14px;
+    font-size: 1.05rem;
+  }
+}
+
+/* Desktop: min-width 901px */
+@media (min-width: 901px) {
+  .bubble {
+    margin: 20px 15px;
+    padding: 1px 20px 20px 20px;
+  }
+
+  .code_block {
+    font-size: 1rem;
+    padding: 12px 16px;
+  }
+
+  .example {
+    padding: 12px;
+    font-size: 1.1rem;
+  }
+
+  .explanation {
+    padding: 12px 16px;
+    font-size: 1.1rem;
+  }
+}
+
 /* chatGPT Questions by liam Disregard if I forgot to remove it. 
 -----------------------
-
-
-
-
 */

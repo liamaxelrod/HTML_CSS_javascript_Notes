@@ -106,7 +106,73 @@ relative to root font size rem
   color: #333;
 }
 
-/* 
+/* ===========================
+   RESPONSIVE / DYNAMIC INTERFACE STYLES
+   =========================== */
 
+/* Phones: max-width 600px */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;        /* Stack nav links vertically */
+  }
 
-*/
+  nav a {
+    padding: 8px 15px;             /* Smaller padding on phones */
+    font-size: 1rem;               /* Adjust font size for smaller screens */
+  }
+
+  .section {
+    margin: 0.5rem 0.5rem;         /* Reduce margin */
+    padding: 0.5rem 1rem;          /* Adjust padding */
+    line-height: 1.0;              /* Slightly more line height for readability */
+  }
+
+  .section p {
+    font-size: 1rem;               /* Smaller font size on phones */
+  }
+}
+
+/* Tablets: 601px to 900px */
+@media (min-width: 601px) and (max-width: 900px) {
+  nav ul {
+    flex-direction: row;           /* Horizontal nav */
+    flex-wrap: wrap;               /* Allow wrapping if needed */
+  }
+
+  nav a {
+    padding: 10px 18px;
+    font-size: 1.1rem;
+  }
+
+  .section {
+    margin: 1rem 1rem;
+    padding: 0.4rem 1.2rem;
+    line-height: 0.9;
+  }
+
+  .section p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Desktop: min-width 901px */
+@media (min-width: 901px) {
+  nav ul {
+    flex-direction: row;
+  }
+
+  nav a {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+  }
+
+  .section {
+    margin: 1rem 1rem;
+    padding: 0.3rem 1.5rem 0.5rem 1.5rem;
+    line-height: 0.7;
+  }
+
+  .section p {
+    font-size: 1.2rem;
+  }
+}
