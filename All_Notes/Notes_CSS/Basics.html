@@ -1,20 +1,328 @@
 <template>
   <div class="bubble">
 
-    <h3>Code Section</h3>
+    <h3>CSS Code Block: Border, Margin, Padding</h3>
     <div class="code_block">
-      <div class="C1">&lt;button&gt;Button 10&lt;/button&gt;</div>
+      <code>
+        /* Border Styles */<br>
+        <span class="C5">.box {</span><br>
+        &nbsp;&nbsp;<span class="C4">border-style:</span> <span class="C6">solid dashed dotted double;</span><br>
+        &nbsp;&nbsp;<span class="C4">border-width:</span> <span class="C6">3px 6px 9px 12px;</span><br>
+        &nbsp;&nbsp;<span class="C4">border-color:</span> <span class="C6">red green blue orange;</span><br>
+        &nbsp;&nbsp;<span class="C4">border-radius:</span> <span class="C6">10px;</span><br>
+        <span class="C5">}</span><br><br>
+
+        /* Margin Shorthand */<br>
+        <span class="C5">.box {</span><br>
+        &nbsp;&nbsp;<span class="C4">margin:</span> <span class="C6">15px 30px 45px 60px;</span><br>
+        <span class="C5">}</span><br><br>
+
+        /* Padding Shorthand */<br>
+        <span class="C5">.box {</span><br>
+        &nbsp;&nbsp;<span class="C4">padding:</span> <span class="C6">5px 10px 15px 20px;</span><br>
+        <span class="C5">}</span><br><br>
+
+        /* Box-sizing to include padding/border in width */<br>
+        <span class="C5">.box {</span><br>
+        &nbsp;&nbsp;<span class="C4">width:</span> <span class="C6">300px;</span><br>
+        &nbsp;&nbsp;<span class="C4">box-sizing:</span> <span class="C6">border-box;</span><br>
+        <span class="C5">}</span>
+      </code>
     </div>
 
-    <h3>Example Section</h3>
+    <h3>Combined Example: Border, Margin, Padding</h3>
     <div class="example">
-      <span class="dot d1"></span><button>Button 10</button>
+      <div class="box" style="
+        border-style: solid dashed dotted double;
+        border-width: 3px 6px 9px 12px;
+        border-color: red green blue orange;
+        border-radius: 10px;
+        margin: 15px 30px 45px 60px;
+        padding: 5px 10px 15px 20px;
+        width: 300px;
+        box-sizing: border-box;
+        ">
+        This box uses all the border, margin, padding styles combined.<br>
+        The <code>box-sizing: border-box;</code> keeps the width fixed at 300px.
+      </div>
     </div>
 
-    <h3>Explanation Section</h3>
+    <h3>Individual Examples for Each CSS Block</h3>
+
+    <div class="example" style="
+      border-style: solid dashed dotted double;
+      border-width: 3px 6px 9px 12px;
+      border-color: red green blue orange;
+      border-radius: 10px;
+      margin: 15px;
+      padding: 10px;
+      width: 300px;
+      box-sizing: border-box;
+      ">
+      <strong>Border Example:</strong> Shows different border styles, widths, colors, and rounded corners.
+    </div>
+
+    <div class="example" style="
+      margin: 15px 30px 45px 60px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      width: 300px;
+      box-sizing: border-box;
+      ">
+      <strong>Margin Example:</strong> Margins create space outside the border. This element has different margins on each side.
+    </div>
+
+    <div class="example" style="
+      padding: 5px 10px 15px 20px;
+      border: 1px solid #ccc;
+      margin: 15px;
+      width: 300px;
+      box-sizing: border-box;
+      ">
+      <strong>Padding Example:</strong> Padding creates space inside the border, around the content.
+    </div>
+
+    <h3>Explanations</h3>
     <div class="explanation">
-      <div class="C1">This is Button 1.</div>
+      <strong>Border:</strong> The <code>border-style</code>, <code>border-width</code>, <code>border-color</code>, and <code>border-radius</code> properties define the look of the element's borders.<br><br>
+
+      <strong>Margin:</strong> The <code>margin</code> property controls the space outside the element's border. It accepts up to four values to control each side.<br><br>
+
+      <strong>Padding:</strong> The <code>padding</code> property controls the space inside the element's border, around its content. Negative values are not allowed.<br><br>
+
+      <strong>Box-sizing:</strong> By default, padding and border add to the total width of an element. Using <code>box-sizing: border-box;</code> includes padding and border inside the specified width, preventing layout issues.
+    </div>
+
+    <div class="explanation" style="margin-top: 15px;">
+      <strong>Additional Notes:</strong><br>
+      - You can specify different values for top, right, bottom, and left sides by providing 1 to 4 values in the shorthand.<br>
+      - The <code>auto</code> value for margin lets the browser calculate margins, often used to center block elements horizontally.<br>
+      - For margins, negative values are allowed, which can pull elements closer or cause overlap; for padding, negative values are not allowed.<br>
+      - Border properties only take effect if <code>border-style</code> is set to a value other than <code>none</code> or <code>hidden</code>.<br>
+      - border-style Values: none, hidden, dotted, dashed, solid, double, groove, ridge, inset, outset
     </div>
 
   </div>
 </template>
+
+<template> <!-- Explanation Different background-xxxx Commands -->
+  <div class="bubble">
+
+    <h3>CSS Background Properties</h3>
+    <div class="code_block">
+      <code>
+        <strong>/* CSS code */</strong><br>
+
+        <span class="C1">#displayBox {</span><br>
+        &nbsp;&nbsp;<span class="C1">width: 80vw;</span><br>
+        &nbsp;&nbsp;<span class="C1">aspect-ratio: 2 / 1;</span><br>
+        &nbsp;&nbsp;<span class="C1">display: inline-block;</span><br>
+        &nbsp;&nbsp;<span class="C1">border: 1px solid #ccc;</span><br>
+        &nbsp;&nbsp;<span class="C1">margin-bottom: 10px;</span><br>
+        <span class="C1">}</span><br><br>
+
+        <span class="C2">.bg1 { background-color: lightblue; }</span><br><br>
+        <span class="C3">.bg2 { background-image: url('/Images/workplace.jpg'); }</span><br><br>
+        <span class="C4">.bg3 { background-image: url('/Images/workplace.jpg'); background-repeat: no-repeat; }</span><br><br>
+        <span class="C5">.bg4 { background-image: url('/Images/workplace.jpg'); background-repeat: repeat-x; }</span><br><br>
+        <span class="C6">.bg5 { background-image: url('/Images/workplace.jpg'); background-position: center top; }</span><br><br>
+        <span class="C1">.bg6 { background-image: url('/Images/workplace.jpg'); background-size: cover; }</span><br><br>
+
+        <strong>/* HTML code */</strong><br>
+        <span class="C1">&lt;button onclick="setBackground(1)"&gt;Background Color&lt;/button&gt;&lt;br&gt;</span><br>
+        <span class="C2">&lt;button onclick="setBackground(2)"&gt;Image&lt;/button&gt;&lt;br&gt;</span><br>
+        <span class="C3">&lt;button onclick="setBackground(3)"&gt;No Repeat&lt;/button&gt;&lt;br&gt;</span><br>
+        <span class="C4">&lt;button onclick="setBackground(4)"&gt;Repeat-X&lt;/button&gt;&lt;br&gt;</span><br>
+        <span class="C5">&lt;button onclick="setBackground(5)"&gt;Center Top&lt;/button&gt;&lt;br&gt;</span><br>
+        <span class="C6">&lt;button onclick="setBackground(6)"&gt;Cover&lt;/button&gt;</span><br><br>
+
+        <strong>/* JavaScript code */</strong><br>
+        function setBackground(num) {<br>
+        &nbsp;&nbsp;const box = document.getElementById('displayBox');<br>
+        &nbsp;&nbsp;box.className = 'bg' + num;<br>
+        }
+      </code>
+    </div>
+
+    <h3>Example</h3>
+    <div class="example">
+      <style>
+        /* Base box */
+        #displayBox {
+          width: 80vw;       
+          aspect-ratio: 2 / 1; 
+          display: inline-block;
+          border: 1px solid #ccc;
+          margin-bottom: 10px;
+        }
+
+        /* Background styles */
+        .bg1 { background-color: lightblue; }
+        .bg2 { background-image: url('/Images/workplace.jpg'); }
+        .bg3 { background-image: url('/Images/workplace.jpg'); background-repeat: no-repeat; }
+        .bg4 { background-image: url('/Images/workplace.jpg'); background-repeat: repeat-x; }
+        .bg5 { background-image: url('/Images/workplace.jpg'); background-position: center top; }
+        .bg6 { background-image: url('/Images/workplace.jpg'); background-size: cover; }
+      </style>
+
+      <!-- Single display box -->
+      <div id="displayBox" class="bg1"></div><br>
+
+      <!-- Buttons -->
+      <button onclick="setBackground(1)">Background Color</button><span class="dot d1"></span><br>
+      <button onclick="setBackground(2)">Image</button><span class="dot d2"></span><br>
+      <button onclick="setBackground(3)">No Repeat</button><span class="dot d3"></span><br>
+      <button onclick="setBackground(4)">Repeat-X</button><span class="dot d4"></span><br>
+      <button onclick="setBackground(5)">Center Top</button><span class="dot d5"></span><br>
+      <button onclick="setBackground(6)">Cover</button><span class="dot d6"></span>
+    </div>
+
+    <h3>Explanation</h3>
+    <div class="explanation">
+      <p class="C1"><code>.bg1</code> sets a solid background color without any image.</p>
+      <p class="C2"><code>.bg2</code> sets a background image that repeats both horizontally and vertically by default, positioned at the top-left.</p>
+      <p class="C3"><code>.bg3</code> adds <code>background-repeat: no-repeat;</code>, so the image appears only once at the top-left without tiling.</p>
+      <p class="C4"><code>.bg4</code> repeats the background image horizontally only using <code>repeat-x</code>, creating horizontal tiling.</p>
+      <p class="C5"><code>.bg5</code> positions the image at the horizontal center and top vertically with <code>background-position: center top;</code> but <strong>without specifying <code>no-repeat</code></strong>, the image will still tile—so adding <code>no-repeat</code> is usually needed to show just one image.</p>
+      <p class="C6"><code>.bg6</code> uses <code>background-size: cover;</code> to scale the image, covering the entire container area while maintaining aspect ratio, cropping parts if needed.</p>
+      <p>The JavaScript function <code>setBackground(num)</code> changes the background style of the display box by setting its <code>className</code> to the corresponding background class (<code>bg1</code> through <code>bg6</code>), enabling the interactive switching of background properties.</p>
+    </div>
+
+    <script>
+      function setBackground(num) {
+        const box = document.getElementById('displayBox');
+        box.className = 'bg' + num;
+      }
+    </script>
+
+  </div>
+</template>
+
+<template> <!-- Explanation Selectors, Comments, Formats to Specify Color -->
+  <div class="bubble">
+
+    <!-- Section 1: Different Selectors -->
+    <h3>Code block Selectors</h3>
+    <div class="code_block">
+      <code>
+        <strong>/* CSS code */</strong><br>
+        <span class="C6">p { color: navy; }</span><br>
+        <span class="C2">.myClass { color: darkorange; }</span><br>
+        <span class="C3">#myId { color: purple; }</span><br>
+        <span class="C4">h1, h2, p { font-family: Arial; }</span><br>
+        <span class="C8">div p { font-size: 14px; }</span><br><br>
+
+        <strong>/* HTML Markup */</strong><br>
+        <span class="C6">&lt;p&gt;This paragraph is navy by element selector.&lt;/p&gt;</span><br>
+        <span class="C2">&lt;p class="myClass"&gt;This paragraph is dark orange by class selector.&lt;/p&gt;</span><br>
+        <span class="C3">&lt;p id="myId"&gt;This paragraph is purple by ID selector.&lt;/p&gt;</span><br>
+        <span class="C4">&lt;h1&gt;This is a heading with Arial font.&lt;/h1&gt;</span><br>
+        <span class="C8">&lt;div&gt;&lt;p&gt;This paragraph inside div has font-size 14px.&lt;/p&gt;&lt;/div&gt;</span><br>
+      </code>
+    </div>
+
+    <h3>Example Selectors</h3>
+    <div class="example">
+      <p style="color: blue;">This paragraph is navy by element selector.<span class="dot d6"></span></p>
+      <p class="myClass" style="color: red;">This paragraph is dark orange by class selector.<span class="dot d2"></span></p>
+      <p id="myId" style="color: purple;">This paragraph is purple by ID selector.<span class="dot d3"></span></p>
+      <h1 style="font-family: Arial;">This is a heading with Arial font.<span class="dot d4"></span></h1>
+      <p style="font-size: 14px;">This paragraph inside div has font-size 14px.<span class="dot d8"></span></p>
+    </div>
+
+    <h3>Explain Selectors</h3>
+      <div class="explanation">
+          Selectors tell CSS which elements to style.<br>
+          <span class="C6">- Element selector targets all elements of that type.</span><br>
+          <span class="C2">- Class selector targets elements with a specific class.</span><br>
+          <span class="C3">- ID selector targets a unique element by id.</span><br>
+          <span class="C4">- Group selector applies the same style to multiple selectors.</span><br>
+          <span class="C8">- Descendant selector targets elements inside other elements.</span>
+      </div>
+
+    <!-- Section 2: How to Make Comments -->
+    <h3>Explain Comments</h3>
+    <div class="explanation">
+      CSS comments are notes inside the CSS code that the browser ignores.<br>
+      They start with <code>/*</code> and end with <code>*/</code>.<br>
+      Use comments to explain your code or leave reminders.<br>
+      Comments can be on their own line or inline.<br>
+      Example: <code>p { color: red; /* This sets text to red */ }</code>
+    </div>
+
+    <!-- Section 3: Different Formats to Specify Color -->
+    <h3>Explain Formats to Specify Color </h3>
+    <div class="explanation">
+      CSS supports several ways to specify colors:<br>
+      1. Named colors (e.g., <code>red</code>, <code>blue</code>)<br>
+      2. HEX codes (e.g., <code>#ff0000</code>) — <strong>most commonly used</strong><br>
+      3. RGB (e.g., <code>rgb(255, 0, 0)</code>)<br>
+      4. RGBA for transparency (e.g., <code>rgba(255, 0, 0, 0.5)</code>)<br>
+      5. HSL (e.g., <code>hsl(0, 100%, 50%)</code>)<br>
+      6. HSLA (e.g., <code>hsla(0, 100%, 50%, 0.5)</code>)<br>
+      HEX codes are widely used because they’re concise and easy to read.<br>
+      You can apply colors to text using <code>color</code> or backgrounds using <code>background-color</code>.
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- Explanation CSS Basics Info. -->
+  <div class="bubble">
+    <h3>Explanation Section</h3>
+    <div class="explanation">
+      <p>CSS works with (or styles) the following languages and frameworks:</p>
+      <ul>
+        <li><strong>HTML</strong> — the core markup language for web pages</li>
+        <li><strong>XHTML</strong> — stricter, XML-based HTML</li>
+        <li><strong>SVG (Scalable Vector Graphics)</strong> — for styling vector images embedded in HTML</li>
+        <li><strong>XML</strong> — when styled with CSS for presentation</li>
+        <li><strong>React (JSX)</strong> — JavaScript framework where CSS styles components (via CSS files, CSS-in-JS, styled-components, etc.)</li>
+        <li><strong>Angular (HTML templates)</strong> — CSS styles components in Angular apps</li>
+        <li><strong>Vue.js (HTML templates)</strong> — CSS applies styles to Vue components</li>
+        <li><strong>Next.js</strong> — React framework that supports CSS modules, styled-jsx, global CSS, etc.</li>
+        <li><strong>Svelte</strong> — CSS styles scoped components in Svelte apps</li>
+        <li><strong>Web Components (Shadow DOM)</strong> — CSS scoped to custom elements</li>
+        <li><strong>Markdown with embedded HTML</strong> — CSS styles the rendered HTML</li>
+        <li><strong>EJS, Pug, Handlebars (templating engines)</strong> — CSS styles the generated HTML output</li>
+        <li><strong>Email templates (HTML emails)</strong> — CSS styles emails (with some restrictions)</li>
+        <li><strong>CMS platforms (WordPress, Drupal, etc.)</strong> — CSS styles themes and content output</li>
+        <li><strong>Hybrid mobile apps (Ionic, React Native Web, etc.)</strong> — CSS styles the web views</li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<template> <!--  Explanation selector, declare, Properties, and value. -->
+  <div class="bubble">
+
+    <h3>Explanation Section</h3>
+    <div class="explanation">
+      <pre>
+Selector      Declaration Block
+    ↓        ↓                 ↓
+    p { color: red; text-align: center; }
+      ↑   ↑  ↑  ↑ ↑      ↑        ↑   ↑
+      |   |  |  | |      |        |   |
+      |   |  |  | |      |        |   └─ Semicolon (ends declaration)
+      |   |  |  | |      |        └───── Value: "center" (for text-align)
+      |   |  |  | |      └─ Property: "text-align"
+      |   |  |  | └──────── Semicolon (ends declaration)
+      |   |  |  └──────────  Value: "red" (for color)
+      |   |  └───────────── Colon (separator between property and value)
+      |   └──────────────── Value: "center" (for text-align)
+      └──────────────────── Opening brace (starts declaration block)
+      </pre>
+    </div>
+  </div>
+</template>
+
+<!-- chatGPT Questions by liam Disregard if I forgot to remove it. 
+------------------------------------------------
+I believe there's a bunch of options that can go along with it. Please just provide those options. You don't need to actually say what those options do. 
+
+Instead of writing all three, how about you? Show what they have in common and then just show what isn't in common in one section. 
+
+
+
+-->
