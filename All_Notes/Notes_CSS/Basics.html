@@ -1,36 +1,169 @@
-<template>
+
+
+
+
+<template> <!-- Controlling texts -->
   <div class="bubble">
 
-    <h3>CSS Code Block: Border, Margin, Padding</h3>
+    <h2 class="C10">CSS Text Properties Unified</h2>
+
+    <!-- Combined Code Block -->
+    <h3>All CSS Code Examples</h3>
     <div class="code_block">
       <code>
-        /* Border Styles */<br>
-        <span class="C5">.box {</span><br>
-        &nbsp;&nbsp;<span class="C4">border-style:</span> <span class="C6">solid dashed dotted double;</span><br>
-        &nbsp;&nbsp;<span class="C4">border-width:</span> <span class="C6">3px 6px 9px 12px;</span><br>
-        &nbsp;&nbsp;<span class="C4">border-color:</span> <span class="C6">red green blue orange;</span><br>
-        &nbsp;&nbsp;<span class="C4">border-radius:</span> <span class="C6">10px;</span><br>
-        <span class="C5">}</span><br><br>
+        <span class="C6">/* Basic text color */<br>
+p { color: darkblue; }</span><br><br>
 
-        /* Margin Shorthand */<br>
-        <span class="C5">.box {</span><br>
-        &nbsp;&nbsp;<span class="C4">margin:</span> <span class="C6">15px 30px 45px 60px;</span><br>
-        <span class="C5">}</span><br><br>
+        <span class="C2">/* Center align and right-to-left text */<br>
+p.center { text-align: center; }<br>
+p.rtl { direction: rtl; }</span><br><br>
 
-        /* Padding Shorthand */<br>
-        <span class="C5">.box {</span><br>
-        &nbsp;&nbsp;<span class="C4">padding:</span> <span class="C6">5px 10px 15px 20px;</span><br>
-        <span class="C5">}</span><br><br>
+        <span class="C4">/* Underlined dotted red text with thickness */<br>
+p.underline { text-decoration: underline dotted red 3px; }</span><br><br>
 
-        /* Box-sizing to include padding/border in width */<br>
-        <span class="C5">.box {</span><br>
-        &nbsp;&nbsp;<span class="C4">width:</span> <span class="C6">300px;</span><br>
-        &nbsp;&nbsp;<span class="C4">box-sizing:</span> <span class="C6">border-box;</span><br>
-        <span class="C5">}</span>
+        <span class="C3">/* Uppercase, lowercase, capitalize */<br>
+p.uppercase { text-transform: uppercase; }<br>
+p.lowercase { text-transform: lowercase; }<br>
+p.capitalize { text-transform: capitalize; }</span><br><br>
+
+        <span class="C5">/* Letter spacing, word spacing, indent, line height, white-space */<br>
+p.letter-spacing { letter-spacing: 3px; }<br>
+p.word-spacing { word-spacing: 10px; }<br>
+p.indent { text-indent: 40px; }<br>
+p.line-height { line-height: 2; }<br>
+p.nowrap { white-space: nowrap; }</span><br><br>
+
+        <span class="C7">/* Text shadow example */<br>
+p.shadow { text-shadow: 2px 2px 2px gray; }</span>
       </code>
     </div>
 
-    <h3>Combined Example: Border, Margin, Padding</h3>
+    <!-- Combined Example Section -->
+    <h3>All Examples</h3>
+    <div class="example">
+      <p style="color: darkblue;">
+        This text color is set using <code>color</code> property.
+        <span class="dot d6"></span>
+      </p>
+
+      <p style="text-align: center;">
+        This text is centered with <code>text-align: center;</code>
+        <span class="dot d2"></span>
+      </p>
+      <p style="direction: rtl; background: #eee; padding: 5px;">
+        This text is right-to-left using <code>direction: rtl;</code>
+        <span class="dot d2"></span>
+      </p>
+
+      <p style="text-decoration: underline dotted red 3px;">
+        Underlined dotted red text (thickness 3px)
+        <span class="dot d4"></span>
+      </p>
+
+      <p style="text-transform: uppercase;">
+        This text is uppercase.
+        <span class="dot d3"></span>
+      </p>
+      <p style="text-transform: lowercase;">
+        THIS TEXT IS LOWERCASE.
+        <span class="dot d3"></span>
+      </p>
+      <p style="text-transform: capitalize;">
+        this text is capitalized.
+        <span class="dot d3"></span>
+      </p>
+
+      <p style="letter-spacing: 3px;">
+        Letters spaced with <code>letter-spacing</code>.
+        <span class="dot d5"></span>
+      </p>
+      <p style="word-spacing: 10px;">
+        Words spaced with <code>word-spacing</code>.
+        <span class="dot d5"></span>
+      </p>
+      <p style="text-indent: 40px;">
+        First line indented using <code>text-indent</code>.
+        <span class="dot d5"></span>
+      </p>
+      <p style="line-height: 2;">
+        Double spaced lines with <code>line-height</code>.
+        <span class="dot d5"></span>
+      </p>
+      <p style="white-space: nowrap; background: #eee;">
+        No line wrapping with <code>white-space: nowrap;</code>
+        <span class="dot d5"></span>
+      </p>
+
+      <p style="text-shadow: 2px 2px 2px gray;">
+        This text has a shadow using <code>text-shadow</code>.
+        <span class="dot d7"></span>
+      </p>
+    </div>
+
+    <!-- Combined Explanation Section -->
+    <h3>All Explanations</h3>
+    <div class="explanation">
+      <span class="C6">
+        <strong>color</strong>: Specifies the color of text.<br>
+      </span>
+
+      <span class="C2">
+        <strong>text-align</strong>: Specifies the horizontal alignment of text.<br>
+        <strong>text-align-last</strong>: Specifies how to align the last line of a text.<br>
+        <strong>direction</strong>: Specifies the text direction or writing direction.<br>
+        <strong>unicode-bidi</strong>: Controls the handling of bidirectional text.<br>
+        <strong>vertical-align</strong>: Sets vertical alignment of inline or table-cell elements.<br>
+      </span>
+
+      <span class="C4">
+        <strong>text-decoration</strong>: Shorthand to set all decoration properties.<br>
+        <strong>text-decoration-line</strong>: Type of decoration (underline, overline, line-through).<br>
+        <strong>text-decoration-color</strong>: Color of the decoration.<br>
+        <strong>text-decoration-style</strong>: Style of decoration line (solid, dotted, dashed).<br>
+        <strong>text-decoration-thickness</strong>: Thickness of the decoration line.<br>
+      </span>
+
+      <span class="C3">
+        <strong>text-transform</strong>: Controls capitalization of text (uppercase, lowercase, capitalize).<br>
+      </span>
+
+      <span class="C5">
+        <strong>letter-spacing</strong>: Space between characters.<br>
+        <strong>word-spacing</strong>: Space between words.<br>
+        <strong>text-indent</strong>: Indentation of the first line.<br>
+        <strong>line-height</strong>: Space between lines.<br>
+        <strong>white-space</strong>: Controls handling of whitespace and wrapping.<br>
+      </span>
+
+      <span class="C7">
+        <strong>text-shadow</strong>: Adds shadow effect to text.<br>
+        Basic syntax: <code>horizontal-offset vertical-offset blur-radius color</code>.<br>
+      </span>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- explanation height, width, Border, Margin, Padding  -->
+  <div class="bubble">
+
+    <h3>Code Block: Border, Margin, Padding</h3>
+    <div class="code_block">
+      <code>
+        .box {<br>
+        &nbsp;&nbsp;<span class="C1">border-style: solid dashed dotted double;</span><br>
+        &nbsp;&nbsp;<span class="C1">border-width: 3px 6px 9px 12px;</span><br>
+        &nbsp;&nbsp;<span class="C1">border-color: red green blue orange;</span><br>
+        &nbsp;&nbsp;<span class="C1">border-radius: 10px;</span><br>
+        &nbsp;&nbsp;<span class="C2">margin: 15px 30px 45px 60px;</span><br>
+        &nbsp;&nbsp;<span class="C3">padding: 5px 10px 15px 20px;</span><br>
+        &nbsp;&nbsp;<span class="C4">width: 300px;</span><br>
+        &nbsp;&nbsp;<span class="C4">box-sizing: border-box;</span><br>
+        }
+      </code>
+    </div>
+
+    <h3>Example Combined: Border, Margin, Padding</h3>
     <div class="example">
       <div class="box" style="
         border-style: solid dashed dotted double;
@@ -47,50 +180,15 @@
       </div>
     </div>
 
-    <h3>Individual Examples for Each CSS Block</h3>
-
-    <div class="example" style="
-      border-style: solid dashed dotted double;
-      border-width: 3px 6px 9px 12px;
-      border-color: red green blue orange;
-      border-radius: 10px;
-      margin: 15px;
-      padding: 10px;
-      width: 300px;
-      box-sizing: border-box;
-      ">
-      <strong>Border Example:</strong> Shows different border styles, widths, colors, and rounded corners.
-    </div>
-
-    <div class="example" style="
-      margin: 15px 30px 45px 60px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      width: 300px;
-      box-sizing: border-box;
-      ">
-      <strong>Margin Example:</strong> Margins create space outside the border. This element has different margins on each side.
-    </div>
-
-    <div class="example" style="
-      padding: 5px 10px 15px 20px;
-      border: 1px solid #ccc;
-      margin: 15px;
-      width: 300px;
-      box-sizing: border-box;
-      ">
-      <strong>Padding Example:</strong> Padding creates space inside the border, around the content.
-    </div>
-
-    <h3>Explanations</h3>
+    <h3>Explanations: Border, Margin, Padding</h3>
     <div class="explanation">
-      <strong>Border:</strong> The <code>border-style</code>, <code>border-width</code>, <code>border-color</code>, and <code>border-radius</code> properties define the look of the element's borders.<br><br>
+      <span class="C1"><strong>Border:</strong> The <code>border-style</code>, <code>border-width</code>, <code>border-color</code>, and <code>border-radius</code> properties define the look of the element's borders.</span><br>
 
-      <strong>Margin:</strong> The <code>margin</code> property controls the space outside the element's border. It accepts up to four values to control each side.<br><br>
+      <span class="C2"><strong>Margin:</strong> The <code>margin</code> property controls the space outside the element's border. It accepts up to four values to control each side.</span><br>
 
-      <strong>Padding:</strong> The <code>padding</code> property controls the space inside the element's border, around its content. Negative values are not allowed.<br><br>
+      <span class="C3"><strong>Padding:</strong> The <code>padding</code> property controls the space inside the element's border, around its content. Negative values are not allowed.</span><br>
 
-      <strong>Box-sizing:</strong> By default, padding and border add to the total width of an element. Using <code>box-sizing: border-box;</code> includes padding and border inside the specified width, preventing layout issues.
+      <span class="C4"><strong>Box-sizing:</strong> By default, padding and border add to the total width of an element. Using <code>box-sizing: border-box;</code> includes padding and border inside the specified width, preventing layout issues.</span>
     </div>
 
     <div class="explanation" style="margin-top: 15px;">
@@ -100,6 +198,32 @@
       - For margins, negative values are allowed, which can pull elements closer or cause overlap; for padding, negative values are not allowed.<br>
       - Border properties only take effect if <code>border-style</code> is set to a value other than <code>none</code> or <code>hidden</code>.<br>
       - border-style Values: none, hidden, dotted, dashed, solid, double, groove, ridge, inset, outset
+    </div>
+
+    <h3>Explanation of CSS Box Model</h3>
+    <div class="explanation">
+      All HTML elements can be considered as boxes.<br><br>
+      The CSS box model wraps around every HTML element and consists of:<br>
+      <span class="C6">Content</span>, <span class="C2">Padding</span>, <span class="C4">Border</span>, and <span class="C7">Margin</span>.<br><br>
+      When you set <code>width</code> and <code>height</code>, you set the size of the <strong>content area</strong> only.<br>
+      Total size calculation must include padding and border as well.<br><br>
+      <strong>Width calculation example:</strong><br>
+      320px (content) + 20px (left+right padding) + 10px (left+right border) = <strong>350px total width</strong>.<br><br>
+      <strong>Height calculation example:</strong><br>
+      50px (content) + 20px (top+bottom padding) + 10px (top+bottom border) = <strong>80px total height</strong>.<br><br>
+      <span class="C7">Note:</span> Margin affects spacing outside the box but is not part of the box's size.<br>
+      Box's total width and height stop at the border.
+    </div>
+
+    <h3>Explanation of Dimension Properties</h3>
+    <div class="explanation">
+      <strong>height</strong>: Sets the fixed height of an element.<br>
+      <strong>max-height</strong>: Limits the maximum height an element can grow to.<br>
+      <strong>max-width</strong>: Limits the maximum width an element can grow to.<br>
+      <strong>min-height</strong>: Sets the minimum height an element can shrink to.<br>
+      <strong>min-width</strong>: Sets the minimum width an element can shrink to.<br>
+      <strong>width</strong>: Sets the fixed width of an element.<br>
+      These properties control the size and scalability of elements on the page.
     </div>
 
   </div>
@@ -317,12 +441,142 @@ Selector      Declaration Block
   </div>
 </template>
 
+<template> <!-- Best example of padding margins and radius Interactive -->
+  <div class="bubble">
+
+    <div class="code_block">
+
+    </div>
+
+
+    <div class="example">
+      <h3>Interactive Controls: Border, Margin, Padding</h3>
+
+      <!-- Controls Panel Margin, Padding, and Border Radius -->  
+      <h4>Margin (px) space outside</h4>
+      <input type="range" min="-500" max="100" value="0" id="marginTop"><label for="marginTop"> Top</label>
+      <span id="marginTopVal">0</span> px<br>
+
+      <input type="range" min="-500" max="100" value="0" id="marginRight"><label for="marginRight"> Right</label>
+      <span id="marginRightVal">0</span> px<br>
+
+      <input type="range" min="-500" max="100" value="0" id="marginBottom"><label for="marginBottom"> Bottom</label>
+      <span id="marginBottomVal">0</span> px<br>
+
+      <input type="range" min="-500" max="100" value="0" id="marginLeft"><label for="marginLeft"> Left</label>
+      <span id="marginLeftVal">0</span> px<br>
+
+      <h4>Padding (px) space inside</h4>
+      <input type="range" min="0" max="100" value="0" id="paddingTop"><label for="paddingTop"> Top</label>
+      <span id="paddingTopVal">0</span> px<br>
+
+      <input type="range" min="0" max="100" value="0" id="paddingRight"><label for="paddingRight"> Right</label>
+      <span id="paddingRightVal">0</span> px<br>
+
+      <input type="range" min="0" max="100" value="0" id="paddingBottom"><label for="paddingBottom"> Bottom</label>
+      <span id="paddingBottomVal">0</span> px<br>
+
+      <input type="range" min="0" max="100" value="0" id="paddingLeft"><label for="paddingLeft"> Left</label>
+      <span id="paddingLeftVal">0</span> px<br>
+
+      <h4>Border Radius (px) corners of the border</h4>
+      <input type="range" min="0" max="100" value="0" id="radiusTL"><label for="radiusTL"> Top-Left</label>
+      <span id="radiusTLVal">0</span> px<br>
+
+      <input type="range" min="0" max="100" value="0" id="radiusTR"><label for="radiusTR"> Top-Right</label>
+      <span id="radiusTRVal">0</span> px<br>
+
+      <input type="range" min="0" max="100" value="0" id="radiusBR"><label for="radiusBR"> Bottom-Right</label>
+      <span id="radiusBRVal">0</span> px<br>
+
+      <input type="range" min="0" max="100" value="0" id="radiusBL"><label for="radiusBL"> Bottom-Left</label>
+      <span id="radiusBLVal">0</span> px<br>
+
+      <h3>Example Box Container</h3>
+      <div style="
+        border: 2px dashed #aaa;
+        background: #efefef;
+        height: 500px;
+        max-width: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      ">
+        <div id="demoBox" style="
+          border-style: solid dashed dotted double;
+          border-width: 3px 3px 12px 12px;
+          border-color: red green blue orange;
+          background: #f9f9f9;
+          display: flex;              /* flex to center content inside */
+          justify-content: center;    /* horizontal center */
+          align-items: center;        /* vertical center */
+          height: 30px;
+          width: 70px;
+        ">
+          Content
+        </div>
+      </div>
+
+      <script>
+        const box = document.getElementById('demoBox');
+        const controls = [
+          'marginTop', 'marginRight', 'marginBottom', 'marginLeft',
+          'paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft',
+          'radiusTL', 'radiusTR', 'radiusBR', 'radiusBL'
+        ];
+
+        function idToStyleProp(id) {
+          switch(id) {
+            case 'marginTop': return 'marginTop';
+            case 'marginRight': return 'marginRight';
+            case 'marginBottom': return 'marginBottom';
+            case 'marginLeft': return 'marginLeft';
+            case 'paddingTop': return 'paddingTop';
+            case 'paddingRight': return 'paddingRight';
+            case 'paddingBottom': return 'paddingBottom';
+            case 'paddingLeft': return 'paddingLeft';
+            case 'radiusTL': return 'borderTopLeftRadius';
+            case 'radiusTR': return 'borderTopRightRadius';
+            case 'radiusBR': return 'borderBottomRightRadius';
+            case 'radiusBL': return 'borderBottomLeftRadius';
+            default: return '';
+          }
+        }
+
+        function updateBox() {
+          controls.forEach(id => {
+            const val = document.getElementById(id).value;
+            box.style[idToStyleProp(id)] = val + 'px';
+
+            const valSpan = document.getElementById(id + 'Val');
+            if (valSpan) valSpan.textContent = val;
+          });
+        }
+
+        controls.forEach(id => {
+          document.getElementById(id).addEventListener('input', updateBox);
+        });
+
+        updateBox();
+      </script>
+    </div>
+
+    <div class="explanation">
+      
+  </div>
+</template>
+
 <!-- chatGPT Questions by liam Disregard if I forgot to remove it. 
 ------------------------------------------------
-I believe there's a bunch of options that can go along with it. Please just provide those options. You don't need to actually say what those options do. 
 
-Instead of writing all three, how about you? Show what they have in common and then just show what isn't in common in one section. 
+Now it's all color coded, we can put it all in one. 
 
+All the code in the same place. 
 
+All the examples in the same place. 
+
+And all the explanations in the same place. 
+
+And because it's color coded, it's easy to know what attaches to what. 
 
 -->
