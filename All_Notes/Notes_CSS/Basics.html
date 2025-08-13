@@ -1,8 +1,420 @@
+<!-- chatGPT Questions by liam Disregard if I forgot to remove it. 
+------------------------------------------------
+
+
+Make all code in this explanation a color with C8. 
 
 
 
+CSS Tables, CSS Lists, CSS Links, CSS Icons, CSS Font
+Complete CSS Controlling texts  
+-->
 
-<template> <!-- Controlling texts -->
+
+
+<template> <!-- CSS Tables -->
+  <div class="bubble">
+
+    <style>
+      /* Base table styling for readability - neutral color to separate from code colors */
+      table {
+        border: 1px solid #999; /* neutral border */
+        border-collapse: separate;
+        padding: 0;
+        margin: 1rem 0;
+        border-spacing: 2px;
+        width: auto;
+        color: black; /* ensure default black text */
+      }
+      th, td {
+        padding: 6px 10px;
+        text-align: left;
+        border: 1px solid #999; /* neutral border */
+      }
+
+      /* Align example to left side */
+      .example {
+        margin-left: 0;
+        max-width: 600px;
+      }
+    </style>
+
+    <div class="code_block">
+      <code><pre>
+<strong>/* CSS Styles */</strong>
+
+<span class="C1">table.basic {</span>
+  <span class="C1">border-spacing: 10px;</span>
+<span class="C1">}</span>
+
+<span class="C2">table.collapse {</span>
+  <span class="C2">border-collapse: collapse;</span>
+<span class="C2">}</span>
+
+<span class="C3">table.full-width {</span>
+  <span class="C3">width: 100%;</span>
+<span class="C3">}</span>
+
+<strong>/* HTML Markup */</strong>
+<span class="C1">&lt;table class="basic"&gt; ... &lt;/table&gt;</span>
+<span class="C2">&lt;table class="collapse"&gt; ... &lt;/table&gt;</span>
+<span class="C3">&lt;table class="full-width"&gt; ... &lt;/table&gt;</span>
+      </pre></code>
+    </div>
+
+    <!-- Section 2: Example -->
+    <h3>Example: Tables</h3>
+    <div class="example">
+
+      <table class="basic">
+        <caption>Basic Table <span class="dot d1"></span></caption>
+        <thead>
+          <tr><th>Name</th><th>Age</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Alice</td><td>30</td></tr>
+          <tr><td>Bob</td><td>25</td></tr>
+        </tbody>
+      </table>
+
+      <table class="collapse">
+        <caption>Collapsed Borders <span class="dot d2"></span></caption>
+        <tr><th>Product</th><th>Price</th></tr>
+        <tr><td>Widget</td><td>$10</td></tr>
+        <tr><td>Gadget</td><td>$15</td></tr>
+      </table>
+
+      <table class="full-width">
+        <caption>Full Width Table <span class="dot d3"></span></caption>
+        <tr><th>Country</th><th>Capital</th></tr>
+        <tr><td>USA</td><td>Washington, D.C.</td></tr>
+        <tr><td>Canada</td><td>Ottawa</td></tr>
+      </table>
+
+    </div>
+
+    <!-- Section 3: Explanation -->
+    <h3>Explain: CSS Tables</h3>
+    <div class="explanation">
+      <span class="C1">Basic table</span> uses <code>border-spacing: 10px;</code> to add space between cell borders.<br>
+      <span class="C2">Collapse table</span> uses <code>border-collapse: collapse;</code> to merge adjacent borders.<br>
+      <span class="C3">Full width table</span> uses <code>width: 100%;</code> to fill container horizontally.<br>
+      Default cell padding, border, and alignment are applied to all tables for readability.<br>
+      Hover effect is not shown in the code block but can be added for interactive row highlighting.
+    </div>
+
+    <h3>Explain: Additional Table Concepts</h3>
+    <div class="explanation">
+      <strong>Border Spacing vs Border Collapse:</strong><br>
+      <span class="C8"><code>border-spacing</code></span> controls the gap between cells when borders are separate.<br>
+      <span class="C8"><code>border-collapse: collapse;</code></span> merges adjacent borders into one.<br><br>
+
+      <strong>Table Size:</strong><br>
+      You can set explicit <span class="C8"><code>width</code></span> and <span class="C8"><code>height</code></span> on tables to control their size.<br><br>
+
+      <strong>Caption Placement:</strong><br>
+      Use <span class="C8"><code>caption-side</code></span> to position the table caption above or below the table.<br><br>
+
+      <strong>Empty Cells:</strong><br>
+      The <span class="C8"><code>empty-cells</code></span> property controls whether borders and backgrounds show on empty table cells.<br><br>
+
+      <strong>Table Layout:</strong><br>
+      <span class="C8"><code>table-layout</code></span> defines the algorithm used to lay out table columns, affecting rendering speed and layout predictability.<br><br>
+
+      <strong>Striped Rows and Dividers:</strong><br>
+      Styling alternate rows with different backgrounds (<span class="C8"><code>nth-child(even)</code></span>) and adding horizontal dividers can improve readability.<br><br>
+
+      <strong>Accessibility & Semantic HTML:</strong><br>
+      Proper use of <span class="C8"><code>&lt;thead&gt;</code></span>, <span class="C8"><code>&lt;tbody&gt;</code></span>, <span class="C8"><code>&lt;tfoot&gt;</code></span>, and <span class="C8"><code>&lt;caption&gt;</code></span> enhances table semantics and accessibility for screen readers.<br><br>
+
+      <span class="C8">Hover effect</span> can highlight rows when the mouse hovers over them using <span class="C8"><code>tr:hover</code></span>.<br><br>
+
+      Incorporating these properties and best practices will help you create tables that are both visually appealing and functionally robust.
+    </div>
+    
+
+  </div>
+</template>
+
+<template> <!-- CSS Lists -->
+  <div class="bubble">
+
+    <style>
+      ul.custom-image {
+        list-style-image: url('/Images/favicon.ico');
+      }
+
+      ul.no-style {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      ul.red-border {
+        border-left: 4px solid red;
+        padding-left: 12px;
+      }
+    </style>
+
+    <!-- Section 1: Code Block (CSS + HTML) -->
+    <h3>Code: CSS + HTML for Lists</h3>
+    <div class="code_block">
+      <code>
+        <strong>/* CSS Styles */</strong><br>
+        <span class="C1">ul { list-style-type: disc; }</span> <span class="C8">/* unordered list with discs */</span><br>
+        <span class="C2">ol { list-style-type: decimal; }</span> <span class="C8">/* ordered list with numbers */</span><br><br>
+
+        <span class="C3">ul.custom-image {</span><br>
+        &nbsp;&nbsp;<span class="C3">list-style-image: url('https://via.placeholder.com/15');</span><br>
+        }<br><br>
+
+        <span class="C4">ul.no-style {</span><br>
+        &nbsp;&nbsp;<span class="C4">list-style: none;</span><br>
+        &nbsp;&nbsp;<span class="C4">padding-left: 0;</span><br>
+        }<br><br>
+
+        <span class="C5">ul.red-border {</span><br>
+        &nbsp;&nbsp;<span class="C5">border-left: 4px solid red;</span><br>
+        &nbsp;&nbsp;<span class="C5">padding-left: 12px;</span><br>
+        }<br><br>
+
+        <strong>/* HTML Markup */</strong><br>
+        <span class="C1">&lt;ul&gt;</span><br>
+        &nbsp;&nbsp;<span class="C1">&lt;li&gt;Apples&lt;/li&gt;</span><br>
+        &nbsp;&nbsp;<span class="C1">&lt;li&gt;Bananas&lt;/li&gt;</span><br>
+        &nbsp;&nbsp;<span class="C1">&lt;li&gt;Cherries&lt;/li&gt;</span><br>
+        <span class="C1">&lt;/ul&gt;</span><br><br>
+
+        <span class="C2">&lt;ol&gt;</span><br>
+        &nbsp;&nbsp;<span class="C2">&lt;li&gt;First step&lt;/li&gt;</span><br>
+        &nbsp;&nbsp;<span class="C2">&lt;li&gt;Second step&lt;/li&gt;</span><br>
+        &nbsp;&nbsp;<span class="C2">&lt;li&gt;Third step&lt;/li&gt;</span><br>
+        <span class="C2">&lt;/ol&gt;</span><br><br>
+
+        <span class="C3">&lt;ul class="custom-image"&gt;</span><br>
+        &nbsp;&nbsp;<span class="C3">&lt;li&gt;Item 1&lt;/li&gt;</span><br>
+        &nbsp;&nbsp;<span class="C3">&lt;li&gt;Item 2&lt;/li&gt;</span><br>
+        &nbsp;&nbsp;<span class="C3">&lt;li&gt;Item 3&lt;/li&gt;</span><br>
+        <span class="C3">&lt;/ul&gt;</span><br><br>
+
+        <span class="C4">&lt;ul class="no-style"&gt;</span><br>
+        &nbsp;&nbsp;<span class="C4">&lt;li&gt;Clean item 1&lt;/li&gt;</span><br>
+        &nbsp;&nbsp;<span class="C4">&lt;li&gt;Clean item 2&lt;/li&gt;</span><br>
+        <span class="C4">&lt;/ul&gt;</span><br><br>
+
+        <span class="C5">&lt;ul class="red-border"&gt;</span><br>
+        &nbsp;&nbsp;<span class="C5">&lt;li&gt;Important 1&lt;/li&gt;</span><br>
+        &nbsp;&nbsp;<span class="C5">&lt;li&gt;Important 2&lt;/li&gt;</span><br>
+        <span class="C5">&lt;/ul&gt;</span>
+      </code>
+    </div>
+
+    <!-- Section 2: Example -->
+    <h3>Example: Styled Lists</h3>
+    <div class="example">
+      <p><strong>Unordered List (disc)</strong> <span class="dot d1"></span></p>
+      <ul>
+        <li>Apples</li>
+        <li>Bananas</li>
+        <li>Cherries</li>
+      </ul>
+
+      <p><strong>Ordered List (decimal)</strong> <span class="dot d2"></span></p>
+      <ol>
+        <li>First step</li>
+        <li>Second step</li>
+        <li>Third step</li>
+      </ol>
+
+      <p><strong>List with image bullets</strong> <span class="dot d3"></span></p>
+      <ul class="custom-image">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>
+
+      <p><strong>List without bullets (no-style)</strong> <span class="dot d4"></span></p>
+      <ul class="no-style">
+        <li>Clean item 1</li>
+        <li>Clean item 2</li>
+      </ul>
+
+      <p><strong>List with red left border</strong> <span class="dot d5"></span></p>
+      <ul class="red-border">
+        <li>Important 1</li>
+        <li>Important 2</li>
+      </ul>
+    </div>
+
+    <h3>Explain: CSS Lists</h3>
+    <div class="explanation">
+      Lists can be styled by changing their marker types, images, and positioning.<br>
+      <span class="C1">ul { list-style-type: disc; }</span> sets the default bullet type for unordered lists as discs (filled circles).<br>
+      <span class="C2">ol { list-style-type: decimal; }</span> sets ordered lists to show numbers as list markers.<br>
+      <span class="C3">list-style-image</span> lets you replace the default bullet with a custom image, as shown with <span class="C3">ul.custom-image</span>.<br>
+      <span class="C4">list-style: none;</span> removes all bullets or numbers, and combined with <span class="C4">padding-left: 0;</span> cleans up spacing (like <span class="C4">ul.no-style</span>).<br>
+      <span class="C5">border-left</span> adds a visual accent to the list, useful for highlighting important items, as in <span class="C5">ul.red-border</span>.<br><br>
+      The HTML markup remains mostly the same—using <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code> tags with <code>&lt;li&gt;</code> children—but CSS controls how the list markers appear.<br>
+      Always test your list styles for readability and consistent behavior across browsers.
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- CSS Links -->
+  <div class="bubble">
+
+    <!-- Section 1: Styling Links -->
+    <h3>Code: Styling Links</h3>
+    <div class="code_block">
+      <code>
+        <span class="C1">a:link { color: blue; }</span> <span class="C8">&lt;!-- normal unvisited --&gt;</span><br>
+        <span class="C2">a:visited { color: purple; }</span> <span class="C8">&lt;!-- visited link --&gt;</span><br>
+        <span class="C3">a:hover { color: red; text-decoration: underline; }</span> <span class="C8">&lt;!-- mouse hover --&gt;</span><br>
+        <span class="C4">a:active { color: orange; }</span> <span class="C8">&lt;!-- clicked moment --&gt;</span><br><br>
+
+        /* Remove underline */<br>
+        <span class="C5">a { text-decoration: none; }</span><br><br>
+
+        /* Background color for hover */<br>
+        <span class="C6">a:hover { background-color: yellow; }</span><br><br>
+
+        /* Link button style */<br>
+        <span class="C7">.link-btn {<br>
+        &nbsp;&nbsp;display: inline-block;<br>
+        &nbsp;&nbsp;padding: 8px 16px;<br>
+        &nbsp;&nbsp;background-color: #4CAF50;<br>
+        &nbsp;&nbsp;color: white;<br>
+        &nbsp;&nbsp;text-decoration: none;<br>
+        &nbsp;&nbsp;border-radius: 4px;<br>
+        }</span><br>
+        <span class="C7">.link-btn:hover { background-color: #45a049; }</span>
+      </code>
+    </div>
+
+    <h3>Explain: CSS Links</h3>
+    <div class="explanation">
+      CSS lets you style links differently based on their state:<br>
+      <ul>
+        <li><span class="C1">a:link</span> — unvisited link style.</li>
+        <li><span class="C2">a:visited</span> — visited link style.</li>
+        <li><span class="C3">a:hover</span> — when the mouse is over the link.</li>
+        <li><span class="C4">a:active</span> — the moment it is clicked.</li>
+      </ul>
+      Use <span class="C5">text-decoration: none</span> to remove underlines, and <span class="C6">background-color</span> to highlight on hover.<br><br>
+      To make a link look like a button, apply padding, background color, border-radius, and hover effects using a class like <span class="C7">.link-btn</span>.
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- CSS Icons -->
+  <div class="bubble">
+
+    <!-- Section 1: How to Add Icons -->
+    <h3>Code: Icons</h3>
+    <div class="code_block">
+      <code>
+        <span class="C1"><strong>/* HTML */</strong><br>
+        &lt;i class="fa fa-home"&gt;&lt;/i&gt;</span><span class="C8"> &lt;!-- Font Awesome icon --&gt;</span><br>
+        <span class="C2">&lt;i class="bi bi-alarm"&gt;&lt;/i&gt;</span> <span class="C8">&lt;!-- Bootstrap icon --&gt;</span><br>
+        <span class="C3">&lt;span class="material-icons"&gt;face&lt;/span&gt;</span> <span class="C8">&lt;!-- Google icon --&gt;</span><br><br>
+
+        <strong>/* CSS */</strong><br>
+        i, .material-icons {<br>
+        &nbsp;&nbsp;font-size: 24px;<br>
+        &nbsp;&nbsp;color: crimson;<br>
+        }
+      </code>
+    </div>
+
+    <h3>Example: Different Icon Libraries</h3>
+    <div class="example">
+      <p>
+        <i class="fa fa-home"></i> Font Awesome Home Icon<span class="dot d8"></span>
+      </p>
+      <p>
+        <i class="bi bi-alarm"></i> Bootstrap Alarm Icon<span class="dot d2"></span>
+      </p>
+      <p>
+        <span class="material-icons">face</span> Google Face Icon<span class="dot d6"></span>
+      </p>
+    </div>
+
+    <h3>Explain: Icons</h3>
+    <div class="explanation">
+      Icons in CSS are typically added via an <code>&lt;i&gt;</code> tag or a <code>&lt;span&gt;</code> with special classes from an icon library.<br><br>
+      <strong>Common Libraries:</strong>
+      <ul>
+        <li><span class="C1">Font Awesome</span> — Load via CDN: <code>&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"&gt;</code></li>
+        <li><span class="C2">Bootstrap Icons</span> — Load via CDN: <code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"&gt;</code></li>
+        <li><span class="C3">Google Icons</span> — Load via CDN: <code>&lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"&gt;</code></li>
+      </ul>
+      After loading the library, use the appropriate HTML class to display an icon, then style it with CSS like <code>font-size</code> and <code>color</code>.
+    </div>
+
+  </div>
+</template>
+
+<template><!-- CSS Font -->
+  <div class="bubble">
+    <!-- Section 1: CSS Font Examples -->
+    <h3>code: Font</h3>
+    <div class="code_block">
+      <code>
+        <strong>/* Examples */</strong><br>
+        <span class="C2">font-style:</span> italic;<br>
+        <span class="C3">font-variant:</span> small-caps;<br>
+        <span class="C4">font-weight:</span> bold;<br>
+        <span class="C6">font-size:</span> 20px;<br>
+        <span class="C8">line-height:</span> 2;<br>
+        <span class="C5">font-family:</span> "Courier New", monospace;<br><br>
+
+        <strong>/* Shorthand */</strong><br>
+        <span class="C2">font:</span> italic small-caps bold 20px/2 "Courier New", monospace;
+      </code>
+    </div>
+
+    <h3>Example: Font</h3>
+    <div class="example">
+      <p style="font-style: italic;">
+        This text is italic.<span class="dot d2"></span>
+      </p>
+      <p style="font-variant: small-caps;">
+        This text is small-caps.<span class="dot d3"></span>
+      </p>
+      <p style="font-weight: bold;">
+        This text is bold.<span class="dot d4"></span>
+      </p>
+      <p style="font-size: 20px;">
+        This text has a larger font size.<span class="dot d6"></span>
+      </p>
+      <p style="line-height: 2; background: #f0f0f0;">
+        This text has extra spacing between lines.<br>
+        See how this second line is spaced farther away?<span class="dot d8"></span>
+      </p>
+      <p style="font-family: 'Courier New', monospace;">
+        This text uses a monospace font.<span class="dot d5"></span>
+      </p>
+    </div>
+
+    <h3>Explain Font Properties</h3>
+    <div class="explanation">
+      <ul>
+        <li><span class="C2">font-style</span>: normal, italic, or oblique.</li>
+        <li><span class="C3">font-variant</span>: small-caps or normal.</li>
+        <li><span class="C4">font-weight</span>: normal, bold, or numeric values like 100–900.</li>
+        <li><span class="C6">font-size</span>: controls the text size (e.g., 16px).</li>
+        <li><span class="C8">line-height</span>: vertical space between lines of text.</li>
+        <li><span class="C5">font-family</span>: the typeface to display the text in.</li>
+      </ul>
+      <strong>Tip:</strong> Use <code>font</code> shorthand to set all in one line:  
+      <code>font: italic small-caps bold 20px/2 "Courier New", monospace;</code>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- CSS Controlling texts -->
   <div class="bubble">
 
     <h2 class="C10">CSS Text Properties Unified</h2>
@@ -144,7 +556,7 @@ p.shadow { text-shadow: 2px 2px 2px gray; }</span>
   </div>
 </template>
 
-<template> <!-- explanation height, width, Border, Margin, Padding  -->
+<template> <!-- CSS explanation height, width, Border, Margin, Padding  -->
   <div class="bubble">
 
     <h3>Code Block: Border, Margin, Padding</h3>
@@ -229,7 +641,7 @@ p.shadow { text-shadow: 2px 2px 2px gray; }</span>
   </div>
 </template>
 
-<template> <!-- Explanation Different background-xxxx Commands -->
+<template> <!-- CSS Explanation Different background-xxxx Commands -->
   <div class="bubble">
 
     <h3>CSS Background Properties</h3>
@@ -322,7 +734,7 @@ p.shadow { text-shadow: 2px 2px 2px gray; }</span>
   </div>
 </template>
 
-<template> <!-- Explanation Selectors, Comments, Formats to Specify Color -->
+<template> <!-- CSS Explanation Selectors, Comments, Formats to Specify Color -->
   <div class="bubble">
 
     <!-- Section 1: Different Selectors -->
@@ -391,7 +803,7 @@ p.shadow { text-shadow: 2px 2px 2px gray; }</span>
   </div>
 </template>
 
-<template> <!-- Explanation CSS Basics Info. -->
+<template> <!-- CSS Explanation Basics Info. -->
   <div class="bubble">
     <h3>Explanation Section</h3>
     <div class="explanation">
@@ -417,7 +829,7 @@ p.shadow { text-shadow: 2px 2px 2px gray; }</span>
   </div>
 </template>
 
-<template> <!--  Explanation selector, declare, Properties, and value. -->
+<template> <!-- CSS Explanation selector, declare, Properties, and value. -->
   <div class="bubble">
 
     <h3>Explanation Section</h3>
@@ -441,7 +853,7 @@ Selector      Declaration Block
   </div>
 </template>
 
-<template> <!-- Best example of padding margins and radius Interactive -->
+<template> <!-- CSS Best example of padding margins and radius Interactive -->
   <div class="bubble">
 
     <div class="code_block">
@@ -566,17 +978,4 @@ Selector      Declaration Block
   </div>
 </template>
 
-<!-- chatGPT Questions by liam Disregard if I forgot to remove it. 
-------------------------------------------------
 
-Now it's all color coded, we can put it all in one. 
-
-All the code in the same place. 
-
-All the examples in the same place. 
-
-And all the explanations in the same place. 
-
-And because it's color coded, it's easy to know what attaches to what. 
-
--->
