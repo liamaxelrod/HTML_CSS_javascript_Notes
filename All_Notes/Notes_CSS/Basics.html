@@ -8,6 +8,150 @@ Add explanation for each color. That explains what the code does and how the cod
 
 
 -->
+<template> <!-- Styling Input Fields -->
+  <style>
+    /* General input styling */
+    input[type=text],
+    input[type=password],
+    input[type=number],
+    textarea,
+    select {
+      padding: 8px 12px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+      box-sizing: border-box;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #00befd;
+      box-shadow: 0 0 5px rgba(0, 190, 253, 0.5);
+      outline: none;
+    }
+
+    /* Input with icon */
+    .input-icon {
+      position: relative;
+      display: inline-block;
+    }
+    .input-icon input {
+      padding-left: 30px;
+    }
+    .input-icon img {
+      position: absolute;
+      left: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Animated search input */
+    .search-input {
+      width: 150px;
+      transition: width 0.4s ease-in-out;
+    }
+    .search-input:focus {
+      width: 250px;
+    }
+
+    /* Input buttons */
+    input[type=submit],
+    input[type=button] {
+      background-color: #00befd;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    input[type=submit]:hover,
+    input[type=button]:hover {
+      background-color: #007bb5;
+    }
+  </style>
+
+  <div class="bubble">
+    <!-- ===== CODE SECTION ===== -->
+    <h3>Code: Styling Input Fields</h3>
+    <div class="code_block">
+      <pre><code>
+<span class="C1">/* Text, password, number fields */</span>
+<span class="C2">input[type=text], input[type=password], input[type=number] {</span>
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+<span class="C2">}</span>
+
+<span class="C3">/* Input with icon */</span>
+<span class="C4">.input-icon input { padding-left: 30px; }</span>
+<span class="C4">.input-icon img { position: absolute; left: 8px; top: 50%; transform: translateY(-50%); }</span>
+
+<span class="C5">/* Animated search input */</span>
+<span class="C5">.search-input { width: 150px; transition: width 0.4s; }</span>
+<span class="C5">.search-input:focus { width: 250px; }</span>
+
+<span class="C6">/* Buttons */</span>
+<span class="C6">input[type=submit], input[type=button] { background-color: #00befd; color: white; border-radius: 6px; }</span>
+<span class="C6">input[type=submit]:hover, input[type=button]:hover { background-color: #007bb5; }</span>
+      </code></pre>
+    </div>
+
+    <!-- ===== LIVE EXAMPLE SECTION ===== -->
+    <h3>Example: Input Field Styles</h3>
+    <div class="example">
+      <p><span class="dot d1"></span> Text Field: <input type="text" placeholder="Text field"></p>
+      <p><span class="dot d2"></span> Password Field: <input type="password" placeholder="Password"></p>
+      <p><span class="dot d3"></span> Number Field: <input type="number" placeholder="Number"></p>
+      <p><span class="dot d4"></span> Input with Icon: 
+        <span class="input-icon">
+          <img src="/Images/favicon.ico" alt="icon">
+          <input type="text" placeholder="Search...">
+        </span>
+      </p>
+      <p><span class="dot d5"></span> Animated Search Input: <input class="search-input" type="text" placeholder="Search..."></p>
+      <p><span class="dot d6"></span> Textarea: <textarea placeholder="Enter text" rows="3"></textarea></p>
+      <p><span class="dot d7"></span> Select Menu: 
+        <select>
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </select>
+      </p>
+      <p><span class="dot d8"></span> Input Button: <input type="button" value="Click Me"></p>
+      <p><span class="dot d9"></span> Submit Button: <input type="submit" value="Submit"></p>
+    </div>
+
+    <!-- ===== EXPLANATION SECTION ===== -->
+    <h3>Explanation: Input Field Styles</h3>
+    <div class="explanation">
+      <p><span class="C1"><strong>input[type=text]</strong> – Styles only text input fields.</span></p>
+      <p><span class="C2"><strong>input[type=password]</strong> – Styles only password fields.</span></p>
+      <p><span class="C3"><strong>input[type=number]</strong> – Styles only number fields.</span></p>
+      <p><span class="C4"><strong>Input with icon/image</strong> – Use a wrapper <code>.input-icon</code> and add an image positioned inside the input using absolute positioning.</span></p>
+      <p><span class="C5"><strong>Animated Search Input</strong> – Use CSS transition on width to expand the input when focused.</span></p>
+      <p><span class="C6"><strong>Textarea</strong> – Styled like other inputs, can adjust rows and placeholder text.</span></p>
+      <p><span class="C7"><strong>Select Menus</strong> – Styled with padding, border, and border-radius. Appearance can vary slightly by browser.</span></p>
+      <p><span class="C8"><strong>Input Buttons</strong> – Styled with background color, text color, border-radius, and hover effect.</span></p>
+    </div>
+  </div>
+</template>
+
+
+
+
+
+
+
+
+
+
 <template> <!-- Navigation Bar Template with Dropdown -->
   <style>
     /* ===== Template-Specific Navigation Styles ===== */
@@ -185,11 +329,6 @@ li:hover > .nav-dropdown {
 
   </div>
 </template>
-
-
-
-
-
 
 <template> <!-- CSS Pseudo-classes & Pseudo-elements -->
   <style>
