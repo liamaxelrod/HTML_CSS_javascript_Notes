@@ -4,12 +4,511 @@
 
 
 
+Add explanation for each color. That explains what the code does and how the code works with the example. 
 
 
 -->
+<template> <!-- Navigation Bar Template with Dropdown -->
+  <style>
+    /* ===== Template-Specific Navigation Styles ===== */
+    .nav-container {
+      background-color: #3498db;
+      padding: 0;
+      border-radius: 8px;
+    }
+
+    .nav-container ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .nav-container li {
+      position: relative;
+    }
+
+    .nav-container a {
+      display: block;
+      padding: 12px 20px;
+      color: white;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+    }
+
+    .nav-container a:hover {
+      background-color: #2980b9;
+    }
+
+    /* Dropdown menu hidden by default */
+    .nav-item .nav-dropdown {
+      display: none; 
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #3498db;
+      min-width: 150px;
+      border-radius: 4px;
+      z-index: 1000;
+    }
+
+    .nav-item .nav-dropdown a {
+      padding: 10px 16px;
+      display: block;
+    }
+
+    /* Show dropdown on hover */
+    .nav-item:hover > .nav-dropdown {
+      display: block;
+    }
+  </style>
+
+  <div class="bubble">
+    <!-- ===== CODE SECTION ===== -->
+    <h3>Code: Navigation Bar with Dropdown</h3>
+    <div class="code_block">
+      <pre><code>
+/* CSS Code */
+<span class="C1">
+nav {
+  background-color: #3498db;
+  padding: 0;
+  border-radius: 8px;
+}
+</span><span class="C2">
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+</span><span class="C3">
+li {
+  position: relative;
+}
+</span><span class="C4">
+a {
+  display: block;
+  padding: 12px 20px;
+  color: white;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+}
+</span><span class="C5">
+a:hover {
+  background-color: #2980b9;
+}
+</span><span class="C6">
+/* Dropdown menu */
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #3498db;
+  min-width: 150px;
+  border-radius: 4px;
+  z-index: 1000;
+}
+</span><span class="C7">
+.nav-dropdown a {
+  padding: 10px 16px;
+  display: block;
+}
+</span><span class="C8">
+/* Show dropdown on hover */
+li:hover > .nav-dropdown {
+  display: block;
+}
+</span>
+/* HTML Code */
+<span class="C9">
+&lt;nav class="nav-container"&gt;
+  &lt;ul&gt;
+    &lt;li class="nav-item"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="nav-item"&gt;
+      &lt;a href="#"&gt;Services ▾&lt;/a&gt;
+      &lt;ul class="nav-dropdown"&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Web Design&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;SEO&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Marketing&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li class="nav-item"&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+</span>
+
+      </code></pre>
+    </div>
+
+    <!-- ===== LIVE EXAMPLE SECTION ===== -->
+    <h3>Example: Navigation Bar with Dropdown</h3>
+    <div class="example">
+      <nav class="nav-container">
+        <ul>
+          <li class="nav-item"><a href="#">Home</a></li>
+          <li class="nav-item">
+            <a href="#">Services ▾</a>
+            <ul class="nav-dropdown">
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">SEO</a></li>
+              <li><a href="#">Marketing</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- ===== EXPLANATION SECTION ===== -->
+    <h3>Explanation: Navigation Bar with Dropdown</h3>
+    <div class="explanation">
+      <p><span class="C1"><strong>nav</strong> – Styles the navigation bar background, padding, and rounded corners. In the live example, it wraps all menu items with a blue background and rounded edges.</span></p>
+
+      <p><span class="C2"><strong>nav ul</strong> – Removes default bullet points and margin/padding, and uses flex layout for horizontal alignment. This makes Home, Services, and About appear in a row.</span></p>
+
+      <p><span class="C3"><strong>li</strong> – Positions each menu item relative so the dropdown menu can be positioned absolutely relative to its parent. This ensures the dropdown appears just below Services.</span></p>
+
+      <p><span class="C4"><strong>a</strong> – Styles the menu links with padding, white text, and no underline. This controls the look of each clickable menu item in the example.</span></p>
+
+      <p><span class="C5"><strong>a:hover</strong> – Changes the link background color on hover to give user feedback when they move the mouse over Home, Services, or About.</span></p>
+
+      <p><span class="C6"><strong>.nav-dropdown</strong> – Initially hidden dropdown menu, positioned absolutely under the parent menu item (Services). The blue background and border-radius match the main nav.</span></p>
+
+      <p><span class="C7"><strong>.nav-dropdown a</strong> – Styles the links inside the dropdown with padding and block display. Each dropdown item (Web Design, SEO, Marketing) fills the dropdown width.</span></p>
+
+      <p><span class="C8"><strong>li:hover > .nav-dropdown</strong> – Shows the dropdown menu only when the user hovers over the parent menu item. This is why Services reveals its submenu on hover.</span></p>
+
+      <p><span class="C9"><strong>HTML structure</strong> – Demonstrates how to create the nav, ul, li, and nested ul elements for dropdown. The hierarchy matches how CSS is applied in the example.</span></p>
+    </div>I. 
+
+  </div>
+</template>
 
 
 
+
+
+
+<template> <!-- CSS Pseudo-classes & Pseudo-elements -->
+  <style>
+    .box7 {
+      width: 250px;
+      height: 40px;
+      border: 2px solid black;
+      margin: 5px;
+      padding: 5px;
+      text-align: center;
+      line-height: 50px;
+      display: inline-block;
+    }
+
+    /* Pseudo-classes */
+    .hover-box-1:hover {
+      background-color: #f4a261;
+    }
+    .first-child-box-1:first-child {
+      background-color: #2a9d8f;
+    }
+    .lang-box-1:lang(en) {
+      color: #e76f51;
+    }
+
+    /* Pseudo-elements */
+    .first-line-box-1::first-line {
+      font-weight: bold;
+      color: #264653;
+    }
+    .first-letter-box-1::first-letter {
+      font-size: 1.5em;
+      color: #e9c46a;
+      float: left;
+      margin-right: 3px;
+    }
+    .before-box-1::before {
+      content: "★ ";
+      color: #f4a261;
+    }
+    .after-box-1::after {
+      content: " ★";
+      color: #e76f51;
+    }
+    .marker-box-1 li::marker {
+      color: #2a9d8f;
+      font-size: 1.2em;
+    }
+    .selection-box-1::selection {
+      background-color: #ffb703;
+      color: #023047;
+    }
+  </style>
+
+  <div class="bubble">
+    <!-- ===== CODE SECTION ===== -->
+    <h3>Code: CSS Pseudo-classes & Pseudo-elements</h3>
+    <div class="code_block">
+  <pre><code>
+/* CSS */
+.box7 {
+  width: 120px;
+  height: 50px;
+  border: 2px solid black;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  line-height: 50px;
+  display: inline-block;
+}
+
+/* Pseudo-classes */
+<span class="C1">.hover-box-1:hover</span> { background-color: #f4a261; }
+<span class="C2">.first-child-box-1:first-child</span> { background-color: #2a9d8f; }
+<span class="C3">.lang-box-1:lang(en)</span> { color: #e76f51; }
+
+/* Pseudo-elements */
+<span class="C4">.first-line-box-1::first-line</span> { font-weight: bold; color: #264653; }
+<span class="C5">.first-letter-box-1::first-letter</span> { font-size: 1.5em; color: #e9c46a; float: left; margin-right: 3px; }
+<span class="C6">.before-box-1::before</span> { content: "★ "; color: #f4a261; }
+<span class="C7">.after-box-1::after</span> { content: " ★"; color: #e76f51; }
+<span class="C8">.marker-box-1 li::marker</span> { color: #2a9d8f; font-size: 1.2em; }
+<span class="C9">.selection-box-1::selection</span> { background-color: #ffb703; color: #023047; }
+
+/* HTML Structure */
+&lt;div class="box7 hover-box-1"&gt;Hover Me&lt;/div&gt;
+&lt;div class="box7 first-child-box-1"&gt;First Child&lt;/div&gt;
+&lt;div class="box7 lang-box-1" lang="en"&gt;English&lt;/div&gt;
+
+&lt;div class="box7 first-line-box-1"&gt;This is the first line styled&lt;/div&gt;
+&lt;div class="box7 first-letter-box-1"&gt;Styled first letter example&lt;/div&gt;
+&lt;div class="box7 before-box-1"&gt;Before Content&lt;/div&gt;
+&lt;div class="box7 after-box-1"&gt;After Content&lt;/div&gt;
+&lt;ul class="box7 marker-box-1"&gt;
+  &lt;li&gt;List item 1&lt;/li&gt;
+  &lt;li&gt;List item 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="box7 selection-box-1"&gt;Select this text to see styling&lt;/div&gt;
+  </code></pre>
+</div>
+
+    <!-- ===== LIVE EXAMPLE SECTION ===== -->
+    <h3>Example: Pseudo-classes</h3>
+    <div class="example">
+      <div class="box7 hover-box-1"><span class="dot d1"></span> Hover Me</div>
+      <div class="box7 first-child-box-1"><span class="dot d2"></span> First Child</div>
+      <div class="box7 lang-box-1" lang="en"><span class="dot d3"></span> English</div>
+    </div>
+
+    <h3>Example: Pseudo-elements</h3>
+    <div class="example">
+      <div class="box7 first-line-box-1"><span class="dot d4"></span> This is the first line styled</div>
+      <div class="box7 first-letter-box-1"><span class="dot d5"></span> Styled first letter example</div>
+      <div class="box7 before-box-1"><span class="dot d6"></span> Before Content</div>
+      <div class="box7 after-box-1"><span class="dot d7"></span> After Content</div>
+      <ul class="box7 marker-box-1">
+        <li><span class="dot d8"></span> List item 1</li>
+        <li><span class="dot d8"></span> List item 2</li>
+      </ul>
+      <div class="box7 selection-box-1"><span class="dot d9"></span> Select this text to see styling</div>
+    </div>
+
+    <!-- ===== EXPLANATION SECTION ===== -->
+    <h3>Explanation: Pseudo-classes & Pseudo-elements</h3>
+    <div class="explanation">
+
+      <p><strong>Pseudo-classes</strong> define special states of elements. You must use a single colon <code>:</code> before the name to indicate that you are styling a **state** of an element. The colon is important because it tells the browser this is not a normal element or class, but a pseudo-class.</p>
+
+      <p><span class="C1"><strong>:hover</strong></span> – Hover is a style element that allows something to happen when you hover over it. In this example, using <code>:hover</code> causes the div element "Hover Me" to change color when you move your mouse over it. The single colon <code>:</code> indicates this is a pseudo-class, targeting a **state** of an element. Without the colon, the browser would not recognize it as a pseudo-class. This is useful for interactive feedback to the user.</p>
+
+      <p><span class="C2"><strong>:first-child</strong></span> – First-child is a style element that targets the first child of a parent element. Using <code>:first-child</code> caused the div element "First Child" to change background color. The single colon <code>:</code> signals a pseudo-class, so the browser knows this is selecting **a state/position**, not the element itself. This is useful for styling only the first element in a group.</p>
+
+      <p><span class="C3"><strong>:lang()</strong></span> – Lang() is a style element that targets elements based on their language attribute. Using <code>:lang(en)</code> caused the div element "English" to have red text because its language is English. The colon <code>:</code> is required to define this pseudo-class, telling the browser it is a **state-based selector** rather than a standard selector. This is useful for language-specific styling.</p>
+
+      <p><strong>Pseudo-elements</strong> style specific **parts of elements**. You must use a double colon <code>::</code> before the name to indicate that you are styling a part of an element rather than its state. The double colon is important because it clearly distinguishes pseudo-elements from pseudo-classes, and ensures future compatibility with CSS specifications.</p>
+
+      <p><span class="C4"><strong>::first-line</strong></span> – First-line styles only the first line of a block element. Using <code>::first-line</code> caused the first line of the div element "This is the first line styled" to become bold and colored. The double colon <code>::</code> shows this is a pseudo-element targeting a **part** of the element. Without the colons, the browser would not recognize this as a pseudo-element. Useful for emphasizing the opening line of text.</p>
+
+      <p><span class="C5"><strong>::first-letter</strong></span> – First-letter styles only the first letter of a block element. Using <code>::first-letter</code> caused the first letter of the div element "Styled first letter example" to become larger, colored, and slightly offset. The double colon <code>::</code> indicates a pseudo-element, targeting a **part** of the content. This is useful for typographic or decorative effects.</p>
+
+      <p><span class="C6"><strong>::before</strong></span> – Before inserts content before the element’s actual content. Using <code>::before</code> caused the div element "Before Content" to show a ★ before the text. The double colon <code>::</code> is required to define this pseudo-element targeting content. Without it, the browser would not interpret it as a pseudo-element. Useful for adding decorative content without changing HTML.</p>
+
+      <p><span class="C7"><strong>::after</strong></span> – After inserts content after the element’s content. Using <code>::after</code> caused the div element "After Content" to show a ★ after the text. The double colon <code>::</code> signals that it’s a pseudo-element targeting a **part** of the element. This is useful for appending symbols, icons, or text dynamically.</p>
+
+      <p><span class="C8"><strong>::marker</strong></span> – Marker styles list item markers (bullets or numbers). Using <code>::marker</code> caused the bullets in the list element to change color and size. The double colon <code>::</code> tells the browser it is a pseudo-element affecting **part of the element**, not the element itself. This is useful for custom list styling while keeping HTML semantic.</p>
+
+      <p><span class="C9"><strong>::selection</strong></span> – Selection styles the portion of text that the user highlights. Using <code>::selection</code> caused the text in the div element "Select this text to see styling" to change background and text color when selected. The double colon <code>::</code> identifies it as a pseudo-element that targets a **user-selected part** of the element. This is useful for providing visual feedback when text is highlighted.</p>
+
+      <p><strong>Key point:</strong> Pseudo-classes use <code>:</code> to select element **states**, pseudo-elements use <code>::</code> to select **parts** of elements. These colons are required; they tell the browser that these are not normal selectors and allow precise control over styling behavior and content parts.</p>
+
+    </div>
+  </div>
+</template>
+
+<template> <!-- CSS Combinators -->
+  <style>
+    .box6 {
+      width: 120px;
+      height: 50px;
+      border: 2px solid black;
+      margin: 5px;
+      padding: 5px;
+      text-align: center;
+      line-height: 50px;
+      display: inline-block;
+    }
+    .parent1 .child1 {
+      background-color: red;
+    }
+    .parent2 > .child2 {
+      background-color: blue;
+    }
+    .div1 + .divAfter1 {
+      background-color: green;
+    }
+    .div2 ~ .divAfter2 {
+      background-color: orange;
+    }
+  </style>
+
+  <div class="bubble">
+    <!-- ===== CODE SECTION ===== -->
+    <h3>Code: CSS Combinators</h3>
+    <div class="code_block">
+      <pre><code>
+/* CSS classes for this template */
+<span class="C8">.box6</span> {
+  width: 120px;
+  height: 50px;
+  border: 2px solid black;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  line-height: 50px;
+  display: inline-block;
+}
+
+/* Descendant combinator (space) */
+<span class="C1">.parent1 .child1</span> { background-color: red; }
+
+/* Child combinator (>) */
+<span class="C2">.parent2 &gt; .child2</span> { background-color: blue; }
+
+/* Next sibling combinator (+) */
+<span class="C3">.div1 + .divAfter1</span> { background-color: green; }
+
+/* Subsequent sibling combinator (~) */
+<span class="C4">.div2 ~ .divAfter2</span> { background-color: orange; }
+      </code></pre>
+    </div>
+
+    <!-- ===== LIVE EXAMPLE SECTION ===== -->
+    <h3>Example: CSS Combinators</h3>
+    <div class="example">
+
+      <p>Descendant combinator (<code>space</code>): .parent1 .child1</p>
+      <div class="box6 parent1">Parent
+        <div class="box6 child1">Child</div>
+      </div><br><br>
+
+      <p>Child combinator (&gt;): .parent2 &gt; .child2</p>
+      <div class="box6 parent2">Parent
+        <div class="box6 child2">in div 1</div>
+        <div class="box6 child2">in div 2</div>
+      </div>
+      <div class="box6 child2">Outside div</div><br><br>
+
+      <p>Next sibling combinator (+): .div1 + .divAfter1</p>
+      <div class="box6 div1">div 1</div>
+      <div class="box6 divAfter1">divAfter 1</div>
+      <div class="box6 divAfter1">divAfter 2</div><br>
+      <div class="box6 divAfter1">divAfter 3</div><br>
+
+      <p>Subsequent sibling combinator (~): .div2 ~ .divAfter2</p>
+      <div class="box6 div2">div 1</div>
+      <div class="box6 divAfter2">divAfter 1</div>
+      <div class="box6 divAfter2">divAfter 2</div>
+      <div class="box6 divAfter2">divAfter 3</div>
+    </div>
+
+    <!-- ===== EXPLANATION SECTION ===== -->
+    <h3>Explanation: CSS Combinators</h3>
+    <div class="explanation">
+      <p><strong>Combinators</strong> describe the relationship between selectors in CSS.</p>
+
+      <p><span class="C1"><strong>Descendant (space)</strong></span> – Selects any element that is a descendant of the parent, at any level. In the example, <code>.parent1 .child1</code> selects the nested "Child" box inside "Parent".</p>
+
+      <p><span class="C2"><strong>Child (&gt;)</strong></span> – Selects only direct children of the parent. In the example, only the ".child2" directly inside ".parent2" is affected; the "Outside div" is ignored.</p>
+
+      <p><span class="C3"><strong>Next sibling (+)</strong></span> – Selects the element immediately following the first element. In the example, only "divAfter 1" right after "div1" is highlighted; other "divAfter" boxes are not affected.</p>
+
+      <p><span class="C4"><strong>Subsequent sibling (~)</strong></span> – Selects all siblings after the first element. In the example, all "divAfter2" boxes following "div2" are highlighted.</p>
+
+      <p><span class="C8">.box6</span> – This class is applied to all boxes for consistent width, height, border, and alignment in all combinator examples.</p>
+
+      <p><strong>Key point:</strong> Combinators allow targeting elements based on their relationships in the DOM tree, making CSS more flexible for complex layouts. The updated class names match the live example and CSS styling.</p>
+    </div>
+  </div>
+</template>
+
+<template> <!-- CSS Layout: display: inline-block -->
+  <style>
+    .box5 {
+      width: 120px;
+      height: 80px;
+      border: 2px solid black;
+      margin: 5px;
+      padding: 5px;
+      text-align: center;
+      line-height: 80px;
+    }
+  </style>
+
+  <div class="bubble">
+    <!-- ===== CODE SECTION ===== -->
+    <h3>Code: display: inline-block</h3>
+    <div class="code_block">
+      <pre><code>
+/* CSS class for this template */
+<span class="C8">.box5</span> {
+  width: 120px;
+  height: 80px;
+  border: 2px solid black;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  line-height: 80px;
+}
+
+&lt;!-- HTML examples --&gt;
+&lt;div class="box5" style="<span class="C1">display: inline</span>;"&gt;Inline&lt;/div&gt;
+&lt;div class="box5" style="<span class="C2">display: inline-block</span>;"&gt;Inline-Block&lt;/div&gt;
+&lt;div class="box5" style="<span class="C3">display: block</span>;"&gt;Block&lt;/div&gt;
+      </code></pre>
+    </div>
+
+    <!-- ===== LIVE EXAMPLE SECTION ===== -->
+    <h3>Example: display Values</h3>
+    <div class="example">
+      <div class="box5" style="display: inline;">Inline<span class="dot d1"></span></div>
+      <div class="box5" style="display: inline-block;">Inline-Block<span class="dot d2"></span></div>
+      <div class="box5" style="display: block;">Block<span class="dot d3"></span></div>
+    </div>
+
+    <!-- ===== EXPLANATION SECTION ===== -->
+    <h3>Explanation: display</h3>
+    <div class="explanation">
+      <p><strong>display</strong> – Defines how an element is rendered in the layout. It affects flow, sizing, and interaction with other elements.</p>
+
+      <p><span class="C1"><strong>display: inline</strong></span> – inline mean that the element will not start on a new line and only occupy as much width as necessary.</p>
+
+      <p><span class="C2"><strong>display: inline-block</strong></span> – Combines inline flow and block sizing. You can set width and height, and elements can sit next to each other. See the second box in the live example and the code block. <em>Alternate usage:</em> Navigation buttons or card items in a row.</p>
+
+      <p><span class="C3"><strong>display: block</strong></span> – Element takes up full width by default and starts on a new line. See the third box in the live example and the code block. <em>Alternate usage:</em> Paragraphs, div containers, or sections.</p>
+
+      <p><span class="C8">.box5</span> – This class is applied to all example boxes to standardize width, height, border, margin, and text alignment.</p>
+    </div>
+  </div>
+</template>
 
 <template> <!-- CSS Float & Clear Properties -->
   <style>
@@ -1388,6 +1887,8 @@ Selector      Declaration Block
 
 
 <!-- 
-CSS Display & Visibility
-CSS Layout: width, height, min/max
+Good add images. 
+
+Property	Description
+opacity	Sets the opacity level for an element
 -->

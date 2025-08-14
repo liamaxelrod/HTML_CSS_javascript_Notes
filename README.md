@@ -38,6 +38,16 @@ Also, I do have plans To refresh my knowledge on other coding languages and lear
 
 ## 6. Lessons Learned (great for portfolio projects - Shows growth and insight.)
 
+CSS:
+
+Before this project, my understanding of CSS was pretty solid, but now I have a much more deeper understanding and it's easier for me to understand how it affects and direct with code.
+
+I have done projects with CSS Where my solid understanding comes from, but this allows me to have a more understanding of vague terminology and In my opinion, most importantly, how does CSS work With multiple styles interacting with each other.
+
+chatGPT:
+
+It's great because every time I make a template I get to learn more about how to use chatGPT to my advantage. Also I have to go over the material What allows me to more ingrain it into my mind so I can easily recall and remember how to use this stuff, And it makes it easier to understand how it works with other coding languages and frameworks.
+
 ---
 
 ## 7. Future Improvements (optional)
