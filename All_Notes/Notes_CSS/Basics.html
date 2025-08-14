@@ -2,15 +2,429 @@
 ------------------------------------------------
 
 
-Make all code in this explanation a color with C8. 
 
 
 
-CSS Tables, CSS Lists, CSS Links, CSS Icons, CSS Font
-Complete CSS Controlling texts  
+
 -->
 
 
+
+
+<template> <!-- CSS Float & Clear Properties -->
+  <style>
+    .box4 {
+      width: 120px;
+      height: 80px;
+      border: 2px solid black;
+      margin: 5px;
+      padding: 5px;
+    }
+  </style>
+
+  <div class="bubble">
+    <!-- ===== CODE SECTION ===== -->
+    <h3>Code: Float & Clear Properties</h3>
+    <div class="code_block">
+      <pre><code>
+/* CSS class for this template */
+<span class="C8">.box4</span> {
+  width: 120px;
+  height: 80px;
+  border: 2px solid black;
+  margin: 5px;
+  padding: 5px;
+}
+
+&lt;!-- HTML examples using the class --&gt;
+&lt;div class="box4" style="<span class="C1">float: left</span>;"&gt;Float Left&lt;/div&gt;
+&lt;div class="box4" style="<span class="C2">float: right</span>;"&gt;Float Right&lt;/div&gt;
+
+&lt;div class="box4" style="<span class="C3">clear: left</span>;"&gt;Clear Left&lt;/div&gt;
+&lt;div class="box4" style="<span class="C4">clear: right</span>;"&gt;Clear Right&lt;/div&gt;
+&lt;div class="box4" style="<span class="C5">clear: both</span>;"&gt;Clear Both&lt;/div&gt;
+      </code></pre>
+    </div>
+
+    <!-- ===== LIVE EXAMPLE SECTION ===== -->
+    <h3>Example: Float & Clear</h3>
+    <div class="example">
+      <div class="box4" style="float: left;">Float Left<span class="dot d1"></span></div>
+      <div class="box4" style="float: right;">Float Right<span class="dot d2"></span></div>
+      <div class="box4" style="float: right; clear: left;">Clear Left<span class="dot d3"></span></div>
+      <div class="box4" style="float: right; clear: right;">Clear Right<span class="dot d4"></span></div>
+      <div class="box4" style="clear: both;">Clear Both<span class="dot d5"></span></div>
+    </div>
+
+    <!-- ===== EXPLANATION SECTION ===== -->
+    <h3>Explanation: Float & Clear</h3>
+    <div class="explanation">
+
+      <p><strong>float</strong> – Positions an element to the left or right of its container. Allows text and inline content to wrap around it. Default is <em>none</em>. Example usage is seen in the "Float Left" and "Float Right" boxes in the live example above, and in the code block using <code>float: left</code> or <code>float: right</code>.</p>
+
+      <p><span class="C1"><strong>float: left</strong></span> – Moves the element to the left of its container. In the live example, the "Float Left" box is floated left, matching the code block line <code>&lt;div class="box4" style="float: left;"&gt;</code>. <em>Alternate usage:</em> You could float a sidebar to the left of main content.</p>
+
+      <p><span class="C2"><strong>float: right</strong></span> – Moves the element to the right of its container. In the live example, the "Float Right" box is floated right, matching the code block line <code>&lt;div class="box4" style="float: right;"&gt;</code>. <em>Alternate usage:</em> You could float a "Buy Now" button to the right of a product description.</p>
+
+      <p><strong>clear</strong> – Ensures that the next element starts below previous floated elements. <em>Important:</em> clearing affects vertical placement only, not horizontal. This prevents wrapping or overlapping caused by floated elements.</p>
+
+      <p><span class="C3"><strong>clear: left</strong></span> – Moves the element below any left-floated elements. In the live example, the "Clear Left" box uses <code>clear: left</code>. <em>Alternate usage:</em> You might want a full-width banner to start below a left-floated sidebar.</p>
+
+      <p><span class="C4"><strong>clear: right</strong></span> – Moves the element below any right-floated elements. In the live example, the "Clear Right" box uses <code>clear: right</code>. <em>Alternate usage:</em> For a footer that should sit below a right-floated ad box.</p>
+
+      <p><span class="C5"><strong>clear: both</strong></span> – Moves the element below all floated elements (left and right). In the live example, the "Clear Both" box uses <code>clear: both</code>. <em>Alternate usage:</em> A "Read More" section that must appear below all floated images or columns.</p>
+
+      <p><span class="C8">.box4</span> – This class is used for all boxes in this template. It sets width, height, border, margin, and padding for consistent layout, as seen in both the code block and the live example.</p>
+
+      <p><strong>Key point:</strong> Clearing controls **vertical placement relative to floated elements**, not horizontal position. Floated elements are removed from normal flow horizontally, but subsequent elements can be cleared to start below them. This is essential to prevent layout overlap.</p>
+
+    </div>
+  </div>
+</template>
+
+<template> <!-- CSS Overflow Property -->
+  <style>
+    .box3 {
+      width: 150px;
+      height: 80px;
+      border: 2px solid black;
+    }
+    .box-visible {
+          overflow: visible;
+    }
+    .box-hidden {
+      overflow: hidden;
+    }
+    .box-scroll {
+      overflow: scroll;
+    }
+  .box-auto {
+          overflow: auto;
+        }
+  </style> 
+
+  <div class="bubble">
+    <!-- ===== CODE SECTION ===== -->
+    <h3>Code: Overflow Property</h3>
+    <div class="code_block">
+      <strong>/* CSS Styles*/</strong><br>
+      <pre><code>
+        <span class="C1">.box-visible {
+          overflow: Visible;
+        }</span>
+
+        <span class="C2">.box-hidden {
+          overflow: hidden;
+        }</span>
+
+        <span class="C3">.box-scroll {
+          overflow: scroll;
+        }</span>
+
+        <span class="C4">.box-auto {
+          overflow: auto;
+        }</span>
+
+        .box3 {
+          width: 150px;
+          height: 80px;
+          border: 2px solid black;
+        }
+      </code></pre>
+    </div>
+
+    <!-- ===== LIVE EXAMPLE SECTION ===== -->
+    <h3>example: Overflow Property</h3>
+    <div class="example">
+      <span class="dot d1"></span>
+      <div class="box3 box-visible">
+        This is some overflowing text that will go outside the box without clipping or scrollbars.
+      </div>
+      <br><br>
+      <span class="dot d2"></span>
+      <div class="box3 box-hidden">
+        overflowing text that will be hidden outside the box. like this
+        Sentence will break off
+      </div>
+      <br><br>
+      <span class="dot d3"></span>
+      <div class="box3 box-scroll">
+        This is some overflowing text that will always show scrollbars. Horizontal and vertical. 
+      </div>
+      <br><br>
+      <span class="dot d4"></span>
+      <div class="box3 box-auto">
+        This is some overflowing text that will show scrollbars only if needed.
+      </div>
+    </div>
+
+    <!-- ===== EXPLANATION SECTION ===== -->
+    <h3>explanation: Overflow Property</h3>
+    <div class="explanation">
+      <p><span class="C1"><strong>visible</strong> – This is the default overflow setting. 
+        The content is not clipped, so it spills outside the box boundaries. 
+        This can cause overlapping with other elements if the overflow is large.</span></p>
+
+      <p><span class="C2"><strong>hidden</strong> – The content that exceeds the box dimensions 
+        is clipped and simply disappears. There is no way to scroll to see the hidden parts. 
+        Useful when you want to enforce strict element boundaries.</span></p>
+
+      <p><span class="C3"><strong>scroll</strong> – The content is clipped, and scrollbars are 
+        always displayed. Vertical scroll appears if the content exceeds the box height. 
+        Horizontal scroll may not appear because text wraps by default. 
+        To see a horizontal scrollbar, text must be longer than the box width or wrapping must be prevented (e.g., using <code>white-space: nowrap;</code>).</span></p>
+
+      <p><span class="C4"><strong>auto</strong> – Similar to <em>scroll</em>, but scrollbars only 
+        appear if the content is larger than the container. This is generally the most user-friendly 
+        option for variable content sizes.</span></p>
+    </div>
+  </div>
+</template>
+
+<template> <!-- CSS position Property -->
+  <div class="bubble">
+
+    <!-- Section 1: Code Example -->
+    <h3>Code block: The position Property</h3>
+    <div class="code_block">
+      <code>
+        <strong>/* CSS Styles box1 */</strong><br>
+        <span class="C1">.box1 { 
+          &nbsp;&nbsp;width: 100px; <br>
+          &nbsp;&nbsp;height: 50px; <br>
+          &nbsp;&nbsp;background: lightblue; <br>
+          &nbsp;&nbsp;margin: 5px; <br>
+          &nbsp;&nbsp;text-align: center; <br>
+          &nbsp;&nbsp;line-height: 50px; }</span><br><br>
+
+        <strong>/* CSS Styles */</strong><br>
+        <span class="C2">.static-box { position: static; }</span><br>
+        <span class="C3">.relative-box { position: relative; top: 10px; left: 10px; }</span><br>
+        <span class="C4">.absolute-box { position: absolute; top: 20px; left: 20px; }</span><br>
+        <span class="C5">.sticky-box { position: sticky; top: 0; }</span><br>
+        <span class="C6">.fixed-box { position: fixed; bottom: 10px; right: 10px; }</span><br>
+      </code>
+    </div>
+
+    <!-- Section 2: Live Example -->
+    <h3>Example: Five Boxes, One Difference Each</h3>
+
+    <style>
+      .box1 {
+        width: 100px;
+        height: 50px;
+        background-color: lightblue;
+        margin: 5px;
+        text-align: center;
+        line-height: 50px; /* vertically center text */
+        border: 1px solid #999;
+      }
+
+      .static-box1 { position: static; }
+      .relative-box1 { position: relative; top: 10px; left: 10px; }
+      .absolute-box1 { position: absolute; top: 60px; left: 150px; }
+      .sticky-box1 { position: sticky; top: 0; background: lightpink; }
+      .fixed-box1 { position: fixed; bottom: 10px; right: 10px; background: lightyellow; }
+    </style>
+
+    <div class="example" style="position: relative; height: 250px; border: 1px dashed gray; overflow-y: auto;">
+      <div class="box1 static-box1">Static<span class="dot d2"></span></div>
+      <div class="box1 relative-box1">Relative<span class="dot d3"></span></div>
+      <div class="box1 absolute-box1">Absolute<span class="dot d4"></span></div>
+      <div class="box1 sticky-box1">Sticky<span class="dot d5"></span></div>
+      
+
+      <p style="margin-top: 150px;">Scroll this example to see sticky behavior.</p>
+      <p>More filler text...</p>
+      <p>More more filler text...</p>
+      <p>More more more filler text...</p>
+    </div>
+
+    <!-- Section 3: Explanation -->
+    <h3>Explain: The position Property</h3>
+    <div class="explanation">
+      All five boxes have the same width, height, background color, and border — the only difference is the <code>position</code> value and related offset properties (<code>top</code>, <code>left</code>, <code>bottom</code>, <code>right</code>).<br><br>
+
+      <span class="C2"><strong>Static</strong> — Default flow, no positioning applied.</span><br>
+      <span class="C3"><strong>Relative</strong> — Shifted relative to its normal position.</span><br>
+      <span class="C4"><strong>Absolute</strong> — Positioned relative to the nearest positioned ancestor (here, the .example container).</span><br>
+      <span class="C5"><strong>Sticky</strong> — Acts like relative until you scroll, then it sticks to the top of its container.</span><br>
+      <span class="C6"><strong>Fixed</strong> — Stays in place relative to the viewport, regardless of scrolling.<br>
+        Take note I chose not to have this example or I would have fixed Constantly on the web page, moving wherever you Scroll down. 
+</span><br>
+
+      Additional position-related properties:<br>
+      <code>top</code>, <code>bottom</code>, <code>left</code>, <code>right</code> — control offsets when position is not static.<br>
+      <code>clip</code> — can clip absolutely positioned elements (mostly deprecated).
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- CSS Layout: width, height, min/max -->
+  <div class="bubble">
+
+    <h3>Code: CSS Layout (width, height, min/max)</h3>
+    <div class="code_block">
+      <code><pre>
+<strong>/* CSS Styles */</strong>
+
+<span class="C2">.width {</span>
+  <span class="C2">width: 200px;</span>
+  <span class="C2">padding: 1rem 0;</span>
+<span class="C2">}</span>
+
+<span class="C3">.height {</span>
+  <span class="C3">height: 100px;</span>
+  <span class="C3">padding: 0 2rem;</span>
+<span class="C3">}</span>
+
+<span class="C4">.max-width {</span>
+  <span class="C4">max-width: 150px;</span>
+  <span class="C4">width: 100%;</span>
+  <span class="C4">padding: 1rem 0;</span>
+<span class="C4">}</span>
+
+<span class="C5">.max-height {</span>
+  <span class="C5">max-height: 80px;</span>
+  <span class="C5">padding: 0 2rem;</span>
+  <span class="C5">overflow: auto;</span>
+<span class="C5">}</span>
+
+<span class="C6">.min-width {</span>
+  <span class="C6">min-width: 150px;</span>
+  <span class="C6">padding: 1rem 0;</span>
+<span class="C6">}</span>
+
+<span class="C7">.min-height {</span>
+  <span class="C7">min-height: 80px;</span>
+  <span class="C7">padding: 0 2rem;</span>
+<span class="C7">}</span>
+
+<strong>/* HTML Markup */</strong>
+&lt;div class="box default-box"&gt;Default&lt;/div&gt;
+&lt;div class="box width"&gt;Width: 200px&lt;/div&gt;
+&lt;div class="box height"&gt;Height: 100px&lt;/div&gt;
+&lt;div class="box max-width"&gt;Max-width: 150px&lt;/div&gt;
+&lt;div class="box max-height"&gt;Max-height: 80px&lt;/div&gt;
+&lt;div class="box min-width"&gt;Min-width: 150px&lt;/div&gt;
+&lt;div class="box min-height"&gt;Min-height: 80px&lt;/div&gt;
+      </pre></code>
+    </div>
+
+    <h3>Explanation</h3>
+    <div class="explanation">
+      <span class="C1"><strong>Default box</strong></span> has no set width or height, so its size depends on content and padding.<br><br>
+
+      <span class="C2"><strong>Width</strong></span> sets the element's fixed horizontal size. Use it to control exact box width.<br><br>
+
+      <span class="C3"><strong>Height</strong></span> sets the element's fixed vertical size. Useful for consistent box height.<br><br>
+
+      <span class="C4"><strong>Max-width</strong></span> limits the maximum width but allows shrinking smaller if needed.<br><br>
+
+      <span class="C5"><strong>Max-height</strong></span> limits the maximum height. Scrollbars appear if content overflows.<br><br>
+
+      <span class="C6"><strong>Min-width</strong></span> enforces a minimum width, preventing the box from getting too narrow.<br><br>
+
+      <span class="C7"><strong>Min-height</strong></span> enforces a minimum height to maintain visual consistency.<br><br>
+
+      These properties help create responsive, flexible layouts by setting size boundaries and defaults.
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- CSS Display & Visibility -->
+  <div class="bubble">
+
+    <style>
+      .box2 {
+        width: 100px;
+        height: 100px;
+        background-color: #4A90E2;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0.5rem;
+        font-weight: bold;
+      }
+
+      .display-block2 {
+        display: block;
+      }
+      .visibility-visible2 {
+        visibility: visible;
+      }
+    </style>
+
+    <h3>Code: display and visibility</h3>
+    <div class="code_block">
+      <code><pre>
+<strong>/* CSS Styles */</strong>
+
+<span class="C1">.display-block {</span>
+  <span class="C1">display: block;</span>
+<span class="C1">}</span>
+
+<span class="C2">.display-none {</span>
+  <span class="C2">display: none;</span>
+<span class="C2">}</span>
+
+<span class="C3">.visibility-visible {</span>
+  <span class="C3">visibility: visible;</span>
+<span class="C3">}</span>
+
+<span class="C4">.visibility-hidden {</span>
+  <span class="C4">visibility: hidden;</span>
+<span class="C4">}</span>
+
+<strong>/* HTML Markup */</strong>
+&lt;div class="box2 display-block2"&gt;Block&lt;/div&gt;
+&lt;div class="box2 display-none2"&gt;None&lt;/div&gt;
+&lt;div class="box2 visibility-visible2"&gt;Visible&lt;/div&gt;
+&lt;div class="box2 visibility-hidden2"&gt;Hidden&lt;/div&gt;
+      </pre></code>
+    </div>
+
+    <h3>Example: Display and Visibility</h3>
+    <div class="example">
+
+      <div class="box2 display-block2">Block <span class="dot d1"></span></div>
+     
+      <div class="box2 visibility-visible2">Block <span class="dot d3"></span></div>
+      
+
+    </div>
+
+    <h3>Explanation</h3>
+    <div class="explanation">
+      <span class="C1"><strong>.display-block</strong></span>:<br>
+      This sets the element to behave as a block-level element, meaning it takes up the full available width and starts on a new line.<br>
+      You want this when you need elements stacked vertically or to occupy the full width, like paragraphs or divs.<br>
+
+      <span class="C2"><strong>.display-none</strong></span>:<br>
+      This completely removes the element from the page layout and rendering, so it takes up no space and is not visible.<br>
+      Use it when you want to hide content entirely, like toggling modals, dropdown menus, or conditional content.<br>
+
+      <span class="C3"><strong>.visibility-visible</strong></span>:<br>
+      This ensures the element is visible (default behavior).<br>
+      Use it explicitly if you have previously hidden something via visibility and want to make it visible again without affecting layout.<br>
+
+      <span class="C4"><strong>.visibility-hidden</strong></span>:<br>
+      This hides the element visually but keeps its space reserved in the layout.<br>
+      Useful when you want to maintain page structure (like hiding text temporarily) without causing layout shifts.<br><br>
+
+      <strong>Other display and visibility properties to explore:</strong><br>
+      Besides <code class="C8">block</code> and <code class="C8">none</code>, the <code class="C8">display</code> property has many other values such as <code class="C8">inline</code>, <code class="C8">inline-block</code>, <code class="C8">flex</code>, and <code class="C8">grid</code> that control complex layout behavior.<br>
+      The <code class="C8">visibility</code> property also supports values like <code class="C8">collapse</code> (for table rows and columns) and <code class="C8">inherit</code>.<br>
+      Exploring these allows more nuanced control over element rendering and layout beyond just showing or hiding.<br><br>
+
+      Mastering display and visibility is key to managing page flow and user experience efficiently.
+    </div>
+
+  </div>
+</template>
 
 <template> <!-- CSS Tables -->
   <div class="bubble">
@@ -30,12 +444,6 @@ Complete CSS Controlling texts
         padding: 6px 10px;
         text-align: left;
         border: 1px solid #999; /* neutral border */
-      }
-
-      /* Align example to left side */
-      .example {
-        margin-left: 0;
-        max-width: 600px;
       }
     </style>
 
@@ -979,3 +1387,7 @@ Selector      Declaration Block
 </template>
 
 
+<!-- 
+CSS Display & Visibility
+CSS Layout: width, height, min/max
+-->
