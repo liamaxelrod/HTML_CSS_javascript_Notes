@@ -3,11 +3,111 @@
 
 
 
-
-Add explanation for each color. That explains what the code does and how the code works with the example. 
-
-
 -->
+
+
+
+
+
+
+<template> <!-- CSS Units -->
+  <style>
+  .unit-box {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 8px;
+    margin: 5px 0;
+    display: inline-block;
+    text-align: center;
+  }
+
+  /* CSS Unit Examples */
+  .box-em { font-size: 2em; width: 10em; }
+  .box-ex { font-size: 4ex; }
+  .box-ch { width: 20ch; }
+  .box-fr { display: grid; grid-template-columns: 1fr 2fr; gap: 4px; }
+  .box-rem { font-size: 1.5rem; width: 15rem; }
+  .box-vw { width: 20vw; }
+  .box-vh { height: 20vh; }
+  .box-vmin { width: 20vmin; height: 10vmin; }
+  .box-vmax { width: 20vmax; height: 10vmax; }
+  .box-percent { width: 50%; height: 50%; }
+  </style>
+
+  <div class="bubble">
+    <!-- ===== CODE SECTION ===== -->
+    <h3>Code: CSS Units</h3>
+    <div class="code_block">
+      <pre><code>
+<span class="C1">/* em - relative to font-size of parent */</span>
+<span class="C1">.box-em { font-size: 2em; width: 10em; }</span>
+
+<span class="C2">/* ex - x-height of the element's font */</span>
+<span class="C2">.box-ex { font-size: 4ex; }</span>
+
+<span class="C3">/* ch - width of the "0" character */</span>
+<span class="C3">.box-ch { width: 20ch; }</span>
+
+<span class="C4">/* fr - fraction of available space (CSS Grid) */</span>
+<span class="C4">.box-fr { display: grid; grid-template-columns: 1fr 2fr; }</span>
+
+<span class="C5">/* rem - relative to root font-size */</span>
+<span class="C5">.box-rem { font-size: 1.5rem; width: 15rem; }</span>
+
+<span class="C6">/* vw - 1% of viewport width */</span>
+<span class="C6">.box-vw { width: 20vw; }</span>
+
+<span class="C7">/* vh - 1% of viewport height */</span>
+<span class="C7">.box-vh { height: 20vh; }</span>
+
+<span class="C8">/* vmin - 1% of smaller viewport dimension */</span>
+<span class="C8">.box-vmin { width: 20vmin; height: 10vmin; }</span>
+
+<span class="C9">/* vmax - 1% of larger viewport dimension */</span>
+<span class="C9">.box-vmax { width: 20vmax; height: 10vmax; }</span>
+
+<span class="C10">/* % - percentage relative to parent */</span>
+<span class="C10">.box-percent { width: 50%; height: 50%; }</span>
+      </code></pre>
+    </div>
+
+    <!-- ===== LIVE EXAMPLE SECTION ===== -->
+    <h3>Example: CSS Units</h3>
+    <div class="example">
+      <p><span class="dot d1"></span> em: <span class="unit-box box-em">10em width</span></p>
+      <p><span class="dot d2"></span> ex: <span class="unit-box box-ex">4ex font-size</span></p>
+      <p><span class="dot d3"></span> ch: <span class="unit-box box-ch">20ch width</span></p>
+      <p><span class="dot d4"></span> fr (grid): 
+        <div class="box-fr unit-box">
+          <div style="background:#00befd;">1fr</div>
+          <div style="background:#f4073a;">2fr</div>
+        </div>
+      </p>
+      <p><span class="dot d5"></span> rem: <span class="unit-box box-rem">15rem width</span></p>
+      <p><span class="dot d6"></span> vw: <span class="unit-box box-vw">20vw width</span></p>
+      <p><span class="dot d7"></span> vh: <span class="unit-box box-vh">20vh height</span></p>
+      <p><span class="dot d8"></span> vmin: <span class="unit-box box-vmin">20vmin × 10vmin</span></p>
+      <p><span class="dot d9"></span> vmax: <span class="unit-box box-vmax">20vmax × 10vmax</span></p>
+      <p><span class="dot d10"></span> %: <span class="unit-box box-percent">50% width × 50% height</span></p>
+    </div>
+
+    <!-- ===== EXPLANATION SECTION ===== -->
+    <h3>Explanation: CSS Units</h3>
+    <div class="explanation">
+      <p><span class="C1"><strong>em</strong> – Relative to the font-size of the parent element. Useful for scalable layouts. <em>Browser support:</em> All modern browsers.</span></p>
+      <p><span class="C2"><strong>ex</strong> – Relative to the x-height of the element’s font. Less commonly used. <em>Browser support:</em> Good support but can vary slightly with fonts.</span></p>
+      <p><span class="C3"><strong>ch</strong> – Width of the “0” (zero) character in the element’s font. <em>Browser support:</em> Supported in all modern browsers.</span></p>
+      <p><span class="C4"><strong>fr</strong> – Fractional unit used in CSS Grid to distribute available space. <em>Browser support:</em> All modern browsers supporting CSS Grid.</span></p>
+      <p><span class="C5"><strong>rem</strong> – Relative to the root (html) font-size. Helps maintain consistent sizing. <em>Browser support:</em> All modern browsers.</span></p>
+      <p><span class="C6"><strong>vw</strong> – 1% of the viewport width. <em>Browser support:</em> All modern browsers.</span></p>
+      <p><span class="C7"><strong>vh</strong> – 1% of the viewport height. <em>Browser support:</em> All modern browsers.</span></p>
+      <p><span class="C8"><strong>vmin</strong> – 1% of the smaller dimension of the viewport. <em>Browser support:</em> All modern browsers.</span></p>
+      <p><span class="C9"><strong>vmax</strong> – 1% of the larger dimension of the viewport. <em>Browser support:</em> All modern browsers.</span></p>
+      <p><span class="C10"><strong>%</strong> – Percentage relative to parent element’s size. <em>Browser support:</em> All modern browsers.</span></p>
+    </div>
+  </div>
+</template>
+
 <template> <!-- Styling Input Fields -->
   <style>
     /* General input styling */
@@ -82,24 +182,32 @@ Add explanation for each color. That explains what the code does and how the cod
     <h3>Code: Styling Input Fields</h3>
     <div class="code_block">
       <pre><code>
-<span class="C1">/* Text, password, number fields */</span>
-<span class="C2">input[type=text], input[type=password], input[type=number] {</span>
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-<span class="C2">}</span>
+<span class="C1">/* Text field */</span>
+<span class="C1">input[type=text] { padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; }</span>
 
-<span class="C3">/* Input with icon */</span>
+<span class="C2">/* Password field */</span>
+<span class="C2">input[type=password] { padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; }</span>
+
+<span class="C3">/* Number field */</span>
+<span class="C3">input[type=number] { padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; }</span>
+
+<span class="C4">/* Input with icon/image */</span>
 <span class="C4">.input-icon input { padding-left: 30px; }</span>
-<span class="C4">.input-icon img { position: absolute; left: 8px; top: 50%; transform: translateY(-50%); }</span>
+<span class="C4">.input-icon img { position: absolute; left: 8px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; }</span>
 
-<span class="C5">/* Animated search input */</span>
-<span class="C5">.search-input { width: 150px; transition: width 0.4s; }</span>
+<span class="C5">/* Animated Search Input */</span>
+<span class="C5">.search-input { width: 150px; transition: width 0.4s ease-in-out; }</span>
 <span class="C5">.search-input:focus { width: 250px; }</span>
 
-<span class="C6">/* Buttons */</span>
-<span class="C6">input[type=submit], input[type=button] { background-color: #00befd; color: white; border-radius: 6px; }</span>
-<span class="C6">input[type=submit]:hover, input[type=button]:hover { background-color: #007bb5; }</span>
+<span class="C6">/* Textarea */</span>
+<span class="C6">textarea { padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; }</span>
+
+<span class="C7">/* Select Menus */</span>
+<span class="C7">select { padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; }</span>
+
+<span class="C8">/* Input Buttons */</span>
+<span class="C8">input[type=submit], input[type=button] { background-color: #00befd; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; transition: background-color 0.3s; }</span>
+<span class="C8">input[type=submit]:hover, input[type=button]:hover { background-color: #007bb5; }</span>
       </code></pre>
     </div>
 
@@ -142,15 +250,6 @@ Add explanation for each color. That explains what the code does and how the cod
     </div>
   </div>
 </template>
-
-
-
-
-
-
-
-
-
 
 <template> <!-- Navigation Bar Template with Dropdown -->
   <style>
