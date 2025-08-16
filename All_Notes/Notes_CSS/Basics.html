@@ -2,13 +2,87 @@
 ------------------------------------------------
 
 
-
 -->
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<template> <!-- Gradient Examples with Linear, Conic, and Radial -->
+  <div class="bubble">
+
+    <h3>CSS Code: with Linear, Conic, and Radial</h3>
+    <div class="code_block">
+      <!-- Linear Gradients -->
+      <span class="C1">background: linear-gradient(red, yellow);</span><br>
+      <span class="C2">background: linear-gradient(to right, red, yellow);</span><br>
+      <span class="C3">background: linear-gradient(45deg, red, yellow);</span><br>
+      <span class="C4">background: linear-gradient(red, orange, yellow);</span><br>
+      <span class="C5">background: linear-gradient(rgba(255,0,0,0.5), rgba(255,255,0,0.5));</span><br>
+      <span class="C6">background: repeating-linear-gradient(45deg, red, yellow 20px);</span><br><br>
+
+      <!-- Radial Gradient -->
+      <span class="C7">background: radial-gradient(red, yellow);</span><br><br>
+
+      <!-- Conic Gradient -->
+      <span class="C8">background: conic-gradient(red, yellow, green);</span>
+    </div>
+
+    <h3>Example: with Linear, Conic, and Radial</h3>
+    <div class="example" style="display:flex; flex-wrap:wrap; gap:10px;">
+      <!-- Linear Gradient Examples -->
+      <div style="flex:1 1 200px; height:100px; background: linear-gradient(red, yellow);"><span class="dot d1"></span></div>
+      <div style="flex:1 1 200px; height:100px; background: linear-gradient(to right, red, yellow);"><span class="dot d2"></span></div>
+      <div style="flex:1 1 200px; height:100px; background: linear-gradient(45deg, red, yellow);"><span class="dot d3"></span></div>
+      <div style="flex:1 1 200px; height:100px; background: linear-gradient(red, orange, yellow);"><span class="dot d4"></span></div>
+      <div style="flex:1 1 200px; height:100px; background: linear-gradient(rgba(255,0,0,0.5), rgba(255,255,0,0.5));"><span class="dot d5"></span></div>
+      <div style="flex:1 1 200px; height:100px; background: repeating-linear-gradient(45deg, red, yellow 20px);"><span class="dot d6"></span></div>
+
+      <!-- Radial Gradient Example -->
+      <div style="flex:1 1 200px; height:100px; background: radial-gradient(red, yellow);"><span class="dot d7"></span></div>
+
+      <!-- Conic Gradient Example -->
+      <div style="flex:1 1 200px; height:100px; background: conic-gradient(red, yellow, green);"><span class="dot d8"></span></div>
+    </div>
+
+    <h3>Explanation: with Linear, Conic, and Radial</h3>
+    <div class="explanation">
+      <!-- Linear Gradients -->
+      <span class="C1"><strong>Default direction:</strong> Top to bottom gradient from red to yellow.</span><br>
+      <span class="C2"><strong>Direction keyword:</strong> Uses <code>to right</code> to go left to right instead of top to bottom.</span><br>
+      <span class="C3"><strong>Angle:</strong> Uses <code>45deg</code> to create a diagonal gradient.</span><br>
+      <span class="C4"><strong>Multiple color stops:</strong> Adds red → orange → yellow. More than three colors can be added for complex transitions.</span><br>
+      <span class="C5"><strong>Transparency:</strong> Uses RGBA to allow see-through effect while maintaining color transition. The first RGBA defines start color, the second defines end color.</span><br>
+      <span class="C6"><strong>Repeating gradient:</strong> Repeats the red/yellow pattern every 20px at 45deg for a striped effect.</span><br>
+
+
+      <p>Variants for  <span class="C7">Radial gradient</span> and <span class="C8">Conic gradient</span> (different spacing, shape, size, repeating) follow the same rules as linear gradients. See linear gradient examples for multiple stops, transparency, and repeating patterns.</p>
+      <!-- Radial Gradient -->
+      <span class="C7"><strong>Radial gradient:</strong> Colors radiate from center outward.</span><br>
+
+      <!-- Conic Gradient -->
+      <span class="C8"><strong>Conic gradient:</strong> Colors rotate around a center point.</span>
+    </div>
+
+  </div>
+</template>
 
 <template> <!-- CSS Units -->
   <style>
@@ -36,7 +110,7 @@
 
   <div class="bubble">
     <!-- ===== CODE SECTION ===== -->
-    <h3>Code: CSS Units</h3>
+    <h3>CSS Code: Units</h3>
     <div class="code_block">
       <pre><code>
 <span class="C1">/* em - relative to font-size of parent */</span>
@@ -179,7 +253,7 @@
 
   <div class="bubble">
     <!-- ===== CODE SECTION ===== -->
-    <h3>Code: Styling Input Fields</h3>
+    <h3>CSS Code: Styling Input Fields</h3>
     <div class="code_block">
       <pre><code>
 <span class="C1">/* Text field */</span>
@@ -308,7 +382,7 @@
 
   <div class="bubble">
     <!-- ===== CODE SECTION ===== -->
-    <h3>Code: Navigation Bar with Dropdown</h3>
+    <h3>CSS Code: Navigation Bar with Dropdown</h3>
     <div class="code_block">
       <pre><code>
 /* CSS Code */
@@ -484,7 +558,7 @@ li:hover > .nav-dropdown {
 
   <div class="bubble">
     <!-- ===== CODE SECTION ===== -->
-    <h3>Code: CSS Pseudo-classes & Pseudo-elements</h3>
+    <h3>CSS Code: Pseudo-classes & Pseudo-elements</h3>
     <div class="code_block">
   <pre><code>
 /* CSS */
@@ -610,7 +684,7 @@ li:hover > .nav-dropdown {
 
   <div class="bubble">
     <!-- ===== CODE SECTION ===== -->
-    <h3>Code: CSS Combinators</h3>
+    <h3>CSS Code: Combinators</h3>
     <div class="code_block">
       <pre><code>
 /* CSS classes for this template */
@@ -703,7 +777,7 @@ li:hover > .nav-dropdown {
 
   <div class="bubble">
     <!-- ===== CODE SECTION ===== -->
-    <h3>Code: display: inline-block</h3>
+    <h3>CSS Code: display: inline-block</h3>
     <div class="code_block">
       <pre><code>
 /* CSS class for this template */
@@ -761,7 +835,7 @@ li:hover > .nav-dropdown {
 
   <div class="bubble">
     <!-- ===== CODE SECTION ===== -->
-    <h3>Code: Float & Clear Properties</h3>
+    <h3>CSS Code: Float & Clear Properties</h3>
     <div class="code_block">
       <pre><code>
 /* CSS class for this template */
@@ -842,7 +916,7 @@ li:hover > .nav-dropdown {
 
   <div class="bubble">
     <!-- ===== CODE SECTION ===== -->
-    <h3>Code: Overflow Property</h3>
+    <h3>CSS Code: Overflow Property</h3>
     <div class="code_block">
       <strong>/* CSS Styles*/</strong><br>
       <pre><code>
@@ -922,7 +996,7 @@ li:hover > .nav-dropdown {
   <div class="bubble">
 
     <!-- Section 1: Code Example -->
-    <h3>Code block: The position Property</h3>
+    <h3>CSS Code block: The position Property</h3>
     <div class="code_block">
       <code>
         <strong>/* CSS Styles box1 */</strong><br>
@@ -1001,7 +1075,7 @@ li:hover > .nav-dropdown {
 <template> <!-- CSS Layout: width, height, min/max -->
   <div class="bubble">
 
-    <h3>Code: CSS Layout (width, height, min/max)</h3>
+    <h3>CSS Code: Layout (width, height, min/max)</h3>
     <div class="code_block">
       <code><pre>
 <strong>/* CSS Styles */</strong>
@@ -1095,7 +1169,7 @@ li:hover > .nav-dropdown {
       }
     </style>
 
-    <h3>Code: display and visibility</h3>
+    <h3>CSS Code: display and visibility</h3>
     <div class="code_block">
       <code><pre>
 <strong>/* CSS Styles */</strong>
@@ -1184,6 +1258,7 @@ li:hover > .nav-dropdown {
       }
     </style>
 
+    <h3>CSS Code: table</h3>
     <div class="code_block">
       <code><pre>
 <strong>/* CSS Styles */</strong>
@@ -1409,7 +1484,7 @@ li:hover > .nav-dropdown {
   <div class="bubble">
 
     <!-- Section 1: Styling Links -->
-    <h3>Code: Styling Links</h3>
+    <h3>CSS Code: Styling Links</h3>
     <div class="code_block">
       <code>
         <span class="C1">a:link { color: blue; }</span> <span class="C8">&lt;!-- normal unvisited --&gt;</span><br>
@@ -1456,7 +1531,7 @@ li:hover > .nav-dropdown {
   <div class="bubble">
 
     <!-- Section 1: How to Add Icons -->
-    <h3>Code: Icons</h3>
+    <h3>CSS Code: Icons</h3>
     <div class="code_block">
       <code>
         <span class="C1"><strong>/* HTML */</strong><br>
@@ -1503,7 +1578,7 @@ li:hover > .nav-dropdown {
 <template><!-- CSS Font -->
   <div class="bubble">
     <!-- Section 1: CSS Font Examples -->
-    <h3>code: Font</h3>
+    <h3>CSS code: Font</h3>
     <div class="code_block">
       <code>
         <strong>/* Examples */</strong><br>
@@ -1559,48 +1634,70 @@ li:hover > .nav-dropdown {
   </div>
 </template>
 
-<template> <!-- CSS Controlling texts -->
+<template> <!-- CSS Text Effect Properties -->
   <div class="bubble">
 
-    <h2 class="C10">CSS Text Properties Unified</h2>
+    <style>
+      /* Only new classes for text effect properties */
+      .temD11 { background-color: #81c784; }
+      .temC11 { color: #81c784; }
+    </style>
 
     <!-- Combined Code Block -->
-    <h3>All CSS Code Examples</h3>
+    <h3>CSS Code: Text Effect Properties</h3>
     <div class="code_block">
       <code>
-        <span class="C6">/* Basic text color */<br>
-p { color: darkblue; }</span><br><br>
+        <!-- Controlling text properties -->
+        <span class="C1">/* Basic text color */<br>
+  &lt;p style="color: darkblue;"&gt;This text color is set using color property.&lt;/p&gt;</span><br><br>
 
         <span class="C2">/* Center align and right-to-left text */<br>
-p.center { text-align: center; }<br>
-p.rtl { direction: rtl; }</span><br><br>
+  &lt;p style="text-align: center;"&gt;This text is centered.&lt;/p&gt;<br>
+  &lt;p style="direction: rtl; background: #eee; padding: 5px;"&gt;This text is right-to-left.&lt;/p&gt;</span><br><br>
 
-        <span class="C4">/* Underlined dotted red text with thickness */<br>
-p.underline { text-decoration: underline dotted red 3px; }</span><br><br>
+        <span class="C3">/* Underlined dotted red text with thickness */<br>
+  &lt;p style="text-decoration: underline dotted red 3px;"&gt;Underlined dotted red text.&lt;/p&gt;</span><br><br>
 
-        <span class="C3">/* Uppercase, lowercase, capitalize */<br>
-p.uppercase { text-transform: uppercase; }<br>
-p.lowercase { text-transform: lowercase; }<br>
-p.capitalize { text-transform: capitalize; }</span><br><br>
+        <span class="C4">/* Uppercase, lowercase, capitalize */<br>
+  &lt;p style="text-transform: uppercase;"&gt;This text is uppercase.&lt;/p&gt;<br>
+  &lt;p style="text-transform: lowercase;"&gt;THIS TEXT IS LOWERCASE.&lt;/p&gt;<br>
+  &lt;p style="text-transform: capitalize;"&gt;this text is capitalized.&lt;/p&gt;</span><br><br>
 
         <span class="C5">/* Letter spacing, word spacing, indent, line height, white-space */<br>
-p.letter-spacing { letter-spacing: 3px; }<br>
-p.word-spacing { word-spacing: 10px; }<br>
-p.indent { text-indent: 40px; }<br>
-p.line-height { line-height: 2; }<br>
-p.nowrap { white-space: nowrap; }</span><br><br>
+  &lt;p style="letter-spacing: 3px;"&gt;Letters spaced with letter-spacing.&lt;/p&gt;<br>
+  &lt;p style="word-spacing: 10px;"&gt;Words spaced with word-spacing.&lt;/p&gt;<br>
+  &lt;p style="text-indent: 40px;"&gt;First line indented with text-indent.&lt;/p&gt;<br>
+  &lt;p style="line-height: 2;"&gt;Double spaced lines with line-height.&lt;/p&gt;<br>
+  &lt;p style="white-space: nowrap; background: #eee;"&gt;No line wrapping with white-space: nowrap.&lt;/p&gt;</span><br><br>
 
-        <span class="C7">/* Text shadow example */<br>
-p.shadow { text-shadow: 2px 2px 2px gray; }</span>
+        <span class="C6">/* Text shadow example */<br>
+  &lt;p style="text-shadow: 2px 2px 2px gray;"&gt;Text with shadow using text-shadow.&lt;/p&gt;</span><br><br>
+
+        <!-- Text Effect Properties -->
+        <span class="C7">/* Justify text */<br>
+  &lt;p style="text-justify: inter-word; text-align: justify;"&gt;This text is justified.&lt;/p&gt;</span><br><br>
+
+        <span class="C8">/* Text overflow */<br>
+  &lt;p style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;"&gt;This text may overflow and show ellipsis.&lt;/p&gt;</span><br><br>
+
+        <span class="C9">/* Word break */<br>
+  &lt;p style="word-break: break-word;"&gt;Thisisaverylongwordthatwillbreak.&lt;/p&gt;</span><br><br>
+
+        <span class="C10">/* Word wrap */<br>
+  &lt;p style="word-wrap: break-word;"&gt;Thisisaverylongwordthatwillwrap.&lt;/p&gt;</span><br><br>
+
+        <span class="temC11">/* Writing mode */<br>
+  &lt;p style="writing-mode: vertical-rl;"&gt;This text flows vertically.&lt;/p&gt;</span>
       </code>
     </div>
 
     <!-- Combined Example Section -->
-    <h3>All Examples</h3>
+    <h3>Example: Controlling Texts & CSS Text Effect Properties</h3>
     <div class="example">
+      <!-- Original controlling text examples -->
       <p style="color: darkblue;">
         This text color is set using <code>color</code> property.
-        <span class="dot d6"></span>
+        <span class="dot d1"></span>
       </p>
 
       <p style="text-align: center;">
@@ -1614,20 +1711,20 @@ p.shadow { text-shadow: 2px 2px 2px gray; }</span>
 
       <p style="text-decoration: underline dotted red 3px;">
         Underlined dotted red text (thickness 3px)
-        <span class="dot d4"></span>
+        <span class="dot d3"></span>
       </p>
 
       <p style="text-transform: uppercase;">
         This text is uppercase.
-        <span class="dot d3"></span>
+        <span class="dot d4"></span>
       </p>
       <p style="text-transform: lowercase;">
         THIS TEXT IS LOWERCASE.
-        <span class="dot d3"></span>
+        <span class="dot d4"></span>
       </p>
       <p style="text-transform: capitalize;">
         this text is capitalized.
-        <span class="dot d3"></span>
+        <span class="dot d4"></span>
       </p>
 
       <p style="letter-spacing: 3px;">
@@ -1653,16 +1750,41 @@ p.shadow { text-shadow: 2px 2px 2px gray; }</span>
 
       <p style="text-shadow: 2px 2px 2px gray;">
         This text has a shadow using <code>text-shadow</code>.
+        <span class="dot d6"></span>
+      </p>
+
+      <!-- Text Effect Examples -->
+      <p style="text-justify: inter-word; text-align: justify;">
+        This text is justified using <code>text-justify</code>.
         <span class="dot d7"></span>
+      </p>
+
+      <p style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap; width: 150px; border: 1px solid #ccc;">
+        This text may overflow and show ellipsis using <code>text-overflow</code>.
+        <span class="dot d8"></span>
+      </p>
+
+      <p style="word-break: break-word; width: 150px; border: 1px solid #ccc;">
+        Thisisaverylongwordthatwillbreak using <code>word-break</code>.
+        <span class="dot d9"></span>
+      </p>
+
+      <p style="word-wrap: break-word; width: 150px; border: 1px solid #ccc;">
+        Thisisaverylongwordthatwillwrap using <code>word-wrap</code>.
+        <span class="dot d10"></span>
+      </p>
+
+      <p style="writing-mode: vertical-rl; border: 1px solid #ccc; padding: 5px;">
+        This text flows vertically using <code>writing-mode</code>.
+        <span class="dot temD11"></span>
       </p>
     </div>
 
     <!-- Combined Explanation Section -->
-    <h3>All Explanations</h3>
+    <h3>Explanations: Controlling Texts & CSS Text Effect Properties</h3>
     <div class="explanation">
-      <span class="C6">
-        <strong>color</strong>: Specifies the color of text.<br>
-      </span>
+      <!-- Original explanations -->
+      <span class="C1"><strong>color</strong>: Specifies the color of text.<br></span>
 
       <span class="C2">
         <strong>text-align</strong>: Specifies the horizontal alignment of text.<br>
@@ -1672,7 +1794,7 @@ p.shadow { text-shadow: 2px 2px 2px gray; }</span>
         <strong>vertical-align</strong>: Sets vertical alignment of inline or table-cell elements.<br>
       </span>
 
-      <span class="C4">
+      <span class="C3">
         <strong>text-decoration</strong>: Shorthand to set all decoration properties.<br>
         <strong>text-decoration-line</strong>: Type of decoration (underline, overline, line-through).<br>
         <strong>text-decoration-color</strong>: Color of the decoration.<br>
@@ -1680,9 +1802,7 @@ p.shadow { text-shadow: 2px 2px 2px gray; }</span>
         <strong>text-decoration-thickness</strong>: Thickness of the decoration line.<br>
       </span>
 
-      <span class="C3">
-        <strong>text-transform</strong>: Controls capitalization of text (uppercase, lowercase, capitalize).<br>
-      </span>
+      <span class="C4"><strong>text-transform</strong>: Controls capitalization of text (uppercase, lowercase, capitalize).<br></span>
 
       <span class="C5">
         <strong>letter-spacing</strong>: Space between characters.<br>
@@ -1692,10 +1812,16 @@ p.shadow { text-shadow: 2px 2px 2px gray; }</span>
         <strong>white-space</strong>: Controls handling of whitespace and wrapping.<br>
       </span>
 
-      <span class="C7">
-        <strong>text-shadow</strong>: Adds shadow effect to text.<br>
+      <span class="C6"><strong>text-shadow</strong>: Adds shadow effect to text.<br>
         Basic syntax: <code>horizontal-offset vertical-offset blur-radius color</code>.<br>
       </span>
+
+      <!-- Text Effect explanations -->
+      <span class="C7"><strong>text-justify</strong>: Specifies how justified text should be aligned and spaced.</span><br>
+      <span class="C8"><strong>text-overflow</strong>: Specifies how overflowed content that is not displayed should be signaled (ellipsis, clip, etc.).</span><br>
+      <span class="C9"><strong>word-break</strong>: Specifies line breaking rules for non-CJK scripts.</span><br>
+      <span class="C10"><strong>word-wrap</strong>: Allows long words to wrap onto the next line.</span><br>
+      <span class="temC11"><strong>writing-mode</strong>: Specifies whether lines of text are laid out horizontally or vertically.</span>
     </div>
 
   </div>
@@ -1704,7 +1830,7 @@ p.shadow { text-shadow: 2px 2px 2px gray; }</span>
 <template> <!-- CSS explanation height, width, Border, Margin, Padding  -->
   <div class="bubble">
 
-    <h3>Code Block: Border, Margin, Padding</h3>
+    <h3>CSS Code Block: Border, Margin, Padding</h3>
     <div class="code_block">
       <code>
         .box {<br>
@@ -1789,7 +1915,7 @@ p.shadow { text-shadow: 2px 2px 2px gray; }</span>
 <template> <!-- CSS Explanation Different background-xxxx Commands -->
   <div class="bubble">
 
-    <h3>CSS Background Properties</h3>
+    <h3>CSS Code: Background Properties</h3>
     <div class="code_block">
       <code>
         <strong>/* CSS code */</strong><br>
@@ -1883,7 +2009,7 @@ p.shadow { text-shadow: 2px 2px 2px gray; }</span>
   <div class="bubble">
 
     <!-- Section 1: Different Selectors -->
-    <h3>Code block Selectors</h3>
+    <h3>CSS Code: block Selectors</h3>
     <div class="code_block">
       <code>
         <strong>/* CSS code */</strong><br>
@@ -1950,7 +2076,7 @@ p.shadow { text-shadow: 2px 2px 2px gray; }</span>
 
 <template> <!-- CSS Explanation Basics Info. -->
   <div class="bubble">
-    <h3>Explanation Section</h3>
+    <h3>CSS Explanation Section</h3>
     <div class="explanation">
       <p>CSS works with (or styles) the following languages and frameworks:</p>
       <ul>
@@ -1977,7 +2103,7 @@ p.shadow { text-shadow: 2px 2px 2px gray; }</span>
 <template> <!-- CSS Explanation selector, declare, Properties, and value. -->
   <div class="bubble">
 
-    <h3>Explanation Section</h3>
+    <h3>CSS Explanation Section</h3>
     <div class="explanation">
       <pre>
 Selector      Declaration Block
@@ -2007,7 +2133,7 @@ Selector      Declaration Block
 
 
     <div class="example">
-      <h3>Interactive Controls: Border, Margin, Padding</h3>
+      <h3>CSS Interactive Controls: Border, Margin, Padding</h3>
 
       <!-- Controls Panel Margin, Padding, and Border Radius -->  
       <h4>Margin (px) space outside</h4>
