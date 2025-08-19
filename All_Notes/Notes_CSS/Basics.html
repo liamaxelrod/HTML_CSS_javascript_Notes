@@ -1,13 +1,1964 @@
 <!-- chatGPT Questions by liam Disregard if I forgot to remove it. 
 ------------------------------------------------
+      Basics 8
+CSS Explanation Basics Info.  
+CSS Explanation Selectors, Comments, Formats to Specify Color   
+CSS Layout: width, height, min/max  
+CSS Text Effect Properties 
+CSS Font  
+CSS Units  
+ 
+CSS Different background-xxxx Commands 
+CSS Gradient Examples with Linear, Conic, and Radial
 
+      Icons, Links 2
+CSS Icons
+CSS Links   
 
+      Layout 3
+CSS Layout: display: inline-block 
+CSS Best example of padding margins and radius 
+CSS height, width, Border, Margin, Padding 
 
+      Animation 2
+CSS Animations  
+CSS Transitions Full  
 
+      Categories 4 
+CSS Tables  
+CSS Lists 
+CSS Styling Input Fields  
+CSS Navigation Bar Template with Dropdown  
 
+      Properties 7
+CSS Pseudo-classes & Pseudo-elements  
+CSS Combinators  
+CSS Float & Clear Properties  
+CSS Overflow Property  
+CSS position Property  
+CSS Display & Visibility   
+CSS selector, declare, Properties, and value.
 
 26 Templates. 
+--------------------------------------------
+HTML Code: <div>
+HTML Code: Class
+HTML Code: ID
+HTML Code: Common Tags & Elements Part 1
+HTML Code: Common Tags & Elements Part 2
+HTML Code: Show Code Tags
+HTML Code: JavaScript with HTML
+HTML Code: Semantic Elements
+HTML Code: Images and Buttons (Not finished.)
+HTML Code: Image Maps
+HTML Code: Links
+HTML Code: Lists
+HTML Code: Layout Elements & CSS Techniques
+HTML Code: Inline Styles
+HTML Code: Styled Links
+HTML Code: Background Image Style
+HTML Code: Special Characters
+HTML Code: Anchor Link Same Page  (Not finished.)
+HTML Code: Anchor Link Other Page (Not finished.)
+HTML Code: Browser Title
+HTML Code: tooltip Effects
+HTML Code: Favicon
+HTML Code: Iframe
+HTML Code: Images
+HTML Code: Table
+HTML Code: Web APIs Overview
+HTML Code: Responsive Web Design
+HTML Code: Form Attributes
+HTML Code: Forms & Input Types
+HTML Code: Form Elements
+
+30 Templates. 
+
 -->
+ 
+
+<!-- ----------------------------------  -->
+<template> <!-- HTML Code: <div> -->
+  <div class="bubble">
+
+    <h3>HTML Code: <code>&lt;div&gt;</code> Basics & Uses</h3>
+    <p>
+      The <code>&lt;div&gt;</code> element is a block-level container used to group HTML content.
+      Below are several layout techniques using <code>&lt;div&gt;</code>.
+    </p>
+
+    <!-- === CODE BLOCKS === -->
+    <div class="code_block" style="max-height: 300px; overflow: auto;">
+      <h4>1. Basic div</h4>
+      <code>&lt;div&gt;A block container&lt;/div&gt;</code>
+
+      <h4>2. Centered div</h4>
+      <code>&lt;div style="width:200px;margin:auto;background:#f8d7da;"&gt;Centered&lt;/div&gt;</code>
+
+      <h4>3. Side-by-Side with float</h4>
+      <code>
+        &lt;div style="float:left;width:45%;background:#d1ecf1;"&gt;Left&lt;/div&gt;<br>
+        &lt;div style="float:right;width:45%;background:#d4edda;"&gt;Right&lt;/div&gt;
+      </code>
+
+      <h4>4. Side-by-Side with inline-block</h4>
+      <code>
+        &lt;div style="display:inline-block;width:45%;background:#f8d7da;"&gt;A&lt;/div&gt;<br>
+        &lt;div style="display:inline-block;width:45%;background:#d1ecf1;"&gt;B&lt;/div&gt;
+      </code>
+
+      <h4>5. Side-by-Side with flex</h4>
+      <code>
+        &lt;div style="display:flex;"&gt;<br>
+        &nbsp;&nbsp;&lt;div style="flex:1;background:#d4edda;"&gt;1&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;div style="flex:1;background:#f8d7da;"&gt;2&lt;/div&gt;<br>
+        &lt;/div&gt;
+      </code>
+
+      <h4>6. Side-by-Side with grid</h4>
+      <code>
+        &lt;div style="display:grid;grid-template-columns:1fr 1fr;"&gt;<br>
+        &nbsp;&nbsp;&lt;div style="background:#d1ecf1;"&gt;Left&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;div style="background:#d4edda;"&gt;Right&lt;/div&gt;<br>
+        &lt;/div&gt;
+      </code>
+    </div>
+
+    <!-- === EXAMPLE BLOCK === -->
+    <h3>Example: <code>&lt;div&gt;</code> Layouts</h3>
+    <div class="example">
+      <h4>1. Basic div</h4>
+      <div style="background:#e3e3e3;padding:5px;"><samp class="dot d1"></samp> A block container</div>
+
+      <h4>2. Centered div</h4>
+      <div style="width:200px;margin:auto;background:#f8d7da;padding:5px;"><samp class="dot d2"></samp> Centered</div>
+
+      <h4>3. Side-by-Side with float</h4>
+      <div style="overflow:hidden;">
+        <div style="float:left;width:45%;background:#d1ecf1;padding:5px;"><samp class="dot d3"></samp> Left</div>
+        <div style="float:right;width:45%;background:#d4edda;padding:5px;"><samp class="dot d4"></samp> Right</div>
+      </div>
+
+      <h4>4. Side-by-Side with inline-block</h4>
+      <div>
+        <div style="display:inline-block;width:45%;background:#f8d7da;padding:5px;"><samp class="dot d5"></samp> A</div>
+        <div style="display:inline-block;width:45%;background:#d1ecf1;padding:5px;"><samp class="dot d6"></samp> B</div>
+      </div>
+
+      <h4>5. Side-by-Side with flex</h4>
+      <div style="display:flex;">
+        <div style="flex:1;background:#d4edda;padding:5px;"><samp class="dot d7"></samp> 1</div>
+        <div style="flex:1;background:#f8d7da;padding:5px;"><samp class="dot d8"></samp> 2</div>
+      </div>
+
+      <h4>6. Side-by-Side with grid</h4>
+      <div style="display:grid;grid-template-columns:1fr 1fr;">
+        <div style="background:#d1ecf1;padding:5px;"><samp class="dot d9"></samp> Left</div>
+        <div style="background:#d4edda;padding:5px;"><samp class="dot d10"></samp> Right</div>
+      </div>
+    </div>
+
+    <!-- === EXPLANATION BLOCK === -->
+    <h3>Explanation: <code>&lt;div&gt;</code> Layout Techniques</h3>
+    <div class="explanation">
+      <ol>
+        <li><samp class="dot d1"></samp> Basic <code>&lt;div&gt;</code> is a block container.</li>
+        <li><samp class="dot d2"></samp> Centered div uses <code>margin:auto</code> with a fixed width.</li>
+        <li><samp class="dot d3"></samp> Float allows side-by-side alignment but requires clearing floats.</li>
+        <li><samp class="dot d5"></samp> Inline-block aligns divs side-by-side without float quirks.</li>
+        <li><samp class="dot d7"></samp> Flex is modern, aligns and spaces divs easily.</li>
+        <li><samp class="dot d9"></samp> Grid provides precise control for multi-column layouts.</li>
+      </ol>
+
+      <p>
+        ✅ Use <code>&lt;div&gt;</code> for grouping and layout.<br>
+        ✅ Flex and Grid are recommended for modern responsive designs.<br>
+        ✅ Float and inline-block are legacy/alternative techniques.
+      </p>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- HTML Code: Class -->
+  <div class="bubble">
+
+    <h3>HTML Code: <code>class</code> Attribute</h3>
+    <p>
+      The <code>class</code> attribute lets you group elements for CSS styling and JavaScript interaction.
+      Below is a single code example that illustrates many features of the <code>class</code> attribute.
+    </p>
+
+    <!-- === CODE BLOCK === -->
+    <div class="code_block" style="max-height: 300px; overflow: auto;">
+      <code>
+        &lt;style&gt;<br>
+        <samp class="C1">&nbsp;.city { background-color: #f8d7da; padding: 5px; }</samp><br>
+        <samp class="C2">&nbsp;.main { font-weight: bold; font-size: 1.2em; }</samp><br>
+        <samp class="C3">&nbsp;.note { color: blue; font-style: italic; }</samp><br>
+        <samp class="C4">&nbsp;.highlight { background-color: #d4edda; padding: 5px; }</samp><br>
+        &lt;/style&gt;<br><br>
+
+        &lt;div <samp class="C5">class="city"</samp>&gt;London&lt;/div&gt;<br>
+        &lt;div <samp class="C6">class="city main"</samp>&gt;Paris&lt;/div&gt;<br>
+        &lt;p <samp class="C7">class="note"</samp>&gt;This is a note&lt;/p&gt;<br>
+        &lt;h2 <samp class="C8">class="highlight"</samp>&gt;Shared highlight&lt;/h2&gt;<br>
+        &lt;p <samp class="C9">class="highlight note"</samp>&gt;Styled with two classes&lt;/p&gt;
+      </code>
+    </div>
+
+    <!-- === EXAMPLE BLOCK === -->
+    <h3>Example: <code>class</code> Attribute</h3>
+    <div class="example">
+      <style>
+        .city { background-color: #f8d7da; padding: 5px; }
+        .main { font-weight: bold; font-size: 1.2em; }
+        .note { color: blue; font-style: italic; }
+        .highlight { background-color: #d4edda; padding: 5px; }
+      </style>
+
+      <p><div class="city"> <samp class="dot d1"></samp> London</div></p>
+      <p><div class="city main"> <samp class="dot d2"></samp> Paris</div></p>
+      <p><p class="note"><samp class="dot d3"></samp> This is a note</p></p>
+      <p></samp><h2 class="highlight"> <samp class="dot d4"></samp> Shared highlight</h2></p>
+      <p><p class="highlight note"><samp class="dot d5"></samp> Styled with two classes</p></p>
+    </div>
+
+    <!-- === EXPLANATIONS === -->
+    <h3>Explanation: <code>class</code> Attribute</h3>
+    <div class="explanation">
+      <ol>
+        <li> <samp class="C5">class="city"</samp> styles all city elements with a pink background.</li>
+        <li> <samp class="C6">class="city main"</samp> applies both city background and bold text.</li>
+        <li> <samp class="C7">class="note"</samp> makes text italic and blue — works on any tag.</li>
+        <li> <samp class="C8">class="highlight"</samp> is shared between <code>&lt;h2&gt;</code> and <code>&lt;p&gt;</code>.</li>
+        <li> Elements with multiple classes (like <samp class="C9">highlight note</samp>) combine all styles.</li>
+      </ol>
+
+      <p>
+        ✅ Class names are case-sensitive.<br>
+        ✅ Elements can have multiple classes.<br>
+        ✅ Classes are reusable across elements.<br>
+        ✅ Access in JavaScript via <code>getElementsByClassName()</code>.
+      </p>
+
+      <h4>Class vs ID</h4>
+      <ul>
+        <li></samp><strong>ID</strong> is unique — one element per ID. Target or style a single element.</li>
+        <li><strong>Class</strong> can be reused — many elements can share the same class for styling or behavior.</li>
+      </ul>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- HTML Code: ID -->
+  <div class="bubble">
+
+    <h3>HTML Code: <code>id</code> Attribute</h3>
+    <div class="code_block">
+      <code>
+        &lt;style&gt;<br>
+        <samp class="C1">&nbsp;#myHeader { color: green; text-align: center; }</samp><br>
+        <samp class="C2">&nbsp;#chapter4 { background-color: #f8d7da; padding: 5px; }</samp><br>
+        &lt;/style&gt;<br><br>
+
+        &lt;h1 <samp class="C3">id="myHeader"</samp>&gt;Welcome&lt;/h1&gt;<br>
+        &lt;p&gt;&lt;a <samp class="C4"> href="#chapter4"</samp>&gt;Jump to Chapter 4&lt;/a&gt;&lt;/p&gt;<br><br>
+
+        &lt;p&gt;...Long content here...&lt;/p&gt;<br><br>
+
+        &lt;h2 <samp class="C5">id="chapter4"</samp>&gt;Chapter 4&lt;/h2&gt;<br>
+        &lt;p&gt;This is the fourth chapter.&lt;/p&gt;
+      </code>
+    </div>
+
+    <!-- === EXAMPLE BLOCK === -->
+    <h3>Example: <code>id</code> Attribute</h3>
+    <div class="example">
+      <style>
+        #chapter4 { background-color: #f8d7da; padding: 5px; }
+      </style>
+
+      <p>
+        <samp class="dot d1"></samp>
+        <a href="#chapter4"><samp>Jump to Chapter 4</samp></a>
+      </p>
+      <h2 id="chapter4">
+        <samp class="dot d2"></samp>
+        <samp>Chapter 4</samp>
+      </h2>
+    </div>
+
+    <!-- === EXPLANATION BLOCK === -->
+    <h3>Explanation: <code>id</code> Attribute</h3>
+    <div class="explanation">
+      <ol>
+        <li><samp class="C3">id="myHeader"</samp> → Targeted with <samp class="C1">#myHeader</samp> in CSS to apply styles.</li>
+        <li><samp class="C5">id="chapter4"</samp> → Acts as a bookmark/anchor for jumping to a section in the page.</li>
+        <li><samp class="C4">&lt;a href="#chapter4"&gt;</samp> → Scrolls the page to the element with that ID.</li>
+        <li><samp class="C3">IDs</samp> can also be accessed in JavaScript using <samp class="C1">getElementById()</samp>.</li>
+      </ol>
+      <p>
+        <samp class="dot d3"></samp> 
+        <samp class="C2">ID</samp> is unique — one element per ID, ideal for targeting a single element.
+      </p>
+      <p>
+        <samp class="dot d4"></samp>
+        <samp class="C3">Class</samp> can be reused — many elements can share the same class for shared styling or behavior.
+      </p>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- HTML Code: Common Tags & Elements Part 1 -->
+  <div class="bubble">
+
+    <h3>HTML Code: Text effect (Part 1)</h3>
+
+    <!-- Code Block -->
+    <div class="code_block" style="max-height: 300px; overflow: auto;">
+      <code>
+        <samp class="C1">&lt;h3&gt;Heading Text&lt;/h3&gt;</samp><br>
+        <samp class="C2">&lt;p&gt;Paragraph text&lt;/p&gt;</samp><br>
+        <samp class="C3">Line 1&lt;br&gt;Line 2</samp><br>
+        <samp class="C4">&lt;p&gt;This is a &lt;cite&gt;Title&lt;/cite&gt; in a paragraph.&lt;/p&gt;</samp><br>
+        <samp class="C5">&lt;p&gt;Quotes: &lt;q&gt;inline quote&lt;/q&gt;&lt;/p&gt;</samp><br>
+        <samp class="C6">&lt;p&gt;Bold: &lt;b&gt;bold text&lt;/b&gt;&lt;/p&gt;</samp><br>
+        <samp class="C7">&lt;p&gt;Important: &lt;strong&gt;strong text&lt;/strong&gt;&lt;/p&gt;</samp><br>
+        <samp class="C8">&lt;p&gt;Italic: &lt;i&gt;italic text&lt;/i&gt;&lt;/p&gt;</samp><br>
+        <samp class="C9">&lt;p&gt;Emphasized: &lt;em&gt;emphasized text&lt;/em&gt;&lt;/p&gt;</samp><br>
+        <samp class="C10">&lt;p&gt;Small text: &lt;small&gt;smaller text&lt;/small&gt;&lt;/p&gt;</samp><br>
+      </code>
+    </div>
+
+    <!-- Example Section -->
+    <h3>Example: Text effect (Part 1)</h3>
+    <div class="example">
+      <h3><samp class="dot d1"></samp> Heading Text</h3>
+      <p><samp class="dot d2"></samp> Paragraph text</p>
+      <p><samp class="dot d3"></samp> Line 1<br>Line 2</p>
+      <p><samp class="dot d4"></samp> This is a <cite>Title</cite> in a paragraph.</p>
+      <p><samp class="dot d5"></samp> Quotes: <q>inline quote</q></p>
+      <p><samp class="dot d6"></samp> Bold: <b>bold text</b></p>
+      <p><samp class="dot d7"></samp> Important: <strong>strong text</strong></p>
+      <p><samp class="dot d8"></samp> Italic: <i>italic text</i></p>
+      <p><samp class="dot d9"></samp> Emphasized: <em>emphasized text</em></p>
+      <p><samp class="dot d10"></samp> Small text: <small>smaller text</small></p>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- HTML Code: Common Tags & Elements Part 2 -->
+  <div class="bubble">
+
+    <h3>HTML Code: Text effect (Part 2)</h3>
+
+    <!-- Code Block -->
+    <div class="code_block" style="max-height: 300px; overflow: auto;">
+      <code>
+        <samp class="C1">&lt;p&gt;Highlighted: &lt;mark&gt;highlighted text&lt;/mark&gt;&lt;/p&gt;</samp><br>
+        <samp class="C2">&lt;p&gt;Deleted: &lt;del&gt;deleted text&lt;/del&gt; &amp; Inserted: &lt;ins&gt;inserted text&lt;/ins&gt;&lt;/p&gt;</samp><br>
+        <samp class="C3">&lt;p&gt;Subscript: &lt;sub&gt;sub&lt;/sub&gt;, Superscript: &lt;sup&gt;sup&lt;/sup&gt;&lt;/p&gt;</samp><br>
+        <samp class="C4">&lt;p&gt;Code: &lt;code&gt;inline code&lt;/code&gt;&lt;/p&gt;</samp><br>
+        <samp class="C5">&lt;samp&gt;Sample output: Hello, World!&lt;/samp&gt;</samp><br>
+        <samp class="C6">&lt;div&gt;This is a block-level &lt;div&gt; element example.&lt;/div&gt;</samp><br>
+        <samp class="C7">&lt;pre&gt;Preformatted text preserves     spaces and line breaks.&lt;/pre&gt;</samp><br>
+        <samp class="C8">&lt;p&gt;Right-to-left: &lt;span&gt;normal &lt;bdo dir="rtl"&gt;reversed&lt;/bdo&gt;&lt;/span&gt;&lt;/p&gt;</samp>
+      </code>
+    </div>
+
+    <!-- Example Section -->
+     <h3>example: Text effect (Part 2)</h3>
+    <div class="example">
+      <h3>Example: Tags in Action (Part 2)</h3>
+      <p><samp class="dot d1"></samp> Highlighted: <mark>highlighted text</mark></p>
+      <p><samp class="dot d2"></samp> Deleted: <del>deleted text</del> & Inserted: <ins>inserted text</ins></p>
+      <p><samp class="dot d3"></samp> Subscript: <sub>sub</sub>, Superscript: <sup>sup</sup></p>
+      <p><samp class="dot d4"></samp> Code: <code>inline code</code></p>
+      <p><samp class="dot d5"></samp> Sample output: Hello, World!</p>
+      <div style="background:#f0f0f0; padding:5px; margin:10px 0;"><samp class="dot d6"></samp> This is a block-level &lt;div&gt; element example.</div>
+      <pre><samp class="dot d7"></samp> Preformatted text preserves     spaces and line breaks.</pre>
+      <p><samp class="dot d8"></samp> Right-to-left: <span>normal <bdo dir="rtl">reversed</bdo></span></p>
+    </div>
+
+    <!-- Block vs Inline Example -->
+    <div class="explanation">
+      <h4>Block vs Inline Elements</h4>
+      <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
+        <p>[Block Element 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]</p>
+        <p>New line starts here</p>
+        <p>[Block Element 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]</p>
+        <p>New line starts here again</p>
+      </div>
+      <p>[Inline1] [Inline2] [Inline3]</p>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- HTML Code: Show Code Tags -->
+  <div class="bubble">
+
+    <h3>HTML Code: &lt;/kbd&gt;, &lt;var&gt;, &lt;samp&gt;, &lt;code&gt;, and &lt;pre&gt; Tags</h3>
+
+    <!-- Code Block -->
+    <div class="code_block">
+      <code>
+        &lt;p&gt;Press <samp class="C1">&lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd class="C1"&gt;C&lt;/kbd&gt;</samp> to copy text.&lt;/p&gt;<br><br>
+
+        &lt;p&gt;The variable<samp class="C2">&lt;var&gt;x&lt;/var&gt;</samp> is used to store the result.&lt;/p&gt;<br><br>
+
+        &lt;p&gt;Program output: <samp class="C3">&lt;samp&gt;Login successful&lt;/samp&gt;</samp>&lt;/p&gt;<br><br>
+
+        &lt;p&gt;Use the <samp class="C4">&lt;code&gt;document.getElementById()&lt;/code&gt;</samp> method to select elements.&lt;/p&gt;<br><br>
+
+        <samp class="C5">&lt;pre&gt;</samp><br>
+        &nbsp;&nbsp;&lt;code&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;function greet(name) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "Hello, " + name;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&lt;/code&gt;<br>
+        <samp class="C5">&lt;/pre&gt;</samp>
+      </code>
+    </div>
+
+    <!-- Explanation -->
+    <h3>explanation: Tags</h3>
+    <div class="explanation">
+      <p><strong>Explanation:</strong></p>
+      <ul>
+        <li><samp class="C1">&lt;kbd&gt;</samp> → Keyboard input. Example: <kbd>Ctrl</kbd> + <kbd>C</kbd></li>
+        <li><samp class="C2">&lt;var&gt;</samp> → Variables in math/programming. Example: <var>x</var></li>
+        <li><samp class="C3">&lt;samp&gt;</samp> → Sample output. Example: <samp>Login successful</samp></li>
+        <li><samp class="C4">&lt;code&gt;</samp> → Inline code snippets. Example: <code>document.getElementById()</code></li>
+        <li><samp class="C5">&lt;pre&gt;</samp> → Preserves line breaks and spacing. Use with <code>&lt;code&gt;</code> for block code.</li>
+      </ul>
+
+      <p>Use <code>&lt;pre&gt;&lt;code&gt;...&lt;/code&gt;&lt;/pre&gt;</code> to preserve indentation and structure when displaying blocks of code, especially for tutorials and teaching.</p>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- HTML Code: JavaScript with HTML -->
+  <div class="bubble">
+
+    <h3>HTML Code: JavaScript with HTML</h3>
+    <div class="code_block">
+      <code>
+        &lt;button <samp class="C1">onclick</samp>="alert('Hello, World!');"&gt;Click Me&lt;/button&gt;
+      </code>
+    </div>
+
+    <h3>Example: Inline JavaScript</h3>
+    <div class="example">
+      <button onclick="alert('Hello, World!');">Click Me</button>
+      <p>
+        <samp class="C1">onclick</samp> → Specifies JavaScript to run when the button is clicked.<br>
+        <samp class="C2">alert('Hello, World!');</samp> → The JavaScript code executed on click.
+      </p>
+    </div>
+
+    <h3>Explanation: &lt;script&gt; Tag</h4>
+    <div class="explanation">
+    <p>
+      The <samp class="C3">&lt;script&gt;</samp> tag is used to include JavaScript in your webpage.<br>
+      JavaScript can be added inline or externally:
+    </p>
+    </div>
+
+    <h3>HTML Code: &lt;noscript&gt; Tag</h3>
+    <div class="code_block">
+      <code>
+        &lt;noscript&gt;<br>
+        &nbsp;&nbsp;JavaScript is required to view this page properly. Please enable JavaScript in your browser.<br>
+        &lt;/noscript&gt;
+      </code>
+    </div>
+
+    <h3>Explanation: &lt;noscript&gt; Tag</h3>
+    <div class="explanation">
+      <p>
+        The <samp class="C4">&lt;noscript&gt;</samp> tag provides fallback content for users whose browsers do not support JavaScript or have it disabled.
+      </p>
+    </div>
+
+    <h3>HTML Code: Inline JavaScript:</h3>
+    <div class="code_block">
+      <code>
+        &lt;script&gt;<br>
+        &nbsp;&nbsp;<samp class="C2">alert('Hello from inline JavaScript!');</samp><br>
+        &lt;/script&gt;
+      </code>
+    </div>
+
+    <h3>HTML Code: External JavaScript:</h5>
+    <div class="code_block">
+      <code>
+        &lt;!-- In <samp class="C5">script.js</samp> file --&gt;<br>
+        <samp class="C2">alert('Hello from external JavaScript!');</samp><br><br>
+        &lt;!-- In your HTML file --&gt;<br>
+        &lt;script <samp class="C6">src</samp>="script.js"&gt;&lt;/script&gt;
+      </code>
+    </div>
+
+    <h3>explanation: Summary</h4>
+    <div class="explanation">
+      <ul>
+        <li>JavaScript can be inline (<samp class="C2">onclick</samp> or inside &lt;script&gt;) or external.</li>
+        <li>External files (<samp class="C5">script.js</samp>) keep code organized and reusable.</li>
+        <li>The <samp class="C4">&lt;noscript&gt;</samp> tag provides fallback content if JavaScript is disabled.</li>
+        <li>Always include meaningful fallback content to improve user experience.</li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<template> <!-- HTML Code: Semantic Elements -->
+  <div class="bubble">
+    <h3>HTML Code: Semantic Elements</h3>
+
+    <div class="code_block">
+      <pre>
+<code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Semantic Example&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+    &lt;<samp class="C1">header</samp>&gt;
+      &lt;<samp class="C2">h1</samp>&gt;My Blog&lt;/h1&gt;
+      &lt;<samp class="C3">nav</samp>&gt;
+        Home | About
+      &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;<samp class="C4">main</samp>&gt;
+      &lt;<samp class="C5">section</samp>&gt;
+        &lt;<samp class="C6">article</samp>&gt;
+          &lt;h2&gt;Post Title&lt;/h2&gt;
+          &lt;p&gt;This is a blog post.&lt;/p&gt;
+        &lt;/article&gt;
+      &lt;/section&gt;
+
+      &lt;<samp class="C7">aside</samp>&gt;
+        &lt;p&gt;Sidebar content, like links or ads.&lt;/p&gt;
+      &lt;/aside&gt;
+    &lt;/main&gt;
+
+    <samp class="C8">&lt;footer&gt;</samp>
+      &lt;p&gt;&copy; 2025 My Blog&lt;/p&gt;</samp>
+    &lt;/footer&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</code>
+      </pre>
+    </div>
+
+    <h3>Example: Semantic Layout</h3>
+    <div class="example" style="max-height: 300px; overflow: auto; border: 1px solid #ccc; padding: 10px;">
+      <pre>
+    +------------------------------------------------+
+    | My Blog                                        | ← <samp class="C1">&lt;header&gt;</samp> (C1)
+    | Home | About                                   | ← <samp class="C3">&lt;nav&gt;</samp> (C3)
+    +------------------------------------------------+
+    | Post Title                                     | ← <samp class="C6">&lt;article&gt;</samp> (C6) inside <samp class="C5">&lt;section&gt;</samp> (C5)
+    | This is a blog post.                           |
+    +----------------+         +---------------------+
+    | Sidebar        |         | Main Content Area   | ← <samp class="C7">&lt;aside&gt;</samp> (C7) ← <samp class="C4">&lt;main&gt;</samp> (C4) 
+    | - links        |         |                     |
+    | - ads          |         |                     |
+    +----------------+         +---------------------+
+    | © 2025 My Blog                                 | ← <samp class="C8">&lt;footer&gt;</samp>
+    +------------------------------------------------+
+      </pre>
+    </div>
+
+    <h3>Explanation: Semantic Elements</h3>
+    <div class="explanation">
+      <p>
+        <samp class="C1">&lt;header&gt;</samp> → Top section of a page or section, typically contains titles and navigation.<br>
+        <samp class="C2">&lt;h1&gt;</samp> → Main heading of the page or section.<br>
+        <samp class="C3">&lt;nav&gt;</samp> → Navigation menu for links.<br>
+        <samp class="C4">&lt;main&gt;</samp> → Primary content area of the page.<br>
+        <samp class="C5">&lt;section&gt;</samp> → Thematic grouping of content.<br>
+        <samp class="C6">&lt;article&gt;</samp> → Independent, reusable block of content (e.g., blog post).<br>
+        <samp class="C7">&lt;aside&gt;</samp> → Sidebar or related content (links, ads).<br>
+        <samp class="C8">&lt;footer&gt;</samp> → Bottom area for copyright or extra links.
+      </p>
+    </div>
+  </div>
+</template>
+
+<template> <!-- HTML Code: Images and Buttons (Not finished.)-->
+  <div class="bubble">
+    <h3>HTML Code: Images and Buttons with Tooltips</h3>
+
+    <div class="code_block">
+      <code>
+        &lt;a <samp class="C1">href</samp>="../Home.html"&gt; <br>
+        &nbsp;&nbsp;&lt;img <samp class="C2">src</samp>="/Images/W3Schools_logo.png" 
+        <samp class="C3">alt</samp>="W3Schools_logo Image" 
+        <samp class="C4">style</samp>="width:42px;height:42px;" 
+        <samp class="C5">title</samp>="tooltip example"&gt; <br>
+        &lt;/a&gt; <br><br>
+        &lt;button <samp class="C6">onclick</samp>="document.location='/Lessons/name1.html'" 
+        <samp class="C5">title</samp>="tooltip example"&gt;Go to name1&lt;/button&gt;
+      </code>
+    </div>
+
+    <h3>Example: Images and Buttons</h3>
+    <div class="example">
+      <p>Hover over the image or button to see the tooltip.</p>
+      <a href="https://www.w3schools.com/" target="_blank">
+        <img src="/Images/W3Schools_logo.png" alt="W3Schools_logo Image" style="width:42px;height:42px;" title="Tooltip example">
+      </a><br>
+      <button onclick="document.location='/Lessons/name1.html'" title="Tooltip example">Go to name1</button>
+    </div>
+
+    <h3>Explanation: Images and Buttons</h3>
+    <div class="explanation">
+      <p>
+        <samp class="C1">href</samp> → URL to navigate to.<br>
+        <samp class="C2">src</samp> → Path to the image inside the link.<br>
+        <samp class="C3">alt</samp> → Alternative text if image cannot load.<br>
+        <samp class="C4">style</samp> → Inline CSS for element size or styling.<br>
+        <samp class="C5">title</samp> → Tooltip text on hover.<br>
+        <samp class="C6">onclick</samp> → JavaScript executed when clicked (navigation in this example).<br><br>
+        Use this structure to make images or buttons clickable with tooltips.
+      </p>
+    </div>
+  </div>
+</template>
+
+<template> <!-- HTML Code: Image Maps -->
+  <div class="bubble">
+    <h3>HTML Code: Image Maps</h3>
+
+    <div class="code_block">
+      <code>
+        &lt;img <samp class="C2">src</samp>="/Images/workplace.jpg" 
+        <samp class="C3">alt</samp>="Workplace" 
+        <samp class="C7">usemap</samp>="#workmap"&gt;<br><br>
+
+        &lt;map <samp class="C7">name</samp>="workmap"&gt;<br>
+        &nbsp;&nbsp;&lt;area shape="rect" <samp class="C1">coords</samp>="34,44,270,350" alt="Computer" href="javascript:void(0);" <samp class="C6">onclick</samp>="alert('You clicked on the Computer');"&gt;<br>
+        &nbsp;&nbsp;&lt;area shape="rect" <samp class="C1">coords</samp>="290,172,333,250" alt="Phone" href="javascript:void(0);" <samp class="C6">onclick</samp>="alert('You clicked on the Phone');"&gt;<br>
+        &nbsp;&nbsp;&lt;area shape="circle" <samp class="C1">coords</samp>="337,300,44" alt="Coffee" href="javascript:void(0);" <samp class="C6">onclick</samp>="alert('You clicked on the Coffee');"&gt;<br>
+        &lt;/map&gt;
+      </code>
+    </div>
+
+    <h3>Example: Image Map</h3>
+    <div class="example">
+      <p>Click different areas on the image to trigger different actions.</p>
+      <img src="/Images/workplace.jpg" alt="Workplace" usemap="#workmap">
+      <map name="workmap">
+        <area shape="rect" coords="34,44,270,350" alt="Computer" href="javascript:void(0);" onclick="alert('You clicked on the Computer');">
+        <area shape="rect" coords="290,172,333,250" alt="Phone" href="javascript:void(0);" onclick="alert('You clicked on the Phone');">
+        <area shape="circle" coords="337,300,44" alt="Coffee" href="javascript:void(0);" onclick="alert('You clicked on the Coffee');">
+      </map>
+    </div>
+
+    <h3>Explanation: Image Maps</h3>
+    <div class="explanation">
+      <p>
+        <samp class="C7">usemap</samp> → Links the image to a &lt;map&gt; element by name.<br>
+        <samp class="C7">name</samp> → Name of the &lt;map&gt; element.<br>
+        <samp class="C1">coords</samp> → Coordinates defining the clickable area.<br>
+        <samp class="C6">onclick</samp> → JavaScript action when area is clicked.<br>
+        <strong>Shapes:</strong> rect = rectangle, circle = circle, poly = polygon, default = entire image.<br><br>
+        This allows one image to have multiple clickable regions with separate actions.
+      </p>
+    </div>
+  </div>
+</template>
+
+<template> <!-- HTML Code: Links -->
+  <div class="bubble">
+    <h3>HTML Code: Links</h3>
+    <div class="code_block">
+      <code>
+        &lt;<samp class="C1">a</samp> <samp class="C2">href</samp>="https://www.w3schools.com/html/html_links.asp" <samp class="C3">target</samp>="_blank"&gt;Visit W3Schools&lt;/a&gt;
+      </code>
+    </div>
+
+    <h3>Example: Links</h3>
+    <div class="example">
+      <a href="https://www.w3schools.com/html/html_links.asp" target="_blank">Visit W3Schools</a>
+    </div>
+
+    <h3>Explanation: Links</h3>
+    <div class="explanation">
+      <p>
+        The <samp class="C1">&lt;a&gt;</samp> tag defines a hyperlink.<br>
+        <samp class="C2">href</samp> → Specifies the URL or file path for the link. Can be relative (e.g., "folder/file.html") or absolute (e.g., "https://www.example.com").<br>
+        <samp class="C3">target</samp> → Specifies where to open the linked document:<br>
+        &nbsp;&nbsp;<strong>_self</strong> → Same window/tab (default).<br>
+        &nbsp;&nbsp;<strong>_blank</strong> → New window/tab.<br>
+        &nbsp;&nbsp;<strong>_parent</strong> → Parent frame.<br>
+        &nbsp;&nbsp;<strong>_top</strong> → Full body of the window.<br><br>
+
+        By default, browser link states appear as follows:<br>
+        <samp class="C4">Unvisited link</samp> → blue, underlined.<br>
+        <samp class="C5">Visited link</samp> → purple, underlined.<br>
+        <samp class="C6">Active link</samp> → red, underlined.<br><br>
+
+        You can change these link colors and states using CSS pseudo-classes: <code>:link</code>, <code>:visited</code>, <code>:hover</code>, and <code>:active</code>.
+      </p>
+    </div>
+  </div>
+</template>
+
+<template> <!-- HTML Code: Lists -->
+  <div class="bubble">
+    <h3>HTML Code: Lists</h3>
+    <div class="code_block">
+      <code>
+        &lt;style&gt;<br>
+        &nbsp;&nbsp;<samp class="C1">ul, ol {</samp><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<samp class="C2">list-style-position: inside;</samp><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<samp class="C3">padding-left: 0;</samp><br>
+        &nbsp;&nbsp;}<br>
+        &lt;/style&gt;<br><br>
+
+        &lt;ul&gt;<br>
+        &nbsp;&nbsp;&lt;li&gt;Apples&lt;/li&gt;<br>
+        &nbsp;&nbsp;&lt;li&gt;Bananas&lt;/li&gt;<br>
+        &nbsp;&nbsp;&lt;li&gt;Cherries&lt;/li&gt;<br>
+        &lt;/ul&gt;<br><br>
+
+        &lt;ol&gt;<br>
+        &nbsp;&nbsp;&lt;li&gt;Wake up&lt;/li&gt;<br>
+        &nbsp;&nbsp;&lt;li&gt;Brush teeth&lt;/li&gt;<br>
+        &nbsp;&nbsp;&lt;li&gt;Eat breakfast&lt;/li&gt;<br>
+        &lt;/ol&gt;
+      </code>
+    </div>
+
+    <h3>Example: Lists</h3>
+    <div class="example">
+      <style>
+        ul, ol {
+          list-style-position: inside;
+          padding-left: 0;
+        }
+      </style>
+
+      <ul>
+        <li>Apples</li>
+        <li>Bananas</li>
+        <li>Cherries</li>
+      </ul>
+
+      <ol>
+        <li>Wake up</li>
+        <li>Brush teeth</li>
+        <li>Eat breakfast</li>
+      </ol>
+    </div>
+
+    <h3>Explanation: Lists</h3>
+    <div class="explanation">
+      <p>
+        <samp class="C1">&lt;ul&gt;, &lt;ol&gt;</samp> → Define unordered (bullets) and ordered (numbers) lists.<br>
+        <samp class="C2">list-style-position: inside;</samp> → Keeps bullets/numbers inside the list container to prevent overflow.<br>
+        <samp class="C3">padding-left: 0;</samp> → Removes default indent for clean alignment.<br><br>
+
+        <samp class="C1">&lt;li&gt;</samp> → Each list item inside <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code>.<br>
+        <samp class="C1">&lt;dl&gt;</samp> → Description list; pairs terms and descriptions.<br>
+        <samp class="C1">&lt;dt&gt;</samp> → Definition term inside a description list.<br>
+        <samp class="C1">&lt;dd&gt;</samp> → Definition description inside a description list.
+      </p>
+    </div>
+  </div>
+</template>
+
+ <template> <!-- HTML Code: Layout Elements & CSS Techniques -->
+  <div class="bubble">
+
+    <h3>HTML Code: Layout Elements & CSS Techniques</h3>
+    <!-- ======================== CODE BLOCK ======================== -->
+    <h3>Code Block</h3>
+    <div class="code_block" id="layout-code">
+      <code>
+        &lt;header&gt;Site Header&lt;/header&gt;<br>
+        &lt;nav&gt;Main Navigation&lt;/nav&gt;<br>
+        &lt;section&gt;<br>
+        &nbsp;&nbsp;&lt;article&gt;Main Content&lt;/article&gt;<br>
+        &nbsp;&nbsp;&lt;aside&gt;Sidebar&lt;/aside&gt;<br>
+        &lt;/section&gt;<br>
+        &lt;footer&gt;Site Footer&lt;/footer&gt;
+      </code>
+    </div>
+
+    <!-- ======================== EXAMPLE ======================== -->
+     <!-- Button controls to change the code and example -->
+    <br>
+    <div style="margin-bottom: 10px;">
+      <button onclick="showLayoutExample('semantic')">Semantic Layout</button>
+      <button onclick="showLayoutExample('float')">CSS Float</button>
+      <button onclick="showLayoutExample('flexbox')">CSS Flexbox</button>
+      <button onclick="showLayoutExample('grid')">CSS Grid</button>
+    </div>
+    <h3>Example</h3>
+    <div class="example" id="layout-example">
+      <header style="background:#ddd; padding:5px;">Site Header</header>
+      <nav style="background:#ccc; padding:5px;">Main Navigation</nav>
+      <section style="display:flex;">
+        <article style="flex:3; background:#eee; padding:5px;">Main Content</article>
+        <aside style="flex:1; background:#f9f9f9; padding:5px;">Sidebar</aside>
+      </section>
+      <footer style="background:#ddd; padding:5px;">Site Footer</footer>
+    </div>
+
+    <!-- ======================== EXPLANATION ======================== -->
+    <h3>Explanation</h3>
+    <div class="explanation">
+      <p>
+        This template demonstrates different HTML layout techniques and CSS approaches.<br>
+        Use the buttons above to switch between each layout example dynamically.<br><br>
+        <strong>Semantic Layout:</strong> Uses HTML5 elements like &lt;header&gt;, &lt;nav&gt;, &lt;section&gt;, &lt;article&gt;, &lt;aside&gt;, and &lt;footer&gt;. Best for accessibility and clean markup.<br>
+        <strong>CSS Float:</strong> Older method that floats elements left or right. Requires clearing floats for proper layout. Mostly replaced by Flexbox/Grid.<br>
+        <strong>Flexbox:</strong> One-dimensional layout. Great for arranging content horizontally or vertically with flexible sizes.<br>
+        <strong>CSS Grid:</strong> Two-dimensional layout. Allows full control over rows and columns. Ideal for complex page structures.<br><br>
+        Switching the code updates both the displayed HTML and the rendered example dynamically.
+      </p>
+    </div>
+
+    <!-- ======================== DYNAMIC JAVASCRIPT ======================== -->
+    <script>
+      function showLayoutExample(type) {
+        const codeEl = document.getElementById('layout-code');
+        const exampleEl = document.getElementById('layout-example');
+
+        if (type === 'semantic') {
+          codeEl.innerHTML = `<code>
+&lt;header&gt;Site Header&lt;/header&gt; <span style="color:gray;">&lt;!-- Top of the page --&gt;</span><br>
+&lt;nav&gt;Main Navigation&lt;/nav&gt; <span style="color:gray;">&lt;!-- Navigation links --&gt;</span><br>
+&lt;section&gt;<br>
+&nbsp;&nbsp;&lt;article&gt;Main Content&lt;/article&gt;<br>
+&nbsp;&nbsp;&lt;aside&gt;Sidebar&lt;/aside&gt;<br>
+&lt;/section&gt;<br>
+&lt;footer&gt;Site Footer&lt;/footer&gt;
+</code>`;
+          exampleEl.innerHTML = `
+<header style="background:#ddd; padding:5px;">Site Header</header>
+<nav style="background:#ccc; padding:5px;">Main Navigation</nav>
+<section style="display:flex;">
+  <article style="flex:3; background:#eee; padding:5px;">Main Content</article>
+  <aside style="flex:1; background:#f9f9f9; padding:5px;">Sidebar</aside>
+</section>
+<footer style="background:#ddd; padding:5px;">Site Footer</footer>`;
+        }
+
+        if (type === 'float') {
+          codeEl.innerHTML = `<code>
+&lt;div style="float:left; width:70%;"&gt;Main Content&lt;/div&gt;<br>
+&lt;div style="float:right; width:30%;"&gt;Sidebar&lt;/div&gt;<br>
+&lt;div style="clear:both;"&gt;&lt;/div&gt; <span style="color:gray;">&lt;!-- Clears the float --&gt;</span>
+</code>`;
+          exampleEl.innerHTML = `
+<div style="float:left; width:70%; background:#eee; padding:5px;">Main Content</div>
+<div style="float:right; width:30%; background:#f9f9f9; padding:5px;">Sidebar</div>
+<div style="clear:both;"></div>`;
+        }
+
+        if (type === 'flexbox') {
+          codeEl.innerHTML = `<code>
+&lt;div style="display:flex;"&gt;<br>
+&nbsp;&nbsp;&lt;div style="flex:3;"&gt;Main Content&lt;/div&gt;<br>
+&nbsp;&nbsp;&lt;div style="flex:1;"&gt;Sidebar&lt;/div&gt;<br>
+&lt;/div&gt;
+</code>`;
+          exampleEl.innerHTML = `
+<div style="display:flex;">
+  <div style="flex:3; background:#eee; padding:5px;">Main Content</div>
+  <div style="flex:1; background:#f9f9f9; padding:5px;">Sidebar</div>
+</div>`;
+        }
+
+        if (type === 'grid') {
+          codeEl.innerHTML = `<code>
+&lt;div style="display:grid; grid-template-columns: 3fr 1fr;"&gt;<br>
+&nbsp;&nbsp;&lt;div&gt;Main Content&lt;/div&gt;<br>
+&nbsp;&nbsp;&lt;div&gt;Sidebar&lt;/div&gt;<br>
+&lt;/div&gt;
+</code>`;
+          exampleEl.innerHTML = `
+<div style="display:grid; grid-template-columns: 3fr 1fr;">
+  <div style="background:#eee; padding:5px;">Main Content</div>
+  <div style="background:#f9f9f9; padding:5px;">Sidebar</div>
+</div>`;
+        }
+      }
+    </script>
+
+  </div>
+</template>
+
+
+
+
+
+
+
+
+
+<!-- 0000000000000000000000 Styles 00000000000000000000 -->
+
+<template> <!-- HTML Code: Inline Styles -->
+  <div class="bubble">
+    <h3>HTML Code: Inline Styles</h3>
+    <div class="code_block">
+      <code>
+        &lt;p&gt; no styles &lt;span <samp class="C1">style="background-color: yellow;"</samp>&gt; styles &lt;/span&gt;&lt;/p&gt; <br>
+        &lt;p&gt; no styles &lt;span <samp class="C2">style="border: 2px solid blue;"</samp>&gt; styles &lt;/span&gt;&lt;/p&gt; <br>
+        &lt;p&gt; no styles &lt;span <samp class="C3">style="color: red;"</samp>&gt; text &lt;/span&gt;&lt;/p&gt; <br>
+        &lt;p&gt; no styles &lt;span <samp class="C4">style="font-family: Fantasy;"</samp>&gt; text &lt;/span&gt;&lt;/p&gt; <br>
+        &lt;p&gt; no styles &lt;span <samp class="C5">style="font-size: 70%;"</samp>&gt; text &lt;/span&gt;&lt;/p&gt; <br>
+        &lt;p <samp class="C6">style="text-align: center;"</samp>&gt; This paragraph is centered. &lt;/p&gt;
+      </code>
+    </div>
+
+    <h3>Example: Inline Styles</h3>
+    <div class="example">
+      <p><samp class="dot d1"></samp> no styles <span style="background-color: yellow;">with styles</span></p>
+      <p><samp class="dot d2"></samp> no styles <span style="border:2px solid blue;">with styles</span></p>
+      <p><samp class="dot d3"></samp> no styles <span style="color: red;">with styles</span></p>
+      <p><samp class="dot d4"></samp> no styles <span style="font-family: Fantasy;">with styles</span></p>
+      <p><samp class="dot d5"></samp> no styles <span style="font-size: 70%;">with styles</span></p>
+      <p style="text-align:center;"><samp class="dot d6"></samp> This paragraph is centered.</p>
+    </div>
+
+    <h3>Explanation: Inline Styles</h3>
+    <div class="explanation">
+      <p>
+        Inline styles are applied directly to HTML elements using the <code>style</code> attribute.<br>
+        You can change <samp class="C1">background-color</samp>, <samp class="C2">border</samp>, <samp class="C3">color</samp>, <samp class="C4">font-family</samp>, <samp class="C5">font-size</samp>, and <samp class="C6">text-align</samp> inline.<br>
+        Use inline styles for quick individual adjustments, but for consistent styling, external or internal CSS is preferred.
+      </p>
+    </div>
+  </div>
+</template>
+
+<template> <!-- HTML Code: Styled Links -->
+  <div class="bubble">
+    <h3>HTML Code: Styled Links</h3>
+    <div class="code_block">
+      <code>
+        &lt;style&gt; <br>
+        <samp class="C1">
+        &nbsp;&nbsp;.example-style-link:link { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;color: green; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;text-decoration: none; <br>
+        &nbsp;&nbsp;} <br>
+        </samp><samp class="C2">
+        &nbsp;&nbsp;.example-style-link:visited { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;color: pink; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;text-decoration: none; <br>
+        &nbsp;&nbsp;} <br>
+        </samp><samp class="C3">
+        &nbsp;&nbsp;.example-style-link:hover { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;color: red; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;text-decoration: underline; <br>
+        &nbsp;&nbsp;} <br>
+        </samp><samp class="C4">
+        &nbsp;&nbsp;.example-style-link:active { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;color: yellow; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;text-decoration: underline; <br>
+        &nbsp;&nbsp;} <br>
+        </samp>
+        &lt;/style&gt; <br><br>
+        &lt;a href="../Home.html" class="example-style-link" target="_blank"&gt;Styled Link&lt;/a&gt;
+      </code>
+    </div>
+
+    <h3>Example: Styled Links</h3>
+    <div class="example">
+      <style>
+        .example-style-link:link { color: green; text-decoration: none; }
+        .example-style-link:visited { color: pink; text-decoration: none; }
+        .example-style-link:hover { color: red; text-decoration: underline; }
+        .example-style-link:active { color: yellow; text-decoration: underline; }
+      </style>
+      <a href="../Home.html" class="example-style-link" target="_blank">Styled Link</a><br>
+      <a href="../Home.html" target="_blank">Default Link</a>
+    </div>
+
+    <h3>Explanation: Styled Links</h3>
+    <div class="explanation">
+      <p>
+        This code demonstrates styling links using CSS pseudo-classes, with each section color-coded:
+      </p>
+      <ul>
+        <li><samp class="C1">:link</samp> → Styles links that have <strong>not yet been clicked</strong>; here it sets the link color to green and removes underline.</li>
+        <li><samp class="C2">:visited</samp> → Styles links that <strong>have been clicked before</strong>; here it sets the link color to pink and removes underline. <br>
+        <em>Note:</em> Browsers remember visited links. If you want the link to appear unvisited again, you need to clear your browser history or cache for that site.</li>
+        <li><samp class="C3">:hover</samp> → Styles links when the mouse hovers over them; here it changes the color to red and adds an underline.</li>
+        <li><samp class="C4">:active</samp> → Styles links during the moment they are clicked; here it changes the color to yellow and keeps the underline.</li>
+      </ul>
+      <p>
+        <strong>Important:</strong> Always define <code>:link</code> and <code>:visited</code> before <code>:hover</code> and <code>:active</code>, otherwise the hover/active styles may not work as expected.
+      </p>
+    </div>
+  </div>
+</template>
+
+<template> <!-- HTML Code: Background Image Style -->
+  <div class="bubble">
+    <h3>HTML Code: Background Image Style</h3>
+    <div class="code_block">
+      <code>
+        
+        &lt;p <samp class="C1">style="background-image: url('https://images.pexels.com/photos/6808985/pexels-photo-6808985.jpeg');<br>
+        </samp><samp class="C2">
+        &nbsp;&nbsp;background-size: cover; <br>
+        </samp><samp class="C3">
+        &nbsp;&nbsp;background-repeat: no-repeat; <br>
+        </samp><samp class="C4">
+        &nbsp;&nbsp;background-position: center; <br>
+        </samp><samp class="C5">
+        &nbsp;&nbsp;color: white; <br>
+        </samp><samp class="C6">
+        &nbsp;&nbsp;padding: 20px;"&gt; <br>
+        </samp>
+        &lt;/p&gt;
+      </code>
+    </div>
+
+    <h3>Example: Background Image Style</h3>
+    <div class="example">
+      <p style="background-image: url('https://images.pexels.com/photos/6808985/pexels-photo-6808985.jpeg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                color: white;
+                padding: 20px;">
+        You can put this in the style section of the HTML document to affect the entire paragraph.<br>
+        <strong>Properties:</strong><br>
+        background-size: cover – covers the entire element.<br>
+        background-repeat: no-repeat – prevents repeating.<br>
+        background-position: center – centers the image.<br>
+        color: white – ensures text is readable.<br>
+        padding: 20px – adds space inside the paragraph.
+      </p>
+    </div>
+
+    <h3>Explanation: Background Image Style</h3>
+    <div class="explanation">
+      <p>
+        <samp class="C1">background-image: url(...);</samp> → Sets the background image for the element.<br>
+        <samp class="C2">background-size: cover;</samp> → Makes the image cover the entire element, scaling as needed.<br>
+        <samp class="C3">background-repeat: no-repeat;</samp> → Prevents the image from repeating/tile.<br>
+        <samp class="C4">background-position: center;</samp> → Centers the image within the element.<br>
+        <samp class="C5">color: white;</samp> → Sets the text color to white to ensure readability against the background image.<br>
+        <samp class="C6">padding: 20px;</samp> → Adds space inside the element so text doesn’t touch edges.
+      </p>
+    </div>
+  </div>
+</template>
+
+<!-- ------------------------------------------------- -->
+
+<!-- 0000000000000000000000 Effects 00000000000000000000 -->
+
+<template> <!-- HTML Code: Special Characters -->
+  <div class="bubble">
+    <h3>HTML Code: Special Characters</h3>
+    <div class="code_block">
+      <code>
+        <samp class="C1">&amp;amp; = & </samp><br>
+        <samp class="C2">&amp;lt; = < </samp><br>
+        <samp class="C3">&amp;gt; = > </samp><br>
+        <samp class="C4">&amp;quot; = " </samp><br>
+      </code>
+    </div>
+
+    <h3>Explanation: Special Characters</h3>
+    <div class="explanation">
+      <p>
+        Use <samp class="C1">&amp;amp;</samp> to display the &amp; character <br>
+        Use <samp class="C2">&amp;lt;</samp> to display the &lt; character <br>
+        Use <samp class="C3">&amp;gt;</samp> to display the &gt; character <br>
+        Use <samp class="C4">&amp;quot;</samp> to display the &quot; character <br>
+        <strong>Find more special characters just look them up.</strong>
+      </p>
+    </div>
+  </div>
+</template>
+
+<template > <!-- HTML Code: Anchor Link Same Page  (Not finished.) -->
+  <div class="bubble">
+    <h3>HTML Code: Anchor Link Same Page</h3>
+    <div class="code_block">
+      <code>
+        &lt;p&gt; Jump to &lt;a href="#?"&gt;Target&lt;/a&gt;&lt; /p&gt;
+      </code>
+    </div>
+
+    <h3>Example: Anchor Link Same Page</h3>
+    <div class="example">
+      <p>
+        Jump to <a href="#?">Target ?</a>. 
+      </p>
+    </div>
+
+    <h3>Explanation: Anchor Link Same Page</h3>
+    <div class="explanation">
+      <p>
+        The # symbol is used to indicate an anchor link within the same page.<br>
+        It allows you to jump to a specific section of the page that has a corresponding id attribute.
+      </p>
+    </div>
+  </div>
+</template>
+
+<template > <!-- HTML Code: Anchor Link Other Page (Not finished.) -->
+  <div class="bubble">
+    <h3>HTML Code: Anchor Link Other Page</h3>
+    <div class="code_block">
+      <code>
+        &lt;a href="Home.html#String_tags"&gt;String tags&lt;/a&gt;
+      </code>
+    </div>
+
+    <h3>Example: Anchor Link Other Page</h3>
+    <div class="example">
+      <p>
+        Link to a bookmark on another page: 
+        <a href="Lessons/advanced_links.html#end_of_advanced_links">end of advanced links</a>
+      </p>
+    </div>
+
+    <h3>Explanation: Anchor Link Other Page</h3>
+    <div class="explanation">
+        <p>Links to a bookmark on another page navigate to a section with a matching id.</p>
+    </div>
+  </div>
+</template>
+
+<template> <!-- HTML Code: Browser Title -->
+  <div class="bubble">
+    <h3>HTML Code: Browser Title</h3>
+    <div class="code_block">
+      <code>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&lt;title&gt;text&lt;/title&gt; <br>
+        &lt;/head&gt;
+      </code>
+    </div>
+
+    <h3>Example: Browser Title</h3>
+    <div class="example">
+      <title>HTML Notes</title>
+    </div>
+
+    <h3>Explanation: Browser Title</h3>
+    <div class="explanation">
+      <p>
+        The &lt;title&gt; tag defines the page title. <br>
+        Appears in the browser's tab or window, and is used by search engines.
+      </p>
+    </div>
+  </div>
+</template>
+
+<template> <!-- HTML Code: tooltip Effects -->
+  <div class="bubble">
+    <h3>HTML Code: tooltip Effects</h3>
+    <div class="code_block">
+      <code>
+        &lt;p title=&lt;q&gt;This is a tooltip that appears when you hover over the text&lt;/q&gt;&gt; hover over this to see tooltip with the mouse&lt;/p&gt;
+      </code>
+    </div>
+
+    <h3>Example: tooltip Effects</h3>
+    <div class="example">
+      <p title="This is a tooltip that appears when you hover over the text">
+        hover over this to see tooltip with the mouse
+      </p>
+    </div>
+
+    <h3>Explanation: tooltip Effects</h3>
+    <div class="explanation">
+      <p>
+        The <code>title</code> attribute displays a tooltip when the mouse hovers over the element.
+      </p>
+    </div>
+  </div>
+</template>
+
+<template > <!-- HTML Code: Favicon -->
+  <div class="bubble">
+    <h3>HTML Code: Favicon</h3>
+    <div class="code_block">
+      <code>
+        &lt;link rel="icon" type="image/ico" href="Images/favicon.ico"&gt;
+      </code>
+    </div>
+
+    <h3>Example: Favicon</h3>
+    <div class="example">
+      <img src="/Images/favicon.ico" alt="Favicon example" width="32" height="32" />
+    </div>
+
+    <h3>Explanation: Favicon</h3>
+    <div class="explanation">
+      <p>
+        <strong>rel="icon"</strong> → Tells the browser this is the page icon (favicon).<br>
+        <strong>type="image/ico"</strong> → Specifies the file type; optional.<br>
+        <strong>href="Images/favicon.ico"</strong> → Path to the icon file; use .ico, .png, or .svg.<br>
+        Place inside the &lt;head&gt; section.
+      </p>
+    </div>
+  </div>
+</template>
+
+<!-- ------------------------------------------------- -->
+
+<template> <!-- HTML Code: Iframe -->
+  <div class="bubble">
+
+    <h3>HTML Code: &lt;iframe&gt;</h3>
+    <div class="code_block">
+      <code>
+        &lt;!-- Container for responsive layout --&gt;<br>
+        &lt;div class="iframe-row"&gt;<br>
+        &nbsp;&nbsp;&lt;div&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<samp class="C1">&lt;src="/Lessons/Advanced_links.html" title="Default iframe"&gt;&lt;/iframe&gt;</samp><br>
+        &nbsp;&nbsp;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;div&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<samp class="C2">&lt;iframe src="/Lessons/Advanced_links.html" title="Custom size" style="height:300px;"&gt;&lt;/iframe&gt;</samp><br>
+        &nbsp;&nbsp;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;div&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<samp class="C3">&lt;iframe src="/Lessons/Advanced_links.html" title="No border" style="border:none;"&gt;&lt;/iframe&gt;</samp><br>
+        &nbsp;&nbsp;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;div&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<samp class="C4">&lt;iframe name="lessonFrame" src="/Lessons/Advanced_links.html" title="Target iframe"&gt;&lt;/iframe&gt;</samp><br>
+        &nbsp;&nbsp;&lt;/div&gt;<br>
+        &lt;/div&gt;
+      </code>
+    </div>
+
+    <h3>Example: Responsive Iframes</h3>
+    <div class="example">
+      <style>
+        /* Responsive iframe layout */
+        .iframe-row {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+          justify-content: center;
+        }
+        .iframe-row > div {
+          flex: 1 1 300px;
+          min-width: 280px;
+          max-width: 400px;
+        }
+        .iframe-row iframe {
+          width: 100%;
+          height: 200px;
+          border: 1px solid #ccc;
+        }
+      </style>
+
+      <div class="iframe-row">
+
+        <div>
+          <p><strong>Default iframe<samp class="dot d1"></samp></strong></p>
+          <iframe src="/About.html" title="Default iframe"></iframe>
+        </div>
+
+        <div>
+          <p><strong>Custom size<samp class="dot d2"></samp></strong></p>
+          <iframe src="/About.html" title="Custom size" style="height: 300px;"></iframe>
+        </div>
+
+        <div>
+          <p><strong>No border<samp class="dot d3"></samp></strong></p>
+          <iframe src="/About.html" title="No border" style="border: none;"></iframe>
+        </div>
+
+        <div>
+          <p><strong>Iframe as Link Target<samp class="dot d4"></samp></strong></p>
+          <div class="link-target-container">
+            <a href="http://127.0.0.1:5500/About.html" target="myframe">Open Advanced_links.html in iframe</a>
+            <iframe name="myframe" title="Link target iframe" width="300" height="200" style="border: 1px solid #ccc;"></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <h3>Explanation: &lt;iframe&gt;</h3>
+    <div class="explanation">
+      <ul>
+        <li><code>&lt;iframe&gt;</code> embeds another HTML document into the current page</li>
+        <li><code>src</code> specifies the page to load</li>
+        <li><code>title</code> improves accessibility (required for screen readers)</li>
+        <li><code>width</code> and <code>height</code> can be set with HTML or CSS</li>
+        <li>Use <code>border: none</code> in style to remove border</li>
+        <li>To load a link inside an iframe, give the iframe a <code>name</code> and use <code>target</code> on the link</li>
+        <li>Use <code>flex-wrap</code> and <code>min-width</code> to make iframes responsive across screen sizes</li>
+        <li><strong>Global CSS rules like <code>overflow-x: hidden</code> and <code>box-sizing: border-box</code> help prevent horizontal scrollbars and layout overflow</strong></li>
+        <li><strong>Note:</strong> Links inside the iframes could work, but in this web page not all of them Have been configured to do so.</li>
+      </ul>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- HTML Code: Images -->
+  <div class="bubble">
+
+    <h3>HTML Code: Images</h3>
+    <div class="code_block">
+      <code>
+        &lt;<span class="C1">img</span> src="Images/W3Schools_logo.png" alt="W3Schools logo" style="width: 40px; height: 40px;"&gt;
+      </code>
+    </div>
+
+    <h3>Example: Images</h3>
+    <div class="example">
+      <img src="/Images/Flower.png" alt="W3Schools logo" style="width: 40px; height: 40px;">
+    </div>
+
+    <h3>Explanation: Images</h3>
+    <div class="explanation">
+      <p>
+        <span class="C1">src</span>: Finds the image in folder or from the internet <br>
+        <span class="C1">alt</span>: Alternate text if the image can't be found <br>
+        <span class="C1">style</span>: Controls how the image is presented, e.g., size
+      </p>
+    </div>
+
+    <br><!-- ======================== -->
+
+    <h3>HTML Code: picture vs img</h3>
+    <div class="code_block">
+      <code>
+        &lt;<span class="C2">picture</span>&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C3">source</span> media="(min-width: 1100px)" srcset="https://images.pexels.com/photos/8693381/pexels-photo-8693381.jpeg"&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C3">source</span> media="(min-width: 700px)" srcset="https://images.pexels.com/photos/6808985/pexels-photo-6808985.jpeg"&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C1">img</span> src="https://images.pexels.com/photos/32388400/pexels-photo-32388400.jpeg" alt="Example responsive image"&gt;<br>
+        &lt;/<span class="C2">picture</span>&gt;
+      </code>
+    </div>
+
+    <h3>Example: picture vs img</h3>
+    <div class="example">
+      <picture>
+        <source media="(min-width: 1100px)" 
+                srcset="https://images.pexels.com/photos/8693381/pexels-photo-8693381.jpeg">
+        <source media="(min-width: 700px)" 
+                srcset="https://images.pexels.com/photos/6808985/pexels-photo-6808985.jpeg">
+        <img src="https://images.pexels.com/photos/32388400/pexels-photo-32388400.jpeg" 
+             alt="Example responsive image" style="max-width:100%; height:auto;">
+      </picture>
+    </div>
+
+    <h3>Explanation: picture vs img</h3>
+    <div class="explanation">
+      <p>
+          <span class="C1">&lt;img&gt;</span><br>
+          <span class="C1">src</span> → The image file (local or URL). <br>
+          <span class="C1">alt</span> → Alternate text (important for accessibility & SEO). <br>
+          width & height → Optional size controls. <br>
+
+          <span class="C2">&lt;picture&gt;</span> Best when:<br>
+          Provides multiple image sources for different screen sizes, pixel densities, or formats.<br>
+          Contains one or more <span class="C3">&lt;source&gt;</span> tags and a fallback <span class="C1">&lt;img&gt;</span>.<br>
+          <span class="C3">&lt;source&gt;</span> → Browser picks the first suitable image, can have multiple formats.<br>
+          style="max-width:100%; height:auto;" → Ensures image scales responsively, maintaining aspect ratio.
+      </p>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- HTML Code: Table -->
+  <div class="bubble">
+
+    <h3>HTML Code: Tables</h3>
+    <div class="code_block">
+      <code>
+        &lt;style&gt;<br>
+        &nbsp;&nbsp;<span class="C1">table, th, td { border: 1px solid black; }</span><br>
+        &lt;/style&gt;<br><br>
+
+        &lt;<span class="C1">table</span>&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C2">tr</span>&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="C3">th</span>&gt;Company&lt;/<span class="C3">th</span>&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="C3">th</span>&gt;Contact&lt;/<span class="C3">th</span>&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="C3">th</span>&gt;Country&lt;/<span class="C3">th</span>&gt;<br>
+        &nbsp;&nbsp;&lt;/<span class="C2">tr</span>&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C2">tr</span>&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="C4">td</span>&gt;Alfreds Futterkiste&lt;/<span class="C4">td</span>&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="C4">td</span>&gt;Maria Anders&lt;/<span class="C4">td</span>&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="C4">td</span>&gt;Germany&lt;/<span class="C4">td</span>&gt;<br>
+        &nbsp;&nbsp;&lt;/<span class="C2">tr</span>&gt;<br>
+        &lt;/<span class="C1">table</span>&gt;
+      </code>
+    </div>
+
+    <h3>example: Tables</h3>
+    <div class="example">
+      <style>
+        table, th, td { border: 1px solid black; }
+      </style>
+
+      <table>
+        <tr>
+          <th>Company</th>
+          <th>Contact</th>
+          <th>Country</th>
+        </tr>
+        <tr>
+          <td>Alfreds Futterkiste</td>
+          <td>Maria Anders</td>
+          <td>Germany</td>
+        </tr>
+        <tr>
+          <td>Centro comercial Moctezuma</td>
+          <td>Francisco Chang</td>
+          <td>Mexico</td>
+        </tr>
+      </table>
+      </div>
+
+      <h3>explanation: Tables</h3>
+      <div class="explanation">
+      <br>
+      <ul>
+        <li><span class="C1">&lt;table&gt;</span>: full table container</li>
+        <li><span class="C2">&lt;tr&gt;</span>: table row</li>
+        <li><span class="C4">&lt;td&gt;</span>: table cell (data)</li>
+        <li><span class="C3">&lt;th&gt;</span>: header cell</li>
+        <li>&lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;: head, body, footer sections</li>
+        <li>&lt;caption&gt;: table caption/title</li>
+        <li>rowspan: merge cells vertically</li>
+        <li>colspan: merge cells horizontally</li>
+      </ul>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- HTML Code: Web APIs Overview -->
+
+  <div class="bubble">
+
+    <h3>Introduction to Web APIs</h3>
+
+    <div class="code_block">
+      <code>
+        /* JavaScript & HTML Example */<br>
+
+        <span class="C7">// Geolocation Example</span><br>
+        <span class="C7">if (navigator.geolocation) {</span><br>
+        <span class="C7">&nbsp;&nbsp;navigator.geolocation.getCurrentPosition(showPosition, showError);</span><br>
+        <span class="C7">} else {</span><br>
+        <span class="C7">&nbsp;&nbsp;alert("Geolocation not supported.");</span><br>
+        <span class="C7">}</span><br><br>
+
+        <span class="C7">function showPosition(position) {</span><br>
+        <span class="C7">&nbsp;&nbsp;console.log("Latitude: " + position.coords.latitude);</span><br>
+        <span class="C7">&nbsp;&nbsp;console.log("Longitude: " + position.coords.longitude);</span><br>
+        <span class="C7">}</span><br><br>
+
+        <span class="C7">function showError(error) {</span><br>
+        <span class="C7">&nbsp;&nbsp;alert("Error getting location: " + error.message);</span><br>
+        <span class="C7">}</span><br><br>
+
+        <span class="C6">&lt;img id="drag1" src="img.png" draggable="true" ondragstart="dragstartHandler(event)"&gt;</span><br>
+
+        <span class="C6">function dragstartHandler(ev) {</span><br>
+        <span class="C6">&nbsp;&nbsp;ev.dataTransfer.setData("text", ev.target.id);</span><br>
+        <span class="C6">}</span><br><br>
+
+        <span class="C6">&lt;div id="dropzone" ondragover="dragoverHandler(event)" ondrop="dropHandler(event)"&gt;Drop here&lt;/div&gt;</span><br>
+
+        <span class="C6">function dragoverHandler(ev) { ev.preventDefault(); }</span><br>
+
+        <span class="C6">function dropHandler(ev) {</span><br>
+        <span class="C6">&nbsp;&nbsp;ev.preventDefault();</span><br>
+        <span class="C6">&nbsp;&nbsp;const data = ev.dataTransfer.getData("text");</span><br>
+        <span class="C6">&nbsp;&nbsp;ev.target.appendChild(document.getElementById(data));</span><br>
+        <span class="C6">}</span>
+      </code>
+    </div>
+
+    <h3>example: Web APIs</h3>
+    <div class="example">
+      <p><strong>Live Geolocation Example:</strong> <span class="dot d7"></span></p>
+      <button id="locateBtn">Get Location</button>
+      <p id="locationResult">Location will appear here.</p>
+
+      <script>
+        document.getElementById("locateBtn").onclick = () => {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+              (pos) => {
+                const lat = pos.coords.latitude.toFixed(4);
+                const lon = pos.coords.longitude.toFixed(4);
+                document.getElementById("locationResult").textContent =
+                  `Latitude: ${lat}, Longitude: ${lon}`;
+              },
+              (err) => {
+                document.getElementById("locationResult").textContent =
+                  "Error: " + err.message;
+              }
+            );
+          } else {
+            document.getElementById("locationResult").textContent =
+              "Geolocation not supported.";
+          }
+        };
+      </script>
+
+      <p><strong>Simple Drag and Drop:</strong> <span class="dot d6"></span></p>
+      <img id="drag1" src="https://via.placeholder.com/100" draggable="true"
+           ondragstart="dragstartHandler(event)" alt="Draggable" style="border:1px solid black;">
+      <div id="dropzone" ondragover="dragoverHandler(event)" ondrop="dropHandler(event)"
+           style="width:150px; height:120px; border: 2px dashed #444; margin-top:10px; padding:5px;">
+        Drop here
+      </div>
+
+      <script>
+        function dragstartHandler(ev) { ev.dataTransfer.setData("text", ev.target.id); }
+        function dragoverHandler(ev) { ev.preventDefault(); }
+        function dropHandler(ev) {
+          ev.preventDefault();
+          const data = ev.dataTransfer.getData("text");
+          ev.target.appendChild(document.getElementById(data));
+        }
+      </script>
+    </div>
+
+    <h3>Explanation: Web APIs</h3>
+    <div class="explanation">
+      <p>
+        Web APIs allow web pages to interact with browser features and hardware.<br><br>
+
+        <span class="C7"><strong>Geolocation API</strong><span class="dot d7"></span>:</span>
+        Lets you get the user’s current location (latitude and longitude). Permission is requested first and works only on HTTPS.<br><br>
+
+        <span class="C6"><strong>Drag and Drop API</strong><span class="dot d6"></span>:</span>
+        Enables moving elements by dragging and dropping. Use <code>draggable="true"</code> and handle <code>ondragstart</code>, <code>ondragover</code>, <code>ondrop</code>.<br><br>
+
+        <strong>Web Storage API</strong>: Stores data locally via <code>localStorage</code> (persistent) or <code>sessionStorage</code> (tab-only). Useful for preferences, counters, or temporary data.<br><br>
+
+        <strong>Web Workers API</strong>: Runs JavaScript in the background without freezing the page. Communicates via messages, cannot access DOM directly.<br><br>
+
+        <strong>Server-Sent Events (SSE) API</strong>: Receives automatic real-time updates from a server over HTTP. Useful for live feeds, stock prices, or social media updates.<br><br>
+
+        Always check browser support and handle errors gracefully.
+      </p>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- HTML Code: Responsive Web Design -->
+
+  <div class="bubble">
+
+    <h3>Responsive Viewport Meta Tag</h3>
+
+    <div class="code_block">
+      <code>
+        /* HTML Code */<br>
+        &lt;!DOCTYPE html&gt;<br>
+        &lt;html lang="en"&gt;<br>
+        &lt;head&gt;<br>
+        &nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+        &nbsp;&nbsp;<span class="C1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span><br>
+        &nbsp;&nbsp;&lt;title&gt;Responsive Example&lt;/title&gt;<br>
+        &lt;/head&gt;<br>
+        &lt;body&gt;<br>
+        &nbsp;&nbsp;&lt;h1&gt;Hello World&lt;/h1&gt;<br>
+        &lt;/body&gt;<br>
+        &lt;/html&gt;
+      </code>
+    </div>
+
+    <h3>Explanation: Responsive Meta Tag</h3>
+    <div class="explanation">
+      <p><strong>What this does:</strong></p>
+      <p>This line of code tells the browser to set the page width to the screen width of the device and to start with the default zoom level (scale 1.0).</p>
+
+      <p><strong>Why it matters:</strong></p>
+      <p>Without it, phones and tablets will treat your webpage like a desktop site and zoom out, making everything small and unreadable. With it, the layout and text adapt better to smaller screens.</p>
+
+      <p><strong>How it connects to CSS:</strong></p>
+      <p>This tag works with your CSS rules. For example, if you use relative units like percentages, <code>vw</code>, <code>em</code>, or media queries, the browser knows how wide the "viewport" is and can adjust styles correctly. This is the first step to making a responsive layout that adapts to phones, tablets, and desktops.</p>
+
+      <p><strong>Do you need different styles for different devices?</strong></p>
+      <p>Most of the time, you only need one flexible, well-designed style that adapts naturally. Use relative units, flexbox, grid, and responsive images. Then, optionally, use <code>@media</code> queries to adjust layout or font size for very small or very large screens. You don't need separate styles for phones, tablets, and desktops — just one smart base plus small tweaks.</p>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- HTML Code: Form Attributes -->
+  <div class="bubble">
+    <h3>HTML Code: Form Attributes & Input Form* Attributes</h3>
+
+    <div class="code_block">
+      <code>
+        /* HTML Code */<br>
+        &lt;form 
+        <span class="C1">action="submit.php"</span> 
+        <span class="C2">method="post"</span> 
+        <span class="C3">target="_blank"</span> 
+        <span class="C4">autocomplete="on"</span> 
+        <span class="C5">novalidate</span>&gt;<br>
+
+        &nbsp;&nbsp;&lt;label for="fname"&gt;First Name:&lt;/label&gt;<br>
+        &nbsp;&nbsp;&lt;input type="text" id="fname" name="fname" placeholder="John"&gt;<br><br>
+
+        &nbsp;&nbsp;&lt;label for="email"&gt;Email:&lt;/label&gt;<br>
+        &nbsp;&nbsp;&lt;input type="email" id="email" name="email" placeholder="you@example.com"&gt;<br><br>
+
+        &nbsp;&nbsp;&lt;input type="submit" value="Submit (POST, new tab)"&gt;<br>
+        &lt;/form&gt;<br><br>
+
+        &lt;form id="form2" 
+        <span class="C1">action="submit_alt.php"</span> 
+        <span class="C2">method="get"</span> 
+        <span class="C3">target="_self"</span>&gt;<br>
+
+        &nbsp;&nbsp;&lt;label for="lname"&gt;Last Name:&lt;/label&gt;<br>
+        &nbsp;&nbsp;&lt;input type="text" id="lname" name="lname" placeholder="Doe"&gt;<br>
+        &lt;/form&gt;<br><br>
+
+        &lt;input type="submit" value="Submit (GET, same tab)" 
+        <span class="C6">form="form2" formaction="submit_alt.php" formmethod="get" formtarget="_self" formenctype="multipart/form-data" formnovalidate</span>&gt;
+      </code>
+    </div>
+
+    <h3>example: Form Attributes</h3>
+    <div class="example">
+      <form id="form1" action="submit.php" method="post" target="_blank" autocomplete="on" novalidate onsubmit="return false;">
+        <label for="fname">First Name:</label><br>
+        <input type="text" id="fname" name="fname" placeholder="John">
+        <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span><span class="dot d4"></span><span class="dot d5"></span><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="you@example.com">
+        <span class="dot d4"></span><br><br>
+
+        <input type="submit" value="Submit (POST, new tab)"><br><br>
+      </form>
+
+      <form id="form2" action="submit_alt.php" method="get" target="_self" onsubmit="return false;">
+        <label for="lname">Last Name:</label><br>
+        <input type="text" id="lname" name="lname" placeholder="Doe">
+        <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span><br><br>
+      </form>
+
+      <input type="submit" value="Submit (GET, same tab)"
+        form="form2"
+        formaction="submit_alt.php"
+        formmethod="get"
+        formtarget="_self"
+        formenctype="multipart/form-data"
+        formnovalidate><span class="dot d6"></span>
+    </div>
+
+    <h3>Explanation: Form Attributes</h3>
+    <div class="explanation">
+      <p>
+      <span class="C1">- <code>action</code></span>: URL the form submits data to. If omitted, defaults to current page.<br>
+
+      <span class="C2">- <code>method</code></span>: Defines how data is sent.<br>
+      &nbsp;&nbsp;<strong>GET:</strong> Appends form data into the URL. You’ll see something like: <code>submit.php?lname=Doe</code><br>
+      &nbsp;&nbsp;- Good for search forms or when bookmarking is useful.<br>
+      &nbsp;&nbsp;- Unsafe for private data (like passwords) since it's visible in the URL.<br>
+      &nbsp;&nbsp;- URL size is limited (~2000 characters).<br>
+
+      &nbsp;&nbsp;<strong>POST:</strong> Sends form data in the HTTP request body (invisible to users).<br>
+      &nbsp;&nbsp;- Better for secure or long input.<br>
+      &nbsp;&nbsp;- Cannot be bookmarked.<br>
+      &nbsp;&nbsp;- Allows file uploads and more complex content.<br>
+
+      <span class="C3">- <code>target</code></span>: Where to display server response.<br>
+      &nbsp;&nbsp;- <code>_self</code>: current tab (default)<br>
+      &nbsp;&nbsp;- <code>_blank</code>: new tab<br>
+      &nbsp;&nbsp;- <code>_parent</code>, <code>_top</code>, or a named iframe<br>
+
+      <span class="C4">- <code>autocomplete</code></span>: Lets browser suggest past input.<br>
+      &nbsp;&nbsp;- <code>on</code>: Browser may autofill fields.<br>
+      &nbsp;&nbsp;- <code>off</code>: No autofill suggestions.<br>
+
+      <span class="C5">- <code>novalidate</code></span>: Tells browser to skip built-in validation.<br>
+      - For example, a required <code>email</code> input won't trigger a warning if left empty.<br>
+      - Useful for custom validation in JavaScript or testing.<br>
+
+      <strong>Input-level overrides (form*):</strong><br>
+      <span class="C6">- <code>form</code></span>: Links the input to a specific form by id.<br>
+      &nbsp;&nbsp;<em>Example:</em> A button outside the form with <code>form="form2"</code> can still submit it.<br>
+
+      <span class="C6">- <code>formaction</code></span>: Overrides the form's <code>action</code>.<br>
+      &nbsp;&nbsp;<em>Example:</em> Use one form with multiple submit buttons that go to different scripts.<br>
+
+      <span class="C6">- <code>formmethod</code></span>: Overrides <code>method</code> only for that input.<br>
+      &nbsp;&nbsp;<em>Example:</em> One submit button uses POST, another uses GET.<br>
+
+      <span class="C6">- <code>formtarget</code></span>: Overrides the form’s <code>target</code>.<br>
+      &nbsp;&nbsp;<em>Example:</em> A single button that opens result in a new tab.<br>
+
+      <span class="C6">- <code>formenctype</code></span>: Overrides encoding type for file uploads.<br>
+      &nbsp;&nbsp;<em>Example:</em> <code>multipart/form-data</code> for file inputs.<br>
+
+      <span class="C6">- <code>formnovalidate</code></span>: Skips validation for that input only.<br>
+      &nbsp;&nbsp;<em>Example:</em> A “Save Draft” button that allows incomplete data.
+      </p>
+    </div> 
+
+  </div>
+</template>
+
+<template> <!-- HTML Code: Forms & Input Types -->
+  <style>
+    /* Style Submit, Reset, and Button consistently */
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"] {
+      background-color: rgb(0, 185, 255);   /* blue background */
+      color: white;                /* white text */
+      border: none;                /* remove default borders */
+      padding: 8px 16px;           /* spacing */
+      border-radius: 6px;          /* little rounded edges */
+      cursor: pointer;             /* pointer cursor on hover */
+      font-size: 14px;
+    }
+  </style>
+  <div class="bubble">
+    <h3>HTML Code: Forms & Input Types</h3>
+
+    <div class="code_block">
+      <code>
+        &lt;form onsubmit="return false;" action="action_page.php" method="post"&gt;<br><br>
+
+        <span class="C1">&lt;input type="text" id="fname" name="fname" placeholder="John"&gt;</span><br>
+        <span class="C1">&lt;input type="text" id="lname" name="lname" placeholder="Doe"&gt;</span><br><br>
+
+        <span class="C2">&lt;input type="password" placeholder="Enter password" name="pwd"&gt;</span><br><br>
+
+        <span class="C3">&lt;input type="email" placeholder="you@example.com"&gt;</span><br><br>
+
+        <span class="C7">&lt;input type="date"&gt;</span><br>
+        <span class="C7">&lt;input type="color"&gt;</span><br><br>
+
+        <span class="C8">&lt;input type="text" value="Readonly" readonly&gt;</span><br>
+        <span class="C8">&lt;input type="text" value="Disabled" disabled&gt;</span><br><br>
+
+        <span class="C5">&lt;input type="radio" name="fav_lang" value="HTML"&gt; HTML<br>
+        &lt;input type="radio" name="fav_lang" value="CSS"&gt; CSS<br>
+        &lt;input type="radio" name="fav_lang" value="JS"&gt; JavaScript</span><br><br>
+
+        <span class="C6">&lt;input type="checkbox" name="vehicle1" value="Bike"&gt; I have a bike<br>
+        &lt;input type="checkbox" name="vehicle2" value="Car"&gt; I have a car<br>
+        &lt;input type="checkbox" name="vehicle3" value="Boat"&gt; I have a boat</span><br><br>
+
+        <span class="C4">&lt;input type="submit" value="Submit (does not submit)"&gt;</span><br>
+        <span class="C4">&lt;input type="reset" value="Reset"&gt;</span><br>
+        <span class="C4">&lt;input type="button" value="Click Me"&gt;</span><br><br>
+
+        &lt;/form&gt;
+      </code>
+    </div>
+
+    <h3>Example: Forms & Input Types</h3>
+    <div class="example">
+      <form onsubmit="return false;" action="action_page.php" method="post">
+
+
+
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname" name="fname" placeholder="John"><span class="dot d1"></span><br><br>
+
+        <label for="lname">Last Name:</label>
+        <input type="text" id="lname" name="lname" placeholder="Doe"><span class="dot d1"></span><br><br>
+
+        <input type="password" placeholder="Enter password" name="pwd"><span class="dot d2"></span><br><br>
+
+        <input type="email" placeholder="you@example.com"><span class="dot d3"></span><br><br>
+
+        <input type="date"><span class="dot d7"></span><br><br>
+        <input type="color"><span class="dot d7"></span><br><br>
+
+        <input type="text" value="Readonly" readonly><span class="dot d8"></span>
+        <input type="text" value="Disabled" disabled><span class="dot d8"></span><br><br>
+
+        <input type="radio" name="fav_lang" value="HTML"> HTML<span class="dot d5"></span><br>
+        <input type="radio" name="fav_lang" value="CSS"> CSS<span class="dot d5"></span><br>
+        <input type="radio" name="fav_lang" value="JS"> JavaScript<span class="dot d5"></span><br><br>
+
+        <input type="checkbox" name="vehicle1" value="Bike"> I have a bike<span class="dot d6"></span><br>
+        <input type="checkbox" name="vehicle2" value="Car"> I have a car<span class="dot d6"></span><br>
+        <input type="checkbox" name="vehicle3" value="Boat"> I have a boat<span class="dot d6"></span><br><br>
+
+        <input type="submit" value="Submit (does not submit)"><span class="dot d4"></span>
+        <input type="reset" value="Reset"><span class="dot d4"></span>
+        <input type="button" value="Click Me"><span class="dot d4"></span>
+
+      </form>
+    </div>
+
+    <h3>Explanation: Forms & Input Types</h3>
+    <div class="explanation">
+      <p>
+        <span class="C1">- Text inputs</span> ask for user text and support placeholders.<br>
+        <span class="C2">- Password inputs</span> hide user text for privacy.<br>
+        <span class="C3">- Email inputs</span> provide validation for email format.<br>
+        <span class="C7">- Date and color inputs</span> give specialized UI controls.<br>
+        <span class="C8">- Readonly fields</span> A readonly field shows information you can read but can’t change. Example: user ID.<br>
+        <span class="C8">- Disabled fields</span> A disabled field is greyed out and cannot be edited. Its value won’t submit.<br>
+        <span class="C5">- Radio buttons</span> allow selecting one option from many.<br>
+        <span class="C6">- Checkboxes</span> allow multiple selections.<br>
+        <span class="C4">- Submit button</span> normally sends data to the server but here it does not submit.<br>
+        <span class="C4">- Reset button</span> resets fields to default values.<br>
+        <span class="C4">- Button type</span> creates a clickable button with no default behavior.<br>
+      </p>
+    </div> 
+
+  </div>
+</template>
+
+<template> <!-- HTML Code: Form Elements -->
+
+  <div class="bubble">
+    <h3>HTML Code: Form Elements</h3>
+    <div class="code_block">
+      <code>
+        /* HTML Code */<br>
+        &lt;<span class="C4">fieldset</span>&gt; &lt;!-- Groups related controls --&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C4">legend</span>&gt;Personal Info&lt;/<span class="C4">legend</span>&gt; &lt;!-- Label for the group --&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C1">label</span> for="fname"&gt;First Name:&lt;/<span class="C1">label</span>&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C1">input</span> type="text" id="fname" name="fname" placeholder="John"&gt;<br><br>
+
+        &nbsp;&nbsp;&lt;<span class="C1">label</span> for="lname"&gt;Last Name:&lt;/<span class="C1">label</span>&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C1">input</span> type="text" id="lname" name="lname" placeholder="Doe"&gt;<br>
+        &lt;/<span class="C4">fieldset</span>&gt;<br><br>
+
+        &lt;<span class="C1">label</span> for="bio"&gt;Biography:&lt;/<span class="C1">label</span>&gt;<br>
+        &lt;<span class="C3">textarea</span> id="bio" name="bio" rows="4" cols="50" placeholder="Write something..."&gt;&lt;/<span class="C3">textarea</span>&gt;<br><br>
+
+        &lt;<span class="C5">label</span>&gt;Gender:&lt;/<span class="C5">label</span>&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C5">input</span> type="radio" id="male" name="gender" value="male"&gt;&lt;<span class="C5">label</span> for="male"&gt;Male&lt;/<span class="C5">label</span>&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C5">input</span> type="radio" id="female" name="gender" value="female"&gt;&lt;<span class="C5">label</span> for="female"&gt;Female&lt;/<span class="C5">label</span>&gt;<br><br>
+
+        &lt;<span class="C6">label</span> for="cars"&gt;Choose a car:&lt;/<span class="C6">label</span>&gt;<br>
+        &lt;<span class="C6">select</span> id="cars" name="cars"&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C6">option</span> value="volvo"&gt;Volvo&lt;/<span class="C6">option</span>&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C6">option</span> value="saab"&gt;Saab&lt;/<span class="C6">option</span>&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C6">option</span> value="fiat"&gt;Fiat&lt;/<span class="C6">option</span>&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C6">option</span> value="audi"&gt;Audi&lt;/<span class="C6">option</span>&gt;<br>
+        &lt;/<span class="C6">select</span>&gt;<br><br>
+
+        &lt;<span class="C4">button</span> type="submit"&gt;Submit&lt;/<span class="C4">button</span>&gt;<br>
+        &lt;<span class="C4">button</span> type="reset"&gt;Reset&lt;/<span class="C4">button</span>&gt;<br>
+        &lt;<span class="C4">button</span> type="button"&gt;Click Me&lt;/<span class="C4">button</span>&gt;
+      </code>
+    </div>
+
+    <h3>example: Form Elements</h3>
+    <div class="example">
+      <form onsubmit="return false;" action="#" method="post">
+        <fieldset>
+          <legend>Personal Info<span class="dot d4"></span></legend>
+
+          <label for="fname">First Name:<span class="dot d1"></span></label><br>
+          <input type="text" id="fname" name="fname" placeholder="John"><br><br>
+
+          <label for="lname">Last Name:<span class="dot d1"></span></label><br>
+          <input type="text" id="lname" name="lname" placeholder="Doe"><br>
+        </fieldset><br>
+
+        <label for="bio">Biography:<span class="dot d3"></span></label><br>
+        <textarea id="bio" name="bio" rows="4" cols="50" placeholder="Write something..."></textarea><br><br>
+
+        <label>Gender:<span class="dot d5"></span></label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br><br>
+
+        <label for="cars">Choose a car:<span class="dot d6"></span></label><br>
+        <select id="cars" name="cars">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="fiat">Fiat</option>
+          <option value="audi">Audi</option>
+        </select><br><br>
+
+        <button type="submit">Submit<span class="dot d4"></span></button>
+        <button type="reset">Reset<span class="dot d4"></span></button>
+        <button type="button">Click Me<span class="dot d4"></span></button>
+      </form>
+    </div>
+
+    <h3>Explanation: Form Elements</h3>
+    <div class="explanation">
+      <p>
+      <span class="C4">&lt;fieldset&gt;</span>: Groups related form elements together inside a visible box with a border.<br>
+      <span class="C4">&lt;legend&gt;</span>: Gives that group a title. This helps both visually and for screen readers.<br><br>
+
+      <span class="C1">&lt;label&gt;</span>: Connects a text label to a specific input field.<br>
+      &nbsp;&nbsp;- Clicking the label will focus (or toggle) the associated input.<br>
+      &nbsp;&nbsp;- Use <code>for="id"</code> to link to the input, or wrap the input inside the label.<br><br>
+
+      <span class="C3">&lt;textarea&gt;</span>: A box for multi-line text (like a comment or bio).<br>
+      &nbsp;&nbsp;- Use <code>rows</code> and <code>cols</code> to control the size.<br>
+      &nbsp;&nbsp;- Supports attributes like <code>placeholder</code> and <code>maxlength</code>.<br><br>
+
+      <span class="C5">Radio buttons</span>: Let users pick only one option from a group.<br>
+      &nbsp;&nbsp;- All buttons with the same <code>name</code> are grouped automatically.<br>
+      &nbsp;&nbsp;- Only one can be selected at a time.<br><br>
+
+      <span class="C6">Dropdowns</span>: Use <code>&lt;select&gt;</code> for picking from a list of options.<br>
+      &nbsp;&nbsp;- Each <code>&lt;option&gt;</code> is a choice.<br>
+      &nbsp;&nbsp;- Add <code>multiple</code> to the <code>&lt;select&gt;</code> tag to allow picking more than one.<br><br>
+
+      <span class="C4">Buttons</span>: Clickable elements that perform actions.<br>
+      &nbsp;&nbsp;- <code>type="submit"</code> sends the form.<br>
+      &nbsp;&nbsp;- <code>type="reset"</code> clears the form to its initial state.<br>
+      &nbsp;&nbsp;- <code>type="button"</code> is a blank button — you add custom behavior with JavaScript.<br><br>
+
+      <strong>Other Notes:</strong><br>
+      - Use <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> to visually group related fields — it helps with accessibility too.<br>
+      - <code>&lt;label&gt;</code> is important for users with screen readers and also improves click/tap targets.<br>
+      - <code>&lt;select&gt;</code> is a compact way to show a list of fixed options.<br>
+      - Any of these elements can be made <code>disabled</code> or <code>readonly</code> to control what users can interact with.<br>
+      </p>
+    </div> 
+
+  </div>
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 26 CSS Templates.  -->
 <template> <!-- CSS Animations -->
   <div class="bubble">
 
@@ -305,7 +2256,7 @@ Example with explanation:
   </div>
 </template>
 
-<template> <!-- Gradient Examples with Linear, Conic, and Radial -->
+<template> <!-- CSS Gradient Examples with Linear, Conic, and Radial -->
   <div class="bubble">
 
     <h3>CSS Code: with Linear, Conic, and Radial</h3>
@@ -462,7 +2413,7 @@ Example with explanation:
   </div>
 </template>
 
-<template> <!-- Styling Input Fields -->
+<template> <!-- CSS Styling Input Fields -->
   <style>
     /* General input styling */
     input[type=text],
@@ -605,7 +2556,7 @@ Example with explanation:
   </div>
 </template>
 
-<template> <!-- Navigation Bar Template with Dropdown -->
+<template> <!-- CSS Navigation Bar Template with Dropdown -->
   <style>
     /* ===== Template-Specific Navigation Styles ===== */
     .nav-container {
@@ -1855,7 +3806,7 @@ li:hover > .nav-dropdown {
   </div>
 </template>
 
-<template><!-- CSS Font -->
+<template> <!-- CSS Font -->
   <div class="bubble">
     <!-- Section 1: CSS Font Examples -->
     <h3>CSS code: Font</h3>
@@ -2107,7 +4058,7 @@ li:hover > .nav-dropdown {
   </div>
 </template>
 
-<template> <!-- CSS explanation height, width, Border, Margin, Padding  -->
+<template> <!-- CSS height, width, Border, Margin, Padding  -->
   <div class="bubble">
 
     <h3>CSS Code Block: Border, Margin, Padding</h3>
@@ -2192,7 +4143,7 @@ li:hover > .nav-dropdown {
   </div>
 </template>
 
-<template> <!-- CSS Explanation Different background-xxxx Commands -->
+<template> <!-- CSS Different background-xxxx Commands -->
   <div class="bubble">
 
     <h3>CSS Code: Background Properties</h3>
@@ -2285,7 +4236,7 @@ li:hover > .nav-dropdown {
   </div>
 </template>
 
-<template> <!-- CSS Explanation Selectors, Comments, Formats to Specify Color -->
+<template> <!-- CSS Selectors, Comments, Formats to Specify Color -->
   <div class="bubble">
 
     <!-- Section 1: Different Selectors -->
@@ -2530,9 +4481,6 @@ Selector      Declaration Block
 </template>
 
 
-<!-- 
-Good add images. 
+<!-- chatGPT Questions by liam Disregard if I forgot to remove it. 
 
-Property	Description
-opacity	Sets the opacity level for an element
 -->
