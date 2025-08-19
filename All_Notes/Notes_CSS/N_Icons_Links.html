@@ -1,0 +1,94 @@
+<template> <!-- CSS Icons -->
+  <div class="bubble">
+
+    <!-- Section 1: How to Add Icons -->
+    <h3>CSS Code: Icons</h3>
+    <div class="code_block">
+      <code>
+        <span class="C1"><strong>/* HTML */</strong><br>
+        &lt;i class="fa fa-home"&gt;&lt;/i&gt;</span><span class="C8"> &lt;!-- Font Awesome icon --&gt;</span><br>
+        <span class="C2">&lt;i class="bi bi-alarm"&gt;&lt;/i&gt;</span> <span class="C8">&lt;!-- Bootstrap icon --&gt;</span><br>
+        <span class="C3">&lt;span class="material-icons"&gt;face&lt;/span&gt;</span> <span class="C8">&lt;!-- Google icon --&gt;</span><br><br>
+
+        <strong>/* CSS */</strong><br>
+        i, .material-icons {<br>
+        &nbsp;&nbsp;font-size: 24px;<br>
+        &nbsp;&nbsp;color: crimson;<br>
+        }
+      </code>
+    </div>
+
+    <h3>Example: Different Icon Libraries</h3>
+    <div class="example">
+      <p>
+        <i class="fa fa-home"></i> Font Awesome Home Icon<span class="dot d8"></span>
+      </p>
+      <p>
+        <i class="bi bi-alarm"></i> Bootstrap Alarm Icon<span class="dot d2"></span>
+      </p>
+      <p>
+        <span class="material-icons">face</span> Google Face Icon<span class="dot d6"></span>
+      </p>
+    </div>
+
+    <h3>Explain: Icons</h3>
+    <div class="explanation">
+      Icons in CSS are typically added via an <code>&lt;i&gt;</code> tag or a <code>&lt;span&gt;</code> with special classes from an icon library.<br><br>
+      <strong>Common Libraries:</strong>
+      <ul>
+        <li><span class="C1">Font Awesome</span> — Load via CDN: <code>&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"&gt;</code></li>
+        <li><span class="C2">Bootstrap Icons</span> — Load via CDN: <code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"&gt;</code></li>
+        <li><span class="C3">Google Icons</span> — Load via CDN: <code>&lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"&gt;</code></li>
+      </ul>
+      After loading the library, use the appropriate HTML class to display an icon, then style it with CSS like <code>font-size</code> and <code>color</code>.
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- CSS Links -->
+  <div class="bubble">
+
+    <!-- Section 1: Styling Links -->
+    <h3>CSS Code: Styling Links</h3>
+    <div class="code_block">
+      <code>
+        <span class="C1">a:link { color: blue; }</span> <span class="C8">&lt;!-- normal unvisited --&gt;</span><br>
+        <span class="C2">a:visited { color: purple; }</span> <span class="C8">&lt;!-- visited link --&gt;</span><br>
+        <span class="C3">a:hover { color: red; text-decoration: underline; }</span> <span class="C8">&lt;!-- mouse hover --&gt;</span><br>
+        <span class="C4">a:active { color: orange; }</span> <span class="C8">&lt;!-- clicked moment --&gt;</span><br><br>
+
+        /* Remove underline */<br>
+        <span class="C5">a { text-decoration: none; }</span><br><br>
+
+        /* Background color for hover */<br>
+        <span class="C6">a:hover { background-color: yellow; }</span><br><br>
+
+        /* Link button style */<br>
+        <span class="C7">.link-btn {<br>
+        &nbsp;&nbsp;display: inline-block;<br>
+        &nbsp;&nbsp;padding: 8px 16px;<br>
+        &nbsp;&nbsp;background-color: #4CAF50;<br>
+        &nbsp;&nbsp;color: white;<br>
+        &nbsp;&nbsp;text-decoration: none;<br>
+        &nbsp;&nbsp;border-radius: 4px;<br>
+        }</span><br>
+        <span class="C7">.link-btn:hover { background-color: #45a049; }</span>
+      </code>
+    </div>
+
+    <h3>Explain: CSS Links</h3>
+    <div class="explanation">
+      CSS lets you style links differently based on their state:<br>
+      <ul>
+        <li><span class="C1">a:link</span> — unvisited link style.</li>
+        <li><span class="C2">a:visited</span> — visited link style.</li>
+        <li><span class="C3">a:hover</span> — when the mouse is over the link.</li>
+        <li><span class="C4">a:active</span> — the moment it is clicked.</li>
+      </ul>
+      Use <span class="C5">text-decoration: none</span> to remove underlines, and <span class="C6">background-color</span> to highlight on hover.<br><br>
+      To make a link look like a button, apply padding, background color, border-radius, and hover effects using a class like <span class="C7">.link-btn</span>.
+    </div>
+
+  </div>
+</template>

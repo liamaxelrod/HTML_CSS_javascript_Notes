@@ -1,0 +1,296 @@
+<template> <!-- CSS Animations -->
+  <div class="bubble">
+
+    <h3>CSS Code: Animations</h3>
+    <div class="code_block">
+      <code><pre>
+/* CSS */
+.nameBox {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 20px;
+  background: steelblue;
+  color: white;
+  position: absolute;
+  margin: 10px;
+}
+
+/* Keyframes example */
+<span class="C1">@keyframes jump {
+  0%   { top: 1vh; right: 1vh; }
+  10%  { top: 20vh; right: 30vh; }
+  20%  { top: 40vh; right: 10vh; }
+  30%  { top: 10vh; right: 50vh; }
+  40%  { top: 50vh; right: 20vh; }
+  50%  { top: 30vh; right: 60vh; }
+  60%  { top: 58vh; right: 15vh; }
+  70%  { top: 5vh; right: 40vh; }
+  80%  { top: 45vh; right: 72vh; }
+  90%  { top: 15vh; right: 55vh; }
+  100% { top: 1vh; right: 1vh; }
+}</span>
+
+/* Background color keyframes */
+<span class="C2">@keyframes colorChange {
+  0%   { background-color: red; }
+  10%  { background-color: green; }
+  20%  { background-color: yellow; }
+  30%  { background-color: blue; }
+  40%  { background-color: blueviolet; }
+  50%  { background-color: peru; }
+  60%  { background-color: ivory; }
+  70%  { background-color: violet; }
+  80%  { background-color: paleturquoise; }
+  90%  { background-color: chartreuse; }
+  100% { background-color: red; }
+}</span>
+
+/* Longhand animation properties combined */
+.animAll {
+  <span class="C3">animation-name: jump, colorChange;</span>
+  <span class="C4">animation-duration: 6s, 3s;</span>
+  <span class="C5">animation-timing-function: ease-in-out, linear;</span>
+  <span class="C6">animation-delay: 0s, 0s;</span>
+  <span class="C7">animation-iteration-count: infinite, infinite;</span>
+  <span class="C8">animation-direction: alternate, normal;</span>
+  <span class="C9">animation-fill-mode: forwards, none;</span>
+}
+
+/* HTML */
+&lt;div class="nameBox animAll"&gt;Liam J Axelrod&lt;/div&gt;
+      </pre></code>
+    </div>
+
+    <h3>Example:</h3>
+    <div class="example example1" style="position: relative; height: 70vh; overflow: hidden;">
+      <style>
+        .example1 {
+          position: relative;
+          height: 100%;
+          overflow: hidden;
+        }
+
+        .nameBox {
+          display: inline-block;
+          font-size: 24px;
+          font-weight: bold;
+          padding: 10px 20px;
+          border-radius: 20px;
+          background: steelblue;
+          color: white;
+          position: absolute;
+          margin: 10px;
+        }
+
+        @keyframes jump {
+          0%   { top: 1vh; right: 1vh; }
+          10%  { top: 20vh; right: 30vh; }
+          20%  { top: 40vh; right: 10vh; }
+          30%  { top: 10vh; right: 50vh; }
+          40%  { top: 50vh; right: 20vh; }
+          50%  { top: 30vh; right: 60vh; }
+          60%  { top: 58vh; right: 15vh; }
+          70%  { top: 5vh; right: 40vh; }
+          80%  { top: 45vh; right: 72vh; }
+          90%  { top: 15vh; right: 55vh; }
+          100% { top: 1vh; right: 1vh; }
+        }
+
+        @keyframes colorChange {
+          0%   { background-color: red; }
+          10%  { background-color: green; }
+          20%  { background-color: yellow; }
+          30%  { background-color: blue; }
+          40%  { background-color: blueviolet; }
+          50%  { background-color: peru; }
+          60%  { background-color: ivory; }
+          70%  { background-color: violet; }
+          80%  { background-color: paleturquoise; }
+          90%  { background-color: chartreuse; }
+          100% { background-color: red; }
+        }
+
+        .animAll {
+          animation-name: jump, colorChange;
+          animation-duration: 6s, 3s;
+          animation-timing-function: ease-in-out, linear;
+          animation-delay: 0s, 0s;
+          animation-iteration-count: infinite, infinite;
+          animation-direction: alternate, normal;
+          animation-fill-mode: forwards, none;
+        }
+      </style>
+
+      <div class="nameBox animAll">Liam J Axelrod</div>
+    </div>
+
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <samp class="C1"><b>@keyframes jump</b>: Defines the motion sequence for the element using percentages from 0% → 100%. Each keyframe sets top and right to move the element around inside the container.</samp><br>
+      <samp class="C2"><b>@keyframes colorChange</b>: Defines the sequence of background color changes over time.</samp><br>
+      <samp class="C3"><b>animation-name</b>: Specifies which keyframes to use; here, two animations run together: jump and colorChange.</samp><br>
+      <samp class="C4"><b>animation-duration</b>: Duration of each animation cycle (6s for jump, 3s for colorChange).</samp><br>
+      <samp class="C5"><b>animation-timing-function</b>: Speed curve for each animation (ease-in-out for jump, linear for colorChange).</samp><br>
+      <samp class="C6"><b>animation-delay</b>: Delay before each animation starts (0s for both here).</samp><br>
+      <samp class="C7"><b>animation-iteration-count</b>: Number of times the animation repeats (infinite for both).</samp><br>
+      <samp class="C8"><b>animation-direction</b>: Direction of the animation (alternate for jump so it reverses, normal for colorChange).</samp><br>
+      <samp class="C9"><b>animation-fill-mode</b>: Determines styles before/after animation (forwards keeps jump's last position, none for colorChange).</samp><br><br>
+      <b>Note:</b> All the longhand properties above can also be combined using the <code>animation</code> shorthand.  
+Example with explanation:
+
+      <pre>
+      animation: jump 6s ease-in-out 0s infinite alternate forwards,
+                colorChange 3s linear 0s infinite;
+      </pre>
+
+      Explanation of each part:
+
+      <span class="C1"><b>jump</b></span> → animation-name: Which @keyframes to use.<br>
+      <span class="C2"><b>6s</b></span> → animation-duration: How long one cycle lasts.<br>
+      <span class="C3"><b>ease-in-out</b></span> → animation-timing-function: Speed curve of the animation.<br>
+      <span class="C4"><b>0s</b></span> → animation-delay: Time to wait before starting.<br>
+      <span class="C5"><b>infinite</b></span> → animation-iteration-count: Number of repetitions.<br>
+      <span class="C6"><b>alternate</b></span> → animation-direction: Reverses every other cycle.<br>
+      <span class="C7"><b>forwards</b></span> → animation-fill-mode: Keeps the final state after finishing.<br><br>
+
+      <span class="C1"><b>colorChange</b></span> → animation-name.<br>
+      <span class="C2"><b>3s</b></span> → animation-duration.<br>
+      <span class="C3"><b>linear</b></span> → animation-timing-function.<br>
+      <span class="C4"><b>0s</b></span> → animation-delay.<br>
+      <span class="C5"><b>infinite</b></span> → animation-iteration-count.<br>
+      <span class="C6"></span> → animation-direction (default: normal).<br>
+      <span class="C7"></span> → animation-fill-mode (default: none).
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- CSS Transitions Full -->
+  <div class="bubble">
+    <h3>CSS Code: Transitions</h3>
+    <div class="code_block">
+      <code><pre>
+  /* CSS */
+  .box8 {
+    width: 80px;
+    height: 40px;
+    background: steelblue;
+    margin: 10px;
+  }
+  /* transition-property example */
+  <samp class="C1">
+  .traProp {
+    transition-property: width;
+    transition-duration: 2s;
+  }
+  </samp>
+  .traProp:hover {
+    width: 200px;
+  }
+  <samp class="C2">
+  /* transition-duration example */
+  .traDur {
+    transition-property: background-color;
+    transition-duration: 4s;
+  }
+  .traDur:hover {
+    background-color: tomato;
+  }
+  </samp>
+  <samp class="C3">
+  /* transition-delay example */
+  .traDelay {
+    transition-property: transform;
+    transition-duration: 2s;
+    transition-delay: 1s;
+  }
+  </samp>
+  <samp class="C4">
+  .traDelay:hover {
+    transform: translateX(150px);
+  }
+  </samp>
+  /* transition-timing-function example (linear) */
+  <samp class="C5">
+  .traLinear {
+    transition: all 3s linear;
+  }
+  </samp>
+  <samp class="C4">
+  .traLinear:hover {
+    transform: translateX(300px);
+  }
+  </samp>
+  /* HTML */
+  &lt;div class="box8 traProp"&gt; Property &lt;/div&gt;
+  &lt;div class="box8 traDur"&gt; Duration &lt;/div&gt;
+  &lt;div class="box8 traDelay"&gt; Delay &lt;/div&gt;
+  &lt;div class="box8 traLinear"&gt; Linear &lt;/div&gt;
+      </pre></code>
+    </div>
+
+    <h3>Example:</h3>
+    <div class="example">
+      <style>
+        .box8 { width: 80px; height: 40px; background: steelblue; margin: 10px; color: #fff; display: inline-block; text-align: center; line-height: 40px; }
+
+        /* transition-property */
+        .traProp { transition-property: width; transition-duration: 2s; }
+        .traProp:hover { width: 200px; }
+
+        /* transition-duration */
+        .traDur { transition-property: background-color; transition-duration: 4s; }
+        .traDur:hover { background-color: tomato; }
+
+        /* transition-delay */
+        .traDelay { transition-property: transform; transition-duration: 2s; transition-delay: 1s; }
+        .traDelay:hover { transform: translateX(150px); }
+
+        /* transition-timing-function */
+        .traLinear { transition: all 3s linear; }
+        .traLinear:hover { transform: translateX(300px); }
+      </style>
+
+      <div class="box8 traProp">Property</div>
+      <div class="box8 traDur">Duration</div>
+      <div class="box8 traDelay">Delay</div>
+      <div class="box8 traLinear">Linear</div>
+    </div>
+
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <samp class="C1">
+        <b>transition-property</b>: Specifies which CSS property will animate.
+        <br>Example: <code>transition-property: width;</code> → Only the width changes smoothly on hover.
+      </samp>
+      <samp class="C2">
+        <b>transition-duration</b>: Defines how long the transition takes to complete.
+        <br>Example: <code>transition-duration: 4s;</code> → The property change will take 4 seconds.
+      </samp>
+      <samp class="C3">
+        <b>transition-delay</b>: Sets a delay before the transition starts.
+        <br>Example: <code>transition-delay: 1s;</code> → Waits 1 second before starting the animation.
+      </samp>
+      <samp class="C4">
+        <b>transition-timing-function</b>: Determines the speed curve of the transition.
+        <br>Examples:
+        <ul>
+          <li><b>ease</b>: Default. Slow start, fast middle, slow end.</li>
+          <li><b>ease-in</b>: Starts slow, speeds up.</li>
+          <li><b>ease-out</b>: Starts fast, slows at the end.</li>
+          <li><b>ease-in-out</b>: Slow start and end, fast middle.</li>
+        </ul>
+      </samp>
+      <samp class="C5">
+        <b>linear</b>: Constant speed from start to finish.
+        <br>Example in the code above shows <code>transition: all 3s linear;</code> applied to an element.
+        <br><b>cubic-bezier(n,n,n,n)</b>: Allows defining a custom timing curve with 4 values between 0–1.
+      </samp><br>
+      note: <b>transition</b> → The shorthand property for CSS transitions.<br>
+        <b>all</b> → Means all animatable properties will transition (e.g., width, color, transform).<br>
+        <b>3s</b> → The duration of the transition (3 seconds).<br><br>
+    </div>
+  </div>
+</template>

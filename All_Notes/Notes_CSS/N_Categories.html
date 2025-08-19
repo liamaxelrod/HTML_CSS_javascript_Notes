@@ -1,0 +1,563 @@
+<template> <!-- CSS Tables -->
+  <div class="bubble">
+
+    <style>
+      /* Base table styling for readability - neutral color to separate from code colors */
+      table {
+        border: 1px solid #999; /* neutral border */
+        border-collapse: separate;
+        padding: 0;
+        margin: 1rem 0;
+        border-spacing: 2px;
+        width: auto;
+        color: black; /* ensure default black text */
+      }
+      th, td {
+        padding: 6px 10px;
+        text-align: left;
+        border: 1px solid #999; /* neutral border */
+      }
+    </style>
+
+    <h3>CSS Code: table</h3>
+    <div class="code_block">
+      <code><pre>
+<strong>/* CSS Styles */</strong>
+
+<span class="C1">table.basic {</span>
+  <span class="C1">border-spacing: 10px;</span>
+<span class="C1">}</span>
+
+<span class="C2">table.collapse {</span>
+  <span class="C2">border-collapse: collapse;</span>
+<span class="C2">}</span>
+
+<span class="C3">table.full-width {</span>
+  <span class="C3">width: 100%;</span>
+<span class="C3">}</span>
+
+<strong>/* HTML Markup */</strong>
+<span class="C1">&lt;table class="basic"&gt; ... &lt;/table&gt;</span>
+<span class="C2">&lt;table class="collapse"&gt; ... &lt;/table&gt;</span>
+<span class="C3">&lt;table class="full-width"&gt; ... &lt;/table&gt;</span>
+      </pre></code>
+    </div>
+
+    <!-- Section 2: Example -->
+    <h3>Example: Tables</h3>
+    <div class="example">
+
+      <table class="basic">
+        <caption>Basic Table <span class="dot d1"></span></caption>
+        <thead>
+          <tr><th>Name</th><th>Age</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Alice</td><td>30</td></tr>
+          <tr><td>Bob</td><td>25</td></tr>
+        </tbody>
+      </table>
+
+      <table class="collapse">
+        <caption>Collapsed Borders <span class="dot d2"></span></caption>
+        <tr><th>Product</th><th>Price</th></tr>
+        <tr><td>Widget</td><td>$10</td></tr>
+        <tr><td>Gadget</td><td>$15</td></tr>
+      </table>
+
+      <table class="full-width">
+        <caption>Full Width Table <span class="dot d3"></span></caption>
+        <tr><th>Country</th><th>Capital</th></tr>
+        <tr><td>USA</td><td>Washington, D.C.</td></tr>
+        <tr><td>Canada</td><td>Ottawa</td></tr>
+      </table>
+
+    </div>
+
+    <!-- Section 3: Explanation -->
+    <h3>Explain: CSS Tables</h3>
+    <div class="explanation">
+      <span class="C1">Basic table</span> uses <code>border-spacing: 10px;</code> to add space between cell borders.<br>
+      <span class="C2">Collapse table</span> uses <code>border-collapse: collapse;</code> to merge adjacent borders.<br>
+      <span class="C3">Full width table</span> uses <code>width: 100%;</code> to fill container horizontally.<br>
+      Default cell padding, border, and alignment are applied to all tables for readability.<br>
+      Hover effect is not shown in the code block but can be added for interactive row highlighting.
+    </div>
+
+    <h3>Explain: Additional Table Concepts</h3>
+    <div class="explanation">
+      <strong>Border Spacing vs Border Collapse:</strong><br>
+      <span class="C8"><code>border-spacing</code></span> controls the gap between cells when borders are separate.<br>
+      <span class="C8"><code>border-collapse: collapse;</code></span> merges adjacent borders into one.<br><br>
+
+      <strong>Table Size:</strong><br>
+      You can set explicit <span class="C8"><code>width</code></span> and <span class="C8"><code>height</code></span> on tables to control their size.<br><br>
+
+      <strong>Caption Placement:</strong><br>
+      Use <span class="C8"><code>caption-side</code></span> to position the table caption above or below the table.<br><br>
+
+      <strong>Empty Cells:</strong><br>
+      The <span class="C8"><code>empty-cells</code></span> property controls whether borders and backgrounds show on empty table cells.<br><br>
+
+      <strong>Table Layout:</strong><br>
+      <span class="C8"><code>table-layout</code></span> defines the algorithm used to lay out table columns, affecting rendering speed and layout predictability.<br><br>
+
+      <strong>Striped Rows and Dividers:</strong><br>
+      Styling alternate rows with different backgrounds (<span class="C8"><code>nth-child(even)</code></span>) and adding horizontal dividers can improve readability.<br><br>
+
+      <strong>Accessibility & Semantic HTML:</strong><br>
+      Proper use of <span class="C8"><code>&lt;thead&gt;</code></span>, <span class="C8"><code>&lt;tbody&gt;</code></span>, <span class="C8"><code>&lt;tfoot&gt;</code></span>, and <span class="C8"><code>&lt;caption&gt;</code></span> enhances table semantics and accessibility for screen readers.<br><br>
+
+      <span class="C8">Hover effect</span> can highlight rows when the mouse hovers over them using <span class="C8"><code>tr:hover</code></span>.<br><br>
+
+      Incorporating these properties and best practices will help you create tables that are both visually appealing and functionally robust.
+    </div>
+    
+
+  </div>
+</template>
+
+<template> <!-- CSS Lists -->
+  <div class="bubble">
+
+    <style>
+      ul.custom-image {
+        list-style-image: url('/Images/favicon.ico');
+      }
+
+      ul.no-style {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      ul.red-border {
+        border-left: 4px solid red;
+        padding-left: 12px;
+      }
+    </style>
+
+    <!-- Section 1: Code Block (CSS + HTML) -->
+    <h3>Code: CSS + HTML for Lists</h3>
+    <div class="code_block">
+      <code>
+        <strong>/* CSS Styles */</strong><br>
+        <span class="C1">ul { list-style-type: disc; }</span> <span class="C8">/* unordered list with discs */</span><br>
+        <span class="C2">ol { list-style-type: decimal; }</span> <span class="C8">/* ordered list with numbers */</span><br><br>
+
+        <span class="C3">ul.custom-image {</span><br>
+        &nbsp;&nbsp;<span class="C3">list-style-image: url('https://via.placeholder.com/15');</span><br>
+        }<br><br>
+
+        <span class="C4">ul.no-style {</span><br>
+        &nbsp;&nbsp;<span class="C4">list-style: none;</span><br>
+        &nbsp;&nbsp;<span class="C4">padding-left: 0;</span><br>
+        }<br><br>
+
+        <span class="C5">ul.red-border {</span><br>
+        &nbsp;&nbsp;<span class="C5">border-left: 4px solid red;</span><br>
+        &nbsp;&nbsp;<span class="C5">padding-left: 12px;</span><br>
+        }<br><br>
+
+        <strong>/* HTML Markup */</strong><br>
+        <span class="C1">&lt;ul&gt;</span><br>
+        &nbsp;&nbsp;<span class="C1">&lt;li&gt;Apples&lt;/li&gt;</span><br>
+        &nbsp;&nbsp;<span class="C1">&lt;li&gt;Bananas&lt;/li&gt;</span><br>
+        &nbsp;&nbsp;<span class="C1">&lt;li&gt;Cherries&lt;/li&gt;</span><br>
+        <span class="C1">&lt;/ul&gt;</span><br><br>
+
+        <span class="C2">&lt;ol&gt;</span><br>
+        &nbsp;&nbsp;<span class="C2">&lt;li&gt;First step&lt;/li&gt;</span><br>
+        &nbsp;&nbsp;<span class="C2">&lt;li&gt;Second step&lt;/li&gt;</span><br>
+        &nbsp;&nbsp;<span class="C2">&lt;li&gt;Third step&lt;/li&gt;</span><br>
+        <span class="C2">&lt;/ol&gt;</span><br><br>
+
+        <span class="C3">&lt;ul class="custom-image"&gt;</span><br>
+        &nbsp;&nbsp;<span class="C3">&lt;li&gt;Item 1&lt;/li&gt;</span><br>
+        &nbsp;&nbsp;<span class="C3">&lt;li&gt;Item 2&lt;/li&gt;</span><br>
+        &nbsp;&nbsp;<span class="C3">&lt;li&gt;Item 3&lt;/li&gt;</span><br>
+        <span class="C3">&lt;/ul&gt;</span><br><br>
+
+        <span class="C4">&lt;ul class="no-style"&gt;</span><br>
+        &nbsp;&nbsp;<span class="C4">&lt;li&gt;Clean item 1&lt;/li&gt;</span><br>
+        &nbsp;&nbsp;<span class="C4">&lt;li&gt;Clean item 2&lt;/li&gt;</span><br>
+        <span class="C4">&lt;/ul&gt;</span><br><br>
+
+        <span class="C5">&lt;ul class="red-border"&gt;</span><br>
+        &nbsp;&nbsp;<span class="C5">&lt;li&gt;Important 1&lt;/li&gt;</span><br>
+        &nbsp;&nbsp;<span class="C5">&lt;li&gt;Important 2&lt;/li&gt;</span><br>
+        <span class="C5">&lt;/ul&gt;</span>
+      </code>
+    </div>
+
+    <!-- Section 2: Example -->
+    <h3>Example: Styled Lists</h3>
+    <div class="example">
+      <p><strong>Unordered List (disc)</strong> <span class="dot d1"></span></p>
+      <ul>
+        <li>Apples</li>
+        <li>Bananas</li>
+        <li>Cherries</li>
+      </ul>
+
+      <p><strong>Ordered List (decimal)</strong> <span class="dot d2"></span></p>
+      <ol>
+        <li>First step</li>
+        <li>Second step</li>
+        <li>Third step</li>
+      </ol>
+
+      <p><strong>List with image bullets</strong> <span class="dot d3"></span></p>
+      <ul class="custom-image">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>
+
+      <p><strong>List without bullets (no-style)</strong> <span class="dot d4"></span></p>
+      <ul class="no-style">
+        <li>Clean item 1</li>
+        <li>Clean item 2</li>
+      </ul>
+
+      <p><strong>List with red left border</strong> <span class="dot d5"></span></p>
+      <ul class="red-border">
+        <li>Important 1</li>
+        <li>Important 2</li>
+      </ul>
+    </div>
+
+    <h3>Explain: CSS Lists</h3>
+    <div class="explanation">
+      Lists can be styled by changing their marker types, images, and positioning.<br>
+      <span class="C1">ul { list-style-type: disc; }</span> sets the default bullet type for unordered lists as discs (filled circles).<br>
+      <span class="C2">ol { list-style-type: decimal; }</span> sets ordered lists to show numbers as list markers.<br>
+      <span class="C3">list-style-image</span> lets you replace the default bullet with a custom image, as shown with <span class="C3">ul.custom-image</span>.<br>
+      <span class="C4">list-style: none;</span> removes all bullets or numbers, and combined with <span class="C4">padding-left: 0;</span> cleans up spacing (like <span class="C4">ul.no-style</span>).<br>
+      <span class="C5">border-left</span> adds a visual accent to the list, useful for highlighting important items, as in <span class="C5">ul.red-border</span>.<br><br>
+      The HTML markup remains mostly the same—using <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code> tags with <code>&lt;li&gt;</code> children—but CSS controls how the list markers appear.<br>
+      Always test your list styles for readability and consistent behavior across browsers.
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- CSS Styling Input Fields -->
+  <style>
+    /* General input styling */
+    input[type=text],
+    input[type=password],
+    input[type=number],
+    textarea,
+    select {
+      padding: 8px 12px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+      box-sizing: border-box;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #00befd;
+      box-shadow: 0 0 5px rgba(0, 190, 253, 0.5);
+      outline: none;
+    }
+
+    /* Input with icon */
+    .input-icon {
+      position: relative;
+      display: inline-block;
+    }
+    .input-icon input {
+      padding-left: 30px;
+    }
+    .input-icon img {
+      position: absolute;
+      left: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Animated search input */
+    .search-input {
+      width: 150px;
+      transition: width 0.4s ease-in-out;
+    }
+    .search-input:focus {
+      width: 250px;
+    }
+
+    /* Input buttons */
+    input[type=submit],
+    input[type=button] {
+      background-color: #00befd;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    input[type=submit]:hover,
+    input[type=button]:hover {
+      background-color: #007bb5;
+    }
+  </style>
+
+  <div class="bubble">
+    <!-- ===== CODE SECTION ===== -->
+    <h3>CSS Code: Styling Input Fields</h3>
+    <div class="code_block">
+      <pre><code>
+<span class="C1">/* Text field */</span>
+<span class="C1">input[type=text] { padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; }</span>
+
+<span class="C2">/* Password field */</span>
+<span class="C2">input[type=password] { padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; }</span>
+
+<span class="C3">/* Number field */</span>
+<span class="C3">input[type=number] { padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; }</span>
+
+<span class="C4">/* Input with icon/image */</span>
+<span class="C4">.input-icon input { padding-left: 30px; }</span>
+<span class="C4">.input-icon img { position: absolute; left: 8px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; }</span>
+
+<span class="C5">/* Animated Search Input */</span>
+<span class="C5">.search-input { width: 150px; transition: width 0.4s ease-in-out; }</span>
+<span class="C5">.search-input:focus { width: 250px; }</span>
+
+<span class="C6">/* Textarea */</span>
+<span class="C6">textarea { padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; }</span>
+
+<span class="C7">/* Select Menus */</span>
+<span class="C7">select { padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; }</span>
+
+<span class="C8">/* Input Buttons */</span>
+<span class="C8">input[type=submit], input[type=button] { background-color: #00befd; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; transition: background-color 0.3s; }</span>
+<span class="C8">input[type=submit]:hover, input[type=button]:hover { background-color: #007bb5; }</span>
+      </code></pre>
+    </div>
+
+    <!-- ===== LIVE EXAMPLE SECTION ===== -->
+    <h3>Example: Input Field Styles</h3>
+    <div class="example">
+      <p><span class="dot d1"></span> Text Field: <input type="text" placeholder="Text field"></p>
+      <p><span class="dot d2"></span> Password Field: <input type="password" placeholder="Password"></p>
+      <p><span class="dot d3"></span> Number Field: <input type="number" placeholder="Number"></p>
+      <p><span class="dot d4"></span> Input with Icon: 
+        <span class="input-icon">
+          <img src="/Images/favicon.ico" alt="icon">
+          <input type="text" placeholder="Search...">
+        </span>
+      </p>
+      <p><span class="dot d5"></span> Animated Search Input: <input class="search-input" type="text" placeholder="Search..."></p>
+      <p><span class="dot d6"></span> Textarea: <textarea placeholder="Enter text" rows="3"></textarea></p>
+      <p><span class="dot d7"></span> Select Menu: 
+        <select>
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </select>
+      </p>
+      <p><span class="dot d8"></span> Input Button: <input type="button" value="Click Me"></p>
+      <p><span class="dot d9"></span> Submit Button: <input type="submit" value="Submit"></p>
+    </div>
+
+    <!-- ===== EXPLANATION SECTION ===== -->
+    <h3>Explanation: Input Field Styles</h3>
+    <div class="explanation">
+      <p><span class="C1"><strong>input[type=text]</strong> – Styles only text input fields.</span></p>
+      <p><span class="C2"><strong>input[type=password]</strong> – Styles only password fields.</span></p>
+      <p><span class="C3"><strong>input[type=number]</strong> – Styles only number fields.</span></p>
+      <p><span class="C4"><strong>Input with icon/image</strong> – Use a wrapper <code>.input-icon</code> and add an image positioned inside the input using absolute positioning.</span></p>
+      <p><span class="C5"><strong>Animated Search Input</strong> – Use CSS transition on width to expand the input when focused.</span></p>
+      <p><span class="C6"><strong>Textarea</strong> – Styled like other inputs, can adjust rows and placeholder text.</span></p>
+      <p><span class="C7"><strong>Select Menus</strong> – Styled with padding, border, and border-radius. Appearance can vary slightly by browser.</span></p>
+      <p><span class="C8"><strong>Input Buttons</strong> – Styled with background color, text color, border-radius, and hover effect.</span></p>
+    </div>
+  </div>
+</template>
+
+<template> <!-- CSS Navigation Bar Template with Dropdown -->
+  <style>
+    /* ===== Template-Specific Navigation Styles ===== */
+    .nav-container {
+      background-color: #3498db;
+      padding: 0;
+      border-radius: 8px;
+    }
+
+    .nav-container ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .nav-container li {
+      position: relative;
+    }
+
+    .nav-container a {
+      display: block;
+      padding: 12px 20px;
+      color: white;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+    }
+
+    .nav-container a:hover {
+      background-color: #2980b9;
+    }
+
+    /* Dropdown menu hidden by default */
+    .nav-item .nav-dropdown {
+      display: none; 
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #3498db;
+      min-width: 150px;
+      border-radius: 4px;
+      z-index: 1000;
+    }
+
+    .nav-item .nav-dropdown a {
+      padding: 10px 16px;
+      display: block;
+    }
+
+    /* Show dropdown on hover */
+    .nav-item:hover > .nav-dropdown {
+      display: block;
+    }
+  </style>
+
+  <div class="bubble">
+    <!-- ===== CODE SECTION ===== -->
+    <h3>CSS Code: Navigation Bar with Dropdown</h3>
+    <div class="code_block">
+      <pre><code>
+/* CSS Code */
+<span class="C1">
+nav {
+  background-color: #3498db;
+  padding: 0;
+  border-radius: 8px;
+}
+</span><span class="C2">
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+</span><span class="C3">
+li {
+  position: relative;
+}
+</span><span class="C4">
+a {
+  display: block;
+  padding: 12px 20px;
+  color: white;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+}
+</span><span class="C5">
+a:hover {
+  background-color: #2980b9;
+}
+</span><span class="C6">
+/* Dropdown menu */
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #3498db;
+  min-width: 150px;
+  border-radius: 4px;
+  z-index: 1000;
+}
+</span><span class="C7">
+.nav-dropdown a {
+  padding: 10px 16px;
+  display: block;
+}
+</span><span class="C8">
+/* Show dropdown on hover */
+li:hover > .nav-dropdown {
+  display: block;
+}
+</span>
+/* HTML Code */
+<span class="C9">
+&lt;nav class="nav-container"&gt;
+  &lt;ul&gt;
+    &lt;li class="nav-item"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="nav-item"&gt;
+      &lt;a href="#"&gt;Services ▾&lt;/a&gt;
+      &lt;ul class="nav-dropdown"&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Web Design&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;SEO&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Marketing&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li class="nav-item"&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+</span>
+
+      </code></pre>
+    </div>
+
+    <!-- ===== LIVE EXAMPLE SECTION ===== -->
+    <h3>Example: Navigation Bar with Dropdown</h3>
+    <div class="example">
+      <nav class="nav-container">
+        <ul>
+          <li class="nav-item"><a href="#">Home</a></li>
+          <li class="nav-item">
+            <a href="#">Services ▾</a>
+            <ul class="nav-dropdown">
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">SEO</a></li>
+              <li><a href="#">Marketing</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- ===== EXPLANATION SECTION ===== -->
+    <h3>Explanation: Navigation Bar with Dropdown</h3>
+    <div class="explanation">
+      <p><span class="C1"><strong>nav</strong> – Styles the navigation bar background, padding, and rounded corners. In the live example, it wraps all menu items with a blue background and rounded edges.</span></p>
+
+      <p><span class="C2"><strong>nav ul</strong> – Removes default bullet points and margin/padding, and uses flex layout for horizontal alignment. This makes Home, Services, and About appear in a row.</span></p>
+
+      <p><span class="C3"><strong>li</strong> – Positions each menu item relative so the dropdown menu can be positioned absolutely relative to its parent. This ensures the dropdown appears just below Services.</span></p>
+
+      <p><span class="C4"><strong>a</strong> – Styles the menu links with padding, white text, and no underline. This controls the look of each clickable menu item in the example.</span></p>
+
+      <p><span class="C5"><strong>a:hover</strong> – Changes the link background color on hover to give user feedback when they move the mouse over Home, Services, or About.</span></p>
+
+      <p><span class="C6"><strong>.nav-dropdown</strong> – Initially hidden dropdown menu, positioned absolutely under the parent menu item (Services). The blue background and border-radius match the main nav.</span></p>
+
+      <p><span class="C7"><strong>.nav-dropdown a</strong> – Styles the links inside the dropdown with padding and block display. Each dropdown item (Web Design, SEO, Marketing) fills the dropdown width.</span></p>
+
+      <p><span class="C8"><strong>li:hover > .nav-dropdown</strong> – Shows the dropdown menu only when the user hovers over the parent menu item. This is why Services reveals its submenu on hover.</span></p>
+
+      <p><span class="C9"><strong>HTML structure</strong> – Demonstrates how to create the nav, ul, li, and nested ul elements for dropdown. The hierarchy matches how CSS is applied in the example.</span></p>
+    </div>I. 
+
+  </div>
+</template>

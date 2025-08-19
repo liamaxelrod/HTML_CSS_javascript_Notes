@@ -1,0 +1,337 @@
+<template> <!-- HTML Code: Form Attributes -->
+  <div class="bubble">
+    <h3>HTML Code: Form Attributes & Input Form* Attributes</h3>
+
+    <div class="code_block">
+      <code>
+        /* HTML Code */<br>
+        &lt;form 
+        <span class="C1">action="submit.php"</span> 
+        <span class="C2">method="post"</span> 
+        <span class="C3">target="_blank"</span> 
+        <span class="C4">autocomplete="on"</span> 
+        <span class="C5">novalidate</span>&gt;<br>
+
+        &nbsp;&nbsp;&lt;label for="fname"&gt;First Name:&lt;/label&gt;<br>
+        &nbsp;&nbsp;&lt;input type="text" id="fname" name="fname" placeholder="John"&gt;<br><br>
+
+        &nbsp;&nbsp;&lt;label for="email"&gt;Email:&lt;/label&gt;<br>
+        &nbsp;&nbsp;&lt;input type="email" id="email" name="email" placeholder="you@example.com"&gt;<br><br>
+
+        &nbsp;&nbsp;&lt;input type="submit" value="Submit (POST, new tab)"&gt;<br>
+        &lt;/form&gt;<br><br>
+
+        &lt;form id="form2" 
+        <span class="C1">action="submit_alt.php"</span> 
+        <span class="C2">method="get"</span> 
+        <span class="C3">target="_self"</span>&gt;<br>
+
+        &nbsp;&nbsp;&lt;label for="lname"&gt;Last Name:&lt;/label&gt;<br>
+        &nbsp;&nbsp;&lt;input type="text" id="lname" name="lname" placeholder="Doe"&gt;<br>
+        &lt;/form&gt;<br><br>
+
+        &lt;input type="submit" value="Submit (GET, same tab)" 
+        <span class="C6">form="form2" formaction="submit_alt.php" formmethod="get" formtarget="_self" formenctype="multipart/form-data" formnovalidate</span>&gt;
+      </code>
+    </div>
+
+    <h3>example: Form Attributes</h3>
+    <div class="example">
+      <form id="form1" action="submit.php" method="post" target="_blank" autocomplete="on" novalidate onsubmit="return false;">
+        <label for="fname">First Name:</label><br>
+        <input type="text" id="fname" name="fname" placeholder="John">
+        <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span><span class="dot d4"></span><span class="dot d5"></span><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="you@example.com">
+        <span class="dot d4"></span><br><br>
+
+        <input type="submit" value="Submit (POST, new tab)"><br><br>
+      </form>
+
+      <form id="form2" action="submit_alt.php" method="get" target="_self" onsubmit="return false;">
+        <label for="lname">Last Name:</label><br>
+        <input type="text" id="lname" name="lname" placeholder="Doe">
+        <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span><br><br>
+      </form>
+
+      <input type="submit" value="Submit (GET, same tab)"
+        form="form2"
+        formaction="submit_alt.php"
+        formmethod="get"
+        formtarget="_self"
+        formenctype="multipart/form-data"
+        formnovalidate><span class="dot d6"></span>
+    </div>
+
+    <h3>Explanation: Form Attributes</h3>
+    <div class="explanation">
+      <p>
+      <span class="C1">- <code>action</code></span>: URL the form submits data to. If omitted, defaults to current page.<br>
+
+      <span class="C2">- <code>method</code></span>: Defines how data is sent.<br>
+      &nbsp;&nbsp;<strong>GET:</strong> Appends form data into the URL. You’ll see something like: <code>submit.php?lname=Doe</code><br>
+      &nbsp;&nbsp;- Good for search forms or when bookmarking is useful.<br>
+      &nbsp;&nbsp;- Unsafe for private data (like passwords) since it's visible in the URL.<br>
+      &nbsp;&nbsp;- URL size is limited (~2000 characters).<br>
+
+      &nbsp;&nbsp;<strong>POST:</strong> Sends form data in the HTTP request body (invisible to users).<br>
+      &nbsp;&nbsp;- Better for secure or long input.<br>
+      &nbsp;&nbsp;- Cannot be bookmarked.<br>
+      &nbsp;&nbsp;- Allows file uploads and more complex content.<br>
+
+      <span class="C3">- <code>target</code></span>: Where to display server response.<br>
+      &nbsp;&nbsp;- <code>_self</code>: current tab (default)<br>
+      &nbsp;&nbsp;- <code>_blank</code>: new tab<br>
+      &nbsp;&nbsp;- <code>_parent</code>, <code>_top</code>, or a named iframe<br>
+
+      <span class="C4">- <code>autocomplete</code></span>: Lets browser suggest past input.<br>
+      &nbsp;&nbsp;- <code>on</code>: Browser may autofill fields.<br>
+      &nbsp;&nbsp;- <code>off</code>: No autofill suggestions.<br>
+
+      <span class="C5">- <code>novalidate</code></span>: Tells browser to skip built-in validation.<br>
+      - For example, a required <code>email</code> input won't trigger a warning if left empty.<br>
+      - Useful for custom validation in JavaScript or testing.<br>
+
+      <strong>Input-level overrides (form*):</strong><br>
+      <span class="C6">- <code>form</code></span>: Links the input to a specific form by id.<br>
+      &nbsp;&nbsp;<em>Example:</em> A button outside the form with <code>form="form2"</code> can still submit it.<br>
+
+      <span class="C6">- <code>formaction</code></span>: Overrides the form's <code>action</code>.<br>
+      &nbsp;&nbsp;<em>Example:</em> Use one form with multiple submit buttons that go to different scripts.<br>
+
+      <span class="C6">- <code>formmethod</code></span>: Overrides <code>method</code> only for that input.<br>
+      &nbsp;&nbsp;<em>Example:</em> One submit button uses POST, another uses GET.<br>
+
+      <span class="C6">- <code>formtarget</code></span>: Overrides the form’s <code>target</code>.<br>
+      &nbsp;&nbsp;<em>Example:</em> A single button that opens result in a new tab.<br>
+
+      <span class="C6">- <code>formenctype</code></span>: Overrides encoding type for file uploads.<br>
+      &nbsp;&nbsp;<em>Example:</em> <code>multipart/form-data</code> for file inputs.<br>
+
+      <span class="C6">- <code>formnovalidate</code></span>: Skips validation for that input only.<br>
+      &nbsp;&nbsp;<em>Example:</em> A “Save Draft” button that allows incomplete data.
+      </p>
+    </div> 
+
+  </div>
+</template>
+
+<template> <!-- HTML Code: Forms & Input Types -->
+  <style>
+    /* Style Submit, Reset, and Button consistently */
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"] {
+      background-color: rgb(0, 185, 255);   /* blue background */
+      color: white;                /* white text */
+      border: none;                /* remove default borders */
+      padding: 8px 16px;           /* spacing */
+      border-radius: 6px;          /* little rounded edges */
+      cursor: pointer;             /* pointer cursor on hover */
+      font-size: 14px;
+    }
+  </style>
+  <div class="bubble">
+    <h3>HTML Code: Forms & Input Types</h3>
+
+    <div class="code_block">
+      <code>
+        &lt;form onsubmit="return false;" action="action_page.php" method="post"&gt;<br><br>
+
+        <span class="C1">&lt;input type="text" id="fname" name="fname" placeholder="John"&gt;</span><br>
+        <span class="C1">&lt;input type="text" id="lname" name="lname" placeholder="Doe"&gt;</span><br><br>
+
+        <span class="C2">&lt;input type="password" placeholder="Enter password" name="pwd"&gt;</span><br><br>
+
+        <span class="C3">&lt;input type="email" placeholder="you@example.com"&gt;</span><br><br>
+
+        <span class="C7">&lt;input type="date"&gt;</span><br>
+        <span class="C7">&lt;input type="color"&gt;</span><br><br>
+
+        <span class="C8">&lt;input type="text" value="Readonly" readonly&gt;</span><br>
+        <span class="C8">&lt;input type="text" value="Disabled" disabled&gt;</span><br><br>
+
+        <span class="C5">&lt;input type="radio" name="fav_lang" value="HTML"&gt; HTML<br>
+        &lt;input type="radio" name="fav_lang" value="CSS"&gt; CSS<br>
+        &lt;input type="radio" name="fav_lang" value="JS"&gt; JavaScript</span><br><br>
+
+        <span class="C6">&lt;input type="checkbox" name="vehicle1" value="Bike"&gt; I have a bike<br>
+        &lt;input type="checkbox" name="vehicle2" value="Car"&gt; I have a car<br>
+        &lt;input type="checkbox" name="vehicle3" value="Boat"&gt; I have a boat</span><br><br>
+
+        <span class="C4">&lt;input type="submit" value="Submit (does not submit)"&gt;</span><br>
+        <span class="C4">&lt;input type="reset" value="Reset"&gt;</span><br>
+        <span class="C4">&lt;input type="button" value="Click Me"&gt;</span><br><br>
+
+        &lt;/form&gt;
+      </code>
+    </div>
+
+    <h3>Example: Forms & Input Types</h3>
+    <div class="example">
+      <form onsubmit="return false;" action="action_page.php" method="post">
+
+
+
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname" name="fname" placeholder="John"><span class="dot d1"></span><br><br>
+
+        <label for="lname">Last Name:</label>
+        <input type="text" id="lname" name="lname" placeholder="Doe"><span class="dot d1"></span><br><br>
+
+        <input type="password" placeholder="Enter password" name="pwd"><span class="dot d2"></span><br><br>
+
+        <input type="email" placeholder="you@example.com"><span class="dot d3"></span><br><br>
+
+        <input type="date"><span class="dot d7"></span><br><br>
+        <input type="color"><span class="dot d7"></span><br><br>
+
+        <input type="text" value="Readonly" readonly><span class="dot d8"></span>
+        <input type="text" value="Disabled" disabled><span class="dot d8"></span><br><br>
+
+        <input type="radio" name="fav_lang" value="HTML"> HTML<span class="dot d5"></span><br>
+        <input type="radio" name="fav_lang" value="CSS"> CSS<span class="dot d5"></span><br>
+        <input type="radio" name="fav_lang" value="JS"> JavaScript<span class="dot d5"></span><br><br>
+
+        <input type="checkbox" name="vehicle1" value="Bike"> I have a bike<span class="dot d6"></span><br>
+        <input type="checkbox" name="vehicle2" value="Car"> I have a car<span class="dot d6"></span><br>
+        <input type="checkbox" name="vehicle3" value="Boat"> I have a boat<span class="dot d6"></span><br><br>
+
+        <input type="submit" value="Submit (does not submit)"><span class="dot d4"></span>
+        <input type="reset" value="Reset"><span class="dot d4"></span>
+        <input type="button" value="Click Me"><span class="dot d4"></span>
+
+      </form>
+    </div>
+
+    <h3>Explanation: Forms & Input Types</h3>
+    <div class="explanation">
+      <p>
+        <span class="C1">- Text inputs</span> ask for user text and support placeholders.<br>
+        <span class="C2">- Password inputs</span> hide user text for privacy.<br>
+        <span class="C3">- Email inputs</span> provide validation for email format.<br>
+        <span class="C7">- Date and color inputs</span> give specialized UI controls.<br>
+        <span class="C8">- Readonly fields</span> A readonly field shows information you can read but can’t change. Example: user ID.<br>
+        <span class="C8">- Disabled fields</span> A disabled field is greyed out and cannot be edited. Its value won’t submit.<br>
+        <span class="C5">- Radio buttons</span> allow selecting one option from many.<br>
+        <span class="C6">- Checkboxes</span> allow multiple selections.<br>
+        <span class="C4">- Submit button</span> normally sends data to the server but here it does not submit.<br>
+        <span class="C4">- Reset button</span> resets fields to default values.<br>
+        <span class="C4">- Button type</span> creates a clickable button with no default behavior.<br>
+      </p>
+    </div> 
+
+  </div>
+</template>
+
+<template> <!-- HTML Code: Form Elements -->
+
+  <div class="bubble">
+    <h3>HTML Code: Form Elements</h3>
+    <div class="code_block">
+      <code>
+        /* HTML Code */<br>
+        &lt;<span class="C4">fieldset</span>&gt; &lt;!-- Groups related controls --&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C4">legend</span>&gt;Personal Info&lt;/<span class="C4">legend</span>&gt; &lt;!-- Label for the group --&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C1">label</span> for="fname"&gt;First Name:&lt;/<span class="C1">label</span>&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C1">input</span> type="text" id="fname" name="fname" placeholder="John"&gt;<br><br>
+
+        &nbsp;&nbsp;&lt;<span class="C1">label</span> for="lname"&gt;Last Name:&lt;/<span class="C1">label</span>&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C1">input</span> type="text" id="lname" name="lname" placeholder="Doe"&gt;<br>
+        &lt;/<span class="C4">fieldset</span>&gt;<br><br>
+
+        &lt;<span class="C1">label</span> for="bio"&gt;Biography:&lt;/<span class="C1">label</span>&gt;<br>
+        &lt;<span class="C3">textarea</span> id="bio" name="bio" rows="4" cols="50" placeholder="Write something..."&gt;&lt;/<span class="C3">textarea</span>&gt;<br><br>
+
+        &lt;<span class="C5">label</span>&gt;Gender:&lt;/<span class="C5">label</span>&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C5">input</span> type="radio" id="male" name="gender" value="male"&gt;&lt;<span class="C5">label</span> for="male"&gt;Male&lt;/<span class="C5">label</span>&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C5">input</span> type="radio" id="female" name="gender" value="female"&gt;&lt;<span class="C5">label</span> for="female"&gt;Female&lt;/<span class="C5">label</span>&gt;<br><br>
+
+        &lt;<span class="C6">label</span> for="cars"&gt;Choose a car:&lt;/<span class="C6">label</span>&gt;<br>
+        &lt;<span class="C6">select</span> id="cars" name="cars"&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C6">option</span> value="volvo"&gt;Volvo&lt;/<span class="C6">option</span>&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C6">option</span> value="saab"&gt;Saab&lt;/<span class="C6">option</span>&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C6">option</span> value="fiat"&gt;Fiat&lt;/<span class="C6">option</span>&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C6">option</span> value="audi"&gt;Audi&lt;/<span class="C6">option</span>&gt;<br>
+        &lt;/<span class="C6">select</span>&gt;<br><br>
+
+        &lt;<span class="C4">button</span> type="submit"&gt;Submit&lt;/<span class="C4">button</span>&gt;<br>
+        &lt;<span class="C4">button</span> type="reset"&gt;Reset&lt;/<span class="C4">button</span>&gt;<br>
+        &lt;<span class="C4">button</span> type="button"&gt;Click Me&lt;/<span class="C4">button</span>&gt;
+      </code>
+    </div>
+
+    <h3>example: Form Elements</h3>
+    <div class="example">
+      <form onsubmit="return false;" action="#" method="post">
+        <fieldset>
+          <legend>Personal Info<span class="dot d4"></span></legend>
+
+          <label for="fname">First Name:<span class="dot d1"></span></label><br>
+          <input type="text" id="fname" name="fname" placeholder="John"><br><br>
+
+          <label for="lname">Last Name:<span class="dot d1"></span></label><br>
+          <input type="text" id="lname" name="lname" placeholder="Doe"><br>
+        </fieldset><br>
+
+        <label for="bio">Biography:<span class="dot d3"></span></label><br>
+        <textarea id="bio" name="bio" rows="4" cols="50" placeholder="Write something..."></textarea><br><br>
+
+        <label>Gender:<span class="dot d5"></span></label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br><br>
+
+        <label for="cars">Choose a car:<span class="dot d6"></span></label><br>
+        <select id="cars" name="cars">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="fiat">Fiat</option>
+          <option value="audi">Audi</option>
+        </select><br><br>
+
+        <button type="submit">Submit<span class="dot d4"></span></button>
+        <button type="reset">Reset<span class="dot d4"></span></button>
+        <button type="button">Click Me<span class="dot d4"></span></button>
+      </form>
+    </div>
+
+    <h3>Explanation: Form Elements</h3>
+    <div class="explanation">
+      <p>
+      <span class="C4">&lt;fieldset&gt;</span>: Groups related form elements together inside a visible box with a border.<br>
+      <span class="C4">&lt;legend&gt;</span>: Gives that group a title. This helps both visually and for screen readers.<br><br>
+
+      <span class="C1">&lt;label&gt;</span>: Connects a text label to a specific input field.<br>
+      &nbsp;&nbsp;- Clicking the label will focus (or toggle) the associated input.<br>
+      &nbsp;&nbsp;- Use <code>for="id"</code> to link to the input, or wrap the input inside the label.<br><br>
+
+      <span class="C3">&lt;textarea&gt;</span>: A box for multi-line text (like a comment or bio).<br>
+      &nbsp;&nbsp;- Use <code>rows</code> and <code>cols</code> to control the size.<br>
+      &nbsp;&nbsp;- Supports attributes like <code>placeholder</code> and <code>maxlength</code>.<br><br>
+
+      <span class="C5">Radio buttons</span>: Let users pick only one option from a group.<br>
+      &nbsp;&nbsp;- All buttons with the same <code>name</code> are grouped automatically.<br>
+      &nbsp;&nbsp;- Only one can be selected at a time.<br><br>
+
+      <span class="C6">Dropdowns</span>: Use <code>&lt;select&gt;</code> for picking from a list of options.<br>
+      &nbsp;&nbsp;- Each <code>&lt;option&gt;</code> is a choice.<br>
+      &nbsp;&nbsp;- Add <code>multiple</code> to the <code>&lt;select&gt;</code> tag to allow picking more than one.<br><br>
+
+      <span class="C4">Buttons</span>: Clickable elements that perform actions.<br>
+      &nbsp;&nbsp;- <code>type="submit"</code> sends the form.<br>
+      &nbsp;&nbsp;- <code>type="reset"</code> clears the form to its initial state.<br>
+      &nbsp;&nbsp;- <code>type="button"</code> is a blank button — you add custom behavior with JavaScript.<br><br>
+
+      <strong>Other Notes:</strong><br>
+      - Use <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> to visually group related fields — it helps with accessibility too.<br>
+      - <code>&lt;label&gt;</code> is important for users with screen readers and also improves click/tap targets.<br>
+      - <code>&lt;select&gt;</code> is a compact way to show a list of fixed options.<br>
+      - Any of these elements can be made <code>disabled</code> or <code>readonly</code> to control what users can interact with.<br>
+      </p>
+    </div> 
+
+  </div>
+</template>
