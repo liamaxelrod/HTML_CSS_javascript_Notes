@@ -98,7 +98,7 @@ One improvement I’m considering is reorganizing the HTML documents so that all
 
 ***Link to the website:***
 
-[Liam Axelrod website](https://liamaxelrod.vercel.app/ "https://liamaxelrod.vercel.app/")
+[Liam Axelrod website](htmlandcssnotes.vercel.app "htmlandcssnotes.vercel.app")
 
 ***Link to vercel:***
 
