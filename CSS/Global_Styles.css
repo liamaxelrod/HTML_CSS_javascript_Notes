@@ -108,6 +108,16 @@ relative to root font size rem
   line-height: 1.5; /* added for better vertical spacing */
 }
 
+.section ul {
+  margin: 1rem 0;        /* space above and below the list */
+  padding-left: 1.5rem;  /* indent the list bullets nicely */
+  line-height: 1.0;       /* vertical spacing between list items */
+}
+
+.section li {
+  margin-bottom: 0.75rem; /* space between each bullet */
+}
+
 /* ===========================
    RESPONSIVE / DYNAMIC INTERFACE STYLES
    =========================== */
@@ -182,6 +192,6 @@ relative to root font size rem
 
 /* chatGPT Questions by liam Disregard if I forgot to remove it. 
 -----------------------
-
+The text is still looking too close together vertically. 
 
 */
