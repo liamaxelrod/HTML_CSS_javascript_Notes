@@ -35,24 +35,36 @@ A live demo of this project has not been published yet.
 ## 4. Project Structure
 
 /All_Notes
-  ├─ Notes_HTML/          # HTML-related notes and templates
-  │    ├─ D_Basics.html
-  │    ├─ D_Forms_Inputs.html
-  │    └─ ...
-  ├─ Notes_CSS/           # CSS-related notes and templates
-  │    ├─ Basics.html
-  │    ├─ TestNote.html
-  │    └─ ...
+  ├─ Notes_HTML/              # HTML-related notes and templates
+  │    ├─ D_Basics.html       # Basic HTML concepts
+  │    ├─ D_Forms_Inputs.html # Forms and input elements
+  │    └─ ...                 # Other HTML notes
+  ├─ Notes_CSS/               # CSS-related notes and templates
+  │    ├─ Basics.html         # Basic CSS concepts
+  │    ├─ TestNote.html       # Test/experimental CSS notes
+  │    └─ ...                 # Other CSS notes
 /CSS
-  ├─ Global_Styles.css    # Main global stylesheet used across all pages
-  └─ template.css         # Page-specific template styles
-/Dropdown                 # HTML files for dropdown content menus
-/Images                   # Images used in the project (favicon, personal images)
-/JS
-  └─ loadNotes.js         # Script to dynamically load note content into pages
-index.html                # Main landing page
-About.html                # About page
-README.md                 # Project documentation
+  ├─ Global_Styles.css        # Main global stylesheet used across all pages
+  └─ template.css             # Page-specific template styles
+/CSS_Dropdown
+  ├─ D_Animation.html         # CSS animation dropdown content
+  ├─ D_Basics.html            # CSS basics dropdown content
+  └─ ...                      # Other CSS dropdown files
+/HTML_Dropdown
+  ├─ D_Basics.html            # HTML basics dropdown content
+  ├─ D_Forms_Inputs.html      # Forms/input dropdown content
+  └─ ...                      # Other HTML dropdown files
+/Images                       # Images used in the project
+  ├─ favicon.ico              # Website favicon
+  ├─ workplace.jpg            # Example workplace image
+  └─ ...                      # Other images
+/loadNotes.js                 # Script to dynamically load note content into pages
+/loadNav.js                   # Script to dynamically load navigation content
+index.html                    # Main landing page
+About.html                    # About page
+nav.html                      # Navigation template/page
+LICENSE                       # Project license file
+README.md                     # Project documentation
 
 ---
 
@@ -88,7 +100,7 @@ Using ChatGPT as a learning aid has been incredibly helpful. Every time I create
 
 ## 7. Future Improvements
 
-One improvement I’m considering is reorganizing the HTML documents so that all links are managed in a single, centralized location. Currently, the links are scattered across multiple files, which makes updating or adding new links tedious. By centralizing the navigation or link structure, future updates will be much easier and more efficient. I definitely plan to implement this approach in this project and for any future projects to improve maintainability and scalability.
+Attach the home button to my home website. What I have not created yet.
 
 ---
 
