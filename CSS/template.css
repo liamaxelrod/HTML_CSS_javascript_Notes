@@ -1,0 +1,183 @@
+/* ===========================
+   TEMPLATE-SPECIFIC STYLES
+First of all, four templates. == */
+
+/* 
+  Outer container for one complete template.
+  Expands full width but keeps inner padding for breathing room.
+  Rounded corners and subtle shadow remain for style.
+*/
+.bubble {
+  background-color: white;          /* White background */
+  border-radius: 12px;              /* Rounded corners */
+  padding: 1px 20px 20px 20px;     /* Inner spacing */
+  margin: 20px 15px 20px 15px;     /* 20px top & bottom margin, 15px left & right */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  width: auto;                    /* Auto width */
+  box-sizing: border-box;          /* Include padding in total width */
+}
+
+/* 
+  Code Section:
+  Styles the code display block to look like a dark code editor.
+  Uses monospace font, preserves formatting, and allows horizontal scroll if needed.
+*/
+.code_block {
+  background-color: black;           /* Dark background similar to editors */
+  color: white;                     /* Light text for contrast and readability */
+  padding: 10px;               /* Inner spacing inside code block */
+  border-radius: 8px;               /* Rounded corners for visual softness */
+  font-family: monospace;           /* Fixed-width font for code alignment */
+  overflow-x: auto;                /* Scroll horizontally if code is wider than container */
+  margin-bottom: 10px;              /* Space below code block */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slight shadow for depth */
+}
+
+/* 
+  Example Section:
+  Shows the rendered output or live example of the code.
+  White background with subtle border and shadow for clarity.
+*/
+.example {
+  background-color: white;          /* Neutral background */
+  border: 1px solid lightgray;      /* Light border to separate from surroundings */
+  border-radius: 8px;               /* Rounded corners to match design */
+  padding: 12px;                   /* Padding inside example box */
+  margin-bottom: 15px;              /* Space below example section */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for subtle elevation */
+}
+
+/* 
+  Explanation Section:
+  Contains descriptive text explaining the code.
+  Uses a gentle off-white background and clean typography for readability.
+*/
+.explanation {
+  font-family: Arial, sans-serif;   /* Clean, easy-to-read font */
+  background-color: #f9faff;        /* Slightly off-white background */
+  border-radius: 8px;               /* Rounded corners consistent with other sections */
+  padding: 12px 16px;              /* Comfortable padding inside */
+  border: 1px solid lightgray;      /* Light border for visual separation */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for subtle pop */
+  line-height: 1.5;                /* Increased line height for better readability */
+}
+
+/* ===========================
+   COLOR FOR CODE & EXPLANATION TEXT
+   =========================== */
+
+.C1 { color: pink; }  /* Pinkish */
+.C2 { color: lightblue; }  /* Blue */
+.C3 { color: green; }  /* Green */
+.C4 { color: orange; }  /* Orange */
+.C5 { color: purple; }  /* Purple */
+.C6 { color: lime; }  /* Teal */
+.C7 { color: red; }  /* Red */
+.C8 { color: gray; }  /* Gray */
+.C9 { color: lightcoral; }  /* Brownish */
+.C10 { color: blue; } /* Strong Blue */
+
+/* ===========================
+   COLORED DOT STYLE FOR EXAMPLES
+   =========================== */
+
+.dot  {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* Dot colors matching the color classes */
+
+.d1 { background-color: pink; }
+.d2 { background-color: lightblue; }
+.d3 { background-color: green; }
+.d4 { background-color: orange; }
+.d5 { background-color: purple; }
+.d6 { background-color: lime; }
+.d7 { background-color: red; }
+.d8 { background-color: gray; }
+.d9 { background-color: lightcoral; }
+.d10 { background-color: blue; }
+
+/* ===========================
+   RESPONSIVE / DYNAMIC INTERFACE STYLES
+   =========================== */
+
+/* Phones: max-width 600px */
+@media (max-width: 600px) {
+  .bubble {
+    margin: 10px 8px;
+    padding: 10px 12px 12px 12px;
+  }
+
+  .code_block {
+    font-size: 0.85rem;
+    padding: 10px 12px;
+  }
+
+  .example {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .explanation {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Tablets: 601px to 900px */
+@media (min-width: 601px) and (max-width: 900px) {
+  .bubble {
+    margin: 15px 12px;
+    padding: 12px 16px 16px 16px;
+  }
+
+  .code_block {
+    font-size: 0.95rem;
+    padding: 11px 14px;
+  }
+
+  .example {
+    padding: 11px;
+    font-size: 1rem;
+  }
+
+  .explanation {
+    padding: 11px 14px;
+    font-size: 1.05rem;
+  }
+}
+
+/* Desktop: min-width 901px */
+@media (min-width: 901px) {
+  .bubble {
+    margin: 20px 15px;
+    padding: 1px 20px 20px 20px;
+  }
+
+  .code_block {
+    font-size: 1rem;
+    padding: 12px 16px;
+  }
+
+  .example {
+    padding: 12px;
+    font-size: 1.1rem;
+  }
+
+  .explanation {
+    padding: 12px 16px;
+    font-size: 1.1rem;
+  }
+}
+
+/* chatGPT Questions by liam Disregard if I forgot to remove it. 
+-----------------------
+
+
+*/

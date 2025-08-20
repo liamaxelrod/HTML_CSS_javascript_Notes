@@ -1,0 +1,19 @@
+<template id="nav-template">
+<nav>
+      <ul>
+        <li><a href="/index.html" onclick="event.preventDefault(); alert('Home link is not active yet.');">Home</a></li>
+        <li><a href="/index.html">Home (HTML & CSS)</a></li>
+
+        <!-- CSS Dropdown -->
+        <li class="dropdown">
+          <a href="#" onclick="event.preventDefault()">Javascript Content ▾</a>
+          <div class="dropdown-content">
+            <a href="#" onclick="event.preventDefault()">text</a>
+          </div>
+        </li>
+
+        <!-- Updated About link -->
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+</template>
