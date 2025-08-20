@@ -19,39 +19,7 @@
 
   <!-- ===== HEADER / NAVIGATION ===== -->
   <header>
-    <nav>
-      <ul>
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/index.html">Home (HTML & CSS)</a></li>
-
-        <!-- CSS Dropdown -->
-        <li class="dropdown">
-          <a href="#" onclick="event.preventDefault()">CSS Content ▾</a>
-          <div class="dropdown-content">
-            <a href="/CSS_Dropdown/D_Animation.html">Animation</a>
-            <a href="/CSS_Dropdown/D_Basics.html">Basics</a>
-            <a href="/CSS_Dropdown/D_Categories.html">Categories</a>
-            <a href="/CSS_Dropdown/D_Icons_Links.html">Icons & Links</a>
-            <a href="/CSS_Dropdown/D_Layout.html">Layout</a>
-            <a href="/CSS_Dropdown/D_Properties.html">Properties</a>
-          </div>
-        </li>
-
-        <!-- HTML Dropdown -->
-        <li class="dropdown">
-          <a href="#" onclick="event.preventDefault()">HTML Content ▾</a>
-          <div class="dropdown-content">
-            <a href="/HTML_Dropdown/D_Basics.html">Basics</a>
-            <a href="/HTML_Dropdown/D_Forms_Inputs.html">Forms & Inputs</a>
-            <a href="/HTML_Dropdown/D_JavaScript_Integration.html">JavaScript Integration</a>
-            <a href="/HTML_Dropdown/D_Structure_Layout.html">Structure & Layout</a>
-            <a href="/HTML_Dropdown/D_Text_Links_Media.html">Text, Links & Media</a>
-          </div>
-        </li>
-
-        <li><a href="/about.html">About</a></li>
-      </ul>
-    </nav>
+    <div class="nav-slot"></div>
   </header>
 
   <!-- ===== MAIN CONTENT ===== -->
@@ -73,6 +41,7 @@
   </footer>
 
   <!-- Load dynamic notes -->
+  <script src="/loadNav.js"></script> 
   <script src="/loadNotes.js"></script>
 </body>
 </html>
