@@ -1,50 +1,675 @@
-<template> <!-- Javascript Description
- -->
+<!-- chatGPT Questions by liam Disregard if I forgot to remove it. 
+
+
+
+
+
+ '5' Can be confusing. You need to explain explanation. Whether it's working or not working because it's a string instead of a number Or if it's the operation
+
+
+
+-->
+<!-- template 10 -->
+<template> <!-- JavaScript Operators4 -->
+
   <div class="bubble">
 
-    <h3>text</h3>
+    <!-- Code -->
+    <h3>JavaScript Logical and Type Operators</h3>
     <div class="code_block">
-      <span class="C#"></span>
+      <span class="C1">&&</span> <span>// logical AND</span><br>
+      <span class="C2">||</span> <span>// logical OR</span><br>
+      <span class="C3">!</span> <span>// logical NOT</span><br>
+      <span class="C4">typeof</span> <span>// returns type of a variable</span><br>
+      <span class="C5">instanceof</span> <span>// checks if object is instance of a type</span>
     </div>
 
-    <h3>text</h3>
+    <!-- Example -->
+    <h3>Example</h3>
     <div class="example">
-      <span class="dot d#"></span>
+      <span class="dot d1"></span> true && false → false<br>
+      <span class="dot d2"></span> true || false → true<br>
+      <span class="dot d3"></span> !true → false<br>
+      <span class="dot d4"></span> typeof 5 → 'number'<br>
+      <span class="dot d5"></span> obj instanceof Array → true (if obj is array)
     </div>
 
-    <h3>text</h3>
+    <!-- Explanation -->
+    <h3>Explanation</h3>
     <div class="explanation">
-      <span class="C#"></span>
+      <span class="C1">&&</span> Logical AND: true if both operands are true.<br>
+      <span class="C2">||</span> Logical OR: true if at least one operand is true.<br>
+      <span class="C3">!</span> Logical NOT: negates the boolean value.<br>
+      <span class="C4">typeof</span> Returns the type of a variable as a string ('number', 'string', etc.).<br>
+      <span class="C5">instanceof</span> Checks if an object is an instance of a particular type.
+    </div>
+
+    <!-- Bitwise Operators -->
+    <h3>JavaScript Bitwise Operators</h3>
+    <div class="code_block">
+      <span class="C6">&amp;</span> <span>// AND</span><br>
+      <span class="C7">|</span> <span>// OR</span><br>
+      <span class="C8">~</span> <span>// NOT</span><br>
+      <span class="C9">^</span> <span>// XOR</span><br>
+      <span class="C10">&lt;&lt;</span> <span>// left shift</span><br>
+      <span class="C1">&gt;&gt;</span> <span>// right shift</span><br>
+      <span class="C2">&gt;&gt;&gt;</span> <span>// unsigned right shift</span>
+    </div>
+
+    <h3>Example</h3>
+    <div class="example">
+      <span class="dot d6"></span> 5 & 1 → 0101 & 0001 → 0001 → 1<br>
+      <span class="dot d7"></span> 5 | 1 → 0101 | 0001 → 0101 → 5<br>
+      <span class="dot d8"></span> ~5 → ~0101 → 1010 → 10<br>
+      <span class="dot d9"></span> 5 ^ 1 → 0101 ^ 0001 → 0100 → 4<br>
+      <span class="dot d10"></span> 5 << 1 → 0101 << 1 → 1010 → 10<br>
+      <span class="dot d1"></span> 5 >> 1 → 0101 >> 1 → 0010 → 2<br>
+      <span class="dot d2"></span> 5 >>> 1 → 0101 >>> 1 → 0010 → 2
+    </div>
+
+    <h3>Explanation</h3>
+    <div class="explanation">
+      <span class="C6">&amp;</span> AND: compares bits, 1 & 1 = 1.<br>
+      <span class="C7">|</span> OR: compares bits, 1 | 0 = 1.<br>
+      <span class="C8">~</span> NOT: inverts each bit.<br>
+      <span class="C9">^</span> XOR: 1 ^ 1 = 0, 1 ^ 0 = 1.<br>
+      <span class="C10">&lt;&lt;</span> Left shift: shifts bits to left.<br>
+      <span class="C1">&gt;&gt;</span> Right shift: shifts bits to right, preserves sign.<br>
+      <span class="C2">&gt;&gt;&gt;</span> Unsigned right shift: shifts bits right, fills with 0.
     </div>
 
   </div>
+
+</template>
+
+<template> <!-- JavaScript Operators3 -->
+
+  <div class="bubble">
+
+    <!-- Code -->
+    <h3>JavaScript Code: Comparison Operators 3</h3>
+    <div class="code_block">
+      <span class="C1">==</span> <span>// equal to</span><br>
+      <span class="C2">===</span> <span>// equal value and equal type</span><br>
+      <span class="C3">!=</span> <span>// not equal</span><br>
+      <span class="C4">!==</span> <span>// not equal value or not equal type</span><br>
+      <span class="C5">&gt;</span> <span>// greater than</span><br>
+      <span class="C6">&lt;</span> <span>// less than</span><br>
+      <span class="C7">&gt;=</span> <span>// greater than or equal to</span><br>
+      <span class="C8">&lt;=</span> <span>// less than or equal to</span><br>
+      <span class="C9">?</span> <span>// ternary operator</span>
+    </div>
+
+    <!-- Example -->
+    <h3>Example</h3>
+    <div class="example">
+      <span class="dot d1"></span> 5 == '5' → true<br>
+      <span class="dot d2"></span> 5 === '5' → false<br>
+      <span class="dot d3"></span> 5 != 3 → true<br>
+      <span class="dot d4"></span> 5 !== '5' → true<br>
+      <span class="dot d5"></span> 7 &gt; 3 → true<br>
+      <span class="dot d6"></span> 2 &lt; 5 → true<br>
+      <span class="dot d7"></span> 5 &gt;= 5 → true<br>
+      <span class="dot d8"></span> 3 &lt;= 5 → true<br>
+      <span class="dot d9"></span> condition ? 'Yes' : 'No'
+    </div>
+
+    <!-- Explanation -->
+    <h3>Explanation</h3>
+    <div class="explanation">
+      <span class="C1">==</span> Compares values only, **ignoring type**.  
+      Example: 5 == '5' → true because the string '5' is converted to the number 5.<br>
+
+      <span class="C2">===</span> Compares **both value and type**.  
+      Example: 5 === '5' → false because 5 is a number and '5' is a string.<br>
+
+      <span class="C3">!=</span> Not equal (value only, ignores type).  
+      Example: 5 != '3' → true<br>
+
+      <span class="C4">!==</span> Not equal (value or type).  
+      Example: 5 !== '5' → true because types differ.<br>
+
+      <span class="C5">&gt;</span> Greater than.  
+      Example: 7 > 3 → true<br>
+
+      <span class="C6">&lt;</span> Less than.  
+      Example: 2 < 5 → true<br>
+
+      <span class="C7">&gt;=</span> Greater than or equal to.  
+      Example: 5 >= 5 → true<br>
+
+      <span class="C8">&lt;=</span> Less than or equal to.  
+      Example: 3 <= 5 → true<br>
+
+      <span class="C9">?</span> Ternary operator (condition ? valueIfTrue : valueIfFalse).  
+      Example: (5 > 3) ? 'Yes' : 'No' → 'Yes'
+    </div>
+
+  </div>
+
+</template>
+
+<template> <!-- JavaScript Operators2 -->
+
+  <div class="bubble">
+
+    <!-- Code -->
+    <h3>JavaScript Code: Assignment Operators 2</h3>
+    <div class="code_block">
+      <span class="C1">=</span> <span>// x = y</span><br>
+      <span class="C2">+=</span> <span>// x += y</span><br>
+      <span class="C3">-=</span> <span>// x -= y</span><br>
+      <span class="C4">*=</span> <span>// x *= y</span><br>
+      <span class="C5">/=</span> <span>// x /= y</span><br>
+      <span class="C6">%=</span> <span>// x %= y</span><br>
+      <span class="C7">**=</span> <span>// x **= y</span>
+    </div>
+
+    <!-- Example -->
+    <h3>Example</h3>
+    <div class="example">
+      <span class="dot d1"></span> x = y → assigns y to x<br>
+      <span class="dot d2"></span> x += y → x = x + y<br>
+      <span class="dot d3"></span> x -= y → x = x - y<br>
+      <span class="dot d4"></span> x *= y → x = x * y<br>
+      <span class="dot d5"></span> x /= y → x = x / y<br>
+      <span class="dot d6"></span> x %= y → x = x % y<br>
+      <span class="dot d7"></span> x **= y → x = x ** y
+    </div>
+
+    <!-- Explanation -->
+    <h3>Explanation</h3>
+    <div class="explanation">
+      <span class="C1">=</span> Assigns the value of y to x.<br>
+      <span class="C2">+=</span> Adds y to x and assigns the result to x.<br>
+      <span class="C3">-=</span> Subtracts y from x and assigns the result to x.<br>
+      <span class="C4">*=</span> Multiplies x by y and assigns the result to x.<br>
+      <span class="C5">/=</span> Divides x by y and assigns the result to x.<br>
+      <span class="C6">%=</span> Assigns the remainder of x divided by y to x.<br>
+      <span class="C7">**=</span> Raises x to the power of y and assigns the result to x.
+    </div>
+
+  </div>
+
+</template>
+
+<template> <!-- JavaScript Operators1 -->
+
+  <div class="bubble">
+
+    <!-- Code -->
+    <h3>JavaScript Code: Operators 1</h3>
+    <div class="code_block">
+      <span class="C1">+</span> <span>// Addition</span><br>
+      <span class="C2">-</span> <span>// Subtraction</span><br>
+      <span class="C3">*</span> <span>// Multiplication</span><br>
+      <span class="C4">**</span> <span>// Exponentiation (ES2016)</span><br>
+      <span class="C5">/</span> <span>// Division</span><br>
+      <span class="C6">%</span> <span>// Modulus (Division Remainder)</span><br>
+      <span class="C7">++</span> <span>// Increment</span><br>
+      <span class="C8">--</span> <span>// Decrement</span>
+    </div>
+
+    <!-- Example -->
+    <h3>Example</h3>
+    <div class="example">
+      <span class="dot d1"></span> <span>5 + 3 = 8</span><br>
+      <span class="dot d2"></span> <span>5 - 3 = 2</span><br>
+      <span class="dot d3"></span> <span>5 * 3 = 15</span><br>
+      <span class="dot d4"></span> <span>2 ** 3 = 8</span><br>
+      <span class="dot d5"></span> <span>6 / 3 = 2</span><br>
+      <span class="dot d6"></span> <span>5 % 2 = 1</span><br>
+      <span class="dot d7"></span> <span>i++ (increment i by 1)</span><br>
+      <span class="dot d8"></span> <span>i-- (decrement i by 1)</span>
+    </div>
+
+    <!-- Explanation -->
+    <h3>Explanation</h3>
+    <div class="explanation">
+      <span class="C1">+</span> Adds numbers.<br>
+      <span class="C2">-</span> Subtracts numbers.<br>
+      <span class="C3">*</span> Multiplies numbers.<br>
+      <span class="C4">**</span> Raises a number to the power of another.<br>
+      <span class="C5">/</span> Divides numbers.<br>
+      <span class="C6">%</span> Returns remainder of division.<br>
+      <span class="C7">++</span> Increments variable by 1.<br>
+      <span class="C8">--</span> Decrements variable by 1.
+    </div>
+
+  </div>
+
+</template>
+
+<template> <!-- JavaScript: Keywords -->
+
+  <!-- Bubble block -->
+  <div class="bubble">
+
+    <!-- Code -->
+    <h3>JavaScript Code: Keywords</h3>
+    <div class="code_block">
+      <!-- Variable declaration -->
+      <code><span class="C1">var</span> x = 5;</code><br>
+      <code><span class="C1">let</span> y = 10;</code><br>
+      <code><span class="C1">const</span> z = 42;</code><br><br>
+
+      <!-- Conditional -->
+      <code><span class="C2">if</span> (y &gt; x) {<br>  console.log("y is greater");<br>}</code><br><br>
+
+      <!-- Function -->
+      <code><span class="C3">function</span> add(a, b) {<br>  <span class="C3">return</span> a + b;<br>}</code><br>
+      <code>console.log(add(3, 4));</code><br><br>
+
+      <!-- Loop -->
+      <code><span class="C4">for</span> (let i = 0; i &lt; 3; i++) {<br>  console.log(i);<br>}</code><br><br>
+
+      <!-- Error handling -->
+      <code><span class="C5">try</span> {<br>  throw "Oops!";<br>} <span class="C5">catch</span> (err) {<br>  console.log(err);<br>}</code><br><br>
+
+      <!-- Simple built-in functions -->
+      <code><span class="C6">alert</span>("Hello World");</code><br>
+      <code><span class="C6">console.log</span>("Hello World");</code><br><br>
+
+      <!-- Template literal / backticks -->
+      <code><span class="C7">let message = `x is ${x}`;</span></code><br>
+      <code><span class="C7">console.log(message);</span></code><br><br>
+
+      <!-- Undefined variable -->
+      <code><span class="C8">let unknown;</span></code><br>
+      <code><span class="C8">console.log(unknown);</span></code>
+    </div>
+
+    <!-- Example -->
+    <h3>Example: Keywords codes</h3>
+    <div class="example">
+      <span class="C1">var x = 5;</span>: <samp>5</samp><br>
+      <span class="C1">let y = 10;</span>: <samp>10</samp><br>
+      <span class="C1">const z = 42;</span>: <samp>42</samp><br>
+      <span class="C2">if (y > x)</span>: <samp>y is greater</samp><br>
+      <span class="C3">function add(3, 4)</span>: <samp>7</samp><br>
+      <span class="C4">for loop</span>: <samp>0 1 2</samp><br>
+      <span class="C5">try / catch</span>: <samp>Oops!</samp><br>
+      <span class="C6">alert()</span>: <samp>[Popup message]</samp><br>
+      <span class="C6">console.log()</span>: <samp>Hello World</samp><br>
+      <span class="C7">Template literal</span>: <samp>x is 5</samp><br>
+      <span class="C8">undefined</span>: <samp>undefined</samp>
+    </div>
+
+    <!-- Explanation -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1">var</span> → Declares a variable with <strong>function scope</strong>. Can be reassigned and redeclared.<br>
+      <strong>Scenario:</strong> Use `var` inside a function for a counter accessible throughout the function.<br><br>
+
+      <span class="C1">let</span> → Declares a variable with <strong>block scope</strong>. Can be reassigned but not redeclared in the same block.<br>
+      <strong>Scenario:</strong> Use `let` for a loop counter that exists only inside the loop.<br><br>
+
+      <span class="C1">const</span> → Declares a <strong>block-scoped constant</strong>. Cannot be reassigned, but object contents can change.<br>
+      <strong>Scenario:</strong> Use `const` for configuration values like `MAX_USERS` or objects where the reference stays the same.<br><br>
+
+      <span class="C2">if</span> → Executes a block of code only if a condition is true.<br>
+      <strong>Scenario:</strong> Check if a user is logged in and display a welcome message.<br><br>
+
+      <span class="C3">function</span> / <span class="C3">return</span> → Declare reusable logic that outputs a value.<br>
+      <strong>Scenario:</strong> Create `calculateTax` function that returns tax for a purchase.<br><br>
+
+      <span class="C4">for</span> → Loop to repeat a block of code multiple times.<br>
+      <strong>Scenario:</strong> Loop through a shopping cart and display items.<br><br>
+
+      <span class="C5">try / catch</span> → Handle errors without stopping program execution.<br>
+      <strong>Scenario:</strong> Attempt to parse user input as JSON and catch invalid input.<br><br>
+
+      <span class="C6">alert()</span> → Show a pop-up message to the user.<br>
+      <strong>Scenario:</strong> Notify user when a form is successfully submitted.<br><br>
+
+      <span class="C6">console.log()</span> → Print messages to the console for debugging or inspecting variables.<br>
+      <strong>Scenario:</strong> Log variable values while developing a function to ensure correctness.<br><br>
+
+      <span class="C7">Template literals (backticks)</span> → Use `` `...` `` to create strings that support **variable interpolation** via `${variable}` and multi-line text.<br>
+      <strong>Scenario:</strong> Construct dynamic messages like `x is ${x}` instead of concatenating with `"x is " + x`.<br>
+      <strong>Example:</strong> `let message = `x is ${x}`; console.log(message);` outputs <samp>x is 5</samp>.<br><br>
+
+      <span class="C8">undefined</span> → A variable declared but not assigned has the value `undefined`. Also returned by functions with no `return` statement.<br>
+      <strong>Scenario:</strong> Declare a variable without assigning a value to check its state, e.g., `let unknown; console.log(unknown);` outputs <samp>undefined</samp>.
+    </div>
+
+  </div>
+
+</template>
+
+<template> <!-- JavaScript: Syntax -->
+
+  <!-- Bubble block -->
+  <div class="bubble">
+
+    <!-- Code -->
+    <h3>JavaScript Code: Syntax Overview</h3>
+    <div class="code_block">
+      <!-- Fixed Values / Literals -->
+      <span class="C1"><code>let num = 42;</code></span> <!-- Number literal -->
+      <span class="C2"><code>let text = "Hello";</code></span> <!-- String literal -->
+      <span class="C2"><code>let text2 = 'World';</code></span> <!-- String literal -->
+      <br><br>
+
+      <!-- Operators -->
+      <span class="C3"><code>let sum = num + 8;</code></span> <!-- addition -->
+      <span class="C3"><code>let isEqual = (num == 42);</code></span> <!-- comparison -->
+      <br><br>
+
+      <!-- Expressions -->
+      <span class="C4"><code>let result = (num + 8) * 2;</code></span><br><br>
+
+      <!-- Comments -->
+      <span class="C5"><code>// This is a single-line comment</code></span><br>
+      <span class="C5"><code>/* This is a multi-line comment */</code></span><br><br>
+
+      <!-- Case Sensitivity -->
+      <span class="C6"><code>let name = "Alice";</code></span>
+      <span class="C6"><code>let Name = "Bob"; // different variable</code></span><br><br>
+
+      <!-- Assignment vs Equality -->
+      <span class="C7"><code>let a = 5;</code></span>
+      <span class="C7"><code>console.log(a == "5");  // true</code></span>
+      <span class="C7"><code>console.log(a === "5"); // false</code></span>
+    </div>
+
+    <!-- Example -->
+    <h3>Example Output:</h3>
+    <div class="example">
+      <span class="C1">num</span>: <samp>42</samp><br>
+      <span class="C2">text</span>: <samp>Hello</samp><br>
+      <span class="C2">text2</span>: <samp>World</samp><br>
+      <span class="C3">sum</span>: <samp>50</samp><br>
+      <span class="C3">isEqual</span>: <samp>true</samp><br>
+      <span class="C4">result</span>: <samp>100</samp><br>
+      <span class="C5">Comments</span>: <samp>[No output, ignored by JavaScript]</samp><br>
+      <span class="C6">name / Name</span>: <samp>Alice / Bob (different variables)</samp><br>
+      <span class="C7">a = 5</span>: <samp>5</samp><br>
+      <span class="C7">a == "5"</span>: <samp>true</samp><br>
+      <span class="C7">a === "5"</span>: <samp>false</samp>
+    </div>
+
+    <!-- Explanation -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1">Number Literals</span> → fixed numeric values, e.g., <code>42</code> or <code>3.14</code>.<br>
+      <span class="C2">String Literals</span> → text values written in quotes, e.g., <code>"Hello"</code> or <code>'World'</code>.<br>
+      <span class="C3">Operators</span> → perform operations on values, e.g., <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>==</code>.<br>
+      <span class="C4">Expressions</span> → combinations of values, operators, and literals that produce a result, e.g., <code>(num + 8) * 2</code>.<br>
+      <span class="C5">Comments</span> → ignored by JavaScript; used to explain code. Single-line <code>//</code>, multi-line <code>/* ... */</code>.<br>
+      <span class="C6">Case Sensitivity</span> → JavaScript differentiates uppercase and lowercase letters. <code>name</code> and <code>Name</code> are separate variables.<br>
+      <span class="C7">= / == / ===</span> → Different assignment and equality operators in JavaScript:<br>
+      <strong>=</strong> → Assigns a value to a variable.  
+      <strong>Scenario:</strong> <code>let a = 5;</code> assigns the value 5 to variable <code>a</code>.<br>
+      <strong>==</strong> → Loose equality: compares values for equality after type conversion.  
+      <strong>Scenario:</strong> <code>a == "5"</code> is <samp>true</samp> because the string "5" is converted to number 5 before comparison.<br>
+      <strong>===</strong> → Strict equality: compares values and types without conversion.  
+      <strong>Scenario:</strong> <code>a === "5"</code> is <samp>false</samp> because number 5 is not the same type as string "5".
+    </div>
+
+  </div>
+
+</template>
+
+<template> <!-- JavaScript: Document Interaction -->
+
+  <!-- Bubble block -->
+  <div class="bubble">
+
+    <!-- Code -->
+    <h3>JavaScript Code: Document Interaction</h3>
+    <div class="code_block">
+      <span class="C1"><code>document</code></span>.<br>
+      <span class="C2"><code>getElementById("demo")</code></span>.<br>
+      <span class="C3"><code>innerHTML = "Hello World";</code></span><br>
+      <span class="C4"><code>document.write("Hello World");</code></span>
+    </div>
+
+    <!-- Example -->
+    <h3>Example:</h3>
+    <div class="example">
+      <span class="dot d1"></span> Accessing the document object:<br>
+      <code class="C1">console.log(document.title);</code><br>
+
+      <span class="dot d2"></span> Selecting an element by ID:<br>
+      <code class="C2">let element = document.getElementById("demo");</code><br>
+
+      <span class="dot d3"></span> Updating innerHTML:<br>
+      <code class="C3">document.getElementById("demo").innerHTML = "Hello World";</code><br>
+
+      <span class="dot d4"></span> Writing directly to the page:<br>
+      <code class="C4">document.write("Hello World");</code>
+    </div>
+
+    <!-- Explanation -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1">document.</span><br>
+      <strong>What it does:</strong> Represents the HTML page loaded in the browser and allows manipulation of elements.<br>
+      <strong>Example:</strong> <code class="C1">console.log(document.title);</code><br><br>
+
+      <span class="C2">.getElementById(...)</span><br>
+      <strong>What it does:</strong> Selects an HTML element by its `id` attribute.<br>
+      <strong>Example:</strong> <code class="C2">let element = document.getElementById("demo");</code><br><br>
+
+      <span class="C3">.innerHTML</span><br>
+      <strong>What it does:</strong> Gets or sets the HTML content inside an element.<br>
+      <strong>Example:</strong> <code class="C3">document.getElementById("demo").innerHTML = "Hello World";</code><br><br>
+
+      <span class="C4">document.write(...)</span><br>
+      <strong>What it does:</strong> Writes text or HTML directly into the document at the point the script runs.<br>
+      <strong>Example:</strong> <code class="C4">document.write("Hello World");</code><br>
+    </div>
+
+  </div>
+
+</template>
+
+<template> <!-- JavaScript: The <script> Tag -->
+
+  <!-- Bubble block -->
+  <div class="bubble">
+
+    <!-- Code -->
+    <h3>JavaScript Code: The &lt;script&gt; Tag</h3>
+    <div class="code_block">
+      <span class="C1"><code>&lt;script&gt;</span>Code<span class="C1">&lt;/script&gt;</code></span> tag can contain JavaScript directly in HTML or reference external files.
+      <br>
+      <span class="C2"><code>&lt;script src="path/to/file.js"&gt;&lt;/script&gt;</code></span> for external JS.
+    </div>
+
+    <!-- Example -->
+    <h3>Example:</h3>
+    <div class="example">
+      <span class="dot d1"></span> Inline JavaScript in &lt;body&gt;:
+      <pre class="C1">&lt;body&gt;
+  &lt;h1&gt;Hello&lt;/h1&gt;
+  &lt;script&gt;
+    alert('Hello World');
+  &lt;/script&gt;
+&lt;/body&gt;</pre>
+
+      <span class="dot d2"></span> External JavaScript reference:
+      <pre class="C2">&lt;head&gt;
+  &lt;script src="/js/script.js"&gt;&lt;/script&gt;
+&lt;/head&gt;</pre>
+    </div>
+
+    <!-- Explanation -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C5">&lt;script&gt;</span> tags allow JavaScript code to run on the page.
+      You can place scripts <span class="C5">inline</span> in the <span class="C5">&lt;head&gt;</span> or <span class="C5">&lt;body&gt;</span>, or link to <span class="C5">external files</span>.
+      <br><br>
+      Advantages of <span class="C5">external JavaScript</span>:
+      <ul>
+        <li>Reusable across multiple pages.</li>
+        <li>Keeps HTML clean and organized.</li>
+        <li>Can be cached by browsers for faster loading.</li>
+      </ul>
+    </div>
+
+  </div>
+
+</template>
+
+<template> <!-- JavaScript Languages Explanation -->
+
+  <!-- Bubble block -->
+  <div class="bubble">
+
+    <!-- Explanation -->
+    <h3>Explanation: Languages JavaScript Works With</h3>
+    <div class="explanation">
+      <span class="C5">Direct Web Stack:</span>
+      <ul>
+        <li><span class="C1">HTML</span> – JS manipulates the DOM.</li>
+        <li><span class="C2">CSS</span> – JS can dynamically change styles and animations.</li>
+        <li><span class="C3">SVG</span> – JS can modify vector graphics via the DOM.</li>
+      </ul>
+
+      <span class="C5">Server-Side & Runtime:</span>
+      <ul>
+        <li><span class="C4">Node.js</span> – JS runtime for server-side operations.</li>
+        <li><span class="C6">TypeScript</span> – superset of JS adding static types.</li>
+        <li><span class="C7">WebAssembly (WASM)</span> – JS can call compiled code from C, C++, Rust, Go, etc.</li>
+      </ul>
+
+      <span class="C5">Databases & Query Languages:</span>
+      <ul>
+        <li><span class="C1">SQL</span> – via Node.js libraries or drivers.</li>
+        <li><span class="C2">NoSQL</span> – e.g., MongoDB, Firebase, CouchDB.</li>
+        <li><span class="C3">GraphQL</span> – query APIs using JS clients.</li>
+      </ul>
+
+      <span class="C5">APIs & Data Formats:</span>
+      <ul>
+        <li><span class="C4">JSON</span> – native, standard for API data.</li>
+        <li><span class="C6">XML</span> – parsed/serialized via JS.</li>
+        <li><span class="C7">YAML</span> – via libraries like js-yaml.</li>
+        <li><span class="C1">CSV</span> – read/write spreadsheets or data tables.</li>
+      </ul>
+
+      <span class="C5">Other Programming Languages (via APIs or Bridges):</span>
+      <ul>
+        <li><span class="C2">Python</span> – via APIs or Pyodide in browser.</li>
+        <li><span class="C3">Java / Kotlin</span> – via backend services or Android WebViews.</li>
+        <li><span class="C4">PHP</span> – backend APIs called from JS.</li>
+        <li><span class="C6">C / C++ / Rust / Go</span> – through WebAssembly.</li>
+        <li><span class="C7">Ruby, .NET, etc.</span> – via REST, GraphQL, or gRPC APIs.</li>
+      </ul>
+
+      <span class="C5">Summary:</span> 
+      <span class="C8">JS directly works with HTML, CSS, JSON, WebAssembly, and interacts indirectly with nearly every other language through APIs or runtimes.</span>
+    </div>
+
+  </div>
+
+</template>
+
+<template> <!-- JavaScript: how & why JavaScript -->
+
+  <!-- What is JavaScript? -->
+  <div class="bubble">
+    <h3>JavaScript Code: What is JavaScript?</h3>
+
+    <!-- Code block -->
+    <div class="code_block">
+      // JavaScript is a programming language for the web<br>
+      <span class="C1">console.log('Hello, World!');</span>
+    </div>
+
+    <!-- Example -->
+    <h3>Example: Running the Code</h3>
+    <div class="example">
+      <span class="dot d1"></span> Console output → <code>Hello, World!</code>
+    </div>
+
+    <!-- Explanation -->
+    <h3>Explanation: What is JavaScript?</h3>
+    <div class="explanation">
+      <span class="C1">JavaScript</span> is the programming language of the web.  
+      It can update and change both <strong>HTML</strong> and <strong>CSS</strong>,  
+      and it makes web pages interactive.  
+    </div>
+  </div>
+
+  <!-- Why Study JavaScript? -->
+  <div class="bubble">
+    <h3>JavaScript Code: Why Study JavaScript?</h3>
+
+    <!-- Code block -->
+    <div class="code_block">
+      // Example: Change webpage content dynamically<br>
+      <span class="C2">document.getElementById('demo').innerHTML = 'Hello JavaScript!';</span>
+    </div>
+
+    <!-- Example -->
+    <h3>Example: Running the Code</h3>
+    <div class="example">
+      <span class="dot d2"></span> Hello JavaScript!
+    </div>
+
+    <!-- Explanation -->
+    <h3>Explanation: Why Study JavaScript?</h3>
+    <div class="explanation">
+      You should study <span class="C2">JavaScript</span> because it is one of the core  
+      technologies of the web (alongside <strong>HTML</strong> and <strong>CSS</strong>).  
+      It powers everything from small webpage effects to full-scale applications.  
+    </div>
+  </div>
+
 </template>
 
 
 
 <!-- chatGPT Questions by liam Disregard if I forgot to remove it. 
 
--->
 
+
+
+
+
+
+
+
+
+-->
+<!-- 7–8 topics per day 225 topics -->
+<!-- 13/225 -->
 <!-- Example of a Templates.  -->
-<template> <!-- Javascript Description
- -->
+<template> <!-- JavaScript Description -->
+
+  <!-- Bubble block -->
   <div class="bubble">
 
-    <h3>text</h3>
+    <!-- Code -->
+    <!-- if a JavaScript code interacts with other code. You need to show both codes and separate them by
+    /*JavaScript*/
+    ...
+    /*Coding language*/
+    ...
+    -->
+    <h3>JavaScript Code: <!-- Description --></h3>
     <div class="code_block">
-      <span class="C#"></span>
+      <span>// Description</span>
+      <span class="C#">
+        <code>/* code goes here */</code></span>
     </div>
 
-    <h3>text</h3>
+    <!-- Example -->
+    <h3>Example: <!-- Description --></h3>
     <div class="example">
-      <span class="dot d#"></span>
+      <span class="dot d#"></span> <!-- Example output goes here from the code in code_block -->
     </div>
 
-    <h3>text</h3>
+    <!-- Explanation -->
+    <h3>Explanation: <!-- Description --></h3>
     <div class="explanation">
-      <span class="C#"></span>
+      <span class="C#">keyword</span> explanation text goes here.
     </div>
 
   </div>
+
 </template>
+
