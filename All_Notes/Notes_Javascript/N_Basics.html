@@ -4,11 +4,423 @@
 
 
 
- '5' Can be confusing. You need to explain explanation. Whether it's working or not working because it's a string instead of a number Or if it's the operation
-
-
+ 
 
 -->
+<!-- template 10 -->
+<template> <!-- JavaScript: Math -->
+
+  <div class="bubble">
+
+    <!-- Part 1: Math Constants -->
+    <h3>JavaScript Math: Constants</h3>
+    <div class="code_block">
+      <span class="C1"><code>Math.E</code></span><br>
+      <span class="C2"><code>Math.PI</code></span><br>
+      <span class="C3"><code>Math.SQRT2</code></span><br>
+      <span class="C4"><code>Math.SQRT1_2</code></span><br>
+      <span class="C5"><code>Math.LN2</code></span><br>
+      <span class="C6"><code>Math.LN10</code></span><br>
+      <span class="C7"><code>Math.LOG2E</code></span><br>
+      <span class="C8"><code>Math.LOG10E</code></span><br>
+    </div>
+
+    <h3>Example</h3>
+    <div class="example">
+      <span class="dot d1"></span><span> Math.E → 2.718...</span><br>
+      <span class="dot d2"></span><span> Math.PI → 3.14159...</span><br>
+      <span class="dot d3"></span><span> Math.SQRT2 → 1.414...</span><br>
+      <span class="dot d4"></span><span> Math.SQRT1_2 → 0.707...</span><br>
+      <span class="dot d5"></span><span> Math.LN2 → 0.693...</span><br>
+      <span class="dot d6"></span><span> Math.LN10 → 2.302...</span><br>
+      <span class="dot d7"></span><span> Math.LOG2E → 1.442...</span><br>
+      <span class="dot d8"></span><span> Math.LOG10E → 0.434...</span><br>
+    </div>
+
+    <h3>Explanation</h3>
+    <div class="explanation">
+      <span class="C1">Math.E</span><span> &rarr; Euler's number.</span><br>
+      <span class="C2">Math.PI</span><span> &rarr; Ratio of circle’s circumference to diameter.</span><br>
+      <span class="C3">Math.SQRT2</span><span> &rarr; Square root of 2.</span><br>
+      <span class="C4">Math.SQRT1_2</span><span> &rarr; Square root of 1/2.</span><br>
+      <span class="C5">Math.LN2</span><span> &rarr; Natural log of 2.</span><br>
+      <span class="C6">Math.LN10</span><span> &rarr; Natural log of 10.</span><br>
+      <span class="C7">Math.LOG2E</span><span> &rarr; Base 2 log of E.</span><br>
+      <span class="C8">Math.LOG10E</span><span> &rarr; Base 10 log of E.</span><br>
+    </div>
+
+
+    <!-- Part 2: Rounding and Basic Operations -->
+    <h3>JavaScript Math: Rounding & Basic</h3>
+    <div class="code_block">
+      <span class="C1"><code>Math.round(4.7)</code></span><br>
+      <span class="C2"><code>Math.ceil(4.1)</code></span><br>
+      <span class="C3"><code>Math.floor(4.9)</code></span><br>
+      <span class="C4"><code>Math.trunc(4.9)</code></span><br>
+      <span class="C5"><code>Math.sign(-5)</code></span><br>
+      <span class="C6"><code>Math.pow(2,3)</code></span><br>
+      <span class="C7"><code>Math.sqrt(16)</code></span><br>
+      <span class="C8"><code>Math.abs(-10)</code></span><br>
+      <span class="C9"><code>Math.min(3,5,1)</code></span><br>
+      <span class="C10"><code>Math.max(3,5,1)</code></span><br>
+    </div>
+
+    <h3>Example</h3>
+    <div class="example">
+      <span class="dot d1"></span><span> Math.round(4.7) → 5</span><br>
+      <span class="dot d2"></span><span> Math.ceil(4.1) → 5</span><br>
+      <span class="dot d3"></span><span> Math.floor(4.9) → 4</span><br>
+      <span class="dot d4"></span><span> Math.trunc(4.9) → 4</span><br>
+      <span class="dot d5"></span><span> Math.sign(-5) → -1</span><br>
+      <span class="dot d6"></span><span> Math.pow(2,3) → 8</span><br>
+      <span class="dot d7"></span><span> Math.sqrt(16) → 4</span><br>
+      <span class="dot d8"></span><span> Math.abs(-10) → 10</span><br>
+      <span class="dot d9"></span><span> Math.min(3,5,1) → 1</span><br>
+      <span class="dot d10"></span><span> Math.max(3,5,1) → 5</span><br>
+    </div>
+
+    <h3>Explanation</h3>
+    <div class="explanation">
+      <span class="C1">Math.round()</span><span> &rarr; Round to nearest integer.</span><br>
+      <span class="C2">Math.ceil()</span><span> &rarr; Round up.</span><br>
+      <span class="C3">Math.floor()</span><span> &rarr; Round down.</span><br>
+      <span class="C4">Math.trunc()</span><span> &rarr; Drop decimal (ES6).</span><br>
+      <span class="C5">Math.sign()</span><span> &rarr; Returns sign of number.</span><br>
+      <span class="C6">Math.pow(x,y)</span><span> &rarr; Exponentiation.</span><br>
+      <span class="C7">Math.sqrt()</span><span> &rarr; Square root.</span><br>
+      <span class="C8">Math.abs()</span><span> &rarr; Absolute value.</span><br>
+      <span class="C9">Math.min()</span><span> &rarr; Smallest number.</span><br>
+      <span class="C10">Math.max()</span><span> &rarr; Largest number.</span><br>
+    </div>
+
+
+    <!-- Part 3: Trigonometry, Random & Logs -->
+    <h3>JavaScript Math: Trig, Random & Logs</h3>
+    <div class="code_block">
+      <span class="C1"><code>Math.sin(Math.PI/2)</code></span><br>
+      <span class="C2"><code>Math.cos(0)</code></span><br>
+      <span class="C3"><code>Math.random()</code></span><br>
+      <span class="C4"><code>Math.log(10)</code></span><br>
+      <span class="C5"><code>Math.log2(8)</code></span><br>
+      <span class="C6"><code>Math.log10(1000)</code></span><br>
+    </div>
+
+    <h3>Example</h3>
+    <div class="example">
+      <span class="dot d1"></span><span> Math.sin(Math.PI/2) → 1</span><br>
+      <span class="dot d2"></span><span> Math.cos(0) → 1</span><br>
+      <span class="dot d3"></span><span> Math.random() → 0.0…0.999…</span><br>
+      <span class="dot d4"></span><span> Math.log(10) → 2.302...</span><br>
+      <span class="dot d5"></span><span> Math.log2(8) → 3</span><br>
+      <span class="dot d6"></span><span> Math.log10(1000) → 3</span><br>
+    </div>
+
+    <h3>Explanation</h3>
+    <div class="explanation">
+      <span class="C1">Math.sin(x)</span><span> &rarr; Sine of x (radians).</span><br>
+      <span class="C2">Math.cos(x)</span><span> &rarr; Cosine of x (radians).</span><br>
+      <span class="C3">Math.random()</span><span> &rarr; Random number 0–1.</span><br>
+      <span class="C4">Math.log(x)</span><span> &rarr; Natural log (base e).</span><br>
+      <span class="C5">Math.log2(x)</span><span> &rarr; Base 2 log.</span><br>
+      <span class="C6">Math.log10(x)</span><span> &rarr; Base 10 log.</span><br>
+    </div>
+
+  </div>
+
+</template>
+
+<template> <!-- JavaScript: Dates -->
+  <div class="bubble">
+
+    <!-- Code -->
+    <h3>JavaScript Code: Dates</h3>
+    <div class="code_block">
+      <span class="C1"><code>const now = new Date();</code></span><br>
+      <span class="C2"><code>const specificDate = new Date("2025-08-22");</code></span><br>
+      <span class="C3"><code>const dateYMD = new Date(2025, 7, 22);</code></span><br>
+      <span class="C4"><code>const dateFull = new Date(2025, 7, 22, 14, 30, 45, 500);</code></span><br>
+      <span class="C5"><code>const fromMillis = new Date(1692718245500);</code></span><br>
+      <span class="C6"><code>now.toISOString()</code></span><br>
+      <span class="C7"><code>now.toUTCString()</code></span><br>
+      <span class="C8"><code>now.toDateString()</code></span><br>
+      <span class="C9"><code>now.toString()</code></span>
+    </div>
+
+    <!-- Example -->
+    <h3>Example</h3>
+    <div class="example">
+      <span class="dot d1"></span><span> new Date() → current date & time, e.g., "Fri Aug 22 2025 19:00:00 GMT-0700 (PDT)"</span><br><br>
+      <span class="dot d2"></span><span> new Date("2025-08-22") → Fri Aug 22 2025 00:00:00 GMT-0700 (PDT)</span><br><br>
+      <span class="dot d3"></span><span> new Date(2025, 7, 22) → Fri Aug 22 2025 00:00:00 GMT-0700 (PDT)</span><br><br>
+      <span class="dot d4"></span><span> new Date(2025, 7, 22, 14, 30, 45, 500) → Fri Aug 22 2025 14:30:45.500 GMT-0700 (PDT)</span><br><br>
+      <span class="dot d5"></span><span> new Date(1692718245500) → Fri Aug 22 2025 19:00:45 GMT-0700 (PDT)</span><br><br>
+      <span class="dot d6"></span><span> now.toISOString() → "2025-08-22T19:00:00.500Z"</span><br><br>
+      <span class="dot d7"></span><span> now.toUTCString() → "Fri, 22 Aug 2025 19:00:00 GMT"</span><br><br>
+      <span class="dot d8"></span><span> now.toDateString() → "Fri Aug 22 2025"</span><br><br>
+      <span class="dot d9"></span><span> now.toString() → "Fri Aug 22 2025 19:00:00 GMT-0700 (PDT)"</span>
+    </div>
+
+    <!-- Explanation -->
+    <h3>Explanation</h3>
+    <div class="explanation">
+      <span class="C1">new Date()</span><span> &rarr; Creates a Date object for the current date and time.</span><br>
+      <span class="C2">new Date(date string)</span><span> &rarr; Parses a date string and creates a Date object. Time defaults to 00:00:00 if not provided.</span><br>
+      <span class="C3">new Date(year, month, day)</span><span> &rarr; Creates a date using year, month (0–11), day (default 1), with optional time parameters.</span><br>
+      <span class="C4">new Date(year, month, day, hours, minutes, seconds, ms)</span><span> &rarr; Full constructor allowing precise date and time. All parameters optional after year/month/day.</span><br>
+      <span class="C5">new Date(milliseconds)</span><span> &rarr; Creates a Date object from milliseconds since Jan 1, 1970 UTC.</span><br>
+      <span> <strong>Month Indexing</strong> &rarr; JavaScript counts months from 0 to 11: January = 0, December = 11.</span><br>
+      <span class="C6">toISOString()</span><span> &rarr; Returns date as ISO 8601 string (UTC), e.g., "2025-08-22T19:00:00.500Z".</span><br>
+      <span class="C7">toUTCString()</span><span> &rarr; Converts date to a UTC string representation.</span><br>
+      <span class="C8">toDateString()</span><span> &rarr; Returns only the date portion in a readable format: "Fri Aug 22 2025".</span><br>
+      <span class="C9">toString()</span><span> &rarr; Returns full date and time as a string in local time zone.</span><br>
+      <span><strong>Note:</strong> <code>new Date()</code> creates a new Date object representing the current date and time. Using <code>now = new Date()</code> stores that Date object in a variable. Each call to <code>new Date()</code> generates a fresh, independent instance of the current date and time.</span>
+    </div>
+
+  </div>
+
+</template>
+
+<template> <!-- JavaScript: Arrays -->
+
+  <div class="bubble">
+
+    <!-- Code -->
+    <h3>JavaScript Code: Arrays</h3>
+    <div class="code_block">
+      <span class="C1"><code>
+        const test = ["Alice","Bob","Charlie", 5, "4", 2];
+      </code></span><br>
+      <span class="C1"><code>
+        const person = {firstName:"John", lastName:"Doe", age:46};
+      </code></span><br>
+      <span class="C1"><code>
+        const cars = new Array("Saab","Volvo","BMW");
+      </code></span><br>
+      <span class="C2"><code>
+        test[0] & test[5] & test[4] & person.lastName & cars[2] 
+      </code></span><br>
+      <span class="C3"><code>
+        test.toString()
+      </code></span><br>
+      <span class="C4"><code>
+        cars.length
+      </code></span><br>
+      <span class="C5"><code>
+        cars.sort()
+      </code></span><br>
+      <span class="C6"><code>
+        test.push("Dave")
+      </code></span><br>
+      <span class="C7"><code>for (let i = 0; i &lt; test.length; i++) {</code><br>
+      <code>  console.log(test[i]);</code><br>
+      <code>}</code></span><br>
+      <span class="C8"><code>
+        test.forEach(item => console.log(item))
+      </code></span>
+      <span class="C9"><code><br>
+        const nested = [[1, 2], [3, 4], ["a", "b"]];<br>
+        console.log(nested[0][1]); // 2
+      </code></span>
+
+
+
+    </div>
+
+    <!-- Example -->
+    <h3>Example</h3>
+    <div class="example">
+      <span class="dot d2"></span><span> 
+        "Alice" & 2 & "4" & "Doe" & "BMW" 
+      </span><br>
+      <span class="dot d3"></span><span> 
+         "Alice,Bob,Charlie,5,4,2"
+      </span><br>
+      <span class="dot d4"></span><span>
+        cars.length → 3
+      </span><br>
+      <span class="dot d5"></span><span>
+        cars.sort() → ["BMW","Saab","Volvo"]
+      </span><br>
+        <span class="dot d6"></span><span>
+          test.push("Dave") → ["Alice","Bob","Charlie",5,"4",2,"Dave"]
+        </span><br>
+        <span class="dot d7"></span> <span>Logs each item individually: Alice, Bob, Charlie, 5, "4", 2</span><br>
+        <span class="dot d8"></span><span> test.forEach(...) → logs each item individually: Alice, 5, "4", 2</span><br>
+        <span class="dot d9"></span><span>
+        nested[0][1] → 2
+        </span><br>
+        
+
+
+
+    </div>
+
+    <!-- Explanation -->
+    <h3>Explanation</h3>
+    <div class="explanation">
+
+      <span class="C1">const test = ["Alice","Bob","Charlie", 5, "4", 2];</span><span> &rarr; An array literal. Stores ordered elements that can be any type.</span><br>
+      <span class="C1">const person = {firstName:"John", lastName:"Doe", age:46};</span><span> &rarr; An object literal. Stores key-value pairs. Accessed by property name. Use when you need named attributes for a single entity or heterogeneous data.</span><br>
+      <span class="C1">const cars = new Array("Saab","Volvo","BMW");</span><span> &rarr; Array constructor, functionally the same but allows dynamic sizing.</span><br>
+      <span> <strong>Notes</strong> &rarr; (const) to declare arrays so the reference stays constant. Elements can still be modified.</span><br>
+      <span class="C2">Array[#]</span><span> → test[0], test[5], test[4], cars[2] are array elements that you get through the index that starts at 0 for arrays.<br>
+      person.lastName accesses object property "Doe" That's a Array of Objects.</span><br>
+      <span class="C3">test.toString()</span><span> &rarr; Converts the array into a single string with elements separated by commas: "Alice,Bob,Charlie,5,4,2". Useful for displaying or concatenating array contents.</span><br>
+      <span class="C4">cars.length</span><span> &rarr; Returns the number of elements in the array. Useful for loops and bounds checking.</span><br>
+      <span class="C5">cars.sort()</span><span> &rarr; Sorts the array elements alphabetically (or numerically with a compare function). Does not create a new array; modifies in place.</span><br>
+      <span class="C6">test.push("Dave")</span><span> &rarr; Adds an element to the end of the array. Returns the new length.</span><br>
+      <span class="C7">for loop</span><span> &rarr; Iterates over array indices from 0 to `length - 1`. You can access elements via `array[i]`. Functionally similar to `forEach`, but gives more control over index and looping behavior.</span><br>
+      <span class="C8">test.forEach(item => ...)</span><span> &rarr; Executes a function for each array element. Does not return a new array, purely iterates.</span><br>
+      <span class="C9">nested arrays</span><span> &rarr; Arrays inside arrays. Access elements using multiple indices, e.g., nested[0][1] is 2. Useful for matrices or grouped data.</span><br>
+      <span><strong>Notes:</strong> <span class="C6"> for test.push("Dave")</span></span>
+      <ul>
+        <li><code>.push(element)</code>: Adds elements to the end.</li>
+        <li><code>.pop()</code>: Removes the last element.</li>
+        <li><code>.splice(index, count, ...items)</code>: Removes or replaces elements at a specified index.</li>
+        <li><code>.shift()</code>: Removes the first element.</li>
+        <li><code>.unshift(element)</code>: Adds elements to the beginning.</li>
+        <li><code>.slice(start, end)</code>: Returns a shallow copy of part of the array.</li>
+        <li><code>.concat(array2, array3…)</code>: Combines arrays into a new array.</li>
+        <li><code>Array.isArray()</code>: Checks if a value is an array <code>typeof</code> does not work.</li>
+        <li><code>.join(separator)</code>: Joins all array elements into a string using the specified separator. Default is comma.</li>
+        <li><code>.reduce(callback, initialValue)</code>: Reduces the array to a single value by applying a function on each element.</li>
+        <li><code>.includes(value)</code>: Checks if an array contains a value. Returns true or false.</li>
+        <li><code>.indexOf(value)</code>: Returns the first index of a value, or -1 if not found.</li>
+        <li><code>.map(callback)</code>: Creates a new array by applying a function to each element.</li>
+      </ul>
+
+
+
+
+    </div>
+
+  </div>
+
+</template>
+
+<template> <!-- JavaScript: Special Characters -->
+
+  <div class="bubble">
+
+    <!-- Code -->
+    <h3>JavaScript Code: Special Characters</h3>
+    <div class="code_block">
+      <!-- Escaped Quotes and Backslash -->
+      <span class="C1"><code>\'</code></span> Single quote<br>
+      <span class="C2"><code>\"</code></span> Double quote<br>
+      <span class="C3"><code>\\</code></span> Backslash<br>
+
+      <!-- Control Characters -->
+      <span class="C4"><code>\b</code></span> Backspace<br>
+      <span class="C5"><code>\f</code></span> Form Feed<br>
+      <span class="C6"><code>\n</code></span> New Line<br>
+      <span class="C7"><code>\r</code></span> Carriage Return<br>
+      <span class="C8"><code>\t</code></span> Horizontal Tab<br>
+      <span class="C9"><code>\v</code></span> Vertical Tab
+    </div>
+
+    <!-- Example -->
+    <h3>Example:</h3>
+    <div class="example">
+      <span class="dot d1"></span><samp> console.log('I\'m here'); → I'm here</samp><br>
+      <span class="dot d2"></span><samp> console.log("He said: \"Hello\""); → He said: "Hello"</samp><br>
+      <span class="dot d3"></span><samp> console.log("C:\\Users\\Liam"); → C:\Users\Liam</samp><br>
+      <span class="dot d4"></span><samp> console.log("Line1\bLine2"); → Line2 (backspace)</samp><br>
+      <span class="dot d5"></span><samp> console.log("Page1\fPage2"); → Page2 (form feed)</samp><br>
+      <span class="dot d6"></span><samp> console.log("Line1\nLine2"); → Line1 (newline) Line2</samp><br>
+      <span class="dot d7"></span><samp> console.log("Line1\rLine2"); → Line2 (carriage return)</samp><br>
+      <span class="dot d8"></span><samp> console.log("Tab\tSeparated"); → Tab    Separated</samp><br>
+      <span class="dot d9"></span><samp> console.log("Vertical\vTab"); → Vertical (vertical tab)</samp>
+    </div>
+
+    <!-- Explanation -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1">\'</span>: Single quote inside a string.<br>
+      <span class="C2">\"</span>: Double quote inside a string.<br>
+      <span class="C3">\\</span>: Backslash character.<br>
+      <span class="C4">\b</span>: Backspace – removes previous character.<br>
+      <span class="C5">\f</span>: Form feed – page break in printers.<br>
+      <span class="C6">\n</span>: Newline – moves text to the next line.<br>
+      <span class="C7">\r</span>: Carriage return – returns to start of line.<br>
+      <span class="C8">\t</span>: Horizontal tab – adds horizontal spacing.<br>
+      <span class="C9">\v</span>: Vertical tab – adds vertical spacing.
+    </div>
+
+  </div>
+
+</template>
+
+<template> <!-- JavaScript Functions & Objects -->
+  <div class="bubble">
+
+    <!-- Code -->
+    <h3>JavaScript Code: Functions & Objects</h3>
+    <div class="code_block">
+      <!-- Generic Function -->
+      <span class="C1"><code><pre>
+        function functionName(a, b) {
+          let result = a + b;
+          return result;
+        }
+      </code></pre></span>
+
+      <!-- Object Example -->
+      <span class="C2"><code><pre>
+        let obj = new Object();
+        obj.name = "Honda";
+        obj.age = 74;
+      </code></pre></span>
+
+      <span class="C3"><code><pre>
+        function Person(name, age) {
+        <span class="C4">this</span>.name = name;
+        <span class="C4">this</span>.age = age;
+        <span class="C4">this</span>.greet = function() {
+            console.log("Hello, my name is " + <span class="C4">this</span>.name);
+          };
+        }<br>
+        <span class="C5">let person1 = new Person("Liam", 30);</span>
+      </code></pre></span><br>
+    </div>
+
+    <!-- Example -->
+    <h3>Example</h3>
+    <div class="example">
+      <strong>Function</strong><br>
+      <span class="dot d1"></span><samp> functionName(2, 3) → 5</samp><br>
+      <span class="dot d2"></span><samp> obj contains → (name:"Honda"; age:74;)</samp><br>
+      <span class="dot d5"></span><samp> let person1 = new Person("Liam", 30) → creates actual object instance with elements "liam" and age 30</samp>
+    </div>
+
+    <!-- Syntax Explanation -->
+    <div class="explanation">
+      <span class="C1">Syntax:</span><span> Structure of a function declaration.</span><br>
+      <span class="C1">function:</span><span> Declares a reusable block of code; invoked with <code>functionName(args)</code>.</span><br>
+      <span class="C1">{}:</span><span> Encloses the function body.</span><br>
+      <span class="C1">functionName:</span><span> Name used to call the function.</span><br>
+      <span class="C1">a & b:</span><span> Parameters accepting input values; replaced by arguments when invoked.</span><br>
+      <span class="C1">return or NO-return:</span><span> Returns a value if specified; otherwise performs an action without returning anything.</span><br>
+      
+      <span class="C2">make an object:</span><span> Create a new object using <code>new Object()</code> and assign properties with <strong>key : value</strong> pairs; key is the property name, value is the assigned data.</span><br>
+      <span class="C3">object Blueprint:</span><span> Define a constructor function that serves as a template for creating multiple objects with the same structure; methods can be included as function values.</span><br>
+      <span class="C4">this.:</span><span>Refers to the current object; inside a constructor, it’s the object being created; inside a regular object method, it’s the object owning the method.</span><br>
+      <span class="C5">Use blueprint to create an object:</span><span> Instantiate an object using <code>new ConstructorName()</code>, which produces the actual object with its keys, values, and methods.</span><br>
+    </div>
+
+    <!-- Detailed Explanation -->
+    <h3>Explanation: Summary</h3>
+    <div class="explanation">
+      Functions are reusable blocks of code. Parameters define inputs; arguments provide values when invoking the function.<br>
+      Objects are containers for properties (values) and methods (functions). Properties can be primitives, functions, or other objects.<br>
+      - Methods are functions stored as object properties.<br>
+      - `this` refers to the current object inside methods or constructor functions.<br>
+      - Constructor functions define blueprints for creating multiple similar objects.<br>
+      - Built-in objects include Math, Functions, Dates, Arrays, Maps, and Sets.
+    </div>
+
+  </div>
+</template>
 <!-- template 10 -->
 <template> <!-- JavaScript Operators4 -->
 
@@ -196,7 +608,6 @@
 <template> <!-- JavaScript Operators1 -->
 
   <div class="bubble">
-
     <!-- Code -->
     <h3>JavaScript Code: Operators 1</h3>
     <div class="code_block">
@@ -207,7 +618,10 @@
       <span class="C5">/</span> <span>// Division</span><br>
       <span class="C6">%</span> <span>// Modulus (Division Remainder)</span><br>
       <span class="C7">++</span> <span>// Increment</span><br>
-      <span class="C8">--</span> <span>// Decrement</span>
+      <span class="C8">--</span> <span>// Decrement</span><br>
+      <span class="C9">NaN</span> <span>// Not-a-Number value</span><br>
+      <span class="C9">isNaN()</span> <span>// Checks if a value is NaN</span><br>
+      <span class="C10">typeof NaN</span> <span>// Returns the type of NaN (number)</span>
     </div>
 
     <!-- Example -->
@@ -219,8 +633,11 @@
       <span class="dot d4"></span> <span>2 ** 3 = 8</span><br>
       <span class="dot d5"></span> <span>6 / 3 = 2</span><br>
       <span class="dot d6"></span> <span>5 % 2 = 1</span><br>
-      <span class="dot d7"></span> <span>i++ (increment i by 1)</span><br>
-      <span class="dot d8"></span> <span>i-- (decrement i by 1)</span>
+      <span class="dot d7"></span> <span>i++ → increment i by 1</span><br>
+      <span class="dot d8"></span> <span>i-- → decrement i by 1</span><br>
+      <span class="dot d9"></span> <span>0 / 0 → NaN</span><br>
+      <span class="dot d9"></span> <span>isNaN("abc") → true</span><br>
+      <span class="dot d10"></span> <span>typeof NaN → "number"</span>
     </div>
 
     <!-- Explanation -->
@@ -233,14 +650,31 @@
       <span class="C5">/</span> Divides numbers.<br>
       <span class="C6">%</span> Returns remainder of division.<br>
       <span class="C7">++</span> Increments variable by 1.<br>
-      <span class="C8">--</span> Decrements variable by 1.
-    </div>
+      <span class="C8">--</span> Decrements variable by 1.<br>
+      <span class="C9">NaN</span> Represents a value that is **Not-a-Number**, usually from invalid math operations.<br>
+      <span class="C9">isNaN()</span> Returns `true` if the argument is NaN, otherwise `false`.<br>
+      <span class="C10">typeof NaN</span>: The ultimate type inspector in JavaScript! 🕵️‍♂️  
+    It returns a string describing the type of its operand.  
 
+      <ul>
+        <li><strong>Numbers:</strong> integers, floats, and even <code>NaN</code> → "number"</li>
+        <li><strong>Strings:</strong> text → "string"</li>
+        <li><strong>Booleans:</strong> true/false → "boolean"</li>
+        <li><strong>Undefined:</strong> variable declared but not assigned → "undefined"</li>
+        <li><strong>null:</strong> special empty value → "object" (historical quirk)</li>
+      </ul>
+
+      <strong>Key point:</strong> <code>typeof NaN</code> returns "number", reminding us that NaN is still considered a numeric value in JavaScript, even though it represents “Not a Number”! ⚡
+    </div>
   </div>
 
 </template>
 
 <template> <!-- JavaScript: Keywords -->
+<!-- 
+
+-->
+
 
   <!-- Bubble block -->
   <div class="bubble">
@@ -333,10 +767,44 @@
       <strong>Scenario:</strong> Declare a variable without assigning a value to check its state, e.g., `let unknown; console.log(unknown);` outputs <samp>undefined</samp>.
     </div>
 
+    <h3>JavaScript Code: Primitives</h3>
+  <div class="code_block">
+    <code><span class="C1">let str = "Hello";</span></code><br>
+    <code><span class="C2">let num = 3.14;</span></code><br>
+    <code><span class="C3">let flag = true;</span></code><br>
+    <code><span class="C4">let big = 123456789012345678901234567890n;</span></code><br>
+    <code><span class="C5">let nothing = null;</span></code><br>
+    <code><span class="C6">let unknown;</span></code><br>
+    <code><span class="C7">let sym = Symbol("id");</span></code>
   </div>
 
-</template>
+  <!-- Example -->
+  <h3>Example: Primitive values</h3>
+  <div class="example">
+    <span class="dot d1"></span> <samp>string: "Hello"</samp><br>
+    <span class="dot d2"></span> <samp>number: 3.14</samp><br>
+    <span class="dot d3"></span> <samp>boolean: true</samp><br>
+    <span class="dot d4"></span> <samp>bigint: 123456789012345678901234567890n</samp><br>
+    <span class="dot d5"></span> <samp>null: null</samp><br>
+    <span class="dot d6"></span> <samp>undefined: undefined</samp><br>
+    <span class="dot d7"></span> <samp>symbol: Symbol(id)</samp>
+  </div>
 
+  <!-- Explanation -->
+  <h3>Explanation: Primitive</h3>
+  <div class="explanation">
+    <span class="C1">string</span> → Sequence of characters in quotes. Example: `"Hello"`, `'World'`, or `` `template` ``.<br><br>
+    <span class="C2">number</span> → Represents integers or floating-point values. Example: `42`, `3.14`.<br><br>
+    <span class="C3">boolean</span> → Logical type with values `true` or `false`. Often used in conditions.<br><br>
+    <span class="C4">bigint</span> → Used for integers too large for `number`. Denoted with an `n` suffix.<br><br>
+    <span class="C5">null</span> → Intentional absence of a value (must be assigned explicitly).<br><br>
+    <span class="C6">undefined</span> → Default value of a variable that has been declared but not assigned.<br><br>
+    <span class="C7">symbol</span> → Unique and immutable value often used as object property keys.<br>
+  </div>
+
+</div>
+</template>
+<!-- template 5 -->
 <template> <!-- JavaScript: Syntax -->
 
   <!-- Bubble block -->
@@ -422,7 +890,11 @@
       <span class="C1"><code>document</code></span>.<br>
       <span class="C2"><code>getElementById("demo")</code></span>.<br>
       <span class="C3"><code>innerHTML = "Hello World";</code></span><br>
-      <span class="C4"><code>document.write("Hello World");</code></span>
+      <span class="C4"><code>document.write("Hello World");</code></span><br>
+      <span class="C5"><code>&lt;button id="btnClick"&gt;Click Me&lt;/button&gt;<br>
+document.getElementById("btnClick").onclick = function() {<br>
+&nbsp;&nbsp;this.innerHTML = "Hello World";<br>
+};</code></span>
     </div>
 
     <!-- Example -->
@@ -438,27 +910,38 @@
       <code class="C3">document.getElementById("demo").innerHTML = "Hello World";</code><br>
 
       <span class="dot d4"></span> Writing directly to the page:<br>
-      <code class="C4">document.write("Hello World");</code>
+      <code class="C4">document.write("Hello World");</code><br>
+
+      <span class="dot d5"></span> Clickable button example:<br>
+      <button id="btnClickExample">Click Me</button>
     </div>
+
+    <!-- Script to make the example button work -->
+    <script>
+      const btn = document.getElementById("btnClickExample");
+      btn.onclick = function() {
+        this.innerHTML = "Hello World";
+      };
+    </script>
 
     <!-- Explanation -->
     <h3>Explanation:</h3>
     <div class="explanation">
-      <span class="C1">document.</span><br>
-      <strong>What it does:</strong> Represents the HTML page loaded in the browser and allows manipulation of elements.<br>
-      <strong>Example:</strong> <code class="C1">console.log(document.title);</code><br><br>
+      <span class="C1">document</span>: Represents the HTML page loaded in the browser. Used to access and manipulate page elements.<br>
+      <span class="C2">getElementById("id")</span>: Selects an element with the specified `id`.<br>
+      <span class="C3">innerHTML</span>: Gets or sets the content inside an HTML element.<br>
+      <span class="C4">document.write(...)</span>: Writes content directly into the document at the point the script runs.<br>
+      <span class="C5">onclick / click event</span>: HTML elements can respond to a click action. In the example, clicking the button changes its text to `"Hello World"`.<br><br>
 
-      <span class="C2">.getElementById(...)</span><br>
-      <strong>What it does:</strong> Selects an HTML element by its `id` attribute.<br>
-      <strong>Example:</strong> <code class="C2">let element = document.getElementById("demo");</code><br><br>
-
-      <span class="C3">.innerHTML</span><br>
-      <strong>What it does:</strong> Gets or sets the HTML content inside an element.<br>
-      <strong>Example:</strong> <code class="C3">document.getElementById("demo").innerHTML = "Hello World";</code><br><br>
-
-      <span class="C4">document.write(...)</span><br>
-      <strong>What it does:</strong> Writes text or HTML directly into the document at the point the script runs.<br>
-      <strong>Example:</strong> <code class="C4">document.write("Hello World");</code><br>
+      <strong>Event summary:</strong><br>
+      <ul>
+        <li><strong>onclick</strong>: Triggered when a user clicks an element.</li>
+        <li><strong>onchange</strong>: Triggered when an element’s value changes.</li>
+        <li><strong>onmouseover</strong>: Triggered when the mouse hovers over an element.</li>
+        <li><strong>onmouseout</strong>: Triggered when the mouse leaves an element.</li>
+        <li><strong>onkeydown</strong>: Triggered when a key is pressed.</li>
+        <li><strong>onload</strong>: Triggered when the browser finishes loading the page.</li>
+      </ul>
     </div>
 
   </div>
@@ -627,16 +1110,9 @@
 
 
 
-
-
-
-
-
-
-
 -->
 <!-- 7–8 topics per day 225 topics -->
-<!-- 13/225 -->
+<!-- 22 of 225 / 22 -> JS math -->
 <!-- Example of a Templates.  -->
 <template> <!-- JavaScript Description -->
 
@@ -660,7 +1136,7 @@
     <!-- Example -->
     <h3>Example: <!-- Description --></h3>
     <div class="example">
-      <span class="dot d#"></span> <!-- Example output goes here from the code in code_block -->
+      <span class="dot d#"></span><samp> &rarr; <!-- Example output goes here from the code in code_block --></samp> 
     </div>
 
     <!-- Explanation -->
