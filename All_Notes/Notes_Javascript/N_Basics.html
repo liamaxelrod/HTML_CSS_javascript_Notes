@@ -1,65 +1,127 @@
 <!-- chatGPT Questions by liam Disregard if I forgot to remove it. 
+class?
+import?
+export?
 
 
 
- 
+
+
+
 
 -->
-<template> <!-- JavaScript: Errors / Try-Catch / Throw -->
-  <!-- Bubble block -->
+<!-- template 20 -->
+<template> <!-- JavaScript: Scope -->
   <div class="bubble">
 
     <!-- Code Block -->
-    <h3>JavaScript Code: Try, Catch, Finally, Throw</h3>
+    <h3>JavaScript Scope Example</h3>
     <div class="code_block">
-      <span><code>
-        <span>// throw an error</span><br>
-        <span class="C1">throw</span> <span class="C2">new</span> <span class="C3">Error</span>("Something went wrong!");<br><br>
+      <code>// Global Scope</code><br>
+      <span class="C1"><code>let globalVar = "I am global";</code></span><br><br>
 
-        <span>// try / catch / finally example</span><br>
-        <span class="C4">try</span> {<br>
-        &nbsp;&nbsp;nonExistentFunction();<br>
-        } <span class="C5">catch</span>(<span class="C6">err</span>) {<br>
-        &nbsp;&nbsp;console.log(<span class="C6">err.name</span>);<br>
-        &nbsp;&nbsp;console.log(<span class="C6">err.message</span>);<br>
-        } <span class="C7">finally</span> {<br>
-        &nbsp;&nbsp;console.log("Cleanup executed.");<br>
-        }
-      </code></span>
+      <code>// Function Scope</code><br>
+      <code>function myFunction() {</code><br>
+      <span class="C2"><code>  let functionVar = "I exist only in this function";</code></span><br>
+      <code>}</code><br><br>
+
+      <code>// Block Scope</code><br>
+      <span class="C3"><code>{</code></span><br>
+      <span class="C4"><code>  let blockVar = "I exist only inside this block";</code></span><br>
+      <span class="C3"><code>}</code></span>
     </div>
 
     <!-- Example -->
-    <h3>Example: </h3>
+    <h3>Example:</h3>
     <div class="example">
-      <samp>
-        <span class="C1">→ Error</span><br>
-        <span class="C6">→ Something went wrong!</span><br>
-        <span class="C7">→ Cleanup executed.</span><br>
-      </samp>
+      <span class="dot d1"></span><span> &rarr; globalVar is accessible anywhere</span><br>
+      <span class="dot d2"></span><span> &rarr; functionVar is only accessible inside myFunction()</span><br>
+      <span class="dot d4"></span><span> &rarr; blockVar is only accessible inside the block { }</span>
     </div>
 
     <!-- Explanation -->
-    <h3>Explanation: </h3>
+    <h3>Explanation:</h3>
     <div class="explanation">
-      <p><span class="C1">throw</span> → manually triggers an error.</p>
-      <p><span class="C4">try</span> → runs code that may fail.</p>
-      <p><span class="C5">catch</span> → executes if error occurs, <span class="C6">err</span> contains <span class="C6">name</span> and <span class="C6">message</span>.</p>
-      <p><span class="C7">finally</span> → always runs regardless of errors (cleanup).</p>
-
-      <strong>Notes:</strong>  
-      <samp>
-        Built-in error names: EvalError, RangeError, ReferenceError, SyntaxError, TypeError, URIError.<br>
-        Always handle errors gracefully to prevent crashes.
-      </samp>
+      <span class="C1">globalVar</span> – Declared in the global scope; accessible anywhere in your script.<br>
+      <span class="C2">functionVar</span> – Declared inside a function; only exists inside that function.<br>
+      <span class="C4">blockVar</span> – Declared inside a block using <code>let</code>; exists only inside that block.<br>
+      <strong>Notes:</strong><br>
+      <span>
+        1. Variables declared with <code>var</code> have **function scope**, not block scope.  
+          - Example: A <code>var</code> declared inside `{ ... }` still exists outside that block if it’s not inside a function.<br> 
+        2. <code>var</code> declarations are **hoisted** to the top of their function scope.  
+          - This means you can reference the variable before its declaration, but its value will be <code>undefined</code> until it is assigned.<br>  
+        3. Because of these quirks, using <code>let</code> or <code>const</code> is safer and more predictable.<br>  
+        4. Always prefer <code>let</code> for variables that will change, and <code>const</code> for constants, to avoid unexpected behavior with <code>var</code>.
+      </span>
     </div>
 
   </div>
 </template>
 
+<template> <!-- JavaScript: Errors / Throw / Try-Catch-Finally -->
+  <!-- Bubble block -->
+  <div class="bubble">
 
+    <!-- Code Block -->
+    <h3>JavaScript Code: Throwing Errors and Handling Them</h3>
+    <div class="code_block">
+      // Example 2: throw new Error inside a function<br><br>
+      <span>age = 18; or age = -18;</span><br><br>
+      function checkAge(age) {<br>
+      &nbsp;&nbsp;if (age &lt; 0) {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="C1">throw</span> <span class="C2">new</span> <span class="C3">Error</span>("Age cannot be negative");<br>
+      &nbsp;&nbsp;}<br>
+      &nbsp;&nbsp;return "Age is " + age;<br>
+      }<br><br>
 
-<!-- ------------------ -->
+      // Example 1: try / catch / finally running checkAge<br>
+      <span class="C4">try</span> {<br>
+      &nbsp;&nbsp;console.log(checkAge(18));  // Works fine<br>
+      &nbsp;&nbsp;console.log(checkAge(-18)); // Throws error<br>
+      } <span class="C5">catch</span>(err) {<br>
+      &nbsp;&nbsp;console.log(<span class="C6">err.name</span>);<br>
+      &nbsp;&nbsp;console.log(<span class="C7">err.message</span>);<br>
+      } <span class="C8">finally</span> {<br>
+      &nbsp;&nbsp;console.log("Cleanup executed.");<br>
+      }
+    </div>
 
+    <!-- Example -->
+    <h3>Example: Throwing Errors and Handling Them</h3>
+    <div class="example">
+      <span class="dot d1"></span> <span class="dot d2"></span> <span class="dot d3"></span>
+      <span> &rarr; "Age is 18" / "Age cannot be negative" (Need to be in try to appear)</span><br>
+      <span class="dot d4"></span> <span class="dot d5"></span> <span class="dot d6"></span> <span class="dot d7"></span>
+      <span> &rarr; "Error" / "Age cannot be negative"</span><br>
+      <span class="dot d8"></span>
+      <span> &rarr; "Cleanup executed."</span><br>
+    </div>
+
+    <!-- Explanation -->
+    <h3>Explanation: Throwing Errors and Handling Them</h3>
+    <div class="explanation">
+      <p><span class="C1">throw</span> → stops execution in the current function and sends an error to the nearest enclosing <span class="C5">catch</span>. In <code>checkAge(-18)</code>, this triggers the <span class="C5">catch</span> block.</p>
+      <p><span class="C2">new</span> → creates a new instance of an error object. Here it is used to instantiate <span class="C3">Error</span>.</p>
+      <p><span class="C3">Error</span> → standard JavaScript error object; takes an optional string <code>message</code>. In our example, the message is "Age cannot be negative". If omitted, <code>err.message</code> would be an empty string.</p>
+      <p><span class="C4">try</span> → encloses code that might throw errors. In our example, it calls <code>checkAge</code> twice.</p>
+      <p><span class="C5">catch</span> → receives the error object thrown in the <span class="C4">try</span>. The <code>err</code> parameter contains <span class="C6">err.name</span> and <span class="C7">err.message</span>.</p>
+      <p><span class="C6">err.name</span> → the type of the error. For normal errors, it is "Error".</p>
+      <p><span class="C7">err.message</span> → the message provided when the error was thrown. Displays "Age cannot be negative" for our second call.</p>
+      <p><span class="C8">finally</span> → always executes after <span class="C4">try</span> and <span class="C5">catch</span>, whether an error occurred or not. Used for cleanup tasks.</p>
+      <strong>Notes:</strong>
+      <p>
+        - The function <code>checkAge</code> and the <span class="C4">try/catch/finally</span> block work together. 
+        The <span class="C1">throw</span> inside <code>checkAge</code> is caught by the <span class="C5">catch</span> only because the function call is inside the <span class="C4">try</span>. 
+        If the function were called outside, the error would remain uncaught and stop the program.<br>
+        - You can throw an <span class="C3">Error</span> with or without a <code>message</code>, but including a message is highly recommended for clarity.<br>
+        - <span class="C4">try</span>, <span class="C5">catch</span>, <span class="C8">finally</span> must all be present in order to safely catch and handle thrown errors.<br>
+        - Each color-coded keyword (C1–C8) corresponds to a specific behavior in error handling: <span class="C1">throw</span> stops execution, <span class="C5">catch</span> handles the error, <span class="C8">finally</span> ensures cleanup, etc.
+      </p>
+    </div>
+
+  </div>
+</template>
 
 <template> <!-- JavaScript: Loops / If / Else -->
   <!-- Bubble block -->
@@ -136,7 +198,7 @@
     <!-- Example -->
     <h3>Example: </h3>
     <div class="example">
-      <samp>
+      <span>
         <span class="C1">→ 0, 1, 2, 3, 4</span><br>
         <span class="C2">→ a 1 , b 2</span><br>
         <span class="C3">→ 10, 20, 30</span><br>
@@ -147,7 +209,7 @@
         <span class="C8">→ zero</span><br>
         <span class="C10">→ 0, 1, 3, 4 (skips 2)</span><br>
         <span class="C9">→ 0, 1, 2 (stops at 3)</span><br>
-      </samp>
+      </span>
     </div>
 
     <!-- Explanation -->
@@ -165,11 +227,11 @@
       <p><span class="C9">break</span> → exits the loop entirely.</p>
 
       <strong>Notes:</strong>  
-      <samp>
+      <span>
         Use <code>let</code> for block scope inside loops.  
         <code>var</code> leaks outside the loop since it’s function scoped.  
         You should almost always use <code>let</code> (or <code>const</code> if the value won’t change) instead of <code>var</code>.
-      </samp>
+      </span>
     </div>
 
   </div>
@@ -204,18 +266,18 @@
     <!-- Example -->
     <h3>Example: switch</h3>
     <div class="example">
-      <span class="dot d2"></span><samp>
+      <span class="dot d2"></span><span>
         value = 1 &rarr; "case 1"
-      </samp><br>
-      <span class="dot d2"></span><samp>
+      </span><br>
+      <span class="dot d2"></span><span>
         value = "test" &rarr; "case 2"
-      </samp><br>
-      <span class="dot d4"></span><samp>
+      </span><br>
+      <span class="dot d4"></span><span>
         value = 3 &rarr; "case 3"
-      </samp><br>
-      <span class="dot d5"></span><samp>
+      </span><br>
+      <span class="dot d5"></span><span>
         value = 69 &rarr; "default"
-      </samp> 
+      </span> 
     </div>
 
     <!-- Explanation -->
@@ -286,7 +348,7 @@
   </div>
 
 </template>
-<!-- template 15 -->
+
 <template> <!-- JavaScript: Math -->
 
   <div class="bubble">
@@ -601,15 +663,15 @@
     <!-- Example -->
     <h3>Example:</h3>
     <div class="example">
-      <span class="dot d1"></span><samp> console.log('I\'m here'); → I'm here</samp><br>
-      <span class="dot d2"></span><samp> console.log("He said: \"Hello\""); → He said: "Hello"</samp><br>
-      <span class="dot d3"></span><samp> console.log("C:\\Users\\Liam"); → C:\Users\Liam</samp><br>
-      <span class="dot d4"></span><samp> console.log("Line1\bLine2"); → Line2 (backspace)</samp><br>
-      <span class="dot d5"></span><samp> console.log("Page1\fPage2"); → Page2 (form feed)</samp><br>
-      <span class="dot d6"></span><samp> console.log("Line1\nLine2"); → Line1 (newline) Line2</samp><br>
-      <span class="dot d7"></span><samp> console.log("Line1\rLine2"); → Line2 (carriage return)</samp><br>
-      <span class="dot d8"></span><samp> console.log("Tab\tSeparated"); → Tab    Separated</samp><br>
-      <span class="dot d9"></span><samp> console.log("Vertical\vTab"); → Vertical (vertical tab)</samp>
+      <span class="dot d1"></span><span> console.log('I\'m here'); → I'm here</span><br>
+      <span class="dot d2"></span><span> console.log("He said: \"Hello\""); → He said: "Hello"</span><br>
+      <span class="dot d3"></span><span> console.log("C:\\Users\\Liam"); → C:\Users\Liam</span><br>
+      <span class="dot d4"></span><span> console.log("Line1\bLine2"); → Line2 (backspace)</span><br>
+      <span class="dot d5"></span><span> console.log("Page1\fPage2"); → Page2 (form feed)</span><br>
+      <span class="dot d6"></span><span> console.log("Line1\nLine2"); → Line1 (newline) Line2</span><br>
+      <span class="dot d7"></span><span> console.log("Line1\rLine2"); → Line2 (carriage return)</span><br>
+      <span class="dot d8"></span><span> console.log("Tab\tSeparated"); → Tab    Separated</span><br>
+      <span class="dot d9"></span><span> console.log("Vertical\vTab"); → Vertical (vertical tab)</span>
     </div>
 
     <!-- Explanation -->
@@ -667,9 +729,9 @@
     <h3>Example</h3>
     <div class="example">
       <strong>Function</strong><br>
-      <span class="dot d1"></span><samp> functionName(2, 3) → 5</samp><br>
-      <span class="dot d2"></span><samp> obj contains → (name:"Honda"; age:74;)</samp><br>
-      <span class="dot d5"></span><samp> let person1 = new Person("Liam", 30) → creates actual object instance with elements "liam" and age 30</samp>
+      <span class="dot d1"></span><span> functionName(2, 3) → 5</span><br>
+      <span class="dot d2"></span><span> obj contains → (name:"Honda"; age:74;)</span><br>
+      <span class="dot d5"></span><span> let person1 = new Person("Liam", 30) → creates actual object instance with elements "liam" and age 30</span>
     </div>
 
     <!-- Syntax Explanation -->
@@ -700,7 +762,7 @@
 
   </div>
 </template>
-<!-- template 10 -->
+
 <template> <!-- JavaScript Operators4 -->
 
   <div class="bubble">
@@ -995,17 +1057,17 @@
     <!-- Example -->
     <h3>Example: Keywords codes</h3>
     <div class="example">
-      <span class="C1">var x = 5;</span>: <samp>5</samp><br>
-      <span class="C1">let y = 10;</span>: <samp>10</samp><br>
-      <span class="C1">const z = 42;</span>: <samp>42</samp><br>
-      <span class="C2">if (y > x)</span>: <samp>y is greater</samp><br>
-      <span class="C3">function add(3, 4)</span>: <samp>7</samp><br>
-      <span class="C4">for loop</span>: <samp>0 1 2</samp><br>
-      <span class="C5">try / catch</span>: <samp>Oops!</samp><br>
-      <span class="C6">alert()</span>: <samp>[Popup message]</samp><br>
-      <span class="C6">console.log()</span>: <samp>Hello World</samp><br>
-      <span class="C7">Template literal</span>: <samp>x is 5</samp><br>
-      <span class="C8">undefined</span>: <samp>undefined</samp>
+      <span class="C1">var x = 5;</span>: <span>5</span><br>
+      <span class="C1">let y = 10;</span>: <span>10</span><br>
+      <span class="C1">const z = 42;</span>: <span>42</span><br>
+      <span class="C2">if (y > x)</span>: <span>y is greater</span><br>
+      <span class="C3">function add(3, 4)</span>: <span>7</span><br>
+      <span class="C4">for loop</span>: <span>0 1 2</span><br>
+      <span class="C5">try / catch</span>: <span>Oops!</span><br>
+      <span class="C6">alert()</span>: <span>[Popup message]</span><br>
+      <span class="C6">console.log()</span>: <span>Hello World</span><br>
+      <span class="C7">Template literal</span>: <span>x is 5</span><br>
+      <span class="C8">undefined</span>: <span>undefined</span>
     </div>
 
     <!-- Explanation -->
@@ -1040,10 +1102,10 @@
 
       <span class="C7">Template literals (backticks)</span> → Use `` `...` `` to create strings that support **variable interpolation** via `${variable}` and multi-line text.<br>
       <strong>Scenario:</strong> Construct dynamic messages like `x is ${x}` instead of concatenating with `"x is " + x`.<br>
-      <strong>Example:</strong> `let message = `x is ${x}`; console.log(message);` outputs <samp>x is 5</samp>.<br><br>
+      <strong>Example:</strong> `let message = `x is ${x}`; console.log(message);` outputs <span>x is 5</span>.<br><br>
 
       <span class="C8">undefined</span> → A variable declared but not assigned has the value `undefined`. Also returned by functions with no `return` statement.<br>
-      <strong>Scenario:</strong> Declare a variable without assigning a value to check its state, e.g., `let unknown; console.log(unknown);` outputs <samp>undefined</samp>.
+      <strong>Scenario:</strong> Declare a variable without assigning a value to check its state, e.g., `let unknown; console.log(unknown);` outputs <span>undefined</span>.
     </div>
 
     <h3>JavaScript Code: Primitives</h3>
@@ -1060,13 +1122,13 @@
   <!-- Example -->
   <h3>Example: Primitive values</h3>
   <div class="example">
-    <span class="dot d1"></span> <samp>string: "Hello"</samp><br>
-    <span class="dot d2"></span> <samp>number: 3.14</samp><br>
-    <span class="dot d3"></span> <samp>boolean: true</samp><br>
-    <span class="dot d4"></span> <samp>bigint: 123456789012345678901234567890n</samp><br>
-    <span class="dot d5"></span> <samp>null: null</samp><br>
-    <span class="dot d6"></span> <samp>undefined: undefined</samp><br>
-    <span class="dot d7"></span> <samp>symbol: Symbol(id)</samp>
+    <span class="dot d1"></span> <span>string: "Hello"</span><br>
+    <span class="dot d2"></span> <span>number: 3.14</span><br>
+    <span class="dot d3"></span> <span>boolean: true</span><br>
+    <span class="dot d4"></span> <span>bigint: 123456789012345678901234567890n</span><br>
+    <span class="dot d5"></span> <span>null: null</span><br>
+    <span class="dot d6"></span> <span>undefined: undefined</span><br>
+    <span class="dot d7"></span> <span>symbol: Symbol(id)</span>
   </div>
 
   <!-- Explanation -->
@@ -1083,7 +1145,7 @@
 
 </div>
 </template>
-<!-- template 5 -->
+
 <template> <!-- JavaScript: Syntax -->
 
   <!-- Bubble block -->
@@ -1123,17 +1185,17 @@
     <!-- Example -->
     <h3>Example Output:</h3>
     <div class="example">
-      <span class="C1">num</span>: <samp>42</samp><br>
-      <span class="C2">text</span>: <samp>Hello</samp><br>
-      <span class="C2">text2</span>: <samp>World</samp><br>
-      <span class="C3">sum</span>: <samp>50</samp><br>
-      <span class="C3">isEqual</span>: <samp>true</samp><br>
-      <span class="C4">result</span>: <samp>100</samp><br>
-      <span class="C5">Comments</span>: <samp>[No output, ignored by JavaScript]</samp><br>
-      <span class="C6">name / Name</span>: <samp>Alice / Bob (different variables)</samp><br>
-      <span class="C7">a = 5</span>: <samp>5</samp><br>
-      <span class="C7">a == "5"</span>: <samp>true</samp><br>
-      <span class="C7">a === "5"</span>: <samp>false</samp>
+      <span class="C1">num</span>: <span>42</span><br>
+      <span class="C2">text</span>: <span>Hello</span><br>
+      <span class="C2">text2</span>: <span>World</span><br>
+      <span class="C3">sum</span>: <span>50</span><br>
+      <span class="C3">isEqual</span>: <span>true</span><br>
+      <span class="C4">result</span>: <span>100</span><br>
+      <span class="C5">Comments</span>: <span>[No output, ignored by JavaScript]</span><br>
+      <span class="C6">name / Name</span>: <span>Alice / Bob (different variables)</span><br>
+      <span class="C7">a = 5</span>: <span>5</span><br>
+      <span class="C7">a == "5"</span>: <span>true</span><br>
+      <span class="C7">a === "5"</span>: <span>false</span>
     </div>
 
     <!-- Explanation -->
@@ -1149,9 +1211,9 @@
       <strong>=</strong> → Assigns a value to a variable.  
       <strong>Scenario:</strong> <code>let a = 5;</code> assigns the value 5 to variable <code>a</code>.<br>
       <strong>==</strong> → Loose equality: compares values for equality after type conversion.  
-      <strong>Scenario:</strong> <code>a == "5"</code> is <samp>true</samp> because the string "5" is converted to number 5 before comparison.<br>
+      <strong>Scenario:</strong> <code>a == "5"</code> is <span>true</span> because the string "5" is converted to number 5 before comparison.<br>
       <strong>===</strong> → Strict equality: compares values and types without conversion.  
-      <strong>Scenario:</strong> <code>a === "5"</code> is <samp>false</samp> because number 5 is not the same type as string "5".
+      <strong>Scenario:</strong> <code>a === "5"</code> is <span>false</span> because number 5 is not the same type as string "5".
     </div>
 
   </div>
@@ -1383,9 +1445,9 @@ document.getElementById("btnClick").onclick = function() {<br>
 
 </template>
 
-
-
 <!-- chatGPT Questions by liam Disregard if I forgot to remove it. 
+
+
 
 
 
@@ -1393,67 +1455,75 @@ document.getElementById("btnClick").onclick = function() {<br>
 <!-- 7–8 topics per day 225 topics -->
 <!-- 31 of 225 / 31 -> JS Scope -->
 <!-- Example of a Templates.  -->
-<template> <!-- JavaScript Description -->
-  <!-- 
-    📜 RULEBOOK: HOW TO USE THIS TEMPLATE
-    ------------------------------------
-    1. Code Block:
-       - Always show the working JavaScript code (or interacting code).
-       - If mixing languages, separate with:
-         /* JavaScript */
-         ...
-         /* OtherLanguage */
-         ...
-       - Use <span class="C#"> for highlighting keywords.
-
-    2. Example:
-       - Show actual example output or results from the code.
-       - Format:
-         <div class="example">
-           <span class="dot d#"></span><samp> &rarr; output here</samp>
-         </div>
-
-    3. Explanation:
-       - Explain what the code does, in plain English.
-       - Connect directly to the Example.
-       - Use <span class="C#"> to highlight relevant code parts.
-
-    4. Notes (optional but encouraged):
-       - Place under Explanation.
-       - Use for best practices, warnings, "always use let," etc.
-       - Format:
-         <strong>Notes:</strong>
-         <samp>guidance goes here</samp>
-
-    ⚡ Golden Rule:
-    Always answer in this exact order:
-    Code → Example → Explanation → Notes
-  -->
-
-  <!-- Bubble block -->
+<template>
   <div class="bubble">
 
-    <!-- Code -->
-    <h3>JavaScript Code: <!-- Short description goes here --></h3>
+    <!-- 
+      📜 RULEBOOK: HOW TO USE THIS TEMPLATE
+      ------------------------------------
+      1. Code Block:
+         - Always include fully working code examples.
+         - Highlight important keywords using <span class="C#">.
+         - Use comments above code lines to indicate sections or purpose.
+         
+      2. Example:
+         - Show actual outputs for each scenario in the code.
+         - Use colored dots to match keyword references.
+         - Format:
+           <div class="example">
+             <span class="dot d#"></span><span> &rarr; output</span>
+           </div>
+         - If multiple color-coded keywords contribute to a single example output, show the output **once** with multiple colored dots.
+
+      3. Explanation:
+         - Describe what each part of the code does.
+         - Use <span class="C#"> to reference highlighted keywords.
+         - Directly relate the explanation to the Example output.
+
+      4. Notes:
+         - Include best practices, warnings, or extra guidance.
+         - Explain tricky behaviors (e.g., var hoisting, block vs function scope).
+      
+      ⚡ Golden Rule:
+      Always maintain this order:
+      Code → Example → Explanation → Notes
+    -->
+
+    <!-- Code Block -->
+    <h3><!-- Short Title Here --></h3>
     <div class="code_block">
-      <span class="C#"><code>
-        <!-- JavaScript code goes here -->
-      </code></span>
+      <!-- Section comment example -->
+      <code>// Section Name</code><br>
+      <span class="C1"><code><!-- Highlighted Code Line 1 --></code></span><br>
+      <span class="C2"><code><!-- Highlighted Code Line 2 --></code></span><br><br>
+
+      <!-- Another section -->
+      <code>// Another Section</code><br>
+      <span class="C3"><code><!-- Highlighted Code Line --></code></span><br>
+      <span class="C4"><code><!-- Highlighted Code Line --></code></span>
     </div>
 
-    <!-- Example -->
-    <h3>Example: <!-- Short description goes here --></h3>
+    <!-- Example Section -->
+    <h3>Example:</h3>
     <div class="example">
-      <span class="dot d#"></span><samp> &rarr; <!-- Example output --></samp> 
+      <span class="dot d1"></span><span> &rarr; <!-- Example Output 1 --></span><br>
+      <span class="dot d2"></span><span> &rarr; <!-- Example Output 2 --></span><br>
+      <span class="dot d4"></span><span> &rarr; <!-- Example Output 3 --></span>
     </div>
 
-    <!-- Explanation -->
-    <h3>Explanation: <!-- Short description goes here --></h3>
+    <!-- Explanation Section -->
+    <h3>Explanation:</h3>
     <div class="explanation">
-      <span class="C#"><!-- keyword from code_block --></span> <!-- Explain what it does -->
-      <!-- Connect it to Example -->
-      <strong>Notes:</strong>
-      <samp><!-- Optional best practices / extra info --></samp> 
+      <span class="C1"><!-- Keyword 1 --></span> – <!-- Explain how it works and link to example output --><br>
+      <span class="C2"><!-- Keyword 2 --></span> – <!-- Explain how it works and link to example output --><br>
+      <span class="C4"><!-- Keyword 3 --></span> – <!-- Explain how it works and link to example output --><br>
+      
+      <strong>Notes:</strong><br>
+      <span>
+        1. <!-- Note about language quirk or best practice 1 --> <br>
+        2. <!-- Note about language quirk or best practice 2 --> <br>
+        3. <!-- Additional guidance or warnings -->
+      </span>
     </div>
 
   </div>
@@ -1471,16 +1541,16 @@ document.getElementById("btnClick").onclick = function() {<br>
 
     <h3>Example:</h3>
     <div class="example">
-      <span class="dot d#"></span><samp>
-         &rarr; <!-- output -->
-      </samp> 
+      <span class="dot d#"></span><span>
+         &rarr; <!-- output / Stating there's no output for this yet is acceptable. -->
+      </span> 
     </div>
 
     <h3>Explanation:</h3>
     <div class="explanation">
       <span class="C#"></span> 
       <strong>Notes:</strong>
-      <samp></samp> 
+      <span></span> 
     </div>
 
   </div>
