@@ -1,0 +1,68 @@
+<template> <!-- JavaScript: Document Interaction -->
+
+  <!-- Bubble block -->
+  <div class="bubble">
+
+    <!-- Code -->
+    <h3>JavaScript Code: Document Interaction</h3>
+    <div class="code_block">
+      <span class="C1"><code>document</code></span>.<br>
+      <span class="C2"><code>getElementById("demo")</code></span>.<br>
+      <span class="C3"><code>innerHTML = "Hello World";</code></span><br>
+      <span class="C4"><code>document.write("Hello World");</code></span><br>
+      <span class="C5"><code>&lt;button id="btnClick"&gt;Click Me&lt;/button&gt;<br>
+document.getElementById("btnClick").onclick = function() {<br>
+&nbsp;&nbsp;this.innerHTML = "Hello World";<br>
+};</code></span>
+    </div>
+
+    <!-- Example -->
+    <h3>Example:</h3>
+    <div class="example">
+      <span class="dot d1"></span> Accessing the document object:<br>
+      <code class="C1">console.log(document.title);</code><br>
+
+      <span class="dot d2"></span> Selecting an element by ID:<br>
+      <code class="C2">let element = document.getElementById("demo");</code><br>
+
+      <span class="dot d3"></span> Updating innerHTML:<br>
+      <code class="C3">document.getElementById("demo").innerHTML = "Hello World";</code><br>
+
+      <span class="dot d4"></span> Writing directly to the page:<br>
+      <code class="C4">document.write("Hello World");</code><br>
+
+      <span class="dot d5"></span> Clickable button example:<br>
+      <button id="btnClickExample">Click Me</button>
+    </div>
+
+    <!-- Script to make the example button work -->
+    <script>
+      const btn = document.getElementById("btnClickExample");
+      btn.onclick = function() {
+        this.innerHTML = "Hello World";
+      };
+    </script>
+
+    <!-- Explanation -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1">document</span>: Represents the HTML page loaded in the browser. Used to access and manipulate page elements.<br>
+      <span class="C2">getElementById("id")</span>: Selects an element with the specified `id`.<br>
+      <span class="C3">innerHTML</span>: Gets or sets the content inside an HTML element.<br>
+      <span class="C4">document.write(...)</span>: Writes content directly into the document at the point the script runs.<br>
+      <span class="C5">onclick / click event</span>: HTML elements can respond to a click action. In the example, clicking the button changes its text to `"Hello World"`.<br><br>
+
+      <strong>Event summary:</strong><br>
+      <ul>
+        <li><strong>onclick</strong>: Triggered when a user clicks an element.</li>
+        <li><strong>onchange</strong>: Triggered when an element’s value changes.</li>
+        <li><strong>onmouseover</strong>: Triggered when the mouse hovers over an element.</li>
+        <li><strong>onmouseout</strong>: Triggered when the mouse leaves an element.</li>
+        <li><strong>onkeydown</strong>: Triggered when a key is pressed.</li>
+        <li><strong>onload</strong>: Triggered when the browser finishes loading the page.</li>
+      </ul>
+    </div>
+
+  </div>
+
+</template>

@@ -1,0 +1,63 @@
+<template> <!-- JavaScript: Errors / Throw / Try-Catch-Finally -->
+  <!-- Bubble block -->
+  <div class="bubble">
+
+    <!-- Code Block -->
+    <h3>JavaScript Code: Throwing Errors and Handling Them</h3>
+    <div class="code_block">
+      // Example 2: throw new Error inside a function<br><br>
+      <span>age = 18; or age = -18;</span><br><br>
+      function checkAge(age) {<br>
+      &nbsp;&nbsp;if (age &lt; 0) {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="C1">throw</span> <span class="C2">new</span> <span class="C3">Error</span>("Age cannot be negative");<br>
+      &nbsp;&nbsp;}<br>
+      &nbsp;&nbsp;return "Age is " + age;<br>
+      }<br><br>
+
+      // Example 1: try / catch / finally running checkAge<br>
+      <span class="C4">try</span> {<br>
+      &nbsp;&nbsp;console.log(checkAge(18));  // Works fine<br>
+      &nbsp;&nbsp;console.log(checkAge(-18)); // Throws error<br>
+      } <span class="C5">catch</span>(err) {<br>
+      &nbsp;&nbsp;console.log(<span class="C6">err.name</span>);<br>
+      &nbsp;&nbsp;console.log(<span class="C7">err.message</span>);<br>
+      } <span class="C8">finally</span> {<br>
+      &nbsp;&nbsp;console.log("Cleanup executed.");<br>
+      }
+    </div>
+
+    <!-- Example -->
+    <h3>Example: Throwing Errors and Handling Them</h3>
+    <div class="example">
+      <span class="dot d1"></span> <span class="dot d2"></span> <span class="dot d3"></span>
+      <span> &rarr; "Age is 18" / "Age cannot be negative" (Need to be in try to appear)</span><br>
+      <span class="dot d4"></span> <span class="dot d5"></span> <span class="dot d6"></span> <span class="dot d7"></span>
+      <span> &rarr; "Error" / "Age cannot be negative"</span><br>
+      <span class="dot d8"></span>
+      <span> &rarr; "Cleanup executed."</span><br>
+    </div>
+
+    <!-- Explanation -->
+    <h3>Explanation: Throwing Errors and Handling Them</h3>
+    <div class="explanation">
+      <p><span class="C1">throw</span> → stops execution in the current function and sends an error to the nearest enclosing <span class="C5">catch</span>. In <code>checkAge(-18)</code>, this triggers the <span class="C5">catch</span> block.</p>
+      <p><span class="C2">new</span> → creates a new instance of an error object. Here it is used to instantiate <span class="C3">Error</span>.</p>
+      <p><span class="C3">Error</span> → standard JavaScript error object; takes an optional string <code>message</code>. In our example, the message is "Age cannot be negative". If omitted, <code>err.message</code> would be an empty string.</p>
+      <p><span class="C4">try</span> → encloses code that might throw errors. In our example, it calls <code>checkAge</code> twice.</p>
+      <p><span class="C5">catch</span> → receives the error object thrown in the <span class="C4">try</span>. The <code>err</code> parameter contains <span class="C6">err.name</span> and <span class="C7">err.message</span>.</p>
+      <p><span class="C6">err.name</span> → the type of the error. For normal errors, it is "Error".</p>
+      <p><span class="C7">err.message</span> → the message provided when the error was thrown. Displays "Age cannot be negative" for our second call.</p>
+      <p><span class="C8">finally</span> → always executes after <span class="C4">try</span> and <span class="C5">catch</span>, whether an error occurred or not. Used for cleanup tasks.</p>
+      <strong>Notes:</strong>
+      <p>
+        - The function <code>checkAge</code> and the <span class="C4">try/catch/finally</span> block work together. 
+        The <span class="C1">throw</span> inside <code>checkAge</code> is caught by the <span class="C5">catch</span> only because the function call is inside the <span class="C4">try</span>. 
+        If the function were called outside, the error would remain uncaught and stop the program.<br>
+        - You can throw an <span class="C3">Error</span> with or without a <code>message</code>, but including a message is highly recommended for clarity.<br>
+        - <span class="C4">try</span>, <span class="C5">catch</span>, <span class="C8">finally</span> must all be present in order to safely catch and handle thrown errors.<br>
+        - Each color-coded keyword (C1–C8) corresponds to a specific behavior in error handling: <span class="C1">throw</span> stops execution, <span class="C5">catch</span> handles the error, <span class="C8">finally</span> ensures cleanup, etc.
+      </p>
+    </div>
+
+  </div>
+</template>

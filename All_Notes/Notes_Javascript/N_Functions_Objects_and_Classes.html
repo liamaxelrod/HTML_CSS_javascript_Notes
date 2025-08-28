@@ -1,0 +1,161 @@
+<template> <!-- JavaScript Functions & Objects -->
+  <div class="bubble">
+
+    <!-- Code -->
+    <h3>JavaScript Code: Functions & Objects</h3>
+    <div class="code_block">
+      <!-- Generic Function -->
+      <span class="C1"><code><pre>
+        function functionName(a, b) {
+          let result = a + b;
+          return result;
+        }
+      </code></pre></span>
+
+      <!-- Object Example -->
+      <span class="C2"><code><pre>
+        let obj = new Object();
+        obj.name = "Honda";
+        obj.age = 74;
+      </code></pre></span>
+
+      <span class="C3"><code><pre>
+        function Person(name, age) {
+        <span class="C4">this</span>.name = name;
+        <span class="C4">this</span>.age = age;
+        <span class="C4">this</span>.greet = function() {
+            console.log("Hello, my name is " + <span class="C4">this</span>.name);
+          };
+        }<br>
+        <span class="C5">let person1 = new Person("Liam", 30);</span>
+      </code></pre></span><br>
+    </div>
+
+    <!-- Example -->
+    <h3>Example</h3>
+    <div class="example">
+      <strong>Function</strong><br>
+      <span class="dot d1"></span><span> functionName(2, 3) → 5</span><br>
+      <span class="dot d2"></span><span> obj contains → (name:"Honda"; age:74;)</span><br>
+      <span class="dot d5"></span><span> let person1 = new Person("Liam", 30) → creates actual object instance with elements "liam" and age 30</span>
+    </div>
+
+    <!-- Syntax Explanation -->
+    <div class="explanation">
+      <span class="C1">Syntax:</span><span> Structure of a function declaration.</span><br>
+      <span class="C1">function:</span><span> Declares a reusable block of code; invoked with <code>functionName(args)</code>.</span><br>
+      <span class="C1">{}:</span><span> Encloses the function body.</span><br>
+      <span class="C1">functionName:</span><span> Name used to call the function.</span><br>
+      <span class="C1">a & b:</span><span> Parameters accepting input values; replaced by arguments when invoked.</span><br>
+      <span class="C1">return or NO-return:</span><span> Returns a value if specified; otherwise performs an action without returning anything.</span><br>
+      
+      <span class="C2">make an object:</span><span> Create a new object using <code>new Object()</code> and assign properties with <strong>key : value</strong> pairs; key is the property name, value is the assigned data.</span><br>
+      <span class="C3">object Blueprint:</span><span> Define a constructor function that serves as a template for creating multiple objects with the same structure; methods can be included as function values.</span><br>
+      <span class="C4">this.:</span><span>Refers to the current object; inside a constructor, it’s the object being created; inside a regular object method, it’s the object owning the method.</span><br>
+      <span class="C5">Use blueprint to create an object:</span><span> Instantiate an object using <code>new ConstructorName()</code>, which produces the actual object with its keys, values, and methods.</span><br>
+    </div>
+
+    <!-- Detailed Explanation -->
+    <h3>Explanation: Summary</h3>
+    <div class="explanation">
+      Functions are reusable blocks of code. Parameters define inputs; arguments provide values when invoking the function.<br>
+      Objects are containers for properties (values) and methods (functions). Properties can be primitives, functions, or other objects.<br>
+      - Methods are functions stored as object properties.<br>
+      - `this` refers to the current object inside methods or constructor functions.<br>
+      - Constructor functions define blueprints for creating multiple similar objects.<br>
+      - Built-in objects include Math, Functions, Dates, Arrays, Maps, and Sets.
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- JavaScript: Class, Import, Export -->
+  <div class="bubble">
+
+  <!-- Code Block -->
+  <h3>JavaScript Code: Class, Import, Export</h3>
+  <div class="code_block">
+    <code>
+      <span class="C1">export</span> <span class="C2">class</span> <span class="C3">Person</span> {<br>
+      &nbsp;&nbsp;<span class="C4">constructor</span>(<span class="C5">name</span>, <span class="C5">age</span>) {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;this.<span class="C5">name</span> = <span class="C5">name</span>;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;this.<span class="C5">age</span> = <span class="C5">age</span>;<br>
+      &nbsp;&nbsp;}<br><br>
+
+      &nbsp;&nbsp;<span class="C6">greet</span>() {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="C7">return</span> `Hello, my name is ${this.<span class="C5">name</span>} and I am ${this.<span class="C5">age</span>} years old.`;<br>
+      &nbsp;&nbsp;}<br>
+      }<br><br>
+
+      <span class="C1">import</span> { <span class="C3">Person</span> } <span class="C7">from</span> './Person.js';<br>
+      <span class="C8">const</span> user = <span class="C9">new</span> <span class="C3">Person</span>('Liam', 30);<br>
+      console.log(user.<span class="C6">greet</span>());
+    </code>
+  </div>
+
+  <!-- Example -->
+  <h3>Example: Class in Action</h3>
+  <div class="example">
+    <span class="dot d9"></span><span> &rarr; A new Person object is created in memory with properties {name: "Liam", age: 30}</span><br>
+    <span class="dot d6"></span><span> &rarr; Console output: "Hello, my name is Liam and I am 30 years old."</span>
+  </div>
+
+  <!-- Explanation -->
+  <h3>Explanation: Class, Import, Export</h3>
+  <div class="explanation">
+    <span class="C2">class</span>:  
+    Defines a **blueprint** for creating objects. Classes can hold properties (like <span class="C5">name</span>, <span class="C5">age</span>) and methods (like <span class="C6">greet</span>).  
+    - **Scenario 1:** Use classes when you want to create multiple similar objects (e.g., users, products, vehicles) with shared behavior.  
+    - **Scenario 2:** Classes help organize code in object-oriented projects such as game characters, data models, or UI components.  
+
+    <br><br>
+
+    <span class="C4">constructor</span>:  
+    A special method that runs automatically when you call <span class="C9">new</span>. It sets up initial values for the object’s properties.  
+    - **Scenario 1:** Pass user input or database data into the constructor to quickly create fully configured objects.  
+    - **Scenario 2:** In frameworks like React, constructors can prepare state or bind methods before a component is used.  
+
+    <br><br>
+
+    <span class="C6">greet()</span>:  
+    A regular method inside the class. Methods define **behavior** of objects.  
+    - **Scenario 1:** Utility methods like <span class="C6">greet</span> encapsulate logic (e.g., formatting text, doing calculations).  
+    - **Scenario 2:** Complex apps use class methods for tasks like fetching data, validating input, or updating state.  
+
+    <br><br>
+
+    <span class="C1">export</span>:  
+    Allows code (class, function, variable) to be shared across files.  
+    - **Scenario 1 (Named export):** `export class Person {}` lets other files selectively import `Person`. Good for libraries where you export multiple things.  
+    - **Scenario 2 (Default export):** `export default Person;` allows importing without curly braces, often used when a file provides one main thing (e.g., a single utility or component).  
+    - **Scenario 3:** In large apps, exports allow splitting code into smaller, focused modules (e.g., `UserService.js`, `ProductService.js`).  
+
+    <br><br>
+
+    <span class="C1">import</span> / <span class="C7">from</span>:  
+    Brings in exports from another file so they can be used.  
+    - **Scenario 1:** `import { Person } from './Person.js';` grabs a named export.  
+    - **Scenario 2:** `import Person from './Person.js';` pulls a default export.  
+    - **Scenario 3:** You can import multiple named exports in one line: `import { User, Product } from './models.js';`.  
+    - **Scenario 4:** Aliases allow renaming: `import { Person as Human } from './Person.js';`  
+
+    <br><br>
+
+    <span class="C8">const</span> + <span class="C9">new</span>:  
+    Creates an **instance** (object) from the class. Each new instance has its own properties and methods.  
+    - **Scenario 1:** `const car = new Vehicle("Tesla");` creates a car with its own data.  
+    - **Scenario 2:** `const button = new UIComponent("red");` could create a button in a UI framework.  
+
+    <br><br>
+
+    <strong>Notes:</strong><br>
+    <span>
+      - **Classes** simplify object creation and code reuse. Avoid using them if you only need a one-off object.  
+      - **Exports** are best practice for breaking large projects into smaller files. Without them, all code in one file becomes unmanageable.  
+      - **Imports** ensure your project stays modular. In modern frontend projects (React, Vue, Angular), imports are the backbone of how you structure components and utilities.  
+      - For Node.js: ES module imports (`import/export`) require `"type": "module"` in <code>package.json</code>. Otherwise, CommonJS syntax (`require/module.exports`) is used.  
+    </span>
+  </div>
+
+</div>
+</template>

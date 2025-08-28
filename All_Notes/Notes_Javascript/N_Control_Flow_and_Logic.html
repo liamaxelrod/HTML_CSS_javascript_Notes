@@ -1,0 +1,178 @@
+<template> <!-- JavaScript: Loops / If / Else -->
+  <!-- Bubble block -->
+  <div class="bubble">
+
+    <!-- Code Block -->
+    <h3>JavaScript Code: Loops and if statements</h3>
+    <div class="code_block">
+      <span><code>
+        <span>// Standard for loop: counts from 0 to 4</span><br>
+        <span class="C1">for (let i = 0; i &lt; 5; i++) {</span><br>
+          &nbsp;&nbsp;console.log(i);<br>
+        }<br><br>
+
+        <span">// for...in loop: iterates over object keys</span><br>
+        <span>let obj = {a: 1, b: 2};</span><br>
+        <span class="C2">for (let key in obj) {</span><br>
+          &nbsp;&nbsp;console.log(key, obj[key]);<br>
+        }<br><br>
+
+        <span>// for...of loop: iterates over array values</span><br>
+        <span>let arr = [10, 20, 30];</span><br>
+        <span class="C3">for (let value of arr) {</span><br>
+          &nbsp;&nbsp;console.log(value);<br>
+        }<br><br>
+
+        <span>// while loop: repeats while condition is true</span><br>
+        <span>let count = 0;</span><br>
+        <span class="C4">while (count &lt; 3) {</span><br>
+          &nbsp;&nbsp;console.log(count);<br>
+          &nbsp;&nbsp;count++;<br>
+        }<br><br>
+
+        <span>// do...while loop: executes at least once</span><br>
+        <span>let n = 0;</span><br>
+        <span class="C5">do {</span><br>
+          &nbsp;&nbsp;console.log(n);<br>
+          &nbsp;&nbsp;n++;<br>
+        } <span class="C5">while (n &lt; 3);</span><br><br>
+
+        <span>// if Versions, if with break and if with continue</span><br>
+        <span class="C6">if (x &gt; 5) {</span><br>
+          &nbsp;&nbsp;console.log("x is greater than 5");<br>
+          }<br><br>
+
+          <span class="C7">if (x === 10) {</span><br>
+  &nbsp;&nbsp;console.log("x is exactly 10");<br>
+          } else {<br>
+          &nbsp;&nbsp;console.log("x is not 10");<br>
+          }<br><br>
+
+        <span class="C8">if (x &lt; 0) {</span><br>
+          &nbsp;&nbsp;console.log("negative");<br>
+          } else if (x === 0) {<br>
+          &nbsp;&nbsp;console.log("zero");<br>
+          } else {<br>
+          &nbsp;&nbsp;console.log("positive");<br>
+          }<br><br>
+  
+        <span>// if inside a loop with continue</span><br>
+          for (let i = 0; i &lt; 5; i++) {<br>
+          &nbsp;&nbsp;<span class="C10">if (i === 2) continue;</span> // skips 2<br>
+          &nbsp;&nbsp;console.log(i);<br>
+        }<br><br>
+
+        <span>// if inside a loop with break</span><br>
+          for (let i = 0; i &lt; 5; i++) {<br>
+          &nbsp;&nbsp;<span class="C9">if (i === 3) break;</span> // stops loop at 3<br>
+          &nbsp;&nbsp;console.log(i);<br>
+        }<br>
+      </code></span>
+    </div>
+
+    <!-- Example -->
+    <h3>Example: </h3>
+    <div class="example">
+      <span>
+        <span class="C1">→ 0, 1, 2, 3, 4</span><br>
+        <span class="C2">→ a 1 , b 2</span><br>
+        <span class="C3">→ 10, 20, 30</span><br>
+        <span class="C4">→ 0, 1, 2</span><br>
+        <span class="C5">→ 0, 1, 2</span><br>
+        <span class="C6">→ x is greater than 5</span><br>
+        <span class="C7">→ x is exactly 10</span><br>
+        <span class="C8">→ zero</span><br>
+        <span class="C10">→ 0, 1, 3, 4 (skips 2)</span><br>
+        <span class="C9">→ 0, 1, 2 (stops at 3)</span><br>
+      </span>
+    </div>
+
+    <!-- Explanation -->
+    <h3>Explanation: </h3>
+    <div class="explanation">
+      <p><span class="C1">for</span> → basic counter loop from 0 to 4.</p>
+      <p><span class="C2">for...in</span> → iterates over object keys and values.</p>
+      <p><span class="C3">for...of</span> → iterates directly over array values.</p>
+      <p><span class="C4">while</span> → repeats until condition is false.</p>
+      <p><span class="C5">do...while</span> → always runs at least once before checking condition.</p>
+      <p><span class="C6">if</span> → runs when a condition is true.</p>
+      <p><span class="C7">if / else</span> → checks one condition, otherwise runs alternative.</p>
+      <p><span class="C8">if / else if / else</span> → handles multiple conditions in order.</p>
+      <p><span class="C10">continue</span> → skips the current loop iteration.</p>
+      <p><span class="C9">break</span> → exits the loop entirely.</p>
+
+      <strong>Notes:</strong>  
+      <span>
+        Use <code>let</code> for block scope inside loops.  
+        <code>var</code> leaks outside the loop since it’s function scoped.  
+        You should almost always use <code>let</code> (or <code>const</code> if the value won’t change) instead of <code>var</code>.
+      </span>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- JavaScript: switch -->
+  <!-- Bubble block -->
+  <div class="bubble">
+
+    <!-- code_block -->
+    <h3>JavaScript Code: switch</h3>
+    <div class="code_block">
+      <span><code>
+        // value = 1; or "test" or 3 or  default<br>
+        let running = true;<br>
+        while (running) {<br>
+        &nbsp;&nbsp;let value = prompt("Enter a number (1-3) or 'stop' to end:");<br>
+        &nbsp;&nbsp;<span class="C1">switch(value)</span> {<br>
+        <span class="C2">&nbsp;&nbsp;&nbsp;&nbsp;case 1: "case 1"; </span><span class="C3">break;</span><br>
+        <span class="C2">&nbsp;&nbsp;&nbsp;&nbsp;case "test": "case 2"; </span><span class="C3">break;</span><br>
+        <span class="C4">&nbsp;&nbsp;&nbsp;&nbsp;case 3: "case 3";</span><br>
+        <span class="C5">&nbsp;&nbsp;&nbsp;&nbsp;default:<br> 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"default console.log("Invalid choice, try again");<br></span>
+        &nbsp;&nbsp;&nbsp;&nbsp;case "stop":<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Exiting...");<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;running = false;<br>
+        &nbsp;&nbsp;}<br>
+        }
+      </code></span>
+    </div>
+
+    <!-- Example -->
+    <h3>Example: switch</h3>
+    <div class="example">
+      <span class="dot d2"></span><span>
+        value = 1 &rarr; "case 1"
+      </span><br>
+      <span class="dot d2"></span><span>
+        value = "test" &rarr; "case 2"
+      </span><br>
+      <span class="dot d4"></span><span>
+        value = 3 &rarr; "case 3"
+      </span><br>
+      <span class="dot d5"></span><span>
+        value = 69 &rarr; "default"
+      </span> 
+    </div>
+
+    <!-- Explanation -->
+    <h3>Explanation: switch</h3>
+    <div class="explanation">
+      <span class="C1">switch</span> → Evaluates <code>value</code> once and compares it to each <span class="C2">case</span>.<br>
+      <span class="C2">case</span> → Defines a possible match for <code>value</code>.<br>
+      <span class="C3">break;</span> → Stops the switch from continuing into the next case (prevents “fall-through”).<br>
+      <span class="C4">case 3</span> → Example without <span class="C3">break;</span>, so if code continued, execution would fall through to the next block.<br>
+      <span class="C5">default</span> → Runs if no <span class="C2">case</span> matches.<br><br>
+      <strong>Notes:</strong>
+      <ul>
+        <li>
+          Always use <span class="C3">break;</span> unless you specifically want fall-through behavior.
+        </li>
+        <li>
+          Placing <span class="C1">switch</span> inside a <span class="C1">while</span> loop allows repeated checking until you choose to end. Useful for menus, games, or interactive scripts.
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</template>

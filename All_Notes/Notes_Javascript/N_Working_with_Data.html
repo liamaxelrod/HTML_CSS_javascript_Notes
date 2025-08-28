@@ -1,0 +1,169 @@
+<template> <!-- JavaScript: Special Characters -->
+
+  <div class="bubble">
+
+    <!-- Code -->
+    <h3>JavaScript Code: Special Characters</h3>
+    <div class="code_block">
+      <!-- Escaped Quotes and Backslash -->
+      <span class="C1"><code>\'</code></span> Single quote<br>
+      <span class="C2"><code>\"</code></span> Double quote<br>
+      <span class="C3"><code>\\</code></span> Backslash<br>
+
+      <!-- Control Characters -->
+      <span class="C4"><code>\b</code></span> Backspace<br>
+      <span class="C5"><code>\f</code></span> Form Feed<br>
+      <span class="C6"><code>\n</code></span> New Line<br>
+      <span class="C7"><code>\r</code></span> Carriage Return<br>
+      <span class="C8"><code>\t</code></span> Horizontal Tab<br>
+      <span class="C9"><code>\v</code></span> Vertical Tab
+    </div>
+
+    <!-- Example -->
+    <h3>Example:</h3>
+    <div class="example">
+      <span class="dot d1"></span><span> console.log('I\'m here'); → I'm here</span><br>
+      <span class="dot d2"></span><span> console.log("He said: \"Hello\""); → He said: "Hello"</span><br>
+      <span class="dot d3"></span><span> console.log("C:\\Users\\Liam"); → C:\Users\Liam</span><br>
+      <span class="dot d4"></span><span> console.log("Line1\bLine2"); → Line2 (backspace)</span><br>
+      <span class="dot d5"></span><span> console.log("Page1\fPage2"); → Page2 (form feed)</span><br>
+      <span class="dot d6"></span><span> console.log("Line1\nLine2"); → Line1 (newline) Line2</span><br>
+      <span class="dot d7"></span><span> console.log("Line1\rLine2"); → Line2 (carriage return)</span><br>
+      <span class="dot d8"></span><span> console.log("Tab\tSeparated"); → Tab    Separated</span><br>
+      <span class="dot d9"></span><span> console.log("Vertical\vTab"); → Vertical (vertical tab)</span>
+    </div>
+
+    <!-- Explanation -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1">\'</span>: Single quote inside a string.<br>
+      <span class="C2">\"</span>: Double quote inside a string.<br>
+      <span class="C3">\\</span>: Backslash character.<br>
+      <span class="C4">\b</span>: Backspace – removes previous character.<br>
+      <span class="C5">\f</span>: Form feed – page break in printers.<br>
+      <span class="C6">\n</span>: Newline – moves text to the next line.<br>
+      <span class="C7">\r</span>: Carriage return – returns to start of line.<br>
+      <span class="C8">\t</span>: Horizontal tab – adds horizontal spacing.<br>
+      <span class="C9">\v</span>: Vertical tab – adds vertical spacing.
+    </div>
+
+  </div>
+
+</template>
+
+<template> <!-- JavaScript: Arrays -->
+  <div class="bubble">
+
+    <!-- Code -->
+    <h3>JavaScript Code: Arrays</h3>
+    <div class="code_block">
+      <span class="C1"><code>
+        const test = ["Alice","Bob","Charlie", 5, "4", 2];
+      </code></span><br>
+      <span class="C1"><code>
+        const person = {firstName:"John", lastName:"Doe", age:46};
+      </code></span><br>
+      <span class="C1"><code>
+        const cars = new Array("Saab","Volvo","BMW");
+      </code></span><br>
+      <span class="C2"><code>
+        test[0] & test[5] & test[4] & person.lastName & cars[2] 
+      </code></span><br>
+      <span class="C3"><code>
+        test.toString()
+      </code></span><br>
+      <span class="C4"><code>
+        cars.length
+      </code></span><br>
+      <span class="C5"><code>
+        cars.sort()
+      </code></span><br>
+      <span class="C6"><code>
+        test.push("Dave")
+      </code></span><br>
+      <span class="C7"><code>for (let i = 0; i &lt; test.length; i++) {</code><br>
+      <code>  console.log(test[i]);</code><br>
+      <code>}</code></span><br>
+      <span class="C8"><code>
+        test.forEach(item => console.log(item))
+      </code></span>
+      <span class="C9"><code><br>
+        const nested = [[1, 2], [3, 4], ["a", "b"]];<br>
+        console.log(nested[0][1]); // 2
+      </code></span>
+
+
+
+    </div>
+
+    <!-- Example -->
+    <h3>Example</h3>
+    <div class="example">
+      <span class="dot d2"></span><span> 
+        "Alice" & 2 & "4" & "Doe" & "BMW" 
+      </span><br>
+      <span class="dot d3"></span><span> 
+         "Alice,Bob,Charlie,5,4,2"
+      </span><br>
+      <span class="dot d4"></span><span>
+        cars.length → 3
+      </span><br>
+      <span class="dot d5"></span><span>
+        cars.sort() → ["BMW","Saab","Volvo"]
+      </span><br>
+        <span class="dot d6"></span><span>
+          test.push("Dave") → ["Alice","Bob","Charlie",5,"4",2,"Dave"]
+        </span><br>
+        <span class="dot d7"></span> <span>Logs each item individually: Alice, Bob, Charlie, 5, "4", 2</span><br>
+        <span class="dot d8"></span><span> test.forEach(...) → logs each item individually: Alice, 5, "4", 2</span><br>
+        <span class="dot d9"></span><span>
+        nested[0][1] → 2
+        </span><br>
+        
+
+
+
+    </div>
+
+    <!-- Explanation -->
+    <h3>Explanation</h3>
+    <div class="explanation">
+
+      <span class="C1">const test = ["Alice","Bob","Charlie", 5, "4", 2];</span><span> &rarr; An array literal. Stores ordered elements that can be any type.</span><br>
+      <span class="C1">const person = {firstName:"John", lastName:"Doe", age:46};</span><span> &rarr; An object literal. Stores key-value pairs. Accessed by property name. Use when you need named attributes for a single entity or heterogeneous data.</span><br>
+      <span class="C1">const cars = new Array("Saab","Volvo","BMW");</span><span> &rarr; Array constructor, functionally the same but allows dynamic sizing.</span><br>
+      <span> <strong>Notes</strong> &rarr; (const) to declare arrays so the reference stays constant. Elements can still be modified.</span><br>
+      <span class="C2">Array[#]</span><span> → test[0], test[5], test[4], cars[2] are array elements that you get through the index that starts at 0 for arrays.<br>
+      person.lastName accesses object property "Doe" That's a Array of Objects.</span><br>
+      <span class="C3">test.toString()</span><span> &rarr; Converts the array into a single string with elements separated by commas: "Alice,Bob,Charlie,5,4,2". Useful for displaying or concatenating array contents.</span><br>
+      <span class="C4">cars.length</span><span> &rarr; Returns the number of elements in the array. Useful for loops and bounds checking.</span><br>
+      <span class="C5">cars.sort()</span><span> &rarr; Sorts the array elements alphabetically (or numerically with a compare function). Does not create a new array; modifies in place.</span><br>
+      <span class="C6">test.push("Dave")</span><span> &rarr; Adds an element to the end of the array. Returns the new length.</span><br>
+      <span class="C7">for loop</span><span> &rarr; Iterates over array indices from 0 to `length - 1`. You can access elements via `array[i]`. Functionally similar to `forEach`, but gives more control over index and looping behavior.</span><br>
+      <span class="C8">test.forEach(item => ...)</span><span> &rarr; Executes a function for each array element. Does not return a new array, purely iterates.</span><br>
+      <span class="C9">nested arrays</span><span> &rarr; Arrays inside arrays. Access elements using multiple indices, e.g., nested[0][1] is 2. Useful for matrices or grouped data.</span><br>
+      <span><strong>Notes:</strong> <span class="C6"> for test.push("Dave")</span></span>
+      <ul>
+        <li><code>.push(element)</code>: Adds elements to the end.</li>
+        <li><code>.pop()</code>: Removes the last element.</li>
+        <li><code>.splice(index, count, ...items)</code>: Removes or replaces elements at a specified index.</li>
+        <li><code>.shift()</code>: Removes the first element.</li>
+        <li><code>.unshift(element)</code>: Adds elements to the beginning.</li>
+        <li><code>.slice(start, end)</code>: Returns a shallow copy of part of the array.</li>
+        <li><code>.concat(array2, array3…)</code>: Combines arrays into a new array.</li>
+        <li><code>Array.isArray()</code>: Checks if a value is an array <code>typeof</code> does not work.</li>
+        <li><code>.join(separator)</code>: Joins all array elements into a string using the specified separator. Default is comma.</li>
+        <li><code>.reduce(callback, initialValue)</code>: Reduces the array to a single value by applying a function on each element.</li>
+        <li><code>.includes(value)</code>: Checks if an array contains a value. Returns true or false.</li>
+        <li><code>.indexOf(value)</code>: Returns the first index of a value, or -1 if not found.</li>
+        <li><code>.map(callback)</code>: Creates a new array by applying a function to each element.</li>
+      </ul>
+
+
+
+
+    </div>
+
+  </div>
+
+</template>
