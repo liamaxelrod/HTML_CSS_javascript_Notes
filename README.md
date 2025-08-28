@@ -34,7 +34,6 @@ A live demo of this project has not been published yet.
 
 ## 4. Project Structure
 
-
 ---
 
 ## 5. How to Run Locally (Open index.html in your browser)
@@ -57,7 +56,7 @@ JavaScript:
 
 ChatGPT / Learning Workflow:
 
-Using ChatGPT as a learning aid has been incredibly helpful. Every time I create a template, I not only practice coding but also learn how to leverage AI to clarify concepts, generate examples, and catch mistakes. Revisiting the material multiple times while building the site has strengthened my retention and made it easier to recall concepts quickly. I also now have a better understanding of how HTML, and CSS, interact together, which is invaluable for future projects.
+Using ChatGPT as a learning aid has been incredibly helpful. Every time I create a template, I not only practice coding but also learn how to leverage AI to clarify concepts, generate examples, and catch mistakes. I also learned how to better inform  ChatGPT How I like my template structured. What can Help in other aspects when using ChatGPT. Revisiting the material multiple times while building the site has strengthened my retention and made it easier to recall concepts quickly. I also now have a better understanding of howJavascript, interact together, which is invaluable for future projects.
 
 ---
 
