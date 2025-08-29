@@ -1,6 +1,6 @@
-# 1. CSS Notes Website
+# 1. Codeing Notes Website
 
-A website for my notes While useing w3schools to refresh my memory on HTML & CSS.
+A website for my notes While useing w3schools to refresh my memory on Javascript, HTML & CSS.
 
 I used vercel to host the website.
 
@@ -35,37 +35,71 @@ A live demo of this project has not been published yet.
 ## 4. Project Structure
 
 /All_Notes
-  ├─ Notes_HTML/              HTML-related notes and templates  
-  │    ├─ D_Basics.html       Basic HTML concepts  
-  │    ├─ D_Forms_Inputs.html Forms and input elements  
-  │    └─ ...                 Other HTML notes  
-  ├─ Notes_CSS/               CSS-related notes and templates  
-  │    ├─ Basics.html         Basic CSS concepts  
-  │    ├─ TestNote.html       Test/experimental CSS notes  
-  │    └─ ...                 Other CSS notes  
-/CSS  
-  ├─ Global_Styles.css        Main global stylesheet used across all pages  
-  └─ template.css             Page-specific template styles  
-/CSS_Dropdown  
-  ├─ D_Animation.html         CSS animation dropdown content  
-  ├─ D_Basics.html            CSS basics dropdown content  
-  └─ ...                      Other CSS dropdown files  
-/HTML_Dropdown  
-  ├─ D_Basics.html            HTML basics dropdown content  
-  ├─ D_Forms_Inputs.html      Forms/input dropdown content  
-  └─ ...                      Other HTML dropdown files  
-/Images                       Images used in the project  
-  ├─ favicon.ico              Website favicon  
-  ├─ workplace.jpg            Example workplace image  
-  └─ ...                      Other images  
-/JS  
-  ├─ loadNotes.js             Script to dynamically load note content into pages  
-  └─ loadNav.js               Script to dynamically load navigation content  
-index.html                    Main landing page  
-About.html                    About page  
-nav.html                      Navigation template/page  
-LICENSE                       Project license file  
-README.md                     Project documentation  
+  ├─ Notes_HTML/              HTML-related notes
+  │    ├─ N_Basics.html
+  │    ├─ N_Forms_Inputs.html
+  │    ├─ N_JavaScript_Integration.html
+  │    ├─ N_Structure_Layout.html
+  │    └─ N_Text_Links_Media.html
+  ├─ Notes_CSS/               CSS-related notes
+  │    ├─ N_Animation.html
+  │    ├─ N_Basics.html
+  │    ├─ N_Categories.html
+  │    ├─ N_Icons_Links.html
+  │    ├─ N_Layout.html
+  │    └─ N_Properties.html
+  └─ Notes_Javascript/        JavaScript-related notes
+    ├─ N_Basics.html
+       ├─ N_Working_with_Data.html
+       ├─ N_Control_Flow_and_Logic.html
+       ├─ N_Functions_Objects_and_Classes.html
+       ├─ N_Mathematics_and_Operators.html
+       ├─ N_Error_Handling.html
+       └─ N_Advanced_Browser_Interaction.html
+/CSS
+  ├─ Global_Styles.css        Main global stylesheet
+  └─ template.css             Page-specific template styles
+/CSS_Dropdown
+  ├─ D_Animation.html
+  ├─ D_Basics.html
+  ├─ D_Categories.html
+  ├─ D_Icons_Links.html
+  ├─ D_Layout.html
+  └─ D_Properties.html
+/HTML_Dropdown
+  ├─ D_Basics.html
+  ├─ D_Forms_Inputs.html
+  ├─ D_JavaScript_Integration.html
+  ├─ D_Structure_Layout.html
+  └─ D_Text_Links_Media.html
+/Javascript_Dropdown
+  ├─ D_Basics.html
+  ├─ D_Working_with_Data.html
+  ├─ D_Control_Flow_and_Logic.html
+  ├─ D_Functions_Objects_and_Classes.html
+  ├─ D_Mathematics_and_Operators.html
+  ├─ D_Error_Handling.html
+  └─ D_Advanced_Browser_Interaction.html
+/Navigation_Bar
+  ├─ Nav_CSS_HTML.html
+  ├─ Nav_Index.html
+  └─ Nav_Javascript.html
+/Images
+  ├─ favicon.ico
+  ├─ Flower.png
+  ├─ Image.png
+  ├─ Liam_Axelrod.jpg
+  ├─ Pink_Flower.png
+  └─ workplace.png
+/JS
+  ├─ loadNav.js               Script to dynamically load navigation
+  └─ loadNotes.js             Script to dynamically load note content
+index.html                    Main landing page
+about.html                    About page
+HTML_CSS.html                 Combined HTML & CSS overview page
+JavaScript.html               JavaScript overview page
+LICENSE                       Project license file
+README.md                     Project documentation
 
 ---
 
@@ -94,7 +128,7 @@ CSS:
 Before this project, my understanding of CSS was fairly solid, but now I have a much deeper understanding of how styles interact and cascade. I’ve learned how multiple styles can affect the same elements, how to use modern layout techniques like Flexbox and Grid efficiently, and how to implement responsive design that works across different devices. Creating reusable templates reinforced how important consistency and clean structure are for both aesthetics and functionality.
 
 JavaScript:
-I already had a good understanding of Javascript and how it worked. After taking these notes, I've reinforced that knowledge. I didn't take away as much as I did from the CSS or HTML, but I'm still glad I did it because it reinforced the knowledge into my mind and will make it easier to use next time I use it in a project. 
+I already had a good understanding of Javascript and how it worked. After taking these notes, I've reinforced that knowledge. I didn't take away as much as I did from the CSS or HTML, but I'm still glad I did it because it reinforced the knowledge into my mind and will make it easier to use next time I use it in a project.
 
 ChatGPT / Learning Workflow:
 
@@ -114,14 +148,13 @@ Attach the home button to my home website. What I have not created yet.
 
 ***Link to the website:***
 
-[Liam Axelrod website](htmlandcssnotes.vercel.app "htmlandcssnotes.vercel.app")
+[Liam Axelrod website](codeing-languages-notes-opal.vercel.app "codeing-languages-notes-opal.vercel.app")
 
 ***Link to vercel:***
 
 [vercel](https://vercel.com/ "https://vercel.com/")
 
 ***Link to w3schools:***
-
 
 [w3schools HTML](https://www.w3schools.com/html/default.asp "https://www.w3schools.com/html/default.asp")
 
