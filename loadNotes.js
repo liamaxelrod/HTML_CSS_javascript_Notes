@@ -1,4 +1,4 @@
-// LoadNotes.js
+// File name: oadNotes.js
 // Base folder path where all notes HTML files are stored
 const notesFolder = '/N';
 
