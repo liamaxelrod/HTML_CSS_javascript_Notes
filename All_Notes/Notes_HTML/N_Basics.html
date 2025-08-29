@@ -1,0 +1,557 @@
+<template> <!-- HTML Code: <div> -->
+  <div class="bubble">
+
+    <h3>HTML Code: <code>&lt;div&gt;</code> Basics & Uses</h3>
+    <p>
+      The <code>&lt;div&gt;</code> element is a block-level container used to group HTML content.
+      Below are several layout techniques using <code>&lt;div&gt;</code>.
+    </p>
+
+    <!-- === CODE BLOCKS === -->
+    <div class="code_block" style="max-height: 300px; overflow: auto;">
+      <h4>1. Basic div</h4>
+      <code>&lt;div&gt;A block container&lt;/div&gt;</code>
+
+      <h4>2. Centered div</h4>
+      <code>&lt;div style="width:200px;margin:auto;background:#f8d7da;"&gt;Centered&lt;/div&gt;</code>
+
+      <h4>3. Side-by-Side with float</h4>
+      <code>
+        &lt;div style="float:left;width:45%;background:#d1ecf1;"&gt;Left&lt;/div&gt;<br>
+        &lt;div style="float:right;width:45%;background:#d4edda;"&gt;Right&lt;/div&gt;
+      </code>
+
+      <h4>4. Side-by-Side with inline-block</h4>
+      <code>
+        &lt;div style="display:inline-block;width:45%;background:#f8d7da;"&gt;A&lt;/div&gt;<br>
+        &lt;div style="display:inline-block;width:45%;background:#d1ecf1;"&gt;B&lt;/div&gt;
+      </code>
+
+      <h4>5. Side-by-Side with flex</h4>
+      <code>
+        &lt;div style="display:flex;"&gt;<br>
+        &nbsp;&nbsp;&lt;div style="flex:1;background:#d4edda;"&gt;1&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;div style="flex:1;background:#f8d7da;"&gt;2&lt;/div&gt;<br>
+        &lt;/div&gt;
+      </code>
+
+      <h4>6. Side-by-Side with grid</h4>
+      <code>
+        &lt;div style="display:grid;grid-template-columns:1fr 1fr;"&gt;<br>
+        &nbsp;&nbsp;&lt;div style="background:#d1ecf1;"&gt;Left&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;div style="background:#d4edda;"&gt;Right&lt;/div&gt;<br>
+        &lt;/div&gt;
+      </code>
+    </div>
+
+    <!-- === EXAMPLE BLOCK === -->
+    <h3>Example: <code>&lt;div&gt;</code> Layouts</h3>
+    <div class="example">
+      <h4>1. Basic div</h4>
+      <div style="background:#e3e3e3;padding:5px;"><samp class="dot d1"></samp> A block container</div>
+
+      <h4>2. Centered div</h4>
+      <div style="width:200px;margin:auto;background:#f8d7da;padding:5px;"><samp class="dot d2"></samp> Centered</div>
+
+      <h4>3. Side-by-Side with float</h4>
+      <div style="overflow:hidden;">
+        <div style="float:left;width:45%;background:#d1ecf1;padding:5px;"><samp class="dot d3"></samp> Left</div>
+        <div style="float:right;width:45%;background:#d4edda;padding:5px;"><samp class="dot d4"></samp> Right</div>
+      </div>
+
+      <h4>4. Side-by-Side with inline-block</h4>
+      <div>
+        <div style="display:inline-block;width:45%;background:#f8d7da;padding:5px;"><samp class="dot d5"></samp> A</div>
+        <div style="display:inline-block;width:45%;background:#d1ecf1;padding:5px;"><samp class="dot d6"></samp> B</div>
+      </div>
+
+      <h4>5. Side-by-Side with flex</h4>
+      <div style="display:flex;">
+        <div style="flex:1;background:#d4edda;padding:5px;"><samp class="dot d7"></samp> 1</div>
+        <div style="flex:1;background:#f8d7da;padding:5px;"><samp class="dot d8"></samp> 2</div>
+      </div>
+
+      <h4>6. Side-by-Side with grid</h4>
+      <div style="display:grid;grid-template-columns:1fr 1fr;">
+        <div style="background:#d1ecf1;padding:5px;"><samp class="dot d9"></samp> Left</div>
+        <div style="background:#d4edda;padding:5px;"><samp class="dot d10"></samp> Right</div>
+      </div>
+    </div>
+
+    <!-- === EXPLANATION BLOCK === -->
+    <h3>Explanation: <code>&lt;div&gt;</code> Layout Techniques</h3>
+    <div class="explanation">
+      <ol>
+        <li><samp class="dot d1"></samp> Basic <code>&lt;div&gt;</code> is a block container.</li>
+        <li><samp class="dot d2"></samp> Centered div uses <code>margin:auto</code> with a fixed width.</li>
+        <li><samp class="dot d3"></samp> Float allows side-by-side alignment but requires clearing floats.</li>
+        <li><samp class="dot d5"></samp> Inline-block aligns divs side-by-side without float quirks.</li>
+        <li><samp class="dot d7"></samp> Flex is modern, aligns and spaces divs easily.</li>
+        <li><samp class="dot d9"></samp> Grid provides precise control for multi-column layouts.</li>
+      </ol>
+
+      <p>
+        ✅ Use <code>&lt;div&gt;</code> for grouping and layout.<br>
+        ✅ Flex and Grid are recommended for modern responsive designs.<br>
+        ✅ Float and inline-block are legacy/alternative techniques.
+      </p>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- HTML Code: Class -->
+  <div class="bubble">
+
+    <h3>HTML Code: <code>class</code> Attribute</h3>
+    <p>
+      The <code>class</code> attribute lets you group elements for CSS styling and JavaScript interaction.
+      Below is a single code example that illustrates many features of the <code>class</code> attribute.
+    </p>
+
+    <!-- === CODE BLOCK === -->
+    <div class="code_block" style="max-height: 300px; overflow: auto;">
+      <code>
+        &lt;style&gt;<br>
+        <samp class="C1">&nbsp;.city { background-color: #f8d7da; padding: 5px; }</samp><br>
+        <samp class="C2">&nbsp;.main { font-weight: bold; font-size: 1.2em; }</samp><br>
+        <samp class="C3">&nbsp;.note { color: blue; font-style: italic; }</samp><br>
+        <samp class="C4">&nbsp;.highlight { background-color: #d4edda; padding: 5px; }</samp><br>
+        &lt;/style&gt;<br><br>
+
+        &lt;div <samp class="C5">class="city"</samp>&gt;London&lt;/div&gt;<br>
+        &lt;div <samp class="C6">class="city main"</samp>&gt;Paris&lt;/div&gt;<br>
+        &lt;p <samp class="C7">class="note"</samp>&gt;This is a note&lt;/p&gt;<br>
+        &lt;h2 <samp class="C8">class="highlight"</samp>&gt;Shared highlight&lt;/h2&gt;<br>
+        &lt;p <samp class="C9">class="highlight note"</samp>&gt;Styled with two classes&lt;/p&gt;
+      </code>
+    </div>
+
+    <!-- === EXAMPLE BLOCK === -->
+    <h3>Example: <code>class</code> Attribute</h3>
+    <div class="example">
+      <style>
+        .city { background-color: #f8d7da; padding: 5px; }
+        .main { font-weight: bold; font-size: 1.2em; }
+        .note { color: blue; font-style: italic; }
+        .highlight { background-color: #d4edda; padding: 5px; }
+      </style>
+
+      <p><div class="city"> <samp class="dot d1"></samp> London</div></p>
+      <p><div class="city main"> <samp class="dot d2"></samp> Paris</div></p>
+      <p><p class="note"><samp class="dot d3"></samp> This is a note</p></p>
+      <p></samp><h2 class="highlight"> <samp class="dot d4"></samp> Shared highlight</h2></p>
+      <p><p class="highlight note"><samp class="dot d5"></samp> Styled with two classes</p></p>
+    </div>
+
+    <!-- === EXPLANATIONS === -->
+    <h3>Explanation: <code>class</code> Attribute</h3>
+    <div class="explanation">
+      <ol>
+        <li> <samp class="C5">class="city"</samp> styles all city elements with a pink background.</li>
+        <li> <samp class="C6">class="city main"</samp> applies both city background and bold text.</li>
+        <li> <samp class="C7">class="note"</samp> makes text italic and blue — works on any tag.</li>
+        <li> <samp class="C8">class="highlight"</samp> is shared between <code>&lt;h2&gt;</code> and <code>&lt;p&gt;</code>.</li>
+        <li> Elements with multiple classes (like <samp class="C9">highlight note</samp>) combine all styles.</li>
+      </ol>
+
+      <p>
+        ✅ Class names are case-sensitive.<br>
+        ✅ Elements can have multiple classes.<br>
+        ✅ Classes are reusable across elements.<br>
+        ✅ Access in JavaScript via <code>getElementsByClassName()</code>.
+      </p>
+
+      <h4>Class vs ID</h4>
+      <ul>
+        <li></samp><strong>ID</strong> is unique — one element per ID. Target or style a single element.</li>
+        <li><strong>Class</strong> can be reused — many elements can share the same class for styling or behavior.</li>
+      </ul>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- HTML Code: ID -->
+  <div class="bubble">
+
+    <h3>HTML Code: <code>id</code> Attribute</h3>
+    <div class="code_block">
+      <code>
+        &lt;style&gt;<br>
+        <samp class="C1">&nbsp;#myHeader { color: green; text-align: center; }</samp><br>
+        <samp class="C2">&nbsp;#chapter4 { background-color: #f8d7da; padding: 5px; }</samp><br>
+        &lt;/style&gt;<br><br>
+
+        &lt;h1 <samp class="C3">id="myHeader"</samp>&gt;Welcome&lt;/h1&gt;<br>
+        &lt;p&gt;&lt;a <samp class="C4"> href="#chapter4"</samp>&gt;Jump to Chapter 4&lt;/a&gt;&lt;/p&gt;<br><br>
+
+        &lt;p&gt;...Long content here...&lt;/p&gt;<br><br>
+
+        &lt;h2 <samp class="C5">id="chapter4"</samp>&gt;Chapter 4&lt;/h2&gt;<br>
+        &lt;p&gt;This is the fourth chapter.&lt;/p&gt;
+      </code>
+    </div>
+
+    <!-- === EXAMPLE BLOCK === -->
+    <h3>Example: <code>id</code> Attribute</h3>
+    <div class="example">
+      <style>
+        #chapter4 { background-color: #f8d7da; padding: 5px; }
+      </style>
+
+      <p>
+        <samp class="dot d1"></samp>
+        <a href="#chapter4"><samp>Jump to Chapter 4</samp></a>
+      </p>
+      <h2 id="chapter4">
+        <samp class="dot d2"></samp>
+        <samp>Chapter 4</samp>
+      </h2>
+    </div>
+
+    <!-- === EXPLANATION BLOCK === -->
+    <h3>Explanation: <code>id</code> Attribute</h3>
+    <div class="explanation">
+      <ol>
+        <li><samp class="C3">id="myHeader"</samp> → Targeted with <samp class="C1">#myHeader</samp> in CSS to apply styles.</li>
+        <li><samp class="C5">id="chapter4"</samp> → Acts as a bookmark/anchor for jumping to a section in the page.</li>
+        <li><samp class="C4">&lt;a href="#chapter4"&gt;</samp> → Scrolls the page to the element with that ID.</li>
+        <li><samp class="C3">IDs</samp> can also be accessed in JavaScript using <samp class="C1">getElementById()</samp>.</li>
+      </ol>
+      <p>
+        <samp class="dot d3"></samp> 
+        <samp class="C2">ID</samp> is unique — one element per ID, ideal for targeting a single element.
+      </p>
+      <p>
+        <samp class="dot d4"></samp>
+        <samp class="C3">Class</samp> can be reused — many elements can share the same class for shared styling or behavior.
+      </p>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- HTML Code: Common Tags & Elements Part 1 -->
+  <div class="bubble">
+
+    <h3>HTML Code: Text effect (Part 1)</h3>
+
+    <!-- Code Block -->
+    <div class="code_block" style="max-height: 300px; overflow: auto;">
+      <code>
+        <samp class="C1">&lt;h3&gt;Heading Text&lt;/h3&gt;</samp><br>
+        <samp class="C2">&lt;p&gt;Paragraph text&lt;/p&gt;</samp><br>
+        <samp class="C3">Line 1&lt;br&gt;Line 2</samp><br>
+        <samp class="C4">&lt;p&gt;This is a &lt;cite&gt;Title&lt;/cite&gt; in a paragraph.&lt;/p&gt;</samp><br>
+        <samp class="C5">&lt;p&gt;Quotes: &lt;q&gt;inline quote&lt;/q&gt;&lt;/p&gt;</samp><br>
+        <samp class="C6">&lt;p&gt;Bold: &lt;b&gt;bold text&lt;/b&gt;&lt;/p&gt;</samp><br>
+        <samp class="C7">&lt;p&gt;Important: &lt;strong&gt;strong text&lt;/strong&gt;&lt;/p&gt;</samp><br>
+        <samp class="C8">&lt;p&gt;Italic: &lt;i&gt;italic text&lt;/i&gt;&lt;/p&gt;</samp><br>
+        <samp class="C9">&lt;p&gt;Emphasized: &lt;em&gt;emphasized text&lt;/em&gt;&lt;/p&gt;</samp><br>
+        <samp class="C10">&lt;p&gt;Small text: &lt;small&gt;smaller text&lt;/small&gt;&lt;/p&gt;</samp><br>
+      </code>
+    </div>
+
+    <!-- Example Section -->
+    <h3>Example: Text effect (Part 1)</h3>
+    <div class="example">
+      <h3><samp class="dot d1"></samp> Heading Text</h3>
+      <p><samp class="dot d2"></samp> Paragraph text</p>
+      <p><samp class="dot d3"></samp> Line 1<br>Line 2</p>
+      <p><samp class="dot d4"></samp> This is a <cite>Title</cite> in a paragraph.</p>
+      <p><samp class="dot d5"></samp> Quotes: <q>inline quote</q></p>
+      <p><samp class="dot d6"></samp> Bold: <b>bold text</b></p>
+      <p><samp class="dot d7"></samp> Important: <strong>strong text</strong></p>
+      <p><samp class="dot d8"></samp> Italic: <i>italic text</i></p>
+      <p><samp class="dot d9"></samp> Emphasized: <em>emphasized text</em></p>
+      <p><samp class="dot d10"></samp> Small text: <small>smaller text</small></p>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- HTML Code: Common Tags & Elements Part 2 -->
+  <div class="bubble">
+
+    <h3>HTML Code: Text effect (Part 2)</h3>
+
+    <!-- Code Block -->
+    <div class="code_block" style="max-height: 300px; overflow: auto;">
+      <code>
+        <samp class="C1">&lt;p&gt;Highlighted: &lt;mark&gt;highlighted text&lt;/mark&gt;&lt;/p&gt;</samp><br>
+        <samp class="C2">&lt;p&gt;Deleted: &lt;del&gt;deleted text&lt;/del&gt; &amp; Inserted: &lt;ins&gt;inserted text&lt;/ins&gt;&lt;/p&gt;</samp><br>
+        <samp class="C3">&lt;p&gt;Subscript: &lt;sub&gt;sub&lt;/sub&gt;, Superscript: &lt;sup&gt;sup&lt;/sup&gt;&lt;/p&gt;</samp><br>
+        <samp class="C4">&lt;p&gt;Code: &lt;code&gt;inline code&lt;/code&gt;&lt;/p&gt;</samp><br>
+        <samp class="C5">&lt;samp&gt;Sample output: Hello, World!&lt;/samp&gt;</samp><br>
+        <samp class="C6">&lt;div&gt;This is a block-level &lt;div&gt; element example.&lt;/div&gt;</samp><br>
+        <samp class="C7">&lt;pre&gt;Preformatted text preserves     spaces and line breaks.&lt;/pre&gt;</samp><br>
+        <samp class="C8">&lt;p&gt;Right-to-left: &lt;span&gt;normal &lt;bdo dir="rtl"&gt;reversed&lt;/bdo&gt;&lt;/span&gt;&lt;/p&gt;</samp>
+      </code>
+    </div>
+
+    <!-- Example Section -->
+     <h3>example: Text effect (Part 2)</h3>
+    <div class="example">
+      <h3>Example: Tags in Action (Part 2)</h3>
+      <p><samp class="dot d1"></samp> Highlighted: <mark>highlighted text</mark></p>
+      <p><samp class="dot d2"></samp> Deleted: <del>deleted text</del> & Inserted: <ins>inserted text</ins></p>
+      <p><samp class="dot d3"></samp> Subscript: <sub>sub</sub>, Superscript: <sup>sup</sup></p>
+      <p><samp class="dot d4"></samp> Code: <code>inline code</code></p>
+      <p><samp class="dot d5"></samp> Sample output: Hello, World!</p>
+      <div style="background:#f0f0f0; padding:5px; margin:10px 0;"><samp class="dot d6"></samp> This is a block-level &lt;div&gt; element example.</div>
+      <pre><samp class="dot d7"></samp> Preformatted text preserves     spaces and line breaks.</pre>
+      <p><samp class="dot d8"></samp> Right-to-left: <span>normal <bdo dir="rtl">reversed</bdo></span></p>
+    </div>
+
+    <!-- Block vs Inline Example -->
+    <div class="explanation">
+      <h4>Block vs Inline Elements</h4>
+      <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
+        <p>[Block Element 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]</p>
+        <p>New line starts here</p>
+        <p>[Block Element 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]</p>
+        <p>New line starts here again</p>
+      </div>
+      <p>[Inline1] [Inline2] [Inline3]</p>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- HTML Code: Show Code Tags -->
+  <div class="bubble">
+
+    <h3>HTML Code: &lt;/kbd&gt;, &lt;var&gt;, &lt;samp&gt;, &lt;code&gt;, and &lt;pre&gt; Tags</h3>
+
+    <!-- Code Block -->
+    <div class="code_block">
+      <code>
+        &lt;p&gt;Press <samp class="C1">&lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd class="C1"&gt;C&lt;/kbd&gt;</samp> to copy text.&lt;/p&gt;<br><br>
+
+        &lt;p&gt;The variable<samp class="C2">&lt;var&gt;x&lt;/var&gt;</samp> is used to store the result.&lt;/p&gt;<br><br>
+
+        &lt;p&gt;Program output: <samp class="C3">&lt;samp&gt;Login successful&lt;/samp&gt;</samp>&lt;/p&gt;<br><br>
+
+        &lt;p&gt;Use the <samp class="C4">&lt;code&gt;document.getElementById()&lt;/code&gt;</samp> method to select elements.&lt;/p&gt;<br><br>
+
+        <samp class="C5">&lt;pre&gt;</samp><br>
+        &nbsp;&nbsp;&lt;code&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;function greet(name) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "Hello, " + name;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&lt;/code&gt;<br>
+        <samp class="C5">&lt;/pre&gt;</samp>
+      </code>
+    </div>
+
+    <!-- Explanation -->
+    <h3>explanation: Tags</h3>
+    <div class="explanation">
+      <p><strong>Explanation:</strong></p>
+      <ul>
+        <li><samp class="C1">&lt;kbd&gt;</samp> → Keyboard input. Example: <kbd>Ctrl</kbd> + <kbd>C</kbd></li>
+        <li><samp class="C2">&lt;var&gt;</samp> → Variables in math/programming. Example: <var>x</var></li>
+        <li><samp class="C3">&lt;samp&gt;</samp> → Sample output. Example: <samp>Login successful</samp></li>
+        <li><samp class="C4">&lt;code&gt;</samp> → Inline code snippets. Example: <code>document.getElementById()</code></li>
+        <li><samp class="C5">&lt;pre&gt;</samp> → Preserves line breaks and spacing. Use with <code>&lt;code&gt;</code> for block code.</li>
+      </ul>
+
+      <p>Use <code>&lt;pre&gt;&lt;code&gt;...&lt;/code&gt;&lt;/pre&gt;</code> to preserve indentation and structure when displaying blocks of code, especially for tutorials and teaching.</p>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- HTML Code: Semantic Elements -->
+  <div class="bubble">
+    <h3>HTML Code: Semantic Elements</h3>
+
+    <div class="code_block">
+      <pre>
+<code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Semantic Example&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+    &lt;<samp class="C1">header</samp>&gt;
+      &lt;<samp class="C2">h1</samp>&gt;My Blog&lt;/h1&gt;
+      &lt;<samp class="C3">nav</samp>&gt;
+        Home | About
+      &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;<samp class="C4">main</samp>&gt;
+      &lt;<samp class="C5">section</samp>&gt;
+        &lt;<samp class="C6">article</samp>&gt;
+          &lt;h2&gt;Post Title&lt;/h2&gt;
+          &lt;p&gt;This is a blog post.&lt;/p&gt;
+        &lt;/article&gt;
+      &lt;/section&gt;
+
+      &lt;<samp class="C7">aside</samp>&gt;
+        &lt;p&gt;Sidebar content, like links or ads.&lt;/p&gt;
+      &lt;/aside&gt;
+    &lt;/main&gt;
+
+    <samp class="C8">&lt;footer&gt;</samp>
+      &lt;p&gt;&copy; 2025 My Blog&lt;/p&gt;</samp>
+    &lt;/footer&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</code>
+      </pre>
+    </div>
+
+    <h3>Example: Semantic Layout</h3>
+    <div class="example" style="max-height: 300px; overflow: auto; border: 1px solid #ccc; padding: 10px;">
+      <pre>
+    +------------------------------------------------+
+    | My Blog                                        | ← <samp class="C1">&lt;header&gt;</samp> (C1)
+    | Home | About                                   | ← <samp class="C3">&lt;nav&gt;</samp> (C3)
+    +------------------------------------------------+
+    | Post Title                                     | ← <samp class="C6">&lt;article&gt;</samp> (C6) inside <samp class="C5">&lt;section&gt;</samp> (C5)
+    | This is a blog post.                           |
+    +----------------+         +---------------------+
+    | Sidebar        |         | Main Content Area   | ← <samp class="C7">&lt;aside&gt;</samp> (C7) ← <samp class="C4">&lt;main&gt;</samp> (C4) 
+    | - links        |         |                     |
+    | - ads          |         |                     |
+    +----------------+         +---------------------+
+    | © 2025 My Blog                                 | ← <samp class="C8">&lt;footer&gt;</samp>
+    +------------------------------------------------+
+      </pre>
+    </div>
+
+    <h3>Explanation: Semantic Elements</h3>
+    <div class="explanation">
+      <p>
+        <samp class="C1">&lt;header&gt;</samp> → Top section of a page or section, typically contains titles and navigation.<br>
+        <samp class="C2">&lt;h1&gt;</samp> → Main heading of the page or section.<br>
+        <samp class="C3">&lt;nav&gt;</samp> → Navigation menu for links.<br>
+        <samp class="C4">&lt;main&gt;</samp> → Primary content area of the page.<br>
+        <samp class="C5">&lt;section&gt;</samp> → Thematic grouping of content.<br>
+        <samp class="C6">&lt;article&gt;</samp> → Independent, reusable block of content (e.g., blog post).<br>
+        <samp class="C7">&lt;aside&gt;</samp> → Sidebar or related content (links, ads).<br>
+        <samp class="C8">&lt;footer&gt;</samp> → Bottom area for copyright or extra links.
+      </p>
+    </div>
+  </div>
+</template>
+
+<template> <!-- HTML Code: Inline Styles -->
+  <div class="bubble">
+    <h3>HTML Code: Inline Styles</h3>
+    <div class="code_block">
+      <code>
+        &lt;p&gt; no styles &lt;span <samp class="C1">style="background-color: yellow;"</samp>&gt; styles &lt;/span&gt;&lt;/p&gt; <br>
+        &lt;p&gt; no styles &lt;span <samp class="C2">style="border: 2px solid blue;"</samp>&gt; styles &lt;/span&gt;&lt;/p&gt; <br>
+        &lt;p&gt; no styles &lt;span <samp class="C3">style="color: red;"</samp>&gt; text &lt;/span&gt;&lt;/p&gt; <br>
+        &lt;p&gt; no styles &lt;span <samp class="C4">style="font-family: Fantasy;"</samp>&gt; text &lt;/span&gt;&lt;/p&gt; <br>
+        &lt;p&gt; no styles &lt;span <samp class="C5">style="font-size: 70%;"</samp>&gt; text &lt;/span&gt;&lt;/p&gt; <br>
+        &lt;p <samp class="C6">style="text-align: center;"</samp>&gt; This paragraph is centered. &lt;/p&gt;
+      </code>
+    </div>
+
+    <h3>Example: Inline Styles</h3>
+    <div class="example">
+      <p><samp class="dot d1"></samp> no styles <span style="background-color: yellow;">with styles</span></p>
+      <p><samp class="dot d2"></samp> no styles <span style="border:2px solid blue;">with styles</span></p>
+      <p><samp class="dot d3"></samp> no styles <span style="color: red;">with styles</span></p>
+      <p><samp class="dot d4"></samp> no styles <span style="font-family: Fantasy;">with styles</span></p>
+      <p><samp class="dot d5"></samp> no styles <span style="font-size: 70%;">with styles</span></p>
+      <p style="text-align:center;"><samp class="dot d6"></samp> This paragraph is centered.</p>
+    </div>
+
+    <h3>Explanation: Inline Styles</h3>
+    <div class="explanation">
+      <p>
+        Inline styles are applied directly to HTML elements using the <code>style</code> attribute.<br>
+        You can change <samp class="C1">background-color</samp>, <samp class="C2">border</samp>, <samp class="C3">color</samp>, <samp class="C4">font-family</samp>, <samp class="C5">font-size</samp>, and <samp class="C6">text-align</samp> inline.<br>
+        Use inline styles for quick individual adjustments, but for consistent styling, external or internal CSS is preferred.
+      </p>
+    </div>
+  </div>
+</template>
+
+<template> <!-- HTML Code: Browser Title -->
+  <div class="bubble">
+    <h3>HTML Code: Browser Title</h3>
+    <div class="code_block">
+      <code>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&lt;title&gt;text&lt;/title&gt; <br>
+        &lt;/head&gt;
+      </code>
+    </div>
+
+    <h3>Example: Browser Title</h3>
+    <div class="example">
+      <title>HTML Notes</title>
+    </div>
+
+    <h3>Explanation: Browser Title</h3>
+    <div class="explanation">
+      <p>
+        The &lt;title&gt; tag defines the page title. <br>
+        Appears in the browser's tab or window, and is used by search engines.
+      </p>
+    </div>
+  </div>
+</template>
+
+<template> <!-- HTML Code: Special Characters -->
+  <div class="bubble">
+    <h3>HTML Code: Special Characters</h3>
+    <div class="code_block">
+      <code>
+        <samp class="C1">&amp;amp; = & </samp><br>
+        <samp class="C2">&amp;lt; = < </samp><br>
+        <samp class="C3">&amp;gt; = > </samp><br>
+        <samp class="C4">&amp;quot; = " </samp><br>
+      </code>
+    </div>
+
+    <h3>Explanation: Special Characters</h3>
+    <div class="explanation">
+      <p>
+        Use <samp class="C1">&amp;amp;</samp> to display the &amp; character <br>
+        Use <samp class="C2">&amp;lt;</samp> to display the &lt; character <br>
+        Use <samp class="C3">&amp;gt;</samp> to display the &gt; character <br>
+        Use <samp class="C4">&amp;quot;</samp> to display the &quot; character <br>
+        <strong>Find more special characters just look them up.</strong>
+      </p>
+    </div>
+  </div>
+</template>
+
+<template > <!-- HTML Code: Favicon -->
+  <div class="bubble">
+    <h3>HTML Code: Favicon</h3>
+    <div class="code_block">
+      <code>
+        &lt;link rel="icon" type="image/ico" href="Images/favicon.ico"&gt;
+      </code>
+    </div>
+
+    <h3>Example: Favicon</h3>
+    <div class="example">
+      <img src="/Images/favicon.ico" alt="Favicon example" width="32" height="32" />
+    </div>
+
+    <h3>Explanation: Favicon</h3>
+    <div class="explanation">
+      <p>
+        <strong>rel="icon"</strong> → Tells the browser this is the page icon (favicon).<br>
+        <strong>type="image/ico"</strong> → Specifies the file type; optional.<br>
+        <strong>href="Images/favicon.ico"</strong> → Path to the icon file; use .ico, .png, or .svg.<br>
+        Place inside the &lt;head&gt; section.
+      </p>
+    </div>
+  </div>
+</template>

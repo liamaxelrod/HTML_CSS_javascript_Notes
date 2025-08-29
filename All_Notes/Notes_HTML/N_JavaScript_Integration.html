@@ -1,0 +1,188 @@
+<template> <!-- HTML Code: JavaScript with HTML -->
+  <div class="bubble">
+
+    <h3>HTML Code: JavaScript with HTML</h3>
+    <div class="code_block">
+      <code>
+        &lt;button <samp class="C1">onclick</samp>="alert('Hello, World!');"&gt;Click Me&lt;/button&gt;
+      </code>
+    </div>
+
+    <h3>Example: Inline JavaScript</h3>
+    <div class="example">
+      <button onclick="alert('Hello, World!');">Click Me</button>
+      <p>
+        <samp class="C1">onclick</samp> → Specifies JavaScript to run when the button is clicked.<br>
+        <samp class="C2">alert('Hello, World!');</samp> → The JavaScript code executed on click.
+      </p>
+    </div>
+
+    <h3>Explanation: &lt;script&gt; Tag</h4>
+    <div class="explanation">
+    <p>
+      The <samp class="C3">&lt;script&gt;</samp> tag is used to include JavaScript in your webpage.<br>
+      JavaScript can be added inline or externally:
+    </p>
+    </div>
+
+    <h3>HTML Code: &lt;noscript&gt; Tag</h3>
+    <div class="code_block">
+      <code>
+        &lt;noscript&gt;<br>
+        &nbsp;&nbsp;JavaScript is required to view this page properly. Please enable JavaScript in your browser.<br>
+        &lt;/noscript&gt;
+      </code>
+    </div>
+
+    <h3>Explanation: &lt;noscript&gt; Tag</h3>
+    <div class="explanation">
+      <p>
+        The <samp class="C4">&lt;noscript&gt;</samp> tag provides fallback content for users whose browsers do not support JavaScript or have it disabled.
+      </p>
+    </div>
+
+    <h3>HTML Code: Inline JavaScript:</h3>
+    <div class="code_block">
+      <code>
+        &lt;script&gt;<br>
+        &nbsp;&nbsp;<samp class="C2">alert('Hello from inline JavaScript!');</samp><br>
+        &lt;/script&gt;
+      </code>
+    </div>
+
+    <h3>HTML Code: External JavaScript:</h5>
+    <div class="code_block">
+      <code>
+        &lt;!-- In <samp class="C5">script.js</samp> file --&gt;<br>
+        <samp class="C2">alert('Hello from external JavaScript!');</samp><br><br>
+        &lt;!-- In your HTML file --&gt;<br>
+        &lt;script <samp class="C6">src</samp>="script.js"&gt;&lt;/script&gt;
+      </code>
+    </div>
+
+    <h3>explanation: Summary</h4>
+    <div class="explanation">
+      <ul>
+        <li>JavaScript can be inline (<samp class="C2">onclick</samp> or inside &lt;script&gt;) or external.</li>
+        <li>External files (<samp class="C5">script.js</samp>) keep code organized and reusable.</li>
+        <li>The <samp class="C4">&lt;noscript&gt;</samp> tag provides fallback content if JavaScript is disabled.</li>
+        <li>Always include meaningful fallback content to improve user experience.</li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<template> <!-- HTML Code: Web APIs Overview -->
+
+  <div class="bubble">
+
+    <h3>Introduction to Web APIs</h3>
+
+    <div class="code_block">
+      <code>
+        /* JavaScript & HTML Example */<br>
+
+        <span class="C7">// Geolocation Example</span><br>
+        <span class="C7">if (navigator.geolocation) {</span><br>
+        <span class="C7">&nbsp;&nbsp;navigator.geolocation.getCurrentPosition(showPosition, showError);</span><br>
+        <span class="C7">} else {</span><br>
+        <span class="C7">&nbsp;&nbsp;alert("Geolocation not supported.");</span><br>
+        <span class="C7">}</span><br><br>
+
+        <span class="C7">function showPosition(position) {</span><br>
+        <span class="C7">&nbsp;&nbsp;console.log("Latitude: " + position.coords.latitude);</span><br>
+        <span class="C7">&nbsp;&nbsp;console.log("Longitude: " + position.coords.longitude);</span><br>
+        <span class="C7">}</span><br><br>
+
+        <span class="C7">function showError(error) {</span><br>
+        <span class="C7">&nbsp;&nbsp;alert("Error getting location: " + error.message);</span><br>
+        <span class="C7">}</span><br><br>
+
+        <span class="C6">&lt;img id="drag1" src="img.png" draggable="true" ondragstart="dragstartHandler(event)"&gt;</span><br>
+
+        <span class="C6">function dragstartHandler(ev) {</span><br>
+        <span class="C6">&nbsp;&nbsp;ev.dataTransfer.setData("text", ev.target.id);</span><br>
+        <span class="C6">}</span><br><br>
+
+        <span class="C6">&lt;div id="dropzone" ondragover="dragoverHandler(event)" ondrop="dropHandler(event)"&gt;Drop here&lt;/div&gt;</span><br>
+
+        <span class="C6">function dragoverHandler(ev) { ev.preventDefault(); }</span><br>
+
+        <span class="C6">function dropHandler(ev) {</span><br>
+        <span class="C6">&nbsp;&nbsp;ev.preventDefault();</span><br>
+        <span class="C6">&nbsp;&nbsp;const data = ev.dataTransfer.getData("text");</span><br>
+        <span class="C6">&nbsp;&nbsp;ev.target.appendChild(document.getElementById(data));</span><br>
+        <span class="C6">}</span>
+      </code>
+    </div>
+
+    <h3>example: Web APIs</h3>
+    <div class="example">
+      <p><strong>Live Geolocation Example:</strong> <span class="dot d7"></span></p>
+      <button id="locateBtn">Get Location</button>
+      <p id="locationResult">Location will appear here.</p>
+
+      <script>
+        document.getElementById("locateBtn").onclick = () => {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+              (pos) => {
+                const lat = pos.coords.latitude.toFixed(4);
+                const lon = pos.coords.longitude.toFixed(4);
+                document.getElementById("locationResult").textContent =
+                  `Latitude: ${lat}, Longitude: ${lon}`;
+              },
+              (err) => {
+                document.getElementById("locationResult").textContent =
+                  "Error: " + err.message;
+              }
+            );
+          } else {
+            document.getElementById("locationResult").textContent =
+              "Geolocation not supported.";
+          }
+        };
+      </script>
+
+      <p><strong>Simple Drag and Drop:</strong> <span class="dot d6"></span></p>
+      <img id="drag1" src="https://via.placeholder.com/100" draggable="true"
+           ondragstart="dragstartHandler(event)" alt="Draggable" style="border:1px solid black;">
+      <div id="dropzone" ondragover="dragoverHandler(event)" ondrop="dropHandler(event)"
+           style="width:150px; height:120px; border: 2px dashed #444; margin-top:10px; padding:5px;">
+        Drop here
+      </div>
+
+      <script>
+        function dragstartHandler(ev) { ev.dataTransfer.setData("text", ev.target.id); }
+        function dragoverHandler(ev) { ev.preventDefault(); }
+        function dropHandler(ev) {
+          ev.preventDefault();
+          const data = ev.dataTransfer.getData("text");
+          ev.target.appendChild(document.getElementById(data));
+        }
+      </script>
+    </div>
+
+    <h3>Explanation: Web APIs</h3>
+    <div class="explanation">
+      <p>
+        Web APIs allow web pages to interact with browser features and hardware.<br><br>
+
+        <span class="C7"><strong>Geolocation API</strong><span class="dot d7"></span>:</span>
+        Lets you get the user’s current location (latitude and longitude). Permission is requested first and works only on HTTPS.<br><br>
+
+        <span class="C6"><strong>Drag and Drop API</strong><span class="dot d6"></span>:</span>
+        Enables moving elements by dragging and dropping. Use <code>draggable="true"</code> and handle <code>ondragstart</code>, <code>ondragover</code>, <code>ondrop</code>.<br><br>
+
+        <strong>Web Storage API</strong>: Stores data locally via <code>localStorage</code> (persistent) or <code>sessionStorage</code> (tab-only). Useful for preferences, counters, or temporary data.<br><br>
+
+        <strong>Web Workers API</strong>: Runs JavaScript in the background without freezing the page. Communicates via messages, cannot access DOM directly.<br><br>
+
+        <strong>Server-Sent Events (SSE) API</strong>: Receives automatic real-time updates from a server over HTTP. Useful for live feeds, stock prices, or social media updates.<br><br>
+
+        Always check browser support and handle errors gracefully.
+      </p>
+    </div>
+
+  </div>
+</template>

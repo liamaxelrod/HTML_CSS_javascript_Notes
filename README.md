@@ -20,7 +20,7 @@ I used vercel to host the website.
 
 ## 2. Project Description
 
-Was to refresh my memory and make it easier to recall things on JavaScript when I need to. Either by looking at the website or just simply because I took notes, what reinforces knowledge.
+the project was to refresh my memory and make it easier to recall things on JavaScript, HTML, & CSS when I need to. Either by looking at the website or just simply because I took notes, what reinforces knowledge.
 
 Also, I do have plans to refresh my knowledge on other coding languages and learn new ones. While doing this I plan on connecting all these languages with this website. The notes I take on the different coding languages I plan on creating connecting so they're all accessed through one website.
 
@@ -33,6 +33,39 @@ A live demo of this project has not been published yet.
 ---
 
 ## 4. Project Structure
+
+/All_Notes
+  ├─ Notes_HTML/              HTML-related notes and templates  
+  │    ├─ D_Basics.html       Basic HTML concepts  
+  │    ├─ D_Forms_Inputs.html Forms and input elements  
+  │    └─ ...                 Other HTML notes  
+  ├─ Notes_CSS/               CSS-related notes and templates  
+  │    ├─ Basics.html         Basic CSS concepts  
+  │    ├─ TestNote.html       Test/experimental CSS notes  
+  │    └─ ...                 Other CSS notes  
+/CSS  
+  ├─ Global_Styles.css        Main global stylesheet used across all pages  
+  └─ template.css             Page-specific template styles  
+/CSS_Dropdown  
+  ├─ D_Animation.html         CSS animation dropdown content  
+  ├─ D_Basics.html            CSS basics dropdown content  
+  └─ ...                      Other CSS dropdown files  
+/HTML_Dropdown  
+  ├─ D_Basics.html            HTML basics dropdown content  
+  ├─ D_Forms_Inputs.html      Forms/input dropdown content  
+  └─ ...                      Other HTML dropdown files  
+/Images                       Images used in the project  
+  ├─ favicon.ico              Website favicon  
+  ├─ workplace.jpg            Example workplace image  
+  └─ ...                      Other images  
+/JS  
+  ├─ loadNotes.js             Script to dynamically load note content into pages  
+  └─ loadNav.js               Script to dynamically load navigation content  
+index.html                    Main landing page  
+About.html                    About page  
+nav.html                      Navigation template/page  
+LICENSE                       Project license file  
+README.md                     Project documentation  
 
 ---
 
@@ -52,7 +85,16 @@ To view this project on your computer:
 
 ## 6. Lessons Learned
 
+HTML:
+
+Before this project, I had a Intermediate understanding of HTML and could Create HTML documents. Through this project, I’ve gained a deeper understanding of how it works and easier to recall and obscure details that if I ever need, will be easy to recall Or Even easier to learn again.
+
+CSS:
+
+Before this project, my understanding of CSS was fairly solid, but now I have a much deeper understanding of how styles interact and cascade. I’ve learned how multiple styles can affect the same elements, how to use modern layout techniques like Flexbox and Grid efficiently, and how to implement responsive design that works across different devices. Creating reusable templates reinforced how important consistency and clean structure are for both aesthetics and functionality.
+
 JavaScript:
+I already had a good understanding of Javascript and how it worked. After taking these notes, I've reinforced that knowledge. I didn't take away as much as I did from the CSS or HTML, but I'm still glad I did it because it reinforced the knowledge into my mind and will make it easier to use next time I use it in a project. 
 
 ChatGPT / Learning Workflow:
 
@@ -80,11 +122,16 @@ Attach the home button to my home website. What I have not created yet.
 
 ***Link to w3schools:***
 
+
+[w3schools HTML](https://www.w3schools.com/html/default.asp "https://www.w3schools.com/html/default.asp")
+
+[w3schools CSS](https://www.w3schools.com/css/default.asp "https://www.w3schools.com/css/default.asp")
+
 [w3schools JavaScript](https://www.w3schools.com/js/default.asp "https://www.w3schools.com/js/default.asp")
 
 **Acknowledgement**
 
-Use chatGPT and Copilot in the assistance of this Project.
+Use chatGPT And copilot in the assistance of this Project.
 
 ---
 

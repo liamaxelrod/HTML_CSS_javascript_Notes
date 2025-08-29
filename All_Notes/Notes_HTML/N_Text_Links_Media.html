@@ -1,0 +1,443 @@
+<template> <!-- HTML Code: Images and Buttons (Not finished.)-->
+  <div class="bubble">
+    <h3>HTML Code: Images and Buttons with Tooltips</h3>
+
+    <div class="code_block">
+      <code>
+        &lt;a <samp class="C1">href</samp>="../Home.html"&gt; <br>
+        &nbsp;&nbsp;&lt;img <samp class="C2">src</samp>="/Images/W3Schools_logo.png" 
+        <samp class="C3">alt</samp>="W3Schools_logo Image" 
+        <samp class="C4">style</samp>="width:42px;height:42px;" 
+        <samp class="C5">title</samp>="tooltip example"&gt; <br>
+        &lt;/a&gt; <br><br>
+        &lt;button <samp class="C6">onclick</samp>="document.location='/Lessons/name1.html'" 
+        <samp class="C5">title</samp>="tooltip example"&gt;Go to name1&lt;/button&gt;
+      </code>
+    </div>
+
+    <h3>Example: Images and Buttons</h3>
+    <div class="example">
+      <p>Hover over the image or button to see the tooltip.</p>
+      <a href="https://www.w3schools.com/" target="_blank">
+        <img src="/Images/W3Schools_logo.png" alt="W3Schools_logo Image" style="width:42px;height:42px;" title="Tooltip example">
+      </a><br>
+      <button onclick="document.location='/Lessons/name1.html'" title="Tooltip example">Go to name1</button>
+    </div>
+
+    <h3>Explanation: Images and Buttons</h3>
+    <div class="explanation">
+      <p>
+        <samp class="C1">href</samp> → URL to navigate to.<br>
+        <samp class="C2">src</samp> → Path to the image inside the link.<br>
+        <samp class="C3">alt</samp> → Alternative text if image cannot load.<br>
+        <samp class="C4">style</samp> → Inline CSS for element size or styling.<br>
+        <samp class="C5">title</samp> → Tooltip text on hover.<br>
+        <samp class="C6">onclick</samp> → JavaScript executed when clicked (navigation in this example).<br><br>
+        Use this structure to make images or buttons clickable with tooltips.
+      </p>
+    </div>
+  </div>
+</template>
+
+<template> <!-- HTML Code: Image Maps -->
+  <div class="bubble">
+    <h3>HTML Code: Image Maps</h3>
+
+    <div class="code_block">
+      <code>
+        &lt;img <samp class="C2">src</samp>="/Images/workplace.jpg" 
+        <samp class="C3">alt</samp>="Workplace" 
+        <samp class="C7">usemap</samp>="#workmap"&gt;<br><br>
+
+        &lt;map <samp class="C7">name</samp>="workmap"&gt;<br>
+        &nbsp;&nbsp;&lt;area shape="rect" <samp class="C1">coords</samp>="34,44,270,350" alt="Computer" href="javascript:void(0);" <samp class="C6">onclick</samp>="alert('You clicked on the Computer');"&gt;<br>
+        &nbsp;&nbsp;&lt;area shape="rect" <samp class="C1">coords</samp>="290,172,333,250" alt="Phone" href="javascript:void(0);" <samp class="C6">onclick</samp>="alert('You clicked on the Phone');"&gt;<br>
+        &nbsp;&nbsp;&lt;area shape="circle" <samp class="C1">coords</samp>="337,300,44" alt="Coffee" href="javascript:void(0);" <samp class="C6">onclick</samp>="alert('You clicked on the Coffee');"&gt;<br>
+        &lt;/map&gt;
+      </code>
+    </div>
+
+    <h3>Example: Image Map</h3>
+    <div class="example">
+      <p>Click different areas on the image to trigger different actions.</p>
+      <img src="/Images/workplace.jpg" alt="Workplace" usemap="#workmap">
+      <map name="workmap">
+        <area shape="rect" coords="34,44,270,350" alt="Computer" href="javascript:void(0);" onclick="alert('You clicked on the Computer');">
+        <area shape="rect" coords="290,172,333,250" alt="Phone" href="javascript:void(0);" onclick="alert('You clicked on the Phone');">
+        <area shape="circle" coords="337,300,44" alt="Coffee" href="javascript:void(0);" onclick="alert('You clicked on the Coffee');">
+      </map>
+    </div>
+
+    <h3>Explanation: Image Maps</h3>
+    <div class="explanation">
+      <p>
+        <samp class="C7">usemap</samp> → Links the image to a &lt;map&gt; element by name.<br>
+        <samp class="C7">name</samp> → Name of the &lt;map&gt; element.<br>
+        <samp class="C1">coords</samp> → Coordinates defining the clickable area.<br>
+        <samp class="C6">onclick</samp> → JavaScript action when area is clicked.<br>
+        <strong>Shapes:</strong> rect = rectangle, circle = circle, poly = polygon, default = entire image.<br><br>
+        This allows one image to have multiple clickable regions with separate actions.
+      </p>
+    </div>
+  </div>
+</template>
+
+<template> <!-- HTML Code: Links -->
+  <div class="bubble">
+    <h3>HTML Code: Links</h3>
+    <div class="code_block">
+      <code>
+        &lt;<samp class="C1">a</samp> <samp class="C2">href</samp>="https://www.w3schools.com/html/html_links.asp" <samp class="C3">target</samp>="_blank"&gt;Visit W3Schools&lt;/a&gt;
+      </code>
+    </div>
+
+    <h3>Example: Links</h3>
+    <div class="example">
+      <a href="https://www.w3schools.com/html/html_links.asp" target="_blank">Visit W3Schools</a>
+    </div>
+
+    <h3>Explanation: Links</h3>
+    <div class="explanation">
+      <p>
+        The <samp class="C1">&lt;a&gt;</samp> tag defines a hyperlink.<br>
+        <samp class="C2">href</samp> → Specifies the URL or file path for the link. Can be relative (e.g., "folder/file.html") or absolute (e.g., "https://www.example.com").<br>
+        <samp class="C3">target</samp> → Specifies where to open the linked document:<br>
+        &nbsp;&nbsp;<strong>_self</strong> → Same window/tab (default).<br>
+        &nbsp;&nbsp;<strong>_blank</strong> → New window/tab.<br>
+        &nbsp;&nbsp;<strong>_parent</strong> → Parent frame.<br>
+        &nbsp;&nbsp;<strong>_top</strong> → Full body of the window.<br><br>
+
+        By default, browser link states appear as follows:<br>
+        <samp class="C4">Unvisited link</samp> → blue, underlined.<br>
+        <samp class="C5">Visited link</samp> → purple, underlined.<br>
+        <samp class="C6">Active link</samp> → red, underlined.<br><br>
+
+        You can change these link colors and states using CSS pseudo-classes: <code>:link</code>, <code>:visited</code>, <code>:hover</code>, and <code>:active</code>.
+      </p>
+    </div>
+  </div>
+</template>
+
+<template> <!-- HTML Code: Lists -->
+  <div class="bubble">
+    <h3>HTML Code: Lists</h3>
+    <div class="code_block">
+      <code>
+        &lt;style&gt;<br>
+        &nbsp;&nbsp;<samp class="C1">ul, ol {</samp><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<samp class="C2">list-style-position: inside;</samp><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<samp class="C3">padding-left: 0;</samp><br>
+        &nbsp;&nbsp;}<br>
+        &lt;/style&gt;<br><br>
+
+        &lt;ul&gt;<br>
+        &nbsp;&nbsp;&lt;li&gt;Apples&lt;/li&gt;<br>
+        &nbsp;&nbsp;&lt;li&gt;Bananas&lt;/li&gt;<br>
+        &nbsp;&nbsp;&lt;li&gt;Cherries&lt;/li&gt;<br>
+        &lt;/ul&gt;<br><br>
+
+        &lt;ol&gt;<br>
+        &nbsp;&nbsp;&lt;li&gt;Wake up&lt;/li&gt;<br>
+        &nbsp;&nbsp;&lt;li&gt;Brush teeth&lt;/li&gt;<br>
+        &nbsp;&nbsp;&lt;li&gt;Eat breakfast&lt;/li&gt;<br>
+        &lt;/ol&gt;
+      </code>
+    </div>
+
+    <h3>Example: Lists</h3>
+    <div class="example">
+      <style>
+        ul, ol {
+          list-style-position: inside;
+          padding-left: 0;
+        }
+      </style>
+
+      <ul>
+        <li>Apples</li>
+        <li>Bananas</li>
+        <li>Cherries</li>
+      </ul>
+
+      <ol>
+        <li>Wake up</li>
+        <li>Brush teeth</li>
+        <li>Eat breakfast</li>
+      </ol>
+    </div>
+
+    <h3>Explanation: Lists</h3>
+    <div class="explanation">
+      <p>
+        <samp class="C1">&lt;ul&gt;, &lt;ol&gt;</samp> → Define unordered (bullets) and ordered (numbers) lists.<br>
+        <samp class="C2">list-style-position: inside;</samp> → Keeps bullets/numbers inside the list container to prevent overflow.<br>
+        <samp class="C3">padding-left: 0;</samp> → Removes default indent for clean alignment.<br><br>
+
+        <samp class="C1">&lt;li&gt;</samp> → Each list item inside <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code>.<br>
+        <samp class="C1">&lt;dl&gt;</samp> → Description list; pairs terms and descriptions.<br>
+        <samp class="C1">&lt;dt&gt;</samp> → Definition term inside a description list.<br>
+        <samp class="C1">&lt;dd&gt;</samp> → Definition description inside a description list.
+      </p>
+    </div>
+  </div>
+</template>
+
+<template> <!-- HTML Code: Styled Links -->
+  <div class="bubble">
+    <h3>HTML Code: Styled Links</h3>
+    <div class="code_block">
+      <code>
+        &lt;style&gt; <br>
+        <samp class="C1">
+        &nbsp;&nbsp;.example-style-link:link { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;color: green; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;text-decoration: none; <br>
+        &nbsp;&nbsp;} <br>
+        </samp><samp class="C2">
+        &nbsp;&nbsp;.example-style-link:visited { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;color: pink; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;text-decoration: none; <br>
+        &nbsp;&nbsp;} <br>
+        </samp><samp class="C3">
+        &nbsp;&nbsp;.example-style-link:hover { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;color: red; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;text-decoration: underline; <br>
+        &nbsp;&nbsp;} <br>
+        </samp><samp class="C4">
+        &nbsp;&nbsp;.example-style-link:active { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;color: yellow; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;text-decoration: underline; <br>
+        &nbsp;&nbsp;} <br>
+        </samp>
+        &lt;/style&gt; <br><br>
+        &lt;a href="../Home.html" class="example-style-link" target="_blank"&gt;Styled Link&lt;/a&gt;
+      </code>
+    </div>
+
+    <h3>Example: Styled Links</h3>
+    <div class="example">
+      <style>
+        .example-style-link:link { color: green; text-decoration: none; }
+        .example-style-link:visited { color: pink; text-decoration: none; }
+        .example-style-link:hover { color: red; text-decoration: underline; }
+        .example-style-link:active { color: yellow; text-decoration: underline; }
+      </style>
+      <a href="../Home.html" class="example-style-link" target="_blank">Styled Link</a><br>
+      <a href="../Home.html" target="_blank">Default Link</a>
+    </div>
+
+    <h3>Explanation: Styled Links</h3>
+    <div class="explanation">
+      <p>
+        This code demonstrates styling links using CSS pseudo-classes, with each section color-coded:
+      </p>
+      <ul>
+        <li><samp class="C1">:link</samp> → Styles links that have <strong>not yet been clicked</strong>; here it sets the link color to green and removes underline.</li>
+        <li><samp class="C2">:visited</samp> → Styles links that <strong>have been clicked before</strong>; here it sets the link color to pink and removes underline. <br>
+        <em>Note:</em> Browsers remember visited links. If you want the link to appear unvisited again, you need to clear your browser history or cache for that site.</li>
+        <li><samp class="C3">:hover</samp> → Styles links when the mouse hovers over them; here it changes the color to red and adds an underline.</li>
+        <li><samp class="C4">:active</samp> → Styles links during the moment they are clicked; here it changes the color to yellow and keeps the underline.</li>
+      </ul>
+      <p>
+        <strong>Important:</strong> Always define <code>:link</code> and <code>:visited</code> before <code>:hover</code> and <code>:active</code>, otherwise the hover/active styles may not work as expected.
+      </p>
+    </div>
+  </div>
+</template>
+
+<template> <!-- HTML Code: Background Image Style -->
+  <div class="bubble">
+    <h3>HTML Code: Background Image Style</h3>
+    <div class="code_block">
+      <code>
+        
+        &lt;p <samp class="C1">style="background-image: url('https://images.pexels.com/photos/6808985/pexels-photo-6808985.jpeg');<br>
+        </samp><samp class="C2">
+        &nbsp;&nbsp;background-size: cover; <br>
+        </samp><samp class="C3">
+        &nbsp;&nbsp;background-repeat: no-repeat; <br>
+        </samp><samp class="C4">
+        &nbsp;&nbsp;background-position: center; <br>
+        </samp><samp class="C5">
+        &nbsp;&nbsp;color: white; <br>
+        </samp><samp class="C6">
+        &nbsp;&nbsp;padding: 20px;"&gt; <br>
+        </samp>
+        &lt;/p&gt;
+      </code>
+    </div>
+
+    <h3>Example: Background Image Style</h3>
+    <div class="example">
+      <p style="background-image: url('https://images.pexels.com/photos/6808985/pexels-photo-6808985.jpeg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                color: white;
+                padding: 20px;">
+        You can put this in the style section of the HTML document to affect the entire paragraph.<br>
+        <strong>Properties:</strong><br>
+        background-size: cover – covers the entire element.<br>
+        background-repeat: no-repeat – prevents repeating.<br>
+        background-position: center – centers the image.<br>
+        color: white – ensures text is readable.<br>
+        padding: 20px – adds space inside the paragraph.
+      </p>
+    </div>
+
+    <h3>Explanation: Background Image Style</h3>
+    <div class="explanation">
+      <p>
+        <samp class="C1">background-image: url(...);</samp> → Sets the background image for the element.<br>
+        <samp class="C2">background-size: cover;</samp> → Makes the image cover the entire element, scaling as needed.<br>
+        <samp class="C3">background-repeat: no-repeat;</samp> → Prevents the image from repeating/tile.<br>
+        <samp class="C4">background-position: center;</samp> → Centers the image within the element.<br>
+        <samp class="C5">color: white;</samp> → Sets the text color to white to ensure readability against the background image.<br>
+        <samp class="C6">padding: 20px;</samp> → Adds space inside the element so text doesn’t touch edges.
+      </p>
+    </div>
+  </div>
+</template>
+
+<template > <!-- HTML Code: Anchor Link Same Page  (Not finished.) -->
+  <div class="bubble">
+    <h3>HTML Code: Anchor Link Same Page</h3>
+    <div class="code_block">
+      <code>
+        &lt;p&gt; Jump to &lt;a href="#?"&gt;Target&lt;/a&gt;&lt; /p&gt;
+      </code>
+    </div>
+
+    <h3>Example: Anchor Link Same Page</h3>
+    <div class="example">
+      <p>
+        Jump to <a href="#?">Target ?</a>. 
+      </p>
+    </div>
+
+    <h3>Explanation: Anchor Link Same Page</h3>
+    <div class="explanation">
+      <p>
+        The # symbol is used to indicate an anchor link within the same page.<br>
+        It allows you to jump to a specific section of the page that has a corresponding id attribute.
+      </p>
+    </div>
+  </div>
+</template>
+
+<template > <!-- HTML Code: Anchor Link Other Page (Not finished.) -->
+  <div class="bubble">
+    <h3>HTML Code: Anchor Link Other Page</h3>
+    <div class="code_block">
+      <code>
+        &lt;a href="Home.html#String_tags"&gt;String tags&lt;/a&gt;
+      </code>
+    </div>
+
+    <h3>Example: Anchor Link Other Page</h3>
+    <div class="example">
+      <p>
+        Link to a bookmark on another page: 
+        <a href="Lessons/advanced_links.html#end_of_advanced_links">end of advanced links</a>
+      </p>
+    </div>
+
+    <h3>Explanation: Anchor Link Other Page</h3>
+    <div class="explanation">
+        <p>Links to a bookmark on another page navigate to a section with a matching id.</p>
+    </div>
+  </div>
+</template>
+
+<template> <!-- HTML Code: Images -->
+  <div class="bubble">
+
+    <h3>HTML Code: Images</h3>
+    <div class="code_block">
+      <code>
+        &lt;<span class="C1">img</span> src="Images/W3Schools_logo.png" alt="W3Schools logo" style="width: 40px; height: 40px;"&gt;
+      </code>
+    </div>
+
+    <h3>Example: Images</h3>
+    <div class="example">
+      <img src="/Images/Flower.png" alt="W3Schools logo" style="width: 40px; height: 40px;">
+    </div>
+
+    <h3>Explanation: Images</h3>
+    <div class="explanation">
+      <p>
+        <span class="C1">src</span>: Finds the image in folder or from the internet <br>
+        <span class="C1">alt</span>: Alternate text if the image can't be found <br>
+        <span class="C1">style</span>: Controls how the image is presented, e.g., size
+      </p>
+    </div>
+
+    <br><!-- ======================== -->
+
+    <h3>HTML Code: picture vs img</h3>
+    <div class="code_block">
+      <code>
+        &lt;<span class="C2">picture</span>&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C3">source</span> media="(min-width: 1100px)" srcset="https://images.pexels.com/photos/8693381/pexels-photo-8693381.jpeg"&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C3">source</span> media="(min-width: 700px)" srcset="https://images.pexels.com/photos/6808985/pexels-photo-6808985.jpeg"&gt;<br>
+        &nbsp;&nbsp;&lt;<span class="C1">img</span> src="https://images.pexels.com/photos/32388400/pexels-photo-32388400.jpeg" alt="Example responsive image"&gt;<br>
+        &lt;/<span class="C2">picture</span>&gt;
+      </code>
+    </div>
+
+    <h3>Example: picture vs img</h3>
+    <div class="example">
+      <picture>
+        <source media="(min-width: 1100px)" 
+                srcset="https://images.pexels.com/photos/8693381/pexels-photo-8693381.jpeg">
+        <source media="(min-width: 700px)" 
+                srcset="https://images.pexels.com/photos/6808985/pexels-photo-6808985.jpeg">
+        <img src="https://images.pexels.com/photos/32388400/pexels-photo-32388400.jpeg" 
+             alt="Example responsive image" style="max-width:100%; height:auto;">
+      </picture>
+    </div>
+
+    <h3>Explanation: picture vs img</h3>
+    <div class="explanation">
+      <p>
+          <span class="C1">&lt;img&gt;</span><br>
+          <span class="C1">src</span> → The image file (local or URL). <br>
+          <span class="C1">alt</span> → Alternate text (important for accessibility & SEO). <br>
+          width & height → Optional size controls. <br>
+
+          <span class="C2">&lt;picture&gt;</span> Best when:<br>
+          Provides multiple image sources for different screen sizes, pixel densities, or formats.<br>
+          Contains one or more <span class="C3">&lt;source&gt;</span> tags and a fallback <span class="C1">&lt;img&gt;</span>.<br>
+          <span class="C3">&lt;source&gt;</span> → Browser picks the first suitable image, can have multiple formats.<br>
+          style="max-width:100%; height:auto;" → Ensures image scales responsively, maintaining aspect ratio.
+      </p>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- HTML Code: tooltip Effects -->
+  <div class="bubble">
+    <h3>HTML Code: tooltip Effects</h3>
+    <div class="code_block">
+      <code>
+        &lt;p title=&lt;q&gt;This is a tooltip that appears when you hover over the text&lt;/q&gt;&gt; hover over this to see tooltip with the mouse&lt;/p&gt;
+      </code>
+    </div>
+
+    <h3>Example: tooltip Effects</h3>
+    <div class="example">
+      <p title="This is a tooltip that appears when you hover over the text">
+        hover over this to see tooltip with the mouse
+      </p>
+    </div>
+
+    <h3>Explanation: tooltip Effects</h3>
+    <div class="explanation">
+      <p>
+        The <code>title</code> attribute displays a tooltip when the mouse hovers over the element.
+      </p>
+    </div>
+  </div>
+</template>

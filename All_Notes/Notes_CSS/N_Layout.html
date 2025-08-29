@@ -1,0 +1,269 @@
+<template> <!-- CSS Layout: display: inline-block -->
+  <style>
+    .box5 {
+      width: 120px;
+      height: 80px;
+      border: 2px solid black;
+      margin: 5px;
+      padding: 5px;
+      text-align: center;
+      line-height: 80px;
+    }
+  </style>
+
+  <div class="bubble">
+    <!-- ===== CODE SECTION ===== -->
+    <h3>CSS Code: display: inline-block</h3>
+    <div class="code_block">
+      <pre><code>
+/* CSS class for this template */
+<span class="C8">.box5</span> {
+  width: 120px;
+  height: 80px;
+  border: 2px solid black;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  line-height: 80px;
+}
+
+&lt;!-- HTML examples --&gt;
+&lt;div class="box5" style="<span class="C1">display: inline</span>;"&gt;Inline&lt;/div&gt;
+&lt;div class="box5" style="<span class="C2">display: inline-block</span>;"&gt;Inline-Block&lt;/div&gt;
+&lt;div class="box5" style="<span class="C3">display: block</span>;"&gt;Block&lt;/div&gt;
+      </code></pre>
+    </div>
+
+    <!-- ===== LIVE EXAMPLE SECTION ===== -->
+    <h3>Example: display Values</h3>
+    <div class="example">
+      <div class="box5" style="display: inline;">Inline<span class="dot d1"></span></div>
+      <div class="box5" style="display: inline-block;">Inline-Block<span class="dot d2"></span></div>
+      <div class="box5" style="display: block;">Block<span class="dot d3"></span></div>
+    </div>
+
+    <!-- ===== EXPLANATION SECTION ===== -->
+    <h3>Explanation: display</h3>
+    <div class="explanation">
+      <p><strong>display</strong> – Defines how an element is rendered in the layout. It affects flow, sizing, and interaction with other elements.</p>
+
+      <p><span class="C1"><strong>display: inline</strong></span> – inline mean that the element will not start on a new line and only occupy as much width as necessary.</p>
+
+      <p><span class="C2"><strong>display: inline-block</strong></span> – Combines inline flow and block sizing. You can set width and height, and elements can sit next to each other. See the second box in the live example and the code block. <em>Alternate usage:</em> Navigation buttons or card items in a row.</p>
+
+      <p><span class="C3"><strong>display: block</strong></span> – Element takes up full width by default and starts on a new line. See the third box in the live example and the code block. <em>Alternate usage:</em> Paragraphs, div containers, or sections.</p>
+
+      <p><span class="C8">.box5</span> – This class is applied to all example boxes to standardize width, height, border, margin, and text alignment.</p>
+    </div>
+  </div>
+</template>
+
+<template> <!-- CSS Best example of padding margins and radius Interactive -->
+  <div class="bubble">
+
+    <div class="code_block">
+
+    </div>
+
+
+    <div class="example">
+      <h3>CSS Interactive Controls: Border, Margin, Padding</h3>
+
+      <!-- Controls Panel Margin, Padding, and Border Radius -->  
+      <h4>Margin (px) space outside</h4>
+      <input type="range" min="-500" max="100" value="0" id="marginTop"><label for="marginTop"> Top</label>
+      <span id="marginTopVal">0</span> px<br>
+
+      <input type="range" min="-500" max="100" value="0" id="marginRight"><label for="marginRight"> Right</label>
+      <span id="marginRightVal">0</span> px<br>
+
+      <input type="range" min="-500" max="100" value="0" id="marginBottom"><label for="marginBottom"> Bottom</label>
+      <span id="marginBottomVal">0</span> px<br>
+
+      <input type="range" min="-500" max="100" value="0" id="marginLeft"><label for="marginLeft"> Left</label>
+      <span id="marginLeftVal">0</span> px<br>
+
+      <h4>Padding (px) space inside</h4>
+      <input type="range" min="0" max="100" value="0" id="paddingTop"><label for="paddingTop"> Top</label>
+      <span id="paddingTopVal">0</span> px<br>
+
+      <input type="range" min="0" max="100" value="0" id="paddingRight"><label for="paddingRight"> Right</label>
+      <span id="paddingRightVal">0</span> px<br>
+
+      <input type="range" min="0" max="100" value="0" id="paddingBottom"><label for="paddingBottom"> Bottom</label>
+      <span id="paddingBottomVal">0</span> px<br>
+
+      <input type="range" min="0" max="100" value="0" id="paddingLeft"><label for="paddingLeft"> Left</label>
+      <span id="paddingLeftVal">0</span> px<br>
+
+      <h4>Border Radius (px) corners of the border</h4>
+      <input type="range" min="0" max="100" value="0" id="radiusTL"><label for="radiusTL"> Top-Left</label>
+      <span id="radiusTLVal">0</span> px<br>
+
+      <input type="range" min="0" max="100" value="0" id="radiusTR"><label for="radiusTR"> Top-Right</label>
+      <span id="radiusTRVal">0</span> px<br>
+
+      <input type="range" min="0" max="100" value="0" id="radiusBR"><label for="radiusBR"> Bottom-Right</label>
+      <span id="radiusBRVal">0</span> px<br>
+
+      <input type="range" min="0" max="100" value="0" id="radiusBL"><label for="radiusBL"> Bottom-Left</label>
+      <span id="radiusBLVal">0</span> px<br>
+
+      <h3>Example Box Container</h3>
+      <div style="
+        border: 2px dashed #aaa;
+        background: #efefef;
+        height: 500px;
+        max-width: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      ">
+        <div id="demoBox" style="
+          border-style: solid dashed dotted double;
+          border-width: 3px 3px 12px 12px;
+          border-color: red green blue orange;
+          background: #f9f9f9;
+          display: flex;              /* flex to center content inside */
+          justify-content: center;    /* horizontal center */
+          align-items: center;        /* vertical center */
+          height: 30px;
+          width: 70px;
+        ">
+          Content
+        </div>
+      </div>
+
+      <script>
+        const box = document.getElementById('demoBox');
+        const controls = [
+          'marginTop', 'marginRight', 'marginBottom', 'marginLeft',
+          'paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft',
+          'radiusTL', 'radiusTR', 'radiusBR', 'radiusBL'
+        ];
+
+        function idToStyleProp(id) {
+          switch(id) {
+            case 'marginTop': return 'marginTop';
+            case 'marginRight': return 'marginRight';
+            case 'marginBottom': return 'marginBottom';
+            case 'marginLeft': return 'marginLeft';
+            case 'paddingTop': return 'paddingTop';
+            case 'paddingRight': return 'paddingRight';
+            case 'paddingBottom': return 'paddingBottom';
+            case 'paddingLeft': return 'paddingLeft';
+            case 'radiusTL': return 'borderTopLeftRadius';
+            case 'radiusTR': return 'borderTopRightRadius';
+            case 'radiusBR': return 'borderBottomRightRadius';
+            case 'radiusBL': return 'borderBottomLeftRadius';
+            default: return '';
+          }
+        }
+
+        function updateBox() {
+          controls.forEach(id => {
+            const val = document.getElementById(id).value;
+            box.style[idToStyleProp(id)] = val + 'px';
+
+            const valSpan = document.getElementById(id + 'Val');
+            if (valSpan) valSpan.textContent = val;
+          });
+        }
+
+        controls.forEach(id => {
+          document.getElementById(id).addEventListener('input', updateBox);
+        });
+
+        updateBox();
+      </script>
+    </div>
+
+    <div class="explanation">
+      
+  </div>
+</template>
+
+<template> <!-- CSS height, width, Border, Margin, Padding  -->
+  <div class="bubble">
+
+    <h3>CSS Code Block: Border, Margin, Padding</h3>
+    <div class="code_block">
+      <code>
+        .box {<br>
+        &nbsp;&nbsp;<span class="C1">border-style: solid dashed dotted double;</span><br>
+        &nbsp;&nbsp;<span class="C1">border-width: 3px 6px 9px 12px;</span><br>
+        &nbsp;&nbsp;<span class="C1">border-color: red green blue orange;</span><br>
+        &nbsp;&nbsp;<span class="C1">border-radius: 10px;</span><br>
+        &nbsp;&nbsp;<span class="C2">margin: 15px 30px 45px 60px;</span><br>
+        &nbsp;&nbsp;<span class="C3">padding: 5px 10px 15px 20px;</span><br>
+        &nbsp;&nbsp;<span class="C4">width: 300px;</span><br>
+        &nbsp;&nbsp;<span class="C4">box-sizing: border-box;</span><br>
+        }
+      </code>
+    </div>
+
+    <h3>Example Combined: Border, Margin, Padding</h3>
+    <div class="example">
+      <div class="box" style="
+        border-style: solid dashed dotted double;
+        border-width: 3px 6px 9px 12px;
+        border-color: red green blue orange;
+        border-radius: 10px;
+        margin: 15px 30px 45px 60px;
+        padding: 5px 10px 15px 20px;
+        width: 300px;
+        box-sizing: border-box;
+        ">
+        This box uses all the border, margin, padding styles combined.<br>
+        The <code>box-sizing: border-box;</code> keeps the width fixed at 300px.
+      </div>
+    </div>
+
+    <h3>Explanations: Border, Margin, Padding</h3>
+    <div class="explanation">
+      <span class="C1"><strong>Border:</strong> The <code>border-style</code>, <code>border-width</code>, <code>border-color</code>, and <code>border-radius</code> properties define the look of the element's borders.</span><br>
+
+      <span class="C2"><strong>Margin:</strong> The <code>margin</code> property controls the space outside the element's border. It accepts up to four values to control each side.</span><br>
+
+      <span class="C3"><strong>Padding:</strong> The <code>padding</code> property controls the space inside the element's border, around its content. Negative values are not allowed.</span><br>
+
+      <span class="C4"><strong>Box-sizing:</strong> By default, padding and border add to the total width of an element. Using <code>box-sizing: border-box;</code> includes padding and border inside the specified width, preventing layout issues.</span>
+    </div>
+
+    <div class="explanation" style="margin-top: 15px;">
+      <strong>Additional Notes:</strong><br>
+      - You can specify different values for top, right, bottom, and left sides by providing 1 to 4 values in the shorthand.<br>
+      - The <code>auto</code> value for margin lets the browser calculate margins, often used to center block elements horizontally.<br>
+      - For margins, negative values are allowed, which can pull elements closer or cause overlap; for padding, negative values are not allowed.<br>
+      - Border properties only take effect if <code>border-style</code> is set to a value other than <code>none</code> or <code>hidden</code>.<br>
+      - border-style Values: none, hidden, dotted, dashed, solid, double, groove, ridge, inset, outset
+    </div>
+
+    <h3>Explanation of CSS Box Model</h3>
+    <div class="explanation">
+      All HTML elements can be considered as boxes.<br><br>
+      The CSS box model wraps around every HTML element and consists of:<br>
+      <span class="C6">Content</span>, <span class="C2">Padding</span>, <span class="C4">Border</span>, and <span class="C7">Margin</span>.<br><br>
+      When you set <code>width</code> and <code>height</code>, you set the size of the <strong>content area</strong> only.<br>
+      Total size calculation must include padding and border as well.<br><br>
+      <strong>Width calculation example:</strong><br>
+      320px (content) + 20px (left+right padding) + 10px (left+right border) = <strong>350px total width</strong>.<br><br>
+      <strong>Height calculation example:</strong><br>
+      50px (content) + 20px (top+bottom padding) + 10px (top+bottom border) = <strong>80px total height</strong>.<br><br>
+      <span class="C7">Note:</span> Margin affects spacing outside the box but is not part of the box's size.<br>
+      Box's total width and height stop at the border.
+    </div>
+
+    <h3>Explanation of Dimension Properties</h3>
+    <div class="explanation">
+      <strong>height</strong>: Sets the fixed height of an element.<br>
+      <strong>max-height</strong>: Limits the maximum height an element can grow to.<br>
+      <strong>max-width</strong>: Limits the maximum width an element can grow to.<br>
+      <strong>min-height</strong>: Sets the minimum height an element can shrink to.<br>
+      <strong>min-width</strong>: Sets the minimum width an element can shrink to.<br>
+      <strong>width</strong>: Sets the fixed width of an element.<br>
+      These properties control the size and scalability of elements on the page.
+    </div>
+
+  </div>
+</template>

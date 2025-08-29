@@ -1,20 +1,38 @@
-// loadNavAndDropdown.js
-// Handles dynamic nav loading + mobile dropdown functionality
+// loadNav.js
+// Dynamically loads the correct navigation bar based on a data attribute
+// and attaches mobile dropdown behavior
 
 document.addEventListener('DOMContentLoaded', function() {
   const navSlots = document.querySelectorAll('.nav-slot');
 
   navSlots.forEach(slot => {
-    fetch('/nav.html') // path to your nav template
+    // Get desired nav type from the HTML element
+    const navType = slot.dataset.navType; // "javascript" or "css-html"
+
+    // Map nav types to file paths
+    const navPaths = {
+      "javascript": "/Navigation_Bar/Nav_Javascript.html",
+      "css-html": "/Navigation_Bar/Nav_CSS_HTML.html",
+      "index": "/Navigation_Bar/Nav_Index.html"
+    };
+
+    const path = navPaths[navType];
+
+    if (!path) {
+      console.error(`No navigation file defined for type: ${navType}`);
+      return;
+    }
+
+    // Fetch and insert the nav HTML
+    fetch(path)
       .then(res => res.text())
       .then(html => {
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
-        const template = doc.querySelector('template#nav-template');
+        const template = doc.querySelector('template');
         if (template) {
           slot.appendChild(template.content.cloneNode(true));
-          // Attach mobile dropdown behavior after nav is loaded
-          attachMobileDropdown(slot);
+          attachMobileDropdown(slot); // attach dropdown after load
         }
       })
       .catch(err => console.error('Error loading nav:', err));
@@ -62,3 +80,4 @@ function attachMobileDropdown(container) {
     });
   });
 }
+

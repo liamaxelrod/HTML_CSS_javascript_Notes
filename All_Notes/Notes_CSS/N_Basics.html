@@ -1,0 +1,670 @@
+<template> <!-- CSS Explanation Basics Info. -->
+  <div class="bubble">
+    <h3>CSS Explanation Section</h3>
+    <div class="explanation">
+      <p>CSS works with (or styles) the following languages and frameworks:</p>
+      <ul>
+        <li><strong>HTML</strong> — the core markup language for web pages</li>
+        <li><strong>XHTML</strong> — stricter, XML-based HTML</li>
+        <li><strong>SVG (Scalable Vector Graphics)</strong> — for styling vector images embedded in HTML</li>
+        <li><strong>XML</strong> — when styled with CSS for presentation</li>
+        <li><strong>React (JSX)</strong> — JavaScript framework where CSS styles components (via CSS files, CSS-in-JS, styled-components, etc.)</li>
+        <li><strong>Angular (HTML templates)</strong> — CSS styles components in Angular apps</li>
+        <li><strong>Vue.js (HTML templates)</strong> — CSS applies styles to Vue components</li>
+        <li><strong>Next.js</strong> — React framework that supports CSS modules, styled-jsx, global CSS, etc.</li>
+        <li><strong>Svelte</strong> — CSS styles scoped components in Svelte apps</li>
+        <li><strong>Web Components (Shadow DOM)</strong> — CSS scoped to custom elements</li>
+        <li><strong>Markdown with embedded HTML</strong> — CSS styles the rendered HTML</li>
+        <li><strong>EJS, Pug, Handlebars (templating engines)</strong> — CSS styles the generated HTML output</li>
+        <li><strong>Email templates (HTML emails)</strong> — CSS styles emails (with some restrictions)</li>
+        <li><strong>CMS platforms (WordPress, Drupal, etc.)</strong> — CSS styles themes and content output</li>
+        <li><strong>Hybrid mobile apps (Ionic, React Native Web, etc.)</strong> — CSS styles the web views</li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<template> <!-- CSS Explanation selector, declare, Properties, and value. -->
+  <div class="bubble">
+
+    <h3>CSS Explanation Section</h3>
+    <div class="explanation">
+      <pre>
+Selector      Declaration Block
+    ↓        ↓                 ↓
+    p { color: red; text-align: center; }
+      ↑   ↑  ↑  ↑ ↑      ↑        ↑   ↑
+      |   |  |  | |      |        |   |
+      |   |  |  | |      |        |   └─ Semicolon (ends declaration)
+      |   |  |  | |      |        └───── Value: "center" (for text-align)
+      |   |  |  | |      └─ Property: "text-align"
+      |   |  |  | └──────── Semicolon (ends declaration)
+      |   |  |  └──────────  Value: "red" (for color)
+      |   |  └───────────── Colon (separator between property and value)
+      |   └──────────────── Value: "center" (for text-align)
+      └──────────────────── Opening brace (starts declaration block)
+      </pre>
+    </div>
+  </div>
+</template>
+
+<template> <!-- CSS Layout: width, height, min/max -->
+  <div class="bubble">
+
+    <h3>CSS Code: Layout (width, height, min/max)</h3>
+    <div class="code_block">
+      <code><pre>
+<strong>/* CSS Styles */</strong>
+
+<span class="C2">.width {</span>
+  <span class="C2">width: 200px;</span>
+  <span class="C2">padding: 1rem 0;</span>
+<span class="C2">}</span>
+
+<span class="C3">.height {</span>
+  <span class="C3">height: 100px;</span>
+  <span class="C3">padding: 0 2rem;</span>
+<span class="C3">}</span>
+
+<span class="C4">.max-width {</span>
+  <span class="C4">max-width: 150px;</span>
+  <span class="C4">width: 100%;</span>
+  <span class="C4">padding: 1rem 0;</span>
+<span class="C4">}</span>
+
+<span class="C5">.max-height {</span>
+  <span class="C5">max-height: 80px;</span>
+  <span class="C5">padding: 0 2rem;</span>
+  <span class="C5">overflow: auto;</span>
+<span class="C5">}</span>
+
+<span class="C6">.min-width {</span>
+  <span class="C6">min-width: 150px;</span>
+  <span class="C6">padding: 1rem 0;</span>
+<span class="C6">}</span>
+
+<span class="C7">.min-height {</span>
+  <span class="C7">min-height: 80px;</span>
+  <span class="C7">padding: 0 2rem;</span>
+<span class="C7">}</span>
+
+<strong>/* HTML Markup */</strong>
+&lt;div class="box default-box"&gt;Default&lt;/div&gt;
+&lt;div class="box width"&gt;Width: 200px&lt;/div&gt;
+&lt;div class="box height"&gt;Height: 100px&lt;/div&gt;
+&lt;div class="box max-width"&gt;Max-width: 150px&lt;/div&gt;
+&lt;div class="box max-height"&gt;Max-height: 80px&lt;/div&gt;
+&lt;div class="box min-width"&gt;Min-width: 150px&lt;/div&gt;
+&lt;div class="box min-height"&gt;Min-height: 80px&lt;/div&gt;
+      </pre></code>
+    </div>
+
+    <h3>Explanation</h3>
+    <div class="explanation">
+      <span class="C1"><strong>Default box</strong></span> has no set width or height, so its size depends on content and padding.<br><br>
+
+      <span class="C2"><strong>Width</strong></span> sets the element's fixed horizontal size. Use it to control exact box width.<br><br>
+
+      <span class="C3"><strong>Height</strong></span> sets the element's fixed vertical size. Useful for consistent box height.<br><br>
+
+      <span class="C4"><strong>Max-width</strong></span> limits the maximum width but allows shrinking smaller if needed.<br><br>
+
+      <span class="C5"><strong>Max-height</strong></span> limits the maximum height. Scrollbars appear if content overflows.<br><br>
+
+      <span class="C6"><strong>Min-width</strong></span> enforces a minimum width, preventing the box from getting too narrow.<br><br>
+
+      <span class="C7"><strong>Min-height</strong></span> enforces a minimum height to maintain visual consistency.<br><br>
+
+      These properties help create responsive, flexible layouts by setting size boundaries and defaults.
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- CSS Text Effect Properties -->
+  <div class="bubble">
+
+    <style>
+      /* Only new classes for text effect properties */
+      .temD11 { background-color: #81c784; }
+      .temC11 { color: #81c784; }
+    </style>
+
+    <!-- Combined Code Block -->
+    <h3>CSS Code: Text Effect Properties</h3>
+    <div class="code_block">
+      <code>
+        <!-- Controlling text properties -->
+        <span class="C1">/* Basic text color */<br>
+  &lt;p style="color: darkblue;"&gt;This text color is set using color property.&lt;/p&gt;</span><br><br>
+
+        <span class="C2">/* Center align and right-to-left text */<br>
+  &lt;p style="text-align: center;"&gt;This text is centered.&lt;/p&gt;<br>
+  &lt;p style="direction: rtl; background: #eee; padding: 5px;"&gt;This text is right-to-left.&lt;/p&gt;</span><br><br>
+
+        <span class="C3">/* Underlined dotted red text with thickness */<br>
+  &lt;p style="text-decoration: underline dotted red 3px;"&gt;Underlined dotted red text.&lt;/p&gt;</span><br><br>
+
+        <span class="C4">/* Uppercase, lowercase, capitalize */<br>
+  &lt;p style="text-transform: uppercase;"&gt;This text is uppercase.&lt;/p&gt;<br>
+  &lt;p style="text-transform: lowercase;"&gt;THIS TEXT IS LOWERCASE.&lt;/p&gt;<br>
+  &lt;p style="text-transform: capitalize;"&gt;this text is capitalized.&lt;/p&gt;</span><br><br>
+
+        <span class="C5">/* Letter spacing, word spacing, indent, line height, white-space */<br>
+  &lt;p style="letter-spacing: 3px;"&gt;Letters spaced with letter-spacing.&lt;/p&gt;<br>
+  &lt;p style="word-spacing: 10px;"&gt;Words spaced with word-spacing.&lt;/p&gt;<br>
+  &lt;p style="text-indent: 40px;"&gt;First line indented with text-indent.&lt;/p&gt;<br>
+  &lt;p style="line-height: 2;"&gt;Double spaced lines with line-height.&lt;/p&gt;<br>
+  &lt;p style="white-space: nowrap; background: #eee;"&gt;No line wrapping with white-space: nowrap.&lt;/p&gt;</span><br><br>
+
+        <span class="C6">/* Text shadow example */<br>
+  &lt;p style="text-shadow: 2px 2px 2px gray;"&gt;Text with shadow using text-shadow.&lt;/p&gt;</span><br><br>
+
+        <!-- Text Effect Properties -->
+        <span class="C7">/* Justify text */<br>
+  &lt;p style="text-justify: inter-word; text-align: justify;"&gt;This text is justified.&lt;/p&gt;</span><br><br>
+
+        <span class="C8">/* Text overflow */<br>
+  &lt;p style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;"&gt;This text may overflow and show ellipsis.&lt;/p&gt;</span><br><br>
+
+        <span class="C9">/* Word break */<br>
+  &lt;p style="word-break: break-word;"&gt;Thisisaverylongwordthatwillbreak.&lt;/p&gt;</span><br><br>
+
+        <span class="C10">/* Word wrap */<br>
+  &lt;p style="word-wrap: break-word;"&gt;Thisisaverylongwordthatwillwrap.&lt;/p&gt;</span><br><br>
+
+        <span class="temC11">/* Writing mode */<br>
+  &lt;p style="writing-mode: vertical-rl;"&gt;This text flows vertically.&lt;/p&gt;</span>
+      </code>
+    </div>
+
+    <!-- Combined Example Section -->
+    <h3>Example: Controlling Texts & CSS Text Effect Properties</h3>
+    <div class="example">
+      <!-- Original controlling text examples -->
+      <p style="color: darkblue;">
+        This text color is set using <code>color</code> property.
+        <span class="dot d1"></span>
+      </p>
+
+      <p style="text-align: center;">
+        This text is centered with <code>text-align: center;</code>
+        <span class="dot d2"></span>
+      </p>
+      <p style="direction: rtl; background: #eee; padding: 5px;">
+        This text is right-to-left using <code>direction: rtl;</code>
+        <span class="dot d2"></span>
+      </p>
+
+      <p style="text-decoration: underline dotted red 3px;">
+        Underlined dotted red text (thickness 3px)
+        <span class="dot d3"></span>
+      </p>
+
+      <p style="text-transform: uppercase;">
+        This text is uppercase.
+        <span class="dot d4"></span>
+      </p>
+      <p style="text-transform: lowercase;">
+        THIS TEXT IS LOWERCASE.
+        <span class="dot d4"></span>
+      </p>
+      <p style="text-transform: capitalize;">
+        this text is capitalized.
+        <span class="dot d4"></span>
+      </p>
+
+      <p style="letter-spacing: 3px;">
+        Letters spaced with <code>letter-spacing</code>.
+        <span class="dot d5"></span>
+      </p>
+      <p style="word-spacing: 10px;">
+        Words spaced with <code>word-spacing</code>.
+        <span class="dot d5"></span>
+      </p>
+      <p style="text-indent: 40px;">
+        First line indented using <code>text-indent</code>.
+        <span class="dot d5"></span>
+      </p>
+      <p style="line-height: 2;">
+        Double spaced lines with <code>line-height</code>.
+        <span class="dot d5"></span>
+      </p>
+      <p style="white-space: nowrap; background: #eee;">
+        No line wrapping with <code>white-space: nowrap;</code>
+        <span class="dot d5"></span>
+      </p>
+
+      <p style="text-shadow: 2px 2px 2px gray;">
+        This text has a shadow using <code>text-shadow</code>.
+        <span class="dot d6"></span>
+      </p>
+
+      <!-- Text Effect Examples -->
+      <p style="text-justify: inter-word; text-align: justify;">
+        This text is justified using <code>text-justify</code>.
+        <span class="dot d7"></span>
+      </p>
+
+      <p style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap; width: 150px; border: 1px solid #ccc;">
+        This text may overflow and show ellipsis using <code>text-overflow</code>.
+        <span class="dot d8"></span>
+      </p>
+
+      <p style="word-break: break-word; width: 150px; border: 1px solid #ccc;">
+        Thisisaverylongwordthatwillbreak using <code>word-break</code>.
+        <span class="dot d9"></span>
+      </p>
+
+      <p style="word-wrap: break-word; width: 150px; border: 1px solid #ccc;">
+        Thisisaverylongwordthatwillwrap using <code>word-wrap</code>.
+        <span class="dot d10"></span>
+      </p>
+
+      <p style="writing-mode: vertical-rl; border: 1px solid #ccc; padding: 5px;">
+        This text flows vertically using <code>writing-mode</code>.
+        <span class="dot temD11"></span>
+      </p>
+    </div>
+
+    <!-- Combined Explanation Section -->
+    <h3>Explanations: Controlling Texts & CSS Text Effect Properties</h3>
+    <div class="explanation">
+      <!-- Original explanations -->
+      <span class="C1"><strong>color</strong>: Specifies the color of text.<br></span>
+
+      <span class="C2">
+        <strong>text-align</strong>: Specifies the horizontal alignment of text.<br>
+        <strong>text-align-last</strong>: Specifies how to align the last line of a text.<br>
+        <strong>direction</strong>: Specifies the text direction or writing direction.<br>
+        <strong>unicode-bidi</strong>: Controls the handling of bidirectional text.<br>
+        <strong>vertical-align</strong>: Sets vertical alignment of inline or table-cell elements.<br>
+      </span>
+
+      <span class="C3">
+        <strong>text-decoration</strong>: Shorthand to set all decoration properties.<br>
+        <strong>text-decoration-line</strong>: Type of decoration (underline, overline, line-through).<br>
+        <strong>text-decoration-color</strong>: Color of the decoration.<br>
+        <strong>text-decoration-style</strong>: Style of decoration line (solid, dotted, dashed).<br>
+        <strong>text-decoration-thickness</strong>: Thickness of the decoration line.<br>
+      </span>
+
+      <span class="C4"><strong>text-transform</strong>: Controls capitalization of text (uppercase, lowercase, capitalize).<br></span>
+
+      <span class="C5">
+        <strong>letter-spacing</strong>: Space between characters.<br>
+        <strong>word-spacing</strong>: Space between words.<br>
+        <strong>text-indent</strong>: Indentation of the first line.<br>
+        <strong>line-height</strong>: Space between lines.<br>
+        <strong>white-space</strong>: Controls handling of whitespace and wrapping.<br>
+      </span>
+
+      <span class="C6"><strong>text-shadow</strong>: Adds shadow effect to text.<br>
+        Basic syntax: <code>horizontal-offset vertical-offset blur-radius color</code>.<br>
+      </span>
+
+      <!-- Text Effect explanations -->
+      <span class="C7"><strong>text-justify</strong>: Specifies how justified text should be aligned and spaced.</span><br>
+      <span class="C8"><strong>text-overflow</strong>: Specifies how overflowed content that is not displayed should be signaled (ellipsis, clip, etc.).</span><br>
+      <span class="C9"><strong>word-break</strong>: Specifies line breaking rules for non-CJK scripts.</span><br>
+      <span class="C10"><strong>word-wrap</strong>: Allows long words to wrap onto the next line.</span><br>
+      <span class="temC11"><strong>writing-mode</strong>: Specifies whether lines of text are laid out horizontally or vertically.</span>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- CSS Font -->
+  <div class="bubble">
+    <!-- Section 1: CSS Font Examples -->
+    <h3>CSS code: Font</h3>
+    <div class="code_block">
+      <code>
+        <strong>/* Examples */</strong><br>
+        <span class="C2">font-style:</span> italic;<br>
+        <span class="C3">font-variant:</span> small-caps;<br>
+        <span class="C4">font-weight:</span> bold;<br>
+        <span class="C6">font-size:</span> 20px;<br>
+        <span class="C8">line-height:</span> 2;<br>
+        <span class="C5">font-family:</span> "Courier New", monospace;<br><br>
+
+        <strong>/* Shorthand */</strong><br>
+        <span class="C2">font:</span> italic small-caps bold 20px/2 "Courier New", monospace;
+      </code>
+    </div>
+
+    <h3>Example: Font</h3>
+    <div class="example">
+      <p style="font-style: italic;">
+        This text is italic.<span class="dot d2"></span>
+      </p>
+      <p style="font-variant: small-caps;">
+        This text is small-caps.<span class="dot d3"></span>
+      </p>
+      <p style="font-weight: bold;">
+        This text is bold.<span class="dot d4"></span>
+      </p>
+      <p style="font-size: 20px;">
+        This text has a larger font size.<span class="dot d6"></span>
+      </p>
+      <p style="line-height: 2; background: #f0f0f0;">
+        This text has extra spacing between lines.<br>
+        See how this second line is spaced farther away?<span class="dot d8"></span>
+      </p>
+      <p style="font-family: 'Courier New', monospace;">
+        This text uses a monospace font.<span class="dot d5"></span>
+      </p>
+    </div>
+
+    <h3>Explain Font Properties</h3>
+    <div class="explanation">
+      <ul>
+        <li><span class="C2">font-style</span>: normal, italic, or oblique.</li>
+        <li><span class="C3">font-variant</span>: small-caps or normal.</li>
+        <li><span class="C4">font-weight</span>: normal, bold, or numeric values like 100–900.</li>
+        <li><span class="C6">font-size</span>: controls the text size (e.g., 16px).</li>
+        <li><span class="C8">line-height</span>: vertical space between lines of text.</li>
+        <li><span class="C5">font-family</span>: the typeface to display the text in.</li>
+      </ul>
+      <strong>Tip:</strong> Use <code>font</code> shorthand to set all in one line:  
+      <code>font: italic small-caps bold 20px/2 "Courier New", monospace;</code>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- CSS Units -->
+  <style>
+  .unit-box {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 8px;
+    margin: 5px 0;
+    display: inline-block;
+    text-align: center;
+  }
+
+  /* CSS Unit Examples */
+  .box-em { font-size: 2em; width: 10em; }
+  .box-ex { font-size: 4ex; }
+  .box-ch { width: 20ch; }
+  .box-fr { display: grid; grid-template-columns: 1fr 2fr; gap: 4px; }
+  .box-rem { font-size: 1.5rem; width: 15rem; }
+  .box-vw { width: 20vw; }
+  .box-vh { height: 20vh; }
+  .box-vmin { width: 20vmin; height: 10vmin; }
+  .box-vmax { width: 20vmax; height: 10vmax; }
+  .box-percent { width: 50%; height: 50%; }
+  </style>
+
+  <div class="bubble">
+    <!-- ===== CODE SECTION ===== -->
+    <h3>CSS Code: Units</h3>
+    <div class="code_block">
+      <pre><code>
+<span class="C1">/* em - relative to font-size of parent */</span>
+<span class="C1">.box-em { font-size: 2em; width: 10em; }</span>
+
+<span class="C2">/* ex - x-height of the element's font */</span>
+<span class="C2">.box-ex { font-size: 4ex; }</span>
+
+<span class="C3">/* ch - width of the "0" character */</span>
+<span class="C3">.box-ch { width: 20ch; }</span>
+
+<span class="C4">/* fr - fraction of available space (CSS Grid) */</span>
+<span class="C4">.box-fr { display: grid; grid-template-columns: 1fr 2fr; }</span>
+
+<span class="C5">/* rem - relative to root font-size */</span>
+<span class="C5">.box-rem { font-size: 1.5rem; width: 15rem; }</span>
+
+<span class="C6">/* vw - 1% of viewport width */</span>
+<span class="C6">.box-vw { width: 20vw; }</span>
+
+<span class="C7">/* vh - 1% of viewport height */</span>
+<span class="C7">.box-vh { height: 20vh; }</span>
+
+<span class="C8">/* vmin - 1% of smaller viewport dimension */</span>
+<span class="C8">.box-vmin { width: 20vmin; height: 10vmin; }</span>
+
+<span class="C9">/* vmax - 1% of larger viewport dimension */</span>
+<span class="C9">.box-vmax { width: 20vmax; height: 10vmax; }</span>
+
+<span class="C10">/* % - percentage relative to parent */</span>
+<span class="C10">.box-percent { width: 50%; height: 50%; }</span>
+      </code></pre>
+    </div>
+
+    <!-- ===== LIVE EXAMPLE SECTION ===== -->
+    <h3>Example: CSS Units</h3>
+    <div class="example">
+      <p><span class="dot d1"></span> em: <span class="unit-box box-em">10em width</span></p>
+      <p><span class="dot d2"></span> ex: <span class="unit-box box-ex">4ex font-size</span></p>
+      <p><span class="dot d3"></span> ch: <span class="unit-box box-ch">20ch width</span></p>
+      <p><span class="dot d4"></span> fr (grid): 
+        <div class="box-fr unit-box">
+          <div style="background:#00befd;">1fr</div>
+          <div style="background:#f4073a;">2fr</div>
+        </div>
+      </p>
+      <p><span class="dot d5"></span> rem: <span class="unit-box box-rem">15rem width</span></p>
+      <p><span class="dot d6"></span> vw: <span class="unit-box box-vw">20vw width</span></p>
+      <p><span class="dot d7"></span> vh: <span class="unit-box box-vh">20vh height</span></p>
+      <p><span class="dot d8"></span> vmin: <span class="unit-box box-vmin">20vmin × 10vmin</span></p>
+      <p><span class="dot d9"></span> vmax: <span class="unit-box box-vmax">20vmax × 10vmax</span></p>
+      <p><span class="dot d10"></span> %: <span class="unit-box box-percent">50% width × 50% height</span></p>
+    </div>
+
+    <!-- ===== EXPLANATION SECTION ===== -->
+    <h3>Explanation: CSS Units</h3>
+    <div class="explanation">
+      <p><span class="C1"><strong>em</strong> – Relative to the font-size of the parent element. Useful for scalable layouts. <em>Browser support:</em> All modern browsers.</span></p>
+      <p><span class="C2"><strong>ex</strong> – Relative to the x-height of the element’s font. Less commonly used. <em>Browser support:</em> Good support but can vary slightly with fonts.</span></p>
+      <p><span class="C3"><strong>ch</strong> – Width of the “0” (zero) character in the element’s font. <em>Browser support:</em> Supported in all modern browsers.</span></p>
+      <p><span class="C4"><strong>fr</strong> – Fractional unit used in CSS Grid to distribute available space. <em>Browser support:</em> All modern browsers supporting CSS Grid.</span></p>
+      <p><span class="C5"><strong>rem</strong> – Relative to the root (html) font-size. Helps maintain consistent sizing. <em>Browser support:</em> All modern browsers.</span></p>
+      <p><span class="C6"><strong>vw</strong> – 1% of the viewport width. <em>Browser support:</em> All modern browsers.</span></p>
+      <p><span class="C7"><strong>vh</strong> – 1% of the viewport height. <em>Browser support:</em> All modern browsers.</span></p>
+      <p><span class="C8"><strong>vmin</strong> – 1% of the smaller dimension of the viewport. <em>Browser support:</em> All modern browsers.</span></p>
+      <p><span class="C9"><strong>vmax</strong> – 1% of the larger dimension of the viewport. <em>Browser support:</em> All modern browsers.</span></p>
+      <p><span class="C10"><strong>%</strong> – Percentage relative to parent element’s size. <em>Browser support:</em> All modern browsers.</span></p>
+    </div>
+  </div>
+</template>
+
+<template> <!-- CSS Different background-xxxx Commands -->
+  <div class="bubble">
+
+    <h3>CSS Code: Background Properties</h3>
+    <div class="code_block">
+      <code>
+        <strong>/* CSS code */</strong><br>
+
+        <span class="C1">#displayBox {</span><br>
+        &nbsp;&nbsp;<span class="C1">width: 80vw;</span><br>
+        &nbsp;&nbsp;<span class="C1">aspect-ratio: 2 / 1;</span><br>
+        &nbsp;&nbsp;<span class="C1">display: inline-block;</span><br>
+        &nbsp;&nbsp;<span class="C1">border: 1px solid #ccc;</span><br>
+        &nbsp;&nbsp;<span class="C1">margin-bottom: 10px;</span><br>
+        <span class="C1">}</span><br><br>
+
+        <span class="C2">.bg1 { background-color: lightblue; }</span><br><br>
+        <span class="C3">.bg2 { background-image: url('/Images/workplace.jpg'); }</span><br><br>
+        <span class="C4">.bg3 { background-image: url('/Images/workplace.jpg'); background-repeat: no-repeat; }</span><br><br>
+        <span class="C5">.bg4 { background-image: url('/Images/workplace.jpg'); background-repeat: repeat-x; }</span><br><br>
+        <span class="C6">.bg5 { background-image: url('/Images/workplace.jpg'); background-position: center top; }</span><br><br>
+        <span class="C1">.bg6 { background-image: url('/Images/workplace.jpg'); background-size: cover; }</span><br><br>
+
+        <strong>/* HTML code */</strong><br>
+        <span class="C1">&lt;button onclick="setBackground(1)"&gt;Background Color&lt;/button&gt;&lt;br&gt;</span><br>
+        <span class="C2">&lt;button onclick="setBackground(2)"&gt;Image&lt;/button&gt;&lt;br&gt;</span><br>
+        <span class="C3">&lt;button onclick="setBackground(3)"&gt;No Repeat&lt;/button&gt;&lt;br&gt;</span><br>
+        <span class="C4">&lt;button onclick="setBackground(4)"&gt;Repeat-X&lt;/button&gt;&lt;br&gt;</span><br>
+        <span class="C5">&lt;button onclick="setBackground(5)"&gt;Center Top&lt;/button&gt;&lt;br&gt;</span><br>
+        <span class="C6">&lt;button onclick="setBackground(6)"&gt;Cover&lt;/button&gt;</span><br><br>
+
+        <strong>/* JavaScript code */</strong><br>
+        function setBackground(num) {<br>
+        &nbsp;&nbsp;const box = document.getElementById('displayBox');<br>
+        &nbsp;&nbsp;box.className = 'bg' + num;<br>
+        }
+      </code>
+    </div>
+
+    <h3>Example</h3>
+    <div class="example">
+      <style>
+        /* Base box */
+        #displayBox {
+          width: 80vw;       
+          aspect-ratio: 2 / 1; 
+          display: inline-block;
+          border: 1px solid #ccc;
+          margin-bottom: 10px;
+        }
+
+        /* Background styles */
+        .bg1 { background-color: lightblue; }
+        .bg2 { background-image: url('/Images/workplace.jpg'); }
+        .bg3 { background-image: url('/Images/workplace.jpg'); background-repeat: no-repeat; }
+        .bg4 { background-image: url('/Images/workplace.jpg'); background-repeat: repeat-x; }
+        .bg5 { background-image: url('/Images/workplace.jpg'); background-position: center top; }
+        .bg6 { background-image: url('/Images/workplace.jpg'); background-size: cover; }
+      </style>
+
+      <!-- Single display box -->
+      <div id="displayBox" class="bg1"></div><br>
+
+      <!-- Buttons -->
+      <button onclick="setBackground(1)">Background Color</button><span class="dot d1"></span><br>
+      <button onclick="setBackground(2)">Image</button><span class="dot d2"></span><br>
+      <button onclick="setBackground(3)">No Repeat</button><span class="dot d3"></span><br>
+      <button onclick="setBackground(4)">Repeat-X</button><span class="dot d4"></span><br>
+      <button onclick="setBackground(5)">Center Top</button><span class="dot d5"></span><br>
+      <button onclick="setBackground(6)">Cover</button><span class="dot d6"></span>
+    </div>
+
+    <h3>Explanation</h3>
+    <div class="explanation">
+      <p class="C1"><code>.bg1</code> sets a solid background color without any image.</p>
+      <p class="C2"><code>.bg2</code> sets a background image that repeats both horizontally and vertically by default, positioned at the top-left.</p>
+      <p class="C3"><code>.bg3</code> adds <code>background-repeat: no-repeat;</code>, so the image appears only once at the top-left without tiling.</p>
+      <p class="C4"><code>.bg4</code> repeats the background image horizontally only using <code>repeat-x</code>, creating horizontal tiling.</p>
+      <p class="C5"><code>.bg5</code> positions the image at the horizontal center and top vertically with <code>background-position: center top;</code> but <strong>without specifying <code>no-repeat</code></strong>, the image will still tile—so adding <code>no-repeat</code> is usually needed to show just one image.</p>
+      <p class="C6"><code>.bg6</code> uses <code>background-size: cover;</code> to scale the image, covering the entire container area while maintaining aspect ratio, cropping parts if needed.</p>
+      <p>The JavaScript function <code>setBackground(num)</code> changes the background style of the display box by setting its <code>className</code> to the corresponding background class (<code>bg1</code> through <code>bg6</code>), enabling the interactive switching of background properties.</p>
+    </div>
+
+    <script>
+      function setBackground(num) {
+        const box = document.getElementById('displayBox');
+        box.className = 'bg' + num;
+      }
+    </script>
+
+  </div>
+</template>
+
+<template> <!-- CSS Gradient Examples with Linear, Conic, and Radial -->
+  <div class="bubble">
+
+    <h3>CSS Code: with Linear, Conic, and Radial</h3>
+    <div class="code_block">
+      <!-- Linear Gradients -->
+      <span class="C1">background: linear-gradient(red, yellow);</span><br>
+      <span class="C2">background: linear-gradient(to right, red, yellow);</span><br>
+      <span class="C3">background: linear-gradient(45deg, red, yellow);</span><br>
+      <span class="C4">background: linear-gradient(red, orange, yellow);</span><br>
+      <span class="C5">background: linear-gradient(rgba(255,0,0,0.5), rgba(255,255,0,0.5));</span><br>
+      <span class="C6">background: repeating-linear-gradient(45deg, red, yellow 20px);</span><br><br>
+
+      <!-- Radial Gradient -->
+      <span class="C7">background: radial-gradient(red, yellow);</span><br><br>
+
+      <!-- Conic Gradient -->
+      <span class="C8">background: conic-gradient(red, yellow, green);</span>
+    </div>
+
+    <h3>Example: with Linear, Conic, and Radial</h3>
+    <div class="example" style="display:flex; flex-wrap:wrap; gap:10px;">
+      <!-- Linear Gradient Examples -->
+      <div style="flex:1 1 200px; height:100px; background: linear-gradient(red, yellow);"><span class="dot d1"></span></div>
+      <div style="flex:1 1 200px; height:100px; background: linear-gradient(to right, red, yellow);"><span class="dot d2"></span></div>
+      <div style="flex:1 1 200px; height:100px; background: linear-gradient(45deg, red, yellow);"><span class="dot d3"></span></div>
+      <div style="flex:1 1 200px; height:100px; background: linear-gradient(red, orange, yellow);"><span class="dot d4"></span></div>
+      <div style="flex:1 1 200px; height:100px; background: linear-gradient(rgba(255,0,0,0.5), rgba(255,255,0,0.5));"><span class="dot d5"></span></div>
+      <div style="flex:1 1 200px; height:100px; background: repeating-linear-gradient(45deg, red, yellow 20px);"><span class="dot d6"></span></div>
+
+      <!-- Radial Gradient Example -->
+      <div style="flex:1 1 200px; height:100px; background: radial-gradient(red, yellow);"><span class="dot d7"></span></div>
+
+      <!-- Conic Gradient Example -->
+      <div style="flex:1 1 200px; height:100px; background: conic-gradient(red, yellow, green);"><span class="dot d8"></span></div>
+    </div>
+
+    <h3>Explanation: with Linear, Conic, and Radial</h3>
+    <div class="explanation">
+      <!-- Linear Gradients -->
+      <span class="C1"><strong>Default direction:</strong> Top to bottom gradient from red to yellow.</span><br>
+      <span class="C2"><strong>Direction keyword:</strong> Uses <code>to right</code> to go left to right instead of top to bottom.</span><br>
+      <span class="C3"><strong>Angle:</strong> Uses <code>45deg</code> to create a diagonal gradient.</span><br>
+      <span class="C4"><strong>Multiple color stops:</strong> Adds red → orange → yellow. More than three colors can be added for complex transitions.</span><br>
+      <span class="C5"><strong>Transparency:</strong> Uses RGBA to allow see-through effect while maintaining color transition. The first RGBA defines start color, the second defines end color.</span><br>
+      <span class="C6"><strong>Repeating gradient:</strong> Repeats the red/yellow pattern every 20px at 45deg for a striped effect.</span><br>
+
+
+      <p>Variants for  <span class="C7">Radial gradient</span> and <span class="C8">Conic gradient</span> (different spacing, shape, size, repeating) follow the same rules as linear gradients. See linear gradient examples for multiple stops, transparency, and repeating patterns.</p>
+      <!-- Radial Gradient -->
+      <span class="C7"><strong>Radial gradient:</strong> Colors radiate from center outward.</span><br>
+
+      <!-- Conic Gradient -->
+      <span class="C8"><strong>Conic gradient:</strong> Colors rotate around a center point.</span>
+    </div>
+
+  </div>
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- chatGPT Questions by liam Disregard if I forgot to remove it. 
+
+-->
