@@ -140,6 +140,8 @@ Using ChatGPT as a learning aid has been incredibly helpful. Every time I create
 
 Attach the home button to my home website. What I have not created yet.
 
+In all notes. Example.html There's a comment at the bottom about last little things to fix. (Security features/And little things to fix in some unfinished templates)
+
 ---
 
 ## 8. Links/Acknowledgement
