@@ -148,7 +148,7 @@ Attach the home button to my home website. What I have not created yet.
 
 ***Link to the website:***
 
-[Liam Axelrod website](codeing-languages-notes-opal.vercel.app "codeing-languages-notes-opal.vercel.app")
+[Liam Axelrod website](https://codeing-languages-notes-opal.vercel.app/index.html "https://codeing-languages-notes-opal.vercel.app/index.html")
 
 ***Link to vercel:***
 
