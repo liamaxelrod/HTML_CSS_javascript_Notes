@@ -115,23 +115,6 @@
 🔒 Website Security Steps Reminder (Steps 3–7)
 ====================================================
 
-Step 3: Use integrity and crossorigin with CDN links
-----------------------------------------------------
-Example for Font Awesome:
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha384-jT6jDwN1X1QjFhJc0b8QGZ8C2Q9ka5Z5Pq1A5e5/3fJtW1XDyMG7Hbh6sRWyQ0NJ"
-      crossorigin="anonymous">
-
-Example for Bootstrap Icons:
-<link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-      integrity="sha384-..."
-      crossorigin="anonymous">
-
-- Protects against tampered or modified CDN files.
-- Optional: self-host critical libraries for full control.
-
 Step 4: Avoid inline JS
 -----------------------
 - Move onclick from nav templates into loadNav.js event listeners.
