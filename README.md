@@ -134,7 +134,11 @@ I already had a good understanding of Javascript and how it worked. After taking
 
 ChatGPT / Learning Workflow:
 
-Using ChatGPT as a learning aid has been incredibly helpful. Every time I create a template, I not only practice coding but also learn how to leverage AI to clarify concepts, generate examples, and catch mistakes. I also learned how to better inform  ChatGPT How I like my template structured. What can Help in other aspects when using ChatGPT. Revisiting the material multiple times while building the site has strengthened my retention and made it easier to recall concepts quickly. I also now have a better understanding of how Javascript, interact together, which is invaluable for future projects.
+Learning Through Project Work:
+Using ChatGPT as a learning aid has been incredibly helpful. Every time I create a template, I not only practice coding but also learn how to leverage AI to clarify concepts, generate examples, and catch mistakes. I’ve learned how to better inform ChatGPT about how I like my templates structured, which helps in other aspects of using AI. Revisiting the material multiple times while building the site has strengthened my retention and made it easier to recall concepts quickly. I also now have a better understanding of how HTML, CSS, and JavaScript interact, which is invaluable for future projects.
+
+Smart Workflow Tip:
+A new trick I learned is to use ChatGPT alongside GitHub as a source of truth for the project. By sharing the repo URL, ChatGPT can reference the file structure, file names, and contents directly. Whenever I push updates, the latest version becomes the master copy. This makes asking questions, reorganizing folders, or requesting improvements faster and keeps context consistent across conversations.
 
 Structural Lessons
 

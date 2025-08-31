@@ -1,4 +1,4 @@
-// File name: loadhead.js
+// File name: /JS/loadhead.js
 // Dynamically loads a head template into the <head> tag
 
 document.addEventListener('DOMContentLoaded', () => {
