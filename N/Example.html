@@ -107,9 +107,7 @@
 
 
 
-
 -->
-
 <!--
 This is a reminder to myself on how I can update and more securely protect my. Website. The steps below are Implementations I have not done yet. 
 ====================================================
@@ -153,5 +151,29 @@ Step 7: Monitor changes on GitHub
 - Some HTML and CSS templates are unfinished.
 - They mostly need correct internal links (href or src) to other templates, images, or JS files.
 - Security steps (3–7) don’t break templates, but fixing links is needed for content to load properly.
+-->
+<!-- -- This is the commit where I started considering security features --
+# Project State Note — Pre-Security Implementation
 
+**Commit reference:** `45a0bba`
+
+## Scope of Work Up to This Point
+- Project primarily focused on **HTML, CSS, and JavaScript**.
+- Key CSS files: 
+  - `globalStyle.css` — global styling rules.
+  - `template.css` — template-specific styles.
+- JavaScript files handle basic functionality but **may include inline JS** and do not yet enforce safe content loading.
+- Templates and links may not yet conform to internal security standards (CSP, whitelisted paths, centralized event listeners).
+
+## Security Features Not Yet Implemented
+- Step 3–7 of website security plan (reminder):
+  1. Avoid inline JS → Not yet applied; event listeners still in HTML.
+  2. Only fetch from trusted internal paths → Not enforced.
+  3. Content Security Policy (CSP) → Not added.
+  4. GitHub monitoring and trusted branch management → Manual, not structured.
+- Some internal links (`href` and `src`) may be broken or need updating once security changes are applied.
+
+## Purpose of This Note
+- Acts as a **baseline snapshot** of the project before security refactors.
+- Helps identify which templates and scripts need updating when implementing security features in the future.
 -->
