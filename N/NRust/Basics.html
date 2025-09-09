@@ -1,0 +1,108 @@
+<!-- File name: N/NRust/Rust.html -->
+
+<!-- File name: N/Rust_Fundamentals.html -->
+
+<template>
+  <div class="bubble">
+
+    <h3>Rust Fundamentals:</h3>
+
+    <!-- Code Block -->
+    <div class="code_block">
+      <!-- Printing -->
+      <code>// Printing Examples</code><br>
+      <span class="C1"><code>print!("Hello ");</code></span><br>
+      <span class="C2"><code>println!("World!");</code></span><br>
+      <span class="C3"><code>println!("Value: {} and {}", 10, 20);</code></span><br><br>
+
+      <!-- Comments -->
+      <code>// Single-line comment</code><br>
+      <span class="C4"><code>// This is a comment</code></span><br>
+      <span class="C5"><code>/* This is a block comment */</code></span><br><br>
+
+      <!-- Variables -->
+      <code>// Variables</code><br>
+      <span class="C6"><code>let x = 5;          // immutable integer</code></span><br>
+      <span class="C7"><code>let mut y = 10;      // mutable integer</code></span><br><br>
+
+      <!-- Data Types -->
+      <code>// Data Types</code><br>
+      <span class="C8"><code>let my_num: i32 = 5;</code></span><br>
+      <span class="C9"><code>let my_double: f64 = 5.99;</code></span><br>
+      <span class="C10"><code>let my_letter: char = 'D';</code></span><br>
+      <span class="C11"><code>let my_bool: bool = true;</code></span><br>
+      <span class="C12"><code>let my_text: &str = "Hello";</code></span><br><br>
+
+      <code>// Type-inferred Data Types</code><br>
+      <span class="C13"><code>let my_num = 5;</code></span><br>
+      <span class="C14"><code>let my_double = 5.99;</code></span><br>
+      <span class="C15"><code>let my_letter = 'D';</code></span><br>
+      <span class="C16"><code>let my_bool = true;</code></span><br>
+      <span class="C17"><code>let my_text = "Hello";</code></span><br><br>
+
+      <!-- Constants -->
+      <code>// Constants</code><br>
+      <span class="C18"><code>const MAX_SPEED: i32 = 120;</code></span><br>
+      <span class="C19"><code>const PI: f64 = 3.14159;</code></span><br>
+      <span class="C20"><code>const MINUTES_PER_HOUR: i32 = 60;</code></span>
+    </div>
+
+    <!-- Example Section -->
+    <h3>Example:</h3>
+    <div class="example">
+      <span class="dot d1"></span><span> &rarr; Prints: Hello World!</span><br>
+      <span class="dot d3"></span><span> &rarr; Prints: Value: 10 and 20</span><br>
+      <span class="dot d6"></span><span> &rarr; x = 5, y = 10</span><br>
+      <span class="dot d8"></span><span> &rarr; my_num = 5, my_double = 5.99, my_letter = 'D', my_bool = true, my_text = "Hello"</span><br>
+      <span class="dot d18"></span><span> &rarr; MAX_SPEED = 120, PI = 3.14159, MINUTES_PER_HOUR = 60</span>
+    </div>
+
+    <!-- Explanation Section -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1">print!()</span> – Prints text without newline.<br>
+      <span class="C2">println!()</span> – Prints text with newline.<br>
+      <span class="C3">{}</span> – Placeholder for variables or values in print macros.<br>
+      <span class="C4">//</span> – Single-line comment.<br>
+      <span class="C5">/* */</span> – Block comment for multiple lines.<br>
+      <span class="C6">let</span> – Declare immutable variable.<br>
+      <span class="C7">mut</span> – Make variable mutable.<br>
+      <span class="C8">let my_num: i32</span> – Explicit type declaration.<br>
+      <span class="C13">let my_num = 5</span> – Type inferred by Rust compiler.<br>
+      <span class="C18">const</span> – Declares a constant; must have explicit type.<br>
+
+      <strong>Notes:</strong><br>
+      <span>
+        1. Variables are immutable by default; `mut` is required for reassignment. <br>
+        2. Rust enforces type safety; constants must have explicit types. <br>
+        3. `print!()` vs `println!()` – newline behavior differs. <br>
+        4. `{}` placeholders in macros allow printing multiple values in order. <br>
+        5. Comments (// or /**/) are ignored by compiler; use for clarity and documentation.
+      </span>
+    </div>
+
+  </div>
+</template>
+<!-- 
+
+
+
+  
+-->
+
+
+<!-- 
+next Template
+
+Syntax: what is the Syntax for Below
+what is fn main()
+what is println!()
+what is macro?
+Rust compiler ignores white spaces.
+
+
+
+
+
+-->
+

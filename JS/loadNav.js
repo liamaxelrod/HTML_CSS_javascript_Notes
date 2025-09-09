@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const allowedNavTypes = {
     "javascript": "/Nav/Nav_JS.html",
     "css-html": "/Nav/Nav_CSS_HTML.html",
-    "index": "/Nav/Nav_Index.html"
+    "index": "/Nav/Nav_Index.html",
+    "Rust": "/Nav/Nav_Rust.html"
   };
 
   navSlots.forEach(slot => {

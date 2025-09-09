@@ -3,7 +3,7 @@
 const notesFolder = '/N';
 
 // 🔒 SECURITY: Whitelist allowed folders with updated names
-const allowedFolders = ['NHTML', 'NCSS', 'NJS'];
+const allowedFolders = ['NHTML', 'NCSS', 'NJS', 'NRust'];
 
 // 🔒 SECURITY: Whitelist allowed note IDs for each folder (updated)
 const allowedNotes = {
@@ -30,6 +30,9 @@ const allowedNotes = {
     'Math',
     'Errors',
     'Browser'
+  ],
+  'NRust': [
+    'Basics'
   ]
 };
 
