@@ -1,108 +1,455 @@
 <!-- File name: N/NRust/Rust.html -->
 
-<!-- File name: N/Rust_Fundamentals.html -->
-
-<template>
+<template> <!-- RUST: loops, while, for. -->
   <div class="bubble">
 
-    <h3>Rust Fundamentals:</h3>
-
     <!-- Code Block -->
+    <h3>Rust Loops: <code>loop</code>, <code>while</code>, and <code>for</code></h3>
     <div class="code_block">
-      <!-- Printing -->
-      <code>// Printing Examples</code><br>
-      <span class="C1"><code>print!("Hello ");</code></span><br>
-      <span class="C2"><code>println!("World!");</code></span><br>
-      <span class="C3"><code>println!("Value: {} and {}", 10, 20);</code></span><br><br>
 
-      <!-- Comments -->
-      <code>// Single-line comment</code><br>
-      <span class="C4"><code>// This is a comment</code></span><br>
-      <span class="C5"><code>/* This is a block comment */</code></span><br><br>
+      <!-- Section 1: Infinite loop -->
+      <code>// Infinite loop (⚠️ press Ctrl + C to stop)</code><br>
+      <span class="C1"><code>loop {</code><br>
+      <code>&nbsp;&nbsp;println!("This runs forever!");</code><br>
+      <code>}</code></span><br><br>
 
-      <!-- Variables -->
-      <code>// Variables</code><br>
-      <span class="C6"><code>let x = 5;          // immutable integer</code></span><br>
-      <span class="C7"><code>let mut y = 10;      // mutable integer</code></span><br><br>
+      <!-- Section 2: loop with break -->
+      <code>// loop with break returning a value</code><br>
+      <span class="C2"><code>let mut counter = 0;</code><br>
+      <code>let result = loop {</code><br>
+      <code>&nbsp;&nbsp;counter += 1;</code><br>
+      <code>&nbsp;&nbsp;if counter == 3 {</code><br>
+      <span class="C6"><code>&nbsp;&nbsp;&nbsp;&nbsp;break counter * 2; // returns 6</code></span><br>
+      <code>&nbsp;&nbsp;}</code><br>
+      <code>};</code><br>
+      <code>println!("Result: {}", result);</code></span><br><br>
 
-      <!-- Data Types -->
-      <code>// Data Types</code><br>
-      <span class="C8"><code>let my_num: i32 = 5;</code></span><br>
-      <span class="C9"><code>let my_double: f64 = 5.99;</code></span><br>
-      <span class="C10"><code>let my_letter: char = 'D';</code></span><br>
-      <span class="C11"><code>let my_bool: bool = true;</code></span><br>
-      <span class="C12"><code>let my_text: &str = "Hello";</code></span><br><br>
+      <!-- Section 3: while loop -->
+      <code>// while loop countdown</code><br>
+      <span class="C3"><code>let mut number = 3;</code><br>
+      <code>while number != 0 {</code><br>
+      <code>&nbsp;&nbsp;if number == 2 {</code><br>
+      <span class="C7"><code>&nbsp;&nbsp;&nbsp;&nbsp;number -= 1; continue; // skips printing 2</code></span><br>
+      <code>&nbsp;&nbsp;}</code><br>
+      <code>&nbsp;&nbsp;println!("{}", number);</code><br>
+      <code>&nbsp;&nbsp;number -= 1;</code><br>
+      <code>}</code><br>
+      <code>println!("LIFTOFF!");</code></span><br><br>
 
-      <code>// Type-inferred Data Types</code><br>
-      <span class="C13"><code>let my_num = 5;</code></span><br>
-      <span class="C14"><code>let my_double = 5.99;</code></span><br>
-      <span class="C15"><code>let my_letter = 'D';</code></span><br>
-      <span class="C16"><code>let my_bool = true;</code></span><br>
-      <span class="C17"><code>let my_text = "Hello";</code></span><br><br>
+      <!-- Section 4: for loop -->
+      <code>// for loop over collection</code><br>
+      <span class="C4"><code>let arr = [10, 20, 30];</code><br>
+      <code>for val in arr.iter() {</code><br>
+      <code>&nbsp;&nbsp;if *val == 20 {</code><br>
+      <span class="C6"><code>&nbsp;&nbsp;&nbsp;&nbsp;break; // exit loop early</code></span><br>
+      <code>&nbsp;&nbsp;}</code><br>
+      <code>&nbsp;&nbsp;println!("Value: {}", val);</code><br>
+      <code>}</code></span><br><br>
 
-      <!-- Constants -->
-      <code>// Constants</code><br>
-      <span class="C18"><code>const MAX_SPEED: i32 = 120;</code></span><br>
-      <span class="C19"><code>const PI: f64 = 3.14159;</code></span><br>
-      <span class="C20"><code>const MINUTES_PER_HOUR: i32 = 60;</code></span>
     </div>
 
     <!-- Example Section -->
-    <h3>Example:</h3>
+    <h3>Example (Outputs):</h3>
     <div class="example">
-      <span class="dot d1"></span><span> &rarr; Prints: Hello World!</span><br>
-      <span class="dot d3"></span><span> &rarr; Prints: Value: 10 and 20</span><br>
-      <span class="dot d6"></span><span> &rarr; x = 5, y = 10</span><br>
-      <span class="dot d8"></span><span> &rarr; my_num = 5, my_double = 5.99, my_letter = 'D', my_bool = true, my_text = "Hello"</span><br>
-      <span class="dot d18"></span><span> &rarr; MAX_SPEED = 120, PI = 3.14159, MINUTES_PER_HOUR = 60</span>
+      <!-- loop (infinite) → no output shown -->
+      <span class="dot d2"></span><span> &rarr; Prints: Result: 6</span><br>
+      <span class="dot d3"></span><span> &rarr; Prints: 3</span><br>
+      <span class="dot d7"></span><span> &rarr; Skips printing 2 (continue)</span><br>
+      <span class="dot d3"></span><span> &rarr; Prints: 1</span><br>
+      <span class="dot d3"></span><span> &rarr; Prints: LIFTOFF!</span><br>
+      <span class="dot d4"></span><span> &rarr; Prints: Value: 10</span><br>
+      <span class="dot d6"></span><span> &rarr; Break stops before printing 20 or 30</span>
     </div>
 
     <!-- Explanation Section -->
     <h3>Explanation:</h3>
     <div class="explanation">
-      <span class="C1">print!()</span> – Prints text without newline.<br>
-      <span class="C2">println!()</span> – Prints text with newline.<br>
-      <span class="C3">{}</span> – Placeholder for variables or values in print macros.<br>
-      <span class="C4">//</span> – Single-line comment.<br>
-      <span class="C5">/* */</span> – Block comment for multiple lines.<br>
-      <span class="C6">let</span> – Declare immutable variable.<br>
-      <span class="C7">mut</span> – Make variable mutable.<br>
-      <span class="C8">let my_num: i32</span> – Explicit type declaration.<br>
-      <span class="C13">let my_num = 5</span> – Type inferred by Rust compiler.<br>
-      <span class="C18">const</span> – Declares a constant; must have explicit type.<br>
+      <span class="C1"><code>loop</code></span><span> – Creates an infinite loop unless ended with <span class="C6">break</span>.</span><br>
+      <span class="C2"><code>loop ... break value</code></span><span> – A loop can return a value when you <span class="C6">break</span> with an expression. Example: 6.</span><br>
+      <span class="C3"><code>while</code></span><span> – Runs while the condition is true. Example: countdown skips printing 2 due to <span class="C7">continue</span>.</span><br>
+      <span class="C4"><code>for</code></span><span> – Iterates over a collection. Example: breaks early when hitting 20 using <span class="C6">break</span>.</span><br>
+      <span class="C6"><code>break</code></span><span> – Exits the loop immediately. Works in <code>loop</code>, <code>while</code>, and <code>for</code>.</span><br>
+      <span class="C7"><code>continue</code></span><span> – Skips the rest of the current iteration and moves to the next. Works in all loop types.</span><br><br>
 
       <strong>Notes:</strong><br>
       <span>
-        1. Variables are immutable by default; `mut` is required for reassignment. <br>
-        2. Rust enforces type safety; constants must have explicit types. <br>
-        3. `print!()` vs `println!()` – newline behavior differs. <br>
-        4. `{}` placeholders in macros allow printing multiple values in order. <br>
-        5. Comments (// or /**/) are ignored by compiler; use for clarity and documentation.
-      </span>
+        1. Infinite loops are rarely needed; always pair with <span class="C6">break</span> for control.<br>
+        2. Returning values from loops (<span class="C6">break expr</span>) is unique to Rust.<br>
+        3. <span class="C7">continue</span> is useful for filtering values inside loops.<br>
+        4. Prefer <code>for</code> for collections, <code>while</code> for conditions, <code>loop</code> for manual control.<br>
+        5. <code>arr.iter()</code> creates an iterator of references — you’re borrowing each element instead of copying it. This is efficient and avoids unnecessary allocations.<br>
+          - <code>iter()</code> → &T (immutable borrow)<br>
+          - <code>iter_mut()</code> → &mut T (mutable borrow)<br>
+          - <code>into_iter()</code> → T (moves ownership)<br>
+          Rust gives explicit control over access and ownership.<br><br>
+
+        <strong>Concept & Spirit of Rust:</strong><br>
+        <span>
+          - Rust loops help you <strong>repeat actions safely</strong> and <strong>control exactly how your program runs</strong>.<br>
+          - <code>loop</code> runs forever unless you use <span class="C6">break</span>. <code>while</code> runs as long as a condition is true. <code>for</code> iterates over collections. This gives you <strong>flexibility with safety</strong>.<br>
+          - Using <span class="C6">break</span> or <span class="C7">continue</span> makes your intentions explicit: you control <strong>when a loop stops</strong> or <strong>skips a step</strong>.<br>
+          - Iterators like <code>arr.iter()</code> <strong>borrow elements</strong> instead of copying them, so your code is <strong>efficient and safe</strong>. You don’t accidentally change or duplicate data.<br>
+          - Rust encourages you to <strong>think about ownership and borrowing</strong> from the start. Loops and iterators are just one example of how Rust keeps memory and data access predictable.<br>
+          - Overall: Rust makes you write code that is <strong>deliberate, clear, and safe</strong>, while still being expressive and powerful. Loops are tools that let you do repetitive tasks <strong>without accidentally creating bugs or memory issues</strong>.<br>
+        </span>
     </div>
 
   </div>
 </template>
-<!-- 
 
+<template> <!-- Rust: If ... else ... / Switch -> in Rust use -> Match -->
+  <div class="bubble">
 
+    <!-- Code Block -->
+    <h3>Rust Code: If / Else / Match</h3>
+    <div class="code_block">
+      <!-- If..Else Section -->
+      <code>// If..Else Example</code><br>
+      <span class="C1"><code>let number = 7;</code></span><br>
+      <span class="C2"><code>let result = <br>
+        if number % 2 == 0 <br>
+        &nbsp;&nbsp;{ "Even" } <br> 
+        else <br> 
+        &nbsp;&nbsp;{ "Odd" };</code></span><br>
+      <span class="C3"><code>println!("Number is {}", result);</code></span><br><br>
 
-  
--->
+      <!-- Match Section -->
+      <code>// Match Example</code><br>
+      <span class="C4"><code>let day = 3;</code></span><br>
+      <span class="C5"><code>let day_name = match day {</code></span><br>
+      <span class="C6"><code>
+        &nbsp;&nbsp;1 => "Monday",</code></span><br>
+      <span class="C6"><code>
+        &nbsp;&nbsp;2 => "Tuesday",</code></span><br>
+      <span class="C6"><code>
+        &nbsp;&nbsp;3 => "Wednesday",</code></span><br>
+      <span class="C6"><code>
+        &nbsp;&nbsp;_ => "Other",</code></span><br>
+      <span class="C5"><code>};</code></span><br>
+      <span class="C7"><code>println!("Day is {}", day_name);</code></span><br>
+    </div>
 
+    <!-- Example Section -->
+    <h3>Example:</h3>
+    <div class="example">
+      <span class="dot d2"></span><span> &rarr; Number is Odd</span><br>
+      <span class="dot d7"></span><span> &rarr; Day is Wednesday</span><br>
+    </div>
+
+    <!-- Explanation Section -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1">let number</span><span> – Declares a variable storing a number.</span><br>
+      <span class="C2">if .. else</span><span> – Conditional expression; both branches must return the same type. Here, both return &quot;Even&quot; or &quot;Odd&quot; (strings).</span><br>
+      <span class="C3">println!</span><span> – Prints the value of <code>result</code> to the console.</span><br>
+      <span class="C4">let day</span><span> – Declares the variable to match against.</span><br>
+      <span class="C5">match</span><span> – Pattern matching; similar to a “switch” in other languages but safer and more powerful. Must return same type for all branches.</span><br>
+      <span class="C6">branch values</span><span> – Each pattern (1,2,3) maps to a string. The underscore <code>_</code> acts as the default case (like “default” in switch).</span><br>
+      <span class="C7">println!</span><span> – Prints <code>day_name</code> to console.</span><br><br>
+
+      <strong>Notes:</strong><br>
+      <span>
+      <strong class="C2">1. Expression vs Statement:</strong><br>  
+        - An <code>expression</code> produces a value (can be assigned to a variable).  <br> 
+          Example: <code>let x = 5 + 3;</code> → <code>5 + 3</code> is an expression returning 8.  <br> 
+        - A <code>statement</code> performs an action but doesn’t return a value.  <br> 
+          Example: <code>let y = 10;</code> is a statement (declares variable, no value returned directly).  <br> 
+        - In Rust, <code>if..else</code> is an expression; it returns a value that can be assigned.  <br><br>  
+
+      <strong class="C5">2. Why use match instead of a switch:</strong>  <br> 
+        - Rust does not have a traditional “switch” like C/JS.  <br> 
+        - <code>match</code> is safer: it forces **exhaustive checking** (all possible cases must be handled).  <br> 
+        - Returns a value (like an expression), unlike most switch statements that don’t return values.  <br> 
+        - Can match complex patterns (enums, tuples, ranges), which a switch cannot.  <br><br>  
+
+      <strong class="C5">3.  Default case (_)</strong>:  <br> 
+        - The underscore <code>_</code> acts as a “catch-all” for any unmatched values.  <br> 
+        - Pick it when you want to handle all remaining possibilities not explicitly listed.  <br> 
+        - Ensures the match expression is exhaustive; Rust will give a compile error if some value is not covered.  <br><br>  
+
+      <strong class="C2">4. Type requirement:</strong>  <br> 
+        - Every branch of <code>if..else</code> or <code>match</code> must return the same type.  <br> 
+        - Example: you cannot have one branch return a string and another return a number.  <br><br> 
+
+      <strong>5. Practical tip:</strong>  <br> 
+        - Use <code>if..else</code> for simple two-way decisions.  <br> 
+        - Use <code>match</code> for multiple options, exhaustive checks, or pattern matching scenarios.  <br> 
+      </span><br> 
+
+      <strong>Concept & Spirit of Rust:</strong><br>
+      <span>
+      - Rust emphasizes **expressions over statements**, meaning many constructs (like <code>if..else</code> and <code>match</code>) produce values that can be used immediately.<br>
+      - Pattern matching with <code>match</code> reflects Rust’s philosophy of **safety and exhaustiveness**: you must consider all possible cases, reducing runtime errors.<br>
+      - Rust encourages thinking in terms of **ownership, borrowing, and predictable behavior**. Conditionals don’t just control flow—they interact with values and ownership explicitly.<br>
+      - The language design nudges you to **write clear, explicit, and memory-safe code**. Each branch returning a consistent type, and exhaustive pattern matching, are examples of this principle.<br>
+      - Conceptually, Rust is about **being deliberate**: you explicitly decide how data is handled, how values flow, and how each construct affects program state. This mindset underpins loops, conditionals, and iterators alike.
+    </span>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- Rust: Operations -->
+  <div class="bubble">
+
+    <!-- Code Block -->
+    <h3>Rust Code: Operators</h3>
+    <div class="code_block">
+
+      <!-- Arithmetic Operators -->
+      <code>// Arithmetic Operators</code>
+      <span class="C1"><br>
+        <code>let sum = 5 + 3;</code><br>
+        <code>let difference = 5 - 3;</code><br>
+        <code>let product = 5 * 3;</code><br>
+        <code>let quotient = 10 / 2;</code><br>
+        <code>let remainder = 10 % 3;</code><br>
+      </span><br>
+
+      <!-- Assignment Operators -->
+      <code>// Assignment Operators</code>
+      <span class="C2"><br>
+        <code>let mut x = 5;</code><br>
+        <code>x += 3;</code><br>
+        <code>x -= 2;</code><br>
+        <code>x *= 4;</code><br>
+        <code>x /= 2;</code><br>
+        <code>x %= 2;</code><br>
+      </span><br>
+
+      <!-- Comparison Operators -->
+      <code>// Comparison Operators</code>
+      <span class="C3"><br>
+        <code>5 == 5</code><br>
+        <code>5 != 3</code><br>
+        <code>7 > 3</code><br>
+        <code>2 < 5</code><br>
+        <code>5 >= 5</code><br>
+        <code>3 <= 4</code><br>
+      </span><br>
+
+      <!-- Logical Operators -->
+       <code>// Logical Operators</code>
+      <span class="C4"><br>
+        <code>true && false</code><br>
+        <code>true || false</code><br>
+        <code>!true</code><br>
+      </span>
+
+    </div>
+
+    <!-- Example Section -->
+    <h3>Example:</h3>
+    <div class="example">
+      <!-- Arithmetic -->
+      <span class="dot d1"></span><span> &rarr; 8</span><br>
+      <span class="dot d1"></span><span> &rarr; 2</span><br>
+      <span class="dot d1"></span><span> &rarr; 15</span><br>
+      <span class="dot d1"></span><span> &rarr; 5</span><br>
+      <span class="dot d1"></span><span> &rarr; 1</span><br>
+
+      <!-- Assignment -->
+      <span class="dot d2"></span><span> &rarr; x = 8 after x += 3</span><br>
+      <span class="dot d2"></span><span> &rarr; x = 6 after x -= 2</span><br>
+      <span class="dot d2"></span><span> &rarr; x = 24 after x *= 4</span><br>
+      <span class="dot d2"></span><span> &rarr; x = 12 after x /= 2</span><br>
+      <span class="dot d2"></span><span> &rarr; x = 0 after x %= 2</span><br>
+
+      <!-- Comparison -->
+      <span class="dot d3"></span><span> &rarr; true</span><br>
+      <span class="dot d3"></span><span> &rarr; true</span><br>
+      <span class="dot d3"></span><span> &rarr; true</span><br>
+      <span class="dot d3"></span><span> &rarr; true</span><br>
+      <span class="dot d3"></span><span> &rarr; true</span><br>
+      <span class="dot d3"></span><span> &rarr; true</span><br>
+
+      <!-- Logical -->
+      <span class="dot d4"></span><span> &rarr; false</span><br>
+      <span class="dot d4"></span><span> &rarr; true</span><br>
+      <span class="dot d4"></span><span> &rarr; false</span><br>
+    </div>
+
+      <!-- Explanation Section -->
+      <h3>Explanation:</h3>
+      <div class="explanation">
+
+        <span class="C1">+</span> adds two numbers. 5 + 3 → 8.<br>
+        <span class="C1">-</span> subtracts one number from another. 5 - 3 → 2.<br>
+        <span class="C1">*</span> multiplies numbers. 5 * 3 → 15.<br>
+        <span class="C1">/</span> divides numbers. 10 / 2 → 5.<br>
+        <span class="C1">%</span> gives the remainder of a division. 10 % 3 → 1.<br><br>
+
+        <span class="C2">=</span> assigns a value to a variable.<br>
+        <span class="C2">+=</span> adds to the current value. x += 3 adds 3 to x.<br>
+        <span class="C2">-=</span> subtracts from the current value.<br>
+        <span class="C2">*=</span> multiplies the current value.<br>
+        <span class="C2">/=</span> divides the current value.<br>
+        <span class="C2">%=</span> replaces the value with the remainder of division.<br>
+        Variables must be mutable (mut) to use these operators.<br><br>
+
+        <span class="C3">==</span> checks if two values are equal. 5 == 5 → true.<br>
+        <span class="C3">!=</span> checks if two values are not equal. 5 != 3 → true.<br>
+        <span class="C3">&gt;</span> checks if the left value is greater than the right. 7 > 3 → true.<br>
+        <span class="C3">&lt;</span> checks if the left value is less than the right. 2 < 5 → true.<br>
+        <span class="C3">&gt;=</span> checks if the left value is greater than or equal to the right. 5 >= 5 → true.<br>
+        <span class="C3">&lt;=</span> checks if the left value is less than or equal to the right. 3 <= 4 → true.<br><br>
+
+        <span class="C4">&&</span> (AND) is true only if both values are true. true && false → false.<br>
+        <span class="C4">||</span> (OR) is true if at least one value is true. true || false → true.<br>
+        <span class="C4">!</span> (NOT) inverts a boolean value. !true → false.<br><br>
+
+        <strong>Notes:</strong><br>
+        Arithmetic operators work on numeric types (i32, f32, etc.).<br>
+        Assignment operators require mutable variables.<br>
+        Comparison and logical operators return boolean values.<br>
+        Rust does not allow mixing numeric types without explicit casting.<br><br>
+
+        <strong>Concept & Spirit of Rust:</strong><br>
+        <span>
+        - Rust makes you **think about your code carefully**. You must decide when a value can change (mutable) and when it cannot.<br>
+        - All operations (math, assignment, comparison, logic) are **safe by default**. Rust won’t do hidden conversions or guesses like some other languages.<br>
+        - Using <code>mut</code> shows clearly when a variable is allowed to change. This makes your program easier to understand and less likely to have mistakes.<br>
+        - Boolean operations (true/false checks) are clear and predictable — no surprises.<br>
+        - The overall idea is to write code that is **explicit, clear, and safe**, so you always know what the program is doing with your data.
+      </span>
+
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- Rust: Basics -->
+  <div class="bubble">
+
+    <h3>Rust Code: Fundamentals:</h3>
+
+    <!-- Code Block -->
+    <div class="code_block">
+      <!-- Comments -->
+      <code>// Single-line comment</code><br>
+      <span class="C1"><code>// This is a comment</code><br>
+      <code>/* This is a block comment */</code></span><br><br>
+
+      <!-- Variables -->
+      <code>// Variables</code><br>
+      <span class="C2"><code>let x = 5;          // immutable integer</code><br>
+      <code>let mut y = 10;      // mutable integer</code></span><br><br>
+
+      <!-- Data Types -->
+      <code>// Data Types</code><br>
+      <span class="C3"><code>let my_num: i32 = 5;</code><br>
+      <code>let my_double: f64 = 5.99;</code><br>
+      <code>let my_letter: char = 'D';</code><br>
+      <code>let my_bool: bool = true;</code><br>
+      <code>let my_text: &str = "Hello";</code></span><br><br>
+
+      <code>// Type-inferred Data Types</code><br>
+      <span class="C4"><code>let my_num = 5;</code><br>
+      <code>let my_double = 5.99;</code><br>
+      <code>let my_letter = 'D';</code><br>
+      <code>let my_bool = true;</code><br>
+      <code>let my_text = "Hello";</code></span><br><br>
+
+      <!-- Printing -->
+      <code>// Printing Examples</code><br>
+      <span class="C5"><code>print!("Hello ");</code><br>
+      <code>println!("World!");</code></span><br>
+      <span class="C6"><code>let name = "Liam";</code><br>
+      <code>println!("Hello, {}", name);</code></span><br>
+      <span class="C6"><code>let age = 21;</code><br>
+      <code>println!("{} is {} years old", name, age);</code></span><br>
+      <span class="C6"><code>println!("First {0}, Second {1}, Again {0}", 10, 20);</code></span><br>
+      <span class="C6"><code>println!("Hi {name}", name="Bob");</code></span><br><br>
+
+      <!-- Constants -->
+      <code>// Constants</code><br>
+      <span class="C7"><code>const MAX_SPEED: i32 = 120;</code><br>
+      <code>const PI: f64 = 3.14159;</code><br>
+      <code>const MINUTES_PER_HOUR: i32 = 60;</code></span>
+    </div>
+
+    <!-- Example Section -->
+    <h3>Example:</h3>
+    <div class="example">
+      <span class="dot d5"></span><span> &rarr; Prints: Hello World!</span><br>
+      <span class="dot d6"></span><span> &rarr; Prints: Hello, Liam</span><br>
+      <span class="dot d6"></span><span> &rarr; Prints: Liam is 21 years old</span><br>
+      <span class="dot d6"></span><span> &rarr; Prints: First 10, Second 20, Again 10</span><br>
+      <span class="dot d6"></span><span> &rarr; Prints: Hi Bob</span>
+    </div>
+
+    <!-- Explanation Section -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1">//, /* */</span><span> – Comments are ignored by the compiler. </span><br>
+      <span>Example: You can write </span><code>// explain what x does</code><span> and it won’t affect the program.</span><br><br>
+
+      <span class="C2">let / mut</span><span> – <code>let</code> creates a variable. By default it’s immutable (cannot change). </span><br>
+      <span>Example: <code>let x = 5;</code> → trying <code>x = 6;</code> gives an error. </span><br>
+      <span>Use <code>let mut y = 10;</code> if you want to change it later (<code>y = 20;</code> works).</span><br><br>
+
+      <span class="C3">Explicit types</span><span> – You can declare the type directly. </span><br>
+      <code>let my_num: i32 = 5;</code><span>, <code>let my_double: f64 = 5.99;</code>. </span><br>
+      <span>This makes your code clearer and avoids mistakes (like wrong type assumptions).</span><br><br>
+
+      <span class="C4">Type inference</span><span> – If you skip the type, Rust figures it out. </span><br>
+      <code>let my_num = 5;</code><span> → compiler knows it’s an <code>i32</code>. </span><br>
+      <code>let my_double = 5.99;</code><span> → compiler knows it’s an <code>f64</code>.</span><br>
+      <span>You write the type explicitly if you want clarity, or when Rust can’t guess correctly.</span><br><br>
+
+      <span class="C5">print!/println!()</span><span> – <code>print!</code> does not add a new line, <code>println!</code> does. </span><br><br>
+
+      <span class="C6">Placeholders {}</span><span> – Pull values into your string. </span><br>
+      <span>Example: </span><code>println!("Hello, {}", name);</code><span> → if <code>name = "Liam"</code>, prints <code>Hello, Liam</code>.</span><br>
+      <span>You can use multiple placeholders: </span><code>println!("{} is {}", name, age);</code><br>
+      <span>You can reuse positions: </span><code>{0}, {1}</code><br>
+      <span>You can also name them: </span><code>println!("Hi {name}", name="Bob");</code><br><br>
+
+      <span class="C7">const</span><span> – Constants never change and must always have a type. </span><br>
+      <span>Example: </span><code>const PI: f64 = 3.14159;</code><span> → always the same, anywhere in your code.</span><br><br>
+
+      <strong>Notes:</strong><br>
+      <span>1. Variables declared with <code>let</code> are immutable unless <code>mut</code> is used.</span><br>
+      <span>2. Constants (<code>const</code>) are always immutable and must have a type.</span><br>
+      <span>3. Comparison between constants and variables:</span><br><br>
+
+      <table border="1" cellpadding="4" cellspacing="0">
+        <tr>
+          <th>Feature</th>
+          <th>Constant (<code>const</code>)</th>
+          <th>Variable (<code>let</code>)</th>
+        </tr>
+        <tr>
+          <td>Can change?</td>
+          <td>No</td>
+          <td>Yes, if <code>mut</code> is used</td>
+        </tr>
+        <tr>
+          <td>Type required?</td>
+          <td>Yes (must be written)</td>
+          <td>No (can be inferred)</td>
+        </tr>
+      </table><br>
+
+      <span>4. Use constants for fixed values like <code>PI</code> or <code>MINUTES_PER_HOUR</code>.</span><br>
+      <span>5. Use <code>let</code> / <code>mut</code> for values that may change during program execution.</span><br><br>
+
+      <strong>Concept & Spirit of Rust:</strong><br>
+      <span>
+      - Rust wants you to **be clear about what can change and what cannot**. Variables are immutable by default, and constants never change — this prevents mistakes.<br>
+      - Types are explicit or inferred, but Rust makes you aware of what each value is. This helps avoid unexpected errors.<br>
+      - Printing with placeholders shows that Rust separates **data** from **how it’s displayed**, making output safe and predictable.<br>
+      - Overall, Rust encourages **writing safe, predictable, and clear code**. Every decision — whether a value can change, how it’s stored, and how it’s printed — is intentional. This is the “spirit” behind Rust.
+    </span>
+    </div>
+
+  </div>
+</template>
 
 <!-- 
 next Template
 
-Syntax: what is the Syntax for Below
-what is fn main()
-what is println!()
-what is macro?
-Rust compiler ignores white spaces.
-
-
 
 
 
 -->
-

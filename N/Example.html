@@ -11,64 +11,76 @@
          - Always include fully working code examples.
          - Highlight important keywords using <span class="C#">.
          - Use comments above code lines to indicate sections or purpose.
-         
+         - Each section should group related concepts (e.g., variables, printing).
+         - Code lines go inside <span class="C#"><code> ... </code></span>.
+
       2. Example:
          - Show actual outputs for each scenario in the code.
-         - Use colored dots to match keyword references.
+         - Use colored dots (.dot d#) to match keyword references in Code/Explanation.
          - Format:
-           <div class="example">
-             <span class="dot d#"></span><span> &rarr; output</span>
-           </div>
-         - If multiple color-coded keywords contribute to a single example output, show the output **once** with multiple colored dots.
+           <span class="dot d#"></span><span> &rarr; output</span>
+         - If multiple dots contribute to one output, list them together before the arrow.
 
       3. Explanation:
-         - Describe what each part of the code does.
-         - Use <span class="C#"> to reference highlighted keywords.
-         - Directly relate the explanation to the Example output.
+         - Break down each highlighted <span class="C#"> section.
+         - Keep the tone **clear, easy-to-understand, and practical**.
+         - Link back to Example outputs when relevant.
+         - If explaining a “placeholder” or special feature, show simple extra examples.
 
       4. Notes:
-         - Include best practices, warnings, or extra guidance.
-         - Explain tricky behaviors (e.g., var hoisting, block vs function scope).
-      
+         - Provide best practices, warnings, or extra tips.
+         - Add comparison tables when useful (e.g., const vs let).
+         - Keep notes at the end of Explanation.
+
       ⚡ Golden Rule:
       Always maintain this order:
       Code → Example → Explanation → Notes
+      PS It's bad practice to have text inside <div></div> It should be always inside of some form of container like <span></span>
     -->
 
     <!-- Code Block -->
     <h3><!-- Short Title Here --></h3>
     <div class="code_block">
-      <!-- Section comment example -->
+      <!-- Section -->
       <code>// Section Name</code><br>
-      <span class="C1"><code><!-- Highlighted Code Line 1 --></code></span><br>
-      <span class="C2"><code><!-- Highlighted Code Line 2 --></code></span><br><br>
+      <span class="C1"><code><!-- Code Example 1 --></code></span><br>
+      <span class="C2"><code><!-- Code Example 2 --></code></span><br><br>
 
-      <!-- Another section -->
+      <!-- Another Section -->
       <code>// Another Section</code><br>
-      <span class="C3"><code><!-- Highlighted Code Line --></code></span><br>
-      <span class="C4"><code><!-- Highlighted Code Line --></code></span>
+      <span class="C3"><code><!-- Code Example 3 --></code></span><br>
+      <span class="C4"><code><!-- Code Example 4 --></code></span><br><br>
+
+      <!-- Printing Example Section -->
+      <code>// Printing Examples</code><br>
+      <span class="C5"><code>print!("Hello ");</code></span><br>
+      <span class="C6"><code>let name = "Liam";</code><br>
+      <code>println!("Hello, {}", name);</code></span><br>
+      <span class="C6"><code>let age = 21;</code><br>
+      <code>println!("{} is {} years old", name, age);</code></span><br>
     </div>
 
     <!-- Example Section -->
     <h3>Example:</h3>
     <div class="example">
-      <span class="dot d1"></span><span> &rarr; <!-- Example Output 1 --></span><br>
-      <span class="dot d2"></span><span> &rarr; <!-- Example Output 2 --></span><br>
-      <span class="dot d4"></span><span> &rarr; <!-- Example Output 3 --></span>
+      <span class="dot d5"></span><span> &rarr; Prints: Hello </span><br>
+      <span class="dot d6"></span><span> &rarr; Prints: Hello, Liam</span><br>
+      <span class="dot d6"></span><span> &rarr; Prints: Liam is 21 years old</span>
     </div>
 
     <!-- Explanation Section -->
     <h3>Explanation:</h3>
     <div class="explanation">
-      <span class="C1"><!-- Keyword 1 --></span> – <!-- Explain how it works and link to example output --><br>
-      <span class="C2"><!-- Keyword 2 --></span> – <!-- Explain how it works and link to example output --><br>
-      <span class="C4"><!-- Keyword 3 --></span> – <!-- Explain how it works and link to example output --><br>
-      
+      <span class="C1"><!-- Keyword/Feature 1 --></span><span> – <!-- Clear explanation + example link --></span><br>
+      <span class="C2"><!-- Keyword/Feature 2 --></span><span> – <!-- Clear explanation + example link --></span><br>
+      <span class="C5">print!/println!()</span><span> – <code>print!</code> keeps text on the same line, <code>println!</code> adds a new line. </span><br>
+      <span class="C6">Placeholders {}</span><span> – Pulls variable values into strings. Example: <code>println!("Hello, {}", name);</code> → Hello, Liam</span><br><br>
+
       <strong>Notes:</strong><br>
       <span>
-        1. <!-- Note about language quirk or best practice 1 --> <br>
-        2. <!-- Note about language quirk or best practice 2 --> <br>
-        3. <!-- Additional guidance or warnings -->
+        1. Variables declared with <code>let</code> are immutable unless <code>mut</code> is added.<br>
+        2. Constants (<code>const</code>) are always immutable and must specify a type.<br>
+        3. Use constants for fixed values; use <code>let</code> / <code>mut</code> when values can change.<br>
       </span>
     </div>
 

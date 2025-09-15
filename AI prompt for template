@@ -1,0 +1,93 @@
+Master Prompt for Template Generation (Rust/Programming Notes Website)
+<!-- Rust: Template Master Prompt -->
+
+Generate a programming notes template that is secure, consistent, and beginner-friendly. Follow all the structural, stylistic, and security rules below:
+
+Template Comment / Metadata
+
+Begin with a comment describing the overall topic/purpose of the template, e.g., <!-- Rust: Loops --> or <!-- Rust: Variables -->.
+
+Core Structure (Always this order)
+
+Template Title → Code → Example → Explanation → Notes → Concept & Spirit
+
+Code Block
+
+Wrap each line of code in <span class="C#"><code>…</code></span>.
+
+Multiple sections allowed, each starting with // Section Name.
+
+Use <div> only for layout; do not place plain text inside <div>—wrap text in <span> or <code>.
+
+No inline JavaScript. All event listeners or scripts must be external.
+
+Example Section
+
+Use <span class="dot d#"></span> to reference corresponding code highlights.
+
+Show actual outputs for each scenario.
+
+Examples must clearly demonstrate what the code does.
+
+Clarification: It is acceptable to use the same dot/color multiple times if multiple outputs correspond to the same chunk of code.
+
+Explanation Section
+
+Explain each <span class="C#"> keyword or feature.
+
+Tie explanations to Example outputs wherever possible.
+
+Use color only if referencing something from the code block or example.
+
+Notes Section
+
+Provide best practices, warnings, or clarifying tips.
+
+Include comparison tables if useful.
+
+Color references allowed only for linking to code highlights.
+
+Concept & Spirit Section
+
+Discuss the philosophy, reasoning, or principles behind the code.
+
+Maintain beginner-friendly, clear, and practical tone.
+
+Color references allowed only if tied to code/example highlights.
+
+Security / Safety Principles
+
+No inline JS — all scripts loaded externally.
+
+Only fetch/execute scripts or content from trusted paths.
+
+Ensure internal links (href, src) are correct and point to whitelisted locations.
+
+Optional CSP header:
+
+Content-Security-Policy:
+  default-src 'self';
+  script-src 'self';
+  style-src 'self' https://fonts.googleapis.com https://cdn.jsdelivr.net;
+
+
+Security Watch Directive: Whenever a template, code snippet, or prompt is generated using this structure, check for potential security risks (inline JS, untrusted fetches, broken links, unescaped content, unsafe <div> usage, etc.) and inform the user immediately so they can take action.
+
+Tone / Style
+
+Practical, clear, beginner-friendly, consistent across templates.
+
+Always maintain dot-to-C# mapping.
+
+Keep all sections clean, structured, and consistent between templates.
+
+General Rules
+
+<div> never contains plain text; wrap text in <span> or <code>.
+
+Colors in Notes or Concept & Spirit only reference code/example highlights.
+
+Top comment (<!-- Rust: … -->) reflects the overall purpose/topic of the template.
+
+Security-first principles always applied.
+
