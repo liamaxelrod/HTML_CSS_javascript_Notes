@@ -1,93 +1,89 @@
-Master Prompt for Template Generation (Rust/Programming Notes Website)
-<!-- Rust: Template Master Prompt -->
+<!-- ⚡ Master Skeleton Template for Coding Notes -->
 
-Generate a programming notes template that is secure, consistent, and beginner-friendly. Follow all the structural, stylistic, and security rules below:
+<template> <!-- ⚡Coding Language: Example Topic -->
 
-Template Comment / Metadata
+  <!-- 📝 GLOBAL RULES (do not render in final notes):
+       1. Code must be in ONE <code> block per section. Use <span class="C#"> for highlights.
+       2. Indentation is done with &nbsp;&nbsp; inside <code>.
+       3. Each color (C1–C10) links across: Code ↔ Example Outputs (dot d#) ↔ Explanation.
+       4. If the language requires an entry point (e.g., Rust’s fn main, C’s int main), always explain it.
+       5. Voice: always beginner-friendly, clear, step-by-step.
+       6. Section order is fixed: Code → Example Outputs → Explanation → Notes → Concept & Spirit.
+  -->
 
-Begin with a comment describing the overall topic/purpose of the template, e.g., <!-- Rust: Loops --> or <!-- Rust: Variables -->.
+  <div class="bubble">
 
-Core Structure (Always this order)
+    <!-- 1. CODE BLOCKS -->
+    <h3>⚡Topic Title: Short description of the programming concept</h3>
+    <div class="code_block">
+      <code>
+        <!-- ⚡Section 1 -->
+        // ⚡Section title <br>
+        <span class="C1">code line 1</span><br>
+        <span class="C1">&nbsp;&nbsp;indented line</span><br><br>
 
-Template Title → Code → Example → Explanation → Notes → Concept & Spirit
+        <!-- ⚡Section 2 -->
+        // ⚡Section title <br>
+        <span class="C2">code line 2</span><br><br>
 
-Code Block
+        <!-- ⚡Section 3 -->
+        // ⚡Section title <br>
+        <span class="C3">code line 3</span><br>
+      </code>
+    </div>
 
-Wrap each line of code in <span class="C#"><code>…</code></span>.
+    <!-- 2. EXAMPLE OUTPUTS -->
+    <h3>Example (Outputs):</h3>
+    <div class="example">
+      <span class="dot d1"></span><span> &rarr; Output or explanation tied to C1</span><br>
+      <span class="dot d2"></span><span> &rarr; Output or explanation tied to C2</span><br>
+      <span class="dot d3"></span><span> &rarr; Output or explanation tied to C3</span><br>
+    </div>
 
-Multiple sections allowed, each starting with // Section Name.
+    <!-- 3.1 EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <!-- 📝 Section-specific rules for Explanation:
+            - Include beginner-friendly analogies
+            - Include memory/lifetime hints where relevant
+            - Compare with similar language features if applicable
+            - Include practical examples of transformations if relevant
+      -->
+      <span class="C1"><code>Word/code</code></span><span> – Explanation tied to C1, written for beginners.</span><br>
+      <span class="C2"><code>Word/code</code></span><span> – Explanation tied to C2.</span><br>
+      <span class="C3"><code>Word/code</code></span><span> – Explanation tied to C3.</span><br><br>
 
-Use <div> only for layout; do not place plain text inside <div>—wrap text in <span> or <code>.
+      <!-- 3.2 NOTES -->
+      <h3>Notes:</h3>
+      <span>- ⚡Best practices, common pitfalls, or differences from other languages.</span><br>
+      <span>- ⚡Special mention if the language requires an entry point (e.g., Rust’s fn main).</span><br><br>
 
-No inline JavaScript. All event listeners or scripts must be external.
+      <!-- 3.3 CONCEPT & SPIRIT -->
+      <h3>Concept & Spirit:</h3>
+      <!-- 📝 Section-specific rules for Concept & Spirit:
+            - Focus on the philosophy of the specific feature/topic, not just the language
+            - Explain why this syntax/feature exists
+            - Include mindset/reasoning for coding safely and effectively with this feature
+      -->
+      <span>- ⚡Why this language feature exists and how it shapes coding mindset.</span><br>
+      <span>- ⚡Big-picture lesson for beginners: how to think about and use this feature effectively and safely.</span>
+    </div>
 
-Example Section
-
-Use <span class="dot d#"></span> to reference corresponding code highlights.
-
-Show actual outputs for each scenario.
-
-Examples must clearly demonstrate what the code does.
-
-Clarification: It is acceptable to use the same dot/color multiple times if multiple outputs correspond to the same chunk of code.
-
-Explanation Section
-
-Explain each <span class="C#"> keyword or feature.
-
-Tie explanations to Example outputs wherever possible.
-
-Use color only if referencing something from the code block or example.
-
-Notes Section
-
-Provide best practices, warnings, or clarifying tips.
-
-Include comparison tables if useful.
-
-Color references allowed only for linking to code highlights.
-
-Concept & Spirit Section
-
-Discuss the philosophy, reasoning, or principles behind the code.
-
-Maintain beginner-friendly, clear, and practical tone.
-
-Color references allowed only if tied to code/example highlights.
-
-Security / Safety Principles
-
-No inline JS — all scripts loaded externally.
-
-Only fetch/execute scripts or content from trusted paths.
-
-Ensure internal links (href, src) are correct and point to whitelisted locations.
-
-Optional CSP header:
-
-Content-Security-Policy:
-  default-src 'self';
-  script-src 'self';
-  style-src 'self' https://fonts.googleapis.com https://cdn.jsdelivr.net;
+  </div>
+</template>
+<!-- Shortly I will give you instructions on the new template I want to make -->
 
 
-Security Watch Directive: Whenever a template, code snippet, or prompt is generated using this structure, check for potential security risks (inline JS, untrusted fetches, broken links, unescaped content, unsafe <div> usage, etc.) and inform the user immediately so they can take action.
 
-Tone / Style
 
-Practical, clear, beginner-friendly, consistent across templates.
 
-Always maintain dot-to-C# mapping.
 
-Keep all sections clean, structured, and consistent between templates.
 
-General Rules
 
-<div> never contains plain text; wrap text in <span> or <code>.
 
-Colors in Notes or Concept & Spirit only reference code/example highlights.
-
-Top comment (<!-- Rust: … -->) reflects the overall purpose/topic of the template.
-
-Security-first principles always applied.
-
+<!--
+📝 CROSS-REFERENCE MARKER:
+  If this skeleton is pasted back with this marker intact,
+  compare it against the last polished template I made,
+  find differences, and update the skeleton accordingly.
+-->
