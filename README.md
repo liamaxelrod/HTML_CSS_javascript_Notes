@@ -134,11 +134,17 @@ I already had a good understanding of Javascript and how it worked. After taking
 
 ChatGPT / Learning Workflow:
 
+Warning > while AI is a useful tool, always keep in mind It's not perfect and Don't become reliant on it.
+
 Learning Through Project Work:
 Using ChatGPT as a learning aid has been incredibly helpful. Every time I create a template, I not only practice coding but also learn how to leverage AI to clarify concepts, generate examples, and catch mistakes. I’ve learned how to better inform ChatGPT about how I like my templates structured, which helps in other aspects of using AI. Revisiting the material multiple times while building the site has strengthened my retention and made it easier to recall concepts quickly. I also now have a better understanding of how HTML, CSS, and JavaScript interact, which is invaluable for future projects.
 
+Shortcut:
+I learned that I can create a reusable prompt to generate templates the way I like. However, it’s important to remember that no prompt is ever perfect. AI is constantly evolving, and sometimes templates created from prompts may not work exactly as expected or may become outdated. A template prompt is a helpful tool, but don’t expect it to be flawless — it’s a guide, not a guarantee.
+
 Smart Workflow Tip:
-A new trick I learned is to use ChatGPT alongside GitHub as a source of truth for the project. By sharing the repo URL, ChatGPT can reference the file structure, file names, and contents directly. Whenever I push updates, the latest version becomes the master copy. This makes asking questions, reorganizing folders, or requesting improvements faster and keeps context consistent across conversations.
+A new trick I learned is to use ChatGPT alongside GitHub as a source of truth for the project. By sharing the repo URL, ChatGPT can reference the file structure, file names, and contents directly. Whenever I push updates, the latest version becomes the master copy. This makes asking questions, reorganizing folders, or requesting improvements faster and keeps context consistent across conversations. (Yet to be tested??)
+
 
 Structural Lessons
 

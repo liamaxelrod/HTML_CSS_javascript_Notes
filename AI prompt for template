@@ -1,34 +1,35 @@
-<!-- ⚡ Master Skeleton Template for Coding Notes -->
-
-<template> <!-- ⚡Coding Language: Example Topic -->
+<template> <!-- Coding Language name: Example Topic -->
 
   <!-- 📝 GLOBAL RULES (do not render in final notes):
-       1. Code must be in ONE <code> block per section. Use <span class="C#"> for highlights.
-       2. Indentation is done with &nbsp;&nbsp; inside <code>.
-       3. Each color (C1–C10) links across: Code ↔ Example Outputs (dot d#) ↔ Explanation.
-       4. If the language requires an entry point (e.g., Rust’s fn main, C’s int main), always explain it.
-       5. Voice: always beginner-friendly, clear, step-by-step.
-       6. Section order is fixed: Code → Example Outputs → Explanation → Notes → Concept & Spirit.
+      1. Each color (C1–C10) highlights links across: Code ↔ Explanation ↔ Notes ↔ Concept & Spirit.
+      2. Section order: Code → Example Outputs → Explanation → Notes → Concept & Spirit.
+      3. Voice: always beginner-friendly, clear, step-by-step.
   -->
 
   <div class="bubble">
 
     <!-- 1. CODE BLOCKS -->
-    <h3>⚡Topic Title: Short description of the programming concept</h3>
+    <h3>Topic Title: Short description of the programming concept</h3>
     <div class="code_block">
+    <!-- 📝 inside CODE BLOCKS
+          - Code must be in ONE <code> block per section. Use <span class="C#"> for highlights
+          - Indentation is done with &nbsp;&nbsp;
+    -->
       <code>
-        <!-- ⚡Section 1 -->
-        // ⚡Section title <br>
+        <!-- Section 1 -->
+        // Section title <br>
         <span class="C1">code line 1</span><br>
         <span class="C1">&nbsp;&nbsp;indented line</span><br><br>
 
-        <!-- ⚡Section 2 -->
-        // ⚡Section title <br>
+        <!-- Section 2 -->
+        // Section title <br>
         <span class="C2">code line 2</span><br><br>
 
-        <!-- ⚡Section 3 -->
-        // ⚡Section title <br>
+        <!-- Section 3 -->
+        // Section title <br>
         <span class="C3">code line 3</span><br>
+
+        <!-- Add more sections (C4–C10) as needed -->
       </code>
     </div>
 
@@ -38,35 +39,34 @@
       <span class="dot d1"></span><span> &rarr; Output or explanation tied to C1</span><br>
       <span class="dot d2"></span><span> &rarr; Output or explanation tied to C2</span><br>
       <span class="dot d3"></span><span> &rarr; Output or explanation tied to C3</span><br>
+      <!-- Add more outputs for C4–C10 as needed -->
     </div>
 
     <!-- 3.1 EXPLANATION -->
     <h3>Explanation:</h3>
     <div class="explanation">
-      <!-- 📝 Section-specific rules for Explanation:
+      <!-- 📝 inside EXPLANATION
             - Include beginner-friendly analogies
             - Include memory/lifetime hints where relevant
             - Compare with similar language features if applicable
             - Include practical examples of transformations if relevant
+            - Use real examples, not just abstract concepts
       -->
       <span class="C1"><code>Word/code</code></span><span> – Explanation tied to C1, written for beginners.</span><br>
       <span class="C2"><code>Word/code</code></span><span> – Explanation tied to C2.</span><br>
       <span class="C3"><code>Word/code</code></span><span> – Explanation tied to C3.</span><br><br>
+      <!-- Add explanations for C4–C10 as needed -->
 
       <!-- 3.2 NOTES -->
       <h3>Notes:</h3>
-      <span>- ⚡Best practices, common pitfalls, or differences from other languages.</span><br>
-      <span>- ⚡Special mention if the language requires an entry point (e.g., Rust’s fn main).</span><br><br>
+      <span>- The point of notes Is stuff that didn't fit in the explanation or the overall concept.</span><br>
+      <span>- Best practices, common pitfalls, or differences from other languages.</span><br><br>
 
       <!-- 3.3 CONCEPT & SPIRIT -->
       <h3>Concept & Spirit:</h3>
-      <!-- 📝 Section-specific rules for Concept & Spirit:
-            - Focus on the philosophy of the specific feature/topic, not just the language
-            - Explain why this syntax/feature exists
-            - Include mindset/reasoning for coding safely and effectively with this feature
-      -->
-      <span>- ⚡Why this language feature exists and how it shapes coding mindset.</span><br>
-      <span>- ⚡Big-picture lesson for beginners: how to think about and use this feature effectively and safely.</span>
+      <span>- Ask: Why did we write it this way? What coding habit or principle is this teaching?</span><br>
+      <span>- Why this language feature exists and how it shapes coding mindset.</span><br>
+      <span>- Big-picture lesson for beginners: how to think about and use this feature effectively and safely.</span>
     </div>
 
   </div>

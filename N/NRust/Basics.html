@@ -1,5 +1,167 @@
 <!-- File name: N/NRust/Rust.html -->
 
+<template> <!-- RUST: Ownership & Borrowing -->
+
+  <div class="bubble">
+
+    <!-- 1. CODE BLOCKS -->
+    <h3>Topic Title: Rust Ownership & Borrowing</h3>
+    <div class="code_block">
+      <code>
+        <!-- Ownership Rules -->
+        // Ownership Rules <br>
+        <span class="C1">let x = 5;</span><br>
+        <span class="C1">let y = x; // x is moved to y</span><br><br>
+
+        <!-- Clone -->
+        // Clone <br>
+        <span class="C2">let x = 5;</span><br>
+        <span class="C2">let y = x.clone(); // explicitly clone value</span><br><br>
+
+        <!-- Borrowing -->
+        // Borrowing & References <br>
+        <span class="C3">let s = String::from("hello");</span><br>
+        <span class="C3">let r = &s; // borrow s</span><br><br>
+
+        <!-- Mutable References -->
+        // Mutable References <br>
+        <span class="C4">let mut s = String::from("hello");</span><br>
+        <span class="C4">&nbsp;&nbsp;let r = &mut s; // mutable borrow</span><br>
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUTS -->
+    <h3>Example (Outputs):</h3>
+    <div class="example">
+      <span class="dot d1"></span><span> &rarr; x is no longer valid after moving to y (C1)</span><br>
+      <span class="dot d2"></span><span> &rarr; x is still usable because we cloned it (C2)</span><br>
+      <span class="dot d3"></span><span> &rarr; r can read s without taking ownership (C3)</span><br>
+      <span class="dot d4"></span><span> &rarr; r can modify s safely when borrowed mutably (C4)</span><br>
+    </div>
+
+    <!-- 3.1 EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1"><code>let x = 5;</code></span>
+      <span> – x owns the value 5. When we assign x to y, ownership moves to y, and x can no longer be used. This ensures Rust automatically frees memory safely when a value goes out of scope.</span><br>
+
+      <span class="C2"><code>x.clone()</code></span>
+      <span> – Cloning creates a full copy of the value so both x and y have independent ownership. Use cloning when you need to preserve the original value while giving a copy to another variable.</span><br>
+
+      <span class="C3"><code>&s</code></span>
+      <span> – Borrowing a reference lets you read a value without taking ownership. The original owner (s) keeps control, preventing accidental invalid memory access, while you can safely use the data temporarily.</span><br>
+
+      <span class="C4"><code>&mut s</code></span>
+      <span> – Mutable references allow you to modify a value without taking ownership. Rust ensures there’s only one mutable reference at a time, preventing conflicts and guaranteeing safe, predictable changes.</span><br>
+
+      <span class="C5"><code>Ownership Concept</code></span>
+      <span> – Rust’s ownership system is the foundation for memory safety. It removes the need for a garbage collector, while preventing bugs like dangling pointers or double frees.</span><br>
+
+      <span class="C6"><code>Borrowing Concept</code></span>
+      <span> – Borrowing allows you to use or modify data safely without giving up ownership. It encourages thinking about who “owns” data at any time and avoids unnecessary cloning, making programs faster.</span><br>
+
+      <span class="C7"><code>Why This Matters</code></span>
+      <span> – By enforcing ownership and borrowing rules, Rust ensures memory is always valid and accessible only by permitted parts of your program, improving reliability and preventing subtle bugs common in other languages.</span><br><br>
+
+      <!-- 3.2 NOTES -->
+      <h3>Notes:</h3>
+      <span>- Each value has exactly one owner unless borrowed.</span><br>
+      <span>- Ownership ensures memory is freed automatically when out of scope.</span><br>
+      <span>- Borrowing avoids expensive clones for large values.</span><br><br>
+
+      <!-- 3.3 CONCEPT & SPIRIT -->
+      <h3>Concept & Spirit:</h3>
+      <span>- Unlike other coding languages, keep in mind you're always either owning a variable or borrowing a variable</span><br>
+      <span>- Ownership is Rust’s way of managing memory safely without a garbage collector.</span><br>
+      <span>- Borrowing encourages safe reuse of data without transferring ownership.</span><br>
+      <span>- These rules prevent common bugs like dangling pointers or double frees and are part of what makes Rust fast and reliable.</span>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- RUST: Strings -->
+
+  <div class="bubble">
+
+    <!-- 1. CODE BLOCKS -->
+    <h3>Topic Title: Rust Strings – Working with &str and String</h3>
+    <div class="code_block">
+      <code>
+        <!-- Section 1 -->
+        // String slices (&str) <br>
+        <span class="C1">let greeting: &str = "Hello";</span><br><br>
+
+        <!-- Section 2 -->
+        // Create a String from &str <br>
+        <span class="C2">let s1 = "Hi".to_string();</span><br>
+        <span class="C2">let s2 = String::from("Hola");</span><br><br>
+
+        <!-- Section 3 -->
+        // Change a mutable String <br>
+        <span class="C3">let mut s3 = String::from("Hello");</span><br>
+        <span class="C3">&nbsp;&nbsp;s3.push_str(", world!");</span><br><br>
+
+        <!-- Section 4 -->
+        // Concatenate with + and format! <br>
+        <span class="C4">let s4 = s1 + &s2;</span><br>
+        <span class="C4">let s5 = format!("{} {}", s2, s3);</span><br><br>
+
+        <!-- Section 5 -->
+        // Find String length <br>
+        <span class="C5">let length = s5.len();</span><br>
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUTS -->
+    <h3>Example (Outputs):</h3>
+    <div class="example">
+      <span class="dot d1"></span><span> → Fixed slice "Hello"</span><br>
+      <span class="dot d2"></span><span> → Creates owned Strings: "Hi", "Hola"</span><br>
+      <span class="dot d3"></span><span> → Mutated string becomes "Hello, world!"</span><br>
+      <span class="dot d4"></span><span> → Concatenated: "HiHola" and "Hola Hello, world!"</span><br>
+      <span class="dot d5"></span><span> → Length of string in bytes (e.g., 18)</span><br>
+    </div>
+
+    <!-- 3.1 EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1"><code>&str</code></span><span> – Pronounced “string slice.” Think of it as a window into some text that already exists. You can look through the window and read the words, but you don’t own the house, so you can’t knock down walls or expand it. That’s why slices like <code>"Hello"</code> are fixed and unchangeable.</span><br><br>
+
+      <span class="C2"><code>String</code></span><span> – A <code>String</code> is like moving the text into your own house. Now you own it, and you can rearrange it however you want. You can build more rooms (add characters) or repaint walls (modify the content). That’s why <code>to_string()</code> and <code>String::from()</code> both “take” the borrowed slice and give you a fresh owned <code>String</code> that you control.</span><br><br>
+
+      <span class="C3"><code>mut</code> + <code>push_str()</code></span><span> – Rust doesn’t let you change things unless you clearly say they’re mutable (<code>mut</code>). Declaring <code>mut s3</code> is like saying “this string is flexible.” Then <code>push_str()</code> works like taping more paper onto the end of a scroll. Each time you call it, the string grows.</span><br><br>
+
+      <span class="C4"><code>Concatenate</code></span><span> – The word “concatenate” simply means “to join things together end-to-end.” In strings, it means gluing words one after another. The <code>+</code> operator does this, but with a catch: the first string is consumed (Rust gives up ownership of it) and then adds a borrowed piece (<code>&str</code>) onto the end. The <code>format!</code> macro is safer and cleaner—it doesn’t take ownership away and works with multiple values at once, like filling in blanks in a sentence.  
+      Why both? The <code>+</code> operator is quick and low-level, good for two pieces. <code>format!</code> is the practical, everyday choice when building longer text.</span><br><br>
+
+      <span class="C5"><code>.len()</code></span><span> – This gives the length of the string, but in bytes, not characters. Why? Because Rust strings are UTF-8, which means some characters (like emoji or non-English letters) take more than one byte. For example, "a" is 1 byte, but "é" is 2 bytes, and "😊" is 4 bytes. This matters because if you assume <code>.len()</code> always means “number of letters,” you can accidentally cut a character in half and corrupt the string. To count human-readable characters, use <code>.chars().count()</code>.</span><br><br>
+
+      <span class="C6"><code>to_string()</code> vs <code>String::from()</code></span><span> – These two are twins: they both convert a <code>&str</code> into an owned <code>String</code>. Which one you use is mostly personal style. Many Rustaceans prefer <code>to_string()</code> when starting from a literal (e.g. <code>"Hi".to_string()</code>) and <code>String::from()</code> when they want to be more explicit about ownership. Functionally, they’re the same.</span><br><br>
+
+      <!-- 3.2 NOTES -->
+      <h3>Notes:</h3>
+      <span>- In Rust, ownership vs borrowing is a big deal. When you use <code>+</code>, the first <code>String</code> is moved and can’t be used anymore—Rust prevents hidden memory leaks by making ownership rules visible in code.</span><br>
+      <span>- If you come from another language (like Python or JavaScript), you might expect all strings to be easy-to-edit. Rust forces you to say whether the data is borrowed (<code>&str</code>) or owned (<code>String</code>) so you know who controls the memory.</span><br>
+      <span>- Rust’s strictness around mutability (<code>mut</code>) prevents accidental bugs where data changes unexpectedly. You always know which variables are frozen and which are flexible.</span><br>
+      <span>- UTF-8 encoding is powerful because it supports every language and emoji, but it also means “length in bytes” is not always equal to “length in characters.” Rust makes you aware of this so you write safer, international-friendly code.</span><br><br>
+
+      <!-- 3.3 CONCEPT & SPIRIT -->
+      <h3>Concept & Spirit:</h3>
+      <span>Rust’s string system may look strict at first, but it’s designed to teach you *who owns your data* and *what costs are being paid*. The reason these rules exist isn’t to slow you down—it’s to protect you from the hidden bugs other languages allow.  
+      <br><br>
+      • <code>&str</code> exists for efficiency: borrow when you don’t need to copy. <br> 
+      • <code>String</code> exists for flexibility: own it when you need to grow or keep it.  <br>
+      • <code>mut</code> ensures changes are deliberate.  <br>
+      • <code>+</code> shows you ownership transfer; <code>format!</code> lets you build safely.  <br>
+      • <code>.len()</code> shows you how Rust respects real encoding, instead of pretending all characters are equal.  <br><br>
+
+      **Big picture:** Strings are one of the first places Rust shows its philosophy—memory safety, clarity, and honesty about costs. Once you understand strings, you start to understand how Rust approaches everything else: don’t hide the details, make them explicit so your code is predictable and safe.</span>
+    </div>
+
+  </div>
+</template>
+
 <template> <!-- RUST: Scope, Shadowing -->
   <div class="bubble">
 
@@ -625,6 +787,9 @@
 </template>
 
 <!-- 
+Yet to be tested.
 
-If you say so, then create my new skeleton. 
+
+
+
 -->
