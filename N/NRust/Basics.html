@@ -1,11 +1,120 @@
 <!-- File name: N/NRust/Rust.html -->
 
-<template> <!-- RUST: Ownership & Borrowing -->
+<template> <!-- Rust: Data Structures -->
+
+  <!-- 📝 GLOBAL RULES:
+       1. Color highlights C1–C6 correspond to each data structure
+       2. Section order: Code → Example Outputs → Explanation → Notes → Concept & Spirit
+       3. Voice: beginner-friendly, step-by-step, assume zero prior experience
+  -->
 
   <div class="bubble">
 
     <!-- 1. CODE BLOCKS -->
-    <h3>Topic Title: Rust Ownership & Borrowing</h3>
+    <h3>Rust Data Structures: Common Types</h3>
+    <div class="code_block">
+      <code>
+        <!-- C1: Array -->
+        // Array: fixed-size list of same-type values <br>
+        <span class="C1">let temperatures: [i32; 7] = [70, 72, 68, 65, 74, 73, 71];</span><br>
+        <span class="C1">println!("Monday temperature: {}", temperatures[0]);</span><br>
+        <span class="C1">for (day, temp) in temperatures.iter().enumerate() {</span><br>
+        <span class="C1">&nbsp;&nbsp;println!("Day {}: {}°F", day + 1, temp);</span><br>
+        <span class="C1">}</span><br><br>
+
+        <!-- C2: Vector (Vec) -->
+        // Vector: growable list of same-type values <br>
+        <span class="C2">let mut shopping_list: Vec<&str> = vec!["eggs", "milk", "bread"];</span><br>
+        <span class="C2">shopping_list.push("apples");</span><br>
+        <span class="C2">shopping_list.push("orange juice");</span><br>
+        <span class="C2">for item in &shopping_list { println!("- {}", item); }</span><br><br>
+
+        <!-- C3: Tuple -->
+        // Tuple: group different types together <br>
+        <span class="C3">let user_profile: (&str, i32, bool) = ("Alice", 30, true);</span><br>
+        <span class="C3">println!("Name: {}, Age: {}, Active: {}", user_profile.0, user_profile.1, user_profile.2);</span><br>
+        <span class="C3">fn min_max(numbers: &[i32]) -> (i32, i32) {</span><br>
+        <span class="C3">&nbsp;&nbsp;let mut min = numbers[0]; let mut max = numbers[0];</span><br>
+        <span class="C3">&nbsp;&nbsp;for &num in numbers { if num < min { min = num; } if num > max { max = num; } }</span><br>
+        <span class="C3">&nbsp;&nbsp;(min, max)</span><br>
+        <span class="C3">}</span><br>
+        <span class="C3">let numbers = [4, 7, 1, 9]; let (min, max) = min_max(&numbers);</span><br>
+        <span class="C3">println!("Min: {}, Max: {}", min, max);</span><br><br>
+
+        <!-- C4: HashMap -->
+        // HashMap: key-value lookup <br>
+        <span class="C4">use std::collections::HashMap;</span><br>
+        <span class="C4">let mut scores = HashMap::new();</span><br>
+        <span class="C4">scores.insert("Alice", 90); scores.insert("Bob", 75); scores.insert("Charlie", 82);</span><br>
+        <span class="C4">if let Some(score) = scores.get("Alice") { println!("Alice scored: {}", score); }</span><br>
+        <span class="C4">for (name, score) in &scores { println!("{}: {}", name, score); }</span><br><br>
+
+        <!-- C5: Structs -->
+        // Struct: custom type with named fields <br>
+        <span class="C5">struct Point { x: i32, y: i32 }</span><br>
+        <span class="C5">let p1 = Point { x: 10, y: 20 };</span><br>
+        <span class="C5">println!("Point coordinates: ({}, {})", p1.x, p1.y);</span><br>
+        <span class="C5">struct Person { name: String, age: u8, active: bool }</span><br>
+        <span class="C5">let user = Person { name: "Bob".to_string(), age: 25, active: true };</span><br>
+        <span class="C5">println!("{} is {} years old", user.name, user.age);</span><br><br>
+
+        <!-- C6: Enums -->
+        // Enum: type with multiple named variants <br>
+        <span class="C6">enum TrafficLight { Red, Yellow, Green }</span><br>
+        <span class="C6">let light = TrafficLight::Red;</span><br>
+        <span class="C6">match light {</span><br>
+        <span class="C6">&nbsp;&nbsp;TrafficLight::Red => println!("Stop!"),</span><br>
+        <span class="C6">&nbsp;&nbsp;TrafficLight::Yellow => println!("Slow down."),</span><br>
+        <span class="C6">&nbsp;&nbsp;TrafficLight::Green => println!("Go!"),</span><br>
+        <span class="C6">}</span><br>
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUTS -->
+    <h3>Example (Outputs):</h3>
+    <div class="example">
+      <span class="dot d1"></span><span> &rarr; Monday: 70, Tuesday: 72, … up to 7 days</span><br>
+      <span class="dot d2"></span><span> &rarr; - eggs, - milk, - bread, - apples, - orange juice</span><br>
+      <span class="dot d3"></span><span> &rarr; Name: Alice, Age: 30, Active: true; Min: 1, Max: 9</span><br>
+      <span class="dot d4"></span><span> &rarr; Alice: 90, Bob: 75, Charlie: 82</span><br>
+      <span class="dot d5"></span><span> &rarr; Point coordinates: (10, 20); Bob is 25 years old</span><br>
+      <span class="dot d6"></span><span> &rarr; Stop! (Red), Slow down. (Yellow), Go! (Green)</span><br>
+    </div>
+
+    <!-- 3. EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1"><code>Array</code></span><span> – Fixed-size, same-type list. Use when the number of items is known. Great for predictable memory. Example: weekly temperatures.</span><br>
+      <span class="C2"><code>Vector (Vec)</code></span><span> – Growable list. Use when collection size is dynamic. Example: shopping list, logs, or items being collected in runtime.</span><br>
+      <span class="C3"><code>Tuple</code></span><span> – Groups different types. Example: returning multiple results, user profile with name, age, active status.</span><br>
+      <span class="C4"><code>HashMap</code></span><span> – Key-value storage. Fast lookup. Example: student scores, configuration settings, inventory.</span><br>
+      <span class="C5"><code>Struct</code></span><span> – Custom types with named fields. Example: points, users, products. Makes code readable and models real-world objects.</span><br>
+      <span class="C6"><code>Enum</code></span><span> – One-of-many variants. Example: traffic lights, states, command options. Combined with match for safe handling.</span><br><br>
+
+      <!-- 3.2 NOTES -->
+      <h3>Notes:</h3>
+      <span>- Arrays and tuples are fixed-size; vectors and hashmaps can grow dynamically.</span><br>
+      <span>- Structs define types; enums define choice variants.</span><br>
+      <span>- Remember Rust ownership rules when storing or accessing these collections.</span><br>
+      <span>- Iteration, indexing, and match statements are beginner-friendly ways to work with data.</span><br><br>
+
+      <!-- 3.3 CONCEPT & SPIRIT -->
+      <h3>Concept & Spirit:</h3>
+      <span>- Arrays and tuples: predictable memory and simple use cases.</span><br>
+      <span>- Vectors and HashMaps: flexibility, runtime growth, dynamic data handling.</span><br>
+      <span>- Structs and enums: model your data cleanly and safely. Rust’s type system prevents many common errors.</span><br>
+      <span>- Learning these six structures gives beginners a strong foundation to think about memory, performance, and program design.</span><br>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- RUST: mut, Ownership & Borrowing -->
+
+  <div class="bubble">
+
+    <!-- 1. CODE BLOCKS -->
+    <h3>Rust: mut, Ownership & Borrowing</h3>
     <div class="code_block">
       <code>
         <!-- Ownership Rules -->
@@ -26,24 +135,50 @@
         <!-- Mutable References -->
         // Mutable References <br>
         <span class="C4">let mut s = String::from("hello");</span><br>
-        <span class="C4">&nbsp;&nbsp;let r = &mut s; // mutable borrow</span><br>
+        <span class="C4">&nbsp;&nbsp;let r = &mut s; // mutable borrow</span><br><br>
+
+        <!-- Guest List Example: Clone, Borrow, Mut Borrow -->
+        fn main() { <br>
+        <span class="C5">&nbsp;&nbsp;let mut guest_list = String::from("Alice, Bob");</span><br><br>
+
+        <span class="C5">&nbsp;&nbsp;// Clone → backup copy before editing</span><br>
+        <span class="C5">&nbsp;&nbsp;let backup = guest_list.clone();</span><br><br>
+
+        <span class="C5">&nbsp;&nbsp;// Borrow → read without taking ownership</span><br>
+        <span class="C5">&nbsp;&nbsp;print_guest_count(&guest_list);</span><br><br>
+
+        <span class="C5">&nbsp;&nbsp;// Mut Borrow → temporarily modify original list</span><br>
+        <span class="C5">&nbsp;&nbsp;add_guest(&mut guest_list);</span><br><br>
+
+        <span class="C5">&nbsp;&nbsp;println!("Updated list: {}", guest_list);</span><br>
+        }<br><br>
+
+        <span class="C5">fn print_guest_count(list: &String) {</span><br>
+        <span class="C5">&nbsp;&nbsp;let count = list.split(", ").count();</span><br>
+        <span class="C5">&nbsp;&nbsp;println!("Current guests: {}", count);</span><br>
+        <span class="C5">}</span><br><br>
+
+        <span class="C5">fn add_guest(list: &mut String) {</span><br>
+        <span class="C5">&nbsp;&nbsp;list.push_str(", Carol");</span><br>
+        <span class="C5">}</span>
       </code>
     </div>
 
     <!-- 2. EXAMPLE OUTPUTS -->
     <h3>Example (Outputs):</h3>
     <div class="example">
-      <span class="dot d1"></span><span> &rarr; x is no longer valid after moving to y (C1)</span><br>
-      <span class="dot d2"></span><span> &rarr; x is still usable because we cloned it (C2)</span><br>
-      <span class="dot d3"></span><span> &rarr; r can read s without taking ownership (C3)</span><br>
-      <span class="dot d4"></span><span> &rarr; r can modify s safely when borrowed mutably (C4)</span><br>
+      <span class="dot d1"></span><span> &rarr; x is no longer valid after moving to y</span><br>
+      <span class="dot d2"></span><span> &rarr; x is still usable because we cloned it</span><br>
+      <span class="dot d3"></span><span> &rarr; r can read s without taking ownership</span><br>
+      <span class="dot d4"></span><span> &rarr; r can modify s safely when borrowed mutably</span><br>
+      <span class="dot d5"></span><span> &rarr; Guest list example: clone → backup copy, borrow → check length, mut borrow → add guest</span><br>
     </div>
 
     <!-- 3.1 EXPLANATION -->
     <h3>Explanation:</h3>
     <div class="explanation">
       <span class="C1"><code>let x = 5;</code></span>
-      <span> – x owns the value 5. When we assign x to y, ownership moves to y, and x can no longer be used. This ensures Rust automatically frees memory safely when a value goes out of scope.</span><br>
+      <span> – x owns the value 5. When we assign x to y, ownership moves to y, and x can no longer be used. Rust automatically frees memory safely when a value goes out of scope.</span><br>
 
       <span class="C2"><code>x.clone()</code></span>
       <span> – Cloning creates a full copy of the value so both x and y have independent ownership. Use cloning when you need to preserve the original value while giving a copy to another variable.</span><br>
@@ -54,13 +189,16 @@
       <span class="C4"><code>&mut s</code></span>
       <span> – Mutable references allow you to modify a value without taking ownership. Rust ensures there’s only one mutable reference at a time, preventing conflicts and guaranteeing safe, predictable changes.</span><br>
 
-      <span class="C5"><code>Ownership Concept</code></span>
+      <span class="C5"><code>Guest List Example</code></span>
+      <span> – Clone creates a backup copy of the guest list so the original is safe. Borrow lets a function check how many guests exist without taking ownership. Mutable borrow lets a function temporarily edit the list (adding a new guest) while ownership stays with main. This shows **when and why to use clone, borrow, and mut borrow** in practice.</span><br>
+
+      <span class="C6"><code>Ownership Concept</code></span>
       <span> – Rust’s ownership system is the foundation for memory safety. It removes the need for a garbage collector, while preventing bugs like dangling pointers or double frees.</span><br>
 
-      <span class="C6"><code>Borrowing Concept</code></span>
+      <span class="C7"><code>Borrowing Concept</code></span>
       <span> – Borrowing allows you to use or modify data safely without giving up ownership. It encourages thinking about who “owns” data at any time and avoids unnecessary cloning, making programs faster.</span><br>
 
-      <span class="C7"><code>Why This Matters</code></span>
+      <span class="C8"><code>Why This Matters</code></span>
       <span> – By enforcing ownership and borrowing rules, Rust ensures memory is always valid and accessible only by permitted parts of your program, improving reliability and preventing subtle bugs common in other languages.</span><br><br>
 
       <!-- 3.2 NOTES -->
@@ -787,8 +925,6 @@
 </template>
 
 <!-- 
-Yet to be tested.
-
 
 
 
