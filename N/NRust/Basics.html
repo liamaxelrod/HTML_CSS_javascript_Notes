@@ -1,12 +1,6 @@
 <!-- File name: N/NRust/Rust.html -->
 
-<template> <!-- Rust: Data Structures -->
-
-  <!-- 📝 GLOBAL RULES:
-       1. Color highlights C1–C6 correspond to each data structure
-       2. Section order: Code → Example Outputs → Explanation → Notes → Concept & Spirit
-       3. Voice: beginner-friendly, step-by-step, assume zero prior experience
-  -->
+<template> <!-- Rust: Data Structures (Array, Vector, Tuple, HashMap, Structs, Enums) -->
 
   <div class="bubble">
 
@@ -16,53 +10,81 @@
       <code>
         <!-- C1: Array -->
         // Array: fixed-size list of same-type values <br>
+        // Define an array of 7 integers (i32), one for each day of the week <br>
         <span class="C1">let temperatures: [i32; 7] = [70, 72, 68, 65, 74, 73, 71];</span><br>
+        // Access a single value by index (0 = Monday) <br>
         <span class="C1">println!("Monday temperature: {}", temperatures[0]);</span><br>
+        // Loop over array with index (day) and value (temp) <br>
         <span class="C1">for (day, temp) in temperatures.iter().enumerate() {</span><br>
+        &nbsp;&nbsp;// Print each day’s number and its temperature <br>
         <span class="C1">&nbsp;&nbsp;println!("Day {}: {}°F", day + 1, temp);</span><br>
         <span class="C1">}</span><br><br>
 
         <!-- C2: Vector (Vec) -->
         // Vector: growable list of same-type values <br>
+        // Start with a shopping list containing 3 items <br>
         <span class="C2">let mut shopping_list: Vec<&str> = vec!["eggs", "milk", "bread"];</span><br>
+        // Add new items at runtime (vectors can grow) <br>
         <span class="C2">shopping_list.push("apples");</span><br>
         <span class="C2">shopping_list.push("orange juice");</span><br>
+        // Loop through vector by reference to print each item <br>
         <span class="C2">for item in &shopping_list { println!("- {}", item); }</span><br><br>
 
         <!-- C3: Tuple -->
         // Tuple: group different types together <br>
+        // A tuple can hold different types: string, number, boolean <br>
         <span class="C3">let user_profile: (&str, i32, bool) = ("Alice", 30, true);</span><br>
+        // Access tuple fields with .0, .1, .2 etc. <br>
         <span class="C3">println!("Name: {}, Age: {}, Active: {}", user_profile.0, user_profile.1, user_profile.2);</span><br>
+        // Function that returns a tuple (min, max) from a slice of numbers <br>
         <span class="C3">fn min_max(numbers: &[i32]) -> (i32, i32) {</span><br>
+        &nbsp;&nbsp;// Start with the first number as both min and max <br>
         <span class="C3">&nbsp;&nbsp;let mut min = numbers[0]; let mut max = numbers[0];</span><br>
+        &nbsp;&nbsp;// Loop through and update min/max <br>
         <span class="C3">&nbsp;&nbsp;for &num in numbers { if num < min { min = num; } if num > max { max = num; } }</span><br>
+        &nbsp;&nbsp;// Return a tuple (min, max) <br>
         <span class="C3">&nbsp;&nbsp;(min, max)</span><br>
         <span class="C3">}</span><br>
+        // Example use: destructure the returned tuple <br>
         <span class="C3">let numbers = [4, 7, 1, 9]; let (min, max) = min_max(&numbers);</span><br>
         <span class="C3">println!("Min: {}, Max: {}", min, max);</span><br><br>
 
         <!-- C4: HashMap -->
         // HashMap: key-value lookup <br>
+        // Bring HashMap type into scope <br>
         <span class="C4">use std::collections::HashMap;</span><br>
+        // Create a mutable HashMap to store student scores <br>
         <span class="C4">let mut scores = HashMap::new();</span><br>
+        // Insert names (keys) with their scores (values) <br>
         <span class="C4">scores.insert("Alice", 90); scores.insert("Bob", 75); scores.insert("Charlie", 82);</span><br>
+        // Get a value safely with .get(), returns Option <br>
         <span class="C4">if let Some(score) = scores.get("Alice") { println!("Alice scored: {}", score); }</span><br>
+        // Iterate through all key-value pairs <br>
         <span class="C4">for (name, score) in &scores { println!("{}: {}", name, score); }</span><br><br>
 
         <!-- C5: Structs -->
         // Struct: custom type with named fields <br>
+        // Define a Point struct with two integer fields <br>
         <span class="C5">struct Point { x: i32, y: i32 }</span><br>
+        // Create a Point instance <br>
         <span class="C5">let p1 = Point { x: 10, y: 20 };</span><br>
+        // Access struct fields with dot notation <br>
         <span class="C5">println!("Point coordinates: ({}, {})", p1.x, p1.y);</span><br>
+        // Define another struct for a more complex type <br>
         <span class="C5">struct Person { name: String, age: u8, active: bool }</span><br>
+        // Create a Person instance with field values <br>
         <span class="C5">let user = Person { name: "Bob".to_string(), age: 25, active: true };</span><br>
         <span class="C5">println!("{} is {} years old", user.name, user.age);</span><br><br>
 
         <!-- C6: Enums -->
         // Enum: type with multiple named variants <br>
+        // Define an enum for traffic light states <br>
         <span class="C6">enum TrafficLight { Red, Yellow, Green }</span><br>
+        // Create a variable holding a variant of the enum <br>
         <span class="C6">let light = TrafficLight::Red;</span><br>
+        // Match enum value to decide behavior <br>
         <span class="C6">match light {</span><br>
+        &nbsp;&nbsp;// Each arm describes what to do for a variant <br>
         <span class="C6">&nbsp;&nbsp;TrafficLight::Red => println!("Stop!"),</span><br>
         <span class="C6">&nbsp;&nbsp;TrafficLight::Yellow => println!("Slow down."),</span><br>
         <span class="C6">&nbsp;&nbsp;TrafficLight::Green => println!("Go!"),</span><br>
@@ -84,26 +106,42 @@
     <!-- 3. EXPLANATION -->
     <h3>Explanation:</h3>
     <div class="explanation">
-      <span class="C1"><code>Array</code></span><span> – Fixed-size, same-type list. Use when the number of items is known. Great for predictable memory. Example: weekly temperatures.</span><br>
-      <span class="C2"><code>Vector (Vec)</code></span><span> – Growable list. Use when collection size is dynamic. Example: shopping list, logs, or items being collected in runtime.</span><br>
-      <span class="C3"><code>Tuple</code></span><span> – Groups different types. Example: returning multiple results, user profile with name, age, active status.</span><br>
-      <span class="C4"><code>HashMap</code></span><span> – Key-value storage. Fast lookup. Example: student scores, configuration settings, inventory.</span><br>
-      <span class="C5"><code>Struct</code></span><span> – Custom types with named fields. Example: points, users, products. Makes code readable and models real-world objects.</span><br>
-      <span class="C6"><code>Enum</code></span><span> – One-of-many variants. Example: traffic lights, states, command options. Combined with match for safe handling.</span><br><br>
+      <span class="C1"><code>Array</code></span><span> – An array is a fixed-size list of items that are all the same type. Use when you know the number of items will never change. Example: the 12 months in a year, or the 7 days of the week. Arrays give very predictable memory usage, which makes them fast and efficient.</span><br><br>
+
+      <span class="C2"><code>Vector (Vec)</code></span><span> – A vector is a growable list of items of the same type. Use when the number of items is not known ahead of time or changes during the program. Example: a shopping cart in an online store (customers can keep adding and removing items), or a log of events as they happen. Vectors manage memory for you, which makes them flexible and safe.</span><br><br>
+
+      <span class="C3"><code>Tuple</code></span><span> – A tuple groups values of different types into a single unit. Use when you need to combine a few different pieces of data together without creating a custom type. Example: returning both a status code and a message from a function, or storing a user’s profile as (name, age, active_status). Tuples are quick and convenient when the data is small and temporary.</span><br><br>
+
+      <span class="C4"><code>HashMap</code></span><span> – A HashMap stores data as key–value pairs for fast lookups. Use when you want to quickly find a value by its key. Example: a dictionary where words (keys) map to definitions (values), or storing student IDs (keys) with their grades (values). HashMaps are great when your data needs to grow dynamically and when direct access by a unique key is important.</span><br><br>
+
+      <span class="C5"><code>Struct</code></span><span> – A struct lets you create your own custom data type with named fields. Use when you want to model something meaningful in your program. Example: a <code>User</code> with a name, age, and email, or a <code>Point</code> with x and y coordinates. Structs make your code easier to read and help represent real-world objects in a clear, structured way.</span><br><br>
+
+      <span class="C6"><code>Enum</code></span><span> – An enum represents a value that can be one of several options. Use when something can exist in different states or forms. Example: traffic lights with <code>Red</code>, <code>Yellow</code>, and <code>Green</code>, or different commands in a program like <code>Start</code>, <code>Stop</code>, <code>Pause</code>. Enums combined with <code>match</code> let you safely handle every possible case.</span><br><br>
+
+       <span class="C7"><code>Array</code></span><span> – Think of a row of mailboxes with a fixed number of slots. Each slot holds the same type of item (like numbers or names). You cannot add or remove slots. Use this when you know exactly how many items you need and they won’t change.</span><br>
+      <span class="C7"><code>Vector (Vec)</code></span><span> – Like a backpack that can hold any number of items. You can add or remove items freely, but everything inside is the same type (all apples, all numbers). Use it when the number of items can change while the program runs.</span><br>
+      <span class="C7"><code>Tuple</code></span><span> – Imagine a single envelope that holds different things together: a photo, a letter, and a coin. Each thing can be a different type. Tuples are not multiple lists, they are **one bundle of different things**. Use it when you want to keep a few related pieces of data together temporarily.</span><br>
+      <span class="C7"><code>HashMap</code></span><span> – Like a dictionary: you have a word (key) and its definition (value). You can add or remove entries anytime. Use it when you want to look things up by a label or key quickly.</span><br>
+      <span class="C7"><code>Struct</code></span><span> – Like a form you fill out with labeled fields: name, age, email. Each field has a name and a type. Unlike a HashMap, the fields are fixed and named ahead of time, so everyone knows exactly what data exists. Use it to model real-world objects clearly and safely.</span><br>
+      <span class="C7"><code>Enum</code></span><span> – Think of a light switch with three positions: Red, Yellow, Green. A variable can only ever be one of these states at a time. Unlike a Struct or HashMap, you don’t store multiple pieces of information; you **choose one from several options**. Use it when something must always be one of a defined set of possibilities.</span><br>
 
       <!-- 3.2 NOTES -->
       <h3>Notes:</h3>
-      <span>- Arrays and tuples are fixed-size; vectors and hashmaps can grow dynamically.</span><br>
-      <span>- Structs define types; enums define choice variants.</span><br>
-      <span>- Remember Rust ownership rules when storing or accessing these collections.</span><br>
-      <span>- Iteration, indexing, and match statements are beginner-friendly ways to work with data.</span><br><br>
+      <span>- Arrays are simple and efficient, but they cannot grow in size.</span><br>
+      <span>- Vectors are more flexible because they can grow or shrink as needed.</span><br>
+      <span>- Tuples are lightweight and temporary, while structs give names to fields for readability and long-term use.</span><br>
+      <span>- HashMaps are the go-to tool when you need fast lookups by a unique key.</span><br>
+      <span>- Structs model data with properties, while enums model situations with clear choices.</span><br>
 
       <!-- 3.3 CONCEPT & SPIRIT -->
       <h3>Concept & Spirit:</h3>
-      <span>- Arrays and tuples: predictable memory and simple use cases.</span><br>
-      <span>- Vectors and HashMaps: flexibility, runtime growth, dynamic data handling.</span><br>
-      <span>- Structs and enums: model your data cleanly and safely. Rust’s type system prevents many common errors.</span><br>
-      <span>- Learning these six structures gives beginners a strong foundation to think about memory, performance, and program design.</span><br>
+      <span>- Rust encourages Arrays for fixed-size data because it guarantees efficient memory usage and predictable behavior.</span><br>
+      <span>- Rust encourages Vectors for dynamic lists, giving flexibility without sacrificing safety, so beginners learn safe memory growth.</span><br>
+      <span>- Tuples are lightweight, quick to use, and allow bundling of different types without creating a full type, teaching beginners simplicity and efficiency.</span><br>
+      <span>- HashMaps show how to handle dynamic, key-based collections safely, emphasizing lookup efficiency and ownership rules.</span><br>
+      <span>- Structs teach design and clarity: defining shapes for your data, modeling real-world objects, and writing readable, maintainable code.</span><br>
+      <span>- Enums teach explicit state handling, showing how Rust enforces exhaustive, safe logic for variables that can be exactly one of several choices.</span><br>
+      <span>- Beginner mindset: Always choose the structure that matches the real-world requirements of your data, consider mutability, ownership, and safety, and leverage Rust’s compiler to prevent mistakes. Think: “What is this data? How will it change? How can Rust help me handle it safely?”</span><br>
     </div>
 
   </div>
@@ -927,5 +965,5 @@
 <!-- 
 
 
-
+One last question with. Enum Sounds more like a switch that I'm using to make something happen. Out of information that's already stored. 
 -->
