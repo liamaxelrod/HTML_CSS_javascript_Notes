@@ -3,18 +3,18 @@
 const notesFolder = '/N';
 
 // 🔒 SECURITY: Whitelist allowed folders with updated names
-const allowedFolders = ['NHTML', 'NCSS', 'NJS', 'NRust'];
+const allowedFolders = ['HTML', 'CSS', 'JS', 'Rust'];
 
 // 🔒 SECURITY: Whitelist allowed note IDs for each folder (updated)
 const allowedNotes = {
-  'NHTML': [
+  'HTML': [
     'Basics',
     'Forms_Inputs',
     'JS_Integration',
     'Structure',
     'Text_Links'
   ],
-  'NCSS': [
+  'CSS': [
     'Animation',
     'Basics',
     'Categories',
@@ -22,7 +22,7 @@ const allowedNotes = {
     'Layout',
     'Properties'
   ],
-  'NJS': [
+  'JS': [
     'Basics',
     'Data',
     'Flow_Logic',
@@ -31,7 +31,7 @@ const allowedNotes = {
     'Errors',
     'Browser'
   ],
-  'NRust': [
+  'Rust': [
     'Basics'
   ]
 };

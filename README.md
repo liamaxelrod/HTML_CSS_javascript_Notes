@@ -143,8 +143,7 @@ Shortcut:
 I learned that I can create a reusable prompt to generate templates the way I like. However, it’s important to remember that no prompt is ever perfect. AI is constantly evolving, and sometimes templates created from prompts may not work exactly as expected or may become outdated. A template prompt is a helpful tool, but don’t expect it to be flawless — it’s a guide, not a guarantee.
 
 Smart Workflow Tip:
-A new trick I learned is to use ChatGPT alongside GitHub as a source of truth for the project. By sharing the repo URL, ChatGPT can reference the file structure, file names, and contents directly. Whenever I push updates, the latest version becomes the master copy. This makes asking questions, reorganizing folders, or requesting improvements faster and keeps context consistent across conversations. (Yet to be tested??)
-
+A new trick I learned is to use ChatGPT alongside GitHub as a source of truth for the project. By sharing the repo URL, ChatGPT can reference the file structure, file names. Whenever I push updates, the latest version becomes the master copy. This makes asking questions, reorganizing folders, file names but, it can't read the content in repo so I still need to give it the code contents if I wanted to assist me.
 
 Structural Lessons
 
