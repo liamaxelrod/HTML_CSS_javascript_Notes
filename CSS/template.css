@@ -70,14 +70,14 @@ First of all, four templates. == */
 
 .C1 { color: pink; }  /* Pinkish */
 .C2 { color: lightblue; }  /* Blue */
-.C3 { color: green; }  /* Green */
+.C3 { color: cornflowerblue; }  /* Green */
 .C4 { color: orange; }  /* Orange */
-.C5 { color: purple; }  /* Purple */
+.C5 { color: yellow; }  /* Purple */
 .C6 { color: lime; }  /* Teal */
-.C7 { color: red; }  /* Red */
-.C8 { color: gray; }  /* Gray */
+.C7 { color: fuchsia; }  /* Red */
+.C8 { color: lightgray; }  /* Gray */
 .C9 { color: lightcoral; }  /* Brownish */
-.C10 { color: blue; } /* Strong Blue */
+.C10 { color: aquamarine; } /* Strong Blue */
 
 /* ===========================
    COLORED DOT STYLE FOR EXAMPLES
@@ -96,14 +96,14 @@ First of all, four templates. == */
 
 .d1 { background-color: pink; }
 .d2 { background-color: lightblue; }
-.d3 { background-color: green; }
+.d3 { background-color: cornflowerblue; }
 .d4 { background-color: orange; }
-.d5 { background-color: purple; }
+.d5 { background-color: yellow; }
 .d6 { background-color: lime; }
-.d7 { background-color: red; }
-.d8 { background-color: gray; }
+.d7 { background-color: fuchsia; }
+.d8 { background-color: lightgray; }
 .d9 { background-color: lightcoral; }
-.d10 { background-color: blue; }
+.d10 { background-color: aquamarine; }
 
 /* ===========================
    RESPONSIVE / DYNAMIC INTERFACE STYLES

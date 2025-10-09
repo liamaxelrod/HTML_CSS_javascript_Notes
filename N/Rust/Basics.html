@@ -613,93 +613,87 @@
   </div>
 </template>
 
-<template> <!-- Rust: If ... else ... / Switch -> in Rust use -> Match -->
+<template> <!-- Rust: If ... else ... / Switch -> Match / User Input / Result Handling -->
+
   <div class="bubble">
 
-    <!-- Code Block -->
-    <h3>Rust Code: If / Else / Match</h3>
-    <div class="code_block">
-      <!-- If..Else Section -->
-      <code>// If..Else Example</code><br>
-      <span class="C1"><code>let number = 7;</code></span><br>
-      <span class="C2"><code>let result = <br>
-        if number % 2 == 0 <br>
-        &nbsp;&nbsp;{ "Even" } <br> 
-        else <br> 
-        &nbsp;&nbsp;{ "Odd" };</code></span><br>
-      <span class="C3"><code>println!("Number is {}", result);</code></span><br><br>
+    <!-- CODE BLOCK -->
+    <h3>Rust Code: If / Else / Match + User Input</h3>
 
-      <!-- Match Section -->
-      <code>// Match Example</code><br>
-      <span class="C4"><code>let day = 3;</code></span><br>
-      <span class="C5"><code>let day_name = match day {</code></span><br>
-      <span class="C6"><code>
-        &nbsp;&nbsp;1 => "Monday",</code></span><br>
-      <span class="C6"><code>
-        &nbsp;&nbsp;2 => "Tuesday",</code></span><br>
-      <span class="C6"><code>
-        &nbsp;&nbsp;3 => "Wednesday",</code></span><br>
-      <span class="C6"><code>
-        &nbsp;&nbsp;_ => "Other",</code></span><br>
-      <span class="C5"><code>};</code></span><br>
-      <span class="C7"><code>println!("Day is {}", day_name);</code></span><br>
+    <div class="code_block">
+      <code>
+        <!-- If..Else Section -->
+        // If..Else Example<br>
+        <span class="C1">let number = 7;</span><br>
+        <span class="C2">let result =<br>
+        if number % 2 == 0 { "Even" } else { "Odd" };</span><br>
+        <span class="C3">println!("Number is {}", result);</span><br><br>
+
+        <!-- Match Section -->
+        // Match Example<br>
+        <span class="C4">let day = 3;</span><br>
+        <span class="C5">let day_name = match day {</span><br>
+        <span class="C6">&nbsp;&nbsp;1 => "Monday",</span><br>
+        <span class="C6">&nbsp;&nbsp;2 => "Tuesday",</span><br>
+        <span class="C6">&nbsp;&nbsp;3 => "Wednesday",</span><br>
+        <span class="C6">&nbsp;&nbsp;_ => "Other",</span><br>
+        <span class="C5">};</span><br>
+        <span class="C7">println!("Day is {}", day_name);</span><br><br>
+
+        <!-- User Input + Result Handling -->
+        // Taking user input safely<br>
+        <span class="C8">use std::io;</span><br>
+        <span class="C9">let mut input = String::new();</span><br>
+        <span class="C10">match io::stdin().read_line(&mut input) {</span><br>
+        <span class="C10">&nbsp;&nbsp;Ok(_) => println!("You entered: {}", input),</span><br>
+        <span class="C10">&nbsp;&nbsp;Err(_) => println!("Failed to read input."),</span><br>
+        <span class="C10">}</span><br>
+      </code>
     </div>
 
-    <!-- Example Section -->
-    <h3>Example:</h3>
+    <!-- EXAMPLE OUTPUTS -->
+    <h3>Example (Outputs):</h3>
     <div class="example">
       <span class="dot d2"></span><span> &rarr; Number is Odd</span><br>
       <span class="dot d7"></span><span> &rarr; Day is Wednesday</span><br>
+      <span class="dot d10"></span><span> &rarr; You entered: Hello World</span><br>
     </div>
 
-    <!-- Explanation Section -->
+    <!-- EXPLANATION -->
     <h3>Explanation:</h3>
     <div class="explanation">
-      <span class="C1">let number</span><span> – Declares a variable storing a number.</span><br>
-      <span class="C2">if .. else</span><span> – Conditional expression; both branches must return the same type. Here, both return &quot;Even&quot; or &quot;Odd&quot; (strings).</span><br>
-      <span class="C3">println!</span><span> – Prints the value of <code>result</code> to the console.</span><br>
-      <span class="C4">let day</span><span> – Declares the variable to match against.</span><br>
-      <span class="C5">match</span><span> – Pattern matching; similar to a “switch” in other languages but safer and more powerful. Must return same type for all branches.</span><br>
-      <span class="C6">branch values</span><span> – Each pattern (1,2,3) maps to a string. The underscore <code>_</code> acts as the default case (like “default” in switch).</span><br>
-      <span class="C7">println!</span><span> – Prints <code>day_name</code> to console.</span><br><br>
+      <span class="C1"><code>let number</code></span><span> – Declares a variable storing a number.</span><br>
+      <span class="C2"><code>if .. else</code></span><span> – Conditional expression; both branches must return the same type. Returns "Even" or "Odd".</span><br>
+      <span class="C3"><code>println!</code></span><span> – Prints the value of <code>result</code> to the console.</span><br>
+      <span class="C4"><code>let day</code></span><span> – Declares a variable to match against.</span><br>
+      <span class="C5"><code>match</code></span><span> – Pattern matching; like a safe, exhaustive “switch”.</span><br>
+      <span class="C6"><code>branches</code></span><span> – Each pattern (1,2,3) maps to a string; <code>_</code> is the default catch-all.</span><br>
+      <span class="C7"><code>println!</code></span><span> – Prints <code>day_name</code> to console.</span><br>
+      <span class="C8"><code>use std::io;</code></span><span> – Brings the standard input/output module into scope.</span><br>
+      <span class="C9"><code>let mut input = String::new();</code></span><span> – Creates a mutable string buffer to hold user input.</span><br>
+      <span class="C10"><code>io::stdin().read_line(...)</code></span><span> – Reads a line from user input. Returns a <code>Result</code> that can be <code>Ok(num)</code> (success) or <code>Err(_)</code> (failure).</span><br>
+    </div>
 
-      <strong>Notes:</strong><br>
-      <span>
-      <strong class="C2">1. Expression vs Statement:</strong><br>  
-        - An <code>expression</code> produces a value (can be assigned to a variable).  <br> 
-          Example: <code>let x = 5 + 3;</code> → <code>5 + 3</code> is an expression returning 8.  <br> 
-        - A <code>statement</code> performs an action but doesn’t return a value.  <br> 
-          Example: <code>let y = 10;</code> is a statement (declares variable, no value returned directly).  <br> 
-        - In Rust, <code>if..else</code> is an expression; it returns a value that can be assigned.  <br><br>  
+    <!-- NOTES -->
+    <h3>Notes:</h3>
+    <div class="notes">
+      <span>- <strong>1. Expressions vs Statements:</strong> Rust’s <code>if..else</code> and <code>match</code> are expressions—they return values you can assign.</span><br>
+      <span>- <strong>2. Why <code>match</code>:</strong> Forces exhaustive checking and returns values safely.</span><br>
+      <span>- <strong>3. <code>use std::io;</code>:</strong> Imports the module for input/output operations.</span><br>
+      <span>- <strong>4. <code>String::new()</code>:</strong> Creates an empty, growable string buffer.</span><br>
+      <span>- <strong>5. <code>read_line()</code>:</strong> Appends user input to the mutable string. Always check its return value!</span><br>
+      <span>- <strong>6. <code>Result</code> type:</strong> Represents success (<code>Ok</code>) or failure (<code>Err</code>).</span><br>
+      <span>- <strong>7. <code>expect()</code> vs <code>match</code>:</strong> <code>expect()</code> panics on error; <code>match</code> lets you handle both cases gracefully.</span><br>
+    </div>
 
-      <strong class="C5">2. Why use match instead of a switch:</strong>  <br> 
-        - Rust does not have a traditional “switch” like C/JS.  <br> 
-        - <code>match</code> is safer: it forces **exhaustive checking** (all possible cases must be handled).  <br> 
-        - Returns a value (like an expression), unlike most switch statements that don’t return values.  <br> 
-        - Can match complex patterns (enums, tuples, ranges), which a switch cannot.  <br><br>  
-
-      <strong class="C5">3.  Default case (_)</strong>:  <br> 
-        - The underscore <code>_</code> acts as a “catch-all” for any unmatched values.  <br> 
-        - Pick it when you want to handle all remaining possibilities not explicitly listed.  <br> 
-        - Ensures the match expression is exhaustive; Rust will give a compile error if some value is not covered.  <br><br>  
-
-      <strong class="C2">4. Type requirement:</strong>  <br> 
-        - Every branch of <code>if..else</code> or <code>match</code> must return the same type.  <br> 
-        - Example: you cannot have one branch return a string and another return a number.  <br><br> 
-
-      <strong>5. Practical tip:</strong>  <br> 
-        - Use <code>if..else</code> for simple two-way decisions.  <br> 
-        - Use <code>match</code> for multiple options, exhaustive checks, or pattern matching scenarios.  <br> 
-      </span><br> 
-
-      <strong>Concept & Spirit of Rust:</strong><br>
-      <span>
-      - Rust emphasizes **expressions over statements**, meaning many constructs (like <code>if..else</code> and <code>match</code>) produce values that can be used immediately.<br>
-      - Pattern matching with <code>match</code> reflects Rust’s philosophy of **safety and exhaustiveness**: you must consider all possible cases, reducing runtime errors.<br>
-      - Rust encourages thinking in terms of **ownership, borrowing, and predictable behavior**. Conditionals don’t just control flow—they interact with values and ownership explicitly.<br>
-      - The language design nudges you to **write clear, explicit, and memory-safe code**. Each branch returning a consistent type, and exhaustive pattern matching, are examples of this principle.<br>
-      - Conceptually, Rust is about **being deliberate**: you explicitly decide how data is handled, how values flow, and how each construct affects program state. This mindset underpins loops, conditionals, and iterators alike.
-    </span>
+    <!-- CONCEPT & SPIRIT -->
+    <h3>Concept & Spirit:</h3>
+    <div class="concept">
+      <span>- Rust teaches you to **handle all possible outcomes** — nothing is silently ignored.</span><br>
+      <span>- Using <code>match</code> on <code>Result</code> values makes error handling **explicit and safe**.</span><br>
+      <span>- <code>mut</code> and <code>String::new()</code> remind you that **mutability must be deliberate**.</span><br>
+      <span>- <code>use std::io;</code> demonstrates **scoped imports** — Rust doesn’t assume you want everything by default.</span><br>
+      <span>- Conceptually, this code moves you from *control flow* to *interacting with the outside world safely* — one of Rust’s key design goals.</span>
     </div>
 
   </div>
@@ -966,8 +960,4 @@
 
 
 
- 
-
-
- 
 -->
