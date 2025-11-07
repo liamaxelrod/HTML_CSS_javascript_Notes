@@ -1,4 +1,5 @@
 // Interactive Rust Example: Using match, if/else, and user input
+// Corresponds to HTML template: <!-- Rust: If ... else ... / Switch -> Match / User Input / Result Handling --> in N/Rust/#
 // =============================================================
 // Title: Interactive Number Selector
 // What this example shows: How to use `match`, `if/else`, and handle user input.
