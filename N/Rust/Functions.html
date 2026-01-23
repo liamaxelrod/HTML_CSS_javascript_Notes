@@ -1,0 +1,180 @@
+<!-- File name: N/Rust/Functions.html -->
+
+<template> <!-- RUST: Functions, Parameters, Return Values -->
+  <div class="bubble">
+
+    <!-- Code Block -->
+    <h3>Rust Functions: <code>fn</code>, Parameters, and Return Values</h3>
+    <div class="code_block">
+      <code>
+        <!-- Section 1: Simple function -->
+        // Simple function definition <br>
+        <span class="C1">fn say_hello() { <br>
+            &nbsp;&nbsp;println!("Hello, world!"); <br>
+        }</span><br><br>
+
+        <!-- Section 2: Function with parameters -->
+        // Function with parameters <br>
+        <span class="C2">fn greet(name: &str) { <br>
+            &nbsp;&nbsp;println!("Hello, {}!", name); <br>
+        }</span><br><br>
+
+        <!-- Section 3: Function with explicit return -->
+        // Function with explicit return <br>
+        <span class="C3">fn add_explicit(a: i32, b: i32) -> i32 { <br>
+            &nbsp;&nbsp;return a + b; <br>
+        }</span><br><br>
+
+        <!-- Section 4: Function with implicit return -->
+        // Function with implicit return (last expression) <br>
+        <span class="C4">fn add_implicit(a: i32, b: i32) -> i32 { <br>
+            &nbsp;&nbsp;a + b <br>
+        }</span><br><br>
+
+        <!-- Section 5: Calling functions -->
+        // Calling functions <br>
+        <span class="C5">fn main() { </span><br>
+            <span class="C1">&nbsp;&nbsp;say_hello(); </span><br>
+            <span class="C2">&nbsp;&nbsp;greet("Alice"); </span><br>
+            <span class="C3">&nbsp;&nbsp;let sum1 = add_explicit(5, 7); </span><br>
+            <span class="C5">&nbsp;&nbsp;println!("Sum with explicit return: {}", sum1); </span><br>
+            <span class="C4">&nbsp;&nbsp;let sum2 = add_implicit(3, 4); </span><br>
+            <span class="C5">&nbsp;&nbsp;println!("Sum with implicit return: {}", sum2); <br>
+        }</span>
+      </code>
+    </div>
+
+    <!-- Example Section -->
+    <h3>Example (Outputs):</h3>
+    <div class="example">
+      <span class="dot d1"></span><span> &rarr; Hello, world!</span><br>
+      <span class="dot d2"></span><span> &rarr; Hello, Alice!</span><br>
+      <span class="dot d3"></span><span> &rarr; Sum with explicit return: 12</span><br>
+      <span class="dot d4"></span><span> &rarr; Sum with implicit return: 7</span><br>
+      <span class="dot d5"></span><span> &rarr; But called through main</span>
+    </div>
+
+    <!-- Explanation Section -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1"><code>fn say_hello()</code></span><span> – A function with no parameters and no return value.</span><br>
+      <span class="C2"><code>fn greet(name: &str)</code></span><span> – Takes one parameter called <code>name</code>. Notice that in Rust you must always specify the type (<code>&str</code> here means a string slice).</span><br>
+      <span class="C3"><code>fn add_explicit(a: i32, b: i32) -> i32</code></span><span> – Uses the <code>return</code> keyword to send back the sum. This is the “long-form” way.</span><br>
+      <span class="C4"><code>fn add_implicit(a: i32, b: i32) -> i32</code></span><span> – Does the same, but without <code>return</code>. In Rust, the last line of a function (if it has no semicolon) is automatically returned.</span><br>
+      <span class="C5"><code>fn main()</code></span><span> – The entry point of every Rust program. Rust always starts by looking for <code>main</code>. Without it, nothing runs (unless you are writing a library). Here it calls the other functions and prints their results.</span><br><br>
+
+      <strong>Notes:</strong><br>
+      <span>1. Both explicit <code>return</code> and implicit return work the same. The difference is style: explicit is clearer in long or complex code, implicit is shorter and common for simple math or logic.</span><br>
+      <span>2. In Rust, every parameter must have a type. This makes your code safer and avoids confusion.</span><br><br>
+
+      <strong>Concept & Spirit of Rust:</strong><br>
+      <span>- Rust wants you to be <em>clear about data flow</em>. Parameters are the inputs, return values are the outputs.</span><br>
+      <span>- Implicit returns encourage short, readable functions where the last expression is the “answer.”</span><br>
+      <span>- Explicit <code>return</code> is useful when you want to exit early or make the return very obvious.</span><br>
+      <span>- Overall, Rust functions are designed to be predictable: you always know what goes in and what comes out.</span><br>
+      <span>- This makes programs easier to read, safer, and less error-prone compared to languages that guess types or hide return values.</span>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- RUST: Scope, Shadowing -->
+  <div class="bubble">
+
+    <!-- Code Block -->
+    <h3>Rust Scope: Variables and Shadowing</h3>
+    <div class="code_block">
+      <code>
+        <!-- Section 1: Variable inside a function -->
+        // Variable inside a function <br>
+        <span class="C1">fn inside_function() { <br>
+            &nbsp;&nbsp;let x = 5; <br>
+            &nbsp;&nbsp;println!("Inside function, x = {}", x); <br>
+        }</span><br><br>
+
+        <!-- Section 2: Variable inside a block -->
+        // Variable inside a block <br>
+        <span class="C2">fn inside_block() { <br>
+            &nbsp;&nbsp;let y = 10; <br>
+            &nbsp;&nbsp;{ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;let y = 20; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;println!("Inside inner block, y = {}", y); <br>
+            &nbsp;&nbsp;} <br>
+            &nbsp;&nbsp;println!("Outside inner block, y = {}", y); <br>
+        }</span><br><br>
+
+        <!-- Section 3: Variables in the same scope with shadowing -->
+        // Shadowing in the same scope <br>
+        <span class="C3">fn shadowing_example() { <br>
+            &nbsp;&nbsp;let z = 2; <br>
+            &nbsp;&nbsp;let z = z + 3; // shadowing previous z <br>
+            &nbsp;&nbsp;println!("After shadowing, z = {}", z); <br>
+        }</span><br><br>
+
+        <!-- Section 4: Calling functions -->
+        // Calling functions <br>
+        <span class="C4">fn main() { <br>
+            &nbsp;&nbsp;inside_function(); <br>
+            &nbsp;&nbsp;inside_block(); <br>
+            &nbsp;&nbsp;shadowing_example(); <br>
+        }</span>
+      </code>
+    </div>
+
+    <!-- Example Section -->
+    <h3>Example (Outputs):</h3>
+    <div class="example">
+      <span class="dot d1"></span><span> &rarr; Inside function, x = 5</span><br>
+      <span class="dot d2"></span><span> &rarr; Inside inner block, y = 20</span><br>
+      <span class="dot d2"></span><span> &rarr; Outside inner block, y = 10</span><br>
+      <span class="dot d3"></span><span> &rarr; After shadowing, z = 5</span><br>
+    </div>
+
+    <!-- Explanation Section -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1"><code>let x = 5</code></span>
+      <span> – A variable created inside a function can only be used inside that function. 
+      Once the function finishes, <code>x</code> disappears. This boundary is called the <em>function scope</em>. 
+      Think of scope as the “lifetime” of a variable — when you leave the function, the variable’s memory is cleaned up.</span><br>
+
+      <span class="C2"><code>let y = 20</code></span>
+      <span> – This is inside a <em>block</em>. A block in Rust is any piece of code wrapped in curly braces <code>{ }</code>. 
+      A block creates its own smaller scope, like a mini-room inside a bigger room. 
+      The <code>y</code> inside the block is separate from the <code>y</code> outside. 
+      Inside the block, <code>y = 20</code>. Outside, <code>y = 10</code>. They are two different variables with the same name, 
+      and the inner one vanishes when the block ends.</span><br>
+
+      <span class="C3"><code>let z = z + 3</code></span>
+      <span> – This shows <strong>shadowing</strong>. Shadowing means you declare a new variable with the same name as an old one. 
+      The first <code>z</code> is <code>2</code>. Then <code>let z = z + 3</code> creates a brand-new <code>z</code> (value <code>5</code>) 
+      that <em>replaces</em> the old one. The old <code>z</code> is dropped, and only the new one exists. 
+      Picture writing on a new sticky note and placing it over the old one — the old note is hidden and thrown away, 
+      not edited in place.</span><br>
+
+      <span class="C4"><code>fn main()</code></span>
+      <span> – The entry point of every Rust program. Rust always looks for <code>main</code> first. 
+      Without it, nothing runs (unless you’re writing a library). 
+      In this example, <code>main</code> calls the functions so we can see how scope and shadowing work in action.</span><br><br>
+
+      <strong>Notes:</strong><br>
+      <span>1. A <strong>scope</strong> is the part of the code where a variable exists. 
+      Functions, blocks, loops, and conditionals all create new scopes.</span><br>
+      <span>2. <strong>Shadowing vs mutability:</strong> 
+      - Shadowing (<code>let z = z + 3</code>) makes a brand-new variable. The old one is dropped, and memory is freed.  
+      - Mutability (<code>let mut a = 1; a = 2;</code>) keeps the same variable, just updates its value in the same memory slot.  
+      Shadowing can also change the type of a variable, while mutability cannot.</span><br>
+      <span>3. Shadowing is useful when you want to reuse a name but transform its value step by step, 
+      for example: <code>let x = "42"; let x: i32 = x.parse().unwrap();</code> 
+      (string → number). This would not be possible with just <code>mut</code>.</span><br><br>
+
+      <strong>Concept & Spirit of Rust:</strong><br>
+      <span>- Rust enforces clear boundaries: variables live only as long as their scope.</span><br>
+      <span>- This prevents hidden errors, like accidentally using a variable that should no longer exist.</span><br>
+      <span>- Shadowing is Rust’s way of letting you reuse names while keeping transformations safe and predictable.</span><br>
+      <span>- Overall, Rust encourages you to think carefully about data lifetimes, which reduces bugs and makes programs more reliable.</span>
+    </div>
+
+  </div>
+</template>
+

@@ -32,7 +32,10 @@ const allowedNotes = {
     'Browser'
   ],
   'Rust': [
-    'Basics'
+    'Basics',
+    'Functions',
+    'Arrays',
+    'Flow_Logic'
   ]
 };
 

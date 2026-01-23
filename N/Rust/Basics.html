@@ -1,700 +1,128 @@
-<!-- File name: N/NRust/Rust.html -->
+<!-- File name: N/NRust/Basics.html -->
 
-<template> <!-- Rust: Data Structures (Array, Vector, Tuple, HashMap, Structs, Enums) -->
-
+<template> <!-- Rust: Basics -->
   <div class="bubble">
 
-    <!-- 1. CODE BLOCKS -->
-    <h3>Rust Data Structures: Common Types</h3>
-    <div class="code_block">
-      <code>
-        <!-- C1: Array -->
-        // Array: fixed-size list of same-type values <br>
-        // Define an array of 7 integers (i32), one for each day of the week <br>
-        <span class="C1">let temperatures: [i32; 7] = [70, 72, 68, 65, 74, 73, 71];</span><br>
-        // Access a single value by index (0 = Monday) <br>
-        <span class="C1">println!("Monday temperature: {}", temperatures[0]);</span><br>
-        // Loop over array with index (day) and value (temp) <br>
-        <span class="C1">for (day, temp) in temperatures.iter().enumerate() {</span><br>
-        &nbsp;&nbsp;// Print each day’s number and its temperature <br>
-        <span class="C1">&nbsp;&nbsp;println!("Day {}: {}°F", day + 1, temp);</span><br>
-        <span class="C1">}</span><br><br>
-
-        <!-- C2: Vector (Vec) -->
-        // Vector: growable list of same-type values <br>
-        // Start with a shopping list containing 3 items <br>
-        <span class="C2">let mut shopping_list: Vec<&str> = vec!["eggs", "milk", "bread"];</span><br>
-        // Add new items at runtime (vectors can grow) <br>
-        <span class="C2">shopping_list.push("apples");</span><br>
-        <span class="C2">shopping_list.push("orange juice");</span><br>
-        // Loop through vector by reference to print each item <br>
-        <span class="C2">for item in &shopping_list { println!("- {}", item); }</span><br><br>
-
-        <!-- C3: Tuple -->
-        // Tuple: group different types together <br>
-        // A tuple can hold different types: string, number, boolean <br>
-        <span class="C3">let user_profile: (&str, i32, bool) = ("Alice", 30, true);</span><br>
-        // Access tuple fields with .0, .1, .2 etc. <br>
-        <span class="C3">println!("Name: {}, Age: {}, Active: {}", user_profile.0, user_profile.1, user_profile.2);</span><br>
-        // Function that returns a tuple (min, max) from a slice of numbers <br>
-        <span class="C3">fn min_max(numbers: &[i32]) -> (i32, i32) {</span><br>
-        &nbsp;&nbsp;// Start with the first number as both min and max <br>
-        <span class="C3">&nbsp;&nbsp;let mut min = numbers[0]; let mut max = numbers[0];</span><br>
-        &nbsp;&nbsp;// Loop through and update min/max <br>
-        <span class="C3">&nbsp;&nbsp;for &num in numbers { if num < min { min = num; } if num > max { max = num; } }</span><br>
-        &nbsp;&nbsp;// Return a tuple (min, max) <br>
-        <span class="C3">&nbsp;&nbsp;(min, max)</span><br>
-        <span class="C3">}</span><br>
-        // Example use: destructure the returned tuple <br>
-        <span class="C3">let numbers = [4, 7, 1, 9]; let (min, max) = min_max(&numbers);</span><br>
-        <span class="C3">println!("Min: {}, Max: {}", min, max);</span><br><br>
-
-        <!-- C4: HashMap -->
-        // HashMap: key-value lookup <br>
-        // Bring HashMap type into scope <br>
-        <span class="C4">use std::collections::HashMap;</span><br>
-        // Create a mutable HashMap to store student scores <br>
-        <span class="C4">let mut scores = HashMap::new();</span><br>
-        // Insert names (keys) with their scores (values) <br>
-        <span class="C4">scores.insert("Alice", 90); scores.insert("Bob", 75); scores.insert("Charlie", 82);</span><br>
-        // Get a value safely with .get(), returns Option <br>
-        <span class="C4">if let Some(score) = scores.get("Alice") { println!("Alice scored: {}", score); }</span><br>
-        // Iterate through all key-value pairs <br>
-        <span class="C4">for (name, score) in &scores { println!("{}: {}", name, score); }</span><br><br>
-
-        <!-- C5: Structs -->
-        // Struct: custom type with named fields <br>
-        // Define a Point struct with two integer fields <br>
-        <span class="C5">struct Point { x: i32, y: i32 }</span><br>
-        // Create a Point instance <br>
-        <span class="C5">let p1 = Point { x: 10, y: 20 };</span><br>
-        // Access struct fields with dot notation <br>
-        <span class="C5">println!("Point coordinates: ({}, {})", p1.x, p1.y);</span><br>
-        // Define another struct for a more complex type <br>
-        <span class="C5">struct Person { name: String, age: u8, active: bool }</span><br>
-        // Create a Person instance with field values <br>
-        <span class="C5">let user = Person { name: "Bob".to_string(), age: 25, active: true };</span><br>
-        <span class="C5">println!("{} is {} years old", user.name, user.age);</span><br><br>
-
-        <!-- C6: Enums -->
-        // Enum: type with multiple named variants <br>
-        // Define an enum for traffic light states <br>
-        <span class="C6">enum TrafficLight { Red, Yellow, Green }</span><br>
-        // Create a variable holding a variant of the enum <br>
-        <span class="C6">let light = TrafficLight::Red;</span><br>
-        // Match enum value to decide behavior <br>
-        <span class="C6">match light {</span><br>
-        &nbsp;&nbsp;// Each arm describes what to do for a variant <br>
-        <span class="C6">&nbsp;&nbsp;TrafficLight::Red => println!("Stop!"),</span><br>
-        <span class="C6">&nbsp;&nbsp;TrafficLight::Yellow => println!("Slow down."),</span><br>
-        <span class="C6">&nbsp;&nbsp;TrafficLight::Green => println!("Go!"),</span><br>
-        <span class="C6">}</span><br>
-      </code>
-    </div>
-
-    <!-- 2. EXAMPLE OUTPUTS -->
-    <h3>Example (Outputs):</h3>
-    <div class="example">
-      <span class="dot d1"></span><span> &rarr; Monday: 70, Tuesday: 72, … up to 7 days</span><br>
-      <span class="dot d2"></span><span> &rarr; - eggs, - milk, - bread, - apples, - orange juice</span><br>
-      <span class="dot d3"></span><span> &rarr; Name: Alice, Age: 30, Active: true; Min: 1, Max: 9</span><br>
-      <span class="dot d4"></span><span> &rarr; Alice: 90, Bob: 75, Charlie: 82</span><br>
-      <span class="dot d5"></span><span> &rarr; Point coordinates: (10, 20); Bob is 25 years old</span><br>
-      <span class="dot d6"></span><span> &rarr; Stop! (Red), Slow down. (Yellow), Go! (Green)</span><br>
-    </div>
-
-    <!-- 3. EXPLANATION -->
-    <h3>Explanation:</h3>
-    <div class="explanation">
-      <span class="C1"><code>Array</code></span><span> – An array is a fixed-size list of items that are all the same type. Use when you know the number of items will never change. Example: the 12 months in a year, or the 7 days of the week. Arrays give very predictable memory usage, which makes them fast and efficient.</span><br><br>
-
-      <span class="C2"><code>Vector (Vec)</code></span><span> – A vector is a growable list of items of the same type. Use when the number of items is not known ahead of time or changes during the program. Example: a shopping cart in an online store (customers can keep adding and removing items), or a log of events as they happen. Vectors manage memory for you, which makes them flexible and safe.</span><br><br>
-
-      <span class="C3"><code>Tuple</code></span><span> – A tuple groups values of different types into a single unit. Use when you need to combine a few different pieces of data together without creating a custom type. Example: returning both a status code and a message from a function, or storing a user’s profile as (name, age, active_status). Tuples are quick and convenient when the data is small and temporary.</span><br><br>
-
-      <span class="C4"><code>HashMap</code></span><span> – A HashMap stores data as key–value pairs for fast lookups. Use when you want to quickly find a value by its key. Example: a dictionary where words (keys) map to definitions (values), or storing student IDs (keys) with their grades (values). HashMaps are great when your data needs to grow dynamically and when direct access by a unique key is important.</span><br><br>
-
-      <span class="C5"><code>Struct</code></span><span> – A struct lets you create your own custom data type with named fields. Use when you want to model something meaningful in your program. Example: a <code>User</code> with a name, age, and email, or a <code>Point</code> with x and y coordinates. Structs make your code easier to read and help represent real-world objects in a clear, structured way.</span><br><br>
-
-      <span class="C6"><code>Enum</code></span><span> – An enum represents a value that can be one of several options. Use when something can exist in different states or forms. Example: traffic lights with <code>Red</code>, <code>Yellow</code>, and <code>Green</code>, or different commands in a program like <code>Start</code>, <code>Stop</code>, <code>Pause</code>. Enums combined with <code>match</code> let you safely handle every possible case.</span><br><br>
-
-       <span class="C7"><code>Array</code></span><span> – Think of a row of mailboxes with a fixed number of slots. Each slot holds the same type of item (like numbers or names). You cannot add or remove slots. Use this when you know exactly how many items you need and they won’t change.</span><br>
-      <span class="C7"><code>Vector (Vec)</code></span><span> – Like a backpack that can hold any number of items. You can add or remove items freely, but everything inside is the same type (all apples, all numbers). Use it when the number of items can change while the program runs.</span><br>
-      <span class="C7"><code>Tuple</code></span><span> – Imagine a single envelope that holds different things together: a photo, a letter, and a coin. Each thing can be a different type. Tuples are not multiple lists, they are **one bundle of different things**. Use it when you want to keep a few related pieces of data together temporarily.</span><br>
-      <span class="C7"><code>HashMap</code></span><span> – Like a dictionary: you have a word (key) and its definition (value). You can add or remove entries anytime. Use it when you want to look things up by a label or key quickly.</span><br>
-      <span class="C7"><code>Struct</code></span><span> – Like a form you fill out with labeled fields: name, age, email. Each field has a name and a type. Unlike a HashMap, the fields are fixed and named ahead of time, so everyone knows exactly what data exists. Use it to model real-world objects clearly and safely.</span><br>
-      <span class="C7"><code>Enum</code></span><span> – Think of a light switch with three positions: Red, Yellow, Green. A variable can only ever be one of these states at a time. Unlike a Struct or HashMap, you don’t store multiple pieces of information; you **choose one from several options**. Use it when something must always be one of a defined set of possibilities.</span><br>
-
-      <!-- 3.2 NOTES -->
-      <h3>Notes:</h3>
-      <span>- Arrays are simple and efficient, but they cannot grow in size.</span><br>
-      <span>- Vectors are more flexible because they can grow or shrink as needed.</span><br>
-      <span>- Tuples are lightweight and temporary, while structs give names to fields for readability and long-term use.</span><br>
-      <span>- HashMaps are the go-to tool when you need fast lookups by a unique key.</span><br>
-      <span>- Structs model data with properties, while enums model situations with clear choices.</span><br>
-
-      <!-- 3.3 CONCEPT & SPIRIT -->
-      <h3>Concept & Spirit:</h3>
-      <span>- Rust encourages Arrays for fixed-size data because it guarantees efficient memory usage and predictable behavior.</span><br>
-      <span>- Rust encourages Vectors for dynamic lists, giving flexibility without sacrificing safety, so beginners learn safe memory growth.</span><br>
-      <span>- Tuples are lightweight, quick to use, and allow bundling of different types without creating a full type, teaching beginners simplicity and efficiency.</span><br>
-      <span>- HashMaps show how to handle dynamic, key-based collections safely, emphasizing lookup efficiency and ownership rules.</span><br>
-      <span>- Structs teach design and clarity: defining shapes for your data, modeling real-world objects, and writing readable, maintainable code.</span><br>
-      <span>- Enums teach explicit state handling, showing how Rust enforces exhaustive, safe logic for variables that can be exactly one of several choices.</span><br>
-      <span>- Beginner mindset: Always choose the structure that matches the real-world requirements of your data, consider mutability, ownership, and safety, and leverage Rust’s compiler to prevent mistakes. Think: “What is this data? How will it change? How can Rust help me handle it safely?”</span><br>
-    </div>
-
-  </div>
-</template>
-
-<template> <!-- RUST: mut, Ownership & Borrowing -->
-
-  <div class="bubble">
-
-    <!-- 1. CODE BLOCKS -->
-    <h3>Rust: mut, Ownership & Borrowing</h3>
-    <div class="code_block">
-      <code>
-        <!-- Ownership Rules -->
-        // Ownership Rules <br>
-        <span class="C1">let x = 5;</span><br>
-        <span class="C1">let y = x; // x is moved to y</span><br><br>
-
-        <!-- Clone -->
-        // Clone <br>
-        <span class="C2">let x = 5;</span><br>
-        <span class="C2">let y = x.clone(); // explicitly clone value</span><br><br>
-
-        <!-- Borrowing -->
-        // Borrowing & References <br>
-        <span class="C3">let s = String::from("hello");</span><br>
-        <span class="C3">let r = &s; // borrow s</span><br><br>
-
-        <!-- Mutable References -->
-        // Mutable References <br>
-        <span class="C4">let mut s = String::from("hello");</span><br>
-        <span class="C4">&nbsp;&nbsp;let r = &mut s; // mutable borrow</span><br><br>
-
-        <!-- Guest List Example: Clone, Borrow, Mut Borrow -->
-        fn main() { <br>
-        <span class="C5">&nbsp;&nbsp;let mut guest_list = String::from("Alice, Bob");</span><br><br>
-
-        <span class="C5">&nbsp;&nbsp;// Clone → backup copy before editing</span><br>
-        <span class="C5">&nbsp;&nbsp;let backup = guest_list.clone();</span><br><br>
-
-        <span class="C5">&nbsp;&nbsp;// Borrow → read without taking ownership</span><br>
-        <span class="C5">&nbsp;&nbsp;print_guest_count(&guest_list);</span><br><br>
-
-        <span class="C5">&nbsp;&nbsp;// Mut Borrow → temporarily modify original list</span><br>
-        <span class="C5">&nbsp;&nbsp;add_guest(&mut guest_list);</span><br><br>
-
-        <span class="C5">&nbsp;&nbsp;println!("Updated list: {}", guest_list);</span><br>
-        }<br><br>
-
-        <span class="C5">fn print_guest_count(list: &String) {</span><br>
-        <span class="C5">&nbsp;&nbsp;let count = list.split(", ").count();</span><br>
-        <span class="C5">&nbsp;&nbsp;println!("Current guests: {}", count);</span><br>
-        <span class="C5">}</span><br><br>
-
-        <span class="C5">fn add_guest(list: &mut String) {</span><br>
-        <span class="C5">&nbsp;&nbsp;list.push_str(", Carol");</span><br>
-        <span class="C5">}</span>
-      </code>
-    </div>
-
-    <!-- 2. EXAMPLE OUTPUTS -->
-    <h3>Example (Outputs):</h3>
-    <div class="example">
-      <span class="dot d1"></span><span> &rarr; x is no longer valid after moving to y</span><br>
-      <span class="dot d2"></span><span> &rarr; x is still usable because we cloned it</span><br>
-      <span class="dot d3"></span><span> &rarr; r can read s without taking ownership</span><br>
-      <span class="dot d4"></span><span> &rarr; r can modify s safely when borrowed mutably</span><br>
-      <span class="dot d5"></span><span> &rarr; Guest list example: clone → backup copy, borrow → check length, mut borrow → add guest</span><br>
-    </div>
-
-    <!-- 3.1 EXPLANATION -->
-    <h3>Explanation:</h3>
-    <div class="explanation">
-      <span class="C1"><code>let x = 5;</code></span>
-      <span> – x owns the value 5. When we assign x to y, ownership moves to y, and x can no longer be used. Rust automatically frees memory safely when a value goes out of scope.</span><br>
-
-      <span class="C2"><code>x.clone()</code></span>
-      <span> – Cloning creates a full copy of the value so both x and y have independent ownership. Use cloning when you need to preserve the original value while giving a copy to another variable.</span><br>
-
-      <span class="C3"><code>&s</code></span>
-      <span> – Borrowing a reference lets you read a value without taking ownership. The original owner (s) keeps control, preventing accidental invalid memory access, while you can safely use the data temporarily.</span><br>
-
-      <span class="C4"><code>&mut s</code></span>
-      <span> – Mutable references allow you to modify a value without taking ownership. Rust ensures there’s only one mutable reference at a time, preventing conflicts and guaranteeing safe, predictable changes.</span><br>
-
-      <span class="C5"><code>Guest List Example</code></span>
-      <span> – Clone creates a backup copy of the guest list so the original is safe. Borrow lets a function check how many guests exist without taking ownership. Mutable borrow lets a function temporarily edit the list (adding a new guest) while ownership stays with main. This shows **when and why to use clone, borrow, and mut borrow** in practice.</span><br>
-
-      <span class="C6"><code>Ownership Concept</code></span>
-      <span> – Rust’s ownership system is the foundation for memory safety. It removes the need for a garbage collector, while preventing bugs like dangling pointers or double frees.</span><br>
-
-      <span class="C7"><code>Borrowing Concept</code></span>
-      <span> – Borrowing allows you to use or modify data safely without giving up ownership. It encourages thinking about who “owns” data at any time and avoids unnecessary cloning, making programs faster.</span><br>
-
-      <span class="C8"><code>Why This Matters</code></span>
-      <span> – By enforcing ownership and borrowing rules, Rust ensures memory is always valid and accessible only by permitted parts of your program, improving reliability and preventing subtle bugs common in other languages.</span><br><br>
-
-      <!-- 3.2 NOTES -->
-      <h3>Notes:</h3>
-      <span>- Each value has exactly one owner unless borrowed.</span><br>
-      <span>- Ownership ensures memory is freed automatically when out of scope.</span><br>
-      <span>- Borrowing avoids expensive clones for large values.</span><br><br>
-
-      <!-- 3.3 CONCEPT & SPIRIT -->
-      <h3>Concept & Spirit:</h3>
-      <span>- Unlike other coding languages, keep in mind you're always either owning a variable or borrowing a variable</span><br>
-      <span>- Ownership is Rust’s way of managing memory safely without a garbage collector.</span><br>
-      <span>- Borrowing encourages safe reuse of data without transferring ownership.</span><br>
-      <span>- These rules prevent common bugs like dangling pointers or double frees and are part of what makes Rust fast and reliable.</span>
-    </div>
-
-  </div>
-</template>
-
-<template> <!-- RUST: Strings -->
-
-  <div class="bubble">
-
-    <!-- 1. CODE BLOCKS -->
-    <h3>Topic Title: Rust Strings – Working with &str and String</h3>
-    <div class="code_block">
-      <code>
-        <!-- Section 1 -->
-        // String slices (&str) <br>
-        <span class="C1">let greeting: &str = "Hello";</span><br><br>
-
-        <!-- Section 2 -->
-        // Create a String from &str <br>
-        <span class="C2">let s1 = "Hi".to_string();</span><br>
-        <span class="C2">let s2 = String::from("Hola");</span><br><br>
-
-        <!-- Section 3 -->
-        // Change a mutable String <br>
-        <span class="C3">let mut s3 = String::from("Hello");</span><br>
-        <span class="C3">&nbsp;&nbsp;s3.push_str(", world!");</span><br><br>
-
-        <!-- Section 4 -->
-        // Concatenate with + and format! <br>
-        <span class="C4">let s4 = s1 + &s2;</span><br>
-        <span class="C4">let s5 = format!("{} {}", s2, s3);</span><br><br>
-
-        <!-- Section 5 -->
-        // Find String length <br>
-        <span class="C5">let length = s5.len();</span><br>
-      </code>
-    </div>
-
-    <!-- 2. EXAMPLE OUTPUTS -->
-    <h3>Example (Outputs):</h3>
-    <div class="example">
-      <span class="dot d1"></span><span> → Fixed slice "Hello"</span><br>
-      <span class="dot d2"></span><span> → Creates owned Strings: "Hi", "Hola"</span><br>
-      <span class="dot d3"></span><span> → Mutated string becomes "Hello, world!"</span><br>
-      <span class="dot d4"></span><span> → Concatenated: "HiHola" and "Hola Hello, world!"</span><br>
-      <span class="dot d5"></span><span> → Length of string in bytes (e.g., 18)</span><br>
-    </div>
-
-    <!-- 3.1 EXPLANATION -->
-    <h3>Explanation:</h3>
-    <div class="explanation">
-      <span class="C1"><code>&str</code></span><span> – Pronounced “string slice.” Think of it as a window into some text that already exists. You can look through the window and read the words, but you don’t own the house, so you can’t knock down walls or expand it. That’s why slices like <code>"Hello"</code> are fixed and unchangeable.</span><br><br>
-
-      <span class="C2"><code>String</code></span><span> – A <code>String</code> is like moving the text into your own house. Now you own it, and you can rearrange it however you want. You can build more rooms (add characters) or repaint walls (modify the content). That’s why <code>to_string()</code> and <code>String::from()</code> both “take” the borrowed slice and give you a fresh owned <code>String</code> that you control.</span><br><br>
-
-      <span class="C3"><code>mut</code> + <code>push_str()</code></span><span> – Rust doesn’t let you change things unless you clearly say they’re mutable (<code>mut</code>). Declaring <code>mut s3</code> is like saying “this string is flexible.” Then <code>push_str()</code> works like taping more paper onto the end of a scroll. Each time you call it, the string grows.</span><br><br>
-
-      <span class="C4"><code>Concatenate</code></span><span> – The word “concatenate” simply means “to join things together end-to-end.” In strings, it means gluing words one after another. The <code>+</code> operator does this, but with a catch: the first string is consumed (Rust gives up ownership of it) and then adds a borrowed piece (<code>&str</code>) onto the end. The <code>format!</code> macro is safer and cleaner—it doesn’t take ownership away and works with multiple values at once, like filling in blanks in a sentence.  
-      Why both? The <code>+</code> operator is quick and low-level, good for two pieces. <code>format!</code> is the practical, everyday choice when building longer text.</span><br><br>
-
-      <span class="C5"><code>.len()</code></span><span> – This gives the length of the string, but in bytes, not characters. Why? Because Rust strings are UTF-8, which means some characters (like emoji or non-English letters) take more than one byte. For example, "a" is 1 byte, but "é" is 2 bytes, and "😊" is 4 bytes. This matters because if you assume <code>.len()</code> always means “number of letters,” you can accidentally cut a character in half and corrupt the string. To count human-readable characters, use <code>.chars().count()</code>.</span><br><br>
-
-      <span class="C6"><code>to_string()</code> vs <code>String::from()</code></span><span> – These two are twins: they both convert a <code>&str</code> into an owned <code>String</code>. Which one you use is mostly personal style. Many Rustaceans prefer <code>to_string()</code> when starting from a literal (e.g. <code>"Hi".to_string()</code>) and <code>String::from()</code> when they want to be more explicit about ownership. Functionally, they’re the same.</span><br><br>
-
-      <!-- 3.2 NOTES -->
-      <h3>Notes:</h3>
-      <span>- In Rust, ownership vs borrowing is a big deal. When you use <code>+</code>, the first <code>String</code> is moved and can’t be used anymore—Rust prevents hidden memory leaks by making ownership rules visible in code.</span><br>
-      <span>- If you come from another language (like Python or JavaScript), you might expect all strings to be easy-to-edit. Rust forces you to say whether the data is borrowed (<code>&str</code>) or owned (<code>String</code>) so you know who controls the memory.</span><br>
-      <span>- Rust’s strictness around mutability (<code>mut</code>) prevents accidental bugs where data changes unexpectedly. You always know which variables are frozen and which are flexible.</span><br>
-      <span>- UTF-8 encoding is powerful because it supports every language and emoji, but it also means “length in bytes” is not always equal to “length in characters.” Rust makes you aware of this so you write safer, international-friendly code.</span><br><br>
-
-      <!-- 3.3 CONCEPT & SPIRIT -->
-      <h3>Concept & Spirit:</h3>
-      <span>Rust’s string system may look strict at first, but it’s designed to teach you *who owns your data* and *what costs are being paid*. The reason these rules exist isn’t to slow you down—it’s to protect you from the hidden bugs other languages allow.  
-      <br><br>
-      • <code>&str</code> exists for efficiency: borrow when you don’t need to copy. <br> 
-      • <code>String</code> exists for flexibility: own it when you need to grow or keep it.  <br>
-      • <code>mut</code> ensures changes are deliberate.  <br>
-      • <code>+</code> shows you ownership transfer; <code>format!</code> lets you build safely.  <br>
-      • <code>.len()</code> shows you how Rust respects real encoding, instead of pretending all characters are equal.  <br><br>
-
-      **Big picture:** Strings are one of the first places Rust shows its philosophy—memory safety, clarity, and honesty about costs. Once you understand strings, you start to understand how Rust approaches everything else: don’t hide the details, make them explicit so your code is predictable and safe.</span>
-    </div>
-
-  </div>
-</template>
-
-<template> <!-- RUST: Scope, Shadowing -->
-  <div class="bubble">
+    <h3>Rust Code: Fundamentals:</h3>
 
     <!-- Code Block -->
-    <h3>Rust Scope: Variables and Shadowing</h3>
     <div class="code_block">
-      <code>
-        <!-- Section 1: Variable inside a function -->
-        // Variable inside a function <br>
-        <span class="C1">fn inside_function() { <br>
-            &nbsp;&nbsp;let x = 5; <br>
-            &nbsp;&nbsp;println!("Inside function, x = {}", x); <br>
-        }</span><br><br>
+      <!-- Comments -->
+      <code>// Single-line comment</code><br>
+      <span class="C1"><code>// This is a comment</code><br>
+      <code>/* This is a block comment */</code></span><br><br>
 
-        <!-- Section 2: Variable inside a block -->
-        // Variable inside a block <br>
-        <span class="C2">fn inside_block() { <br>
-            &nbsp;&nbsp;let y = 10; <br>
-            &nbsp;&nbsp;{ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;let y = 20; <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;println!("Inside inner block, y = {}", y); <br>
-            &nbsp;&nbsp;} <br>
-            &nbsp;&nbsp;println!("Outside inner block, y = {}", y); <br>
-        }</span><br><br>
+      <!-- Variables -->
+      <code>// Variables</code><br>
+      <span class="C2"><code>let x = 5;          // immutable integer</code><br>
+      <code>let mut y = 10;      // mutable integer</code></span><br><br>
 
-        <!-- Section 3: Variables in the same scope with shadowing -->
-        // Shadowing in the same scope <br>
-        <span class="C3">fn shadowing_example() { <br>
-            &nbsp;&nbsp;let z = 2; <br>
-            &nbsp;&nbsp;let z = z + 3; // shadowing previous z <br>
-            &nbsp;&nbsp;println!("After shadowing, z = {}", z); <br>
-        }</span><br><br>
+      <!-- Data Types -->
+      <code>// Data Types</code><br>
+      <span class="C3"><code>let my_num: i32 = 5;</code><br>
+      <code>let my_double: f64 = 5.99;</code><br>
+      <code>let my_letter: char = 'D';</code><br>
+      <code>let my_bool: bool = true;</code><br>
+      <code>let my_text: &str = "Hello";</code></span><br><br>
 
-        <!-- Section 4: Calling functions -->
-        // Calling functions <br>
-        <span class="C4">fn main() { <br>
-            &nbsp;&nbsp;inside_function(); <br>
-            &nbsp;&nbsp;inside_block(); <br>
-            &nbsp;&nbsp;shadowing_example(); <br>
-        }</span>
-      </code>
+      <code>// Type-inferred Data Types</code><br>
+      <span class="C4"><code>let my_num = 5;</code><br>
+      <code>let my_double = 5.99;</code><br>
+      <code>let my_letter = 'D';</code><br>
+      <code>let my_bool = true;</code><br>
+      <code>let my_text = "Hello";</code></span><br><br>
+
+      <!-- Printing -->
+      <code>// Printing Examples</code><br>
+      <span class="C5"><code>print!("Hello ");</code><br>
+      <code>println!("World!");</code></span><br>
+      <span class="C6"><code>let name = "Liam";</code><br>
+      <code>println!("Hello, {}", name);</code></span><br>
+      <span class="C6"><code>let age = 21;</code><br>
+      <code>println!("{} is {} years old", name, age);</code></span><br>
+      <span class="C6"><code>println!("First {0}, Second {1}, Again {0}", 10, 20);</code></span><br>
+      <span class="C6"><code>println!("Hi {name}", name="Bob");</code></span><br><br>
+
+      <!-- Constants -->
+      <code>// Constants</code><br>
+      <span class="C7"><code>const MAX_SPEED: i32 = 120;</code><br>
+      <code>const PI: f64 = 3.14159;</code><br>
+      <code>const MINUTES_PER_HOUR: i32 = 60;</code></span>
     </div>
 
     <!-- Example Section -->
-    <h3>Example (Outputs):</h3>
+    <h3>Example:</h3>
     <div class="example">
-      <span class="dot d1"></span><span> &rarr; Inside function, x = 5</span><br>
-      <span class="dot d2"></span><span> &rarr; Inside inner block, y = 20</span><br>
-      <span class="dot d2"></span><span> &rarr; Outside inner block, y = 10</span><br>
-      <span class="dot d3"></span><span> &rarr; After shadowing, z = 5</span><br>
+      <span class="dot d5"></span><span> &rarr; Prints: Hello World!</span><br>
+      <span class="dot d6"></span><span> &rarr; Prints: Hello, Liam</span><br>
+      <span class="dot d6"></span><span> &rarr; Prints: Liam is 21 years old</span><br>
+      <span class="dot d6"></span><span> &rarr; Prints: First 10, Second 20, Again 10</span><br>
+      <span class="dot d6"></span><span> &rarr; Prints: Hi Bob</span>
     </div>
 
     <!-- Explanation Section -->
     <h3>Explanation:</h3>
     <div class="explanation">
-      <span class="C1"><code>let x = 5</code></span>
-      <span> – A variable created inside a function can only be used inside that function. 
-      Once the function finishes, <code>x</code> disappears. This boundary is called the <em>function scope</em>. 
-      Think of scope as the “lifetime” of a variable — when you leave the function, the variable’s memory is cleaned up.</span><br>
+      <span class="C1">//, /* */</span><span> – Comments are ignored by the compiler. </span><br>
+      <span>Example: You can write </span><code>// explain what x does</code><span> and it won’t affect the program.</span><br><br>
 
-      <span class="C2"><code>let y = 20</code></span>
-      <span> – This is inside a <em>block</em>. A block in Rust is any piece of code wrapped in curly braces <code>{ }</code>. 
-      A block creates its own smaller scope, like a mini-room inside a bigger room. 
-      The <code>y</code> inside the block is separate from the <code>y</code> outside. 
-      Inside the block, <code>y = 20</code>. Outside, <code>y = 10</code>. They are two different variables with the same name, 
-      and the inner one vanishes when the block ends.</span><br>
+      <span class="C2">let / mut</span><span> – <code>let</code> creates a variable. By default it’s immutable (cannot change). </span><br>
+      <span>Example: <code>let x = 5;</code> → trying <code>x = 6;</code> gives an error. </span><br>
+      <span>Use <code>let mut y = 10;</code> if you want to change it later (<code>y = 20;</code> works).</span><br><br>
 
-      <span class="C3"><code>let z = z + 3</code></span>
-      <span> – This shows <strong>shadowing</strong>. Shadowing means you declare a new variable with the same name as an old one. 
-      The first <code>z</code> is <code>2</code>. Then <code>let z = z + 3</code> creates a brand-new <code>z</code> (value <code>5</code>) 
-      that <em>replaces</em> the old one. The old <code>z</code> is dropped, and only the new one exists. 
-      Picture writing on a new sticky note and placing it over the old one — the old note is hidden and thrown away, 
-      not edited in place.</span><br>
+      <span class="C3">Explicit types</span><span> – You can declare the type directly. </span><br>
+      <code>let my_num: i32 = 5;</code><span>, <code>let my_double: f64 = 5.99;</code>. </span><br>
+      <span>This makes your code clearer and avoids mistakes (like wrong type assumptions).</span><br><br>
 
-      <span class="C4"><code>fn main()</code></span>
-      <span> – The entry point of every Rust program. Rust always looks for <code>main</code> first. 
-      Without it, nothing runs (unless you’re writing a library). 
-      In this example, <code>main</code> calls the functions so we can see how scope and shadowing work in action.</span><br><br>
+      <span class="C4">Type inference</span><span> – If you skip the type, Rust figures it out. </span><br>
+      <code>let my_num = 5;</code><span> → compiler knows it’s an <code>i32</code>. </span><br>
+      <code>let my_double = 5.99;</code><span> → compiler knows it’s an <code>f64</code>.</span><br>
+      <span>You write the type explicitly if you want clarity, or when Rust can’t guess correctly.</span><br><br>
+
+      <span class="C5">print!/println!()</span><span> – <code>print!</code> does not add a new line, <code>println!</code> does. </span><br><br>
+
+      <span class="C6">Placeholders {}</span><span> – Pull values into your string. </span><br>
+      <span>Example: </span><code>println!("Hello, {}", name);</code><span> → if <code>name = "Liam"</code>, prints <code>Hello, Liam</code>.</span><br>
+      <span>You can use multiple placeholders: </span><code>println!("{} is {}", name, age);</code><br>
+      <span>You can reuse positions: </span><code>{0}, {1}</code><br>
+      <span>You can also name them: </span><code>println!("Hi {name}", name="Bob");</code><br><br>
+
+      <span class="C7">const</span><span> – Constants never change and must always have a type. </span><br>
+      <span>Example: </span><code>const PI: f64 = 3.14159;</code><span> → always the same, anywhere in your code.</span><br><br>
 
       <strong>Notes:</strong><br>
-      <span>1. A <strong>scope</strong> is the part of the code where a variable exists. 
-      Functions, blocks, loops, and conditionals all create new scopes.</span><br>
-      <span>2. <strong>Shadowing vs mutability:</strong> 
-      - Shadowing (<code>let z = z + 3</code>) makes a brand-new variable. The old one is dropped, and memory is freed.  
-      - Mutability (<code>let mut a = 1; a = 2;</code>) keeps the same variable, just updates its value in the same memory slot.  
-      Shadowing can also change the type of a variable, while mutability cannot.</span><br>
-      <span>3. Shadowing is useful when you want to reuse a name but transform its value step by step, 
-      for example: <code>let x = "42"; let x: i32 = x.parse().unwrap();</code> 
-      (string → number). This would not be possible with just <code>mut</code>.</span><br><br>
+      <span>1. Variables declared with <code>let</code> are immutable unless <code>mut</code> is used.</span><br>
+      <span>2. Constants (<code>const</code>) are always immutable and must have a type.</span><br>
+      <span>3. Comparison between constants and variables:</span><br><br>
+
+      <table border="1" cellpadding="4" cellspacing="0">
+        <tr>
+          <th>Feature</th>
+          <th>Constant (<code>const</code>)</th>
+          <th>Variable (<code>let</code>)</th>
+        </tr>
+        <tr>
+          <td>Can change?</td>
+          <td>No</td>
+          <td>Yes, if <code>mut</code> is used</td>
+        </tr>
+        <tr>
+          <td>Type required?</td>
+          <td>Yes (must be written)</td>
+          <td>No (can be inferred)</td>
+        </tr>
+      </table><br>
+
+      <span>4. Use constants for fixed values like <code>PI</code> or <code>MINUTES_PER_HOUR</code>.</span><br>
+      <span>5. Use <code>let</code> / <code>mut</code> for values that may change during program execution.</span><br><br>
 
       <strong>Concept & Spirit of Rust:</strong><br>
-      <span>- Rust enforces clear boundaries: variables live only as long as their scope.</span><br>
-      <span>- This prevents hidden errors, like accidentally using a variable that should no longer exist.</span><br>
-      <span>- Shadowing is Rust’s way of letting you reuse names while keeping transformations safe and predictable.</span><br>
-      <span>- Overall, Rust encourages you to think carefully about data lifetimes, which reduces bugs and makes programs more reliable.</span>
-    </div>
-
-  </div>
-</template>
-
-<template> <!-- RUST: Functions, Parameters, Return Values -->
-  <div class="bubble">
-
-    <!-- Code Block -->
-    <h3>Rust Functions: <code>fn</code>, Parameters, and Return Values</h3>
-    <div class="code_block">
-      <code>
-        <!-- Section 1: Simple function -->
-        // Simple function definition <br>
-        <span class="C1">fn say_hello() { <br>
-            &nbsp;&nbsp;println!("Hello, world!"); <br>
-        }</span><br><br>
-
-        <!-- Section 2: Function with parameters -->
-        // Function with parameters <br>
-        <span class="C2">fn greet(name: &str) { <br>
-            &nbsp;&nbsp;println!("Hello, {}!", name); <br>
-        }</span><br><br>
-
-        <!-- Section 3: Function with explicit return -->
-        // Function with explicit return <br>
-        <span class="C3">fn add_explicit(a: i32, b: i32) -> i32 { <br>
-            &nbsp;&nbsp;return a + b; <br>
-        }</span><br><br>
-
-        <!-- Section 4: Function with implicit return -->
-        // Function with implicit return (last expression) <br>
-        <span class="C4">fn add_implicit(a: i32, b: i32) -> i32 { <br>
-            &nbsp;&nbsp;a + b <br>
-        }</span><br><br>
-
-        <!-- Section 5: Calling functions -->
-        // Calling functions <br>
-        <span class="C5">fn main() { </span><br>
-            <span class="C1">&nbsp;&nbsp;say_hello(); </span><br>
-            <span class="C2">&nbsp;&nbsp;greet("Alice"); </span><br>
-            <span class="C3">&nbsp;&nbsp;let sum1 = add_explicit(5, 7); </span><br>
-            <span class="C5">&nbsp;&nbsp;println!("Sum with explicit return: {}", sum1); </span><br>
-            <span class="C4">&nbsp;&nbsp;let sum2 = add_implicit(3, 4); </span><br>
-            <span class="C5">&nbsp;&nbsp;println!("Sum with implicit return: {}", sum2); <br>
-        }</span>
-      </code>
-    </div>
-
-    <!-- Example Section -->
-    <h3>Example (Outputs):</h3>
-    <div class="example">
-      <span class="dot d1"></span><span> &rarr; Hello, world!</span><br>
-      <span class="dot d2"></span><span> &rarr; Hello, Alice!</span><br>
-      <span class="dot d3"></span><span> &rarr; Sum with explicit return: 12</span><br>
-      <span class="dot d4"></span><span> &rarr; Sum with implicit return: 7</span><br>
-      <span class="dot d5"></span><span> &rarr; But called through main</span>
-    </div>
-
-    <!-- Explanation Section -->
-    <h3>Explanation:</h3>
-    <div class="explanation">
-      <span class="C1"><code>fn say_hello()</code></span><span> – A function with no parameters and no return value.</span><br>
-      <span class="C2"><code>fn greet(name: &str)</code></span><span> – Takes one parameter called <code>name</code>. Notice that in Rust you must always specify the type (<code>&str</code> here means a string slice).</span><br>
-      <span class="C3"><code>fn add_explicit(a: i32, b: i32) -> i32</code></span><span> – Uses the <code>return</code> keyword to send back the sum. This is the “long-form” way.</span><br>
-      <span class="C4"><code>fn add_implicit(a: i32, b: i32) -> i32</code></span><span> – Does the same, but without <code>return</code>. In Rust, the last line of a function (if it has no semicolon) is automatically returned.</span><br>
-      <span class="C5"><code>fn main()</code></span><span> – The entry point of every Rust program. Rust always starts by looking for <code>main</code>. Without it, nothing runs (unless you are writing a library). Here it calls the other functions and prints their results.</span><br><br>
-
-      <strong>Notes:</strong><br>
-      <span>1. Both explicit <code>return</code> and implicit return work the same. The difference is style: explicit is clearer in long or complex code, implicit is shorter and common for simple math or logic.</span><br>
-      <span>2. In Rust, every parameter must have a type. This makes your code safer and avoids confusion.</span><br><br>
-
-      <strong>Concept & Spirit of Rust:</strong><br>
-      <span>- Rust wants you to be <em>clear about data flow</em>. Parameters are the inputs, return values are the outputs.</span><br>
-      <span>- Implicit returns encourage short, readable functions where the last expression is the “answer.”</span><br>
-      <span>- Explicit <code>return</code> is useful when you want to exit early or make the return very obvious.</span><br>
-      <span>- Overall, Rust functions are designed to be predictable: you always know what goes in and what comes out.</span><br>
-      <span>- This makes programs easier to read, safer, and less error-prone compared to languages that guess types or hide return values.</span>
-    </div>
-
-  </div>
-</template>
-
-<template> <!-- RUST: loops, while, for. -->
-  <div class="bubble">
-
-    <!-- Code Block -->
-    <h3>Rust Loops: <code>loop</code>, <code>while</code>, and <code>for</code></h3>
-    <div class="code_block">
-
-      <!-- Section 1: Infinite loop -->
-      <code>// Infinite loop (⚠️ press Ctrl + C to stop)</code><br>
-      <span class="C1"><code>loop {</code><br>
-      <code>&nbsp;&nbsp;println!("This runs forever!");</code><br>
-      <code>}</code></span><br><br>
-
-      <!-- Section 2: loop with break -->
-      <code>// loop with break returning a value</code><br>
-      <span class="C2"><code>let mut counter = 0;</code><br>
-      <code>let result = loop {</code><br>
-      <code>&nbsp;&nbsp;counter += 1;</code><br>
-      <code>&nbsp;&nbsp;if counter == 3 {</code><br>
-      <span class="C6"><code>&nbsp;&nbsp;&nbsp;&nbsp;break counter * 2; // returns 6</code></span><br>
-      <code>&nbsp;&nbsp;}</code><br>
-      <code>};</code><br>
-      <code>println!("Result: {}", result);</code></span><br><br>
-
-      <!-- Section 3: while loop -->
-      <code>// while loop countdown</code><br>
-      <span class="C3"><code>let mut number = 3;</code><br>
-      <code>while number != 0 {</code><br>
-      <code>&nbsp;&nbsp;if number == 2 {</code><br>
-      <span class="C7"><code>&nbsp;&nbsp;&nbsp;&nbsp;number -= 1; continue; // skips printing 2</code></span><br>
-      <code>&nbsp;&nbsp;}</code><br>
-      <code>&nbsp;&nbsp;println!("{}", number);</code><br>
-      <code>&nbsp;&nbsp;number -= 1;</code><br>
-      <code>}</code><br>
-      <code>println!("LIFTOFF!");</code></span><br><br>
-
-      <!-- Section 4: for loop -->
-      <code>// for loop over collection</code><br>
-      <span class="C4"><code>let arr = [10, 20, 30];</code><br>
-      <code>for val in arr.iter() {</code><br>
-      <code>&nbsp;&nbsp;if *val == 20 {</code><br>
-      <span class="C6"><code>&nbsp;&nbsp;&nbsp;&nbsp;break; // exit loop early</code></span><br>
-      <code>&nbsp;&nbsp;}</code><br>
-      <code>&nbsp;&nbsp;println!("Value: {}", val);</code><br>
-      <code>}</code></span><br><br>
-
-    </div>
-
-    <!-- Example Section -->
-    <h3>Example (Outputs):</h3>
-    <div class="example">
-      <!-- loop (infinite) → no output shown -->
-      <span class="dot d2"></span><span> &rarr; Prints: Result: 6</span><br>
-      <span class="dot d3"></span><span> &rarr; Prints: 3</span><br>
-      <span class="dot d7"></span><span> &rarr; Skips printing 2 (continue)</span><br>
-      <span class="dot d3"></span><span> &rarr; Prints: 1</span><br>
-      <span class="dot d3"></span><span> &rarr; Prints: LIFTOFF!</span><br>
-      <span class="dot d4"></span><span> &rarr; Prints: Value: 10</span><br>
-      <span class="dot d6"></span><span> &rarr; Break stops before printing 20 or 30</span>
-    </div>
-
-    <!-- Explanation Section -->
-    <h3>Explanation:</h3>
-    <div class="explanation">
-      <span class="C1"><code>loop</code></span><span> – Creates an infinite loop unless ended with <span class="C6">break</span>.</span><br>
-      <span class="C2"><code>loop ... break value</code></span><span> – A loop can return a value when you <span class="C6">break</span> with an expression. Example: 6.</span><br>
-      <span class="C3"><code>while</code></span><span> – Runs while the condition is true. Example: countdown skips printing 2 due to <span class="C7">continue</span>.</span><br>
-      <span class="C4"><code>for</code></span><span> – Iterates over a collection. Example: breaks early when hitting 20 using <span class="C6">break</span>.</span><br>
-      <span class="C6"><code>break</code></span><span> – Exits the loop immediately. Works in <code>loop</code>, <code>while</code>, and <code>for</code>.</span><br>
-      <span class="C7"><code>continue</code></span><span> – Skips the rest of the current iteration and moves to the next. Works in all loop types.</span><br><br>
-
-      <strong>Notes:</strong><br>
       <span>
-        1. Infinite loops are rarely needed; always pair with <span class="C6">break</span> for control.<br>
-        2. Returning values from loops (<span class="C6">break expr</span>) is unique to Rust.<br>
-        3. <span class="C7">continue</span> is useful for filtering values inside loops.<br>
-        4. Prefer <code>for</code> for collections, <code>while</code> for conditions, <code>loop</code> for manual control.<br>
-        5. <code>arr.iter()</code> creates an iterator of references — you’re borrowing each element instead of copying it. This is efficient and avoids unnecessary allocations.<br>
-          - <code>iter()</code> → &T (immutable borrow)<br>
-          - <code>iter_mut()</code> → &mut T (mutable borrow)<br>
-          - <code>into_iter()</code> → T (moves ownership)<br>
-          Rust gives explicit control over access and ownership.<br>
-          -  <code>*val == 20</code> → Dereferences means go follow this reference and get the value it points to.<br><br>
-
-        <strong>Concept & Spirit of Rust:</strong><br>
-        <span>
-          - Rust loops help you <strong>repeat actions safely</strong> and <strong>control exactly how your program runs</strong>.<br>
-          - <code>loop</code> runs forever unless you use <span class="C6">break</span>. <code>while</code> runs as long as a condition is true. <code>for</code> iterates over collections. This gives you <strong>flexibility with safety</strong>.<br>
-          - Using <span class="C6">break</span> or <span class="C7">continue</span> makes your intentions explicit: you control <strong>when a loop stops</strong> or <strong>skips a step</strong>.<br>
-          - Iterators like <code>arr.iter()</code> <strong>borrow elements</strong> instead of copying them, so your code is <strong>efficient and safe</strong>. You don’t accidentally change or duplicate data.<br>
-          - Rust encourages you to <strong>think about ownership and borrowing</strong> from the start. Loops and iterators are just one example of how Rust keeps memory and data access predictable.<br>
-          - Overall: Rust makes you write code that is <strong>deliberate, clear, and safe</strong>, while still being expressive and powerful. Loops are tools that let you do repetitive tasks <strong>without accidentally creating bugs or memory issues</strong>.<br>
-        </span>
-    </div>
-
-  </div>
-</template>
-
-<template> <!-- Rust: If ... else ... / Switch -> Match / User Input / Result Handling -->
-
-  <div class="bubble">
-
-    <!-- CODE BLOCK -->
-    <h3>Rust Code: If / Else / Match + User Input</h3>
-
-    <div class="code_block">
-      <code>
-        <!-- If..Else Section -->
-        // If..Else Example<br>
-        <span class="C1">let number = 7;</span><br>
-        <span class="C2">let result =<br>
-        if number % 2 == 0 { "Even" } else { "Odd" };</span><br>
-        <span class="C3">println!("Number is {}", result);</span><br><br>
-
-        <!-- Match Section -->
-        // Match Example<br>
-        <span class="C4">let day = 3;</span><br>
-        <span class="C5">let day_name = match day {</span><br>
-        <span class="C6">&nbsp;&nbsp;1 => "Monday",</span><br>
-        <span class="C6">&nbsp;&nbsp;2 => "Tuesday",</span><br>
-        <span class="C6">&nbsp;&nbsp;3 => "Wednesday",</span><br>
-        <span class="C6">&nbsp;&nbsp;_ => "Other",</span><br>
-        <span class="C5">};</span><br>
-        <span class="C7">println!("Day is {}", day_name);</span><br><br>
-
-        <!-- User Input + Result Handling -->
-        // Taking user input safely<br>
-        <span class="C8">use std::io;</span><br>
-        <span class="C9">let mut input = String::new();</span><br>
-        <span class="C10">match io::stdin().read_line(&mut input) {</span><br>
-        <span class="C10">&nbsp;&nbsp;Ok(_) => println!("You entered: {}", input),</span><br>
-        <span class="C10">&nbsp;&nbsp;Err(_) => println!("Failed to read input."),</span><br>
-        <span class="C10">}</span><br>
-      </code>
-    </div>
-
-    <!-- EXAMPLE OUTPUTS -->
-    <h3>Example (Outputs):</h3>
-    <div class="example">
-      <span class="dot d2"></span><span> &rarr; Number is Odd</span><br>
-      <span class="dot d7"></span><span> &rarr; Day is Wednesday</span><br>
-      <span class="dot d10"></span><span> &rarr; You entered: Hello World</span><br>
-    </div>
-
-    <!-- EXPLANATION -->
-    <h3>Explanation:</h3>
-    <div class="explanation">
-      <span class="C1"><code>let number</code></span><span> – Declares a variable storing a number.</span><br>
-      <span class="C2"><code>if .. else</code></span><span> – Conditional expression; both branches must return the same type. Returns "Even" or "Odd".</span><br>
-      <span class="C3"><code>println!</code></span><span> – Prints the value of <code>result</code> to the console.</span><br>
-      <span class="C4"><code>let day</code></span><span> – Declares a variable to match against.</span><br>
-      <span class="C5"><code>match</code></span><span> – Pattern matching; like a safe, exhaustive “switch”.</span><br>
-      <span class="C6"><code>branches</code></span><span> – Each pattern (1,2,3) maps to a string; <code>_</code> is the default catch-all.</span><br>
-      <span class="C7"><code>println!</code></span><span> – Prints <code>day_name</code> to console.</span><br>
-      <span class="C8"><code>use std::io;</code></span><span> – Brings the standard input/output module into scope.</span><br>
-      <span class="C9"><code>let mut input = String::new();</code></span><span> – Creates a mutable string buffer to hold user input.</span><br>
-      <span class="C10"><code>io::stdin().read_line(...)</code></span><span> – Reads a line from user input. Returns a <code>Result</code> that can be <code>Ok(num)</code> (success) or <code>Err(_)</code> (failure).</span><br>
-    </div>
-
-    <!-- NOTES -->
-    <h3>Notes:</h3>
-    <div class="notes">
-      <span>- <strong>1. Expressions vs Statements:</strong> Rust’s <code>if..else</code> and <code>match</code> are expressions—they return values you can assign.</span><br>
-      <span>- <strong>2. Why <code>match</code>:</strong> Forces exhaustive checking and returns values safely.</span><br>
-      <span>- <strong>3. <code>use std::io;</code>:</strong> Imports the module for input/output operations.</span><br>
-      <span>- <strong>4. <code>String::new()</code>:</strong> Creates an empty, growable string buffer.</span><br>
-      <span>- <strong>5. <code>read_line()</code>:</strong> Appends user input to the mutable string. Always check its return value!</span><br>
-      <span>- <strong>6. <code>Result</code> type:</strong> Represents success (<code>Ok</code>) or failure (<code>Err</code>).</span><br>
-      <span>- <strong>7. <code>expect()</code> vs <code>match</code>:</strong> <code>expect()</code> panics on error; <code>match</code> lets you handle both cases gracefully.</span><br>
-    </div>
-
-    <!-- CONCEPT & SPIRIT -->
-    <h3>Concept & Spirit:</h3>
-    <div class="concept">
-      <span>- Rust teaches you to **handle all possible outcomes** — nothing is silently ignored.</span><br>
-      <span>- Using <code>match</code> on <code>Result</code> values makes error handling **explicit and safe**.</span><br>
-      <span>- <code>mut</code> and <code>String::new()</code> remind you that **mutability must be deliberate**.</span><br>
-      <span>- <code>use std::io;</code> demonstrates **scoped imports** — Rust doesn’t assume you want everything by default.</span><br>
-      <span>- Conceptually, this code moves you from *control flow* to *interacting with the outside world safely* — one of Rust’s key design goals.</span>
+      - Rust wants you to **be clear about what can change and what cannot**. Variables are immutable by default, and constants never change — this prevents mistakes.<br>
+      - Types are explicit or inferred, but Rust makes you aware of what each value is. This helps avoid unexpected errors.<br>
+      - Printing with placeholders shows that Rust separates **data** from **how it’s displayed**, making output safe and predictable.<br>
+      - Overall, Rust encourages **writing safe, predictable, and clear code**. Every decision — whether a value can change, how it’s stored, and how it’s printed — is intentional. This is the “spirit” behind Rust.
+    </span>
     </div>
 
   </div>
@@ -829,129 +257,110 @@
   </div>
 </template>
 
-<template> <!-- Rust: Basics -->
+<template> <!-- RUST: mut, Ownership & Borrowing -->
+
   <div class="bubble">
 
-    <h3>Rust Code: Fundamentals:</h3>
-
-    <!-- Code Block -->
+    <!-- 1. CODE BLOCKS -->
+    <h3>Rust: mut, Ownership & Borrowing</h3>
     <div class="code_block">
-      <!-- Comments -->
-      <code>// Single-line comment</code><br>
-      <span class="C1"><code>// This is a comment</code><br>
-      <code>/* This is a block comment */</code></span><br><br>
+      <code>
+        <!-- Ownership Rules -->
+        // Ownership Rules <br>
+        <span class="C1">let x = 5;</span><br>
+        <span class="C1">let y = x; // x is moved to y</span><br><br>
 
-      <!-- Variables -->
-      <code>// Variables</code><br>
-      <span class="C2"><code>let x = 5;          // immutable integer</code><br>
-      <code>let mut y = 10;      // mutable integer</code></span><br><br>
+        <!-- Clone -->
+        // Clone <br>
+        <span class="C2">let x = 5;</span><br>
+        <span class="C2">let y = x.clone(); // explicitly clone value</span><br><br>
 
-      <!-- Data Types -->
-      <code>// Data Types</code><br>
-      <span class="C3"><code>let my_num: i32 = 5;</code><br>
-      <code>let my_double: f64 = 5.99;</code><br>
-      <code>let my_letter: char = 'D';</code><br>
-      <code>let my_bool: bool = true;</code><br>
-      <code>let my_text: &str = "Hello";</code></span><br><br>
+        <!-- Borrowing -->
+        // Borrowing & References <br>
+        <span class="C3">let s = String::from("hello");</span><br>
+        <span class="C3">let r = &s; // borrow s</span><br><br>
 
-      <code>// Type-inferred Data Types</code><br>
-      <span class="C4"><code>let my_num = 5;</code><br>
-      <code>let my_double = 5.99;</code><br>
-      <code>let my_letter = 'D';</code><br>
-      <code>let my_bool = true;</code><br>
-      <code>let my_text = "Hello";</code></span><br><br>
+        <!-- Mutable References -->
+        // Mutable References <br>
+        <span class="C4">let mut s = String::from("hello");</span><br>
+        <span class="C4">&nbsp;&nbsp;let r = &mut s; // mutable borrow</span><br><br>
 
-      <!-- Printing -->
-      <code>// Printing Examples</code><br>
-      <span class="C5"><code>print!("Hello ");</code><br>
-      <code>println!("World!");</code></span><br>
-      <span class="C6"><code>let name = "Liam";</code><br>
-      <code>println!("Hello, {}", name);</code></span><br>
-      <span class="C6"><code>let age = 21;</code><br>
-      <code>println!("{} is {} years old", name, age);</code></span><br>
-      <span class="C6"><code>println!("First {0}, Second {1}, Again {0}", 10, 20);</code></span><br>
-      <span class="C6"><code>println!("Hi {name}", name="Bob");</code></span><br><br>
+        <!-- Guest List Example: Clone, Borrow, Mut Borrow -->
+        fn main() { <br>
+        <span class="C5">&nbsp;&nbsp;let mut guest_list = String::from("Alice, Bob");</span><br><br>
 
-      <!-- Constants -->
-      <code>// Constants</code><br>
-      <span class="C7"><code>const MAX_SPEED: i32 = 120;</code><br>
-      <code>const PI: f64 = 3.14159;</code><br>
-      <code>const MINUTES_PER_HOUR: i32 = 60;</code></span>
+        <span class="C5">&nbsp;&nbsp;// Clone → backup copy before editing</span><br>
+        <span class="C5">&nbsp;&nbsp;let backup = guest_list.clone();</span><br><br>
+
+        <span class="C5">&nbsp;&nbsp;// Borrow → read without taking ownership</span><br>
+        <span class="C5">&nbsp;&nbsp;print_guest_count(&guest_list);</span><br><br>
+
+        <span class="C5">&nbsp;&nbsp;// Mut Borrow → temporarily modify original list</span><br>
+        <span class="C5">&nbsp;&nbsp;add_guest(&mut guest_list);</span><br><br>
+
+        <span class="C5">&nbsp;&nbsp;println!("Updated list: {}", guest_list);</span><br>
+        }<br><br>
+
+        <span class="C5">fn print_guest_count(list: &String) {</span><br>
+        <span class="C5">&nbsp;&nbsp;let count = list.split(", ").count();</span><br>
+        <span class="C5">&nbsp;&nbsp;println!("Current guests: {}", count);</span><br>
+        <span class="C5">}</span><br><br>
+
+        <span class="C5">fn add_guest(list: &mut String) {</span><br>
+        <span class="C5">&nbsp;&nbsp;list.push_str(", Carol");</span><br>
+        <span class="C5">}</span>
+      </code>
     </div>
 
-    <!-- Example Section -->
-    <h3>Example:</h3>
+    <!-- 2. EXAMPLE OUTPUTS -->
+    <h3>Example (Outputs):</h3>
     <div class="example">
-      <span class="dot d5"></span><span> &rarr; Prints: Hello World!</span><br>
-      <span class="dot d6"></span><span> &rarr; Prints: Hello, Liam</span><br>
-      <span class="dot d6"></span><span> &rarr; Prints: Liam is 21 years old</span><br>
-      <span class="dot d6"></span><span> &rarr; Prints: First 10, Second 20, Again 10</span><br>
-      <span class="dot d6"></span><span> &rarr; Prints: Hi Bob</span>
+      <span class="dot d1"></span><span> &rarr; x is no longer valid after moving to y</span><br>
+      <span class="dot d2"></span><span> &rarr; x is still usable because we cloned it</span><br>
+      <span class="dot d3"></span><span> &rarr; r can read s without taking ownership</span><br>
+      <span class="dot d4"></span><span> &rarr; r can modify s safely when borrowed mutably</span><br>
+      <span class="dot d5"></span><span> &rarr; Guest list example: clone → backup copy, borrow → check length, mut borrow → add guest</span><br>
     </div>
 
-    <!-- Explanation Section -->
+    <!-- 3.1 EXPLANATION -->
     <h3>Explanation:</h3>
     <div class="explanation">
-      <span class="C1">//, /* */</span><span> – Comments are ignored by the compiler. </span><br>
-      <span>Example: You can write </span><code>// explain what x does</code><span> and it won’t affect the program.</span><br><br>
+      <span class="C1"><code>let x = 5;</code></span>
+      <span> – x owns the value 5. When we assign x to y, ownership moves to y, and x can no longer be used. Rust automatically frees memory safely when a value goes out of scope.</span><br>
 
-      <span class="C2">let / mut</span><span> – <code>let</code> creates a variable. By default it’s immutable (cannot change). </span><br>
-      <span>Example: <code>let x = 5;</code> → trying <code>x = 6;</code> gives an error. </span><br>
-      <span>Use <code>let mut y = 10;</code> if you want to change it later (<code>y = 20;</code> works).</span><br><br>
+      <span class="C2"><code>x.clone()</code></span>
+      <span> – Cloning creates a full copy of the value so both x and y have independent ownership. Use cloning when you need to preserve the original value while giving a copy to another variable.</span><br>
 
-      <span class="C3">Explicit types</span><span> – You can declare the type directly. </span><br>
-      <code>let my_num: i32 = 5;</code><span>, <code>let my_double: f64 = 5.99;</code>. </span><br>
-      <span>This makes your code clearer and avoids mistakes (like wrong type assumptions).</span><br><br>
+      <span class="C3"><code>&s</code></span>
+      <span> – Borrowing a reference lets you read a value without taking ownership. The original owner (s) keeps control, preventing accidental invalid memory access, while you can safely use the data temporarily.</span><br>
 
-      <span class="C4">Type inference</span><span> – If you skip the type, Rust figures it out. </span><br>
-      <code>let my_num = 5;</code><span> → compiler knows it’s an <code>i32</code>. </span><br>
-      <code>let my_double = 5.99;</code><span> → compiler knows it’s an <code>f64</code>.</span><br>
-      <span>You write the type explicitly if you want clarity, or when Rust can’t guess correctly.</span><br><br>
+      <span class="C4"><code>&mut s</code></span>
+      <span> – Mutable references allow you to modify a value without taking ownership. Rust ensures there’s only one mutable reference at a time, preventing conflicts and guaranteeing safe, predictable changes.</span><br>
 
-      <span class="C5">print!/println!()</span><span> – <code>print!</code> does not add a new line, <code>println!</code> does. </span><br><br>
+      <span class="C5"><code>Guest List Example</code></span>
+      <span> – Clone creates a backup copy of the guest list so the original is safe. Borrow lets a function check how many guests exist without taking ownership. Mutable borrow lets a function temporarily edit the list (adding a new guest) while ownership stays with main. This shows **when and why to use clone, borrow, and mut borrow** in practice.</span><br>
 
-      <span class="C6">Placeholders {}</span><span> – Pull values into your string. </span><br>
-      <span>Example: </span><code>println!("Hello, {}", name);</code><span> → if <code>name = "Liam"</code>, prints <code>Hello, Liam</code>.</span><br>
-      <span>You can use multiple placeholders: </span><code>println!("{} is {}", name, age);</code><br>
-      <span>You can reuse positions: </span><code>{0}, {1}</code><br>
-      <span>You can also name them: </span><code>println!("Hi {name}", name="Bob");</code><br><br>
+      <span class="C6"><code>Ownership Concept</code></span>
+      <span> – Rust’s ownership system is the foundation for memory safety. It removes the need for a garbage collector, while preventing bugs like dangling pointers or double frees.</span><br>
 
-      <span class="C7">const</span><span> – Constants never change and must always have a type. </span><br>
-      <span>Example: </span><code>const PI: f64 = 3.14159;</code><span> → always the same, anywhere in your code.</span><br><br>
+      <span class="C7"><code>Borrowing Concept</code></span>
+      <span> – Borrowing allows you to use or modify data safely without giving up ownership. It encourages thinking about who “owns” data at any time and avoids unnecessary cloning, making programs faster.</span><br>
 
-      <strong>Notes:</strong><br>
-      <span>1. Variables declared with <code>let</code> are immutable unless <code>mut</code> is used.</span><br>
-      <span>2. Constants (<code>const</code>) are always immutable and must have a type.</span><br>
-      <span>3. Comparison between constants and variables:</span><br><br>
+      <span class="C8"><code>Why This Matters</code></span>
+      <span> – By enforcing ownership and borrowing rules, Rust ensures memory is always valid and accessible only by permitted parts of your program, improving reliability and preventing subtle bugs common in other languages.</span><br><br>
 
-      <table border="1" cellpadding="4" cellspacing="0">
-        <tr>
-          <th>Feature</th>
-          <th>Constant (<code>const</code>)</th>
-          <th>Variable (<code>let</code>)</th>
-        </tr>
-        <tr>
-          <td>Can change?</td>
-          <td>No</td>
-          <td>Yes, if <code>mut</code> is used</td>
-        </tr>
-        <tr>
-          <td>Type required?</td>
-          <td>Yes (must be written)</td>
-          <td>No (can be inferred)</td>
-        </tr>
-      </table><br>
+      <!-- 3.2 NOTES -->
+      <h3>Notes:</h3>
+      <span>- Each value has exactly one owner unless borrowed.</span><br>
+      <span>- Ownership ensures memory is freed automatically when out of scope.</span><br>
+      <span>- Borrowing avoids expensive clones for large values.</span><br><br>
 
-      <span>4. Use constants for fixed values like <code>PI</code> or <code>MINUTES_PER_HOUR</code>.</span><br>
-      <span>5. Use <code>let</code> / <code>mut</code> for values that may change during program execution.</span><br><br>
-
-      <strong>Concept & Spirit of Rust:</strong><br>
-      <span>
-      - Rust wants you to **be clear about what can change and what cannot**. Variables are immutable by default, and constants never change — this prevents mistakes.<br>
-      - Types are explicit or inferred, but Rust makes you aware of what each value is. This helps avoid unexpected errors.<br>
-      - Printing with placeholders shows that Rust separates **data** from **how it’s displayed**, making output safe and predictable.<br>
-      - Overall, Rust encourages **writing safe, predictable, and clear code**. Every decision — whether a value can change, how it’s stored, and how it’s printed — is intentional. This is the “spirit” behind Rust.
-    </span>
+      <!-- 3.3 CONCEPT & SPIRIT -->
+      <h3>Concept & Spirit:</h3>
+      <span>- Unlike other coding languages, keep in mind you're always either owning a variable or borrowing a variable</span><br>
+      <span>- Ownership is Rust’s way of managing memory safely without a garbage collector.</span><br>
+      <span>- Borrowing encourages safe reuse of data without transferring ownership.</span><br>
+      <span>- These rules prevent common bugs like dangling pointers or double frees and are part of what makes Rust fast and reliable.</span>
     </div>
 
   </div>
@@ -961,5 +370,5 @@
 
 
 
--->
 
+-->

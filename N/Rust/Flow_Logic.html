@@ -1,0 +1,185 @@
+<!-- File name: N/Rust/Flow_Logic.html -->
+
+<template> <!-- Rust: If ... else ... / Switch -> Match / User Input / Result Handling -->
+
+  <div class="bubble">
+
+    <!-- CODE BLOCK -->
+    <h3>Rust Code: If / Else / Match + User Input</h3>
+
+    <div class="code_block">
+      <code>
+        <!-- If..Else Section -->
+        // If..Else Example<br>
+        <span class="C1">let number = 7;</span><br>
+        <span class="C2">let result =<br>
+        if number % 2 == 0 { "Even" } else { "Odd" };</span><br>
+        <span class="C3">println!("Number is {}", result);</span><br><br>
+
+        <!-- Match Section -->
+        // Match Example<br>
+        <span class="C4">let day = 3;</span><br>
+        <span class="C5">let day_name = match day {</span><br>
+        <span class="C6">&nbsp;&nbsp;1 => "Monday",</span><br>
+        <span class="C6">&nbsp;&nbsp;2 => "Tuesday",</span><br>
+        <span class="C6">&nbsp;&nbsp;3 => "Wednesday",</span><br>
+        <span class="C6">&nbsp;&nbsp;_ => "Other",</span><br>
+        <span class="C5">};</span><br>
+        <span class="C7">println!("Day is {}", day_name);</span><br><br>
+
+        <!-- User Input + Result Handling -->
+        // Taking user input safely<br>
+        <span class="C8">use std::io;</span><br>
+        <span class="C9">let mut input = String::new();</span><br>
+        <span class="C10">match io::stdin().read_line(&mut input) {</span><br>
+        <span class="C10">&nbsp;&nbsp;Ok(_) => println!("You entered: {}", input),</span><br>
+        <span class="C10">&nbsp;&nbsp;Err(_) => println!("Failed to read input."),</span><br>
+        <span class="C10">}</span><br>
+      </code>
+    </div>
+
+    <!-- EXAMPLE OUTPUTS -->
+    <h3>Example (Outputs):</h3>
+    <div class="example">
+      <span class="dot d2"></span><span> &rarr; Number is Odd</span><br>
+      <span class="dot d7"></span><span> &rarr; Day is Wednesday</span><br>
+      <span class="dot d10"></span><span> &rarr; You entered: Hello World</span><br>
+    </div>
+
+    <!-- EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1"><code>let number</code></span><span> – Declares a variable storing a number.</span><br>
+      <span class="C2"><code>if .. else</code></span><span> – Conditional expression; both branches must return the same type. Returns "Even" or "Odd".</span><br>
+      <span class="C3"><code>println!</code></span><span> – Prints the value of <code>result</code> to the console.</span><br>
+      <span class="C4"><code>let day</code></span><span> – Declares a variable to match against.</span><br>
+      <span class="C5"><code>match</code></span><span> – Pattern matching; like a safe, exhaustive “switch”.</span><br>
+      <span class="C6"><code>branches</code></span><span> – Each pattern (1,2,3) maps to a string; <code>_</code> is the default catch-all.</span><br>
+      <span class="C7"><code>println!</code></span><span> – Prints <code>day_name</code> to console.</span><br>
+      <span class="C8"><code>use std::io;</code></span><span> – Brings the standard input/output module into scope.</span><br>
+      <span class="C9"><code>let mut input = String::new();</code></span><span> – Creates a mutable string buffer to hold user input.</span><br>
+      <span class="C10"><code>io::stdin().read_line(...)</code></span><span> – Reads a line from user input. Returns a <code>Result</code> that can be <code>Ok(num)</code> (success) or <code>Err(_)</code> (failure).</span><br>
+    </div>
+
+    <!-- NOTES -->
+    <h3>Notes:</h3>
+    <div class="notes">
+      <span>- <strong>1. Expressions vs Statements:</strong> Rust’s <code>if..else</code> and <code>match</code> are expressions—they return values you can assign.</span><br>
+      <span>- <strong>2. Why <code>match</code>:</strong> Forces exhaustive checking and returns values safely.</span><br>
+      <span>- <strong>3. <code>use std::io;</code>:</strong> Imports the module for input/output operations.</span><br>
+      <span>- <strong>4. <code>String::new()</code>:</strong> Creates an empty, growable string buffer.</span><br>
+      <span>- <strong>5. <code>read_line()</code>:</strong> Appends user input to the mutable string. Always check its return value!</span><br>
+      <span>- <strong>6. <code>Result</code> type:</strong> Represents success (<code>Ok</code>) or failure (<code>Err</code>).</span><br>
+      <span>- <strong>7. <code>expect()</code> vs <code>match</code>:</strong> <code>expect()</code> panics on error; <code>match</code> lets you handle both cases gracefully.</span><br>
+    </div>
+
+    <!-- CONCEPT & SPIRIT -->
+    <h3>Concept & Spirit:</h3>
+    <div class="concept">
+      <span>- Rust teaches you to **handle all possible outcomes** — nothing is silently ignored.</span><br>
+      <span>- Using <code>match</code> on <code>Result</code> values makes error handling **explicit and safe**.</span><br>
+      <span>- <code>mut</code> and <code>String::new()</code> remind you that **mutability must be deliberate**.</span><br>
+      <span>- <code>use std::io;</code> demonstrates **scoped imports** — Rust doesn’t assume you want everything by default.</span><br>
+      <span>- Conceptually, this code moves you from *control flow* to *interacting with the outside world safely* — one of Rust’s key design goals.</span>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- RUST: loops, while, for. -->
+  <div class="bubble">
+
+    <!-- Code Block -->
+    <h3>Rust Loops: <code>loop</code>, <code>while</code>, and <code>for</code></h3>
+    <div class="code_block">
+
+      <!-- Section 1: Infinite loop -->
+      <code>// Infinite loop (⚠️ press Ctrl + C to stop)</code><br>
+      <span class="C1"><code>loop {</code><br>
+      <code>&nbsp;&nbsp;println!("This runs forever!");</code><br>
+      <code>}</code></span><br><br>
+
+      <!-- Section 2: loop with break -->
+      <code>// loop with break returning a value</code><br>
+      <span class="C2"><code>let mut counter = 0;</code><br>
+      <code>let result = loop {</code><br>
+      <code>&nbsp;&nbsp;counter += 1;</code><br>
+      <code>&nbsp;&nbsp;if counter == 3 {</code><br>
+      <span class="C6"><code>&nbsp;&nbsp;&nbsp;&nbsp;break counter * 2; // returns 6</code></span><br>
+      <code>&nbsp;&nbsp;}</code><br>
+      <code>};</code><br>
+      <code>println!("Result: {}", result);</code></span><br><br>
+
+      <!-- Section 3: while loop -->
+      <code>// while loop countdown</code><br>
+      <span class="C3"><code>let mut number = 3;</code><br>
+      <code>while number != 0 {</code><br>
+      <code>&nbsp;&nbsp;if number == 2 {</code><br>
+      <span class="C7"><code>&nbsp;&nbsp;&nbsp;&nbsp;number -= 1; continue; // skips printing 2</code></span><br>
+      <code>&nbsp;&nbsp;}</code><br>
+      <code>&nbsp;&nbsp;println!("{}", number);</code><br>
+      <code>&nbsp;&nbsp;number -= 1;</code><br>
+      <code>}</code><br>
+      <code>println!("LIFTOFF!");</code></span><br><br>
+
+      <!-- Section 4: for loop -->
+      <code>// for loop over collection</code><br>
+      <span class="C4"><code>let arr = [10, 20, 30];</code><br>
+      <code>for val in arr.iter() {</code><br>
+      <code>&nbsp;&nbsp;if *val == 20 {</code><br>
+      <span class="C6"><code>&nbsp;&nbsp;&nbsp;&nbsp;break; // exit loop early</code></span><br>
+      <code>&nbsp;&nbsp;}</code><br>
+      <code>&nbsp;&nbsp;println!("Value: {}", val);</code><br>
+      <code>}</code></span><br><br>
+
+    </div>
+
+    <!-- Example Section -->
+    <h3>Example (Outputs):</h3>
+    <div class="example">
+      <!-- loop (infinite) → no output shown -->
+      <span class="dot d2"></span><span> &rarr; Prints: Result: 6</span><br>
+      <span class="dot d3"></span><span> &rarr; Prints: 3</span><br>
+      <span class="dot d7"></span><span> &rarr; Skips printing 2 (continue)</span><br>
+      <span class="dot d3"></span><span> &rarr; Prints: 1</span><br>
+      <span class="dot d3"></span><span> &rarr; Prints: LIFTOFF!</span><br>
+      <span class="dot d4"></span><span> &rarr; Prints: Value: 10</span><br>
+      <span class="dot d6"></span><span> &rarr; Break stops before printing 20 or 30</span>
+    </div>
+
+    <!-- Explanation Section -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1"><code>loop</code></span><span> – Creates an infinite loop unless ended with <span class="C6">break</span>.</span><br>
+      <span class="C2"><code>loop ... break value</code></span><span> – A loop can return a value when you <span class="C6">break</span> with an expression. Example: 6.</span><br>
+      <span class="C3"><code>while</code></span><span> – Runs while the condition is true. Example: countdown skips printing 2 due to <span class="C7">continue</span>.</span><br>
+      <span class="C4"><code>for</code></span><span> – Iterates over a collection. Example: breaks early when hitting 20 using <span class="C6">break</span>.</span><br>
+      <span class="C6"><code>break</code></span><span> – Exits the loop immediately. Works in <code>loop</code>, <code>while</code>, and <code>for</code>.</span><br>
+      <span class="C7"><code>continue</code></span><span> – Skips the rest of the current iteration and moves to the next. Works in all loop types.</span><br><br>
+
+      <strong>Notes:</strong><br>
+      <span>
+        1. Infinite loops are rarely needed; always pair with <span class="C6">break</span> for control.<br>
+        2. Returning values from loops (<span class="C6">break expr</span>) is unique to Rust.<br>
+        3. <span class="C7">continue</span> is useful for filtering values inside loops.<br>
+        4. Prefer <code>for</code> for collections, <code>while</code> for conditions, <code>loop</code> for manual control.<br>
+        5. <code>arr.iter()</code> creates an iterator of references — you’re borrowing each element instead of copying it. This is efficient and avoids unnecessary allocations.<br>
+          - <code>iter()</code> → &T (immutable borrow)<br>
+          - <code>iter_mut()</code> → &mut T (mutable borrow)<br>
+          - <code>into_iter()</code> → T (moves ownership)<br>
+          Rust gives explicit control over access and ownership.<br>
+          -  <code>*val == 20</code> → Dereferences means go follow this reference and get the value it points to.<br><br>
+
+        <strong>Concept & Spirit of Rust:</strong><br>
+        <span>
+          - Rust loops help you <strong>repeat actions safely</strong> and <strong>control exactly how your program runs</strong>.<br>
+          - <code>loop</code> runs forever unless you use <span class="C6">break</span>. <code>while</code> runs as long as a condition is true. <code>for</code> iterates over collections. This gives you <strong>flexibility with safety</strong>.<br>
+          - Using <span class="C6">break</span> or <span class="C7">continue</span> makes your intentions explicit: you control <strong>when a loop stops</strong> or <strong>skips a step</strong>.<br>
+          - Iterators like <code>arr.iter()</code> <strong>borrow elements</strong> instead of copying them, so your code is <strong>efficient and safe</strong>. You don’t accidentally change or duplicate data.<br>
+          - Rust encourages you to <strong>think about ownership and borrowing</strong> from the start. Loops and iterators are just one example of how Rust keeps memory and data access predictable.<br>
+          - Overall: Rust makes you write code that is <strong>deliberate, clear, and safe</strong>, while still being expressive and powerful. Loops are tools that let you do repetitive tasks <strong>without accidentally creating bugs or memory issues</strong>.<br>
+        </span>
+    </div>
+
+  </div>
+</template>

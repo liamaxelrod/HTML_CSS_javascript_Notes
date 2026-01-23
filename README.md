@@ -105,19 +105,20 @@ README.md                        Project documentation
 
 ---
 
-## 5. How to Run Locally (Open index.html in your browser)
+## 5. How to Run Locally (View in Browser with Local Server)
 
 To view this project on your computer:
 
 1. **Clone or download the repository** from GitHub.
-2. **Navigate to the project folder** on your computer.
-3. **Open the `index.html` file** in your preferred web browser (e.g., Chrome, Firefox, Edge).
-   * You can usually double-click the file, or right-click and choose  **“Open with” → your browser** .
-4. The website should load fully, including all navigation, CSS styles, and dynamically loaded notes.
+2. **Open the project folder** in Visual Studio Code
+3. **Open `index.html` in VS Code** .
+4. **Start a local server** to view the project:
+   * Click the **“Go Live”** button in the bottom-right corner of VS Code (requires the Live Server by Ritwick Dey extension).
+   * The website will open in your default browser at `http://localhost:5500/` (or another port).
+5. You can now navigate through all pages, and all CSS styles, navigation, and dynamic content will load correctly.
+6. **Edit files** in VS Code and refresh the browser to see changes immediately.
 
-**Note:** No server setup or installation is required. Everything runs directly in the browser.
-
----
+**Note:** Simply opening `index.html` by double-clicking will  **not work correctly** , because the project requires a local server to handle paths and navigation.
 
 ## 6. Lessons Learned
 
