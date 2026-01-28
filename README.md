@@ -36,72 +36,70 @@ A live demo of this project has not been published yet.
 
 ## 4. Project Structure
 
-/All_Notes
-  ├─ Notes_HTML/                HTML-related notes
-  │    ├─ N_Basics.html
-  │    ├─ N_Forms_Inputs.html
-  │    ├─ N_JavaScript_Integration.html
-  │    ├─ N_Structure_Layout.html
-  │    └─ N_Text_Links_Media.html
-  ├─ Notes_CSS/                 CSS-related notes
-  │    ├─ N_Animation.html
-  │    ├─ N_Basics.html
-  │    ├─ N_Categories.html
-  │    ├─ N_Icons_Links.html
-  │    ├─ N_Layout.html
-  │    └─ N_Properties.html
-  └─ Notes_Javascript/          JavaScript-related notes
-    ├─ N_Basics.html
-    ├─ N_Working_with_Data.html
-    ├─ N_Control_Flow_and_Logic.html
-    ├─ N_Functions_Objects_and_Classes.html
-    ├─ N_Mathematics_and_Operators.html
-    ├─ N_Error_Handling.html
-    └─ N_Advanced_Browser_Interaction.html
-/CSS
-  ├─ Global_Styles.css          Main global stylesheet
-  └─ template.css               Page-specific template styles
-/CSS_Dropdown
-  ├─ D_Animation.html
-  ├─ D_Basics.html
-  ├─ D_Categories.html
-  ├─ D_Icons_Links.html
-  ├─ D_Layout.html
-  └─ D_Properties.html
-/HTML_Dropdown
-  ├─ D_Basics.html
-  ├─ D_Forms_Inputs.html
-  ├─ D_JavaScript_Integration.html
-  ├─ D_Structure_Layout.html
-  └─ D_Text_Links_Media.html
-/Javascript_Dropdown
-  ├─ D_Basics.html
-  ├─ D_Working_with_Data.html
-  ├─ D_Control_Flow_and_Logic.html
-  ├─ D_Functions_Objects_and_Classes.html
-  ├─ D_Mathematics_and_Operators.html
-  ├─ D_Error_Handling.html
-  └─ D_Advanced_Browser_Interaction.html
-/Navigation_Bar
-  ├─ Nav_CSS_HTML.html
-  ├─ Nav_Index.html
-  └─ Nav_Javascript.html
-/Images
-  ├─ favicon.ico
-  ├─ Flower.png
-  ├─ Image.png
-  ├─ Liam_Axelrod.jpg
-  ├─ Pink_Flower.png
-  └─ workplace.png
-/JS
-  ├─ loadNav.js                 Script to dynamically load navigation
-  └─ loadNotes.js               Script to dynamically load note content
-index.html                      Main landing page
-about.html                      About page
-HTML_CSS.html                   Combined HTML & CSS overview page
-JavaScript.html                 JavaScript overview page
-LICENSE                         Project license file
-README.md                        Project documentation
+/CSS     
+  ├─ Global_Styles.css          Main global stylesheet      
+  └─ template.css               Page-specific template styles     
+/Drop 
+  ├─ CSS   
+      ├─ Animation.html           
+      ├─ Basics.html      
+      ├─ Categories.html      
+      ├─ Icons_Links.html      
+      ├─ Layout.html      
+      └─ Properties.html  
+  ├─ HTML
+      ├─ Basics.html      
+      ├─ Forms_Inputs.html      
+      ├─ JavaScript_Integration.html      
+      ├─ Structure_Layout.html      
+      └─ Text_Links_Media.html   
+  ├─ JS
+      ├─ Basics.html      
+      ├─ Browser.html      
+      ├─ Data.html      
+      ├─ Eeeirs.html      
+      ├─ Flow_Logic.html      
+      ├─ Functions.html      
+      └─ Math.html 
+  └─ Rust
+       ├─ Arrays.html      
+       ├─ Basics.html      
+       ├─ Flow_Logic.html           
+       └─ Functions.html
+/Header      
+  ├─ default.html
+  └─ icons.html
+Images
+  ├─ favicon.ico      
+  ├─ Flower.png      
+  ├─ Image.png      
+  ├─ Liam_Axelrod.jpg      
+  ├─ Pink_Flower.png      
+  └─ workplace.png   
+/JS   
+  ├─ LoadHead.js          Script to dynamically load header content   
+  ├─ loadNav.js           Script to dynamically load navigation      
+  └─ loadNotes.js         Script to dynamically load note content
+/N                        Different templates to be loaded
+  ├─ C                    practice using languages like Rust Correspond to the template. 
+  ├─ CSS                  All the templates for CSS
+  ├─ HTML                 All the templates for HTML
+  ├─ JS                   All the templates for JS
+  └─ Rust                 All the templates for Rust       
+/Navigation_Bar      
+  ├─ Nav_CSS_HTML.html      
+  ├─ Nav_Index.html      
+  ├─ Nav_Javascript.html      
+  └─ Nav_Rust.html
+/Pages
+  ├─ About.html           About page
+  ├─ HTML_CSS.html        Combined HTML & CSS overview page       
+  ├─ JavaScript.html      JavaScript overview page   
+  └─ Rust.html            Rust overview page
+AI prompts for template
+index.html                Main landing page      
+LICENSE                   Project license file      
+README.md                 Project documentation 
 
 ---
 
