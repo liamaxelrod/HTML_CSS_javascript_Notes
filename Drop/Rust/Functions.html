@@ -1,0 +1,58 @@
+<!-- File name: Drop/Rust/Basics.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Basics</title>
+  <link rel="stylesheet" href="/CSS/Global_Styles.css" />
+  <link rel="stylesheet" href="/CSS/template.css" />
+  <link rel="icon" href="/Images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+  <header>
+    <!-- Tell JS which nav to load -->
+    <div class="nav-slot" data-nav-type="Rust"></div>
+  </header>
+
+  <main>
+    <!-- Section Overview -->
+    <div class="section">
+        <h1>Functions</h1>
+        <p>
+            Rust functions are blocks of code you can reuse. Each function can take inputs called <em>parameters</em> 
+            and return outputs. Functions have explicit types for inputs and outputs, which ensures clarity 
+            about what data enters and leaves the function.
+        </p>
+        <p>
+            Variables in Rust exist only within a defined <em>scope</em>. Functions, blocks, and loops create scopes. 
+            Rust also allows <strong>shadowing</strong>, letting you declare a new variable with the same name 
+            as an old one, replacing it safely. This helps transform values step by step without mutating the original.
+        </p>
+        <p>
+            Understanding functions, scope, and shadowing is key to writing code that is clear, predictable, 
+            and memory-safe. Rust encourages deliberate data flow: you always know what variables exist, where, 
+            and what values functions produce.
+        </p>
+    </div>
+
+    <!-- Dynamic Notes Loader -->
+    <!-- Each note-slot corresponds to a template inside Notes_Javascript folder -->
+    <div class="note-slot" data-folder="Rust" data-id="Functions"></div>
+
+  </main>
+
+  <footer>
+    <!-- Optional footer content -->
+  </footer>
+
+  <!-- Load dynamic notes -->
+  <script src="/JS/loadNav.js"></script> 
+  <script src="/JS/loadNotes.js"></script>
+
+</body>
+</html>
+
+

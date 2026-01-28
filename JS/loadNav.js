@@ -1,4 +1,4 @@
-// File name: oadNav.js
+// File name: JS/loadNav.js
 // Dynamically loads the correct navigation bar based on a data attribute
 // and attaches mobile dropdown behavior
 
