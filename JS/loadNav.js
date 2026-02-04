@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
     "javascript": "/Nav/Nav_JS.html",
     "css-html": "/Nav/Nav_CSS_HTML.html",
     "index": "/Nav/Nav_Index.html",
-    "Rust": "/Nav/Nav_Rust.html"
+    "Rust": "/Nav/Nav_Rust.html",
+    "SQL": "/Nav/Nav_SQL.html"
   };
 
   navSlots.forEach(slot => {

@@ -3,7 +3,7 @@
 const notesFolder = '/N';
 
 // 🔒 SECURITY: Whitelist allowed folders with updated names
-const allowedFolders = ['HTML', 'CSS', 'JS', 'Rust'];
+const allowedFolders = ['HTML', 'CSS', 'JS', 'Rust', 'SQL'];
 
 // 🔒 SECURITY: Whitelist allowed note IDs for each folder (updated)
 const allowedNotes = {
@@ -36,6 +36,9 @@ const allowedNotes = {
     'Functions',
     'Arrays',
     'Flow_Logic'
+  ],
+  'SQL': [
+    'Basics'
   ]
 };
 
