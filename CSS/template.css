@@ -68,16 +68,16 @@ First of all, four templates. == */
    COLOR FOR CODE & EXPLANATION TEXT
    =========================== */
 
-.C1 { color: pink; }  /* Pinkish */
-.C2 { color: lightblue; }  /* Blue */
-.C3 { color: cornflowerblue; }  /* Green */
-.C4 { color: orange; }  /* Orange */
-.C5 { color: yellow; }  /* Purple */
-.C6 { color: lime; }  /* Teal */
-.C7 { color: fuchsia; }  /* Red */
-.C8 { color: lightgray; }  /* Gray */
-.C9 { color: lightcoral; }  /* Brownish */
-.C10 { color: aquamarine; } /* Strong Blue */
+.C1 { color: #E53935; }  /* Pinkish */
+.C2 { color: #1E88E5; }  /* Blue */
+.C3 { color: #43A047; }  /* Green */
+.C4 { color: #FB8C00; }  /* Orange */
+.C5 { color: #8E24AA; }  /* Purple */
+.C6 { color: #00ACC1; }  /* Teal */
+.C7 { color: #D81B60; }  /* Red */
+.C8 { color: #6D4C41; }  /* Gray */
+.C9 { color: #424242; }  /* Brownish */
+.C10 { color: #C0CA33; } /* Strong Blue */
 
 /* ===========================
    COLORED DOT STYLE FOR EXAMPLES
@@ -94,16 +94,16 @@ First of all, four templates. == */
 
 /* Dot colors matching the color classes */
 
-.d1 { background-color: pink; }
-.d2 { background-color: lightblue; }
-.d3 { background-color: cornflowerblue; }
-.d4 { background-color: orange; }
-.d5 { background-color: yellow; }
-.d6 { background-color: lime; }
-.d7 { background-color: fuchsia; }
-.d8 { background-color: lightgray; }
-.d9 { background-color: lightcoral; }
-.d10 { background-color: aquamarine; }
+.d1 { background-color: #E53935; }
+.d2 { background-color: #1E88E5; }
+.d3 { background-color: #43A047; }
+.d4 { background-color: #FB8C00; }
+.d5 { background-color: #8E24AA; }
+.d6 { background-color: #00ACC1; }
+.d7 { background-color: #D81B60; }
+.d8 { background-color: #6D4C41; }
+.d9 { background-color: #424242; }
+.d10 { background-color: #C0CA33; }
 
 /* ===========================
    RESPONSIVE / DYNAMIC INTERFACE STYLES

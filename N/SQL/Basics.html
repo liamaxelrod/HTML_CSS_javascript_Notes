@@ -1,71 +1,157 @@
 <!-- File name: N/SQL/Basics.html -->
 
-<template> <!-- Coding Language name: SQL - Intro / Basics -->
+<template> <!-- SQL: Intro / Basics -->
 
   <div class="bubble">
 
-    <!-- 1. CODE BLOCKS -->
-    <h3>Topic Title: What is SQL and Basic Concepts</h3>
+    <h3>Example: Customers Table (Existing Data)</h3>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>ID</th>
+        <th>CustomerName</th>
+        <th>ContactName</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>PostalCode</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+        <td>Obere Str. 57</td>
+        <td>Berlin</td>
+        <td>12209</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Ana Trujillo Emparedados</td>
+        <td>Ana Trujillo</td>
+        <td>Avda. de la Constitución 2222</td>
+        <td>México D.F.</td>
+        <td>05021</td>
+        <td>Mexico</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Around the Horn</td>
+        <td>Thomas Hardy</td>
+        <td>120 Hanover Sq.</td>
+        <td>London</td>
+        <td>WA1 1DP</td>
+        <td>UK</td>
+      </tr>
+    </table>
+
+    <!-- 1. CODE BLOCK -->
+    <h3>SQL Code:</h3>
     <div class="code_block">
-      <code>
-        // SQL Overview <br>
-        <span class="C1">SQL</span> – Structured Query Language<br>
-        <span class="C2">SELECT, UPDATE, DELETE, INSERT, WHERE</span> – Core SQL commands, ANSI standard compliant<br><br>
-
-        // Using SQL in Websites <br>
-        <span class="C3">RDBMS</span> – Relational Database Management System (MySQL, SQL Server, MS Access)<br>
-        <span class="C4">Server-side language</span> – PHP, ASP (used to query the database)<br>
-        <span class="C5">HTML / CSS</span> – For displaying the data retrieved by SQL<br><br>
-
-        // Database Structure <br>
-        <span class="C6">Tables</span> – Named containers for related data<br>
-        <span class="C7">Rows / Records</span> – Individual entries in a table<br>
-        <span class="C8">Columns / Fields</span> – Named attributes of a table with specific data types<br><br>
-
-        // SQL Syntax Notes <br>
-        <span class="C9">SQL keywords</span> – Not case sensitive (SELECT = select)<br>
-        <span class="C10">Semicolon (;)</span> – Statement separator; required in some systems<br><br>
-
-        // Data Types <br>
-        <span class="C1">String, Numeric, Date/Time</span> – Common MySQL column data types
+      <code class="C1">
+        SELECT * FROM Customers;
       </code>
     </div>
 
-    <!-- 2. EXAMPLE OUTPUTS -->
-    <h3>Example (Outputs):</h3>
-    <div class="example">
-      <span class="dot d1"></span><span> &rarr; SQL lets you retrieve and manipulate data from tables.</span><br>
-      <span class="dot d2"></span><span> &rarr; Core commands like SELECT, INSERT, DELETE follow the same standard across databases.</span><br>
-      <span class="dot d3"></span><span> &rarr; Example: MySQL server accessed via PHP to display data on a website.</span><br>
-      <span class="dot d4"></span><span> &rarr; Server-side script sends SQL queries to the database.</span><br>
-      <span class="dot d5"></span><span> &rarr; HTML/CSS formats the displayed data.</span><br>
-      <span class="dot d6"></span><span> &rarr; Tables organize related information like Customers or Orders.</span><br>
-      <span class="dot d7"></span><span> &rarr; Each row represents a single entry (record).</span><br>
-      <span class="dot d8"></span><span> &rarr; Columns define the kind of data stored, e.g., Name, Date, Price.</span><br>
-      <span class="dot d9"></span><span> &rarr; Keywords like SELECT are case-insensitive.</span><br>
-      <span class="dot d10"></span><span> &rarr; Semicolon separates statements, required in multi-statement execution.</span><br>
-    </div>
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Output:</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1">
+        <th>ID</th>
+        <th>CustomerFullName</th>
+        <th>ContactName</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>PostalCode</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+        <td>Obere Str. 57</td>
+        <td>Berlin</td>
+        <td>12209</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Ana Trujillo Emparedados</td>
+        <td>Ana Trujillo</td>
+        <td>Avda. de la Constitución 2222</td>
+        <td>México D.F.</td>
+        <td>05021</td>
+        <td>Mexico</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Around the Horn</td>
+        <td>Thomas Hardy</td>
+        <td>Thomas Hardy</td>
+        <td>London</td>
+        <td>WA1 1DP</td>
+        <td>UK</td>
+      </tr>
+    </table>
 
     <!-- 3.1 EXPLANATION -->
     <h3>Explanation:</h3>
     <div class="explanation">
-      <span class="C1"><code>SQL</code></span> – The language used to talk to a database. Think of it as giving instructions to a librarian for finding, adding, or updating books.<br>
-      <span class="C2"><code>SELECT, UPDATE, DELETE, INSERT, WHERE</code></span> – The basic “verbs” of SQL; each does a specific job: SELECT reads, INSERT adds, UPDATE changes, DELETE removes, WHERE filters.<br>
-      <span class="C3"><code>RDBMS</code></span> – Software that stores and manages your data in tables; it ensures relationships and consistency.<br>
-      <span class="C4"><code>Server-side language</code></span> – Acts as the messenger between your website and the database.<br>
-      <span class="C5"><code>HTML / CSS</code></span> – Presents the data nicely on the webpage; SQL does not handle formatting.<br>
-      <span class="C6"><code>Tables</code></span> – Think of a table as a spreadsheet; it groups related data.<br>
-      <span class="C7"><code>Rows / Records</code></span> – Each row is like a single filled-out form in the table.<br>
-      <span class="C8"><code>Columns / Fields</code></span> – Each column has a data type and describes an attribute, like “Name” or “Price”.<br>
-      <span class="C9"><code>SQL keywords</code></span> – Not case-sensitive, so SELECT = select = SeLeCt.<br>
-      <span class="C10"><code>Semicolon (;)</code></span> – Marks the end of a statement; required in some systems when sending multiple statements.<br>
-      <span class="C1"><code>String, Numeric, Date/Time</code></span> – Column types define the kind of information stored, e.g., text, numbers, or dates.<br><br>
+      
+      <span class="C1">
+        The SQL statement <code>SELECT * FROM Customers;</code></span><span> tells the database to return
+        all rows and all columns from the <code>Customers</code> table.
+      </span><br>
+
+      <span>
+        The table shown in the example output is exactly what already exists in the database.
+        This query does not modify the data — it only reads and displays it.
+      </span><br><br>
+
+      <span>
+        SQL (Structured Query Language) is the language used to communicate with a database.
+        You can think of it like giving clear instructions to a librarian about which information
+        you want to see.
+      </span><br><br>
+
+
+      <span>
+        Using the filing cabinet analogy:
+      </span><br>
+      <span>- The cabinet is the database.</span><br>
+      <span>- Each drawer is a table (like <code>Customers</code>).</span><br>
+      <span>- Each folder is a row (one customer).</span><br>
+      <span>- Each page in the folder is a column value (name, city, country).</span><br><br>
+
+      <span>
+        Columns have data types, such as string, numeric, or date/time, which define what kind
+        of values they can store. Every column must have a name and a data type.
+      </span><br>
+
+      <span>
+        SQL provides a small set of core commands, such as SELECT, INSERT, UPDATE, DELETE, and WHERE.
+        These act as the basic “verbs” for working with data.
+      </span><br>
+
+      <span>
+        SQL keywords are not case-sensitive, meaning <code>SELECT</code> and <code>select</code>
+        are treated the same. Some database systems require a semicolon at the end of each statement,
+        especially when multiple statements are sent together.
+      </span><br>
+
+      <span>
+        In a web application, SQL is typically used by a server-side language (such as PHP or ASP)
+        to retrieve data from the database, while HTML and CSS are responsible for displaying
+        that data to the user.
+      </span>
+
 
       <!-- 3.2 NOTES -->
       <h3>Notes:</h3>
       <span>- Some databases are stricter about semicolons than others (MySQL often optional, Oracle required in scripts).</span><br>
       <span>- ANSI compliance ensures basic SQL commands work similarly across systems.</span><br>
       <span>- Data types vary slightly between systems; always check your RDBMS documentation.</span><br><br>
+      
 
       <!-- 3.3 CONCEPT & SPIRIT -->
       <h3>Concept & Spirit:</h3>
@@ -78,8 +164,10 @@
 </template>
 
 
+
 <!-- chatGPT Questions by liam Disregard if I forgot to remove them. 
 ------------------------------------------------ 
+
 
 
 

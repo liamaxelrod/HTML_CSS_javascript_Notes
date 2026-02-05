@@ -1,3 +1,5 @@
+
+<!-- template for normal coding language.  -->
 <template> <!-- Coding Language name: Example Topic -->
 
   <!-- 📝 GLOBAL RULES (do not render in final notes):
@@ -71,9 +73,109 @@
 
   </div>
 </template>
-<!-- Shortly I will give you instructions on the new template I want to make -->
 
+<!-- template for database coding language. -->
+<template> <!-- Coding Language name: Example Topic -->
 
+  <!-- 📝 GLOBAL RULES (do not render in final notes):
+      1. Each color (C1–C10) highlights links across: Code ↔ Explanation ↔ Notes ↔ Concept & Spirit.
+      2. Section order: Code → Example Outputs → Explanation → Notes → Concept & Spirit.
+      3. Voice: always beginner-friendly, clear, step-by-step.
+  -->
+
+  <div class="bubble">
+
+    <!-- 0. TABLE EXAMPLE (Existing Data) -->
+    <h3>Example: Table Preview</h3>
+    <table class="example" border="#" cellspacing="#" cellpadding="#">
+      <tr>
+        <th>Column1</th>
+        <th>Column2</th>
+        <th>Column3</th>
+        <!-- Add more columns as needed -->
+      </tr>
+      <tr>
+        <td>Value1</td>
+        <td>Value2</td>
+        <td>Value3</td>
+      </tr>
+      <tr>
+        <td>Value4</td>
+        <td>Value5</td>
+        <td>Value6</td>
+      </tr>
+      <!-- Add more rows as needed -->
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+    <!-- 📝 inside CODE BLOCKS
+          - Code must be in ONE <code> block per section. Use <span class="C#"> for highlights
+          - Indentation is done with &nbsp;&nbsp;
+    -->
+      <code>
+        <!-- Section 1 -->
+        <span class="C1">SELECT * FROM TableName;</span><br><br>
+
+        <!-- Section 1 -->
+        <span class="C2">SELECT Column1, Column2 FROM TableName WHERE Column3 = 'Value';</span><br>
+        <!-- Add more queries (C3–C10) if needed -->
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Output:</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1">
+        <th>Column1</th>
+        <th>Column2</th>
+        <th>Column3</th>
+      </tr>
+      <tr>
+        <td>Value1</td>
+        <td>Value2</td>
+        <td>Value3</td>
+      </tr>
+      <tr>
+        <td>Value4</td>
+        <td>Value5</td>
+        <td>Value6</td>
+      </tr>
+      <!-- Add more rows as needed; optionally link to C# using class if useful -->
+      <!-- Add more outputs for C4–C10 as needed or dot d# as needed -->
+    </table>
+
+    <!-- 3.1 EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <!-- 📝 inside EXPLANATION
+            - Include beginner-friendly analogies
+            - Include memory/lifetime hints where relevant
+            - Compare with similar language features if applicable
+            - Include practical examples of transformations if relevant
+            - Use real examples, not just abstract concepts
+      -->
+      <span class="C1"><code>Word/code</code></span><span> – Explanation tied to C1, written for beginners.</span><br>
+      <span class="C2"><code>Word/code</code></span><span> – Explanation tied to C2.</span><br>
+      <span class="C3"><code>Word/code</code></span><span> – Explanation tied to C3.</span><br><br>
+      <!-- Add explanations for C4–C10 as needed -->
+
+      <!-- 3.2 NOTES -->
+      <h3>Notes:</h3>
+      <span>- The point of notes Is stuff that didn't fit in the explanation or the overall concept.</span><br>
+      <span>- Best practices, common pitfalls, or differences from other languages.</span><br><br>
+
+      <!-- 3.3 CONCEPT & SPIRIT -->
+      <h3>Concept & Spirit:</h3>
+      <span>- Ask: Why did we write it this way? What coding habit or principle is this teaching?</span><br>
+      <span>- Why this language feature exists and how it shapes coding mindset.</span><br>
+      <span>- Big-picture lesson for beginners: how to think about and use this feature effectively and safely.</span>
+    </div>
+
+  </div>
+
+</template>
 
 
 
