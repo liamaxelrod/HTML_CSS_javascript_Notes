@@ -1,10 +1,285 @@
 <!-- File name: N/SQL/Basics.html -->
 
+
+
+
+
+
+
+
+
+<!-- chatGPT Questions by liam Disregard if I forgot to remove them. 
+------------------------------------------------ 
+
+
+
+
+
+
+-------------------------------------------------
+-->
+
+<!-- list
+------------------------------------------------ 
+1. SQL Foundations
+
+SQL Tutorial / SQL Home
+
+SQL Intro ✅
+SQL Syntax ✅
+SQL Comments ✅
+SQL Operators 
+SQL Data Types ✅
+
+2. Retrieving Data
+
+🧠 Template 1 — Selecting & Shaping Results
+Mental focus: What does my result look like?
+
+SQL SELECT ✅
+SQL SELECT DISTINCT ✅
+SQL SELECT TOP ✅
+SQL ALIASES ✅
+
+🧠 Template 2 — Filtering Rows (WHERE & Condition Types)
+Mental focus: Which rows are allowed to exist?
+
+SQL WHERE ✅
+Text Fields vs Numeric Fields (inside WHERE)
+SQL LIKE
+SQL WILDCARDS
+SQL IN
+SQL BETWEEN
+
+🧠 Template 3 — Logical Operators & Condition Composition
+Mental focus: How conditions interact with each other.
+
+SQL AND ✅
+SQL OR ✅
+SQL NOT ✅
+Combining AND / OR (Parentheses) (inside same template)
+
+🧠 Template 4 — Sorting Results
+Mental focus: In what order do I want to see the data?
+
+SQL ORDER BY  ✅
+ASC vs DESC (inside ORDER BY)
+Alphabetical Ordering
+ORDER BY Multiple Columns
+Mixed ASC / DESC
+
+3. Nulls & Conditional Logic
+SQL Null Values
+SQL Null Functions
+SQL Case
+SQL Exists
+SQL Any
+SQL All
+
+4. Aggregation & Grouping
+
+SQL Aggregate Functions
+SQL Min
+SQL Max
+SQL Count
+SQL Sum
+SQL Avg
+SQL Group By
+SQL Having
+
+5. Combining Tables
+
+SQL Joins
+SQL Inner Join
+SQL Left Join
+SQL Right Join
+SQL Full Join
+SQL Self Join
+SQL Union
+SQL Union All
+6. Modifying Data
+SQL Insert Into
+SQL Insert Into Select
+SQL Update
+SQL Delete
+SQL Select Into
+
+7. Database Design, Integrity & Safety
+
+SQL Database
+SQL Create DB
+SQL Drop DB
+SQL Backup DB
+SQL Create Table
+SQL Drop Table
+SQL Alter Table
+SQL Constraints
+SQL Not Null
+SQL Unique
+SQL Primary Key
+SQL Foreign Key
+SQL Check
+SQL Default
+SQL Index
+SQL Auto Increment
+SQL Dates
+SQL Views
+SQL Stored Procedures
+SQL Injection
+SQL Hosting
+
+
+
+
+-------------------------------------------------
+-->
+
+<!-- 
+
+
+SQL WHERE ✅
+
+The WHERE clause is used to filter records.
+It is used to extract only those records that fulfill a specified condition.
+
+ExampleGet
+SELECT * FROM Customers
+WHERE Country='Mexico';
+
+Syntax
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+
+Note: The WHERE clause is not only used in SELECT statements, it is also used in UPDATE, DELETE, etc.!
+
+Text Fields vs. Numeric Fields
+SQL requires single quotes around text values (most database systems will also allow double quotes).
+
+However, numeric fields should not be enclosed in quotes:
+
+SQL AND ✅
+
+The WHERE clause can contain one or many AND operators.
+
+The AND operator is used to filter records based on more than one condition, like if you want to return all customers from Spain that starts with the letter 'G':
+
+Example
+
+SELECT *
+FROM Customers
+WHERE Country = 'Spain' AND CustomerName LIKE 'G%';
+
+Syntax
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 AND condition2 AND condition3 ...;
+
+SQL OR ✅
+
+The WHERE clause can contain one or more OR operators.
+
+The OR operator is used to filter records based on more than one condition, like if you want to return all customers from Germany but also those from Spain:
+
+ExampleGet
+SELECT *
+FROM Customers
+WHERE Country = 'Germany' OR Country = 'Spain';
+
+Syntax
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 OR condition2 OR condition3 ...;
+
+OR vs AND
+The OR operator displays a record if any of the conditions are TRUE.
+
+The AND operator displays a record if all the conditions are TRUE.
+
+Combining AND and OR
+You can combine the AND and OR operators.
+
+The following SQL statement selects all customers from Spain that starts with a "G" or an "R".
+
+Make sure you use parenthesis to get the correct result.
+
+SELECT * FROM Customers
+WHERE Country = 'Spain' AND (CustomerName LIKE 'G%' OR CustomerName LIKE 'R%');
+
+Without parenthesis, the select statement will return all customers from Spain that starts with a "G", plus all customers that starts with an "R", regardless of the country value:
+
+SQL NOT ✅
+
+The NOT operator is used in combination with other operators to give the opposite result, also called the negative result.
+
+In the select statement below we want to return all customers that are NOT from Spain:
+
+ExampleGet
+SELECT * FROM Customers
+WHERE NOT Country = 'Spain';
+
+Syntax
+SELECT column1, column2, ...
+FROM table_name
+WHERE NOT condition;
+
+SQL ORDER BY ✅
+
+The ORDER BY keyword is used to sort the result-set in ascending or descending order.
+
+Example
+SELECT * FROM Products
+ORDER BY Price;
+
+Syntax
+SELECT column1, column2, ...
+FROM table_name
+ORDER BY column1, column2, ... ASC|DESC;
+
+DESC
+The ORDER BY keyword sorts the records in ascending order by default. To sort the records in descending order, use the DESC keyword.
+
+Example
+SELECT * FROM Products
+ORDER BY Price DESC;
+
+Order Alphabetically
+For string values the ORDER BY keyword will order alphabetically:
+
+Example
+SELECT * FROM Products
+ORDER BY ProductName;
+
+Alphabetically DESC
+To sort the table reverse alphabetically, use the DESC keyword
+
+Example
+SELECT * FROM Products
+ORDER BY ProductName DESC;
+
+ORDER BY Several Columns
+The following SQL statement selects all customers from the "Customers" table, sorted by the "Country" and the "CustomerName" column. This means that it orders by Country, but if some rows have the same Country, it orders them by CustomerName:
+
+Example
+SELECT * FROM Customers
+ORDER BY Country, CustomerName;
+
+Using Both ASC and DESC
+The following SQL statement selects all customers from the "Customers" table, sorted ascending by the "Country" and descending by the "CustomerName" column:
+
+Example
+SELECT * FROM Customers
+ORDER BY Country ASC, CustomerName DESC;
+-->
+
+
 <template> <!-- SQL: Intro / Basics -->
 
   <div class="bubble">
 
-    <h3>Example: Customers Table (Existing Data)</h3>
+    <h3>Template for SQL: basic tutorial on SQL.</h3>
+
+    <h3>Original: Table</h3>
 
     <table class="example" border="1" cellspacing="0" cellpadding="5">
       <tr>
@@ -100,76 +375,357 @@
       
       <span class="C1">
         The SQL statement <code>SELECT * FROM Customers;</code></span><span> tells the database to return
-        all rows and all columns from the <code>Customers</code> table.
-      </span><br>
+        all rows and all columns from the <code>Customers</code> table.<br>
 
-      <span>
+      
         The table shown in the example output is exactly what already exists in the database.
-        This query does not modify the data — it only reads and displays it.
-      </span><br><br>
+        This query does not modify the data — it only reads and displays it.<br><br>
 
-      <span>
+      
         SQL (Structured Query Language) is the language used to communicate with a database.
         You can think of it like giving clear instructions to a librarian about which information
-        you want to see.
-      </span><br><br>
+        you want to see.<br><br>
 
+        Using a cabinet as a analogy:<br>
+        - The cabinet is the database.<br>
+        - Each drawer is a table (like <code>Customers</code>).<br>
+        - Each folder is a row (one customer).<br>
+        - Each page in the folder is a column value (name, city, country).<br><br>
 
-      <span>
-        Using the filing cabinet analogy:
-      </span><br>
-      <span>- The cabinet is the database.</span><br>
-      <span>- Each drawer is a table (like <code>Customers</code>).</span><br>
-      <span>- Each folder is a row (one customer).</span><br>
-      <span>- Each page in the folder is a column value (name, city, country).</span><br><br>
-
-      <span>
         Columns have data types, such as string, numeric, or date/time, which define what kind
-        of values they can store. Every column must have a name and a data type.
-      </span><br>
+        of values they can store. Every column must have a name and a data type.<br>
 
-      <span>
         SQL provides a small set of core commands, such as SELECT, INSERT, UPDATE, DELETE, and WHERE.
-        These act as the basic “verbs” for working with data.
-      </span><br>
+        These act as the basic “verbs” for working with data.<br>
 
-      <span>
         SQL keywords are not case-sensitive, meaning <code>SELECT</code> and <code>select</code>
         are treated the same. Some database systems require a semicolon at the end of each statement,
-        especially when multiple statements are sent together.
-      </span><br>
+        especially when multiple statements are sent together.<br>
 
-      <span>
         In a web application, SQL is typically used by a server-side language (such as PHP or ASP)
         to retrieve data from the database, while HTML and CSS are responsible for displaying
         that data to the user.
-      </span>
+      </span><br><br>
 
 
       <!-- 3.2 NOTES -->
-      <h3>Notes:</h3>
-      <span>- Some databases are stricter about semicolons than others (MySQL often optional, Oracle required in scripts).</span><br>
-      <span>- ANSI compliance ensures basic SQL commands work similarly across systems.</span><br>
-      <span>- Data types vary slightly between systems; always check your RDBMS documentation.</span><br><br>
+      <strong>Notes:</strong><br>
+      <span>
+        - Some databases are stricter about semicolons than others (MySQL often optional, Oracle required in scripts).<br>
+        - ANSI compliance ensures basic SQL commands work similarly across systems.<br>
+        - Data types vary slightly between systems; always check your RDBMS documentation.<br>
+        - comment are made with /* text */ and -- text.
+      </span><br><br>
       
 
       <!-- 3.3 CONCEPT & SPIRIT -->
-      <h3>Concept & Spirit:</h3>
-      <span>- SQL is a declarative language: you describe WHAT you want, not HOW to get it.</span><br>
-      <span>- Understanding table structure is critical before writing queries; you must know rows, columns, and types.</span><br>
-      <span>- Early habits: always use consistent case for readability; semicolons help prevent multi-statement errors.</span>
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - SQL is a declarative language: you describe WHAT you want, not HOW to get it.<br>
+        - Understanding table structure is critical before writing queries; you must know rows, columns, and types.<br>
+        - Early habits: always use consistent case for readability; semicolons help prevent multi-statement errors.
+      </span>
     </div>
 
   </div>
 </template>
 
+<template> <!-- SQL: SELECT, SELECT DISTINCT, SELECT TOP, ALIASES -->
 
+  <div class="bubble">
 
-<!-- chatGPT Questions by liam Disregard if I forgot to remove them. 
------------------------------------------------- 
+    <h3>Template for SQL: SELECT, SELECT DISTINCT, SELECT TOP, ALIASES</h3>
 
+    <!-- 0. TABLE EXAMPLE (Existing Data + Duplicate Row for DISTINCT) -->
+    <h3>Original: Table</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>ID</th>
+        <th>CustomerName</th>
+        <th>ContactName</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>PostalCode</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+        <td>Obere Str. 57</td>
+        <td>Berlin</td>
+        <td>12209</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Ana Trujillo Emparedados</td>
+        <td>Ana Trujillo</td>
+        <td>Avda. de la Constitución 2222</td>
+        <td>México D.F.</td>
+        <td>05021</td>
+        <td>Mexico</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Around the Horn</td>
+        <td>Thomas Hardy</td>
+        <td>120 Hanover Sq.</td>
+        <td>London</td>
+        <td>WA1 1DP</td>
+        <td>UK</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Around the Horn</td>
+        <td>Sarah Smith</td>
+        <td>88 Fleet Street</td>
+        <td>London</td>
+        <td>EC4Y 1DH</td>
+        <td>UK</td>
+      </tr>
+    </table>
 
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+        <span class="C1">SELECT * FROM Customers;</span><br><br>
 
+        <span class="C2">SELECT CustomerName, Country FROM Customers;</span><br><br>
 
--------------------------------------------------
--->
+        <!-- New C3: DISTINCT -->
+        <span class="C3">SELECT DISTINCT CustomerName, Country FROM Customers;</span><br><br>
+
+        <!-- Pushed down -->
+        <span class="C4">SELECT TOP 2 CustomerName, Country FROM Customers;</span><br><br>
+
+        <span class="C5">SELECT CustomerName AS Name, Country AS Location FROM Customers;</span>
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Output:</h3>
+
+    <!-- Output for C1 -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1">
+        <th>ID</th>
+        <th>CustomerName</th>
+        <th>ContactName</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>PostalCode</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+        <td>Obere Str. 57</td>
+        <td>Berlin</td>
+        <td>12209</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Ana Trujillo Emparedados</td>
+        <td>Ana Trujillo</td>
+        <td>Avda. de la Constitución 2222</td>
+        <td>México D.F.</td>
+        <td>05021</td>
+        <td>Mexico</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Around the Horn</td>
+        <td>Thomas Hardy</td>
+        <td>120 Hanover Sq.</td>
+        <td>London</td>
+        <td>WA1 1DP</td>
+        <td>UK</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Around the Horn</td>
+        <td>Sarah Smith</td>
+        <td>88 Fleet Street</td>
+        <td>London</td>
+        <td>EC4Y 1DH</td>
+        <td>UK</td>
+      </tr>
+    </table>
+
+    <!-- Output for C2 -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C2">
+        <th>CustomerName</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>Ana Trujillo Emparedados</td>
+        <td>Mexico</td>
+      </tr>
+      <tr>
+        <td>Around the Horn</td>
+        <td>UK</td>
+      </tr>
+      <tr>
+        <td>Around the Horn</td>
+        <td>UK</td>
+      </tr>
+    </table>
+
+    <!-- Output for C3: DISTINCT removes duplicates -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C3">
+        <th>CustomerName</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>Ana Trujillo Emparedados</td>
+        <td>Mexico</td>
+      </tr>
+      <tr>
+        <td>Around the Horn</td>
+        <td>UK</td>
+      </tr>
+    </table>
+
+    <!-- Output for C4: TOP -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C4">
+        <th>CustomerName</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>Ana Trujillo Emparedados</td>
+        <td>Mexico</td>
+      </tr>
+    </table>
+
+    <!-- Output for C5: ALIASES -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C5">
+        <th>Name</th>
+        <th>Location</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>Ana Trujillo Emparedados</td>
+        <td>Mexico</td>
+      </tr>
+      <tr>
+        <td>Around the Horn</td>
+        <td>UK</td>
+      </tr>
+      <tr>
+        <td>Around the Horn</td>
+        <td>UK</td>
+      </tr>
+    </table>
+
+    <!-- 3. EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+
+      <span class="C1"><code>SELECT * FROM Customers</code></span>
+      <span> – Retrieves all columns from the <code>Customers</code> table.<br>
+      The <code>SELECT</code> tells SQL that we want to read data.<br>
+      The <code>*</code>symbol means “everything.” This is useful for exploring a table, but not ideal for production code.<br>
+      The <code>FROM</code>tells SQL which table to read from.<br>
+      The <code>Customers</code>is the table name.<br>
+      </span><br>
+
+      <span class="C2"><code>SELECT CustomerName, Country FROM Customers</code></span>
+      <span>– This query asks the database to return two specific columns from the <code>Customers</code> table.<br>
+      The structure might be different, but the commands are still coherent.<br>
+      The <code>SELECT</code> tells SQL that we want to read data.<br>
+      The <code>CustomerName</code> Specifies the first column to include in the result. (We still don't know the table)<br>
+      The <code>,</code> It tells SQL that more than one column should be returned.<br>
+      The <code>Country</code> Specifies the second column to include in the result.<br>
+      The <code>FROM</code> tells SQL which table to read from.<br>
+      The <code>Customers</code> is the table name.<br>
+      </span><br>
+
+      <!-- New C3: DISTINCT -->
+      <span class="C3"><code>SELECT DISTINCT CustomerName, Country FROM Customers</code></span>
+      <span> – The <code>DISTINCT</code> keyword tells SQL to return only unique rows.<br>
+      In our example, there are two rows for "Around the Horn", but <code>DISTINCT</code> removes the duplicate.<br>
+      It only focuses on the dulicates on that column, not for the other columns that may have differences.</span><br><br>
+
+      <!-- C3: SELECT TOP -->
+      <span class="C4"><code>SELECT TOP</code></span>
+      <span>
+      – The <code>SELECT TOP</code> clause is used to limit how many rows are returned by a query.<br>
+      If not specified, it will just get the first data it reads from the table.<br>
+
+      This makes <code>TOP</code> a performance-focused tool, not just a convenience feature.
+      </span><br><br>
+
+      <!-- C4: SQL ALIASES -->
+      <span class="C5"><code>AS (Aliases)</code></span>
+      <span>
+      – SQL aliases allow you to temporarily rename a column or table for the duration of a query.<br>
+      They do not change the database itself — only how the result is displayed.<br><br>
+
+      Aliases are commonly used to:<br>
+      - Make column names easier to read<br>
+      - Shorten long table names<br>
+      - Improve clarity when combining or transforming data<br><br>
+      </span>
+
+      <!-- NOTES -->
+      <strong>Notes:</strong><br>
+      <span>
+      - <code>SELECT</code> only reads data; it never modifies the table.<br>
+      - Query results behave like a temporary table that exists only for that query.<br>
+      - Avoid <code>SELECT *</code> in real applications to reduce unnecessary data transfer.<br><br>
+
+      - <code>SELECT TOP</code> is not supported by all database systems.<br>
+      &nbsp;&nbsp;• SQL Server / MS Access → <code>TOP</code><br>
+      &nbsp;&nbsp;• MySQL → <code>LIMIT</code><br>
+      &nbsp;&nbsp;• Oracle → <code>FETCH FIRST n ROWS ONLY</code> or <code>ROWNUM</code><br><br>
+
+      - Aliases do not change the database; they only affect the query result.<br>
+      - When using spaces in aliases, wrap them in brackets or quotes.<br>
+      - Aliases are useful for formatting, combining columns, and improving readability.<br>
+      - Table aliases are especially important when working with multiple tables.<br>
+      </span><br>
+
+      <!-- CONCEPT & SPIRIT -->
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+      - SQL is designed around asking clear questions about data, not writing step-by-step instructions.<br>
+      - The <code>SELECT</code> statement reinforces precision: you explicitly state what data you want and nothing more.<br>
+      - This approach naturally improves performance, readability, and safety by discouraging unnecessary data access.<br><br>
+
+      - Features like <code>TOP</code> encourage intentional data limits, reinforcing the idea that queries should return only what is actually needed.<br>
+      - SQL rewards thoughtful, well-scoped questions instead of retrieving full tables by default.<br><br>
+
+      - Aliases emphasize that clarity matters just as much as correctness.<br>
+      - Readable, well-labeled result sets are easier to understand, debug, share, and reason about.<br><br>
+
+      - Taken together, these features shape a mindset where SQL is treated as a structured data conversation rather than a low-level command language.
+      </span>
+
+    </div>
+
+  </div>
+
+</template>

@@ -6,6 +6,7 @@
       1. Each color (C1–C10) highlights links across: Code ↔ Explanation ↔ Notes ↔ Concept & Spirit.
       2. Section order: Code → Example Outputs → Explanation → Notes → Concept & Spirit.
       3. Voice: always beginner-friendly, clear, step-by-step.
+      4. Use <span></span> when required, not for every line of text. 
   -->
 
   <div class="bubble">
@@ -61,14 +62,18 @@
 
       <!-- 3.2 NOTES -->
       <h3>Notes:</h3>
-      <span>- The point of notes Is stuff that didn't fit in the explanation or the overall concept.</span><br>
-      <span>- Best practices, common pitfalls, or differences from other languages.</span><br><br>
+      <span>
+        - The point of notes Is stuff that didn't fit in the explanation or the overall concept.<br>
+        - Best practices, common pitfalls, or differences from other languages.
+      </span><br><br>
 
       <!-- 3.3 CONCEPT & SPIRIT -->
       <h3>Concept & Spirit:</h3>
-      <span>- Ask: Why did we write it this way? What coding habit or principle is this teaching?</span><br>
-      <span>- Why this language feature exists and how it shapes coding mindset.</span><br>
-      <span>- Big-picture lesson for beginners: how to think about and use this feature effectively and safely.</span>
+      <span>
+        - Ask: Why did we write it this way? What coding habit or principle is this teaching?<br>
+        - Why this language feature exists and how it shapes coding mindset.<br>
+        - Big-picture lesson for beginners: how to think about and use this feature effectively and safely.
+      </span>
     </div>
 
   </div>
@@ -81,6 +86,7 @@
       1. Each color (C1–C10) highlights links across: Code ↔ Explanation ↔ Notes ↔ Concept & Spirit.
       2. Section order: Code → Example Outputs → Explanation → Notes → Concept & Spirit.
       3. Voice: always beginner-friendly, clear, step-by-step.
+      4. Use <span></span> when required, not for every line of text. 
   -->
 
   <div class="bubble">
@@ -163,14 +169,18 @@
 
       <!-- 3.2 NOTES -->
       <h3>Notes:</h3>
-      <span>- The point of notes Is stuff that didn't fit in the explanation or the overall concept.</span><br>
-      <span>- Best practices, common pitfalls, or differences from other languages.</span><br><br>
+      <span>
+        - The point of notes Is stuff that didn't fit in the explanation or the overall concept.<br>
+        - Best practices, common pitfalls, or differences from other languages.
+      </span><br><br>
 
       <!-- 3.3 CONCEPT & SPIRIT -->
       <h3>Concept & Spirit:</h3>
-      <span>- Ask: Why did we write it this way? What coding habit or principle is this teaching?</span><br>
-      <span>- Why this language feature exists and how it shapes coding mindset.</span><br>
-      <span>- Big-picture lesson for beginners: how to think about and use this feature effectively and safely.</span>
+      <span>
+        - Ask: Why did we write it this way? What coding habit or principle is this teaching?<br>
+        - Why this language feature exists and how it shapes coding mindset.<br>
+        - Big-picture lesson for beginners: how to think about and use this feature effectively and safely.
+      </span>
     </div>
 
   </div>
