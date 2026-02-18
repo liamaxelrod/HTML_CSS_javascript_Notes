@@ -1,149 +1,5 @@
 <!-- File name: N/SQL/Basics.html -->
 
-<!-- Mental focus: Which rows are allowed to exist? -->
-<template> <!-- Coding Language name: SQL Filtering -->
-
-  <div class="bubble">
-
-    <!-- 0. TABLE EXAMPLE (Existing Data) -->
-    <h3>Example: Table Preview</h3>
-    <table class="example" border="1" cellspacing="0" cellpadding="5">
-      <tr>
-        <th>CustomerID</th><th>CustomerName</th><th>Country</th><th>City</th><th>JoinDate</th>
-      </tr>
-      <tr>
-        <td>1</td><td>Alberto</td><td>Mexico</td><td>La Paz</td><td>2024-01-05</td>
-      </tr>
-      <tr>
-        <td>2</td><td>Lars</td><td>Sweden</td><td>Stockholm</td><td>2024-02-10</td>
-      </tr>
-      <tr>
-        <td>3</td><td>Maria</td><td>Germany</td><td>Berlin</td><td>2024-03-15</td>
-      </tr>
-      <tr>
-        <td>4</td><td>Laura</td><td>Mexico</td><td>Leon</td><td>2024-04-01</td>
-      </tr>
-      <tr>
-        <td>5</td><td>Paul</td><td>UK</td><td>London</td><td>2024-05-20</td>
-      </tr>
-    </table>
-
-    <!-- 1. SQL CODE -->
-    <h3>SQL Code:</h3>
-    <div class="code_block">
-      <code>
-        <span class="C1">SELECT * FROM Customers WHERE Country = 'Mexico';</span><br>
-        <span class="C2">SELECT * FROM Customers WHERE CustomerName LIKE 'L%';</span><br>
-        <span class="C3">SELECT * FROM Customers WHERE City LIKE '_e%';</span><br>
-        <span class="C4">SELECT * FROM Customers WHERE Country IN ('Germany', 'UK');</span><br>
-        <span class="C5">SELECT * FROM Customers WHERE JoinDate BETWEEN '2024-01-01' AND '2024-03-31';</span><br>
-      </code>
-    </div>
-
-    <!-- 2. EXAMPLE OUTPUT -->
-    <h3>Example Output:</h3>
-
-    <!-- C1 Output -->
-    <table class="example" border="1" cellspacing="0" cellpadding="5">
-      <tr class="C1">
-        <th>CustomerID</th><th>CustomerName</th><th>Country</th><th>City</th><th>JoinDate</th>
-      </tr>
-      <tr>
-        <td>1</td><td>Alberto</td><td>Mexico</td><td>La Paz</td><td>2024-01-05</td>
-      </tr>
-      <tr>
-        <td>4</td><td>Laura</td><td>Mexico</td><td>Leon</td><td>2024-04-01</td>
-      </tr>
-    </table>
-
-    <!-- C2 Output -->
-    <table class="example" border="1" cellspacing="0" cellpadding="5">
-      <tr class="C2">
-        <th>CustomerID</th><th>CustomerName</th><th>Country</th><th>City</th><th>JoinDate</th>
-      </tr>
-      <tr>
-        <td>2</td><td>Lars</td><td>Sweden</td><td>Stockholm</td><td>2024-02-10</td>
-      </tr>
-      <tr>
-        <td>4</td><td>Laura</td><td>Mexico</td><td>Leon</td><td>2024-04-01</td>
-      </tr>
-    </table>
-
-    <!-- C3 Output (Corrected) -->
-<table class="example" border="1" cellspacing="0" cellpadding="5">
-  <tr class="C3">
-    <th>CustomerID</th><th>CustomerName</th><th>Country</th><th>City</th><th>JoinDate</th>
-  </tr>
-  <tr>
-    <td>3</td><td>Maria</td><td>Germany</td><td>Berlin</td><td>2024-03-15</td>
-  </tr>
-  <tr>
-    <td>4</td><td>Laura</td><td>Mexico</td><td>Leon</td><td>2024-04-01</td>
-  </tr>
-</table>
-
-    <!-- C4 Output -->
-    <table class="example" border="1" cellspacing="0" cellpadding="5">
-      <tr class="C4">
-        <th>CustomerID</th><th>CustomerName</th><th>Country</th><th>City</th><th>JoinDate</th>
-      </tr>
-      <tr>
-        <td>3</td><td>Maria</td><td>Germany</td><td>Berlin</td><td>2024-03-15</td>
-      </tr>
-      <tr>
-        <td>5</td><td>Paul</td><td>UK</td><td>London</td><td>2024-05-20</td>
-      </tr>
-    </table>
-
-    <!-- C5 Output -->
-    <table class="example" border="1" cellspacing="0" cellpadding="5">
-      <tr class="C5">
-        <th>CustomerID</th><th>CustomerName</th><th>Country</th><th>City</th><th>JoinDate</th>
-      </tr>
-      <tr>
-        <td>1</td><td>Alberto</td><td>Mexico</td><td>La Paz</td><td>2024-01-05</td>
-      </tr>
-      <tr>
-        <td>2</td><td>Lars</td><td>Sweden</td><td>Stockholm</td><td>2024-02-10</td>
-      </tr>
-      <tr>
-        <td>3</td><td>Maria</td><td>Germany</td><td>Berlin</td><td>2024-03-15</td>
-      </tr>
-    </table>
-
-    <!-- 3.1 EXPLANATION -->
-    <h3>Explanation:</h3>
-    <div class="explanation">
-      <span class="C1"><code>WHERE Country = 'Mexico'</code></span> – Filters records <code>where</code> the Country column exactly matches 'Mexico'. <code>where</code> Select different regions of information to collect, like the column Country. <br>
-      <span class="C2"><code>CustomerName LIKE 'L%'</code></span> – Filters names starting with 'L'. The % wildcard represents zero or more characters. so example %a% - ###a###, ##a##a## or #a#####, and %a - ###a <br>
-      <span class="C3"><code>City LIKE '_e%'</code></span> – Filters cities where the second letter is 'e' and any number of characters follow. Combines _ (single character) and % (multiple characters).<br>
-      <span class="C4"><code>Country IN ('Germany','UK')</code></span> – Filters rows where Country is any of the listed values. Equivalent to multiple OR conditions. So you can use identifiers like country or <code>-,+,/,*,</code>  <br>
-      <span class="C5"><code>JoinDate BETWEEN '2024-01-01' AND '2024-03-31'</code></span> – Filters rows where JoinDate falls inclusively within the range. BETWEEN works with numbers, text (alphabetical range), and dates.<br><br>
-
-      <strong>Notes:</strong><br>
-      <span>
-        - LIKE without wildcards behaves like exact match.<br>
-        - always remember these extended patterns are database-specific and may not work in MySQL or PostgreSQL without using regular expressions.<br>
-        - Extended wildcards: [], ^, -, {} exist in some SQL dialects.<br>
-        - [] lets you match one single character from a specific list (e.g., [LM]% means the name must start with either L or M)<br>
-        - ^ inside [] means any one character except those listed ([^L]% means the name cannot start with L)<br>
-        - inside [] creates an alphabetical range ([A-C]% means the name starts with A, B, or C)<br>
-        - {} (in some dialects) is used to escape special characters so symbols like % or _ are treated as normal text instead of wildcards;
-      </span><br><br>
-
-      <strong>Concept & Spirit:</strong><br>
-      <span>
-        - Learn to think in terms of **filters** and **patterns**.<br>
-        - Break down conditions: exact match → pattern match → set inclusion → ranges.<br>
-        - Use the right operator for the mental model: LIKE for flexible patterns, IN for discrete sets, BETWEEN for ranges.<br>
-        - Layer your WHERE clauses incrementally to avoid mistakes.<br>
-        - Beginner habit: always visualize the table when writing conditions.
-      </span>
-    </div>
-
-  </div>
-
-</template>
 
 
 
@@ -176,13 +32,7 @@ SQL Data Types ✅
 
 
 
-🧠 Template 3 — Logical Operators & Condition Composition
-Mental focus: How conditions interact with each other.
 
-SQL AND ✅
-SQL OR ✅
-SQL NOT ✅
-Combining AND / OR (Parentheses) (inside same template)
 
 🧠 Template 4 — Sorting Results
 Mental focus: In what order do I want to see the data?
@@ -260,74 +110,6 @@ SQL Hosting
 -->
 
 <!-- 
-
-
-
-
-SQL AND ✅
-
-The WHERE clause can contain one or many AND operators.
-
-The AND operator is used to filter records based on more than one condition, like if you want to return all customers from Spain that starts with the letter 'G':
-
-Example
-
-SELECT *
-FROM Customers
-WHERE Country = 'Spain' AND CustomerName LIKE 'G%';
-
-Syntax
-SELECT column1, column2, ...
-FROM table_name
-WHERE condition1 AND condition2 AND condition3 ...;
-
-SQL OR ✅
-
-The WHERE clause can contain one or more OR operators.
-
-The OR operator is used to filter records based on more than one condition, like if you want to return all customers from Germany but also those from Spain:
-
-ExampleGet
-SELECT *
-FROM Customers
-WHERE Country = 'Germany' OR Country = 'Spain';
-
-Syntax
-SELECT column1, column2, ...
-FROM table_name
-WHERE condition1 OR condition2 OR condition3 ...;
-
-OR vs AND
-The OR operator displays a record if any of the conditions are TRUE.
-
-The AND operator displays a record if all the conditions are TRUE.
-
-Combining AND and OR
-You can combine the AND and OR operators.
-
-The following SQL statement selects all customers from Spain that starts with a "G" or an "R".
-
-Make sure you use parenthesis to get the correct result.
-
-SELECT * FROM Customers
-WHERE Country = 'Spain' AND (CustomerName LIKE 'G%' OR CustomerName LIKE 'R%');
-
-Without parenthesis, the select statement will return all customers from Spain that starts with a "G", plus all customers that starts with an "R", regardless of the country value:
-
-SQL NOT ✅
-
-The NOT operator is used in combination with other operators to give the opposite result, also called the negative result.
-
-In the select statement below we want to return all customers that are NOT from Spain:
-
-ExampleGet
-SELECT * FROM Customers
-WHERE NOT Country = 'Spain';
-
-Syntax
-SELECT column1, column2, ...
-FROM table_name
-WHERE NOT condition;
 
 SQL ORDER BY ✅
 
@@ -978,6 +760,343 @@ ORDER BY Country ASC, CustomerName DESC;
         - Layer your WHERE clauses incrementally to avoid mistakes.<br>
         - Beginner habit: always visualize the table when writing conditions.
       </span>
+    </div>
+
+  </div>
+
+</template>
+
+<!-- Mental focus: Which rows are allowed to exist? -->
+<template> <!-- Coding Language name: SQL Filtering -->
+
+  <div class="bubble">
+
+    <!-- 0. TABLE EXAMPLE (Existing Data) -->
+    <h3>Example: Table Preview</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th><th>City</th><th>JoinDate</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Alberto</td><td>Mexico</td><td>La Paz</td><td>2024-01-05</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Lars</td><td>Sweden</td><td>Stockholm</td><td>2024-02-10</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Maria</td><td>Germany</td><td>Berlin</td><td>2024-03-15</td>
+      </tr>
+      <tr>
+        <td>4</td><td>Laura</td><td>Mexico</td><td>Leon</td><td>2024-04-01</td>
+      </tr>
+      <tr>
+        <td>5</td><td>Paul</td><td>UK</td><td>London</td><td>2024-05-20</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+        <span class="C1">SELECT * FROM Customers WHERE Country = 'Mexico';</span><br>
+        <span class="C2">SELECT * FROM Customers WHERE CustomerName LIKE 'L%';</span><br>
+        <span class="C3">SELECT * FROM Customers WHERE City LIKE '_e%';</span><br>
+        <span class="C4">SELECT * FROM Customers WHERE Country IN ('Germany', 'UK');</span><br>
+        <span class="C5">SELECT * FROM Customers WHERE JoinDate BETWEEN '2024-01-01' AND '2024-03-31';</span><br>
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Output:</h3>
+
+    <!-- C1 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1">
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th><th>City</th><th>JoinDate</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Alberto</td><td>Mexico</td><td>La Paz</td><td>2024-01-05</td>
+      </tr>
+      <tr>
+        <td>4</td><td>Laura</td><td>Mexico</td><td>Leon</td><td>2024-04-01</td>
+      </tr>
+    </table>
+
+    <!-- C2 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C2">
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th><th>City</th><th>JoinDate</th>
+      </tr>
+      <tr>
+        <td>2</td><td>Lars</td><td>Sweden</td><td>Stockholm</td><td>2024-02-10</td>
+      </tr>
+      <tr>
+        <td>4</td><td>Laura</td><td>Mexico</td><td>Leon</td><td>2024-04-01</td>
+      </tr>
+    </table>
+
+    <!-- C3 Output (Corrected) -->
+<table class="example" border="1" cellspacing="0" cellpadding="5">
+  <tr class="C3">
+    <th>CustomerID</th><th>CustomerName</th><th>Country</th><th>City</th><th>JoinDate</th>
+  </tr>
+  <tr>
+    <td>3</td><td>Maria</td><td>Germany</td><td>Berlin</td><td>2024-03-15</td>
+  </tr>
+  <tr>
+    <td>4</td><td>Laura</td><td>Mexico</td><td>Leon</td><td>2024-04-01</td>
+  </tr>
+</table>
+
+    <!-- C4 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C4">
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th><th>City</th><th>JoinDate</th>
+      </tr>
+      <tr>
+        <td>3</td><td>Maria</td><td>Germany</td><td>Berlin</td><td>2024-03-15</td>
+      </tr>
+      <tr>
+        <td>5</td><td>Paul</td><td>UK</td><td>London</td><td>2024-05-20</td>
+      </tr>
+    </table>
+
+    <!-- C5 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C5">
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th><th>City</th><th>JoinDate</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Alberto</td><td>Mexico</td><td>La Paz</td><td>2024-01-05</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Lars</td><td>Sweden</td><td>Stockholm</td><td>2024-02-10</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Maria</td><td>Germany</td><td>Berlin</td><td>2024-03-15</td>
+      </tr>
+    </table>
+
+    <!-- 3.1 EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1"><code>WHERE Country = 'Mexico'</code></span> – Filters records <code>where</code> the Country column exactly matches 'Mexico'. <code>where</code> Select different regions of information to collect, like the column Country. <br>
+      <span class="C2"><code>CustomerName LIKE 'L%'</code></span> – Filters names starting with 'L'. The % wildcard represents zero or more characters. so example %a% - ###a###, ##a##a## or #a#####, and %a - ###a <br>
+      <span class="C3"><code>City LIKE '_e%'</code></span> – Filters cities where the second letter is 'e' and any number of characters follow. Combines _ (single character) and % (multiple characters).<br>
+      <span class="C4"><code>Country IN ('Germany','UK')</code></span> – Filters rows where Country is any of the listed values. Equivalent to multiple OR conditions. So you can use identifiers like country or <code>-,+,/,*,</code>  <br>
+      <span class="C5"><code>JoinDate BETWEEN '2024-01-01' AND '2024-03-31'</code></span> – Filters rows where JoinDate falls inclusively within the range. BETWEEN works with numbers, text (alphabetical range), and dates.<br><br>
+
+      <strong>Notes:</strong><br>
+      <span>
+        - LIKE without wildcards behaves like exact match.<br>
+        - always remember these extended patterns are database-specific and may not work in MySQL or PostgreSQL without using regular expressions.<br>
+        - Extended wildcards: [], ^, -, {} exist in some SQL dialects.<br>
+        - [] lets you match one single character from a specific list (e.g., [LM]% means the name must start with either L or M)<br>
+        - ^ inside [] means any one character except those listed ([^L]% means the name cannot start with L)<br>
+        - inside [] creates an alphabetical range ([A-C]% means the name starts with A, B, or C)<br>
+        - {} (in some dialects) is used to escape special characters so symbols like % or _ are treated as normal text instead of wildcards;
+      </span><br><br>
+
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - Learn to think in terms of **filters** and **patterns**.<br>
+        - Break down conditions: exact match → pattern match → set inclusion → ranges.<br>
+        - Use the right operator for the mental model: LIKE for flexible patterns, IN for discrete sets, BETWEEN for ranges.<br>
+        - Layer your WHERE clauses incrementally to avoid mistakes.<br>
+        - Beginner habit: always visualize the table when writing conditions.
+      </span>
+    </div>
+
+  </div>
+
+</template>
+
+<!-- Mental focus: How conditions interact with each other -->
+<template> <!-- Coding Language name: SQL AND / OR / NOT -->
+
+  <div class="bubble">
+
+    <!-- 0. TABLE EXAMPLE (Existing Data) -->
+    <h3>Example: Customers Table Preview</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Gabriel Garcia</td><td>Spain</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Robert King</td><td>Spain</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Maria Schmidt</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>4</td><td>Giovanni Rossi</td><td>Italy</td>
+      </tr>
+      <tr>
+        <td>5</td><td>Greta Müller</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>6</td><td>Rafael Torres</td><td>Spain</td>
+      </tr>
+      <tr>
+        <td>7</td><td>Anna Lopez</td><td>Spain</td>
+      </tr>
+      <tr>
+        <td>8</td><td>George Brown</td><td>USA</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+        <!-- AND Example -->
+        <span class="C1">SELECT * FROM Customers<br>
+        WHERE Country = 'Spain' AND CustomerName LIKE 'G%';</span><br><br>
+
+        <!-- OR Example -->
+        <span class="C2">SELECT * FROM Customers<br>
+        WHERE Country = 'Germany' OR Country = 'Spain';</span><br><br>
+
+        <!-- AND + OR with Parentheses -->
+        <span class="C3">SELECT * FROM Customers<br>
+        WHERE Country = 'Spain' AND (CustomerName LIKE 'G%' OR CustomerName LIKE 'R%');</span><br><br>
+
+        <!-- NOT Example -->
+        <span class="C4">SELECT * FROM Customers<br>
+        WHERE NOT Country = 'Spain';</span>
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Output:</h3>
+
+    <!-- C1 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1">
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Gabriel Garcia</td><td>Spain</td>
+      </tr>
+    </table>
+    <br>
+
+    <!-- C2 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C2">
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Gabriel Garcia</td><td>Spain</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Robert King</td><td>Spain</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Maria Schmidt</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>5</td><td>Greta Müller</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>6</td><td>Rafael Torres</td><td>Spain</td>
+      </tr>
+      <tr>
+        <td>7</td><td>Anna Lopez</td><td>Spain</td>
+      </tr>
+    </table>
+    <br>
+
+    <!-- C3 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C3">
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Gabriel Garcia</td><td>Spain</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Robert King</td><td>Spain</td>
+      </tr>
+      <tr>
+        <td>6</td><td>Rafael Torres</td><td>Spain</td>
+      </tr>
+    </table>
+    <br>
+
+    <!-- C4 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C4">
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>3</td><td>Maria Schmidt</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>4</td><td>Giovanni Rossi</td><td>Italy</td>
+      </tr>
+      <tr>
+        <td>5</td><td>Greta Müller</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>8</td><td>George Brown</td><td>USA</td>
+      </tr>
+    </table>
+
+    <!-- 3.1 EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+
+      <span class="C1"><code>AND</code></span>
+      <span>
+        – Think of <b>AND</b> like saying: “This AND that must both be true.”  
+        The row is returned only if <b>every condition</b> is TRUE.  
+        In our example, the customer must be from Spain <i>and</i> their name must start with “G”.  
+        If one part fails, the entire condition fails.
+      </span><br><br>
+
+      <span class="C2"><code>OR</code></span>
+      <span>
+        – Think of <b>OR</b> like saying: “Either this OR that is fine.”  
+        Only <b>one condition</b> needs to be TRUE for the row to appear.  
+        If the customer is from Germany OR Spain, they will be included.
+      </span><br><br>
+
+      <span class="C3"><code>( ) Parentheses</code></span>
+      <span>
+        – Parentheses control logic order, just like in math.  
+        SQL evaluates <b>AND before OR</b> by default.  
+        So we use parentheses to make sure the database checks the grouped conditions first.  
+        Without parentheses, SQL might return unintended results.
+      </span><br><br>
+
+      <span class="C4"><code>NOT</code></span>
+      <span>
+        – <b>NOT</b> reverses a condition.  
+        It gives the opposite result.  
+        If a condition says “Country = Spain”, adding NOT means  
+        “Country is NOT Spain.”
+      </span><br><br>
+
+      <!-- NOTES -->
+      <strong>Notes:</strong><br>
+      <span>
+        - Logical operators are heavily used in real applications when filtering search results or user data.
+      </span><br><br>
+
+      <!-- CONCEPT & SPIRIT -->
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - These operators teach logical thinking in databases.<br>
+        - Writing SQL is like asking very precise questions to your data.<br>
+        - The goal is clarity: always write conditions in a way that another developer immediately understands your intent.<br>
+        - Parentheses are not just syntax — they protect your logic from mistakes.<br>
+        - Think in terms of truth values: each condition is either TRUE or FALSE.
+      </span>
+
     </div>
 
   </div>
