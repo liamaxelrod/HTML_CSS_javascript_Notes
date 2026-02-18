@@ -95,20 +95,14 @@
     <h3>Example: Table Preview</h3>
     <table class="example" border="#" cellspacing="#" cellpadding="#">
       <tr>
-        <th>Column1</th>
-        <th>Column2</th>
-        <th>Column3</th>
+        <th>Column1</th><th>Column2</th><th>Column3</th>
         <!-- Add more columns as needed -->
       </tr>
       <tr>
-        <td>Value1</td>
-        <td>Value2</td>
-        <td>Value3</td>
+        <td>Value1</td><td>Value2</td><td>Value3</td>
       </tr>
       <tr>
-        <td>Value4</td>
-        <td>Value5</td>
-        <td>Value6</td>
+        <td>Value4</td><td>Value5</td><td>Value6</td>
       </tr>
       <!-- Add more rows as needed -->
     </table>
@@ -134,22 +128,17 @@
     <h3>Example Output:</h3>
     <table class="example" border="1" cellspacing="0" cellpadding="5">
       <tr class="C1">
-        <th>Column1</th>
-        <th>Column2</th>
-        <th>Column3</th>
+        <th>Column1</th><th>Column2</th><th>Column3</th>
       </tr>
       <tr>
-        <td>Value1</td>
-        <td>Value2</td>
-        <td>Value3</td>
+        <td>Value1</td><td>Value2</td><td>Value3</td>
       </tr>
       <tr>
-        <td>Value4</td>
-        <td>Value5</td>
-        <td>Value6</td>
+        <td>Value4</td><td>Value5</td><td>Value6</td>
       </tr>
       <!-- Add more rows as needed; optionally link to C# using class if useful -->
       <!-- Add more outputs for C4–C10 as needed or dot d# as needed -->
+      <!-- tr separated vertically BUT td separated horizontally for readability  -->
     </table>
 
     <!-- 3.1 EXPLANATION -->
