@@ -1,9 +1,110 @@
 <!-- File name: N/SQL/Basics.html -->
 
+<template> <!-- SQL: EXISTS, ANY, ALL -->
 
+  <div class="bubble">
 
+    <!-- 0. TABLE EXAMPLE (Existing Data) -->
+    <h3>Example: Table Preview</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>SupplierID</th><th>SupplierName</th><th>ProductName</th><th>Price</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Supplier A</td><td>Widget</td><td>15</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Supplier B</td><td>Gadget</td><td>25</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Supplier C</td><td>Doohickey</td><td>10</td>
+      </tr>
+    </table>
 
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+        <!-- EXISTS Example -->
+        SELECT SupplierName FROM Suppliers<br>
+        &nbsp;&nbsp;WHERE <span class="C1">EXISTS (SELECT ProductName FROM Products<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;WHERE Products.SupplierID = Suppliers.SupplierID AND Price &lt; 20);</span><br><br>
 
+        <!-- ANY Example -->
+        SELECT ProductName FROM Products<br>
+        &nbsp;&nbsp;WHERE ProductID <span class="C2">= ANY (SELECT ProductID FROM OrderDetails WHERE Quantity = 10);</span><br><br>
+
+        <!-- ALL Example -->
+        SELECT ProductName FROM Products<br>
+        &nbsp;&nbsp;WHERE ProductID <span class="C3">= ALL (SELECT ProductID FROM OrderDetails WHERE Quantity = 10);</span>
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Output:</h3>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1">
+        <th>SupplierName</th>
+      </tr>
+      <tr>
+        <td>Supplier A</td>
+      </tr>
+      <tr>
+        <td>Supplier C</td>
+      </tr>
+    </table>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C2">
+        <th>ProductName</th>
+      </tr>
+      <tr>
+        <td>Widget</td>
+      </tr>
+      <tr>
+        <td>Doohickey</td>
+      </tr>
+    </table>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C3">
+        <th>ProductName</th>
+      </tr>
+      <tr>
+        <td>(no rows returned)</td>
+      </tr>
+    </table>
+
+    <!-- 3.1 EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1"><code>EXISTS</code></span><span> – Checks if at least one row in the subquery meets the condition. Returns TRUE/FALSE. Useful for yes/no checks without returning data from subquery.</span><br>
+      <span class="C2"><code>ANY</code></span><span> – Compares a value to any value returned by a subquery. Returns TRUE if the comparison is true for at least one value. Works with standard comparison operators (=, &lt;&gt;, !=, &gt;, &gt;=, &lt;, &lt;=).</span><br>
+      <span class="C3"><code>ALL</code></span><span> – Compares a value to all values returned by a subquery. Returns TRUE only if the comparison is true for every value. Also uses standard comparison operators.</span><br><br>
+
+      <!-- 3.2 NOTES -->
+      <strong>Notes:</strong><br>
+      <span>
+        - EXISTS is more efficient for large datasets when you only care about presence, not data.<br>
+        - ANY is like an OR across the subquery results; ALL is like an AND.<br>
+        - Use ALL carefully; if even one row doesn’t match, the condition is FALSE.<br>
+        - EXISTS often replaces IN for performance in some SQL engines.
+      </span><br><br>
+
+      <!-- 3.3 CONCEPT & SPIRIT -->
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - Think of EXISTS as asking a yes/no question: "Does at least one row meet this criteria?"<br>
+        - ANY and ALL teach how to reason about comparisons over ranges of values rather than single values.<br>
+        - These operators help write expressive, declarative queries without looping manually over rows.<br>
+        - Mastering them builds skill in thinking in set-based logic, a core SQL mindset.
+      </span>
+    </div>
+
+  </div>
+
+</template>
 
 
 
@@ -13,10 +114,6 @@
 
 
 
-
-
-
- 
 -------------------------------------------------
 -->
 
@@ -32,28 +129,18 @@ SQL Comments ✅
 SQL Operators 
 SQL Data Types ✅
 
-2. Retrieving Data
 
-
-
-
-
-🧠 Template 4 — Sorting Results
-Mental focus: In what order do I want to see the data?
-
-SQL ORDER BY  ✅
-ASC vs DESC (inside ORDER BY)
-Alphabetical Ordering
-ORDER BY Multiple Columns
-Mixed ASC / DESC
 
 3. Nulls & Conditional Logic
-SQL Null Values
-SQL Null Functions
-SQL Case
-SQL Exists
-SQL Any
-SQL All
+
+SQL Null Values ✅
+SQL Null Functions ✅
+
+SQL Case ✅
+
+SQL Exists ✅
+SQL Any ✅
+SQL All ✅
 
 4. Aggregation & Grouping
 
@@ -76,7 +163,9 @@ SQL Full Join
 SQL Self Join
 SQL Union
 SQL Union All
+
 6. Modifying Data
+
 SQL Insert Into
 SQL Insert Into Select
 SQL Update
@@ -115,53 +204,7 @@ SQL Hosting
 
 <!-- 
 
-SQL ORDER BY ✅
 
-The ORDER BY keyword is used to sort the result-set in ascending or descending order.
-
-Example
-SELECT * FROM Products
-ORDER BY Price;
-
-Syntax
-SELECT column1, column2, ...
-FROM table_name
-ORDER BY column1, column2, ... ASC|DESC;
-
-DESC
-The ORDER BY keyword sorts the records in ascending order by default. To sort the records in descending order, use the DESC keyword.
-
-Example
-SELECT * FROM Products
-ORDER BY Price DESC;
-
-Order Alphabetically
-For string values the ORDER BY keyword will order alphabetically:
-
-Example
-SELECT * FROM Products
-ORDER BY ProductName;
-
-Alphabetically DESC
-To sort the table reverse alphabetically, use the DESC keyword
-
-Example
-SELECT * FROM Products
-ORDER BY ProductName DESC;
-
-ORDER BY Several Columns
-The following SQL statement selects all customers from the "Customers" table, sorted by the "Country" and the "CustomerName" column. This means that it orders by Country, but if some rows have the same Country, it orders them by CustomerName:
-
-Example
-SELECT * FROM Customers
-ORDER BY Country, CustomerName;
-
-Using Both ASC and DESC
-The following SQL statement selects all customers from the "Customers" table, sorted ascending by the "Country" and descending by the "CustomerName" column:
-
-Example
-SELECT * FROM Customers
-ORDER BY Country ASC, CustomerName DESC;
 -->
 
 <!--1. SQL Foundations -->
@@ -1106,3 +1149,356 @@ ORDER BY Country ASC, CustomerName DESC;
   </div>
 
 </template>
+
+<!-- Mental focus: In what order do I want to see the data? -->
+<template> <!-- Coding Language name: SQL ORDER BY, ASC, and DESC -->
+
+  <div class="bubble">
+
+    <!-- 0. TABLE EXAMPLE (Existing Data) -->
+    <h3>Example: Products Table Preview</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>ProductID</th><th>ProductName</th><th>Price</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Apple Juice</td><td>3.50</td><td>USA</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Banana Milk</td><td>2.00</td><td>Sweden</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Carrot Cake</td><td>5.00</td><td>USA</td>
+      </tr>
+      <tr>
+        <td>4</td><td>Avocado Oil</td><td>8.00</td><td>Mexico</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+
+        <!-- C1: Basic ORDER BY -->
+        <span class="C1">SELECT * FROM Products<br>
+        ORDER BY Price;</span><br><br>
+
+        <!-- C2: DESC -->
+        <span class="C2">SELECT * FROM Products<br>
+        ORDER BY Price DESC;</span><br><br>
+
+        <!-- C3: Alphabetical -->
+        <span class="C3">SELECT * FROM Products<br>
+        ORDER BY ProductName;</span><br><br>
+
+        <!-- C4: Alphabetical DESC -->
+        <span class="C4">SELECT * FROM Products<br>
+        ORDER BY ProductName DESC;</span><br><br>
+
+        <!-- C5: Multiple Columns -->
+        <span class="C5">SELECT * FROM Products<br>
+        ORDER BY Country, ProductName;</span><br><br>
+
+        <!-- C6: Mixed ASC / DESC -->
+        <span class="C6">SELECT * FROM Products<br>
+        ORDER BY Country ASC, ProductName DESC;</span>
+
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Output (C1 – ORDER BY Price ASC):</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1">
+        <th>ProductID</th><th>ProductName</th><th>Price</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>2</td><td>Banana Milk</td><td>2.00</td><td>Sweden</td>
+      </tr>
+      <tr>
+        <td>1</td><td>Apple Juice</td><td>3.50</td><td>USA</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Carrot Cake</td><td>5.00</td><td>USA</td>
+      </tr>
+      <tr>
+        <td>4</td><td>Avocado Oil</td><td>8.00</td><td>Mexico</td>
+      </tr>
+    </table>
+
+    <!-- 3.1 EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+
+      <span class="C1"><code>ORDER BY Price</code></span>
+      <span> – Sorts the results by Price in ascending order by default (smallest → largest). Think of it like sorting numbers from lowest to highest.</span><br>
+
+      <span class="C2"><code>DESC</code></span>
+      <span> – Reverses the order (largest → smallest). If you don’t write ASC or DESC, SQL assumes ASC automatically.</span><br>
+
+      <span class="C3"><code>ORDER BY ProductName</code></span>
+      <span> – When sorting text (strings), SQL sorts alphabetically (A → Z). Just like a dictionary.</span><br>
+
+      <span class="C4"><code>ProductName DESC</code></span>
+      <span> – Reverse alphabetical order (Z → A).</span><br>
+
+      <span class="C5"><code>ORDER BY Country, ProductName</code></span>
+      <span> – First sorts by Country. If multiple rows have the same Country, then it sorts those rows by ProductName. Think of it as: primary sort → secondary sort.</span><br>
+
+      <span class="C6"><code>Country ASC, ProductName DESC</code></span>
+      <span> – You can mix directions. Here: Countries A → Z, but inside each country, names are Z → A.</span><br><br>
+
+      <!-- NOTES -->
+      <strong>Notes:</strong><br>
+      <span>
+        - ASC is optional because it is the default.<br>
+        - ORDER BY always comes after FROM (and after WHERE if used).<br>
+        - Sorting can affect performance on very large tables.<br>
+        - You can sort by columns not shown in SELECT (depending on SQL dialect).<br>
+        - Alphabetical sorting depends on database collation (case sensitivity rules).
+      </span><br><br>
+
+      <!-- CONCEPT & SPIRIT -->
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - ORDER BY teaches structured thinking about how data should be presented.<br>
+        - Databases store data efficiently, but presentation order is your responsibility.<br>
+        - Sorting is about clarity: making results meaningful for humans.<br>
+        - Multiple column sorting teaches priority logic (primary key vs secondary key thinking).
+      </span>
+
+    </div>
+
+  </div>
+
+</template>
+
+<!-- 3. Nulls & Conditional Logic -->
+<template> <!-- Coding Language name: SQL Nulls & Conditional Logic -->
+
+  <div class="bubble">
+    
+    <!-- 0. TABLE EXAMPLES -->
+    <h3>Example: Table Preview</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>CustomerName</th><th>ContactName</th><th>Address</th>
+      </tr>
+      <tr>
+        <td>Maria Anders</td><td>Maria A.</td><td>Berlin</td>
+      </tr>
+      <tr>
+        <td>John Doe</td><td>John D.</td><td></td>
+      </tr>
+      <tr>
+        <td>Linda Smith</td><td>Linda S.</td><td>New York</td>
+      </tr>
+    </table>
+
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+        <!-- IS NULL example -->
+        <span class="C1">SELECT CustomerName, ContactName, Address<br>
+        &nbsp;&nbsp;FROM Customers<br>
+        &nbsp;&nbsp;WHERE Address IS NULL;</span><br><br>
+
+        <!-- IS NOT NULL example -->
+        <span class="C2">SELECT CustomerName, ContactName, Address<br>
+        &nbsp;&nbsp;FROM Customers<br>
+        &nbsp;&nbsp;WHERE Address IS NOT NULL;</span><br><br>
+
+        <!-- NULL Function example -->
+        <span class="C3">SELECT CustomerName, ContactName, IFNULL(Address, 'No Address') AS Address<br>
+        &nbsp;&nbsp;FROM Customers;</span><br>
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Outputs:</h3>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1">
+        <th>CustomerName</th><th>ContactName</th><th>Address</th>
+      </tr>
+      <tr>
+        <td>John Doe</td><td>John D.</td><td></td>
+      </tr>
+    </table>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C2">
+        <th>CustomerName</th><th>ContactName</th><th>Address</th>
+      </tr>
+      <tr>
+        <td>Maria Anders</td><td>Maria A.</td><td>Berlin</td>
+      </tr>
+      <tr>
+        <td>Linda Smith</td><td>Linda S.</td><td>New York</td>
+      </tr>
+    </table>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C3">
+        <th>CustomerName</th><th>ContactName</th><th>Address</th>
+      </tr>
+      <tr>
+        <td>Maria Anders</td><td>Maria A.</td><td>Berlin</td>
+      </tr>
+      <tr>
+        <td>John Doe</td><td>John D.</td><td>No Address</td>
+      </tr>
+      <tr>
+        <td>Linda Smith</td><td>Linda S.</td><td>New York</td>
+      </tr>
+    </table>
+
+    <!-- 3. EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1"><code>IS NULL</code></span><span> – Checks for fields that are empty or have a no value. Never use = NULL; always use IS NULL to correctly identify unknown values.</span><br>
+      <span class="C2"><code>IS NOT NULL</code></span><span> – Checks for fields that contain all value (none can be empty). Useful for filtering out incomplete records.</span><br>
+      <span class="C3"><code>IFNULL(Address, 'No Address')</code></span><span> – Replaces NULL values with a default, ensuring calculations or display logic don’t break. For SQL Server, use ISNULL(); for PostgreSQL/standard SQL, use COALESCE().</span><br><br>
+
+      <!-- Notes -->
+      <strong>Notes:</strong><br>
+      <span>
+        - NULL is different from zero or empty string – it represents unknown or missing data.<br>
+        - Always use IS NULL / IS NOT NULL for testing NULLs; = or <> will not work.<br>
+        - Using NULL functions helps avoid errors in aggregates like SUM() or AVG().
+      </span><br><br>
+
+      <!-- Concept & Spirit -->
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - Think of NULL as “unknown” rather than empty – it’s a signal that data is missing.<br>
+        - Using IS NULL / IS NOT NULL teaches careful data validation and safety in queries.<br>
+        - NULL replacement functions encourage defensive coding: you plan for missing data, ensuring reliable results and cleaner outputs.<br>
+        - Big-picture: handling NULLs properly keeps your database queries accurate, predictable, and beginner-friendly.
+      </span>
+    </div>
+
+  </div> 
+</template>
+
+<template> <!-- Coding Language name: SQL CASE -->
+  <div class="bubble">
+    
+    <!-- 0. TABLE EXAMPLE -->
+    <h3>Example: Table Preview</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>OrderID</th><th>Quantity</th>
+      </tr>
+      <tr>
+        <td>101</td><td>45</td>
+      </tr>
+      <tr>
+        <td>102</td><td>30</td>
+      </tr>
+      <tr>
+        <td>103</td><td>10</td>
+      </tr>
+      <tr>
+        <td>104</td><td>25</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+        <!-- Example 1: CASE with ELSE -->
+        SELECT OrderID, Quantity,<br>
+        &nbsp;&nbsp;<span class="C1">CASE</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="C2">WHEN Quantity > 30 THEN 'Greater than 30'</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="C2">WHEN Quantity = 30 THEN 'Equals 30'</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="C3">ELSE 'Under 30'</span><br>
+        &nbsp;&nbsp;<span class="C1">END AS OverUnderNull</span><br>
+        FROM OrderDetails;<br><br>
+
+        <!-- Example 2: CASE without ELSE -->
+        SELECT OrderID, Quantity,<br>
+        &nbsp;&nbsp;<span class="C1">CASE</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="C2">WHEN Quantity > 50 THEN 'Over 50'</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="C2">WHEN Quantity = 45 THEN 'Exactly 45'</span><br>
+        &nbsp;&nbsp;<span class="C1">END AS OverUnderNull</span><br>
+        FROM OrderDetails;
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Output:</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>OrderID</th><th>Quantity</th><th>OverUnderNull</th>
+      </tr>
+      <tr>
+        <td>101</td><td>45</td><td>Greater than 30</td>
+      </tr>
+      <tr>
+        <td>102</td><td>30</td><td>Equals 30</td>
+      </tr>
+      <tr>
+        <td>103</td><td>10</td><td>Under 30</td>
+      </tr>
+      <tr>
+        <td>104</td><td>25</td><td>Under 30</td>
+      </tr>
+    </table>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>OrderID</th><th>Quantity</th><th>OverUnderNull</th>
+      </tr>
+      <tr>
+        <td>101</td><td>45</td><td>Over 40</td>
+      </tr>
+      <tr>
+        <td>102</td><td>30</td><td>Exactly 30</td>
+      </tr>
+      <tr>
+        <td>103</td><td>10</td><td>NULL</td>
+      </tr>
+      <tr>
+        <td>104</td><td>25</td><td>NULL</td>
+      </tr>
+    </table>
+
+    <!-- 3.1 EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1"><code>CASE ... END AS #####;</code></span><span> Wraps the entire conditional expression; CASE starts it, END closes it. AS ##### says what that new column's going to be called like OverUnderNull</span><br><br>
+      <span class="C2"><code>WHEN condition THEN result;</code></span><span> Checks a condition; the first true one returns its result and stops further checks. So for instance, if nothing is greater than 30, only then do we go to the next condition state.</span><br><br>
+      <span class="C3"><code>ELSE result;</code></span><span> Optional default value if none of the WHEN conditions match. If omitted, returns NULL for those conditions that were not met in the WHEN cases.</span><br><br>
+
+      <!-- 3.2 NOTES -->
+      <strong>Notes:</strong><br>
+      <span>
+        - CASE can be used in SELECT, WHERE, ORDER BY, and UPDATE statements.<br>
+        - Multiple CASE statements can appear in a single query.<br>
+      </span><br><br>
+
+      <!-- 3.3 CONCEPT & SPIRIT -->
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - Teaches conditional thinking in SQL, similar to if-else in programming.<br>
+        - Embeds logic in queries for readability and maintainability.<br>
+        - Encourages planning the order of conditions carefully and handling defaults explicitly.
+      </span>
+    </div>
+
+
+  </div>
+</template>
+
+<!-- 4. Aggregation & Grouping -->
+
+<!-- 5. Combining Tables -->
+
+<!-- 6. Modifying Data -->
+
+<!-- 7. Database Design, Integrity & Safety -->

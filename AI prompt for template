@@ -141,6 +141,23 @@
       <!-- tr separated vertically BUT td separated horizontally for readability  -->
     </table>
 
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C2">
+        <th>Column1</th><th>Column2</th><th>Column3</th>
+      </tr>
+      <tr>
+        <td>Value1</td><td>Value2</td><td>Value3</td>
+      </tr>
+      <tr>
+        <td>Value4</td><td>Value5</td><td>Value6</td>
+      </tr>
+      <!-- Add more rows as needed; optionally link to C# using class if useful -->
+      <!-- Add more outputs for C4–C10 as needed or dot d# as needed -->
+      <!-- tr separated vertically BUT td separated horizontally for readability  -->
+    </table>
+
+    <!-- Add more example (C3–C10) if needed -->
+
     <!-- 3.1 EXPLANATION -->
     <h3>Explanation:</h3>
     <div class="explanation">
@@ -157,14 +174,14 @@
       <!-- Add explanations for C4–C10 as needed -->
 
       <!-- 3.2 NOTES -->
-      <h3>Notes:</h3>
+      <strong>Notes:</strong><br>
       <span>
         - The point of notes Is stuff that didn't fit in the explanation or the overall concept.<br>
         - Best practices, common pitfalls, or differences from other languages.
       </span><br><br>
 
       <!-- 3.3 CONCEPT & SPIRIT -->
-      <h3>Concept & Spirit:</h3>
+      <strong>Concept & Spirit:</strong><br>
       <span>
         - Ask: Why did we write it this way? What coding habit or principle is this teaching?<br>
         - Why this language feature exists and how it shapes coding mindset.<br>
@@ -188,3 +205,4 @@
   compare it against the last polished template I made,
   find differences, and update the skeleton accordingly.
 -->
+
