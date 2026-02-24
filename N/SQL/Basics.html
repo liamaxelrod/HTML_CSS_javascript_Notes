@@ -1,117 +1,14 @@
 <!-- File name: N/SQL/Basics.html -->
 
-<template> <!-- SQL: EXISTS, ANY, ALL -->
 
-  <div class="bubble">
 
-    <!-- 0. TABLE EXAMPLE (Existing Data) -->
-    <h3>Example: Table Preview</h3>
-    <table class="example" border="1" cellspacing="0" cellpadding="5">
-      <tr>
-        <th>SupplierID</th><th>SupplierName</th><th>ProductName</th><th>Price</th>
-      </tr>
-      <tr>
-        <td>1</td><td>Supplier A</td><td>Widget</td><td>15</td>
-      </tr>
-      <tr>
-        <td>2</td><td>Supplier B</td><td>Gadget</td><td>25</td>
-      </tr>
-      <tr>
-        <td>3</td><td>Supplier C</td><td>Doohickey</td><td>10</td>
-      </tr>
-    </table>
 
-    <!-- 1. SQL CODE -->
-    <h3>SQL Code:</h3>
-    <div class="code_block">
-      <code>
-        <!-- EXISTS Example -->
-        SELECT SupplierName FROM Suppliers<br>
-        &nbsp;&nbsp;WHERE <span class="C1">EXISTS (SELECT ProductName FROM Products<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;WHERE Products.SupplierID = Suppliers.SupplierID AND Price &lt; 20);</span><br><br>
-
-        <!-- ANY Example -->
-        SELECT ProductName FROM Products<br>
-        &nbsp;&nbsp;WHERE ProductID <span class="C2">= ANY (SELECT ProductID FROM OrderDetails WHERE Quantity = 10);</span><br><br>
-
-        <!-- ALL Example -->
-        SELECT ProductName FROM Products<br>
-        &nbsp;&nbsp;WHERE ProductID <span class="C3">= ALL (SELECT ProductID FROM OrderDetails WHERE Quantity = 10);</span>
-      </code>
-    </div>
-
-    <!-- 2. EXAMPLE OUTPUT -->
-    <h3>Example Output:</h3>
-
-    <table class="example" border="1" cellspacing="0" cellpadding="5">
-      <tr class="C1">
-        <th>SupplierName</th>
-      </tr>
-      <tr>
-        <td>Supplier A</td>
-      </tr>
-      <tr>
-        <td>Supplier C</td>
-      </tr>
-    </table>
-
-    <table class="example" border="1" cellspacing="0" cellpadding="5">
-      <tr class="C2">
-        <th>ProductName</th>
-      </tr>
-      <tr>
-        <td>Widget</td>
-      </tr>
-      <tr>
-        <td>Doohickey</td>
-      </tr>
-    </table>
-
-    <table class="example" border="1" cellspacing="0" cellpadding="5">
-      <tr class="C3">
-        <th>ProductName</th>
-      </tr>
-      <tr>
-        <td>(no rows returned)</td>
-      </tr>
-    </table>
-
-    <!-- 3.1 EXPLANATION -->
-    <h3>Explanation:</h3>
-    <div class="explanation">
-      <span class="C1"><code>EXISTS</code></span><span> – Checks if at least one row in the subquery meets the condition. Returns TRUE/FALSE. Useful for yes/no checks without returning data from subquery.</span><br>
-      <span class="C2"><code>ANY</code></span><span> – Compares a value to any value returned by a subquery. Returns TRUE if the comparison is true for at least one value. Works with standard comparison operators (=, &lt;&gt;, !=, &gt;, &gt;=, &lt;, &lt;=).</span><br>
-      <span class="C3"><code>ALL</code></span><span> – Compares a value to all values returned by a subquery. Returns TRUE only if the comparison is true for every value. Also uses standard comparison operators.</span><br><br>
-
-      <!-- 3.2 NOTES -->
-      <strong>Notes:</strong><br>
-      <span>
-        - EXISTS is more efficient for large datasets when you only care about presence, not data.<br>
-        - ANY is like an OR across the subquery results; ALL is like an AND.<br>
-        - Use ALL carefully; if even one row doesn’t match, the condition is FALSE.<br>
-        - EXISTS often replaces IN for performance in some SQL engines.
-      </span><br><br>
-
-      <!-- 3.3 CONCEPT & SPIRIT -->
-      <strong>Concept & Spirit:</strong><br>
-      <span>
-        - Think of EXISTS as asking a yes/no question: "Does at least one row meet this criteria?"<br>
-        - ANY and ALL teach how to reason about comparisons over ranges of values rather than single values.<br>
-        - These operators help write expressive, declarative queries without looping manually over rows.<br>
-        - Mastering them builds skill in thinking in set-based logic, a core SQL mindset.
-      </span>
-    </div>
-
-  </div>
-
-</template>
 
 
 
 
 <!-- chatGPT Questions by liam Disregard if I forgot to remove them. 
 ------------------------------------------------ 
-
 
 
 -------------------------------------------------
@@ -128,30 +25,6 @@ SQL Syntax ✅
 SQL Comments ✅
 SQL Operators 
 SQL Data Types ✅
-
-
-
-3. Nulls & Conditional Logic
-
-SQL Null Values ✅
-SQL Null Functions ✅
-
-SQL Case ✅
-
-SQL Exists ✅
-SQL Any ✅
-SQL All ✅
-
-4. Aggregation & Grouping
-
-SQL Aggregate Functions
-SQL Min
-SQL Max
-SQL Count
-SQL Sum
-SQL Avg
-SQL Group By
-SQL Having
 
 5. Combining Tables
 
@@ -203,6 +76,7 @@ SQL Hosting
 -->
 
 <!-- 
+
 
 
 -->
@@ -669,7 +543,7 @@ SQL Hosting
 </template>
 
 <!-- Mental focus: Which rows are allowed to exist? -->
-<template> <!-- Coding Language name: SQL Filtering -->
+<template> <!-- SQL: Filtering 1 -->
 
   <div class="bubble">
 
@@ -814,7 +688,7 @@ SQL Hosting
 </template>
 
 <!-- Mental focus: Which rows are allowed to exist? -->
-<template> <!-- Coding Language name: SQL Filtering -->
+<template> <!-- SQL: Filtering 2 -->
 
   <div class="bubble">
 
@@ -959,7 +833,7 @@ SQL Hosting
 </template>
 
 <!-- Mental focus: How conditions interact with each other -->
-<template> <!-- Coding Language name: SQL AND / OR / NOT -->
+<template> <!-- SQL: AND / OR / NOT -->
 
   <div class="bubble">
 
@@ -1151,7 +1025,7 @@ SQL Hosting
 </template>
 
 <!-- Mental focus: In what order do I want to see the data? -->
-<template> <!-- Coding Language name: SQL ORDER BY, ASC, and DESC -->
+<template> <!-- SQL: ORDER BY, ASC, and DESC -->
 
   <div class="bubble">
 
@@ -1275,7 +1149,7 @@ SQL Hosting
 </template>
 
 <!-- 3. Nulls & Conditional Logic -->
-<template> <!-- Coding Language name: SQL Nulls & Conditional Logic -->
+<template> <!-- SQL: Nulls & Conditional Logic -->
 
   <div class="bubble">
     
@@ -1384,7 +1258,7 @@ SQL Hosting
   </div> 
 </template>
 
-<template> <!-- Coding Language name: SQL CASE -->
+<template> <!-- SQL: CASE -->
   <div class="bubble">
     
     <!-- 0. TABLE EXAMPLE -->
@@ -1495,9 +1369,948 @@ SQL Hosting
   </div>
 </template>
 
+<template> <!-- SQL: EXISTS, ANY, ALL -->
+
+  <div class="bubble">
+
+    <!-- 0. TABLE EXAMPLE (Existing Data) -->
+    <h3>Example: Table Preview</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>SupplierID</th><th>SupplierName</th><th>ProductName</th><th>Price</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Supplier A</td><td>Widget</td><td>15</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Supplier B</td><td>Gadget</td><td>25</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Supplier C</td><td>Doohickey</td><td>10</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+        <!-- EXISTS Example -->
+        SELECT SupplierName FROM Suppliers<br>
+        &nbsp;&nbsp;WHERE <span class="C1">EXISTS (SELECT ProductName FROM Products<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;WHERE Products.SupplierID = Suppliers.SupplierID AND Price &lt; 20);</span><br><br>
+
+        <!-- ANY Example -->
+        SELECT ProductName FROM Products<br>
+        &nbsp;&nbsp;WHERE ProductID <span class="C2">= ANY (SELECT ProductID FROM OrderDetails WHERE Quantity = 10);</span><br><br>
+
+        <!-- ALL Example -->
+        SELECT ProductName FROM Products<br>
+        &nbsp;&nbsp;WHERE ProductID <span class="C3">= ALL (SELECT ProductID FROM OrderDetails WHERE Quantity = 10);</span>
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Output:</h3>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1">
+        <th>SupplierName</th>
+      </tr>
+      <tr>
+        <td>Supplier A</td>
+      </tr>
+      <tr>
+        <td>Supplier C</td>
+      </tr>
+    </table>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C2">
+        <th>ProductName</th>
+      </tr>
+      <tr>
+        <td>Widget</td>
+      </tr>
+      <tr>
+        <td>Doohickey</td>
+      </tr>
+    </table>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C3">
+        <th>ProductName</th>
+      </tr>
+      <tr>
+        <td>(no rows returned)</td>
+      </tr>
+    </table>
+
+    <!-- 3.1 EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1"><code>EXISTS</code></span><span> – Checks if at least one row in the subquery meets the condition. Returns TRUE/FALSE. Useful for yes/no checks without returning data from subquery.</span><br><br>
+      <span class="C2"><code>ANY</code></span><span> – Compares a value to any value returned by a subquery. Returns TRUE if the comparison is true for at least one value. Works with standard comparison operators (=, &lt;&gt;, !=, &gt;, &gt;=, &lt;, &lt;=).</span><br><br>
+      <span class="C3"><code>ALL</code></span><span> – Compares a value to all values returned by a subquery. Returns TRUE only if the comparison is true for every value. Also uses standard comparison operators.</span><br><br>
+
+      <!-- 3.2 NOTES -->
+      <strong>Notes:</strong><br>
+      <span>
+        - EXISTS is more efficient for large datasets when you only care about presence, not data.<br>
+        - ANY is like an OR across the subquery results; ALL is like an AND.<br>
+        - Use ALL carefully; if even one row doesn’t match, the condition is FALSE.<br>
+        - EXISTS often replaces IN for performance in some SQL engines.
+      </span><br><br>
+
+      <!-- 3.3 CONCEPT & SPIRIT -->
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - Think of EXISTS as asking a yes/no question: "Does at least one row meet this criteria?"<br>
+        - ANY and ALL teach how to reason about comparisons over ranges of values rather than single values.<br>
+        - These operators help write expressive, declarative queries without looping manually over rows.<br>
+        - Mastering them builds skill in thinking in set-based logic, a core SQL mindset.
+      </span>
+    </div>
+
+  </div>
+
+</template>
+
 <!-- 4. Aggregation & Grouping -->
+<template> <!-- SQL: MIN(), MAX(), COUNT(), SUM(), AVG()-->
+
+  <div class="bubble">
+
+    <!-- 0. TABLE EXAMPLE -->
+    <h3>Example: Products Table Preview</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>ProductID</th><th>ProductName</th><th>Price</th><th>CategoryID</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Keyboard</td><td>50</td><td>1</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Mouse</td><td>25</td><td>1</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Monitor</td><td>200</td><td>2</td>
+      </tr>
+      <tr>
+        <td>4</td><td>USB Cable</td><td>10</td><td>1</td>
+      </tr>
+      <tr>
+        <td>5</td><td>Webcam</td><td>80</td><td>2</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+
+        <!-- MIN -->
+        <span class="C1">SELECT MIN(Price) AS LowestPrice</span><br>
+        &nbsp;&nbsp;<span class="C1">FROM Products</span><br>
+        &nbsp;&nbsp;<span class="C1">WHERE CategoryID = 1;</span><br><br>
+
+        <!-- MAX -->
+        <span class="C2">SELECT MAX(Price) AS HighestPrice</span><br>
+        &nbsp;&nbsp;<span class="C2">FROM Products</span><br>
+        &nbsp;&nbsp;<span class="C2">WHERE CategoryID = 1;</span><br><br>
+
+        <!-- COUNT -->
+        <span class="C3">SELECT COUNT(*) AS TotalProducts</span><br>
+        &nbsp;&nbsp;<span class="C3">FROM Products</span><br>
+        &nbsp;&nbsp;<span class="C3">WHERE Price &gt; 20;</span><br><br>
+
+        <!-- SUM -->
+        <span class="C4">SELECT SUM(Price) AS TotalCategoryOne</span><br>
+        &nbsp;&nbsp;<span class="C4">FROM Products</span><br>
+        &nbsp;&nbsp;<span class="C4">WHERE CategoryID = 1;</span><br><br>
+
+        <!-- AVG -->
+        <span class="C5">SELECT AVG(Price) AS AverageCategoryOne</span><br>
+        &nbsp;&nbsp;<span class="C5">FROM Products</span><br>
+        &nbsp;&nbsp;<span class="C5">WHERE CategoryID = 1;</span><br><br>
+
+        <!-- GROUP BY Preview -->
+        <span class="C6">SELECT CategoryID, SUM(Price) AS TotalPerCategory</span><br>
+        &nbsp;&nbsp;<span class="C6">FROM Products</span><br>
+        &nbsp;&nbsp;<span class="C6">GROUP BY CategoryID;</span>
+
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+
+    <h3>Example Output:</h3>
+
+    <!-- MIN -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1">
+        <th>LowestPrice</th>
+      </tr>
+      <tr>
+        <td>10</td>
+      </tr>
+    </table>
+
+    <!-- MAX -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C2">
+        <th>HighestPrice</th>
+      </tr>
+      <tr>
+        <td>50</td>
+      </tr>
+    </table>
+
+    <!-- COUNT -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C3">
+        <th>TotalProducts</th>
+      </tr>
+      <tr>
+        <td>4</td>
+      </tr>
+    </table>
+
+    <!-- SUM -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C4">
+        <th>TotalCategoryOne</th>
+      </tr>
+      <tr>
+        <td>85</td>
+      </tr>
+    </table>
+
+    <!-- AVG -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C5">
+        <th>AverageCategoryOne</th>
+      </tr>
+      <tr>
+        <td>28.33</td>
+      </tr>
+    </table>
+
+    <!-- GROUP BY Preview -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C6">
+        <th>CategoryID</th><th>TotalPerCategory</th>
+      </tr>
+      <tr>
+        <td>1</td><td>85</td>
+      </tr>
+      <tr>
+        <td>2</td><td>280</td>
+      </tr>
+    </table>
+
+    <!-- 3. EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+
+      <span>
+        SQL Aggregate Functions perform a calculation on multiple rows and return a single value.
+        Without GROUP BY, all filtered rows are treated as one big group.
+      </span><br><br>
+
+      <span class="C1"><code>MIN()</code></span>
+      <span> – Finds the smallest value in the filtered set.</span><br>
+
+      <span class="C2"><code>MAX()</code></span>
+      <span> – Finds the largest value in the filtered set.</span><br>
+
+      <span class="C3"><code>COUNT()</code></span>
+      <span> – Counts how many rows match the condition.</span><br>
+
+      <span class="C4"><code>SUM()</code></span>
+      <span> – Adds together all values from the filtered rows.</span><br>
+
+      <span class="C5"><code>AVG()</code></span>
+      <span> – Calculates the average value of the filtered rows.</span><br>
+
+      <span class="C6"><code>GROUP BY</code></span>
+      <span> – Instead of treating all rows as one group, SQL splits them by CategoryID.
+      The aggregate function is then calculated separately for each category.
+      This produces multiple rows instead of one.</span><br><br>
+
+      <strong>Notes:</strong><br>
+      <span>
+        - Aggregate functions ignore NULL values (except COUNT(*)).<br>
+        - WHERE filters rows before aggregation happens.<br>
+        - Without GROUP BY → one result row.<br>
+        - With GROUP BY → one result per group.<br>
+        - GROUP BY will be fully explained in the next template.<br>
+        - MIN(), MAX(), COUNT(), SUM(), AVG() are function names — they must always be followed by parentheses.<br>
+        - The value inside the parentheses tells SQL what to calculate on.<br>
+        - Example: SUM(Price) means "add all values from the Price column".<br>
+        - You cannot leave the parentheses empty — SQL needs to know what column or expression to use.<br>
+        - COUNT(*) is different: the * tells SQL to count all rows, not a specific column.
+      </span><br><br>
+
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        Aggregates teach you to summarize data instead of reading row by row.
+        GROUP BY extends that idea by letting you summarize per category.
+        This is where SQL becomes powerful: you describe the result you want,
+        and the database handles the calculation.
+      </span>
+
+    </div>
+
+  </div>
+
+</template>
+
+<template> <!-- SQL: ORDER BY -->
+
+  <div class="bubble">
+
+    <!-- 0. TABLE EXAMPLE (Existing Data) -->
+    <h3>Example: Products Table Preview</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>ProductID</th><th>ProductName</th><th>Price</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Laptop</td><td>1200</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Mouse</td><td>25</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Keyboard</td><td>75</td>
+      </tr>
+      <tr>
+        <td>4</td><td>Monitor</td><td>300</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+
+        <span class="C1">SELECT * FROM Products ORDER BY Price;</span><br><br>
+
+        <span class="C2">SELECT * FROM Products ORDER BY Price DESC;</span><br><br>
+
+        <span class="C3">SELECT * FROM Products ORDER BY ProductName;</span><br><br>
+
+        <span class="C4">SELECT * FROM Products ORDER BY ProductName DESC;</span><br><br>
+
+        <span class="C5">SELECT * FROM Products ORDER BY Price ASC, ProductName DESC;</span>
+
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+
+    <!-- C1 -->
+    <h3>Example Output:</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1">
+        <th>ProductID</th><th>ProductName</th><th>Price</th>
+      </tr>
+      <tr><td>2</td><td>Mouse</td><td>25</td></tr>
+      <tr><td>3</td><td>Keyboard</td><td>75</td></tr>
+      <tr><td>4</td><td>Monitor</td><td>300</td></tr>
+      <tr><td>1</td><td>Laptop</td><td>1200</td></tr>
+    </table>
+
+    <!-- C2 -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C2">
+        <th>ProductID</th><th>ProductName</th><th>Price</th>
+      </tr>
+      <tr><td>1</td><td>Laptop</td><td>1200</td></tr>
+      <tr><td>4</td><td>Monitor</td><td>300</td></tr>
+      <tr><td>3</td><td>Keyboard</td><td>75</td></tr>
+      <tr><td>2</td><td>Mouse</td><td>25</td></tr>
+    </table>
+
+    <!-- C3 -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C3">
+        <th>ProductID</th><th>ProductName</th><th>Price</th>
+      </tr>
+      <tr><td>3</td><td>Keyboard</td><td>75</td></tr>
+      <tr><td>1</td><td>Laptop</td><td>1200</td></tr>
+      <tr><td>4</td><td>Monitor</td><td>300</td></tr>
+      <tr><td>2</td><td>Mouse</td><td>25</td></tr>
+    </table>
+
+    <!-- C4 -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C4">
+        <th>ProductID</th><th>ProductName</th><th>Price</th>
+      </tr>
+      <tr><td>2</td><td>Mouse</td><td>25</td></tr>
+      <tr><td>4</td><td>Monitor</td><td>300</td></tr>
+      <tr><td>1</td><td>Laptop</td><td>1200</td></tr>
+      <tr><td>3</td><td>Keyboard</td><td>75</td></tr>
+    </table>
+
+    <!-- C5 -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C5">
+        <th>ProductID</th><th>ProductName</th><th>Price</th>
+      </tr>
+      <tr><td>2</td><td>Mouse</td><td>25</td></tr>
+      <tr><td>3</td><td>Keyboard</td><td>75</td></tr>
+      <tr><td>4</td><td>Monitor</td><td>300</td></tr>
+      <tr><td>1</td><td>Laptop</td><td>1200</td></tr>
+    </table>
+
+    <!-- 3.1 EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+
+      <span class="C1"><code>ORDER BY Price</code></span>
+      <span>– Sorts results by <code>Price</code> in ascending order (lowest → highest). 
+      Ascending is the default, so we don’t need to write <code>ASC</code>.</span><br>
+
+      <span class="C2"><code>ORDER BY Price DESC</code></span>
+      <span>– Reverses the order. Instead of smallest first, it shows largest first.
+      Think of it as flipping the list upside down.</span><br>
+
+      <span class="C3"><code>ORDER BY ProductName</code></span>
+      <span>– When sorting text, SQL orders alphabetically (A → Z).</span><br>
+
+      <span class="C4"><code>ORDER BY ProductName DESC</code></span>
+      <span>– Reverse alphabetical order (Z → A).</span><br>
+
+      <span class="C5"><code>ORDER BY Price ASC, ProductName DESC</code></span>
+      <span>– SQL sorts by the first column first. If two rows have the same 
+      <code>Price</code>, it then sorts those rows by <code>ProductName</code>.
+      Think of it like sorting papers: first by grade, then by name if grades match.</span><br><br>
+
+      <!-- NOTES -->
+      <strong>Notes:</strong><br>
+      <span>
+        - <code>ASC</code> is optional because ascending is default.<br>
+        - ORDER BY always comes after WHERE (if used).<br>
+        - You can sort by columns that are not shown in SELECT (in most SQL systems).<br>
+        - Sorting does NOT change the table permanently — it only changes how results are displayed.
+      </span><br><br>
+
+      <!-- CONCEPT & SPIRIT -->
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        Why didn’t we put this in the template earlier about select information?<br>
+
+        The first templates focused on retrieving data (SELECT and WHERE).
+        That teaches: <em>“Which rows do I want?”</em><br>
+
+        ORDER BY teaches something different:
+        <em>“In what order should I see them?”</em><br>
+
+        Filtering (WHERE) decides WHAT data appears.<br>
+        Sorting (ORDER BY) decides HOW it is organized.<br>
+
+        We separate them because they teach two different mental models:
+        - Selection logic (filtering)
+        - Presentation logic (ordering)<br>
+
+        Big beginner lesson:
+        First think about getting the correct data.
+        Then think about how you want it arranged.
+      </span>
+
+    </div>
+
+  </div>
+
+</template>
+
+<template> <!-- SQL: HAVING -->
+  <div class="bubble">
+
+    <!-- 0. TABLE EXAMPLE (Existing Data) -->
+    <h3>Example: Customers Table Preview</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th>
+      </tr>
+      <tr><td>1</td><td>Anna</td><td>Germany</td></tr>
+      <tr><td>2</td><td>John</td><td>Germany</td></tr>
+      <tr><td>3</td><td>Maria</td><td>Brazil</td></tr>
+      <tr><td>4</td><td>James</td><td>Brazil</td></tr>
+      <tr><td>5</td><td>David</td><td>Brazil</td></tr>
+      <tr><td>6</td><td>Sophia</td><td>Germany</td></tr>
+      <tr><td>7</td><td>Lucas</td><td>Germany</td></tr>
+      <tr><td>8</td><td>Emma</td><td>Germany</td></tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+
+        SELECT Country, COUNT(CustomerID)<br>
+        FROM Customers<br>
+        GROUP BY Country<br>
+        <span class="C1">HAVING COUNT(CustomerID) > 3;</span><br><br>
+
+        SELECT Country, COUNT(CustomerID)<br>
+        FROM Customers<br>
+        <span class="C2">WHERE Country != 'Brazil'</span><br>
+        GROUP BY Country<br>
+        <span class="C2">HAVING COUNT(CustomerID) > 3;</span><br><br>
+
+        
+        SELECT Country, COUNT(CustomerID)<br>
+        FROM Customers<br>
+        GROUP BY Country<br>
+        <span class="C3">HAVING COUNT(CustomerID) > 1<br>
+        ORDER BY COUNT(CustomerID) DESC;</span>
+        
+
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Output:</h3>
+
+    <!-- C1 -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1">
+        <th>Country</th><th>COUNT(CustomerID)</th>
+      </tr>
+      <tr><td>Germany</td><td>5</td></tr>
+      <tr><td>Brazil</td><td>3</td></tr>
+    </table>
+
+    <!-- C2 -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C2">
+        <th>Country</th><th>COUNT(CustomerID)</th>
+      </tr>
+      <tr><td>Germany</td><td>5</td></tr>
+    </table>
+
+    <!-- C3 -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C3">
+        <th>Country</th><th>COUNT(CustomerID)</th>
+      </tr>
+      <tr><td>Germany</td><td>5</td></tr>
+      <tr><td>Brazil</td><td>3</td></tr>
+    </table>
+
+    <!-- 3.1 EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+
+      <span class="C1"><code>HAVING COUNT(CustomerID) &gt; 3</code></span>
+      <span>
+      – After grouping customers by <code>Country</code>, HAVING filters the grouped results.
+      We are no longer filtering individual rows — we are filtering entire groups.
+      </span><br>
+
+      <span class="C2"><code>WHERE Country != 'Brazil'</code></span>
+      <span>
+      – WHERE filters rows before grouping happens.
+      Brazil rows are removed first.
+      Then GROUP BY runs.
+      Then HAVING filters the grouped result.
+      </span><br>
+
+      <span class="C3"><code>ORDER BY COUNT(CustomerID) DESC</code></span>
+      <span>
+      – HAVING decides which groups stay.
+      ORDER BY decides how the final result is arranged.
+      Sorting does not change the data — only the presentation.
+      </span><br><br>
+
+      <!-- NOTES -->
+      <strong>Notes:</strong><br>
+      <span>
+        - WHERE cannot use aggregate functions like <code>COUNT()</code>.<br>
+        - HAVING was added to SQL specifically to filter aggregated results.<br>
+        - Clause order matters: FROM → WHERE → GROUP BY → HAVING → ORDER BY.<br>
+        - If you try <code>WHERE COUNT(CustomerID) &gt; 3</code>, SQL will throw an error.
+      </span><br><br>
+
+      <!-- CONCEPT & SPIRIT -->
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        Why is HAVING its own? HAVING now teaches: “How do I filter calculated categories?” This is a different mental step. WHERE filters raw rows. GROUP BY filters a group from the rows. HAVING filters summarized groups. <br>
+
+        Big beginner lesson:<br>
+        1. Filter rows (WHERE)<br>
+        2. Group rows (GROUP BY)<br>
+        3. Filter groups (HAVING)<br>
+        4. Sort results (ORDER BY)<br>
+        SQL works in stages. Understanding those stages is more important than memorizing syntax.
+
+      </span>
+
+    </div>
+    
+  </div>
+</template>
 
 <!-- 5. Combining Tables -->
+
+<template> <!-- SQL: JOIN/INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN, and SELF JOIN   -->
+  <div class="bubble">
+
+    <!-- 0. TABLE EXAMPLE (Existing Data) -->
+    <h3>Example: Tables Preview</h3>
+
+    <h4>Customers Table</h4>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>CustomerID</th><th>CustomerName</th><th>City</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Maria Anders</td><td>Berlin</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Francisco Chang</td><td>Madrid</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Roland Mendel</td><td>Berlin</td>
+      </tr>
+      <tr>
+        <td>4</td><td>Helen Bennett</td><td>London</td>
+      </tr>
+    </table>
+
+    <h4>Orders Table</h4>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>OrderID</th><th>CustomerID</th><th>OrderDate</th>
+      </tr>
+      <tr>
+        <td>101</td><td>1</td><td>2026-01-10</td>
+      </tr>
+      <tr>
+        <td>102</td><td>3</td><td>2026-01-12</td>
+      </tr>
+      <tr>
+        <td>103</td><td>5</td><td>2026-01-15</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+        <!-- C1 – INNER JOIN -->
+        SELECT Customers.CustomerName, Orders.OrderID, Orders.OrderDate<br>
+        FROM Customers<br>
+        <span class="C1">
+        INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID;</span><br><br>
+
+        <!-- C2 – LEFT JOIN -->
+        SELECT Customers.CustomerName, Orders.OrderID, Orders.OrderDate<br>
+        FROM Customers<br>
+        <span class="C2">LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID</span><br>
+        ORDER BY Customers.CustomerName;<br><br>
+
+        <!-- C3 – RIGHT JOIN -->
+        SELECT Customers.CustomerName, Orders.OrderID, Orders.OrderDate<br>
+        FROM Customers<br>
+        <span class="C3">RIGHT JOIN Orders ON Customers.CustomerID = Orders.CustomerID</span><br>
+        ORDER BY Orders.OrderID;<br><br>
+
+        <!-- C4 – FULL OUTER JOIN -->
+        SELECT Customers.CustomerName, Orders.OrderID, Orders.OrderDate<br>
+        FROM Customers<br>
+        <span class="C4">FULL OUTER JOIN Orders ON Customers.CustomerID = Orders.CustomerID</span><br>
+        ORDER BY Customers.CustomerName;<br><br>
+
+        <!-- C5 – SELF JOIN -->
+        SELECT A.CustomerName AS Customer1, B.CustomerName AS Customer2, A.City<br>
+        <span class="C5">FROM Customers A, Customers B<br>
+        WHERE A.CustomerID &lt;&gt; B.CustomerID AND A.City = B.City</span><br>
+        ORDER BY A.City;
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Output:</h3>
+
+    <h4>INNER JOIN</h4>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1"><th>CustomerName</th><th>OrderID</th><th>OrderDate</th></tr>
+      <tr><td>Maria Anders</td><td>101</td><td>2026-01-10</td></tr>
+      <tr><td>Roland Mendel</td><td>102</td><td>2026-01-12</td></tr>
+    </table>
+
+    <h4>LEFT JOIN</h4>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C2"><th>CustomerName</th><th>OrderID</th><th>OrderDate</th></tr>
+      <tr><td>Francisco Chang</td><td>NULL</td><td>NULL</td></tr>
+      <tr><td>Helen Bennett</td><td>NULL</td><td>NULL</td></tr>
+      <tr><td>Maria Anders</td><td>101</td><td>2026-01-10</td></tr>
+      <tr><td>Roland Mendel</td><td>102</td><td>2026-01-12</td></tr>
+    </table>
+
+    <h4>RIGHT JOIN</h4>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C3"><th>CustomerName</th><th>OrderID</th><th>OrderDate</th></tr>
+      <tr><td>Maria Anders</td><td>101</td><td>2026-01-10</td></tr>
+      <tr><td>Roland Mendel</td><td>102</td><td>2026-01-12</td></tr>
+      <tr><td>NULL</td><td>103</td><td>2026-01-15</td></tr>
+    </table>
+
+    <h4>FULL OUTER JOIN</h4>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C4"><th>CustomerName</th><th>OrderID</th><th>OrderDate</th></tr>
+      <tr><td>Francisco Chang</td><td>NULL</td><td>NULL</td></tr>
+      <tr><td>Helen Bennett</td><td>NULL</td><td>NULL</td></tr>
+      <tr><td>Maria Anders</td><td>101</td><td>2026-01-10</td></tr>
+      <tr><td>Roland Mendel</td><td>102</td><td>2026-01-12</td></tr>
+      <tr><td>NULL</td><td>103</td><td>2026-01-15</td></tr>
+    </table>
+
+    <h4>SELF JOIN</h4>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C5"><th>Customer1</th><th>Customer2</th><th>City</th></tr>
+      <tr><td>Maria Anders</td><td>Roland Mendel</td><td>Berlin</td></tr>
+      <tr><td>Roland Mendel</td><td>Maria Anders</td><td>Berlin</td></tr>
+    </table>
+
+    <!-- 3.1 EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span>With ON, it looks for a column of data that Is similar or the same data and JOIN depending on which one will join the data if they're the same</span><br>
+      <span class="C1"><code>INNER JOIN</code></span><span> – Returns only the rows where there’s a match in both tables. Rows without matches are ignored.</span><br>
+      <span class="C2"><code>LEFT JOIN</code></span><span> – Returns all rows from the left table; unmatched rows in the right table appear as NULL.</span><br>
+      <span class="C3"><code>RIGHT JOIN</code></span><span> – Returns all rows from the right table; unmatched rows in the left table appear as NULL.</span><br>
+      <span class="C4"><code>FULL OUTER JOIN</code></span><span> – Returns all rows from both tables; unmatched rows appear as NULL where there’s no match.</span><br>
+      <span class="C5"><code>SELF JOIN</code></span><span> – Joins a table to itself; useful for finding relationships within the same table (e.g., customers in the same city).<br>
+      Where is the SELF JOIN? I don’t see the word JOIN anywhere.”<br>
+      That’s because this is the old (implicit) way of writing a self join.</span><br>
+      SELF JOIN = FROM Customers A, Customers B<br>
+      ON = WHERE A.CustomerID <> B.CustomerID AND A.City = B.City<br><br>
+
+      <strong>Notes:</strong><br>
+      <span>
+        - SQL creates a temporary combined result. That result is returned to you. Then it disappears.
+        - Always specify table names when column names exist in multiple tables.<br>
+        - JOIN defaults to INNER JOIN.<br>
+        - Use aliases (A, B) for clarity in SELF JOINs.<br>
+        - LEFT/RIGHT/FULL JOIN help handle missing relationships elegantly.
+      </span><br><br>
+
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - Joins teach how relational databases combine related data across tables.<br>
+        - Understand the difference between "all rows" vs "matched rows".<br>
+        - Thinking in sets: each JOIN type answers a different question about relationships between tables.<br>
+        - Builds the mindset of designing queries that reflect real-world data connections.
+      </span>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- SQL: UNION & UNION ALL -->
+
+  <div class="bubble">
+
+    <!-- 0. TABLE EXAMPLE (Existing Data) -->
+    <h3>Example: Table Preview</h3>
+
+    <!-- Customers Table -->
+    <strong>Customers</strong>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>ContactName</th><th>City</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>Maria Anders</td><td>Berlin</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>Ana Trujillo</td><td>Madrid</td><td>Spain</td>
+      </tr>
+      <tr>
+        <td>Thomas Hardy</td><td>Berlin</td><td>Germany</td>
+      </tr>
+    </table>
+
+    <br>
+
+    <!-- Suppliers Table -->
+    <strong>Suppliers</strong>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>ContactName</th><th>City</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>Heli Süßwaren</td><td>Berlin</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>Nordic Foods</td><td>Hamburg</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>New Orleans Cajun</td><td>New Orleans</td><td>USA</td>
+      </tr>
+    </table>
+
+    <br>
+
+    <!-- Employees Table (for C3 example) -->
+    <strong>Employees</strong>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>ContactName</th><th>City</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>John Smith</td><td>Berlin</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>Sara Connor</td><td>London</td><td>UK</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+
+        <!-- C1 UNION -->
+        <span class="C1">SELECT City FROM Customers<br>
+        UNION<br>
+        SELECT City FROM Suppliers</span><br>
+        ORDER BY City;<br><br>
+
+        <!-- C2 UNION ALL -->
+        <span class="C2">SELECT City FROM Customers<br>
+        UNION ALL<br>
+        SELECT City FROM Suppliers</span><br>
+        ORDER BY City;<br><br>
+
+        <!-- C3 UNION from three tables -->
+        <span class="C3">SELECT City FROM Customers<br>
+        UNION<br>
+        SELECT City FROM Suppliers<br>
+        UNION<br>
+        SELECT City FROM Employees;</span><br><br>
+
+        <!-- C4 UNION with WHERE -->
+        <span class="C4">SELECT City, Country FROM Customers<br>
+        WHERE Country = 'Germany'<br>
+        UNION<br>
+        SELECT City, Country FROM Suppliers<br>
+        WHERE Country = 'Germany';</span>
+
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Output:</h3>
+
+    <!-- C1 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1"><th>City</th></tr>
+      <tr><td>Berlin</td></tr>
+      <tr><td>Madrid</td></tr>
+      <tr><td>New Orleans</td></tr>
+    </table>
+
+    <br>
+
+    <!-- C2 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C2"><th>City</th></tr>
+      <tr><td>Berlin</td></tr>
+      <tr><td>Berlin</td></tr>
+      <tr><td>Berlin</td></tr>
+      <tr><td>Madrid</td></tr>
+      <tr><td>New Orleans</td></tr>
+    </table>
+
+    <br>
+
+    <!-- C3 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C3"><th>City</th></tr>
+      <tr><td>Berlin</td></tr>
+      <tr><td>London</td></tr>
+      <tr><td>Madrid</td></tr>
+      <tr><td>New Orleans</td></tr>
+    </table>
+
+    <br>
+
+    <!-- C4 Output (Now Multiple Rows) -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C4"><th>City</th><th>Country</th></tr>
+      <tr><td>Berlin</td><td>Germany</td></tr>
+      <tr><td>Hamburg</td><td>Germany</td></tr>
+    </table>
+
+    <!-- 3. EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+
+      <span class="C1"><code>UNION</code></span>
+      <span>
+        – Combines result sets and automatically removes duplicate rows.
+      </span><br>
+
+      <span class="C2"><code>UNION ALL</code></span>
+      <span>
+        – Combines result sets but keeps duplicates. Faster because no duplicate-check step happens.
+      </span><br>
+
+      <span class="C3"><code>Multiple UNION statements</code></span><br>
+      <span>
+        You can combine more than two SELECT statements.<br>
+        Each additional UNION keeps stacking results vertically.<br>
+        This works also for UNION ALL
+      </span><br>
+
+      <span class="C4"><code>WHERE + UNION</code></span>
+      <span>
+        – Each SELECT filters independently before combining.
+      </span><br><br>
+
+      <strong>Notes:</strong><br>
+      <span>
+        - All SELECT statements must have the same number of columns.<br>
+        &nbsp;&nbsp;-- ✅ Works: same number of columns<br>
+        &nbsp;&nbsp;SELECT City, Country FROM Customers<br>
+        &nbsp;&nbsp;UNION<br>
+        &nbsp;&nbsp;SELECT City, Country FROM Suppliers;<br><br>
+
+        &nbsp;&nbsp;-- ❌ Error: different number of columns<br>
+        &nbsp;&nbsp;SELECT City FROM Customers<br>
+        &nbsp;&nbsp;UNION<br>
+        &nbsp;&nbsp;SELECT City, Country FROM Suppliers;<br><br>
+        - Column data types must be compatible.<br>
+        - Column order must match exactly.<br>
+        - Result column names come from the first SELECT statement.
+      </span><br><br>
+
+      <strong>UNION vs JOIN:</strong><br>
+      <span>
+        - UNION adds rows (vertical merge).<br>
+        - JOIN adds columns (horizontal merge using keys).<br><br>
+        UNION = stack data.<br>
+        JOIN = connect related data.
+      </span><br><br>
+
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        UNION teaches consolidation of similar structured datasets. 
+        It reinforces thinking about compatibility and schema alignment. 
+        JOIN teaches relationships. UNION teaches structural merging.
+      </span>
+
+    </div>
+
+  </div>
+
+</template>
 
 <!-- 6. Modifying Data -->
 
