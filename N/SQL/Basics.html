@@ -6,9 +6,13 @@
 
 
 
-
 <!-- chatGPT Questions by liam Disregard if I forgot to remove them. 
 ------------------------------------------------ 
+
+
+Do you mind giving me the whole templates so I can copy and paste it? 
+
+
 
 
 -------------------------------------------------
@@ -25,17 +29,6 @@ SQL Syntax ✅
 SQL Comments ✅
 SQL Operators 
 SQL Data Types ✅
-
-5. Combining Tables
-
-SQL Joins
-SQL Inner Join
-SQL Left Join
-SQL Right Join
-SQL Full Join
-SQL Self Join
-SQL Union
-SQL Union All
 
 6. Modifying Data
 
@@ -2313,5 +2306,256 @@ SQL Hosting
 </template>
 
 <!-- 6. Modifying Data -->
+ <template> <!-- SQL: SELECT INTO, INSERT INTO, and INSERT INTO ... SELECT -->
+  <div class="bubble">
+
+    <!-- 0. TABLE EXAMPLE (Existing Data) -->
+    <h3>Example: Original Table</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>CustomerName</th><th>ContactName</th><th>City</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td><td>Maria Anders</td><td>Berlin</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>Cardinal</td><td>Tom B. Erichsen</td><td>Stavanger</td><td>Norway</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+        -- 1. SELECT INTO: Create new table with data<br>
+        <span class="C1">SELECT * INTO CustomersBackup FROM Customers;</span><br><br>
+
+        /* 2. INSERT INTO: Add new row to existing table */<br>
+        <span class="C2">INSERT INTO Customers (CustomerName, ContactName, City, Country)</span><br>
+        <span class="C2">VALUES ('Greasy Burger', 'Per Olsen', 'Sandnes', 'Norway');</span><br><br>
+
+        -- 3. INSERT INTO ... SELECT: Copy rows from one table to another<br>
+        <span class="C3">INSERT INTO Customers (CustomerName, ContactName, City, Country)<br>
+        SELECT CustomerName, ContactName, City, Country FROM CustomersBackup WHERE Country='Germany';</span>
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Output:</h3>
+
+    <!-- C1 Output -->
+    <h3>New table:</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1">
+        <th>CustomerName</th><th>ContactName</th><th>City</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td><td>Maria Anders</td><td>Berlin</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>Cardinal</td><td>Tom B. Erichsen</td><td>Stavanger</td><td>Norway</td>
+      </tr>
+    </table>
+
+    <!-- C2 Output -->
+    <h3>Add to original table:</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C2">
+        <th>CustomerName</th><th>ContactName</th><th>City</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td><td>Maria Anders</td><td>Berlin</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>Cardinal</td><td>Tom B. Erichsen</td><td>Stavanger</td><td>Norway</td>
+      </tr>
+      <tr>
+        <td>Greasy Burger</td><td>Per Olsen</td><td>Sandnes</td><td>Norway</td>
+      </tr>
+    </table>
+
+    <!-- C3 Output -->
+    <h3>Use example 2 table and add 1 row to it:</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C3">
+        <th>CustomerName</th><th>ContactName</th><th>City</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td><td>Maria Anders</td><td>Berlin</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>Cardinal</td><td>Tom B. Erichsen</td><td>Stavanger</td><td>Norway</td>
+      </tr>
+      <tr>
+        <td>Greasy Burger</td><td>Per Olsen</td><td>Sandnes</td><td>Norway</td>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td><td>Maria Anders</td><td>Berlin</td><td>Germany</td>
+      </tr>
+    </table>
+
+    <!-- 3. EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1"><code>SELECT INTO</code></span><span> – Creates a completely new table that copies the data from the source. Great for backups or temporary tables.</span><br>
+      <span class="C2"><code>INSERT INTO … VALUES</code></span><span> – Adds new rows to an existing table. You manually provide the data to insert. The table grows but structure remains the same.</span><br>
+      <span class="C3"><code>INSERT INTO … SELECT</code></span><span> – Adds rows from another table (or backup) into an existing table. You can filter rows using conditions. Useful for merging or restoring data.</span><br><br>
+
+      <strong>Additional Notes:</strong><br>
+      <span>
+        - Columns in the target table must match types with the source when using INSERT INTO … SELECT.<br>
+        - SELECT INTO creates the table automatically; INSERT INTO assumes the table exists.<br>
+        - WHERE clauses can limit what data is copied or inserted.<br>
+        - Always consider duplicates: INSERT INTO … SELECT can duplicate data if not filtered.
+      </span><br><br>
+
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - Think in terms of table creation vs table modification: SELECT INTO → new table, INSERT INTO → grow existing table.<br>
+        - These commands teach how to manage and manipulate data safely: copy, append, filter, merge.<br>
+        - Beginner mindset: visualize how your table changes with each command before running it — data integrity is key.
+      </span>
+    </div>
+
+
+  </div>
+</template>
+
+<template> <!-- SQL: UPDATE, and DELETE -->
+  <div class="bubble">
+
+    <!-- 0. TABLE EXAMPLE (Existing Data) -->
+    <h3>Example: Table Preview</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>CustomerID</th><th>CustomerName</th><th>ContactName</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Alfreds Futterkiste</td><td>Maria</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>2</td><td>La Maison</td><td>Jean</td><td>France</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Centro Comercial</td><td>Antonio</td><td>Mexico</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+        <!-- UPDATE single record -->
+        <span class="C1">UPDATE Customers<br>
+        SET ContactName='Juan'<br>
+        WHERE Country='Mexico';</span><br><br>
+
+        <!-- UPDATE all records warning -->
+        <span class="C2">UPDATE Customers<br>
+        SET ContactName='Juan';</span><br><br>
+
+        <!-- DELETE specific record -->
+        <span class="C3">DELETE FROM Customers<br>
+        WHERE CustomerName='Alfreds Futterkiste';</span><br><br>
+
+        <!-- DELETE all records -->
+        <span class="C4">DELETE FROM Customers;</span><br><br>
+
+        <!-- DROP table completely -->
+        <span class="C5">DROP TABLE Customers;</span>
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Output:</h3>
+
+    <!-- C1: UPDATE specific -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1">
+        <th>CustomerID</th><th>CustomerName</th><th>ContactName</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Alfreds Futterkiste</td><td>Maria</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>2</td><td>La Maison</td><td>Jean</td><td>France</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Centro Comercial</td><td class="C1">Juan</td><td>Mexico</td>
+      </tr>
+    </table>
+
+    <!-- C2: UPDATE all rows -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C2">
+        <th>CustomerID</th><th>CustomerName</th><th>ContactName</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Alfreds Futterkiste</td><td class="C2">Juan</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>2</td><td>La Maison</td><td>Juan</td><td>France</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Centro Comercial</td><td class="C2">Juan</td><td>Mexico</td>
+      </tr>
+    </table>
+
+    <!-- C3: DELETE specific -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C3">
+        <th>CustomerID</th><th>CustomerName</th><th>ContactName</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>2</td><td>La Maison</td><td>Jean</td><td>France</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Centro Comercial</td><td>Antonio</td><td>Mexico</td>
+      </tr>
+    </table>
+
+    <!-- C4: DELETE all rows -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C4">
+        <th>CustomerID</th><th>CustomerName</th><th>ContactName</th><th>Country</th>
+      </tr>
+      <!-- No rows left after DELETE -->
+    </table>
+
+    <!-- 3.1 EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1"><code>UPDATE</code></span><span> – Modifies existing records. The <code>WHERE</code> clause limits which rows are changed.</span><br>
+      <span class="C2"><code>UPDATE (no WHERE)</code></span><span> – Updates all rows! Use carefully; usually a beginner mistake.</span><br>
+      <span class="C3"><code>DELETE FROM ... WHERE</code></span><span> – Deletes only the records that match the condition.</span><br>
+      <span class="C4"><code>DELETE FROM ...</code></span><span> – Deletes all records but keeps the table structure.</span><br>
+      <span class="C5"><code>DROP TABLE</code></span><span> – Completely removes the table and all its data. Irreversible.</span><br><br>
+
+      <!-- 3.2 NOTES -->
+      <strong>Notes:</strong><br>
+      <span>
+        - Always backup or test on a sample table before using UPDATE/DELETE on production data.<br>
+        - Forgetting WHERE is a common beginner error that can wipe all data.<br>
+        - UPDATE can change multiple columns at once by separating with commas.<br>
+        - DELETE cannot be undone unless inside a transaction that you rollback.
+      </span><br><br>
+
+      <!-- 3.3 CONCEPT & SPIRIT -->
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - Think of UPDATE as “editing” existing rows, and DELETE as “erasing” unwanted rows.<br>
+        - Always be conscious of scope: WHERE defines focus. Without it, actions are global.<br>
+        - These commands teach carefulness and planning before modifying data — a key database habit.<br>
+        - Big-picture: SQL lets you change your data safely when used thoughtfully; mastering these commands prevents costly mistakes.
+      </span>
+    </div>
+
+
+
+
+  </div>
+</template>
+
+
 
 <!-- 7. Database Design, Integrity & Safety -->
