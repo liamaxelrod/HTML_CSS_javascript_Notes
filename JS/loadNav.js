@@ -78,11 +78,3 @@ function attachMobileDropdown(container) {
     });
   });
 }
-
-/* chatGPT Questions by liam Disregard if I forgot to remove it. 
-
-
-
-
-
-*/

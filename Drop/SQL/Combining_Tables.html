@@ -1,0 +1,47 @@
+<!-- File name: Drop/SQL/Combining_Tables.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Basics</title>
+  <link rel="stylesheet" href="/CSS/Global_Styles.css" />
+  <link rel="stylesheet" href="/CSS/template.css" />
+  <link rel="icon" href="/Images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+  <header>
+    <!-- Tell JS which nav to load -->
+    <div class="nav-slot" data-nav-type="SQL"></div>
+  </header>
+
+  <main>
+    <!-- Section Overview -->
+    <div class="section">
+        <h1>SQL: Combining Tables</h1>
+        <p>
+            Relational databases store related information in separate tables. To retrieve meaningful insights, you often need to combine data from multiple tables. SQL provides <strong>JOIN</strong> statements (INNER, LEFT, RIGHT, FULL OUTER, SELF) to merge tables horizontally using related columns, and <strong>UNION</strong> / <strong>UNION ALL</strong> to stack results vertically from multiple queries.
+        </p>
+        <p>
+            Think of JOINs as connecting related rows across tables based on keys, while UNION stacks similar tables on top of each other. Understanding these operations is critical for writing queries that reflect real-world relationships between datasets.
+        </p>
+    </div>
+
+    <!-- Dynamic Notes Loader -->
+    <!-- Each note-slot corresponds to a template inside Notes_Javascript folder -->
+    <div class="note-slot" data-folder="SQL" data-id="Combining_Tables"></div>
+
+  </main>
+
+  <footer>
+    <!-- Optional footer content -->
+  </footer>
+
+  <!-- Load dynamic notes -->
+  <script src="/JS/loadNav.js"></script> 
+  <script src="/JS/loadNotes.js"></script>
+
+</body>
+</html>

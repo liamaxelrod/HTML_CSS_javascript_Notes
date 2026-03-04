@@ -1,0 +1,330 @@
+<!-- 3. Nulls & Conditional Logic -->
+<template> <!-- SQL: Nulls & Conditional Logic -->
+  <div class="bubble">
+
+    <h3>SQL: Nulls & Conditional Logic</h3>
+    
+    <!-- 0. TABLE EXAMPLES -->
+    <h3>Example: Table Preview</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>CustomerName</th><th>ContactName</th><th>Address</th>
+      </tr>
+      <tr>
+        <td>Maria Anders</td><td>Maria A.</td><td>Berlin</td>
+      </tr>
+      <tr>
+        <td>John Doe</td><td>John D.</td><td></td>
+      </tr>
+      <tr>
+        <td>Linda Smith</td><td>Linda S.</td><td>New York</td>
+      </tr>
+    </table>
+
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+        <!-- IS NULL example -->
+        <span class="C1">SELECT CustomerName, ContactName, Address<br>
+        &nbsp;&nbsp;FROM Customers<br>
+        &nbsp;&nbsp;WHERE Address IS NULL;</span><br><br>
+
+        <!-- IS NOT NULL example -->
+        <span class="C2">SELECT CustomerName, ContactName, Address<br>
+        &nbsp;&nbsp;FROM Customers<br>
+        &nbsp;&nbsp;WHERE Address IS NOT NULL;</span><br><br>
+
+        <!-- NULL Function example -->
+        <span class="C3">SELECT CustomerName, ContactName, IFNULL(Address, 'No Address') AS Address<br>
+        &nbsp;&nbsp;FROM Customers;</span><br>
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Outputs:</h3>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1">
+        <th>CustomerName</th><th>ContactName</th><th>Address</th>
+      </tr>
+      <tr>
+        <td>John Doe</td><td>John D.</td><td></td>
+      </tr>
+    </table>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C2">
+        <th>CustomerName</th><th>ContactName</th><th>Address</th>
+      </tr>
+      <tr>
+        <td>Maria Anders</td><td>Maria A.</td><td>Berlin</td>
+      </tr>
+      <tr>
+        <td>Linda Smith</td><td>Linda S.</td><td>New York</td>
+      </tr>
+    </table>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C3">
+        <th>CustomerName</th><th>ContactName</th><th>Address</th>
+      </tr>
+      <tr>
+        <td>Maria Anders</td><td>Maria A.</td><td>Berlin</td>
+      </tr>
+      <tr>
+        <td>John Doe</td><td>John D.</td><td>No Address</td>
+      </tr>
+      <tr>
+        <td>Linda Smith</td><td>Linda S.</td><td>New York</td>
+      </tr>
+    </table>
+
+    <!-- 3. EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1"><code>IS NULL</code></span><span> – Checks for fields that are empty or have a no value. Never use = NULL; always use IS NULL to correctly identify unknown values.</span><br>
+      <span class="C2"><code>IS NOT NULL</code></span><span> – Checks for fields that contain all value (none can be empty). Useful for filtering out incomplete records.</span><br>
+      <span class="C3"><code>IFNULL(Address, 'No Address')</code></span><span> – Replaces NULL values with a default, ensuring calculations or display logic don’t break. For SQL Server, use ISNULL(); for PostgreSQL/standard SQL, use COALESCE().</span><br><br>
+
+      <!-- Notes -->
+      <strong>Notes:</strong><br>
+      <span>
+        - NULL is different from zero or empty string – it represents unknown or missing data.<br>
+        - Always use IS NULL / IS NOT NULL for testing NULLs; = or <> will not work.<br>
+        - Using NULL functions helps avoid errors in aggregates like SUM() or AVG().
+      </span><br><br>
+
+      <!-- Concept & Spirit -->
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - Think of NULL as “unknown” rather than empty – it’s a signal that data is missing.<br>
+        - Using IS NULL / IS NOT NULL teaches careful data validation and safety in queries.<br>
+        - NULL replacement functions encourage defensive coding: you plan for missing data, ensuring reliable results and cleaner outputs.<br>
+        - Big-picture: handling NULLs properly keeps your database queries accurate, predictable, and beginner-friendly.
+      </span>
+    </div>
+
+  </div> 
+</template>
+
+<template> <!-- SQL: CASE -->
+  <div class="bubble">
+
+    <h3>SQL: CASE</h3>
+    
+    <!-- 0. TABLE EXAMPLE -->
+    <h3>Example: Table Preview</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>OrderID</th><th>Quantity</th>
+      </tr>
+      <tr>
+        <td>101</td><td>45</td>
+      </tr>
+      <tr>
+        <td>102</td><td>30</td>
+      </tr>
+      <tr>
+        <td>103</td><td>10</td>
+      </tr>
+      <tr>
+        <td>104</td><td>25</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+        <!-- Example 1: CASE with ELSE -->
+        SELECT OrderID, Quantity,<br>
+        &nbsp;&nbsp;<span class="C1">CASE</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="C2">WHEN Quantity > 30 THEN 'Greater than 30'</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="C2">WHEN Quantity = 30 THEN 'Equals 30'</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="C3">ELSE 'Under 30'</span><br>
+        &nbsp;&nbsp;<span class="C1">END AS OverUnderNull</span><br>
+        FROM OrderDetails;<br><br>
+
+        <!-- Example 2: CASE without ELSE -->
+        SELECT OrderID, Quantity,<br>
+        &nbsp;&nbsp;<span class="C1">CASE</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="C2">WHEN Quantity > 40 THEN 'Over 40'</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="C2">WHEN Quantity = 30 THEN 'Exactly 30'</span><br>
+        &nbsp;&nbsp;<span class="C1">END AS OverUnderNull</span><br>
+        FROM OrderDetails;
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Output:</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>OrderID</th><th>Quantity</th><th>OverUnderNull</th>
+      </tr>
+      <tr>
+        <td>101</td><td>45</td><td>Greater than 30</td>
+      </tr>
+      <tr>
+        <td>102</td><td>30</td><td>Equals 30</td>
+      </tr>
+      <tr>
+        <td>103</td><td>10</td><td>Under 30</td>
+      </tr>
+      <tr>
+        <td>104</td><td>25</td><td>Under 30</td>
+      </tr>
+    </table>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>OrderID</th><th>Quantity</th><th>OverUnderNull</th>
+      </tr>
+      <tr>
+        <td>101</td><td>45</td><td>Over 40</td>
+      </tr>
+      <tr>
+        <td>102</td><td>30</td><td>Exactly 30</td>
+      </tr>
+      <tr>
+        <td>103</td><td>10</td><td>NULL</td>
+      </tr>
+      <tr>
+        <td>104</td><td>25</td><td>NULL</td>
+      </tr>
+    </table>
+
+    <!-- 3.1 EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1"><code>CASE ... END AS #####;</code></span><span> Wraps the entire conditional expression; CASE starts it, END closes it. AS ##### says what that new column's going to be called like OverUnderNull</span><br><br>
+      <span class="C2"><code>WHEN condition THEN result;</code></span><span> Checks a condition; the first true one returns its result and stops further checks. So for instance, if nothing is greater than 30, only then do we go to the next condition state.</span><br><br>
+      <span class="C3"><code>ELSE result;</code></span><span> Optional default value if none of the WHEN conditions match. If omitted, returns NULL for those conditions that were not met in the WHEN cases.</span><br><br>
+
+      <!-- 3.2 NOTES -->
+      <strong>Notes:</strong><br>
+      <span>
+        - CASE can be used in SELECT, WHERE, ORDER BY, and UPDATE statements.<br>
+        - Multiple CASE statements can appear in a single query.<br>
+      </span><br><br>
+
+      <!-- 3.3 CONCEPT & SPIRIT -->
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - Teaches conditional thinking in SQL, similar to if-else in programming.<br>
+        - Embeds logic in queries for readability and maintainability.<br>
+        - Encourages planning the order of conditions carefully and handling defaults explicitly.
+      </span>
+    </div>
+
+
+  </div>
+</template>
+
+<template> <!-- SQL: EXISTS, ANY, ALL -->
+  <div class="bubble">
+
+    <h3>SQL: EXISTS, ANY, ALL</h3>
+
+    <!-- 0. TABLE EXAMPLE (Existing Data) -->
+    <h3>Example: Table Preview</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>SupplierID</th><th>SupplierName</th><th>ProductName</th><th>Price</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Supplier A</td><td>Widget</td><td>15</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Supplier B</td><td>Gadget</td><td>25</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Supplier C</td><td>Doohickey</td><td>10</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+        <!-- EXISTS Example -->
+        SELECT SupplierName FROM Suppliers<br>
+        &nbsp;&nbsp;WHERE <span class="C1">EXISTS (SELECT ProductName FROM Products<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;WHERE Products.SupplierID = Suppliers.SupplierID AND Price &lt; 20);</span><br><br>
+
+        <!-- ANY Example -->
+        SELECT ProductName FROM Products<br>
+        &nbsp;&nbsp;WHERE ProductID <span class="C2">= ANY (SELECT ProductID FROM OrderDetails WHERE Quantity = 10);</span><br><br>
+
+        <!-- ALL Example -->
+        SELECT ProductName FROM Products<br>
+        &nbsp;&nbsp;WHERE ProductID <span class="C3">= ALL (SELECT ProductID FROM OrderDetails WHERE Quantity = 10);</span>
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Output:</h3>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1">
+        <th>SupplierName</th>
+      </tr>
+      <tr>
+        <td>Supplier A</td>
+      </tr>
+      <tr>
+        <td>Supplier C</td>
+      </tr>
+    </table>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C2">
+        <th>ProductName</th>
+      </tr>
+      <tr>
+        <td>Widget</td>
+      </tr>
+      <tr>
+        <td>Doohickey</td>
+      </tr>
+    </table>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C3">
+        <th>ProductName</th>
+      </tr>
+      <tr>
+        <td>(no rows returned)</td>
+      </tr>
+    </table>
+
+    <!-- 3.1 EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1"><code>EXISTS</code></span><span> – Checks if at least one row in the subquery meets the condition. Returns TRUE/FALSE. Useful for yes/no checks without returning data from subquery.</span><br><br>
+      <span class="C2"><code>ANY</code></span><span> – Compares a value to any value returned by a subquery. Returns TRUE if the comparison is true for at least one value. Works with standard comparison operators (=, &lt;&gt;, !=, &gt;, &gt;=, &lt;, &lt;=).</span><br><br>
+      <span class="C3"><code>ALL</code></span><span> – Compares a value to all values returned by a subquery. Returns TRUE only if the comparison is true for every value. Also uses standard comparison operators.</span><br><br>
+
+      <!-- 3.2 NOTES -->
+      <strong>Notes:</strong><br>
+      <span>
+        - EXISTS is more efficient for large datasets when you only care about presence, not data.<br>
+        - ANY is like an OR across the subquery results; ALL is like an AND.<br>
+        - Use ALL carefully; if even one row doesn’t match, the condition is FALSE.<br>
+        - EXISTS often replaces IN for performance in some SQL engines.
+      </span><br><br>
+
+      <!-- 3.3 CONCEPT & SPIRIT -->
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - Think of EXISTS as asking a yes/no question: "Does at least one row meet this criteria?"<br>
+        - ANY and ALL teach how to reason about comparisons over ranges of values rather than single values.<br>
+        - These operators help write expressive, declarative queries without looping manually over rows.<br>
+        - Mastering them builds skill in thinking in set-based logic, a core SQL mindset.
+      </span>
+    </div>
+
+  </div>
+
+</template>

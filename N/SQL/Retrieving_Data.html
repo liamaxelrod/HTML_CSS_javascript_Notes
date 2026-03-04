@@ -1,0 +1,917 @@
+<!-- 2. Retrieving Data -->
+<!-- Mental focus: What does my result look like? -->
+<template> <!-- SQL: SELECT, SELECT DISTINCT, SELECT LIMIT, ALIASES -->
+
+  <div class="bubble">
+
+    <h3>SQL: SELECT, SELECT DISTINCT, SELECT LIMIT, ALIASES</h3>
+
+    <!-- 0. TABLE EXAMPLE (Existing Data + Duplicate Row for DISTINCT) -->
+    <h3>Original: Table</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>ID</th>
+        <th>CustomerName</th>
+        <th>ContactName</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>PostalCode</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+        <td>Obere Str. 57</td>
+        <td>Berlin</td>
+        <td>12209</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Ana Trujillo Emparedados</td>
+        <td>Ana Trujillo</td>
+        <td>Avda. de la Constitución 2222</td>
+        <td>México D.F.</td>
+        <td>05021</td>
+        <td>Mexico</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Around the Horn</td>
+        <td>Thomas Hardy</td>
+        <td>120 Hanover Sq.</td>
+        <td>London</td>
+        <td>WA1 1DP</td>
+        <td>UK</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Around the Horn</td>
+        <td>Sarah Smith</td>
+        <td>88 Fleet Street</td>
+        <td>London</td>
+        <td>EC4Y 1DH</td>
+        <td>UK</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+        <span class="C1">SELECT * FROM Customers;</span><br><br>
+
+        <span class="C2">SELECT CustomerName, Country FROM Customers;</span><br><br>
+
+        <!-- New C3: DISTINCT -->
+        <span class="C3">SELECT DISTINCT CustomerName, Country FROM Customers;</span><br><br>
+
+        <!-- Pushed down -->
+        <span class="C4">SELECT LIMIT 2 CustomerName, Country FROM Customers;</span><br><br>
+
+        <span class="C5">SELECT CustomerName AS Name, Country AS Location FROM Customers;</span>
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Output:</h3>
+
+    <!-- Output for C1 -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1">
+        <th>ID</th>
+        <th>CustomerName</th>
+        <th>ContactName</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>PostalCode</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+        <td>Obere Str. 57</td>
+        <td>Berlin</td>
+        <td>12209</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Ana Trujillo Emparedados</td>
+        <td>Ana Trujillo</td>
+        <td>Avda. de la Constitución 2222</td>
+        <td>México D.F.</td>
+        <td>05021</td>
+        <td>Mexico</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Around the Horn</td>
+        <td>Thomas Hardy</td>
+        <td>120 Hanover Sq.</td>
+        <td>London</td>
+        <td>WA1 1DP</td>
+        <td>UK</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Around the Horn</td>
+        <td>Sarah Smith</td>
+        <td>88 Fleet Street</td>
+        <td>London</td>
+        <td>EC4Y 1DH</td>
+        <td>UK</td>
+      </tr>
+    </table>
+
+    <!-- Output for C2 -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C2">
+        <th>CustomerName</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>Ana Trujillo Emparedados</td>
+        <td>Mexico</td>
+      </tr>
+      <tr>
+        <td>Around the Horn</td>
+        <td>UK</td>
+      </tr>
+      <tr>
+        <td>Around the Horn</td>
+        <td>UK</td>
+      </tr>
+    </table>
+
+    <!-- Output for C3: DISTINCT removes duplicates -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C3">
+        <th>CustomerName</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>Ana Trujillo Emparedados</td>
+        <td>Mexico</td>
+      </tr>
+      <tr>
+        <td>Around the Horn</td>
+        <td>UK</td>
+      </tr>
+    </table>
+
+    <!-- Output for C4: LIMIT -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C4">
+        <th>CustomerName</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>Ana Trujillo Emparedados</td>
+        <td>Mexico</td>
+      </tr>
+    </table>
+
+    <!-- Output for C5: ALIASES -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C5">
+        <th>Name</th>
+        <th>Location</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>Ana Trujillo Emparedados</td>
+        <td>Mexico</td>
+      </tr>
+      <tr>
+        <td>Around the Horn</td>
+        <td>UK</td>
+      </tr>
+      <tr>
+        <td>Around the Horn</td>
+        <td>UK</td>
+      </tr>
+    </table>
+
+    <!-- 3. EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+
+      <span class="C1"><code>SELECT * FROM Customers</code></span>
+      <span> – Retrieves all columns from the <code>Customers</code> table.<br>
+      The <code>SELECT</code> tells SQL that we want to read data.<br>
+      The <code>*</code>symbol means “everything.” This is useful for exploring a table, but not ideal for production code.<br>
+      The <code>FROM</code>tells SQL which table to read from.<br>
+      The <code>Customers</code>is the table name.<br>
+      </span><br>
+
+      <span class="C2"><code>SELECT CustomerName, Country FROM Customers</code></span>
+      <span>– This query asks the database to return two specific columns from the <code>Customers</code> table.<br>
+      The structure might be different, but the commands are still coherent.<br>
+      The <code>SELECT</code> tells SQL that we want to read data.<br>
+      The <code>CustomerName</code> Specifies the first column to include in the result. (We still don't know the table)<br>
+      The <code>,</code> It tells SQL that more than one column should be returned.<br>
+      The <code>Country</code> Specifies the second column to include in the result.<br>
+      The <code>FROM</code> tells SQL which table to read from.<br>
+      The <code>Customers</code> is the table name.<br>
+      </span><br>
+
+      <!-- New C3: DISTINCT -->
+      <span class="C3"><code>SELECT DISTINCT CustomerName, Country FROM Customers</code></span>
+      <span> – The <code>DISTINCT</code> keyword tells SQL to return only unique rows.<br>
+      In our example, there are two rows for "Around the Horn", but <code>DISTINCT</code> removes the duplicate.<br>
+      It only focuses on the dulicates on that column, not for the other columns that may have differences.</span><br><br>
+
+      <!-- C3: SELECT LIMIT -->
+      <span class="C4"><code>SELECT LIMIT</code></span>
+      <span>
+      – The <code>SELECT LIMIT</code> clause is used to limit how many rows are returned by a query.<br>
+      If not specified, it will just get the first data it reads from the table.<br>
+
+      This makes <code>LIMIT</code> a performance-focused tool, not just a convenience feature.
+      </span><br><br>
+
+      <!-- C4: SQL ALIASES -->
+      <span class="C5"><code>AS (Aliases)</code></span>
+      <span>
+      – SQL aliases allow you to temporarily rename a column or table for the duration of a query.<br>
+      They do not change the database itself — only how the result is displayed.<br><br>
+
+      Aliases are commonly used to:<br>
+      - Make column names easier to read<br>
+      - Shorten long table names<br>
+      - Improve clarity when combining or transforming data<br><br>
+      </span>
+
+      <!-- NOTES -->
+      <strong>Notes:</strong><br>
+      <span>
+      - <code>SELECT</code> only reads data; it never modifies the table.<br>
+      - Query results behave like a temporary table that exists only for that query.<br>
+      - Avoid <code>SELECT *</code> in real applications to reduce unnecessary data transfer.<br><br>
+
+      - <code>SELECT LIMIT</code> is not supported by all database systems.<br>
+      &nbsp;&nbsp;• SQL Server / MS Access → <code>LIMIT</code><br>
+      &nbsp;&nbsp;• MySQL → <code>LIMIT</code><br>
+      &nbsp;&nbsp;• Oracle → <code>FETCH FIRST n ROWS ONLY</code> or <code>ROWNUM</code><br><br>
+
+      - Aliases do not change the database; they only affect the query result.<br>
+      - When using spaces in aliases, wrap them in brackets or quotes.<br>
+      - Aliases are useful for formatting, combining columns, and improving readability.<br>
+      - Table aliases are especially important when working with multiple tables.<br>
+      </span><br>
+
+      <!-- CONCEPT & SPIRIT -->
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+      - SQL is designed around asking clear questions about data, not writing step-by-step instructions.<br>
+      - The <code>SELECT</code> statement reinforces precision: you explicitly state what data you want and nothing more.<br>
+      - This approach naturally improves performance, readability, and safety by discouraging unnecessary data access.<br><br>
+
+      - Features like <code>LIMIT</code> encourage intentional data limits, reinforcing the idea that queries should return only what is actually needed.<br>
+      - SQL rewards thoughtful, well-scoped questions instead of retrieving full tables by default.<br><br>
+
+      - Aliases emphasize that clarity matters just as much as correctness.<br>
+      - Readable, well-labeled result sets are easier to understand, debug, share, and reason about.<br><br>
+
+      - Taken together, these features shape a mindset where SQL is treated as a structured data conversation rather than a low-level command language.
+      </span>
+
+    </div>
+
+  </div>
+
+</template>
+
+<!-- Mental focus: Which rows are allowed to exist? -->
+<template> <!-- SQL: Filtering 1 -->
+  <div class="bubble">
+
+    <h3>SQL: Filtering 1</h3>
+
+    <!-- 0. TABLE EXAMPLE (Existing Data) -->
+    <h3>Example: Table Preview</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th><th>City</th><th>JoinDate</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Alberto</td><td>Mexico</td><td>La Paz</td><td>2024-01-05</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Lars</td><td>Sweden</td><td>Stockholm</td><td>2024-02-10</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Maria</td><td>Germany</td><td>Berlin</td><td>2024-03-15</td>
+      </tr>
+      <tr>
+        <td>4</td><td>Laura</td><td>Mexico</td><td>Leon</td><td>2024-04-01</td>
+      </tr>
+      <tr>
+        <td>5</td><td>Paul</td><td>UK</td><td>London</td><td>2024-05-20</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+        <span class="C1">SELECT * FROM Customers WHERE Country = 'Mexico';</span><br>
+        <span class="C2">SELECT * FROM Customers WHERE CustomerName LIKE 'L%';</span><br>
+        <span class="C3">SELECT * FROM Customers WHERE City LIKE '_e%';</span><br>
+        <span class="C4">SELECT * FROM Customers WHERE Country IN ('Germany', 'UK');</span><br>
+        <span class="C5">SELECT * FROM Customers WHERE JoinDate BETWEEN '2024-01-01' AND '2024-03-31';</span><br>
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Output:</h3>
+
+    <!-- C1 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1">
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th><th>City</th><th>JoinDate</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Alberto</td><td>Mexico</td><td>La Paz</td><td>2024-01-05</td>
+      </tr>
+      <tr>
+        <td>4</td><td>Laura</td><td>Mexico</td><td>Leon</td><td>2024-04-01</td>
+      </tr>
+    </table>
+
+    <!-- C2 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C2">
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th><th>City</th><th>JoinDate</th>
+      </tr>
+      <tr>
+        <td>2</td><td>Lars</td><td>Sweden</td><td>Stockholm</td><td>2024-02-10</td>
+      </tr>
+      <tr>
+        <td>4</td><td>Laura</td><td>Mexico</td><td>Leon</td><td>2024-04-01</td>
+      </tr>
+    </table>
+
+    <!-- C3 Output (Corrected) -->
+<table class="example" border="1" cellspacing="0" cellpadding="5">
+  <tr class="C3">
+    <th>CustomerID</th><th>CustomerName</th><th>Country</th><th>City</th><th>JoinDate</th>
+  </tr>
+  <tr>
+    <td>3</td><td>Maria</td><td>Germany</td><td>Berlin</td><td>2024-03-15</td>
+  </tr>
+  <tr>
+    <td>4</td><td>Laura</td><td>Mexico</td><td>Leon</td><td>2024-04-01</td>
+  </tr>
+</table>
+
+    <!-- C4 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C4">
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th><th>City</th><th>JoinDate</th>
+      </tr>
+      <tr>
+        <td>3</td><td>Maria</td><td>Germany</td><td>Berlin</td><td>2024-03-15</td>
+      </tr>
+      <tr>
+        <td>5</td><td>Paul</td><td>UK</td><td>London</td><td>2024-05-20</td>
+      </tr>
+    </table>
+
+    <!-- C5 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C5">
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th><th>City</th><th>JoinDate</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Alberto</td><td>Mexico</td><td>La Paz</td><td>2024-01-05</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Lars</td><td>Sweden</td><td>Stockholm</td><td>2024-02-10</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Maria</td><td>Germany</td><td>Berlin</td><td>2024-03-15</td>
+      </tr>
+    </table>
+
+    <!-- 3.1 EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1"><code>WHERE Country = 'Mexico'</code></span> – Filters records <code>where</code> the Country column exactly matches 'Mexico'. <code>where</code> Select different regions of information to collect, like the column Country. <br>
+      <span class="C2"><code>CustomerName LIKE 'L%'</code></span> – Filters names starting with 'L'. The % wildcard represents zero or more characters. so example %a% - ###a###, ##a##a## or #a#####, and %a - ###a <br>
+      <span class="C3"><code>City LIKE '_e%'</code></span> – Filters cities where the second letter is 'e' and any number of characters follow. Combines _ (single character) and % (multiple characters).<br>
+      <span class="C4"><code>Country IN ('Germany','UK')</code></span> – Filters rows where Country is any of the listed values. Equivalent to multiple OR conditions. So you can use identifiers like country or <code>-,+,/,*,</code>  <br>
+      <span class="C5"><code>JoinDate BETWEEN '2024-01-01' AND '2024-03-31'</code></span> – Filters rows where JoinDate falls inclusively within the range. BETWEEN works with numbers, text (alphabetical range), and dates.<br><br>
+
+      <strong>Notes:</strong><br>
+      <span>
+        - LIKE without wildcards behaves like exact match.<br>
+        - MySQL supports % (any characters) and _ (single character) wildcards.<br>
+        - Extended wildcards like [], ^, -, {} are NOT supported in MySQL LIKE.<br>
+          - Use REGEXP in MySQL for more complex patterns.<br>
+        - Escape % or _ in MySQL with backslash (\) if needed.<br><br>
+
+        - [] lets you match one single character from a specific list (e.g., [LM]% means the name must start with either L or M)<br>
+        - ^ inside [] means any one character except those listed ([^L]% means the name cannot start with L)<br>
+        - inside [] creates an alphabetical range ([A-C]% means the name starts with A, B, or C)<br>
+        - {} (in some dialects) is used to escape special characters so symbols like % or _ are treated as normal text instead of wildcards;
+      </span><br><br>
+
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - Learn to think in terms of **filters** and **patterns**.<br>
+        - Break down conditions: exact match → pattern match → set inclusion → ranges.<br>
+        - Use the right operator for the mental model: LIKE for flexible patterns, IN for discrete sets, BETWEEN for ranges.<br>
+        - Layer your WHERE clauses incrementally to avoid mistakes.<br>
+        - Beginner habit: always visualize the table when writing conditions.
+      </span>
+    </div>
+
+  </div>
+
+</template>
+
+<!-- Mental focus: Which rows are allowed to exist? -->
+<template> <!-- SQL: Filtering 2 -->
+  <div class="bubble">
+
+    <h3>SQL: Filtering 2</h3>
+
+    <!-- 0. TABLE EXAMPLE (Existing Data) -->
+    <h3>Example: Table Preview</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th><th>City</th><th>JoinDate</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Alberto</td><td>Mexico</td><td>La Paz</td><td>2024-01-05</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Lars</td><td>Sweden</td><td>Stockholm</td><td>2024-02-10</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Maria</td><td>Germany</td><td>Berlin</td><td>2024-03-15</td>
+      </tr>
+      <tr>
+        <td>4</td><td>Laura</td><td>Mexico</td><td>Leon</td><td>2024-04-01</td>
+      </tr>
+      <tr>
+        <td>5</td><td>Paul</td><td>UK</td><td>London</td><td>2024-05-20</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+        <span class="C1">SELECT * FROM Customers WHERE Country = 'Mexico';</span><br>
+        <span class="C2">SELECT * FROM Customers WHERE CustomerName LIKE 'L%';</span><br>
+        <span class="C3">SELECT * FROM Customers WHERE City LIKE '_e%';</span><br>
+        <span class="C4">SELECT * FROM Customers WHERE Country IN ('Germany', 'UK');</span><br>
+        <span class="C5">SELECT * FROM Customers WHERE JoinDate BETWEEN '2024-01-01' AND '2024-03-31';</span><br>
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Output:</h3>
+
+    <!-- C1 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1">
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th><th>City</th><th>JoinDate</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Alberto</td><td>Mexico</td><td>La Paz</td><td>2024-01-05</td>
+      </tr>
+      <tr>
+        <td>4</td><td>Laura</td><td>Mexico</td><td>Leon</td><td>2024-04-01</td>
+      </tr>
+    </table>
+
+    <!-- C2 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C2">
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th><th>City</th><th>JoinDate</th>
+      </tr>
+      <tr>
+        <td>2</td><td>Lars</td><td>Sweden</td><td>Stockholm</td><td>2024-02-10</td>
+      </tr>
+      <tr>
+        <td>4</td><td>Laura</td><td>Mexico</td><td>Leon</td><td>2024-04-01</td>
+      </tr>
+    </table>
+
+    <!-- C3 Output (Corrected) -->
+<table class="example" border="1" cellspacing="0" cellpadding="5">
+  <tr class="C3">
+    <th>CustomerID</th><th>CustomerName</th><th>Country</th><th>City</th><th>JoinDate</th>
+  </tr>
+  <tr>
+    <td>3</td><td>Maria</td><td>Germany</td><td>Berlin</td><td>2024-03-15</td>
+  </tr>
+  <tr>
+    <td>4</td><td>Laura</td><td>Mexico</td><td>Leon</td><td>2024-04-01</td>
+  </tr>
+</table>
+
+    <!-- C4 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C4">
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th><th>City</th><th>JoinDate</th>
+      </tr>
+      <tr>
+        <td>3</td><td>Maria</td><td>Germany</td><td>Berlin</td><td>2024-03-15</td>
+      </tr>
+      <tr>
+        <td>5</td><td>Paul</td><td>UK</td><td>London</td><td>2024-05-20</td>
+      </tr>
+    </table>
+
+    <!-- C5 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C5">
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th><th>City</th><th>JoinDate</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Alberto</td><td>Mexico</td><td>La Paz</td><td>2024-01-05</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Lars</td><td>Sweden</td><td>Stockholm</td><td>2024-02-10</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Maria</td><td>Germany</td><td>Berlin</td><td>2024-03-15</td>
+      </tr>
+    </table>
+
+    <!-- 3.1 EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span class="C1"><code>WHERE Country = 'Mexico'</code></span> – Filters records <code>where</code> the Country column exactly matches 'Mexico'. <code>where</code> Select different regions of information to collect, like the column Country. <br>
+      <span class="C2"><code>CustomerName LIKE 'L%'</code></span> – Filters names starting with 'L'. The % wildcard represents zero or more characters. so example %a% - ###a###, ##a##a## or #a#####, and %a - ###a <br>
+      <span class="C3"><code>City LIKE '_e%'</code></span> – Filters cities where the second letter is 'e' and any number of characters follow. Combines _ (single character) and % (multiple characters).<br>
+      <span class="C4"><code>Country IN ('Germany','UK')</code></span> – Filters rows where Country is any of the listed values. Equivalent to multiple OR conditions. So you can use identifiers like country or <code>-,+,/,*,</code>  <br>
+      <span class="C5"><code>JoinDate BETWEEN '2024-01-01' AND '2024-03-31'</code></span> – Filters rows where JoinDate falls inclusively within the range. BETWEEN works with numbers, text (alphabetical range), and dates.<br><br>
+
+      <strong>Notes:</strong><br>
+      <span>
+        - LIKE without wildcards behaves like exact match.<br>
+        - MySQL supports only % (any characters) and _ (single character) in LIKE patterns.<br>
+        - Extended wildcards like [], ^, -, {} are **not supported in MySQL LIKE**. Use REGEXP for more complex patterns.<br>
+        - Escape % or _ in MySQL with backslash (\) if you want to treat them as literal characters.<br>
+        - BETWEEN works with numbers, dates, and text ranges, and is inclusive.<br>
+        - IN is equivalent to multiple OR conditions and works across all major SQL dialects.<br>
+        - [] lets you match one single character from a specific list (e.g., [LM]% means the name must start with either L or M)<br>
+        - ^ inside [] means any one character except those listed ([^L]% means the name cannot start with L)<br>
+        - inside [] creates an alphabetical range ([A-C]% means the name starts with A, B, or C)<br>
+        - {} (in some dialects) is used to escape special characters so symbols like % or _ are treated as normal text instead of wildcards;
+      </span><br><br>
+
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - Learn to think in terms of **filters** and **patterns**.<br>
+        - Break down conditions: exact match → pattern match → set inclusion → ranges.<br>
+        - Use the right operator for the mental model: LIKE for flexible patterns, IN for discrete sets, BETWEEN for ranges.<br>
+        - Layer your WHERE clauses incrementally to avoid mistakes.<br>
+        - Beginner habit: always visualize the table when writing conditions.
+      </span>
+    </div>
+
+  </div>
+
+</template>
+
+<!-- Mental focus: How conditions interact with each other -->
+<template> <!-- SQL: AND, OR, NOT -->
+  <div class="bubble">
+
+    <h3>SQL: AND, OR, NOT</h3>
+
+    <!-- 0. TABLE EXAMPLE (Existing Data) -->
+    <h3>Example: Customers Table Preview</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Gabriel Garcia</td><td>Spain</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Robert King</td><td>Spain</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Maria Schmidt</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>4</td><td>Giovanni Rossi</td><td>Italy</td>
+      </tr>
+      <tr>
+        <td>5</td><td>Greta Müller</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>6</td><td>Rafael Torres</td><td>Spain</td>
+      </tr>
+      <tr>
+        <td>7</td><td>Anna Lopez</td><td>Spain</td>
+      </tr>
+      <tr>
+        <td>8</td><td>George Brown</td><td>USA</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+        <!-- AND Example -->
+        <span class="C1">SELECT * FROM Customers<br>
+        WHERE Country = 'Spain' AND CustomerName LIKE 'G%';</span><br><br>
+
+        <!-- OR Example -->
+        <span class="C2">SELECT * FROM Customers<br>
+        WHERE Country = 'Germany' OR Country = 'Spain';</span><br><br>
+
+        <!-- AND + OR with Parentheses -->
+        <span class="C3">SELECT * FROM Customers<br>
+        WHERE Country = 'Spain' AND (CustomerName LIKE 'G%' OR CustomerName LIKE 'R%');</span><br><br>
+
+        <!-- NOT Example -->
+        <span class="C4">SELECT * FROM Customers<br>
+        WHERE NOT Country = 'Spain';</span>
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Output:</h3>
+
+    <!-- C1 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1">
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Gabriel Garcia</td><td>Spain</td>
+      </tr>
+    </table>
+    <br>
+
+    <!-- C2 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C2">
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Gabriel Garcia</td><td>Spain</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Robert King</td><td>Spain</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Maria Schmidt</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>5</td><td>Greta Müller</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>6</td><td>Rafael Torres</td><td>Spain</td>
+      </tr>
+      <tr>
+        <td>7</td><td>Anna Lopez</td><td>Spain</td>
+      </tr>
+    </table>
+    <br>
+
+    <!-- C3 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C3">
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Gabriel Garcia</td><td>Spain</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Robert King</td><td>Spain</td>
+      </tr>
+      <tr>
+        <td>6</td><td>Rafael Torres</td><td>Spain</td>
+      </tr>
+    </table>
+    <br>
+
+    <!-- C4 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C4">
+        <th>CustomerID</th><th>CustomerName</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>3</td><td>Maria Schmidt</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>4</td><td>Giovanni Rossi</td><td>Italy</td>
+      </tr>
+      <tr>
+        <td>5</td><td>Greta Müller</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>8</td><td>George Brown</td><td>USA</td>
+      </tr>
+    </table>
+
+    <!-- 3.1 EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+
+      <span class="C1"><code>AND</code></span>
+      <span>
+        – Think of <b>AND</b> like saying: “This AND that must both be true.”  
+        The row is returned only if <b>every condition</b> is TRUE.  
+        In our example, the customer must be from Spain <i>and</i> their name must start with “G”.  
+        If one part fails, the entire condition fails.
+      </span><br><br>
+
+      <span class="C2"><code>OR</code></span>
+      <span>
+        – Think of <b>OR</b> like saying: “Either this OR that is fine.”  
+        Only <b>one condition</b> needs to be TRUE for the row to appear.  
+        If the customer is from Germany OR Spain, they will be included.
+      </span><br><br>
+
+      <span class="C3"><code>( ) Parentheses</code></span>
+      <span>
+        – Parentheses control logic order, just like in math.  
+        SQL evaluates <b>AND before OR</b> by default.  
+        So we use parentheses to make sure the database checks the grouped conditions first.  
+        Without parentheses, SQL might return unintended results.
+      </span><br><br>
+
+      <span class="C4"><code>NOT</code></span>
+      <span>
+        – <b>NOT</b> reverses a condition.  
+        It gives the opposite result.  
+        If a condition says “Country = Spain”, adding NOT means  
+        “Country is NOT Spain.”
+      </span><br><br>
+
+      <!-- NOTES -->
+      <strong>Notes:</strong><br>
+      <span>
+        - Logical operators are heavily used in real applications when filtering search results or user data.
+      </span><br><br>
+
+      <!-- CONCEPT & SPIRIT -->
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - These operators teach logical thinking in databases.<br>
+        - Writing SQL is like asking very precise questions to your data.<br>
+        - The goal is clarity: always write conditions in a way that another developer immediately understands your intent.<br>
+        - Parentheses are not just syntax — they protect your logic from mistakes.<br>
+        - Think in terms of truth values: each condition is either TRUE or FALSE.
+      </span>
+
+    </div>
+
+  </div>
+
+</template>
+
+<!-- Mental focus: In what order do I want to see the data? -->
+<template> <!-- SQL: ORDER BY, ASC, and DESC -->
+  <div class="bubble">
+
+    <h3>SQL: ORDER BY, ASC, and DESC</h3>
+
+    <!-- 0. TABLE EXAMPLE (Existing Data) -->
+    <h3>Example: Products Table Preview</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>ProductID</th><th>ProductName</th><th>Price</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Apple Juice</td><td>3.50</td><td>USA</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Banana Milk</td><td>2.00</td><td>Sweden</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Carrot Cake</td><td>5.00</td><td>USA</td>
+      </tr>
+      <tr>
+        <td>4</td><td>Avocado Oil</td><td>8.00</td><td>Mexico</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+
+        <!-- C1: Basic ORDER BY -->
+        <span class="C1">SELECT * FROM Products<br>
+        ORDER BY Price;</span><br><br>
+
+        <!-- C2: DESC -->
+        <span class="C2">SELECT * FROM Products<br>
+        ORDER BY Price DESC;</span><br><br>
+
+        <!-- C3: Alphabetical -->
+        <span class="C3">SELECT * FROM Products<br>
+        ORDER BY ProductName;</span><br><br>
+
+        <!-- C4: Alphabetical DESC -->
+        <span class="C4">SELECT * FROM Products<br>
+        ORDER BY ProductName DESC;</span><br><br>
+
+        <!-- C5: Multiple Columns -->
+        <span class="C5">SELECT * FROM Products<br>
+        ORDER BY Country, ProductName;</span><br><br>
+
+        <!-- C6: Mixed ASC / DESC -->
+        <span class="C6">SELECT * FROM Products<br>
+        ORDER BY Country ASC, ProductName DESC;</span>
+
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Output (C1 – ORDER BY Price ASC):</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1">
+        <th>ProductID</th><th>ProductName</th><th>Price</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>2</td><td>Banana Milk</td><td>2.00</td><td>Sweden</td>
+      </tr>
+      <tr>
+        <td>1</td><td>Apple Juice</td><td>3.50</td><td>USA</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Carrot Cake</td><td>5.00</td><td>USA</td>
+      </tr>
+      <tr>
+        <td>4</td><td>Avocado Oil</td><td>8.00</td><td>Mexico</td>
+      </tr>
+    </table>
+
+    <!-- 3.1 EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+
+      <span class="C1"><code>ORDER BY Price</code></span>
+      <span> – Sorts the results by Price in ascending order by default (smallest → largest). Think of it like sorting numbers from lowest to highest.</span><br>
+
+      <span class="C2"><code>DESC</code></span>
+      <span> – Reverses the order (largest → smallest). If you don’t write ASC or DESC, SQL assumes ASC automatically.</span><br>
+
+      <span class="C3"><code>ORDER BY ProductName</code></span>
+      <span> – When sorting text (strings), SQL sorts alphabetically (A → Z). Just like a dictionary.</span><br>
+
+      <span class="C4"><code>ProductName DESC</code></span>
+      <span> – Reverse alphabetical order (Z → A).</span><br>
+
+      <span class="C5"><code>ORDER BY Country, ProductName</code></span>
+      <span> – First sorts by Country. If multiple rows have the same Country, then it sorts those rows by ProductName. Think of it as: primary sort → secondary sort.</span><br>
+
+      <span class="C6"><code>Country ASC, ProductName DESC</code></span>
+      <span> – You can mix directions. Here: Countries A → Z, but inside each country, names are Z → A.</span><br><br>
+
+      <!-- NOTES -->
+      <strong>Notes:</strong><br>
+      <span>
+        - ASC is optional because it is the default.<br>
+        - ORDER BY always comes after FROM (and after WHERE if used).<br>
+        - Sorting can affect performance on very large tables.<br>
+        - You can sort by columns not shown in SELECT (depending on SQL dialect).<br>
+        - Alphabetical sorting depends on database collation (case sensitivity rules).
+      </span><br><br>
+
+      <!-- CONCEPT & SPIRIT -->
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - ORDER BY teaches structured thinking about how data should be presented.<br>
+        - Databases store data efficiently, but presentation order is your responsibility.<br>
+        - Sorting is about clarity: making results meaningful for humans.<br>
+        - Multiple column sorting teaches priority logic (primary key vs secondary key thinking).
+      </span>
+
+    </div>
+
+  </div>
+
+</template>

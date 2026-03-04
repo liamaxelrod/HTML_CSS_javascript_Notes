@@ -38,7 +38,13 @@ const allowedNotes = {
     'Flow_Logic'
   ],
   'SQL': [
-    'Basics'
+    'Basics',
+    'Retrieving_Data',
+    'Conditional_Logic',
+    'Aggregation_Grouping',
+    'Combining_Tables',
+    'Modifying_Data',
+    'Design_Integrity_Safety',
   ]
 };
 
@@ -93,11 +99,3 @@ async function loadNeededNotes() {
 
 // Start loading all needed notes
 loadNeededNotes();
-
-/* chatGPT Questions by liam Disregard if I forgot to remove it. 
-
-
-
-
-
-*/

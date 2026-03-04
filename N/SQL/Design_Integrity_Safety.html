@@ -1,0 +1,949 @@
+<!-- 7. Database Design, Integrity & Safety -->
+<template> <!-- SQL: CREATE DATABASE, SHOW DATABASES, DROP DATABASE, and BACKUP DATABASE -->
+  <div class="bubble">
+
+    <h3>SQL: CREATE DATABASE, SHOW DATABASES, DROP DATABASE, and BACKUP DATABASE</h3>
+
+    <!-- 0. TABLE EXAMPLE (Database List Preview) -->
+    <h3>Example: Preview Database</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>Database</th>
+      </tr>
+      <tr>
+        <td>master</td>
+      </tr>
+      <tr>
+        <td>model</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+
+        <!-- C1 CREATE DATABASE -->
+        <span class="C1">CREATE DATABASE testDB;</span><br><br>
+
+        <!-- C2 SHOW DATABASES -->
+        <span class="C2">SHOW DATABASES;</span><br><br>
+
+        <!-- C3 DROP DATABASE -->
+        <span class="C3">DROP DATABASE model;</span><br><br>
+
+        <!-- C4 BACKUP DATABASE (Full) -->
+        <span class="C4">BACKUP DATABASE testDB</span><br>
+        <span class="C4">&nbsp;&nbsp;TO DISK = 'D:\backups\testDB.bak';</span><br><br>
+
+        <!-- C5 BACKUP DATABASE (Differential) -->
+        <span class="C5">BACKUP DATABASE testDB</span><br>
+        <span class="C5">&nbsp;&nbsp;TO DISK = 'D:\backups\testDB.bak'</span><br>
+        <span class="C5">&nbsp;&nbsp;WITH DIFFERENTIAL;</span>
+
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+
+    <!-- C1 + C2 OUTPUT -->
+    <h3>Example Output:</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1">
+        <th>Database</th>
+      </tr>
+      <tr>
+        <td>master</td>
+      </tr>
+      <tr>
+        <td>model</td>
+      </tr>
+      <tr class="C1">
+        <td>testDB</td>
+      </tr>
+    </table>
+
+    <!-- C3 OUTPUT -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C2">
+        <th>Database</th>
+      </tr>
+      <tr>
+        <td>master</td>
+      </tr>
+      <tr>
+        <td>model</td>
+      </tr>
+      <!-- testDB no longer appears -->
+    </table>
+
+    <!-- C3 OUTPUT -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C3">
+        <th>Database</th>
+      </tr>
+      <tr>
+        <td>master</td>
+      </tr>
+    </table>
+
+    <!-- 3.1 EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+
+      <span class="C1"><code>CREATE DATABASE testDB;</code></span><br>
+      <span> – Creates a brand new database container named <code>testDB</code>. Think of a database like a large empty warehouse. At this stage, it has no tables inside — it is just the structure that will hold tables later.</span><br><br>
+
+      <span class="C2"><code>SHOW DATABASES;</code></span><br>
+      <span> – Displays all databases on the server. This is like asking, “What warehouses currently exist?” It helps you confirm that your new database was successfully created.</span><br><br>
+
+      <span class="C3"><code>DROP DATABASE testDB;</code></span><br>
+      <span> – Permanently deletes the entire database and everything inside it. This is equivalent to demolishing the entire warehouse. All tables and data inside are completely removed.</span><br><br>
+
+      <span class="C4"><code>BACKUP DATABASE testDB TO DISK</code></span><br>
+      <span> – Creates a full backup of the database (SQL Server). This copies everything — tables, data, structure — into a backup file. Think of it as creating a full duplicate safety copy.</span><br><br>
+
+      <span class="C5"><code>WITH DIFFERENTIAL</code></span><br>
+      <span> – Creates a differential backup. Instead of copying everything again, it only copies changes made since the last full backup. This saves time and storage.</span><br><br>
+
+      <!-- NOTES -->
+      <strong>Notes:</strong><br>
+      <span>
+        - You must have admin privileges to create or drop databases.<br>
+        - Dropping a database cannot be undone unless you have a backup.<br>
+        - Backups should always be stored on a different disk than the database.<br>
+        - BACKUP DATABASE is specific to SQL Server; other systems (like MySQL) use different tools.<br>
+        - Differential backups reduce backup time because only changes are saved.
+      </span><br><br>
+
+      <!-- CONCEPT & SPIRIT -->
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - Databases are containers. Before tables and data, you must create the container.<br>
+        - Power commands like DROP DATABASE teach responsibility — SQL gives you strong control, but you must use it carefully.<br>
+        - Backups reflect a core engineering principle: Always plan for failure. Systems crash. Disks fail. Good developers design with recovery in mind.<br>
+        - The mindset here is infrastructure thinking: not just writing queries, but managing systems safely.
+      </span>
+
+    </div>
+
+  </div>
+
+</template>
+
+<template> <!-- SQL: CREATE TABLE, CREATE TABLE name AS SELECT, DROP TABLE, TRUNCATE TABLE, ALTER TABLE name ADD, ALTER TABLE name DROP COLUMN name, and ALTER TABLE name MODIFY COLUMN name -->
+  <div class="bubble">
+
+    <h3>SQL: CREATE TABLE, CREATE TABLE name AS SELECT, DROP TABLE, TRUNCATE TABLE, ALTER TABLE name ADD, ALTER TABLE name DROP COLUMN name, and ALTER TABLE name MODIFY COLUMN name</h3>
+
+    <!-- 0. TABLE PREVIEW (Base Table Used for ALTER Examples) -->
+    <h3>Example: Table Preview</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>PersonID</th><th>LastName</th><th>FirstName</th><th>City</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Smith</td><td>John</td><td>New York</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Brown</td><td>Lisa</td><td>Chicago</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+
+        <span class="C1">CREATE TABLE Employees (</span><br>
+        &nbsp;&nbsp;EmployeeID int,<br>
+        &nbsp;&nbsp;Name varchar(255),<br>
+        &nbsp;&nbsp;Department varchar(255)<br>
+        );<br><br>
+
+        <span class="C2">CREATE TABLE EmployeesCopy AS</span><br>
+        &nbsp;&nbsp;SELECT Name, Department<br>
+        &nbsp;&nbsp;FROM Employees;<br><br>
+
+        <span class="C3">DROP TABLE Employees;</span><br><br>
+
+        <span class="C4">TRUNCATE TABLE Employees;</span><br><br>
+
+        <span class="C5">ALTER TABLE Persons ADD Email varchar(255);</span><br><br>
+
+        <span class="C6">ALTER TABLE Persons DROP COLUMN City;</span><br><br>
+
+        <span class="C7">ALTER TABLE Persons RENAME COLUMN City TO Location;</span><br><br>
+
+        <span class="C8">ALTER TABLE Persons MODIFY COLUMN PersonID bigint;</span>
+
+      </code>
+    </div>
+
+    <!-- ================= CREATE TABLE ================= -->
+    <h3>Example Output:</h3>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1">
+        <th>EmployeeID</th><th>Name</th><th>Department</th>
+      </tr>
+      <tr>
+        <td colspan="3" style="text-align:center;">Empty table</td>
+      </tr>
+    </table>
+
+    <!-- ================= CREATE TABLE AS SELECT ================= -->
+    <h3>Example Output: Table EmployeesCopy</h3>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C2">
+        <th>Name</th><th>Department</th>
+      </tr>
+      <tr>
+        <td>John</td><td>Sales</td>
+      </tr>
+      <tr>
+        <td>Lisa</td><td>Marketing</td>
+      </tr>
+    </table>
+
+    <h3>Example Output: Table Employees deleted</h3>
+
+    <h3>Example Output: Table Employees deleted content</h3>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C4">
+        <th>Name</th><th>Department</th>
+      </tr>
+      <tr>
+        <td colspan="3" style="text-align:center;">No rows (table is empty)</td>
+      </tr>
+    </table>
+
+    <!-- ================= ALTER TABLE ADD ================= -->
+    <h3>Example Output:</h3>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C5">
+        <th>PersonID</th><th>LastName</th><th>FirstName</th><th>City</th><th>Email</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Smith</td><td>John</td><td>New York</td><td>null</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Brown</td><td>Lisa</td><td>Chicago</td><td>null</td>
+      </tr>
+    </table>
+
+    <!-- ================= DROP COLUMN ================= -->
+    <h3>Example Output:</h3>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C6">
+        <th>PersonID</th><th>LastName</th><th>FirstName</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Smith</td><td>John</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Brown</td><td>Lisa</td>
+      </tr>
+    </table>
+
+    <!-- ================= RENAME COLUMN ================= -->
+    <h3>Example Output:</h3>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C7">
+        <th>PersonID</th><th>LastName</th><th>FirstName</th><th>Location</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Smith</td><td>John</td><td>New York</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Brown</td><td>Lisa</td><td>Chicago</td>
+      </tr>
+    </table>
+
+    <!-- ================= ALTER COLUMN ================= -->
+    <h3>Example Output: Data Type Changed</h3>
+    <p><strong>PersonID</strong> is now stored as <code>bigint</code> instead of <code>int</code>. The structure changed, but the visible data remains the same.</p>
+
+    <!-- ================= EXPLANATION ================= -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+
+      <span class="C1"><code>CREATE TABLE</code></span>
+      <span> – Builds a brand-new table from scratch. Like creating a new spreadsheet with defined columns.</span><br>
+
+      <span class="C2"><code>CREATE TABLE name AS SELECT</code></span>
+      <span> – Creates a new table using data from another table. Copies both structure and data.</span><br>
+
+      <span class="C3"><code>DROP TABLE</code></span>
+      <span> – Permanently deletes a table and everything inside it.</span><br>
+
+      <span class="C4"><code>TRUNCATE TABLE</code></span>
+      <span> – Deletes all rows but keeps the table structure.</span><br>
+
+      <span class="C5"><code>ALTER TABLE ADD</code></span>
+      <span> – Adds a new column to an existing table.</span><br>
+
+      <span class="C6"><code>DROP COLUMN</code></span>
+      <span> – Removes a column permanently.</span><br>
+
+      <span class="C7"><code>RENAME COLUMN</code></span>
+      <span> – Changes a column name without losing its data.</span><br>
+
+      <span class="C8"><code>MODIFY COLUMN</code></span>
+      <span> – Changes the data type of a column. (MySQL replaces `ALTER COLUMN` with `MODIFY COLUMN`)</span><br><br>
+
+      <strong>Notes:</strong><br>
+      <span>
+        - Always be careful with <code>DROP</code> and <code>TRUNCATE</code> — they are destructive.<br>
+        - ALTER syntax varies slightly between database systems; MySQL uses `MODIFY COLUMN` for type changes.<br>
+        - `RENAME COLUMN` requires MySQL 8.0+. Older versions need `CHANGE COLUMN old_name new_name datatype`.<br>
+        - Structural changes affect how future data behaves.
+      </span><br><br>
+
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - Tables define structure. Structure defines safety.<br>
+        - Databases evolve — ALTER teaches adaptability.<br>
+        - Always think before destructive commands.
+      </span>
+
+    </div>
+
+  </div>
+
+</template>
+
+<template> <!-- Template 3: SQL: NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, CHECK, DEFAULT -->
+  <div class="bubble">
+
+    <h3>SQL: NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, CHECK, DEFAULT</h3>
+
+    <!-- 0. TABLE STRUCTURE PREVIEW -->
+    <h3>Example: Table Structure with Constraints</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>Column</th><th>Data Type</th><th>Constraint</th>
+      </tr>
+      <tr>
+        <td>ID</td><td>INT</td><td>NOT NULL</td>
+      </tr>
+      <tr>
+        <td>Email</td><td>VARCHAR(255)</td><td>UNIQUE</td>
+      </tr>
+      <tr>
+        <td>ProductID</td><td>INT</td><td>PRIMARY KEY</td>
+      </tr>
+      <tr>
+        <td>PersonID</td><td>INT</td><td>FOREIGN KEY → Persons(ID)</td>
+      </tr>
+      <tr>
+        <td>Age</td><td>INT</td><td>CHECK (Age ≥ 18)</td>
+      </tr>
+      <tr>
+        <td>City</td><td>VARCHAR(255)</td><td>DEFAULT 'Sandnes'</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code (Table Creation):</h3>
+    <div class="code_block">
+      <code>
+
+        <!-- C1 NOT NULL -->
+        <span class="C1">CREATE TABLE Persons (<br>
+        &nbsp;&nbsp;ID INT NOT NULL,<br>
+        &nbsp;&nbsp;FirstName VARCHAR(255) NOT NULL,<br>
+        &nbsp;&nbsp;LastName VARCHAR(255) NOT NULL<br>
+        );</span><br><br>
+
+        <!-- C2 UNIQUE -->
+        <span class="C2">CREATE TABLE Users (<br>
+        &nbsp;&nbsp;UserID INT,<br>
+        &nbsp;&nbsp;Email VARCHAR(255),<br>
+        &nbsp;&nbsp;UNIQUE (Email)<br>
+        );</span><br><br>
+
+        <!-- C3 PRIMARY KEY -->
+        <span class="C3">CREATE TABLE Products (<br>
+        &nbsp;&nbsp;ProductID INT,<br>
+        &nbsp;&nbsp;ProductName VARCHAR(255),<br>
+        &nbsp;&nbsp;PRIMARY KEY (ProductID)<br>
+        );</span><br><br>
+
+        <!-- C4 FOREIGN KEY -->
+        <span class="C4">CREATE TABLE Orders (<br>
+        &nbsp;&nbsp;OrderID INT,<br>
+        &nbsp;&nbsp;PersonID INT,<br>
+        &nbsp;&nbsp;PRIMARY KEY (OrderID),<br>
+        &nbsp;&nbsp;FOREIGN KEY (PersonID) REFERENCES Persons(ID)<br>
+        );</span><br><br>
+
+        <!-- C5 CHECK -->
+        <span class="C5">CREATE TABLE Adults (<br>
+        &nbsp;&nbsp;ID INT,<br>
+        &nbsp;&nbsp;Age INT,<br>
+        &nbsp;&nbsp;CHECK (Age >= 18)<br>
+        );</span><br><br>
+
+        <!-- C6 DEFAULT -->
+        <span class="C6">CREATE TABLE Customers (<br>
+        &nbsp;&nbsp;ID INT,<br>
+        &nbsp;&nbsp;City VARCHAR(255) DEFAULT 'Sandnes'<br>
+        );</span>
+
+      </code>
+    </div>
+
+    <!-- 2. CONSTRAINT BEHAVIOR TESTS -->
+    <h3>Constraint Behavior Tests:</h3>
+
+    <div class="code_block">
+      <code>
+
+        <code class="C1">-- C1 NOT NULL</code><br>
+        INSERT INTO Persons VALUES (1, 'Liam', 'Axelrod');<br>
+        -- ✅ Success<br><br>
+
+        INSERT INTO Persons VALUES (NULL, 'Anna', 'Smith');<br>
+        -- ❌ ERROR 1048 (23000): Column 'ID' cannot be null<br><br><br>
+
+        <code class="C2">-- C2 UNIQUE</code><br>
+        INSERT INTO Users VALUES (1, 'test@email.com');<br>
+        -- ✅ Success<br><br>
+
+        INSERT INTO Users VALUES (2, 'test@email.com');<br>
+        -- ❌ ERROR 1062 (23000): Duplicate entry 'test@email.com' for key 'Email'<br><br><br>
+
+        <code class="C3">-- C3 PRIMARY KEY</code><br>
+        INSERT INTO Products VALUES (100, 'Laptop');<br>
+        -- ✅ Success<br><br>
+
+        INSERT INTO Products VALUES (100, 'Tablet');<br>
+        -- ❌ ERROR 1062 (23000): Duplicate entry '100' for key 'PRIMARY'<br><br><br>
+
+        <code class="C4">-- C4 FOREIGN KEY</code><br>
+        INSERT INTO Persons VALUES (10, 'John', 'Doe');<br>
+        -- ✅ Success (Parent row exists)<br><br>
+
+        INSERT INTO Orders VALUES (1, 10);<br>
+        -- ✅ Success (PersonID 10 exists)<br><br>
+
+        INSERT INTO Orders VALUES (2, 999);<br>
+        -- ❌ ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails<br><br><br>
+
+        <code class="C5">-- C5 CHECK</code><br>
+        INSERT INTO Adults VALUES (1, 25);<br>
+        -- ✅ Success<br><br>
+
+        INSERT INTO Adults VALUES (2, 16);<br>
+        -- ❌ ERROR 3819 (HY000): Check constraint 'Adults_chk_1' is violated.<br><br><br>
+
+        <code class="C6">-- C6 DEFAULT</code><br>
+        INSERT INTO Customers (ID) VALUES (1);<br>
+        -- ✅ Success (City automatically set to 'Sandnes')<br>
+
+      </code>
+    </div>
+
+    <!-- 3. EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+
+      <span class="C1"><code>NOT NULL</code></span>
+      <span> – The first insert succeeded because ID had a value.  
+      The second failed because NULL violates the NOT NULL rule, so the database rejected the row immediately.</span><br><br>
+
+      <span class="C2"><code>UNIQUE</code></span>
+      <span> – The first email worked because it was new.  
+      The second failed because the value already existed. UNIQUE prevents duplicate values in that column.</span><br><br>
+
+      <span class="C3"><code>PRIMARY KEY</code></span>
+      <span> – The first ProductID was unique, so it succeeded.  
+      The second failed because PRIMARY KEY enforces uniqueness and does not allow duplicates.</span><br><br>
+
+      <span class="C4"><code>FOREIGN KEY</code></span>
+      <span> – The insert into Orders with PersonID 10 succeeded because that ID exists in the Persons table.  
+      The insert with PersonID 999 failed because no matching parent row exists.  
+      FOREIGN KEY protects relationships between tables.</span><br><br>
+
+      <span class="C5"><code>CHECK</code></span>
+      <span> – Age 25 passed because it satisfies the condition (Age ≥ 18).  
+      Age 16 failed because it violates the CHECK rule.</span><br><br>
+
+      <span class="C6"><code>DEFAULT</code></span>
+      <span> – The insert succeeded even without specifying City because the database automatically filled in 'Sandnes'.  
+      DEFAULT prevents missing data without throwing an error.</span><br><br>
+
+      <strong>Notes:</strong><br>
+      <span>
+        - Error codes shown are MySQL-style (ANSI behavior).<br>
+        - CHECK constraints are enforced in MySQL 8+. Older versions ignored them.<br>
+        - FOREIGN KEY requires the parent table to exist first.<br>
+        - Constraints are enforced by the database engine, not your application.
+      </span><br><br>
+
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - Constraints act as the database’s immune system.<br>
+        - They prevent corruption at the structural level.<br>
+        - Valid data flows through. Invalid data is rejected instantly.<br>
+        - This is defensive engineering: build systems that protect themselves.
+      </span>
+
+    </div>
+
+  </div>
+
+</template>
+
+<template> <!-- SQL: CREATE INDEX, CREATE UNIQUE INDEX, DROP INDEX, AUTO_INCREMENT, and ALTER TABLE name AUTO_INCREMENT -->
+  <div class="bubble">
+
+    <h3>SQL: CREATE INDEX, CREATE UNIQUE INDEX, DROP INDEX, AUTO_INCREMENT, and ALTER TABLE name AUTO_INCREMENT</h3>
+
+    <!-- 0. TABLE EXAMPLE (Existing Data) -->
+    <h3>Example: Table Preview</h3>
+    <table class="example" border="#" cellspacing="#" cellpadding="#">
+      <tr>
+        <th>Personid</th><th>FirstName</th><th>LastName</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Lars</td><td>Monsen</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Anna</td><td>Smith</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+
+        <!-- C1: Basic Index -->
+        <span class="C1">CREATE INDEX idx_lastname</span><br>
+        &nbsp;&nbsp;<span class="C1">ON Persons (LastName);</span><br><br>
+
+        <!-- C2: Multi-column Index -->
+        <span class="C2">CREATE INDEX idx_fullname</span><br>
+        &nbsp;&nbsp;<span class="C2">ON Persons (LastName, FirstName);</span><br><br>
+
+        <!-- C3: Unique Index -->
+        <span class="C3">CREATE UNIQUE INDEX idx_unique_email</span><br>
+        &nbsp;&nbsp;<span class="C3">ON Persons (Email);</span><br><br>
+
+        <!-- C4: Drop Index -->
+        <span class="C4">ALTER TABLE Persons</span><br>
+        &nbsp;&nbsp;<span class="C4">DROP INDEX idx_lastname;</span><br><br>
+
+        <!-- C5: AUTO_INCREMENT Table -->
+        <span class="C5">CREATE TABLE Persons (</span><br>
+        &nbsp;&nbsp;<span class="C5">Personid INT NOT NULL AUTO_INCREMENT,</span><br>
+        &nbsp;&nbsp;<span class="C5">LastName VARCHAR(255) NOT NULL,</span><br>
+        &nbsp;&nbsp;<span class="C5">FirstName VARCHAR(255),</span><br>
+        &nbsp;&nbsp;<span class="C5">PRIMARY KEY (Personid)</span><br>
+        <span class="C5">);</span><br><br>
+
+        <!-- C6: Insert Without ID -->
+        <span class="C6">INSERT INTO Persons (FirstName, LastName)</span><br>
+        &nbsp;&nbsp;<span class="C6">VALUES ('Lars', 'Monsen');</span><br><br>
+
+        <!-- C7: Change Starting Value -->
+        <span class="C7">ALTER TABLE Persons AUTO_INCREMENT = 100;</span>
+
+      </code>
+    </div>
+
+    <h3>Example Output:</h3>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C6">
+        <th>Personid</th><th>FirstName</th><th>LastName</th>
+      </tr>
+      <tr>
+        <td>3</td><td>Lars</td><td>Monsen</td>
+      </tr>
+    </table>
+
+    <!-- 3. EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+
+      <span class="C1"><code>CREATE INDEX</code></span>
+      <span> – Creates a lookup structure for one column. Think of it like an index in the back of a book: instead of scanning every page (row), the database jumps directly to matches.</span><br><br>
+
+      <span class="C2"><code>Multi-column Index</code></span>
+      <span> – Works like a sorted phonebook: ordered first by LastName, then FirstName. It is most useful when queries filter using both columns together. Order matters.</span><br><br>
+
+      <span class="C3"><code>CREATE UNIQUE INDEX</code></span>
+      <span> – Same speed benefit as a normal index, but also prevents duplicate values. It enforces uniqueness without necessarily being a primary key.</span><br><br>
+
+      <span class="C4"><code>DROP INDEX</code></span>
+      <span> – Removes the lookup structure. The table data remains unchanged — only the performance optimization is removed.</span><br><br>
+
+      <strong>How Index Types Differ:</strong><br>
+      <span>
+        - Basic index → improves search speed only.<br>
+        - Multi-column index → improves combined-column searches.<br>
+        - Unique index → improves search speed AND enforces uniqueness.<br>
+      </span><br>
+
+      <span class="C5"><code>AUTO_INCREMENT</code></span>
+      <span> – Automatically generates a new unique number when inserting a record. Usually used for primary keys so developers don’t manually manage IDs.</span><br><br>
+
+      <span class="C6"><code>INSERT without specifying Personid</code></span>
+      <span> – This exists because the database handles ID generation. If you manually inserted IDs, you could accidentally create duplicates or break relationships. AUTO_INCREMENT removes human error.</span><br><br>
+
+      <span class="C7"><code>ALTER TABLE ... AUTO_INCREMENT</code></span>
+      <span> – Changes the NEXT number the database will assign. It does NOT change existing IDs. It only affects future inserts.</span><br><br>
+
+      <!-- NOTES -->
+      <strong>Notes:</strong><br>
+      <span>
+        - You can only change the starting/next value using <code>ALTER TABLE ... AUTO_INCREMENT</code> in MySQL.<br>
+        - You cannot reset existing row IDs using this command.<br>
+        - If the table already contains higher numbers, MySQL will ignore lower AUTO_INCREMENT values.<br>
+        - Indexes speed up SELECT queries but slow down INSERT/UPDATE because indexes must also update.<br>
+        - In SQL Server, use <code>IDENTITY(start, increment)</code> instead of AUTO_INCREMENT.<br>
+        - In Oracle, use a <code>SEQUENCE</code> object.<br>
+        - Never over-index a table — each index adds storage and maintenance cost.
+      </span><br><br>
+
+      <!-- CONCEPT & SPIRIT -->
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - Indexing teaches performance tradeoffs: faster reads vs slower writes.<br>
+        - AUTO_INCREMENT teaches delegation: let the database manage identity safely.<br>
+        - ALTER TABLE teaches controlled structural change — you modify structure carefully, not data recklessly.
+      </span>
+
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- SQL: OrderDate, CREATE VIEW, CREATE OR REPLACE VIEW, and DROP VIEW -->
+  <div class="bubble">
+
+    <h3>SQL: OrderDate, CREATE VIEW, CREATE OR REPLACE VIEW, and DROP VIEW</h3>
+
+    <!-- 0. TABLE EXAMPLE (Existing Data) -->
+    <h3>Example: Orders Table Preview</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>OrderId</th><th>ProductName</th><th>OrderDate</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Geitost</td><td>2008-11-11</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Camembert Pierrot</td><td>2008-11-09</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Mozzarella di Giovanni</td><td>2008-11-11</td>
+      </tr>
+      <tr>
+        <td>4</td><td>Mascarpone Fabioli</td><td>2008-10-29</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+        <span class="C1">SELECT * FROM Orders WHERE OrderDate = '2008-11-11';</span><br><br>
+
+        <span class="C2">CREATE VIEW Brazil_Customers AS</span><br>
+        &nbsp;&nbsp;<span class="C2">SELECT CustomerName, ContactName</span><br>
+        &nbsp;&nbsp;<span class="C2">FROM Customers</span><br>
+        &nbsp;&nbsp;<span class="C2">WHERE Country = 'Brazil';</span><br><br>
+
+        <span class="C3">SELECT * FROM Brazil_Customers;</span><br><br>
+
+        <span class="C4">CREATE OR REPLACE VIEW Brazil_Customers AS</span><br>
+        &nbsp;&nbsp;<span class="C4">SELECT CustomerName, ContactName, City</span><br>
+        &nbsp;&nbsp;<span class="C4">FROM Customers</span><br>
+        &nbsp;&nbsp;<span class="C4">WHERE Country = 'Brazil';</span><br><br>
+
+        <span class="C5">DROP VIEW Brazil_Customers;</span>
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Output:</h3>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1">
+        <th>OrderId</th><th>ProductName</th><th>OrderDate</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Geitost</td><td>2008-11-11</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Mozzarella di Giovanni</td><td>2008-11-11</td>
+      </tr>
+    </table>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <span class="d2 dot"></span><span class="d3 dot"></span>
+      <tr>
+        <th>CustomerName</th><th>ContactName</th>
+      </tr>
+      <tr>
+        <td>Ana Trujillo</td><td>Ana Trujillo</td>
+      </tr>
+      <tr>
+        <td>Ricardo Adocicados</td><td>Maria Silva</td>
+      </tr>
+    </table>
+
+    <!-- 3. EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+
+      <span class="C1"><code>WHERE OrderDate = '2008-11-11'</code></span>
+      <span> – Dates must match the column’s format exactly. If the column is <code>DATE</code> (YYYY-MM-DD), this works perfectly. But if the column includes time (DATETIME), this comparison will fail because the time part must also match.</span><br><br>
+
+      <span class="C2"><code>CREATE VIEW</code></span>
+      <span> – A view is a virtual table built from a SELECT statement. Think of it as saving a query with a name. Instead of rewriting complex queries, you create a view once and reuse it.</span><br><br>
+
+      <span class="C3"><code>SELECT * FROM Brazil_Customers</code></span>
+      <span> – Once created, a view behaves like a normal table. You can query it the same way. Behind the scenes, the database runs the original SELECT every time.</span><br><br>
+
+      <span class="C4"><code>CREATE OR REPLACE VIEW</code></span>
+      <span> – Updates an existing view definition. Instead of dropping and recreating it manually, this safely replaces it with the new version.</span><br><br>
+
+      <span class="C5"><code>DROP VIEW</code></span>
+      <span> – Deletes the view definition. It does NOT delete the underlying tables or data.</span><br><br>
+
+      <strong>Notes:</strong><br>
+      <span>
+        - MySQL Date Types:<br>
+        &nbsp;&nbsp;• DATE → YYYY-MM-DD<br>
+        &nbsp;&nbsp;• DATETIME → YYYY-MM-DD HH:MM:SS<br>
+        &nbsp;&nbsp;• TIMESTAMP → similar to DATETIME (auto-handled by server)<br>
+        &nbsp;&nbsp;• YEAR → YYYY<br><br>
+
+        - If your column is DATETIME and contains time (e.g., 2008-11-11 13:23:44), comparing only '2008-11-11' will return no results.<br>
+        - To keep queries simple, avoid time components unless necessary.<br>
+        - SQL Server differences: SQL Server has SMALLDATETIME and a different TIMESTAMP behavior (unique number).<br>
+        - Views always show up-to-date data because they rerun the stored query every time.<br><br>
+
+        - VIEW vs INDEX:<br>
+
+        &nbsp;&nbsp;• VIEW = changes how data is PRESENTED.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;(It is a saved SELECT query.)<br>
+
+        &nbsp;&nbsp;• INDEX = changes how data is FOUND.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;(It makes searching faster.)<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;A view affects what you see.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;An index affects how fast the database finds it.
+      </span><br><br>
+
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - Dates teach precision. Databases require exact formatting and matching — small differences (like time) matter.<br>
+        - Views teach abstraction. You separate complex logic from usage, improving clarity and reusability.<br>
+        - Big beginner lesson: Design for simplicity. Use DATE when you only need dates. Use views to simplify repeated logic. Clean structure = safer databases.
+      </span>
+
+    </div>
+
+  </div>
+
+</template>
+
+<template> <!-- SQL: CREATE PROCEDURE, CALL and (CREATE PROCEDURE - safety practice) -->
+  <div class="bubble">
+
+    <h3>SQL: CREATE PROCEDURE, CALL and (CREATE PROCEDURE - safety practice)</h3>
+
+    <!-- 0. TABLE EXAMPLE (Existing Data) -->
+    <h3>Example: Customers Table Preview</h3>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>CustomerID</th><th>CustomerName</th><th>City</th><th>PostalCode</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Anna Smith</td><td>London</td><td>WA1 1DP</td>
+      </tr>
+      <tr>
+        <td>2</td><td>John Lee</td><td>Paris</td><td>75001</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Maria Garcia</td><td>London</td><td>WA1 1DP</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+        <!-- C1 Add Customer Procedure -->
+        <span class="C6">DELIMITER //<br>
+        <span class="C1">CREATE PROCEDURE AddCustomer(<br>
+        &nbsp;&nbsp;IN cName VARCHAR(50),<br>
+        &nbsp;&nbsp;IN cCity VARCHAR(50),<br>
+        &nbsp;&nbsp;IN cPostal VARCHAR(10)<br>
+        )<br>
+        BEGIN<br>
+        &nbsp;&nbsp;INSERT INTO Customers (CustomerName, City, PostalCode)<br>
+        &nbsp;&nbsp;VALUES (cName, cCity, cPostal);<br>
+        END</span><span class="C6"> //<br>
+        DELIMITER ;</span><br><br>
+
+        <!-- C2 Execute Add Customer -->
+        <span class="C2">CALL AddCustomer('Liam Axelrod', 'Los Angeles', '90034');</span><br><br>
+
+        <!-- C3 Delete Customer Procedure -->
+        <span class="C6">DELIMITER //<br>
+        <span class="C3">CREATE PROCEDURE DeleteCustomerByName(IN delName VARCHAR(50))<br>
+        BEGIN<br>
+        &nbsp;&nbsp;DELETE FROM Customers WHERE CustomerName = delName;<br>
+        END</span><span class="C6"> //<br>
+        DELIMITER ;</span><br><br>
+
+        <!-- C4 Execute Delete Customer -->
+        <span class="C4">CALL DeleteCustomerByName('John Lee');</span><br><br>
+
+        <!-- C5 Unsafe SQL (Injection Example) -->
+        <span class="C5">SELECT * FROM Users WHERE UserId = 105 OR 1=1;</span><br><br>
+
+        <!-- C6 Safe Parameterized Query Concept -->
+        <span class="C5">SELECT * FROM Users WHERE UserId = ?;</span>
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Output:</h3>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C2">
+        <th>CustomerID</th><th>CustomerName</th><th>City</th><th>PostalCode</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Anna Smith</td><td>London</td><td>WA1 1DP</td>
+      </tr>
+      <tr>
+        <td>2</td><td>John Lee</td><td>Paris</td><td>75001</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Maria Garcia</td><td>London</td><td>WA1 1DP</td>
+      </tr>
+    </table>
+
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C4">
+        <th>CustomerID</th><th>CustomerName</th><th>City</th><th>PostalCode</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Anna Smith</td><td>London</td><td>WA1 1DP</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Maria Garcia</td><td>London</td><td>WA1 1DP</td>
+      </tr>
+    </table>
+
+    <!-- 3.1 EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+
+      <span class="C1"><code>CREATE PROCEDURE</code></span>
+      <span> – Creates a reusable procedure in the database. Here, it inserts a new customer row. It’s like defining a function in other languages that performs an action.</span><br><br>
+
+      <span class="C2"><code>CALL procedure_name()</code></span>
+      <span> – Executes the procedure. Think of it like calling a function with arguments in JavaScript or Java.</span><br><br>
+
+      <span class="C3"><code>DELETE FROM Customers WHERE CustomerName = delName</code></span>
+      <span> – Deletes rows matching the input name. This demonstrates that procedures can modify data, not just read it, similar to a function that performs a side effect.</span><br><br>
+
+      <span class="C4"><code>CALL DeleteCustomerByName('John Lee')</code></span>
+      <span> – Runs the deletion procedure. After execution, any customer named "John Lee" is removed from the table.</span><br><br>
+
+      <span class="C5"><code>OR 1=1</code></span>
+      <span> – Classic SQL injection example. Shows how a hacker could get into your sensitive data by simply adding or true statement to trick the query into giving you all the data. <br>
+      <span class="C5"><code>?</code> (Parameterized Query)</span> 
+      <span>– Safe placeholder for user input. Prevents SQL injection by treating parameters strictly as data.</span><br><br>
+
+        <span class="C5">DELIMITER #</span> 
+        <span>– Changes how the query knows when the query ends. Usually we use ; to say the query statement has ended but in a procedure we need that so we change it for the procedure.</span><br><br>
+
+      <!-- NOTES -->
+      <strong>Notes:</strong><br>
+      <span>
+        - SQL Server uses <code>@param</code> style for procedure parameters.<br>
+        - Procedures can perform INSERT, UPDATE, DELETE, or SELECT operations.<br>
+        - Always avoid concatenating user input into queries. Use parameters/prepared statements.<br>
+        - Deletion procedures show “side effects,” like functions that modify state in programming languages.
+      </span><br><br>
+
+      <!-- CONCEPT & SPIRIT -->
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - Procedures are like functions at the database level — reusable, maintainable, and capable of performing actions.<br>
+        - They separate logic from application code, which improves security and maintainability.<br>
+        - SQL injection demonstrates the importance of treating user input carefully.<br>
+        - The big lesson: database code can be function-like, but always secure and well-structured.
+      </span>
+
+    </div>
+
+  </div>
+
+</template>
+
+<template> <!-- SQL: Exploration / Hosting -->
+  <div class="bubble">
+
+    <h3>Exploration: SQL Hosting</h3>
+
+    <div class="explanation">
+      <span\>
+        When building a website or web application that stores and retrieves data, your web server must access a 
+        <strong>SQL database</strong>. This allows your app to read, write, and manage data efficiently.  
+      </span><br><br>
+
+      <span>
+        <strong>Common SQL hosting options:</strong><br>
+        - <strong>MS SQL Server:</strong> powerful, full-featured, suited for high-traffic and enterprise sites.<br>
+        - <strong>Oracle:</strong> robust and high-performance, widely used for large-scale applications.<br>
+        - <strong>MySQL:</strong> popular, flexible, inexpensive; ideal for most web apps. This is the style used in these notes.<br>
+        - <strong>MS Access:</strong> simple and easy, suited for small or low-traffic websites. Not ideal for high-traffic apps.<br>
+      </span><br>
+
+      <span>
+        <strong>Key concepts to consider:</strong><br>
+        - Your web server must have proper access to the database; many hosting providers offer SQL-enabled plans.<br>
+        - ANSI SQL compliance ensures core commands work similarly across different systems, though differences exist in syntax and data types.<br>
+        - Choose a database based on traffic, complexity, cost, and required features: high-traffic → SQL Server/Oracle, general web apps → MySQL, small/simple apps → MS Access.<br>
+      </span><br>
+
+      <span>
+        <strong>Analogy:</strong> Think of the web server as your office and the database as a filing cabinet:<br>
+        - The office (web server) needs a key to access the cabinet (database).<br>
+        - Some cabinets are large and powerful (Oracle, SQL Server), some are smaller and simpler (MS Access), and some are widely used and flexible (MySQL).<br>
+      </span><br>
+
+      <strong>Notes:</strong><br>
+      <span>
+        - This exploration is informational; no SQL code is involved here.<br>
+        - MySQL / ANSI SQL style is used in examples throughout the notes, but other SQL systems are mentioned for context.<br>
+        - Understanding hosting options helps guide which database system to practice with and deploy.<br>
+      </span><br>
+
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - SQL Hosting is about context, not syntax: you don’t write SQL to host your database, but you must know the environment where your SQL runs.<br>
+        - Knowing the tradeoffs (traffic capacity, cost, simplicity) shapes good decisions in database-backed applications.<br>
+        - Early understanding of the database environment builds awareness of portability and compatibility between different SQL systems.
+      </span>
+    </div>
+
+  </div>
+</template> 

@@ -1,0 +1,53 @@
+<!-- File name: Drop/SQL/Basics.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Basics</title>
+  <link rel="stylesheet" href="/CSS/Global_Styles.css" />
+  <link rel="stylesheet" href="/CSS/template.css" />
+  <link rel="icon" href="/Images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+  <header>
+    <!-- Tell JS which nav to load -->
+    <div class="nav-slot" data-nav-type="SQL"></div>
+  </header>
+
+  <main>
+    <!-- Section Overview -->
+    <div class="section">
+        <h1>SQL Basics</h1>
+        <p>
+            SQL (Structured Query Language) is the standard language for working with relational databases. <br>
+            It allows you to retrieve, manipulate, and manage data stored in tables. SQL is <strong>declarative</strong>, <br>
+            meaning you specify what data you want, not how to fetch it. Key concepts include tables, columns, rows, <br>
+            and data types, as well as core commands like <code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code>, <br>
+            <code>DELETE</code>, and <code>WHERE</code>.
+        </p>
+        <p>
+            Think of a database as a cabinet: each table is a drawer, each row is a folder, and each column is a page <br>
+            in the folder. Learning the basics of SQL queries, operators, and table structures is essential for <br>
+            reading and managing data efficiently and safely.
+        </p>
+    </div>
+
+    <!-- Dynamic Notes Loader -->
+    <!-- Each note-slot corresponds to a template inside Notes_Javascript folder -->
+    <div class="note-slot" data-folder="SQL" data-id="Basics"></div>
+
+  </main>
+
+  <footer>
+    <!-- Optional footer content -->
+  </footer>
+
+  <!-- Load dynamic notes -->
+  <script src="/JS/loadNav.js"></script> 
+  <script src="/JS/loadNotes.js"></script>
+
+</body>
+</html>

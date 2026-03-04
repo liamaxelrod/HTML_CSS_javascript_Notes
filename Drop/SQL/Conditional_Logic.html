@@ -1,0 +1,49 @@
+<!-- File name: Drop/SQL/Conditional_Logic.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Basics</title>
+  <link rel="stylesheet" href="/CSS/Global_Styles.css" />
+  <link rel="stylesheet" href="/CSS/template.css" />
+  <link rel="icon" href="/Images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+  <header>
+    <!-- Tell JS which nav to load -->
+    <div class="nav-slot" data-nav-type="SQL"></div>
+  </header>
+
+  <main>
+    <!-- Section Overview -->
+    <div class="section">
+      <h1>SQL: Nulls & Conditional Logic</h1>
+      <p>
+        Databases often contain missing or unknown information. <strong>NULL</strong> represents this absence of data. <br>
+        SQL provides tools to handle NULLs safely and apply conditional logic directly in queries. <br>
+        Use <code>IS NULL</code> and <code>IS NOT NULL</code> to filter missing or existing data. Use functions like <code>IFNULL()</code>, <code>ISNULL()</code>, or <code>COALESCE()</code> to replace NULLs with default values, ensuring queries and calculations remain reliable. <br>
+        Conditional logic in SQL is implemented with <strong>CASE</strong>, allowing if-else style evaluations for query output. Combined with NULL handling, it enables robust data transformations directly in SELECT statements. <br>
+        Advanced comparison operators <strong>EXISTS</strong>, <strong>ANY</strong>, and <strong>ALL</strong> allow set-based conditions: checking presence, comparing against one or all values from subqueries, enabling expressive and declarative queries without row-by-row loops. <br>
+        Mastering these concepts encourages careful data validation, defensive query writing, and set-based thinking—core skills for effective SQL usage. <br>
+      </p>
+    </div>
+
+    <!-- Dynamic Notes Loader -->
+    <!-- Each note-slot corresponds to a template inside Notes_Javascript folder -->
+    <div class="note-slot" data-folder="SQL" data-id="Conditional_Logic"></div>
+
+  </main>
+
+  <footer>
+    <!-- Optional footer content -->
+  </footer>
+
+  <!-- Load dynamic notes -->
+  <script src="/JS/loadNav.js"></script> 
+  <script src="/JS/loadNotes.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!-- File name: Drop/SQL/Aggregation_Grouping.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Basics</title>
+  <link rel="stylesheet" href="/CSS/Global_Styles.css" />
+  <link rel="stylesheet" href="/CSS/template.css" />
+  <link rel="icon" href="/Images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+  <header>
+    <!-- Tell JS which nav to load -->
+    <div class="nav-slot" data-nav-type="SQL"></div>
+  </header>
+
+  <main>
+    <!-- Section Overview -->
+    <div class="section">
+        <h1>Aggregation, Sorting & Filtering Groups</h1>
+        <p>
+            SQL lets you summarize, organize, and filter your data efficiently. <br>
+            Aggregate functions like <code>MIN()</code>, <code>MAX()</code>, <br><code>COUNT()</code>, <code>SUM()</code>, and <code>AVG()</code> <br>
+            calculate single values from multiple rows. <code>GROUP BY</code> breaks your data into categories before aggregation, <br>
+            while <code>HAVING</code> filters these grouped results. <br>
+            Finally, <code>ORDER BY</code> controls the order in which rows are displayed. <br>
+            Together, these tools let you answer questions like “what is the average price per category?” or <br>
+            “which countries have more than 3 customers?” without reading every row manually. <br>
+        </p>
+    </div>
+
+    <!-- Dynamic Notes Loader -->
+    <!-- Each note-slot corresponds to a template inside Notes_Javascript folder -->
+    <div class="note-slot" data-folder="SQL" data-id="Aggregation_Grouping"></div>
+
+  </main>
+
+  <footer>
+    <!-- Optional footer content -->
+  </footer>
+
+  <!-- Load dynamic notes -->
+  <script src="/JS/loadNav.js"></script> 
+  <script src="/JS/loadNotes.js"></script>
+
+</body>
+</html>
+

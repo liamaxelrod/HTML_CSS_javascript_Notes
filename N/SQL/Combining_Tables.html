@@ -1,0 +1,362 @@
+<!-- 5. Combining Tables -->
+<template> <!-- SQL: JOIN/INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN, and SELF JOIN   -->
+  <div class="bubble">
+
+    <h3>SQL: JOIN/INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN, and SELF JOIN</h3>
+
+    <!-- 0. TABLE EXAMPLE (Existing Data) -->
+    <h3>Example: Tables Preview</h3>
+
+    <h4>Customers Table</h4>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>CustomerID</th><th>CustomerName</th><th>City</th>
+      </tr>
+      <tr>
+        <td>1</td><td>Maria Anders</td><td>Berlin</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Francisco Chang</td><td>Madrid</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Roland Mendel</td><td>Berlin</td>
+      </tr>
+      <tr>
+        <td>4</td><td>Helen Bennett</td><td>London</td>
+      </tr>
+    </table>
+
+    <h4>Orders Table</h4>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>OrderID</th><th>CustomerID</th><th>OrderDate</th>
+      </tr>
+      <tr>
+        <td>101</td><td>1</td><td>2026-01-10</td>
+      </tr>
+      <tr>
+        <td>102</td><td>3</td><td>2026-01-12</td>
+      </tr>
+      <tr>
+        <td>103</td><td>5</td><td>2026-01-15</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+        <!-- C1 – INNER JOIN -->
+        SELECT Customers.CustomerName, Orders.OrderID, Orders.OrderDate<br>
+        FROM Customers<br>
+        <span class="C1">
+        INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID;</span><br><br>
+
+        <!-- C2 – LEFT JOIN -->
+        SELECT Customers.CustomerName, Orders.OrderID, Orders.OrderDate<br>
+        FROM Customers<br>
+        <span class="C2">LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID</span><br>
+        ORDER BY Customers.CustomerName;<br><br>
+
+        <!-- C3 – RIGHT JOIN -->
+        SELECT Customers.CustomerName, Orders.OrderID, Orders.OrderDate<br>
+        FROM Customers<br>
+        <span class="C3">RIGHT JOIN Orders ON Customers.CustomerID = Orders.CustomerID</span><br>
+        ORDER BY Orders.OrderID;<br><br>
+
+        <!-- C4 – FULL OUTER JOIN -->
+        SELECT Customers.CustomerName, Orders.OrderID, Orders.OrderDate<br>
+        FROM Customers<br>
+        <span class="C4">FULL OUTER JOIN Orders ON Customers.CustomerID = Orders.CustomerID</span><br>
+        ORDER BY Customers.CustomerName;<br><br>
+
+        <!-- C5 – SELF JOIN -->
+        SELECT A.CustomerName AS Customer1, B.CustomerName AS Customer2, A.City<br>
+        <span class="C5">FROM Customers A, Customers B<br>
+        WHERE A.CustomerID &lt;&gt; B.CustomerID AND A.City = B.City</span><br>
+        ORDER BY A.City;
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Output:</h3>
+
+    <h4>INNER JOIN</h4>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1"><th>CustomerName</th><th>OrderID</th><th>OrderDate</th></tr>
+      <tr><td>Maria Anders</td><td>101</td><td>2026-01-10</td></tr>
+      <tr><td>Roland Mendel</td><td>102</td><td>2026-01-12</td></tr>
+    </table>
+
+    <h4>LEFT JOIN</h4>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C2"><th>CustomerName</th><th>OrderID</th><th>OrderDate</th></tr>
+      <tr><td>Francisco Chang</td><td>NULL</td><td>NULL</td></tr>
+      <tr><td>Helen Bennett</td><td>NULL</td><td>NULL</td></tr>
+      <tr><td>Maria Anders</td><td>101</td><td>2026-01-10</td></tr>
+      <tr><td>Roland Mendel</td><td>102</td><td>2026-01-12</td></tr>
+    </table>
+
+    <h4>RIGHT JOIN</h4>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C3"><th>CustomerName</th><th>OrderID</th><th>OrderDate</th></tr>
+      <tr><td>Maria Anders</td><td>101</td><td>2026-01-10</td></tr>
+      <tr><td>Roland Mendel</td><td>102</td><td>2026-01-12</td></tr>
+      <tr><td>NULL</td><td>103</td><td>2026-01-15</td></tr>
+    </table>
+
+    <h4>FULL OUTER JOIN</h4>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C4"><th>CustomerName</th><th>OrderID</th><th>OrderDate</th></tr>
+      <tr><td>Francisco Chang</td><td>NULL</td><td>NULL</td></tr>
+      <tr><td>Helen Bennett</td><td>NULL</td><td>NULL</td></tr>
+      <tr><td>Maria Anders</td><td>101</td><td>2026-01-10</td></tr>
+      <tr><td>Roland Mendel</td><td>102</td><td>2026-01-12</td></tr>
+      <tr><td>NULL</td><td>103</td><td>2026-01-15</td></tr>
+    </table>
+
+    <h4>SELF JOIN</h4>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C5"><th>Customer1</th><th>Customer2</th><th>City</th></tr>
+      <tr><td>Maria Anders</td><td>Roland Mendel</td><td>Berlin</td></tr>
+      <tr><td>Roland Mendel</td><td>Maria Anders</td><td>Berlin</td></tr>
+    </table>
+
+    <!-- 3.1 EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+      <span>With ON, it looks for a column of data that Is similar or the same data and JOIN depending on which one will join the data if they're the same</span><br>
+      <span class="C1"><code>INNER JOIN</code></span><span> – Returns only the rows where there’s a match in both tables. Rows without matches are ignored.</span><br>
+      <span class="C2"><code>LEFT JOIN</code></span><span> – Returns all rows from the left table; unmatched rows in the right table appear as NULL.</span><br>
+      <span class="C3"><code>RIGHT JOIN</code></span><span> – Returns all rows from the right table; unmatched rows in the left table appear as NULL.</span><br>
+      <span class="C4"><code>FULL OUTER JOIN</code></span><span> – Returns all rows from both tables; unmatched rows appear as NULL where there’s no match.<br>
+        - MySQL does not support FULL OUTER JOIN directly. It can be simulated using LEFT JOIN UNION RIGHT JOIN.</span><br>
+      <span class="C5"><code>SELF JOIN</code></span><span> – Joins a table to itself; useful for finding relationships within the same table (e.g., customers in the same city).<br>
+      Where is the SELF JOIN? I don’t see the word JOIN anywhere.”<br>
+      That’s because this is the old (implicit) way of writing a self join.</span><br>
+      SELF JOIN = FROM Customers A, Customers B<br>
+      ON = WHERE A.CustomerID <> B.CustomerID AND A.City = B.City<br><br>
+
+      <strong>Notes:</strong><br>
+      <span>
+        - SQL creates a temporary combined result. That result is returned to you. Then it disappears.
+        - Always specify table names when column names exist in multiple tables.<br>
+        - JOIN defaults to INNER JOIN.<br>
+        - Use aliases (A, B) for clarity in SELF JOINs.<br>
+        - LEFT/RIGHT/FULL JOIN help handle missing relationships elegantly.
+      </span><br><br>
+
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        - Joins teach how relational databases combine related data across tables.<br>
+        - Understand the difference between "all rows" vs "matched rows".<br>
+        - Thinking in sets: each JOIN type answers a different question about relationships between tables.<br>
+        - Builds the mindset of designing queries that reflect real-world data connections.
+      </span>
+    </div>
+
+  </div>
+</template>
+
+<template> <!-- SQL: UNION & UNION ALL -->
+  <div class="bubble">
+
+    <h3>SQL: UNION & UNION ALL</h3>
+
+    <!-- 0. TABLE EXAMPLE (Existing Data) -->
+    <h3>Example: Table Preview</h3>
+
+    <!-- Customers Table -->
+    <strong>Customers</strong>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>ContactName</th><th>City</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>Maria Anders</td><td>Berlin</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>Ana Trujillo</td><td>Madrid</td><td>Spain</td>
+      </tr>
+      <tr>
+        <td>Thomas Hardy</td><td>Berlin</td><td>Germany</td>
+      </tr>
+    </table>
+
+    <br>
+
+    <!-- Suppliers Table -->
+    <strong>Suppliers</strong>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>ContactName</th><th>City</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>Heli Süßwaren</td><td>Berlin</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>Nordic Foods</td><td>Hamburg</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>New Orleans Cajun</td><td>New Orleans</td><td>USA</td>
+      </tr>
+    </table>
+
+    <br>
+
+    <!-- Employees Table (for C3 example) -->
+    <strong>Employees</strong>
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>ContactName</th><th>City</th><th>Country</th>
+      </tr>
+      <tr>
+        <td>John Smith</td><td>Berlin</td><td>Germany</td>
+      </tr>
+      <tr>
+        <td>Sara Connor</td><td>London</td><td>UK</td>
+      </tr>
+    </table>
+
+    <!-- 1. SQL CODE -->
+    <h3>SQL Code:</h3>
+    <div class="code_block">
+      <code>
+
+        <!-- C1 UNION -->
+        <span class="C1">SELECT City FROM Customers<br>
+        UNION<br>
+        SELECT City FROM Suppliers</span><br>
+        ORDER BY City;<br><br>
+
+        <!-- C2 UNION ALL -->
+        <span class="C2">SELECT City FROM Customers<br>
+        UNION ALL<br>
+        SELECT City FROM Suppliers</span><br>
+        ORDER BY City;<br><br>
+
+        <!-- C3 UNION from three tables -->
+        <span class="C3">SELECT City FROM Customers<br>
+        UNION<br>
+        SELECT City FROM Suppliers<br>
+        UNION<br>
+        SELECT City FROM Employees;</span><br><br>
+
+        <!-- C4 UNION with WHERE -->
+        <span class="C4">SELECT City, Country FROM Customers<br>
+        WHERE Country = 'Germany'<br>
+        UNION<br>
+        SELECT City, Country FROM Suppliers<br>
+        WHERE Country = 'Germany';</span>
+
+      </code>
+    </div>
+
+    <!-- 2. EXAMPLE OUTPUT -->
+    <h3>Example Output:</h3>
+
+    <!-- C1 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C1"><th>City</th></tr>
+      <tr><td>Berlin</td></tr>
+      <tr><td>Hamburg</td></tr>
+      <tr><td>Madrid</td></tr>
+      <tr><td>New Orleans</td></tr>
+    </table>
+
+    <br>
+
+    <!-- C2 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C2"><th>City</th></tr>
+      <tr><td>Berlin</td></tr>
+      <tr><td>Berlin</td></tr>
+      <tr><td>Berlin</td></tr>
+      <tr><td>Hamburg</td></tr>
+      <tr><td>Madrid</td></tr>
+      <tr><td>New Orleans</td></tr>
+    </table>
+
+    <br>
+
+    <!-- C3 Output -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C3"><th>City</th></tr>
+      <tr><td>Berlin</td></tr>
+      <tr><td>London</td></tr>
+      <tr><td>Madrid</td></tr>
+      <tr><td>New Orleans</td></tr>
+    </table>
+
+    <br>
+
+    <!-- C4 Output (Now Multiple Rows) -->
+    <table class="example" border="1" cellspacing="0" cellpadding="5">
+      <tr class="C4"><th>City</th><th>Country</th></tr>
+      <tr><td>Berlin</td><td>Germany</td></tr>
+      <tr><td>Hamburg</td><td>Germany</td></tr>
+    </table>
+
+    <!-- 3. EXPLANATION -->
+    <h3>Explanation:</h3>
+    <div class="explanation">
+
+      <span class="C1"><code>UNION</code></span>
+      <span>
+        – Combines result sets and automatically removes duplicate rows.
+      </span><br>
+
+      <span class="C2"><code>UNION ALL</code></span>
+      <span>
+        – Combines result sets but keeps duplicates. Faster because no duplicate-check step happens.
+      </span><br>
+
+      <span class="C3"><code>Multiple UNION statements</code></span><br>
+      <span>
+        You can combine more than two SELECT statements.<br>
+        Each additional UNION keeps stacking results vertically.<br>
+        This works also for UNION ALL
+      </span><br>
+
+      <span class="C4"><code>WHERE + UNION</code></span>
+      <span>
+        – Each SELECT filters independently before combining.
+      </span><br><br>
+
+      <strong>Notes:</strong><br>
+      <span>
+        - All SELECT statements must have the same number of columns.<br>
+        &nbsp;&nbsp;-- ✅ Works: same number of columns<br>
+        &nbsp;&nbsp;SELECT City, Country FROM Customers<br>
+        &nbsp;&nbsp;UNION<br>
+        &nbsp;&nbsp;SELECT City, Country FROM Suppliers;<br><br>
+
+        &nbsp;&nbsp;-- ❌ Error: different number of columns<br>
+        &nbsp;&nbsp;SELECT City FROM Customers<br>
+        &nbsp;&nbsp;UNION<br>
+        &nbsp;&nbsp;SELECT City, Country FROM Suppliers;<br><br>
+        - Column data types must be compatible.<br>
+        - Column order must match exactly.<br>
+        - Result column names come from the first SELECT statement.
+      </span><br><br>
+
+      <strong>UNION vs JOIN:</strong><br>
+      <span>
+        - UNION adds rows (vertical merge).<br>
+        - JOIN adds columns (horizontal merge using keys).<br><br>
+        UNION = stack data.<br>
+        JOIN = connect related data.
+      </span><br><br>
+
+      <strong>Concept & Spirit:</strong><br>
+      <span>
+        UNION teaches consolidation of similar structured datasets. 
+        It reinforces thinking about compatibility and schema alignment. 
+        JOIN teaches relationships. UNION teaches structural merging.
+      </span>
+
+    </div>
+
+  </div>
+
+</template>
